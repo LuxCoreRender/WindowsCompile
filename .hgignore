@@ -1,0 +1,8 @@
+syntax: glob
+*.old
+*.suo
+*.ncb
+*.xml
+Projects\Win32\*
+Projects\x64\*
+*.vcproj.*
