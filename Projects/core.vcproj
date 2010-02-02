@@ -45,7 +45,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -129,7 +129,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;_DEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
@@ -220,7 +220,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -315,7 +315,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -409,7 +409,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -504,7 +504,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -598,7 +598,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -693,7 +693,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -787,7 +787,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -882,7 +882,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -976,7 +976,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X86_BOOST_ROOT);&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -1071,7 +1071,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;$(LUX_X64_BOOST_ROOT);&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -4269,10 +4269,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\lux\core\parser.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\core\photonmap.cpp"
 					>
 				</File>
@@ -4488,6 +4484,10 @@
 					<Filter
 						Name="bxdf"
 						>
+						<File
+							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.cpp"
+							>
+						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.cpp"
 							>
@@ -4861,6 +4861,18 @@
 							</FileConfiguration>
 						</File>
 					</Filter>
+				</Filter>
+				<Filter
+					Name="queryable"
+					>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryable.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryableattribute.cpp"
+						>
+					</File>
 				</Filter>
 			</Filter>
 			<Filter
@@ -5965,6 +5977,10 @@
 						Name="bxdf"
 						>
 						<File
+							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.h"
+							>
+						</File>
+						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.h"
 							>
 						</File>
@@ -6055,6 +6071,22 @@
 					>
 					<File
 						RelativePath="..\..\lux\core\external\cimg.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="queryable"
+					>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryable.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryableattribute.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryableregistry.h"
 						>
 					</File>
 				</Filter>
