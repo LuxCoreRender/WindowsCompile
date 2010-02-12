@@ -1837,6 +1837,26 @@
 					</FileConfiguration>
 				</File>
 				<File
+					RelativePath="..\..\lux\materials\glass2.cpp"
+					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
 					RelativePath="..\..\lux\materials\glossy.cpp"
 					>
 					<FileConfiguration
@@ -4109,6 +4129,10 @@
 				Name="volumes"
 				>
 				<File
+					RelativePath="..\..\lux\volumes\clearvolume.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\lux\volumes\cloud.cpp"
 					>
 					<FileConfiguration
@@ -4487,6 +4511,22 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.cpp"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Luxmerge|x64"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.cpp"
@@ -4871,6 +4911,10 @@
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableattribute.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\lux\core\queryable\queryableregistry.cpp"
 						>
 					</File>
 				</Filter>
@@ -5315,6 +5359,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\lux\materials\glass2.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\lux\materials\glossy.h"
 					>
 				</File>
@@ -5626,6 +5674,10 @@
 			<Filter
 				Name="volumes"
 				>
+				<File
+					RelativePath="..\..\lux\volumes\clearvolume.h"
+					>
+				</File>
 				<File
 					RelativePath="..\..\lux\volumes\cloud.h"
 					>
@@ -6071,6 +6123,10 @@
 					>
 					<File
 						RelativePath="..\..\lux\core\external\cimg.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\lux\core\external\greycstoration.h"
 						>
 					</File>
 				</Filter>
