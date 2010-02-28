@@ -4733,6 +4733,26 @@
 						Name="fresnel"
 						>
 						<File
+							RelativePath="..\..\lux\core\reflection\fresnel\fresnelcauchy.cpp"
+							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Luxmerge|x64"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+						</File>
+						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelconductor.cpp"
 							>
 							<FileConfiguration
@@ -4755,6 +4775,20 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresneldielectric.cpp"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Luxmerge|x64"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelgeneral.cpp"
@@ -6076,6 +6110,10 @@
 					<Filter
 						Name="fresnel"
 						>
+						<File
+							RelativePath="..\..\lux\core\reflection\fresnel\fresnelcauchy.h"
+							>
+						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelconductor.h"
 							>
