@@ -756,6 +756,184 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="PyluxDebug|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON_ROOT)/PC&quot;;..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819;4996"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON_ROOT)/PC/VS8.0&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PyluxRelease|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON_ROOT)/PC/VS8.0&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Console SSE1|Win32"
 			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
@@ -2033,6 +2211,7 @@
 							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 						/>
 					</FileConfiguration>
+					
 					<FileConfiguration
 						Name="Release SSE1|Win32"
 						>
@@ -2208,6 +2387,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2326,6 +2522,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|x64"
 						>
 						<Tool
@@ -2398,6 +2611,22 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2450,6 +2679,22 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2485,6 +2730,7 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
+					
 					<FileConfiguration
 						Name="Console|x64"
 						ExcludedFromBuild="true"
@@ -2537,6 +2783,7 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
+					
 					<FileConfiguration
 						Name="Console|x64"
 						ExcludedFromBuild="true"
@@ -3084,6 +3331,24 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3733,26 +3998,6 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath="..\..\lux\textures\sopratexture.cpp"
-					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
 					RelativePath="..\..\lux\textures\uv.cpp"
 					>
 					<FileConfiguration
@@ -3984,6 +4229,22 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4061,6 +4322,22 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4360,6 +4637,15 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5054,6 +5340,24 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PyluxDebug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
 						>
 						<Tool
@@ -5185,6 +5489,69 @@
 				<File
 					RelativePath="..\..\lux\spds\rgbrefl.cpp"
 					>
+				</File>
+			</Filter>
+			<Filter
+				Name="python"
+				>
+				<File
+					RelativePath="..\..\lux\python\binding.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 		</Filter>
@@ -6322,6 +6689,7 @@
 						Outputs="$(InputDir)/luxlex.cpp"
 					/>
 				</FileConfiguration>
+				
 				<FileConfiguration
 					Name="Console|Win32"
 					>
@@ -6438,6 +6806,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PyluxDebug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PyluxRelease|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"

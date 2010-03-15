@@ -12,6 +12,8 @@ Global
 		Debug|x64 = Debug|x64
 		Luxmerge|Win32 = Luxmerge|Win32
 		Luxmerge|x64 = Luxmerge|x64
+		PyluxDebug|Win32 = PyluxDebug|Win32
+		PyluxRelease|Win32 = PyluxRelease|Win32
 		Release SSE1|Win32 = Release SSE1|Win32
 		Release SSE1|x64 = Release SSE1|x64
 		Release|Win32 = Release|Win32
@@ -34,6 +36,10 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|Win32.Build.0 = Luxmerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|x64.ActiveCfg = Luxmerge|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|x64.Build.0 = Luxmerge|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.PyluxDebug|Win32.ActiveCfg = PyluxDebug|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.PyluxDebug|Win32.Build.0 = PyluxDebug|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.PyluxRelease|Win32.ActiveCfg = PyluxRelease|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.PyluxRelease|Win32.Build.0 = PyluxRelease|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|Win32.ActiveCfg = Release SSE1|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|x64.ActiveCfg = Release SSE1|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|x64.Build.0 = Release SSE1|x64
