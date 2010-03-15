@@ -2211,7 +2211,6 @@
 							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 						/>
 					</FileConfiguration>
-					
 					<FileConfiguration
 						Name="Release SSE1|Win32"
 						>
@@ -2595,22 +2594,6 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PyluxDebug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2627,7 +2610,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|x64"
+						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2636,6 +2619,22 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2663,22 +2662,6 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PyluxDebug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2695,7 +2678,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|x64"
+						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2704,6 +2687,22 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2730,9 +2729,16 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
-					
 					<FileConfiguration
-						Name="Console|x64"
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2748,7 +2754,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|x64"
+						Name="Luxmerge|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2756,7 +2762,15 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2783,9 +2797,16 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
-					
 					<FileConfiguration
-						Name="Console|x64"
+						Name="PyluxDebug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PyluxRelease|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2801,7 +2822,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|x64"
+						Name="Luxmerge|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2809,7 +2830,15 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3294,25 +3323,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3330,7 +3341,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|x64"
+						Name="Release SSE1|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3357,7 +3368,44 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release SSE1|Win32"
+						Name="Console SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3375,26 +3423,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Console SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4197,14 +4226,6 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Release|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -4213,7 +4234,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|x64"
+						Name="Console|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4221,7 +4242,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|Win32"
+						Name="Release SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4245,7 +4266,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|x64"
+						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4253,7 +4274,31 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release SSE1|Win32"
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4269,23 +4314,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4313,7 +4342,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug|x64"
+						Name="Release|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4321,7 +4350,15 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|Win32"
+						Name="Console|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4345,7 +4382,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|x64"
+						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4353,7 +4390,15 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|Win32"
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4369,23 +4414,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release SSE1|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4618,34 +4647,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Console|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PyluxRelease|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4663,7 +4665,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release SSE1|x64"
+						Name="PyluxRelease|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4681,7 +4683,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|x64"
+						Name="Luxmerge|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4690,7 +4692,34 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console SSE1|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5295,25 +5324,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5331,7 +5342,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console|x64"
+						Name="Release SSE1|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5358,7 +5369,44 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release SSE1|Win32"
+						Name="Console SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5376,26 +5424,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Console SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Console SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -6660,16 +6689,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Release|Win32"
 					>
 					<Tool
@@ -6680,28 +6699,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				
-				<FileConfiguration
 					Name="Console|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Console|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -6721,16 +6719,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release SSE1|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Console SSE1|Win32"
 					>
 					<Tool
@@ -6741,7 +6729,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Console SSE1|x64"
+					Name="Luxmerge|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -6751,7 +6739,47 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Luxmerge|Win32"
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Console|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Console SSE1|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -6785,16 +6813,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Release|Win32"
 					>
 					<Tool
@@ -6805,7 +6823,17 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Console|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -6835,7 +6863,37 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Console|Win32"
+					Name="Console SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Luxmerge|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -6855,16 +6913,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release SSE1|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Release SSE1|x64"
 					>
 					<Tool
@@ -6875,27 +6923,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Console SSE1|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Console SSE1|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Luxmerge|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
