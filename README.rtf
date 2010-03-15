@@ -64,6 +64,7 @@ The solution file expects that the following environment variables are declared 
 \b Building Python\par
 \b0\par
 Use the pcbuild.sln files in the following locations to build python:\par
+\par
 \f1\fs18\tab LUX_X86_PYTHON2_ROOT/PCbuild\par
 \tab LUX_X64_PYTHON2_ROOT/PCbuild\par
 \tab LUX_X86_PYTHON3_ROOT/PCbuild\par
@@ -83,9 +84,14 @@ Go to the Boost root directory and run bjam 4 times as follows (these are 4 line
 \par
 \f1\fs18\tab bjam -sZLIB_SOURCE=%BUILD_PATH%\\zlib-1.2.3 -sBZIP2_SOURCE=%BUILD_PATH%\\bzip2-1.0.5 --toolset=msvc --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage\par
 \par
-\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 stage\tab\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage\tab\par
 \par
-\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 stage\tab\par
+\f0\fs20 In order to build against python 3.1 we need to correct a typo in the boost build system. Open up the following files:\par
+\tab\f1\fs18 LUX_X86_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20\tab\f1\fs18 LUX_X64_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20 and change the value '30' in line 397 to '32'. It is important to first build against 2.6, then edit this file and then build against 3.1\f1\fs18\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage\tab\par
 \par
 \tab bjam --toolset=msvc --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage\par
 \f0\fs20\par
@@ -98,9 +104,14 @@ Go to the Boost root directory and run bjam 4 times as follows (these are 4 line
 \par
 \f1\fs18\tab bjam -sZLIB_SOURCE=%BUILD_PATH%\\zlib-1.2.3 -sBZIP2_SOURCE=%BUILD_PATH%\\bzip2-1.0.5 --toolset=msvc address-model=64 --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage\par
 \par
-\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc address-model=64 --with-python --stagedir=stage/python2 --build-dir=bin/python2 stage\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc address-model=64 --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage\par
 \par
-\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc address-model=64 --with-python --stagedir=stage/python3 --build-dir=bin/python3 stage\par
+\f0\fs20 In order to build against python 3.1 we need to correct a typo in the boost build system. Open up the following files:\par
+\tab\f1\fs18 LUX_X86_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20\tab\f1\fs18 LUX_X64_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20 and change the value '30' in line 397 to '32'. It is important to first build against 2.6, then edit this file and then build against 3.1\f1\fs18\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc address-model=64 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage\par
 \par
 \tab bjam --toolset=msvc address-model=64 --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage\par
 \f0\fs20\par
