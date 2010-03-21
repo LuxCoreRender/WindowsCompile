@@ -1505,7 +1505,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1525,7 +1524,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1545,7 +1543,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1565,7 +1562,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1585,7 +1581,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1605,7 +1600,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1627,6 +1621,13 @@
 				<File
 					RelativePath="..\..\lux\film\fleximage.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1637,7 +1638,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1657,7 +1657,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1677,7 +1676,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1697,7 +1695,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1719,22 +1716,57 @@
 				<File
 					RelativePath="..\..\lux\filters\box.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\gaussian.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\mitchell.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\sinc.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\triangle.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1745,7 +1777,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1765,7 +1796,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1785,7 +1815,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1805,7 +1834,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1825,7 +1853,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1845,7 +1872,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1865,7 +1891,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1885,7 +1910,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1909,7 +1933,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1929,7 +1952,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1949,7 +1971,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1969,7 +1990,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1989,7 +2009,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2009,7 +2028,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2029,7 +2047,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2049,7 +2066,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2069,7 +2085,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2092,7 +2107,6 @@
 						>
 						<FileConfiguration
 							Name="Luxmerge|Win32"
-							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -2112,7 +2126,6 @@
 						>
 						<FileConfiguration
 							Name="Luxmerge|Win32"
-							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -2132,7 +2145,6 @@
 						>
 						<FileConfiguration
 							Name="Luxmerge|Win32"
-							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -2157,7 +2169,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2177,7 +2188,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2197,7 +2207,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2217,7 +2226,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2237,7 +2245,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2257,7 +2264,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2277,7 +2283,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2297,7 +2302,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2317,7 +2321,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2382,7 +2385,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2451,7 +2453,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2471,7 +2472,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2491,7 +2491,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3139,7 +3138,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3159,7 +3157,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3179,7 +3176,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3199,7 +3195,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3219,7 +3214,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3239,7 +3233,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3259,7 +3252,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3279,7 +3271,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3299,7 +3290,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3319,7 +3309,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3339,7 +3328,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3359,7 +3347,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3379,7 +3366,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3399,7 +3385,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3419,7 +3404,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3439,7 +3423,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3462,7 +3445,6 @@
 						>
 						<FileConfiguration
 							Name="Luxmerge|Win32"
-							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -3487,7 +3469,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3507,7 +3488,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3527,7 +3507,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3547,7 +3526,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3571,7 +3549,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3654,7 +3631,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3739,13 +3715,19 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_base.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_blend.cpp"
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3765,7 +3747,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3785,7 +3766,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3805,7 +3785,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3825,7 +3804,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3845,7 +3823,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3865,7 +3842,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3885,7 +3861,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3905,7 +3880,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3925,7 +3899,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3945,7 +3918,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3965,7 +3937,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3985,7 +3956,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4005,7 +3975,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4025,7 +3994,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4045,7 +4013,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4065,7 +4032,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4085,7 +4051,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4105,7 +4070,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4125,7 +4089,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4145,7 +4108,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4165,7 +4127,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4185,7 +4146,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4205,7 +4165,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4225,7 +4184,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4245,7 +4203,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4265,7 +4222,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4285,7 +4241,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4305,7 +4260,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4323,21 +4277,41 @@
 				<File
 					RelativePath="..\..\lux\textures\sellmeiertexture.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulateddata.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulatedfresnel.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\uv.cpp"
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4357,7 +4331,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4377,7 +4350,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4401,7 +4373,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4421,7 +4392,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4441,7 +4411,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4461,7 +4430,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4481,7 +4449,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4501,7 +4468,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4712,6 +4678,13 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Debug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -4775,13 +4748,19 @@
 				<File
 					RelativePath="..\..\lux\volumes\clearvolume.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\cloud.cpp"
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4801,7 +4780,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4821,7 +4799,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4841,7 +4818,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4863,114 +4839,310 @@
 				<File
 					RelativePath="..\..\lux\core\api.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\camera.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\color.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\context.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\contribution.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\dynload.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\epsilon.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\exrio.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\film.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\igiio.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\imagereader.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\light.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\luxlex.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\luxparse.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\material.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\mc.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\motionsystem.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\osfunc.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\paramset.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\photonmap.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\pngio.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\primitive.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderfarm.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderinghints.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\sampling.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\scene.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\shape.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spd.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spectrum.cpp"
@@ -5087,30 +5259,79 @@
 				<File
 					RelativePath="..\..\lux\core\spectrumwavelengths.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\texture.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\tgaio.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\timer.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\transport.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\util.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\volume.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<Filter
 					Name="geometry"
@@ -5118,22 +5339,57 @@
 					<File
 						RelativePath="..\..\lux\core\geometry\bbox.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\matrix4x4.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\quaternion.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\raydifferential.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\transform.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -5142,17 +5398,30 @@
 					<File
 						RelativePath="..\..\lux\core\reflection\bxdf.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\fresnel.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\microfacetdistribution.cpp"
 						>
 						<FileConfiguration
 							Name="Luxmerge|Win32"
-							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -5175,7 +5444,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5195,7 +5463,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5215,7 +5482,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5235,7 +5501,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5255,7 +5520,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5275,7 +5539,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5295,7 +5558,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5315,7 +5577,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5335,7 +5596,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5355,7 +5615,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5375,7 +5634,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5399,7 +5657,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5419,7 +5676,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5438,6 +5694,13 @@
 							RelativePath="..\..\lux\core\reflection\fresnel\fresneldielectric.cpp"
 							>
 							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Luxmerge|x64"
 								>
 								<Tool
@@ -5450,7 +5713,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5470,7 +5732,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5490,7 +5751,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5514,7 +5774,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5534,7 +5793,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5554,7 +5812,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5574,7 +5831,6 @@
 							>
 							<FileConfiguration
 								Name="Luxmerge|Win32"
-								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
@@ -5597,14 +5853,35 @@
 					<File
 						RelativePath="..\..\lux\core\queryable\queryable.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableattribute.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableregistry.cpp"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -5616,7 +5893,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5636,7 +5912,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5719,7 +5994,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5806,7 +6080,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5826,7 +6099,6 @@
 					>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5848,34 +6120,90 @@
 				<File
 					RelativePath="..\..\lux\spds\blackbodyspd.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\equalspd.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\frequencyspd.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\gaussianspd.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\irregular.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\regular.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbillum.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbrefl.cpp"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -5950,26 +6278,68 @@
 				<File
 					RelativePath="..\..\lux\accelerators\bruteforce.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\bvhaccel.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\grid.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\qbvhaccel.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\tabreckdtreeaccel.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\unsafekdtreeaccel.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -5978,18 +6348,46 @@
 				<File
 					RelativePath="..\..\lux\cameras\environment.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\orthographic.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\perspective.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\realistic.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -5998,6 +6396,13 @@
 				<File
 					RelativePath="..\..\lux\film\fleximage.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6006,22 +6411,57 @@
 				<File
 					RelativePath="..\..\lux\filters\box.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\gaussian.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\mitchell.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\sinc.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\triangle.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6030,34 +6470,90 @@
 				<File
 					RelativePath="..\..\lux\integrators\bidirectional.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\directlighting.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\distributedpath.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\emission.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\exphotonmap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\igi.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\path.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\single.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6066,34 +6562,90 @@
 				<File
 					RelativePath="..\..\lux\lights\distant.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\infinite.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\infinitesample.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\pointlight.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\projection.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\sky.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\spot.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\sun.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<Filter
 					Name="data"
@@ -6101,14 +6653,35 @@
 					<File
 						RelativePath="..\..\lux\lights\data\lamp_spect.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\data\skychroma_spect.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\data\sun_spect.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -6117,14 +6690,35 @@
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\photometricdata_ies.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction_ies.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -6134,54 +6728,145 @@
 				<File
 					RelativePath="..\..\lux\materials\carpaint.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glass.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glass2.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glossy.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glossy2.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\matte.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mattetranslucent.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\metal.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mirror.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mixmaterial.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\null.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\roughglass.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\shinymetal.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6190,18 +6875,46 @@
 				<File
 					RelativePath="..\..\lux\samplers\erpt.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\lowdiscrepancy.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\metrosampler.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\random.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6210,54 +6923,145 @@
 				<File
 					RelativePath="..\..\lux\shapes\cone.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\cylinder.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\disk.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\heightfield.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\hyperboloid.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\lenscomponent.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\loopsubdiv.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\mesh.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\nurbs.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\paraboloid.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\plymesh.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\sphere.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\torus.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<Filter
 					Name="plymesh"
@@ -6265,6 +7069,13 @@
 					<File
 						RelativePath="..\..\lux\shapes\plymesh\rply.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -6274,154 +7085,420 @@
 				<File
 					RelativePath="..\..\lux\textures\bilerp.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blackbody.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_base.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_blend.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_clouds.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_distortednoise.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_magic.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_marble.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_musgrave.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_noise.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_noiselib.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_stucci.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_texlib.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_voronoi.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_wood.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\brick.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\cauchytexture.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\checkerboard.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\constant.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\dots.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\equalenergy.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\fbm.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\frequencytexture.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\gaussiantexture.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\harlequin.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\imagemap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\irregulardata.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\lampspectrum.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\marble.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\mix.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\regulardata.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\scale.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\sellmeiertexture.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulateddata.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulatedfresnel.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\uv.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\windy.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\wrinkled.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6430,26 +7507,68 @@
 				<File
 					RelativePath="..\..\lux\tonemaps\contrast.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\highcontrast.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\lineartonemap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\maxwhite.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\nonlinear.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\reinhard.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6458,22 +7577,57 @@
 				<File
 					RelativePath="..\..\lux\volumes\clearvolume.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\cloud.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\exponential.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\homogeneous.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\volumegrid.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6482,30 +7636,86 @@
 				<File
 					RelativePath="..\..\lux\renderer\renderserver.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wxglviewer.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wximages.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wxluxapp.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wxluxframe.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wxluxgui.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\wxviewer.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6514,186 +7724,508 @@
 				<File
 					RelativePath="..\..\lux\core\api.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\camera.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\color.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\context.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\contribution.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\dynload.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\epsilon.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\error.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\exrio.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\fastmutex.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\film.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\filter.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\igiio.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\imagereader.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\kdtree.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\light.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\lux.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\material.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\mc.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\mcdistribution.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\memory.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\mipmap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\motionsystem.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\octree.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\osfunc.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\paramset.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\photonmap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\pngio.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\primitive.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\randomgen.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderfarm.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderinghints.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\sampling.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\scene.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\shape.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spd.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spectrum.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spectrumwavelengths.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\stats.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\texture.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\texturecolor.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\tgaio.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\timer.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\tonemap.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\transport.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\volume.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<Filter
 					Name="geometry"
@@ -6701,58 +8233,156 @@
 					<File
 						RelativePath="..\..\lux\core\geometry\bbox.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\matrix3x3.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\matrix4x4-sse.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\matrix4x4.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\normal.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\point.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\quaternion.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\ray.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\raydifferential.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\transform-sse.inl"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\transform.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\transform.inl"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\vector.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\vector_normal.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -6761,14 +8391,35 @@
 					<File
 						RelativePath="..\..\lux\core\reflection\bxdf.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\fresnel.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\microfacetdistribution.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<Filter
 						Name="bxdf"
@@ -6776,46 +8427,123 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\fresnelblend.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\lafortune.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\lambertian.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\microfacet.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\nulltransmission.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\orennayar.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\schlickbrdf.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\specularreflection.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\speculartransmission.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 					</Filter>
 					<Filter
@@ -6824,26 +8552,68 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelcauchy.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelconductor.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresneldielectric.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelgeneral.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelnoop.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelslick.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 					</Filter>
 					<Filter
@@ -6852,18 +8622,46 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\anisotropic.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\beckmann.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\blinn.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\wardisotropic.h"
 							>
+							<FileConfiguration
+								Name="Luxmerge|Win32"
+								>
+								<Tool
+									Name="VCCustomBuildTool"
+								/>
+							</FileConfiguration>
 						</File>
 					</Filter>
 				</Filter>
@@ -6873,10 +8671,24 @@
 					<File
 						RelativePath="..\..\lux\core\external\cimg.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\external\greycstoration.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -6885,14 +8697,35 @@
 					<File
 						RelativePath="..\..\lux\core\queryable\queryable.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableattribute.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableregistry.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -6902,22 +8735,57 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\hilbertpx.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\linear.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\lowdiscrepancypx.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\tilepx.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\vegas.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6926,34 +8794,90 @@
 				<File
 					RelativePath="..\..\lux\spds\blackbodyspd.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\equalspd.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\frequencyspd.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\gaussianspd.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\irregular.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\regular.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbillum.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbrefl.h"
 					>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<Filter
 					Name="data"
@@ -6961,14 +8885,35 @@
 					<File
 						RelativePath="..\..\lux\spds\data\rgbD65_32.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\spds\data\rgbE_32.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\spds\data\xyzbasis.h"
 						>
+						<FileConfiguration
+							Name="Luxmerge|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>

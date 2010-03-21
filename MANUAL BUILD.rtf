@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fmodern\fprq1\fcharset0 Courier New;}{\f2\fswiss\fprq2\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\lang1044\f0\fs28 Building LuxRender with Visual Studio 2008\par
+\fs20\par
+\par
+\b\fs24 Overview\b0\fs20\par
+\par
+The solution file is configured for building both x86 and x64 targets. It assumes that all required libraries are built from sources (see below for details). Thus, while precompiled libraries may work, it has not been tested. In addition it has only been tested with Visual Studio 2008, as I don't have access to any other versions.\par
+\par
+The solution file \b requires\b0  that the directory that solution file is located in (eg \f1\fs18 windows\f0\fs20 ) and the \f1\fs18 lux\f0\fs20  source directory has a common parent directory (\f1\fs18 C:\\Prog\\Lux\f0\fs20  in the example below).\par
+\par
+The steps for building the required libraries assumes that the libraries for a particular platform (either x86 or x64) is located in the same directory. If you're only planning on targeting a single platform, you can obviously skip all steps related to the other platform. If you want to target both platforms you'll need to keep two copies of all libraries. As an example, here is the directory layout I currently use:\par
+\par
+\f1\fs18 C:\\Prog\par
+\tab\\Lux\par
+\tab\tab\\lux\f2\tab\tab\i LuxRender source code\f1\par
+\i0\tab\tab\\windows\f2\tab\i Visual Studio solution\i0\f1\par
+\tab\\x64\par
+\tab\tab\\boost_1_39_0\par
+\tab\tab\\bzip2-1.0.5\par
+\tab\tab\\openexr-1.4.0\par
+\tab\tab\\Python-2.6.4\par
+\tab\tab\\Python-3.1.1\par
+\tab\tab\\wxMSW-2.8.10\par
+\tab\tab\\zlib-1.2.3\tab\tab\par
+\tab\\x86\par
+\tab\tab\\boost_1_39_0\par
+\tab\tab\\bzip2-1.0.5\par
+\tab\tab\\openexr-1.4.0\par
+\tab\tab\\Python-2.6.4\par
+\tab\tab\\Python-3.1.1\par
+\tab\tab\\wxMSW-2.8.10\par
+\tab\tab\\zlib-1.2.3\tab\tab\par
+\f0\fs20\par
+The solution file assumes that the various library directories are defined via environment variables. If you keep the same structure as above, you can use the "Lux Dev EnvVars.reg" file in the "support" directory to add the environment variables directly. Remember to log off and back in to activate them.\par
+\par
+\par
+\lang1033\b\fs24 Required libraries\par
+\b0\fs20\par
+List of required libraries (version used):\par
+\tab Boost and Boost Jam: http://www.boost.org/users/download/ (1.42.0)\par
+\tab wxWidgets: http://www.wxwidgets.org/downloads/ (2.8.10)\par
+\tab bzip2: http://www.bzip.org/downloads.html (1.0.5)\par
+\tab zlib: http://www.zlib.net/ (1.2.3)\par
+\tab OpenEXR: http://www.openexr.com/downloads.html (1.4.0a)\par
+\tab Python: http://python.org/ (2.6.4 and 3.1.1)\par
+\par
+The solution file expects that the following environment variables are declared and points to the respective library root directories. The values given here are based on the directory structure given above, modify appropriately:\par
+\par
+\f1\fs18\tab LUX_X86_BOOST_ROOT = C:\\Prog\\x86\\boost_1_42_0\par
+\tab LUX_X64_BOOST_ROOT = C:\\Prog\\x64\\boost_1_42_0\par
+\par
+\tab LUX_X86_OPENEXR_ROOT = C:\\Prog\\x86\\openexr-1.4.0\par
+\tab LUX_X64_OPENEXR_ROOT = C:\\Prog\\x64\\openexr-1.4.0\par
+\par
+\tab LUX_X86_WX_ROOT = C:\\Prog\\x86\\wxMSW-2.8.10\par
+\tab LUX_X64_WX_ROOT = C:\\Prog\\x64\\wxMSW-2.8.10\par
+\par
+\tab LUX_X86_PYTHON2_ROOT = C:\\Prog\\x86\\Python-2.6.4\par
+\tab LUX_X64_PYTHON2_ROOT = C:\\Prog\\x64\\Python-2.6.4\par
+\f0\fs20\par
+\f1\fs18\tab LUX_X86_PYTHON3_ROOT = C:\\Prog\\x86\\Python-3.1.1\par
+\tab LUX_X64_PYTHON3_ROOT = C:\\Prog\\x64\\Python-3.1.1\par
+\f0\fs20\par
+\b Building Python\par
+\b0\par
+Use the pcbuild.sln files in the following locations to build python:\par
+\par
+\f1\fs18\tab LUX_X86_PYTHON2_ROOT/PCbuild\par
+\tab LUX_X64_PYTHON2_ROOT/PCbuild\par
+\tab LUX_X86_PYTHON3_ROOT/PCbuild\par
+\tab LUX_X64_PYTHON3_ROOT/PCbuild\par
+\par
+\f0\fs20 You will get some failures (5 projects) where some non-essential external libraries are missing, you can safely ignore those for now.\par
+\b\par
+Building Boost\par
+\b0\par
+I had some issues building all the libraries in one go, so I had to build iostreams separately. Expect lots of warnings, but no errors.\par
+\par
+For x86:\par
+Put bjam.exe in the Boost root directory (ie \f1\fs18 LUX_X86_BOOST_ROOT\f0\fs20 ). Start the "Visual Studio 2008 Command Prompt", and go to the x86 library root (ie \f1\fs18 C:\\Prog\\x86\f0\fs20 ). Execute\par
+\tab\f1\fs18 set BUILD_PATH=%CD%\par
+\f0\fs20\par
+Go to the Boost root directory and run bjam 4 times as follows (these are 4 lines, mind any wordwrapping)\par
+\par
+\f1\fs18\tab bjam -sZLIB_SOURCE=%BUILD_PATH%\\zlib-1.2.3 -sBZIP2_SOURCE=%BUILD_PATH%\\bzip2-1.0.5 --toolset=msvc --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage\tab\par
+\par
+\f0\fs20 In order to build against python 3.1 we need to correct a typo in the boost build system. Open up the following files:\par
+\tab\f1\fs18 LUX_X86_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20\tab\f1\fs18 LUX_X64_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20 and change the value '30' in line 397 to '32'. It is important to first build against 2.6, then edit this file and then build against 3.1\f1\fs18\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage\tab\par
+\par
+\tab bjam --toolset=msvc --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage\par
+\f0\fs20\par
+\par
+For x64:\par
+Put bjam.exe in the Boost root directory (ie \f1\fs18 LUX_X64_BOOST_ROOT\f0\fs20 ). Start the "Visual Studio 2008 2008 x64 Win64 Command Prompt", and go to the x64 library root (ie \f1\fs18 C:\\Prog\\x64\f0\fs20 ). Execute\par
+\tab\f1\fs18 set BUILD_PATH=%CD%\par
+\f0\fs20\par
+Go to the Boost root directory and run bjam 4 times as follows (these are 4 lines, mind any wordwrapping)\par
+\par
+\f1\fs18\tab bjam -sZLIB_SOURCE=%BUILD_PATH%\\zlib-1.2.3 -sBZIP2_SOURCE=%BUILD_PATH%\\bzip2-1.0.5 --toolset=msvc address-model=64 --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-2.6.4 --toolset=msvc address-model=64 --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage\par
+\par
+\f0\fs20 In order to build against python 3.1 we need to correct a typo in the boost build system. Open up the following files:\par
+\tab\f1\fs18 LUX_X86_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20\tab\f1\fs18 LUX_X64_BOOST_ROOT/tools/build/v2/tools/python.jam\par
+\f0\fs20 and change the value '30' in line 397 to '32'. It is important to first build against 2.6, then edit this file and then build against 3.1\f1\fs18\par
+\par
+\tab bjam -sPYTHON_SOURCE=%BUILD_PATH%\\Python-3.1.1 --toolset=msvc address-model=64 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage\par
+\par
+\tab bjam --toolset=msvc address-model=64 --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage\par
+\f0\fs20\par
+\par
+\b Building wxWidgets\b0\par
+\par
+First, make sure Visual Studio doesn't try to build more than one project at a time, since this doesn't work with wxWidgets it seems. In Visual Studio, Go to Tools -> Options -> Projects and Solutions -> Build and Run, and set Maximum number of parallel project builds to 1.\par
+\par
+Open \f1\fs18 wxWidgets-2.8.10\\build\\msw\\wx.dsw\f0\fs20  in Visual Studio, and convert it. Next, open \f1\fs18 wxWidgets-2.8.10\\include\\wx\\msw\\setup.h\f0\fs20  and make sure \f1\fs18 wxUSE_GLCANVAS\f0\fs20  is defined as 1 (default is 0).\par
+\par
+If you're targeting x64, you need to change all projects to build to x64 platform. Select the solution in the Solution Explorer, and open Properties page (right click -> Properties). Select Configuration Properties and click on Configuration Manager. Change the active solution configuration to Release. Next click on the Active solution plaform, and select <New> in the dropdown box. Select x64 as the new platform, and make sure it copies settings from Win32. Click Ok and wait a bit, then Close and Ok.\par
+\par
+Now build the solution. You'll probably get loads of warnings about possible data loss in conversions, never mind them.\par
+\par
+\par
+\b Building OpenEXR\par
+\b0\par
+Open \f1\fs18 openexr-1.4.0\\vc\\vc8\\OpenEXR.sln\f0\fs20  and convert it. If you're targeting x64, change the active platform/configuration to Release|x64 as you did with wxWidgets above, otherwise choose Release|Win32. Open the properties page for IlmImf, and add the appropriate \f1\fs18 zlib123\f0\fs20  (eg \f1\fs18 C:\\Prog\\x86\\zlib-1.2.3\f0\fs20  for x86)  to Additional Include Directories under Configuration Properties -> C/C++ -> General.\par
+\par
+Select the following projects: Half, Iex, IlmImf, IlmThread and Imath in the Solution Explorer, and build them (Build -> Build Selection).\par
+\par
+\par
+\b\fs24 Required tools\b0\fs20\par
+\par
+List of required tools:\par
+\tab flex: http://gnuwin32.sourceforge.net/packages/flex.htm\par
+\tab bison: http://gnuwin32.sourceforge.net/packages/bison.htm\par
+\tab\tab (get the dependencies zip too!)\par
+\par
+Install both tools and add the \f1\fs18 bin\f0\fs20  directory to the system path (eg \f1\fs18 C:\\Prog\\Tools\\GnuWin32\\bin\f0\fs20 ).\par
+\par
+\b\fs24 Building LuxRender\b0\fs20\par
+\par
+Make sure the appropriate environment variables are set. Open \f1\fs18 lux.sln\f0\fs20  and select the desired build target and start building. It should now build successfully. If you have any issues please make a thread in the following forum: http://www.luxrender.net/forum/viewforum.php?f=22\par
+\par
+Good luck!\par
+\par
+\par
+\par
+}
+ 
