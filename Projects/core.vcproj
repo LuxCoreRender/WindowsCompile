@@ -4321,6 +4321,18 @@
 					</FileConfiguration>
 				</File>
 				<File
+					RelativePath="..\..\lux\textures\sellmeiertexture.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\lux\textures\tabulateddata.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\lux\textures\tabulatedfresnel.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\lux\textures\uv.cpp"
 					>
 					<FileConfiguration
@@ -6196,10 +6208,6 @@
 				Name="shapes"
 				>
 				<File
-					RelativePath="..\..\lux\shapes\barytrianglemesh.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\shapes\cone.h"
 					>
 				</File>
@@ -6249,10 +6257,6 @@
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\torus.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\shapes\waldtrianglemesh.h"
 					>
 				</File>
 				<Filter
@@ -6396,7 +6400,15 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\lux\textures\sopratexture.h"
+					RelativePath="..\..\lux\textures\sellmeiertexture.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\lux\textures\tabulateddata.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\lux\textures\tabulatedfresnel.h"
 					>
 				</File>
 				<File
@@ -6468,19 +6480,7 @@
 				Name="renderer"
 				>
 				<File
-					RelativePath="..\..\lux\renderer\icons.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\renderer\luxgui.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\renderer\renderserver.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\renderer\renderwindow.h"
 					>
 				</File>
 				<File
@@ -6520,10 +6520,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\lux\core\cimg.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\core\color.h"
 					>
 				</File>
@@ -6556,10 +6552,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\lux\core\fft.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\core\film.h"
 					>
 				</File>
@@ -6568,27 +6560,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\lux\core\geometry.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\core\greycstoration.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\core\IES.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\lux\core\igiio.h"
 					>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\imagereader.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\lux\core\imagingpipeline.h"
 					>
 				</File>
 				<File
