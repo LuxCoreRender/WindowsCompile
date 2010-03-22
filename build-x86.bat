@@ -57,7 +57,7 @@ IF NOT EXIST "%LUX_X86_OPENEXR_ROOT%" (
 )
 
 msbuild /nologo /version > nul
-if ERRORLEVEL 9009 (
+if NOT ERRORLEVEL 0 (
     echo.
     echo Cannot execute the 'msbuild' command. Please run
     echo this script from the Visual Studio Command Prompt.
