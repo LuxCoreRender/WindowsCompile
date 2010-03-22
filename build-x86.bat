@@ -2,6 +2,73 @@
 
 echo.
 echo **************************************************************************
+echo * Checking environment                                                   *
+echo **************************************************************************
+
+IF "%LUX_X86_PYTHON2_ROOT%" == "" (
+    echo.
+    echo %%LUX_X86_PYTHON2_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST "%LUX_X86_PYTHON2_ROOT%" (
+    echo.
+    echo %%LUX_X86_PYTHON2_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF "%LUX_X86_PYTHON3_ROOT%" == "" (
+    echo.
+    echo %%LUX_X86_PYTHON3_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST "%LUX_X86_PYTHON3_ROOT%" (
+    echo.
+    echo %%LUX_X86_PYTHON3_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF "%LUX_X86_BOOST_ROOT%" == "" (
+    echo.
+    echo %%LUX_X86_BOOST_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST "%LUX_X86_BOOST_ROOT%" (
+    echo.
+    echo %%LUX_X86_BOOST_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF "%LUX_X86_WX_ROOT%" == "" (
+    echo.
+    echo %%LUX_X86_WX_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST "%LUX_X86_WX_ROOT%" (
+    echo.
+    echo %%LUX_X86_WX_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF "%LUX_X86_OPENEXR_ROOT%" == "" (
+    echo.
+    echo %%LUX_X86_OPENEXR_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST "%LUX_X86_OPENEXR_ROOT%" (
+    echo.
+    echo %%LUX_X86_OPENEXR_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+
+msbuild /nologo /version > nul
+if ERRORLEVEL 9009 (
+    echo.
+    echo Cannot execute the 'msbuild' command. Please run
+    echo this script from the Visual Studio Command Prompt.
+    exit /b -1
+)
+
+echo Environment OK.
+
+
+echo.
+echo **************************************************************************
 echo **************************************************************************
 echo *                                                                        *
 echo *        Building For x86                                                *
