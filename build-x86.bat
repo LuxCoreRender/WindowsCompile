@@ -1,9 +1,30 @@
 @Echo off
 
+
+
+echo.
+echo **************************************************************************
+echo * Startup                                                                *
+echo **************************************************************************
+echo.
+echo This script will use 2 pre-built binaries to help build LuxRender:
+echo  1: GNU flex.exe       from http://gnuwin32.sourceforge.net/packages/flex.htm
+echo  2: GNU bison.exe      from http://gnuwin32.sourceforge.net/packages/bison.htm
+echo.
+echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C NOW
+echo Otherwise,
+pause
+
+
+
 echo.
 echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
+
+IF EXIST build-vars.bat (
+    call build-vars.bat
+)
 
 IF "%LUX_X86_PYTHON2_ROOT%" == "" (
     echo.
@@ -66,7 +87,6 @@ if NOT ERRORLEVEL 0 (
 
 echo Environment OK.
 
-
 echo.
 echo **************************************************************************
 echo **************************************************************************
@@ -77,7 +97,7 @@ echo **************************************************************************
 echo **************************************************************************
 
 :: Start in a known location
-pushd /d %LUX_X86_BOOST_ROOT%
+pushd %LUX_X86_BOOST_ROOT%
 cd ..
 set BUILD_PATH=%CD%
 
@@ -119,7 +139,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
 echo **************************************************************************
-bjam -sZLIB_SOURCE=%BUILD_PATH%\zlib-1.2.3 -sBZIP2_SOURCE=%BUILD_PATH%\bzip2-1.0.5 --toolset=msvc --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
+bjam -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --toolset=msvc --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
 
 echo.
 echo **************************************************************************
@@ -191,13 +211,17 @@ echo to convert the projects. Proceed with the conversion, save the
 echo solution and quit VS. Do not build the solution, I will continue
 echo the build after you have saved the new projects.
 echo.
-echo ADDITIONAL: For the project IlmImf, please add the zlib source
-echo path to the "Additional Include Directories"
-echo (Found under Configuration Properties \ C/C++ \ General)
+::echo ADDITIONAL: For the project IlmImf, please add the zlib source
+::echo path to the "Additional Include Directories"
+::echo (Found under Configuration Properties \ C/C++ \ General)
 pause
 start /WAIT OpenEXR.sln
 pause
 echo Conversion finished. Building...
+
+:: include zlib source in system PATH
+set PATH=%LUX_X86_ZLIB_ROOT%;%PATH%
+
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 Half\Half.vcproj
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 Iex\Iex.vcproj
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 IlmImf\IlmImf.vcproj
@@ -219,6 +243,10 @@ echo **************************************************************************
 echo * Building LuxRender                                                     *
 echo **************************************************************************
 cd /d ..\..\..\..\Lux\windows
+
+:: include flex and bison in system PATH
+set PATH=support\bin;%PATH%
+
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 lux.sln
 msbuild /nologo /p:Configuration=Pylux2Debug;Platform=Win32 lux.sln
 msbuild /nologo /p:Configuration=Pylux3Debug;Platform=Win32 lux.sln
