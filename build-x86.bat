@@ -87,8 +87,6 @@ if NOT ERRORLEVEL 0 (
 
 echo Environment OK.
 
-goto LuxRender
-
 echo.
 echo **************************************************************************
 echo **************************************************************************
@@ -193,6 +191,7 @@ msbuild /nologo /p:Configuration=Debug;Platform=Win32 wx.sln
 msbuild /nologo /p:Configuration=Release;Platform=Win32 wx.sln
 
 
+
 :: ****************************************************************************
 :: ******************************* ZLIB ***************************************
 :: ****************************************************************************
@@ -216,6 +215,7 @@ start /WAIT zlib.dsw
 echo Conversion finished. Building...
 msbuild /nologo /p:Configuration="LIB Debug";Platform=Win32 zlib.sln
 msbuild /nologo /p:Configuration="LIB Release";Platform=Win32 zlib.sln
+
 
 
 :: ****************************************************************************
@@ -264,6 +264,8 @@ msbuild /nologo /p:Configuration=Release;Platform=Win32 Iex\Iex.vcproj
 msbuild /nologo /p:Configuration=Release;Platform=Win32 IlmThread\IlmThread.vcproj
 msbuild /nologo /p:Configuration=Release;Platform=Win32 Imath\Imath.vcproj
 msbuild /nologo /p:Configuration=Release;Platform=Win32 IlmImf\IlmImf.vcproj
+
+
 
 :: ****************************************************************************
 :: ******************************* LuxRender***********************************
