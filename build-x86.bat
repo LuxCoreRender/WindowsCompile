@@ -87,6 +87,7 @@ if NOT ERRORLEVEL 0 (
 
 echo Environment OK.
 
+
 echo.
 echo **************************************************************************
 echo **************************************************************************
@@ -98,6 +99,9 @@ echo **************************************************************************
 
 :: Store known location
 set BUILD_PATH=%CD%
+
+choice /C NY /M "Build LuxRender only?"
+IF ERRORLEVEL 2 GOTO LuxRender
 
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
@@ -278,7 +282,7 @@ echo **************************************************************************
 cd /d %BUILD_PATH%
 
 :: include flex and bison in system PATH
-set PATH=support\bin;%PATH%
+set PATH=%CD%\support\bin;%PATH%
 
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 lux.sln
 msbuild /nologo /p:Configuration=Pylux2Debug;Platform=Win32 lux.sln
