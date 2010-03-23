@@ -10,7 +10,7 @@ echo.
 echo We are going to download and extract sources for:
 echo   Boost 1.42                               http://www.boost.org/
 echo   WxWidgets 2.8.10                         http://www.wxwidgets.org/
-echo   zlib 1.2.4                               http://www.zlib.net/
+echo   zlib 1.2.3                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   OpenEXR 1.4.0a                           http://www.openexr.com/
 echo   Python 2.6.5 ^& Python 3.1.2              http://www.python.org/
@@ -27,7 +27,6 @@ echo.
 echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C NOW
 echo Otherwise,
 pause
-
 
 
 echo.
@@ -77,6 +76,7 @@ echo OK
 
 echo @Echo off > build-vars.bat
 
+:boost
 IF NOT EXIST %DOWNLOADS%\boost_1_42_0.zip (
     echo.
     echo **************************************************************************
@@ -97,9 +97,10 @@ echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\boost_1_42_0.zip -o%D32% > nul
 xcopy /Q/E/Y %D32%\boost_1_42_0 %D64%\boost_1_42_0\
 
-echo set LUX_X86_BOOST_ROOT="%D32%\boost_1_42_0" >> build-vars.bat
-echo set LUX_X64_BOOST_ROOT="%D64%\boost_1_42_0" >> build-vars.bat
+echo set LUX_X86_BOOST_ROOT=%D32%\boost_1_42_0>> build-vars.bat
+echo set LUX_X64_BOOST_ROOT=%D64%\boost_1_42_0>> build-vars.bat
 
+:wxwidgets
 IF NOT EXIST %DOWNLOADS%\wxWidgets-2.8.10.zip (
     echo.
     echo **************************************************************************
@@ -120,15 +121,16 @@ echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\wxWidgets-2.8.10.zip -o%D32% > nul
 xcopy /Q/E/Y %D32%\wxWidgets-2.8.10 %D64%\wxWidgets-2.8.10\
 
-echo set LUX_X86_WX_ROOT="%D32%\wxWidgets-2.8.10" >> build-vars.bat
-echo set LUX_X64_WX_ROOT="%D64%\wxWidgets-2.8.10" >> build-vars.bat
+echo set LUX_X86_WX_ROOT=%D32%\wxWidgets-2.8.10>> build-vars.bat
+echo set LUX_X64_WX_ROOT=%D64%\wxWidgets-2.8.10>> build-vars.bat
 
-IF NOT EXIST %DOWNLOADS%\zlib124.zip (
+:zlib
+IF NOT EXIST %DOWNLOADS%\zlib123.zip (
     echo.
     echo **************************************************************************
     echo * Downloading zlib                                                       *
     echo **************************************************************************
-    %WGET% http://zlib.net/zlib124.zip -O %DOWNLOADS%\zlib124.zip
+    %WGET% http://sourceforge.net/projects/libpng/files/zlib/1.2.3/zlib123.zip/download -O %DOWNLOADS%\zlib123.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -140,12 +142,13 @@ echo.
 echo **************************************************************************
 echo * Extracting zlib                                                        *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\zlib124.zip -o%D32% > nul
-xcopy /Q/E/Y %D32%\zlib-1.2.4 %D64%\zlib-1.2.4\
+%UNZIPBIN% x -y %DOWNLOADS%\zlib123.zip -o%D32%\zlib-1.2.3 > nul
+xcopy /Q/E/Y %D32%\zlib-1.2.3 %D64%\zlib-1.2.3\
 
-echo set LUX_X86_ZLIB_ROOT="%D32%\zlib-1.2.4" >> build-vars.bat
-echo set LUX_X64_ZLIB_ROOT="%D64%\zlib-1.2.4" >> build-vars.bat
+echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-1.2.3>> build-vars.bat
+echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-1.2.3>> build-vars.bat
 
+:bzip
 IF NOT EXIST %DOWNLOADS%\bzip2-1.0.5.tar.gz (
     echo.
     echo **************************************************************************
@@ -168,9 +171,10 @@ echo **************************************************************************
 del bzip2-1.0.5.tar
 xcopy /Q/E/Y %D32%\bzip2-1.0.5 %D64%\bzip2-1.0.5\
 
-echo set LUX_X86_BZIP_ROOT="%D32%\bzip2-1.0.5" >> build-vars.bat
-echo set LUX_X64_BZIP_ROOT="%D64%\bzip2-1.0.5" >> build-vars.bat
+echo set LUX_X86_BZIP_ROOT=%D32%\bzip2-1.0.5>> build-vars.bat
+echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
 
+:openexr
 IF NOT EXIST %DOWNLOADS%\openexr-1.4.0a.tar.gz (
     echo.
     echo **************************************************************************
@@ -193,9 +197,10 @@ echo **************************************************************************
 del openexr-1.4.0a.tar
 xcopy /Q/E/Y %D32%\openexr-1.4.0 %D64%\openexr-1.4.0\
 
-echo set LUX_X86_OPENEXR_ROOT="%D32%\openexr-1.4.0" >> build-vars.bat
-echo set LUX_X64_OPENEXR_ROOT="%D64%\openexr-1.4.0" >> build-vars.bat
+echo set LUX_X86_OPENEXR_ROOT=%D32%\openexr-1.4.0>> build-vars.bat
+echo set LUX_X64_OPENEXR_ROOT=%D64%\openexr-1.4.0>> build-vars.bat
 
+:python2
 IF NOT EXIST %DOWNLOADS%\Python-2.6.5.tgz (
     echo.
     echo **************************************************************************
@@ -218,9 +223,10 @@ echo **************************************************************************
 del Python-2.6.5.tar
 xcopy /Q/E/Y %D32%\Python-2.6.5 %D64%\Python-2.6.5\
 
-echo set LUX_X86_PYTHON2_ROOT="%D32%\Python-2.6.5" >> build-vars.bat
-echo set LUX_X64_PYTHON2_ROOT="%D64%\Python-2.6.5" >> build-vars.bat
+echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-2.6.5>> build-vars.bat
+echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-2.6.5>> build-vars.bat
 
+:python3
 IF NOT EXIST %DOWNLOADS%\Python-3.1.2.tgz (
     echo.
     echo **************************************************************************
@@ -243,8 +249,8 @@ echo **************************************************************************
 del Python-3.1.2.tar
 xcopy /Q/E/Y %D32%\Python-3.1.2 %D64%\Python-3.1.2\
 
-echo set LUX_X86_PYTHON3_ROOT="%D32%\Python-3.1.2" >> build-vars.bat
-echo set LUX_X64_PYTHON3_ROOT="%D64%\Python-3.1.2" >> build-vars.bat
+echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-3.1.2>> build-vars.bat
+echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-3.1.2>> build-vars.bat
 
 
 echo.

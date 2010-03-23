@@ -96,11 +96,8 @@ echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
 
-:: Start in a known location
-pushd %LUX_X86_BOOST_ROOT%
-cd ..
+:: Store known location
 set BUILD_PATH=%CD%
-
 
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
@@ -145,14 +142,14 @@ echo.
 echo **************************************************************************
 echo * Building Boost::Python2                                                *
 echo **************************************************************************
-copy ..\..\Lux\windows\support\python-2.6.jam tools\build\v2\tools\python.jam
+copy %BUILD_PATH%\support\python-2.6.jam tools\build\v2\tools\python.jam
 bjam -sPYTHON_SOURCE=%BUILD_PATH%\Python-2.6.4 --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage
 
 echo.
 echo **************************************************************************
 echo * Building Boost::Python3                                                *
 echo **************************************************************************
-copy ..\..\Lux\windows\support\python-3.1.jam tools\build\v2\tools\python.jam
+copy %BUILD_PATH%\support\python-3.1.jam tools\build\v2\tools\python.jam
 bjam -sPYTHON_SOURCE=%BUILD_PATH%\Python-3.1.1 --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage
 
 echo.
@@ -194,6 +191,30 @@ msbuild /nologo /p:Configuration=Debug;Platform=Win32 wx.sln
 msbuild /nologo /p:Configuration=Release;Platform=Win32 wx.sln
 
 
+:: ****************************************************************************
+:: ******************************* ZLIB ***************************************
+:: ****************************************************************************
+:zlib
+echo.
+echo **************************************************************************
+echo * Building zlib                                                          *
+echo **************************************************************************
+cd /d %LUX_X86_ZLIB_ROOT%\projects\visualc6
+del *.sln
+del *.vcproj
+echo.
+echo We need to convert the old project files to sln/vcproj files.
+echo I will open the old project for you, and VS should prompt you
+echo to convert the projects. Proceed with the conversion, save the
+echo solution and quit VS. Do not build the solution, I will continue
+echo the build after you have saved the new projects.
+echo.
+pause
+start /WAIT zlib.dsw
+echo Conversion finished. Building...
+msbuild /nologo /p:Configuration="LIB Debug";Platform=Win32 zlib.sln
+msbuild /nologo /p:Configuration="LIB Release";Platform=Win32 zlib.sln
+
 
 :: ****************************************************************************
 :: ******************************* OPENEXR ************************************
@@ -216,23 +237,23 @@ echo.
 ::echo (Found under Configuration Properties \ C/C++ \ General)
 pause
 start /WAIT OpenEXR.sln
+echo Do not continue until you save OpenEXR.sln and quit VS. Then,
 pause
 echo Conversion finished. Building...
+echo ... this will generate a fair few errors. Don't panic, just ignore them.
+echo ... and the testing takes a while too, go and grab a coffee ;)
+pause
 
-:: include zlib source in system PATH
-set PATH=%LUX_X86_ZLIB_ROOT%;%PATH%
+:: copy zlibs
+copy %LUX_X86_ZLIB_ROOT%\zlib.h include\zlib.h
+copy %LUX_X86_ZLIB_ROOT%\zconf.h include\zconf.h
+copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Debug\*.lib lib\
+copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Release\*.lib lib\
 
-msbuild /nologo /p:Configuration=Debug;Platform=Win32 Half\Half.vcproj
-msbuild /nologo /p:Configuration=Debug;Platform=Win32 Iex\Iex.vcproj
-msbuild /nologo /p:Configuration=Debug;Platform=Win32 IlmImf\IlmImf.vcproj
-msbuild /nologo /p:Configuration=Debug;Platform=Win32 Imath\Imath.vcproj
+:: TODO - cannot build only specified projects; Half, Iex, IlmImf, IlmThread and Imath 
 
-msbuild /nologo /p:Configuration=Release;Platform=Win32 Half\Half.vcproj
-msbuild /nologo /p:Configuration=Release;Platform=Win32 Iex\Iex.vcproj
-msbuild /nologo /p:Configuration=Release;Platform=Win32 IlmImf\IlmImf.vcproj
-msbuild /nologo /p:Configuration=Release;Platform=Win32 Imath\Imath.vcproj
-
-
+vcbuild /nologo OpenEXR.sln "Debug|Win32"
+vcbuild /nologo OpenEXR.sln "Release|Win32"
 
 :: ****************************************************************************
 :: ******************************* LuxRender***********************************
@@ -242,7 +263,7 @@ echo.
 echo **************************************************************************
 echo * Building LuxRender                                                     *
 echo **************************************************************************
-cd /d ..\..\..\..\Lux\windows
+cd /d %BUILD_PATH%
 
 :: include flex and bison in system PATH
 set PATH=support\bin;%PATH%
@@ -266,4 +287,3 @@ echo *        Building Completed                                              *
 echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
-popd
