@@ -87,6 +87,8 @@ if NOT ERRORLEVEL 0 (
 
 echo Environment OK.
 
+goto LuxRender
+
 echo.
 echo **************************************************************************
 echo **************************************************************************
@@ -240,9 +242,6 @@ start /WAIT OpenEXR.sln
 echo Do not continue until you save OpenEXR.sln and quit VS. Then,
 pause
 echo Conversion finished. Building...
-echo ... this will generate a fair few errors. Don't panic, just ignore them.
-echo ... and the testing takes a while too, go and grab a coffee ;)
-pause
 
 :: copy zlibs
 copy %LUX_X86_ZLIB_ROOT%\zlib.h include\zlib.h
@@ -250,10 +249,21 @@ copy %LUX_X86_ZLIB_ROOT%\zconf.h include\zconf.h
 copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Debug\*.lib lib\
 copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Release\*.lib lib\
 
-:: TODO - cannot build only specified projects; Half, Iex, IlmImf, IlmThread and Imath 
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 Half_eLut\Half_eLut.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 Half_toFloat\Half_toFloat.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 Half\Half.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 Iex\Iex.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 IlmThread\IlmThread.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 Imath\Imath.vcproj
+msbuild /nologo /p:Configuration=Debug;Platform=Win32 IlmImf\IlmImf.vcproj
 
-vcbuild /nologo OpenEXR.sln "Debug|Win32"
-vcbuild /nologo OpenEXR.sln "Release|Win32"
+msbuild /nologo /p:Configuration=Release;Platform=Win32 Half_eLut\Half_eLut.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 Half_toFloat\Half_toFloat.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 Half\Half.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 Iex\Iex.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 IlmThread\IlmThread.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 Imath\Imath.vcproj
+msbuild /nologo /p:Configuration=Release;Platform=Win32 IlmImf\IlmImf.vcproj
 
 :: ****************************************************************************
 :: ******************************* LuxRender***********************************
