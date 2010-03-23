@@ -100,7 +100,7 @@ echo **************************************************************************
 :: Store known location
 set BUILD_PATH=%CD%
 
-choice /C NY /M "Build LuxRender only?"
+choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
 IF ERRORLEVEL 2 GOTO LuxRender
 
 :: ****************************************************************************
