@@ -98,7 +98,7 @@ echo **************************************************************************
 echo **************************************************************************
 
 :: Store known location
-set BUILD_PATH=%CD%
+set BUILD_PATH="%CD%"
 
 :StartChoice
 set BUILDCHOICE=''
@@ -150,6 +150,9 @@ echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
 echo **************************************************************************
 bjam -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --toolset=msvc --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
+
+:: hax boost script to force acceptance of python versions
+copy /Y %BUILD_PATH%\support\python.jam .\tools\build\v2\tools
 
 echo.
 echo **************************************************************************
