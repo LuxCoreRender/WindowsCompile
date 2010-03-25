@@ -34,14 +34,14 @@ echo.
 echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
-set WGET=%CD%\support\bin\wget.exe
+set WGET="%CD%\support\bin\wget.exe"
 %WGET% --version 1> nul 2>&1
 if ERRORLEVEL 9009 (
     echo.
     echo Cannot execute wget. Aborting.
     exit /b -1
 )
-set UNZIPBIN=%CD%\support\bin\7za.exe
+set UNZIPBIN="%CD%\support\bin\7za.exe"
 %UNZIPBIN% > nul
 if ERRORLEVEL 9009 (
     echo.
@@ -50,20 +50,20 @@ if ERRORLEVEL 9009 (
 )
 
 
-set DOWNLOADS=%CD%\..\downloads
+set DOWNLOADS="%CD%\..\downloads"
 :: resolve relative path
 FOR %%G in (%DOWNLOADS%) do (
-    set DOWNLOADS=%%~fG
+    set DOWNLOADS="%%~fG"
 )
 
-set D32=%CD%\..\deps\x86
+set D32="%CD%\..\deps\x86"
 FOR %%G in (%D32%) do (
-    set D32=%%~fG
+    set D32="%%~fG"
 )
 
-set D64=%CD%\..\deps\x64
+set D64="%CD%\..\deps\x64"
 FOR %%G in (%D64%) do (
-    set D64=%%~fG
+    set D64="%%~fG"
 )
 
 mkdir %DOWNLOADS% 2> nul

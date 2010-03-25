@@ -26,52 +26,52 @@ IF EXIST build-vars.bat (
     call build-vars.bat
 )
 
-IF "%LUX_X86_PYTHON2_ROOT%" == "" (
+IF %LUX_X86_PYTHON2_ROOT% == "" (
     echo.
     echo %%LUX_X86_PYTHON2_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST "%LUX_X86_PYTHON2_ROOT%" (
+IF NOT EXIST %LUX_X86_PYTHON2_ROOT% (
     echo.
     echo %%LUX_X86_PYTHON2_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF "%LUX_X86_PYTHON3_ROOT%" == "" (
+IF %LUX_X86_PYTHON3_ROOT% == "" (
     echo.
     echo %%LUX_X86_PYTHON3_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST "%LUX_X86_PYTHON3_ROOT%" (
+IF NOT EXIST %LUX_X86_PYTHON3_ROOT% (
     echo.
     echo %%LUX_X86_PYTHON3_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF "%LUX_X86_BOOST_ROOT%" == "" (
+IF %LUX_X86_BOOST_ROOT% == "" (
     echo.
     echo %%LUX_X86_BOOST_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST "%LUX_X86_BOOST_ROOT%" (
+IF NOT EXIST %LUX_X86_BOOST_ROOT% (
     echo.
     echo %%LUX_X86_BOOST_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF "%LUX_X86_WX_ROOT%" == "" (
+IF %LUX_X86_WX_ROOT% == "" (
     echo.
     echo %%LUX_X86_WX_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST "%LUX_X86_WX_ROOT%" (
+IF NOT EXIST %LUX_X86_WX_ROOT% (
     echo.
     echo %%LUX_X86_WX_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF "%LUX_X86_OPENEXR_ROOT%" == "" (
+IF %LUX_X86_OPENEXR_ROOT% == "" (
     echo.
     echo %%LUX_X86_OPENEXR_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST "%LUX_X86_OPENEXR_ROOT%" (
+IF NOT EXIST %LUX_X86_OPENEXR_ROOT% (
     echo.
     echo %%LUX_X86_OPENEXR_ROOT%% not valid! Aborting.
     exit /b -1
