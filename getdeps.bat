@@ -13,6 +13,7 @@ echo   WxWidgets 2.8.10                         http://www.wxwidgets.org/
 echo   zlib 1.2.3                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   OpenEXR 1.4.0a                           http://www.openexr.com/
+echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python 2.6.5 ^& Python 3.1.2              http://www.python.org/
 echo.
 echo Downloading and extracting all this source code will require 995 MB, and
@@ -199,6 +200,32 @@ xcopy /Q/E/Y %D32%\openexr-1.4.0 %D64%\openexr-1.4.0\
 
 echo set LUX_X86_OPENEXR_ROOT=%D32%\openexr-1.4.0>> build-vars.bat
 echo set LUX_X64_OPENEXR_ROOT=%D64%\openexr-1.4.0>> build-vars.bat
+
+
+:sqlite
+IF NOT EXIST %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip (
+    echo.
+    echo **************************************************************************
+    echo * Downloading sqlite                                                     *
+    echo **************************************************************************
+    %WGET% http://www.sqlite.org/sqlite-amalgamation-3_5_9.zip -O %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip
+    if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
+    )
+)
+
+echo.
+echo **************************************************************************
+echo * Extracting sqlite                                                      *
+echo **************************************************************************
+%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D32%\sqlite-3.5.9 > nul
+xcopy /Q/E/Y %D32%\sqlite-3.5.9 %D64%\sqlite-3.5.9\
+
+echo set LUX_X86_SQLITE_ROOT=%D32%\sqlite-3.5.9>> build-vars.bat
+echo set LUX_X64_SQLITE_ROOT=%D64%\sqlite-3.5.9>> build-vars.bat
+
 
 :python2
 IF NOT EXIST %DOWNLOADS%\Python-2.6.5.tgz (

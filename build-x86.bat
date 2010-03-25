@@ -103,6 +103,7 @@ set BUILD_PATH=%CD%
 choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
 IF ERRORLEVEL 2 GOTO LuxRender
 
+
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
 :: ****************************************************************************
@@ -146,15 +147,15 @@ echo.
 echo **************************************************************************
 echo * Building Boost::Python2                                                *
 echo **************************************************************************
-copy %BUILD_PATH%\support\python-2.6.jam tools\build\v2\tools\python.jam
-bjam -sPYTHON_SOURCE=%BUILD_PATH%\Python-2.6.4 --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 stage
+copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
+bjam -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
 echo.
 echo **************************************************************************
 echo * Building Boost::Python3                                                *
 echo **************************************************************************
-copy %BUILD_PATH%\support\python-3.1.jam tools\build\v2\tools\python.jam
-bjam -sPYTHON_SOURCE=%BUILD_PATH%\Python-3.1.1 --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 stage
+copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
+bjam -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
 echo.
 echo **************************************************************************
@@ -177,8 +178,8 @@ echo **************************************************************************
 echo * Building WxWidgets                                                     *
 echo **************************************************************************
 cd /d %LUX_X86_WX_ROOT%\build\msw
-del *.sln
-del *.vcproj
+
+IF NOT EXIST "wx.sln" (
 echo.
 echo We need to convert the old project files to sln/vcproj files.
 echo I will open the old project for you, and VS should prompt you
@@ -186,11 +187,13 @@ echo to convert the projects. Proceed with the conversion, save the
 echo solution and quit VS. Do not build the solution, I will continue
 echo the build after you have saved the new projects.
 echo.
-echo ADDITIONAL: Open gl\Setup Headers\setup.h (the top one) and make
-echo sure that wxUSE_GLCANVAS is defined as 1 (default is 0) on line 994.
+echo ADDITIONAL: Open gl\Setup Headers\setup.h ^(the top one^) and make
+echo sure that wxUSE_GLCANVAS is defined as 1 ^(default is 0^) on line 994.
 pause
 start /WAIT wx.dsw
 echo Conversion finished. Building...
+)
+
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 wx.sln
 msbuild /nologo /p:Configuration=Release;Platform=Win32 wx.sln
 
@@ -205,8 +208,8 @@ echo **************************************************************************
 echo * Building zlib                                                          *
 echo **************************************************************************
 cd /d %LUX_X86_ZLIB_ROOT%\projects\visualc6
-del *.sln
-del *.vcproj
+
+IF NOT EXIST "zlib.sln" (
 echo.
 echo We need to convert the old project files to sln/vcproj files.
 echo I will open the old project for you, and VS should prompt you
@@ -217,6 +220,8 @@ echo.
 pause
 start /WAIT zlib.dsw
 echo Conversion finished. Building...
+)
+
 msbuild /nologo /p:Configuration="LIB Debug";Platform=Win32 zlib.sln
 msbuild /nologo /p:Configuration="LIB Release";Platform=Win32 zlib.sln
 
