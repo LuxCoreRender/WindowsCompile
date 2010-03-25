@@ -100,8 +100,16 @@ echo **************************************************************************
 :: Store known location
 set BUILD_PATH=%CD%
 
-choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
-IF ERRORLEVEL 2 GOTO LuxRender
+:StartChoice
+set BUILDCHOICE=''
+:: choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
+:: IF ERRORLEVEL 2 GOTO LuxRender
+
+set /P BUILDCHOICE="Build LuxRender only? (You can choose Y if you've already build the libraries) [y/n] "
+IF %BUILDCHOICE% == n ( GOTO Python )
+IF %BUILDCHOICE% == y ( GOTO LuxRender )
+echo Invalid choice
+GOTO StartChoice
 
 
 :: ****************************************************************************
