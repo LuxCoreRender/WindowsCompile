@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Python2"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		RuntimeLibrary="2"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libboost_python-vc90-mt.lib libboost_wserialization-vc90-mt.lib"
+	/>
+</VisualStudioPropertySheet>
