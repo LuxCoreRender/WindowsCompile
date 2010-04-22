@@ -130,7 +130,7 @@
 				AdditionalOptions="/MP"
 				Optimization="0"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;WIN64;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -156,7 +156,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxrender.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
@@ -164,7 +164,7 @@
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="17"
+				TargetMachine="0"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -343,7 +343,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxrender.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
@@ -509,6 +509,7 @@
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
 				FloatingPointModel="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -532,7 +533,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxconsole.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="1"
@@ -599,7 +600,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -721,7 +722,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxrender.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
@@ -784,7 +785,7 @@
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
 				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
+				RuntimeLibrary="3"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -804,9 +805,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
+				OutputFile="$(OutDir)\python2\pylux.pyd"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -841,7 +842,10 @@
 		</Configuration>
 		<Configuration
 			Name="Pylux2Debug|x64"
-			ConfigurationType="1"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -860,18 +864,41 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819;4996"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python2\pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="17"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -928,7 +955,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -952,10 +979,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python2\pylux.pyd"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
@@ -991,7 +1019,9 @@
 		</Configuration>
 		<Configuration
 			Name="Pylux2Release|x64"
-			ConfigurationType="1"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -1010,18 +1040,52 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_VC80_UPGRADE=0x0710"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python2\pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="17"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1078,7 +1142,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -1200,7 +1264,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxconsole.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="1"
@@ -1267,7 +1331,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -1362,7 +1426,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -1388,7 +1452,7 @@
 				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
 				OutputFile="$(OUTDIR)/luxmerger.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="1"
@@ -1451,7 +1515,7 @@
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
 				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
+				RuntimeLibrary="3"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -1470,10 +1534,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python3-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python3\pylux.pyd"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -1508,7 +1572,9 @@
 		</Configuration>
 		<Configuration
 			Name="Pylux3Debug|x64"
-			ConfigurationType="1"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -1527,18 +1593,42 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819;4996"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_VC80_UPGRADE=0x0710"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python3-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python3\pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="17"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1595,7 +1685,7 @@
 				OmitFramePointers="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -1619,10 +1709,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python3-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python3\pylux.pyd"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
@@ -1658,7 +1749,9 @@
 		</Configuration>
 		<Configuration
 			Name="Pylux3Release|x64"
-			ConfigurationType="1"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -1677,18 +1770,52 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_VC80_UPGRADE=0x0710"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python3-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OutDir)\python3\pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="17"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -2477,12 +2604,28 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
 							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2528,6 +2671,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2536,10 +2687,34 @@
 							StringPooling="false"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\renderer\renderserver.cpp"
 					>
+					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|Win32"
 						ExcludedFromBuild="true"
@@ -2550,6 +2725,22 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2619,12 +2810,28 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
 							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2672,12 +2879,28 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
 							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
 				</File>
@@ -2709,7 +2932,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2757,7 +2996,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2793,7 +3048,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2841,7 +3112,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2877,7 +3164,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2925,7 +3228,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2961,7 +3280,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3009,7 +3344,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4002,7 +4353,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4050,7 +4417,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4134,7 +4517,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux2Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux2Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4166,7 +4565,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Pylux3Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux3Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -5075,7 +5490,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Console|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -5091,6 +5522,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Release SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console SSE1|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -5099,7 +5538,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -7772,10 +8227,26 @@
 			<File
 				RelativePath=".\Resources\core.rc"
 				>
+				<FileConfiguration
+					Name="Pylux2Debug|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Resources\lux.ico"
 				>
+				<FileConfiguration
+					Name="Pylux2Debug|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
@@ -7990,6 +8461,16 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Pylux2Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Pylux2Debug|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
