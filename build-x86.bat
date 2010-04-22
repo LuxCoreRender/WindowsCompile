@@ -301,11 +301,15 @@ cd /d %BUILD_PATH%
 set PATH=%CD%\support\bin;%PATH%
 
 msbuild /nologo /p:Configuration=Debug;Platform=Win32 lux.sln
+del Projects\Win32\Debug\binding.obj
 msbuild /nologo /p:Configuration=Pylux2Debug;Platform=Win32 lux.sln
+del Projects\Win32\Debug\binding.obj
 msbuild /nologo /p:Configuration=Pylux3Debug;Platform=Win32 lux.sln
 
 msbuild /nologo /p:Configuration=Release;Platform=Win32 lux.sln
+del Projects\Win32\Release\binding.obj
 msbuild /nologo /p:Configuration=Pylux2Release;Platform=Win32 lux.sln
+del Projects\Win32\Release\binding.obj
 msbuild /nologo /p:Configuration=Pylux3Release;Platform=Win32 lux.sln
 
 msbuild /nologo /p:Configuration=Console;Platform=Win32 lux.sln
