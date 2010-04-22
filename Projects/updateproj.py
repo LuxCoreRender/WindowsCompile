@@ -1,17 +1,18 @@
-import os
+import os, sys
 import shutil
 from xml.dom.minidom import parse
 
 projroot = os.path.normcase(os.getcwd())
 
 if not os.path.isfile(os.path.join(projroot, 'core.vcproj')):
-        print 'Error: core.vcproj not found'
-        exit
+		print 'Error: core.vcproj not found'
+		sys.exit()
 
 luxroot = os.path.normcase(os.path.abspath(os.path.join(projroot, '../..')))
 
 print projroot, luxroot
-exit
+
+#sys.exit()
 
 doc = None
 
@@ -24,19 +25,22 @@ def relpath(path, start):
 	prefix = ''
 	for pi in crels.split(os.sep):
 		prefix = '..' + os.sep + prefix
-	return prefix + crelp
+	
+	#rp = prefix + crelp
+	#print rp, os.path.relpath(path, start)
+	return rp
 
 
 def isFilterNode(n):
-        return n.nodeType == n.ELEMENT_NODE and n.nodeName == 'Filter'
+		return n.nodeType == n.ELEMENT_NODE and n.nodeName == 'Filter'
 
 def isFileNode(n):
-        return n.nodeType == n.ELEMENT_NODE and n.nodeName == 'File'
+		return n.nodeType == n.ELEMENT_NODE and n.nodeName == 'File'
 
 def getNodeByName(nodes, name):
 	n = [n for n in nodes if n.getAttribute('Name') == name]
 	if len(n) < 1:
-                return None
+				return None
 	return n[0]
 
 
@@ -66,7 +70,7 @@ def walkDirectory(path, root, fileext):
 			continue
 		# file already in project
 		if f in fnodes:
-			continue        
+			continue		
 		fnode = doc.createElement('File')
 		rfpath = relpath(f, projroot)
 		fnode.setAttribute('RelativePath', rfpath)

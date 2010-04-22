@@ -103,6 +103,92 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				MinimalRebuild="false"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/luxrender.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
@@ -173,824 +259,6 @@
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Console|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/luxconsole.exe"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release SSE1|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="1"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/luxrender.exe"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Pylux2Debug|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				DisableSpecificWarnings="4819;4996"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				IgnoreAllDefaultLibraries="false"
-				IgnoreDefaultLibraryNames=""
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Pylux2Release|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Console SSE1|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="1"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/luxconsole.exe"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Luxmerge|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="3"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="1"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/luxmerger.exe"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Pylux3Debug|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				DisableSpecificWarnings="4819;4996"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				IgnoreAllDefaultLibraries="false"
-				IgnoreDefaultLibraryNames=""
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Pylux3Release|Win32"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CallingConvention="0"
-				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/pylux.pyd"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				LinkTimeCodeGeneration="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
-				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
-				MinimalRebuild="false"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-				DisableSpecificWarnings="4819"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X64_WX_ROOT)/include&quot;"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
-				OutputFile="$(OUTDIR)/luxrender.exe"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(LUX_X64_BOOST_ROOT)/stage/lib;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_WX_ROOT)/lib/vc_lib&quot;"
-				IgnoreAllDefaultLibraries="false"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				ImportLibrary="$(OUTDIR)/core.lib"
-				TargetMachine="17"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1110,6 +378,100 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Console|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/luxconsole.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="1"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Console|x64"
 			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
@@ -1181,6 +543,100 @@
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release SSE1|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="1"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/luxrender.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1300,6 +756,390 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Pylux2Debug|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819;4996"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux2Debug|x64"
+			ConfigurationType="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux2Release|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux2Release|x64"
+			ConfigurationType="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Console SSE1|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="1"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/luxconsole.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="1"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Console SSE1|x64"
 			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
@@ -1371,6 +1211,100 @@
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Luxmerge|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+				PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="1"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/luxmerger.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="1"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1488,6 +1422,296 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
+		<Configuration
+			Name="Pylux3Debug|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4819;4996"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_bzip2-vc90-mt.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				IgnoreAllDefaultLibraries="false"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux3Debug|x64"
+			ConfigurationType="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux3Release|Win32"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
+				AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
+				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CallingConvention="0"
+				DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Half.lib Iex.lib IlmImf.lib IlmThread.lib Imath.lib ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_python-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_wserialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib wxbase28.lib wxmsw28_media.lib wxmsw28_core.lib wxmsw28_aui.lib wxmsw28_gl.lib wxmsw28_adv.lib wxjpeg.lib wxpng.lib wxtiff.lib"
+				OutputFile="$(OUTDIR)/pylux.pyd"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python3/lib&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				LinkTimeCodeGeneration="1"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OUTDIR)/core.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Pylux3Release|x64"
+			ConfigurationType="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -1504,13 +1728,6 @@
 					RelativePath="..\..\lux\accelerators\bruteforce.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1522,13 +1739,6 @@
 				<File
 					RelativePath="..\..\lux\accelerators\bvhaccel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1542,13 +1752,6 @@
 					RelativePath="..\..\lux\accelerators\grid.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1560,13 +1763,6 @@
 				<File
 					RelativePath="..\..\lux\accelerators\qbvhaccel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1580,13 +1776,6 @@
 					RelativePath="..\..\lux\accelerators\tabreckdtree.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1598,13 +1787,6 @@
 				<File
 					RelativePath="..\..\lux\accelerators\unsafekdtree.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1621,13 +1803,6 @@
 				<File
 					RelativePath="..\..\lux\film\fleximage.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1636,13 +1811,6 @@
 				<File
 					RelativePath="..\..\lux\cameras\environment.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1656,13 +1824,6 @@
 					RelativePath="..\..\lux\cameras\orthographic.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1675,13 +1836,6 @@
 					RelativePath="..\..\lux\cameras\perspective.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1693,13 +1847,6 @@
 				<File
 					RelativePath="..\..\lux\cameras\realistic.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1716,57 +1863,22 @@
 				<File
 					RelativePath="..\..\lux\filters\box.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\gaussian.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\mitchell.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\sinc.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\filters\triangle.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1775,13 +1887,6 @@
 				<File
 					RelativePath="..\..\lux\integrators\bidirectional.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1795,13 +1900,6 @@
 					RelativePath="..\..\lux\integrators\directlighting.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1813,13 +1911,6 @@
 				<File
 					RelativePath="..\..\lux\integrators\distributedpath.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1833,13 +1924,6 @@
 					RelativePath="..\..\lux\integrators\emission.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1851,13 +1935,6 @@
 				<File
 					RelativePath="..\..\lux\integrators\exphotonmap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1871,13 +1948,6 @@
 					RelativePath="..\..\lux\integrators\igi.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1890,13 +1960,6 @@
 					RelativePath="..\..\lux\integrators\path.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1908,13 +1971,6 @@
 				<File
 					RelativePath="..\..\lux\integrators\single.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1932,13 +1988,6 @@
 					RelativePath="..\..\lux\lights\area.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1950,13 +1999,6 @@
 				<File
 					RelativePath="..\..\lux\lights\distant.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -1970,13 +2012,6 @@
 					RelativePath="..\..\lux\lights\infinite.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -1988,13 +2023,6 @@
 				<File
 					RelativePath="..\..\lux\lights\infinitesample.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2008,13 +2036,6 @@
 					RelativePath="..\..\lux\lights\pointlight.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2026,13 +2047,6 @@
 				<File
 					RelativePath="..\..\lux\lights\projection.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2046,13 +2060,6 @@
 					RelativePath="..\..\lux\lights\sky.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2065,13 +2072,6 @@
 					RelativePath="..\..\lux\lights\spot.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2083,13 +2083,6 @@
 				<File
 					RelativePath="..\..\lux\lights\sun.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2106,13 +2099,6 @@
 						RelativePath="..\..\lux\lights\sphericalfunction\photometricdata_ies.cpp"
 						>
 						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
 							Name="Luxmerge|x64"
 							ExcludedFromBuild="true"
 							>
@@ -2125,13 +2111,6 @@
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction.cpp"
 						>
 						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
 							Name="Luxmerge|x64"
 							ExcludedFromBuild="true"
 							>
@@ -2143,13 +2122,6 @@
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction_ies.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 						<FileConfiguration
 							Name="Luxmerge|x64"
 							ExcludedFromBuild="true"
@@ -2168,13 +2140,6 @@
 					RelativePath="..\..\lux\materials\carpaint.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2186,13 +2151,6 @@
 				<File
 					RelativePath="..\..\lux\materials\glass.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2206,13 +2164,6 @@
 					RelativePath="..\..\lux\materials\glass2.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2224,13 +2175,6 @@
 				<File
 					RelativePath="..\..\lux\materials\glossy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2244,13 +2188,6 @@
 					RelativePath="..\..\lux\materials\glossy2.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2262,13 +2199,6 @@
 				<File
 					RelativePath="..\..\lux\materials\matte.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2282,13 +2212,6 @@
 					RelativePath="..\..\lux\materials\mattetranslucent.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2301,13 +2224,6 @@
 					RelativePath="..\..\lux\materials\metal.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2319,13 +2235,6 @@
 				<File
 					RelativePath="..\..\lux\materials\mirror.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2348,52 +2257,16 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2411,7 +2284,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2429,7 +2320,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2452,13 +2361,6 @@
 					RelativePath="..\..\lux\materials\null.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2471,13 +2373,6 @@
 					RelativePath="..\..\lux\materials\roughglass.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -2489,13 +2384,6 @@
 				<File
 					RelativePath="..\..\lux\materials\shinymetal.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -2521,7 +2409,24 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2538,7 +2443,24 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2572,7 +2494,24 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2590,57 +2529,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2681,6 +2569,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Console|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2690,7 +2586,24 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -2724,7 +2637,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							StringPooling="false"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2742,49 +2673,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							StringPooling="false"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2805,6 +2693,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Debug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2829,7 +2725,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2846,30 +2758,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2889,6 +2777,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Debug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2913,7 +2809,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2930,30 +2842,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2973,6 +2861,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Debug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2997,7 +2893,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3014,30 +2926,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3057,6 +2945,14 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Pylux2Debug|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -3081,7 +2977,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3104,30 +3016,6 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -3136,13 +3024,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\cone.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3156,13 +3037,6 @@
 					RelativePath="..\..\lux\shapes\cylinder.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3174,13 +3048,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\disk.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3194,13 +3061,6 @@
 					RelativePath="..\..\lux\shapes\heightfield.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3212,13 +3072,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\hyperboloid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3232,13 +3085,6 @@
 					RelativePath="..\..\lux\shapes\lenscomponent.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3250,13 +3096,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\loopsubdiv.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3270,13 +3109,6 @@
 					RelativePath="..\..\lux\shapes\mesh.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3288,13 +3120,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\meshbarytriangle.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3308,13 +3133,6 @@
 					RelativePath="..\..\lux\shapes\meshquadrilateral.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3326,13 +3144,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\meshwaldtriangle.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3346,13 +3157,6 @@
 					RelativePath="..\..\lux\shapes\nurbs.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3364,13 +3168,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\paraboloid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3384,13 +3181,6 @@
 					RelativePath="..\..\lux\shapes\plymesh.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3403,13 +3193,6 @@
 					RelativePath="..\..\lux\shapes\sphere.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3421,13 +3204,6 @@
 				<File
 					RelativePath="..\..\lux\shapes\torus.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3443,13 +3219,6 @@
 					<File
 						RelativePath="..\..\lux\shapes\plymesh\rply.c"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 						<FileConfiguration
 							Name="Luxmerge|x64"
 							ExcludedFromBuild="true"
@@ -3468,13 +3237,6 @@
 					RelativePath="..\..\lux\samplers\erpt.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3486,13 +3248,6 @@
 				<File
 					RelativePath="..\..\lux\samplers\lowdiscrepancy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3506,13 +3261,6 @@
 					RelativePath="..\..\lux\samplers\metrosampler.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3524,13 +3272,6 @@
 				<File
 					RelativePath="..\..\lux\samplers\random.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3547,13 +3288,6 @@
 				<File
 					RelativePath="..\..\lux\textures\bilerp.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3576,7 +3310,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3594,7 +3346,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3630,7 +3400,26 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
+						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -3656,83 +3445,14 @@
 							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 						/>
 					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_base.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_blend.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3746,13 +3466,6 @@
 					RelativePath="..\..\lux\textures\blender_clouds.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3764,13 +3477,6 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_distortednoise.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3784,13 +3490,6 @@
 					RelativePath="..\..\lux\textures\blender_magic.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3802,13 +3501,6 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_marble.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3822,13 +3514,6 @@
 					RelativePath="..\..\lux\textures\blender_musgrave.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3840,13 +3525,6 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_noise.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3860,13 +3538,6 @@
 					RelativePath="..\..\lux\textures\blender_noiselib.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3878,13 +3549,6 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_stucci.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3898,13 +3562,6 @@
 					RelativePath="..\..\lux\textures\blender_texlib.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3916,13 +3573,6 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_voronoi.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3936,13 +3586,6 @@
 					RelativePath="..\..\lux\textures\blender_wood.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3954,13 +3597,6 @@
 				<File
 					RelativePath="..\..\lux\textures\brick.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -3974,13 +3610,6 @@
 					RelativePath="..\..\lux\textures\cauchytexture.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -3992,13 +3621,6 @@
 				<File
 					RelativePath="..\..\lux\textures\checkerboard.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4012,13 +3634,6 @@
 					RelativePath="..\..\lux\textures\constant.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4030,13 +3645,6 @@
 				<File
 					RelativePath="..\..\lux\textures\dots.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4050,13 +3658,6 @@
 					RelativePath="..\..\lux\textures\equalenergy.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4068,13 +3669,6 @@
 				<File
 					RelativePath="..\..\lux\textures\fbm.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4088,13 +3682,6 @@
 					RelativePath="..\..\lux\textures\frequencytexture.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4106,13 +3693,6 @@
 				<File
 					RelativePath="..\..\lux\textures\gaussiantexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4126,13 +3706,6 @@
 					RelativePath="..\..\lux\textures\harlequin.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4144,13 +3717,6 @@
 				<File
 					RelativePath="..\..\lux\textures\imagemap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4164,13 +3730,6 @@
 					RelativePath="..\..\lux\textures\irregulardata.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4182,13 +3741,6 @@
 				<File
 					RelativePath="..\..\lux\textures\lampspectrum.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4202,13 +3754,6 @@
 					RelativePath="..\..\lux\textures\marble.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4220,13 +3765,6 @@
 				<File
 					RelativePath="..\..\lux\textures\mix.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4240,13 +3778,6 @@
 					RelativePath="..\..\lux\textures\regulardata.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4259,13 +3790,6 @@
 					RelativePath="..\..\lux\textures\scale.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4277,46 +3801,18 @@
 				<File
 					RelativePath="..\..\lux\textures\sellmeiertexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulateddata.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulatedfresnel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\uv.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4330,13 +3826,6 @@
 					RelativePath="..\..\lux\textures\windy.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4348,13 +3837,6 @@
 				<File
 					RelativePath="..\..\lux\textures\wrinkled.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4372,13 +3854,6 @@
 					RelativePath="..\..\lux\tonemaps\contrast.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4390,13 +3865,6 @@
 				<File
 					RelativePath="..\..\lux\tonemaps\highcontrast.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4410,13 +3878,6 @@
 					RelativePath="..\..\lux\tonemaps\lineartonemap.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4428,13 +3889,6 @@
 				<File
 					RelativePath="..\..\lux\tonemaps\maxwhite.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4448,13 +3902,6 @@
 					RelativePath="..\..\lux\tonemaps\nonlinear.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4466,13 +3913,6 @@
 				<File
 					RelativePath="..\..\lux\tonemaps\reinhard.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4498,7 +3938,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4514,7 +3970,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4546,7 +4018,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4563,54 +4051,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Pylux3Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4630,7 +4070,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4646,7 +4102,23 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -4678,7 +4150,8 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
+						Name="Console SSE1|x64"
+						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -4700,46 +4173,6 @@
 							Name="VCCLCompilerTool"
 						/>
 					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -4748,24 +4181,10 @@
 				<File
 					RelativePath="..\..\lux\volumes\clearvolume.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\cloud.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4779,13 +4198,6 @@
 					RelativePath="..\..\lux\volumes\exponential.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4798,13 +4210,6 @@
 					RelativePath="..\..\lux\volumes\homogeneous.cpp"
 					>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
 						>
@@ -4816,13 +4221,6 @@
 				<File
 					RelativePath="..\..\lux\volumes\volumegrid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -4839,316 +4237,129 @@
 				<File
 					RelativePath="..\..\lux\core\api.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\camera.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\color.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\context.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\contribution.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\dynload.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\epsilon.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\exrio.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\film.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\igiio.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\imagereader.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\light.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\luxlex.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\luxparse.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\material.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\mc.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\motionsystem.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\osfunc.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\paramset.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\photonmap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\pngio.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\primitive.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderfarm.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\renderinghints.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\sampling.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\scene.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\shape.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spd.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spectrum.cpp"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5166,7 +4377,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5193,52 +4422,16 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Pylux3Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							Optimization="2"
-							InlineFunctionExpansion="2"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Console SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|Win32"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5255,83 +4448,43 @@
 							InlineFunctionExpansion="2"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="Pylux3Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							InlineFunctionExpansion="2"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\spectrumwavelengths.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\texture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\tgaio.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\timer.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\transport.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\util.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\core\volume.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<Filter
 					Name="geometry"
@@ -5339,57 +4492,22 @@
 					<File
 						RelativePath="..\..\lux\core\geometry\bbox.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\matrix4x4.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\quaternion.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\raydifferential.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\geometry\transform.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -5398,35 +4516,14 @@
 					<File
 						RelativePath="..\..\lux\core\reflection\bxdf.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\fresnel.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\reflection\microfacetdistribution.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 						<FileConfiguration
 							Name="Luxmerge|x64"
 							ExcludedFromBuild="true"
@@ -5443,13 +4540,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5461,13 +4551,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5481,13 +4564,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\fresnelblend.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5499,13 +4575,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\lafortune.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5519,13 +4588,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\lambertian.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5537,13 +4599,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\microfacet.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5557,13 +4612,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\nulltransmission.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5575,13 +4623,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\orennayar.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5595,13 +4636,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\schlickbrdf.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5614,13 +4648,6 @@
 							RelativePath="..\..\lux\core\reflection\bxdf\specularreflection.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5632,13 +4659,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\speculartransmission.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5656,13 +4676,6 @@
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelcauchy.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5675,13 +4688,6 @@
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelconductor.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5693,31 +4699,10 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresneldielectric.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelgeneral.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5731,13 +4716,6 @@
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelnoop.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5749,13 +4727,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelslick.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5773,13 +4744,6 @@
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\anisotropic.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5791,13 +4755,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\beckmann.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5811,13 +4768,6 @@
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\blinn.cpp"
 							>
 							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
 								>
@@ -5829,13 +4779,6 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\wardisotropic.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Luxmerge|x64"
 								ExcludedFromBuild="true"
@@ -5853,35 +4796,14 @@
 					<File
 						RelativePath="..\..\lux\core\queryable\queryable.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableattribute.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\core\queryable\queryableregistry.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -5891,13 +4813,6 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\hilbertpx.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -5910,13 +4825,6 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\linear.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -5939,7 +4847,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5957,7 +4883,25 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Release SSE1|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -5993,7 +4937,26 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Console SSE1|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Luxmerge|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)\$(InputName)1.obj"
+							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Luxmerge|x64"
+						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -6019,72 +4982,10 @@
 							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 						/>
 					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Console SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\tilepx.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -6097,13 +4998,6 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\vegas.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 					<FileConfiguration
 						Name="Luxmerge|x64"
 						ExcludedFromBuild="true"
@@ -6120,90 +5014,34 @@
 				<File
 					RelativePath="..\..\lux\spds\blackbodyspd.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\equalspd.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\frequencyspd.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\gaussianspd.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\irregular.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\regular.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbillum.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\spds\rgbrefl.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -6214,6 +5052,14 @@
 					>
 					<FileConfiguration
 						Name="Debug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -8949,57 +7795,17 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Console|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release SSE1|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Console SSE1|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Luxmerge|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/luxlex.cpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9019,7 +7825,27 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Console|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Console|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9039,7 +7865,27 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Console SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Console SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Luxmerge|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9073,7 +7919,27 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9093,7 +7959,27 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Console|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9133,7 +8019,27 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Console SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Luxmerge|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Luxmerge|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -9154,66 +8060,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Pylux3Release|Win32"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Console|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release SSE1|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Console SSE1|x64"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Luxmerge|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"

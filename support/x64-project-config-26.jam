@@ -1,0 +1,15 @@
+using msvc ; 
+
+import os ;
+local LUX_X64_PYTHON2_ROOT = [ os.environ LUX_X64_PYTHON2_ROOT ] ;
+
+using python : 2.6
+	: $(LUX_X64_PYTHON2_ROOT)
+	: #
+	: #
+	;
+using python : 2.6
+	: $(LUX_X64_PYTHON2_ROOT)\\PCbuild\\python_d
+	: #
+	: #
+	: <python-debugging>on	;
