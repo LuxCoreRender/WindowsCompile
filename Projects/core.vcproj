@@ -60,7 +60,6 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
-				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 			/>
@@ -130,7 +129,6 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
-				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 			/>
@@ -203,7 +201,6 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 			/>
@@ -278,7 +275,6 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OUTDIR)/core.lib"
 			/>
@@ -1503,68 +1499,26 @@
 				<File
 					RelativePath="..\..\lux\accelerators\bruteforce.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\bvhaccel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\grid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\qbvhaccel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\tabreckdtree.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\accelerators\unsafekdtree.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1581,46 +1535,18 @@
 				<File
 					RelativePath="..\..\lux\cameras\environment.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\orthographic.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\perspective.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\cameras\realistic.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1653,90 +1579,34 @@
 				<File
 					RelativePath="..\..\lux\integrators\bidirectional.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\directlighting.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\distributedpath.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\emission.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\exphotonmap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\igi.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\path.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\integrators\single.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1745,101 +1615,38 @@
 				<File
 					RelativePath="..\..\lux\lights\area.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\distant.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\infinite.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\infinitesample.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\pointlight.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\projection.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\sky.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\spot.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\lights\sun.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<Filter
 					Name="sphericalfunction"
@@ -1847,35 +1654,14 @@
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\photometricdata_ies.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="..\..\lux\lights\sphericalfunction\sphericalfunction_ies.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -1885,101 +1671,38 @@
 				<File
 					RelativePath="..\..\lux\materials\carpaint.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glass.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glass2.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glossy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\glossy2.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\matte.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mattetranslucent.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\metal.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mirror.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\mixmaterial.cpp"
@@ -2096,35 +1819,14 @@
 				<File
 					RelativePath="..\..\lux\materials\null.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\roughglass.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\materials\shinymetal.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -2981,178 +2683,66 @@
 				<File
 					RelativePath="..\..\lux\shapes\cone.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\cylinder.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\disk.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\heightfield.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\hyperboloid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\lenscomponent.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\loopsubdiv.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\mesh.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\meshbarytriangle.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\meshquadrilateral.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\meshwaldtriangle.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\nurbs.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\paraboloid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\plymesh.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\sphere.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\shapes\torus.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<Filter
 					Name="plymesh"
@@ -3160,13 +2750,6 @@
 					<File
 						RelativePath="..\..\lux\shapes\plymesh\rply.c"
 						>
-						<FileConfiguration
-							Name="Luxmerge|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -3176,46 +2759,18 @@
 				<File
 					RelativePath="..\..\lux\samplers\erpt.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\lowdiscrepancy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\metrosampler.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\samplers\random.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -3224,13 +2779,6 @@
 				<File
 					RelativePath="..\..\lux\textures\bilerp.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blackbody.cpp"
@@ -3383,398 +2931,146 @@
 				<File
 					RelativePath="..\..\lux\textures\blender_base.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_blend.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_clouds.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_distortednoise.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_magic.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_marble.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_musgrave.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_noise.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_noiselib.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_stucci.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_texlib.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_voronoi.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\blender_wood.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\brick.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\cauchytexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\checkerboard.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\constant.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\dots.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\equalenergy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\fbm.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\frequencytexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\gaussiantexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\harlequin.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\imagemap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\irregulardata.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\lampspectrum.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\marble.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\mix.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\regulardata.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\scale.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\sellmeiertexture.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulateddata.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\tabulatedfresnel.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\uv.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\windy.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\textures\wrinkled.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -3783,68 +3079,26 @@
 				<File
 					RelativePath="..\..\lux\tonemaps\contrast.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\highcontrast.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\lineartonemap.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\maxwhite.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\nonlinear.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\tonemaps\reinhard.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -4173,46 +3427,18 @@
 				<File
 					RelativePath="..\..\lux\volumes\cloud.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\exponential.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\homogeneous.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\volumes\volumegrid.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -4508,13 +3734,6 @@
 					<File
 						RelativePath="..\..\lux\core\reflection\microfacetdistribution.cpp"
 						>
-						<FileConfiguration
-							Name="Luxmerge|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-							/>
-						</FileConfiguration>
 					</File>
 					<Filter
 						Name="bxdf"
@@ -4522,123 +3741,46 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\brdftobtdf.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\cooktorrance.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\fresnelblend.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\lafortune.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\lambertian.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\microfacet.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\nulltransmission.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\orennayar.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\schlickbrdf.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\specularreflection.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\bxdf\speculartransmission.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 					</Filter>
 					<Filter
@@ -4647,68 +3789,26 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelcauchy.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelconductor.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresneldielectric.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelgeneral.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelnoop.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\fresnel\fresnelslick.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 					</Filter>
 					<Filter
@@ -4717,46 +3817,18 @@
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\anisotropic.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\beckmann.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\blinn.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 						<File
 							RelativePath="..\..\lux\core\reflection\microfacetdistribution\wardisotropic.cpp"
 							>
-							<FileConfiguration
-								Name="Luxmerge|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-								/>
-							</FileConfiguration>
 						</File>
 					</Filter>
 				</Filter>
@@ -4783,24 +3855,10 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\hilbertpx.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\linear.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\lowdiscrepancypx.cpp"
@@ -4953,24 +4011,10 @@
 				<File
 					RelativePath="..\..\lux\pixelsamplers\tilepx.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\lux\pixelsamplers\vegas.cpp"
 					>
-					<FileConfiguration
-						Name="Luxmerge|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter

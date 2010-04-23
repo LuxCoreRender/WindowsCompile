@@ -158,7 +158,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::Python2                                                *
 echo **************************************************************************
-copy /Y ..\Python-2.6.5\PC\pyconfig.h ..\Python-2.6.5\Include
+copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
 bjam -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --toolset=msvc --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
@@ -166,7 +166,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::Python3                                                *
 echo **************************************************************************
-copy /Y ..\Python-3.1.2\PC\pyconfig.h ..\Python-3.1.2\Include
+copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
 bjam -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --toolset=msvc --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
@@ -316,6 +316,9 @@ vcbuild /nologo lux.sln "Pylux3Release|Win32"
 
 vcbuild /nologo lux.sln "Console|Win32"
 vcbuild /nologo lux.sln "Luxmerge|Win32"
+
+vcbuild /nologo lux.sln "Console SSE1|Win32"
+vcbuild /nologo lux.sln "Release SSE1|Win32"
 
 echo.
 echo **************************************************************************

@@ -174,7 +174,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::Python (2 and 3)                                       *
 echo **************************************************************************
-copy /Y ..\Python-2.6.5\PC\pyconfig.h ..\Python-2.6.5\Include
+copy /Y %LUX_X64_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x64-project-config-26.jam .\project-config.jam
 tools\jam\src\bin.ntx86_64\bjam.exe -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --toolset=msvc-9.0 address-model=64 --with-python --stagedir=stage/python --build-dir=bin/python2 python=2.6 target-os=windows stage
 
@@ -182,7 +182,7 @@ rem echo.
 rem echo **************************************************************************
 rem echo * Building Boost::Python3                                                *
 rem echo **************************************************************************
-rem copy /Y ..\Python-3.1.2\PC\pyconfig.h ..\Python-3.1.2\Include
+rem copy /Y %LUX_X64_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON3_ROOT%\Include
 rem copy /Y %BUILD_PATH%\support\x64-project-config-31.jam .\project-config.jam
 rem tools\jam\src\bin.ntx86_64\bjam.exe -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% --toolset=msvc-9.0 address-model=64 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
@@ -337,6 +337,9 @@ vcbuild /nologo lux.sln "Pylux3Release|x64"
 
 vcbuild /nologo lux.sln "Console|x64"
 vcbuild /nologo lux.sln "Luxmerge|x64"
+
+vcbuild /nologo lux.sln "Console SSE1|x64"
+vcbuild /nologo lux.sln "Release SSE1|x64"
 
 echo.
 echo **************************************************************************
