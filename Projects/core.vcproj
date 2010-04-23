@@ -623,7 +623,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -694,7 +694,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -768,7 +768,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -845,7 +845,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -1216,7 +1216,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -1287,7 +1287,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -1362,7 +1362,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -1439,7 +1439,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON3_ROOT)/PC&quot;"
-				PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_PYTHON_STATIC_LIB;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
 				DebugInformationFormat="3"
 			/>
 			<Tool
