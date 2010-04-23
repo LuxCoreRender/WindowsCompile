@@ -327,11 +327,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -346,6 +341,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OUTDIR)/luxconsole.exe"
+				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="1"

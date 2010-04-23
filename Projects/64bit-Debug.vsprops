@@ -6,7 +6,7 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds;&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
+		AdditionalIncludeDirectories="&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_WX_ROOT)/include&quot;;&quot;$(LUX_X64_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X64_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X64_WX_ROOT)/src/png&quot;;&quot;$(LUX_X64_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X64_WX_ROOT)/src/zlib&quot;"
 		PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;WIN64;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 		RuntimeLibrary="1"
 		DebugInformationFormat="3"
