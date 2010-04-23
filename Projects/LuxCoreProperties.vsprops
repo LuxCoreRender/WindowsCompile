@@ -10,7 +10,7 @@
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
 		AdditionalIncludeDirectories="..;./Resources;../include;../../lux;../../lux/core;../../lux/core/external;../../lux/core/queryable;../../lux/core/reflection;../../lux/core/reflection/bxdf;../../lux/core/reflection/fresnel;../../lux/core/reflection/microfacetdistribution;../../lux/lights/sphericalfunction;../../lux/spds"
-		RuntimeLibrary="2"
+		RuntimeLibrary="0"
 		BufferSecurityCheck="false"
 		EnableEnhancedInstructionSet="2"
 		FloatingPointModel="2"
