@@ -26,7 +26,7 @@ def relpath(path, start):
 	for pi in crels.split(os.sep):
 		prefix = '..' + os.sep + prefix
 	
-	#rp = prefix + crelp
+	rp = prefix + crelp
 	#print rp, os.path.relpath(path, start)
 	return rp
 
@@ -128,6 +128,7 @@ headernode = getNodeByName(filesfilternodes, 'Header Files')
 sourcenode = getNodeByName(filesfilternodes, 'Source Files')
 
 walkRootDirectory(os.path.join(luxroot, 'lux'), headernode, '.h')
+walkRootDirectory(os.path.join(luxroot, 'lux'), headernode, '.hxx')
 walkRootDirectory(os.path.join(luxroot, 'lux'), sourcenode, '.cpp')
 
 outf = open('core.vcproj', 'w+')
