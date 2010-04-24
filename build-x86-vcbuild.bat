@@ -316,6 +316,7 @@ vcbuild /nologo lux.sln "Pylux3Release|Win32"
 
 vcbuild /nologo lux.sln "Console|Win32"
 vcbuild /nologo lux.sln "Luxmerge|Win32"
+vcbuild /nologo lux.sln "Luxcomp|Win32"
 
 vcbuild /nologo lux.sln "Console SSE1|Win32"
 vcbuild /nologo lux.sln "Release SSE1|Win32"

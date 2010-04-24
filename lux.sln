@@ -10,6 +10,8 @@ Global
 		Console|x64 = Console|x64
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
+		Luxcomp|Win32 = Luxcomp|Win32
+		Luxcomp|x64 = Luxcomp|x64
 		Luxmerge|Win32 = Luxmerge|Win32
 		Luxmerge|x64 = Luxmerge|x64
 		Pylux2Debug|Win32 = Pylux2Debug|Win32
@@ -38,6 +40,10 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|Win32.Build.0 = Debug|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|x64.ActiveCfg = Debug|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|x64.Build.0 = Debug|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|Win32.ActiveCfg = Luxcomp|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|Win32.Build.0 = Luxcomp|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|x64.ActiveCfg = Luxcomp|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|x64.Build.0 = Luxcomp|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|Win32.ActiveCfg = Luxmerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|Win32.Build.0 = Luxmerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|x64.ActiveCfg = Luxmerge|x64

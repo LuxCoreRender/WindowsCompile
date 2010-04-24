@@ -337,6 +337,7 @@ vcbuild /nologo lux.sln "Pylux3Release|x64"
 
 vcbuild /nologo lux.sln "Console|x64"
 vcbuild /nologo lux.sln "Luxmerge|x64"
+vcbuild /nologo lux.sln "Luxcomp|x64"
 
 vcbuild /nologo lux.sln "Console SSE1|x64"
 vcbuild /nologo lux.sln "Release SSE1|x64"
