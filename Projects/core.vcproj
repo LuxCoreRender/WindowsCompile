@@ -446,6 +446,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release SSE1|Win32"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;.\LuxCoreProperties.vsprops;.\32bit-Release.vsprops"
 			WholeProgramOptimization="1"
@@ -1659,7 +1660,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_QT_DIR)\include&quot;;&quot;$(LUX_X86_QT_DIR)\include\Qt&quot;;&quot;$(LUX_X86_QT_DIR)\include\QtCore&quot;;&quot;$(LUX_X86_QT_DIR)\include\QtGui&quot;"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_QT_ROOT)\include&quot;;&quot;$(LUX_X86_QT_ROOT)\include\Qt&quot;;&quot;$(LUX_X86_QT_ROOT)\include\QtCore&quot;;&quot;$(LUX_X86_QT_ROOT)\include\QtGui&quot;"
 				PreprocessorDefinitions="QT_LARGEFILE_SUPPORT;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB"
 				DebugInformationFormat="3"
 			/>
@@ -1676,7 +1677,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="qtmain.lib QtCore4.lib QtGui4.lib QtOpenGL4.lib QtUITools.lib"
 				OutputFile="$(OUTDIR)/luxrender.exe"
-				AdditionalLibraryDirectories="$(LUX_X86_QT_DIR)\lib"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_QT_ROOT)\lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"
@@ -1736,7 +1737,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="&quot;$(LUX_X64_QT_DIR)\include&quot;;&quot;$(LUX_X64_QT_DIR)\include\Qt&quot;;&quot;$(LUX_X64_QT_DIR)\include\QtCore&quot;;&quot;$(LUX_X64_QT_DIR)\include\QtGui&quot;"
+				AdditionalIncludeDirectories="&quot;$(LUX_X64_QT_ROOT)\include&quot;;&quot;$(LUX_X64_QT_ROOT)\include\Qt&quot;;&quot;$(LUX_X64_QT_ROOT)\include\QtCore&quot;;&quot;$(LUX_X64_QT_ROOT)\include\QtGui&quot;"
 				PreprocessorDefinitions="QT_LARGEFILE_SUPPORT;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
@@ -1754,7 +1755,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="qtmain.lib QtCore4.lib QtGui4.lib QtOpenGL4.lib QtUITools.lib"
 				OutputFile="$(OUTDIR)/luxrender.exe"
-				AdditionalLibraryDirectories="$(LUX_X64_QT_DIR)\lib"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_QT_ROOT)\lib&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
 				SubSystem="2"

@@ -11,13 +11,13 @@
 		EnableIntrinsicFunctions="true"
 		FavorSizeOrSpeed="1"
 		OmitFramePointers="true"
-		AdditionalIncludeDirectories="&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_WX_ROOT)/include&quot;;&quot;$(LUX_X86_WX_ROOT)/include/msvc&quot;;&quot;$(LUX_X86_WX_ROOT)/src/jpeg&quot;;&quot;$(LUX_X86_WX_ROOT)/src/png&quot;;&quot;$(LUX_X86_WX_ROOT)/src/tiff&quot;;&quot;$(LUX_X86_WX_ROOT)/src/zlib&quot;"
+		AdditionalIncludeDirectories="&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;"
 		PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 		DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_WX_ROOT)/lib/vc_lib&quot;"
+		AdditionalLibraryDirectories="&quot;$(LUX_X86_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X86_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/FreeImageLib/Release&quot;"
 		TargetMachine="1"
 	/>
 	<Tool
