@@ -9,10 +9,11 @@ echo **************************************************************************
 echo.
 echo We are going to download and extract sources for:
 echo   Boost 1.42                               http://www.boost.org/
-echo   WxWidgets 2.8.10                         http://www.wxwidgets.org/
+echo   QT 4.6.2                                 http://qt.nokia.com/
 echo   zlib 1.2.3                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   OpenEXR 1.4.0a                           http://www.openexr.com/
+echo   FreeImage 3.13.1                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python 2.6.5 ^& Python 3.1.2              http://www.python.org/
 echo.
@@ -77,6 +78,7 @@ echo OK
 
 echo @Echo off > build-vars.bat
 
+
 :boost
 IF NOT EXIST %DOWNLOADS%\boost_1_42_0.zip (
     echo.
@@ -90,7 +92,6 @@ IF NOT EXIST %DOWNLOADS%\boost_1_42_0.zip (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting Boost                                                       *
@@ -101,29 +102,30 @@ xcopy /Q/E/Y %D32%\boost_1_42_0 %D64%\boost_1_42_0\
 echo set LUX_X86_BOOST_ROOT=%D32%\boost_1_42_0>> build-vars.bat
 echo set LUX_X64_BOOST_ROOT=%D64%\boost_1_42_0>> build-vars.bat
 
-:wxwidgets
-IF NOT EXIST %DOWNLOADS%\wxWidgets-2.8.10.zip (
+
+:qt
+IF NOT EXIST %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip (
     echo.
     echo **************************************************************************
-    echo * Downloading WxWidgets                                                  *
+    echo * Downloading QT                                                         *
     echo **************************************************************************
-    %WGET% http://sourceforge.net/projects/wxwindows/files/wxAll/2.8.10/wxWidgets-2.8.10.zip/download -O %DOWNLOADS%\wxWidgets-2.8.10.zip
+    %WGET% http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.6.2.zip -O %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
-echo * Extracting WxWidgets                                                   *
+echo * Extracting QT                                                          *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\wxWidgets-2.8.10.zip -o%D32% > nul
-xcopy /Q/E/Y %D32%\wxWidgets-2.8.10 %D64%\wxWidgets-2.8.10\
+%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D32% > nul
+xcopy /Q/E/Y %D32%\qt-everywhere-opensource-src-4.6.2 %D64%\qt-everywhere-opensource-src-4.6.2\
 
-echo set LUX_X86_WX_ROOT=%D32%\wxWidgets-2.8.10>> build-vars.bat
-echo set LUX_X64_WX_ROOT=%D64%\wxWidgets-2.8.10>> build-vars.bat
+echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
+echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
+
 
 :zlib
 IF NOT EXIST %DOWNLOADS%\zlib123.zip (
@@ -138,7 +140,6 @@ IF NOT EXIST %DOWNLOADS%\zlib123.zip (
         exit /b -1
     )
 )
-    
 echo.
 echo **************************************************************************
 echo * Extracting zlib                                                        *
@@ -148,6 +149,7 @@ xcopy /Q/E/Y %D32%\zlib-1.2.3 %D64%\zlib-1.2.3\
 
 echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-1.2.3>> build-vars.bat
 echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-1.2.3>> build-vars.bat
+
 
 :bzip
 IF NOT EXIST %DOWNLOADS%\bzip2-1.0.5.tar.gz (
@@ -162,7 +164,6 @@ IF NOT EXIST %DOWNLOADS%\bzip2-1.0.5.tar.gz (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting bzip                                                        *
@@ -174,6 +175,7 @@ xcopy /Q/E/Y %D32%\bzip2-1.0.5 %D64%\bzip2-1.0.5\
 
 echo set LUX_X86_BZIP_ROOT=%D32%\bzip2-1.0.5>> build-vars.bat
 echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
+
 
 :openexr
 IF NOT EXIST %DOWNLOADS%\openexr-1.4.0a.tar.gz (
@@ -188,7 +190,6 @@ IF NOT EXIST %DOWNLOADS%\openexr-1.4.0a.tar.gz (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting OpenEXR                                                     *
@@ -200,6 +201,30 @@ xcopy /Q/E/Y %D32%\openexr-1.4.0 %D64%\openexr-1.4.0\
 
 echo set LUX_X86_OPENEXR_ROOT=%D32%\openexr-1.4.0>> build-vars.bat
 echo set LUX_X64_OPENEXR_ROOT=%D64%\openexr-1.4.0>> build-vars.bat
+
+
+:freeimage
+IF NOT EXIST %DOWNLOADS%\FreeImage3131.zip (
+    echo.
+    echo **************************************************************************
+    echo * Downloading FreeImage                                                  *
+    echo **************************************************************************
+    %WGET% http://downloads.sourceforge.net/freeimage/FreeImage3131.zip -O %DOWNLOADS%\FreeImage3131.zip
+    if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
+    )
+)
+echo.
+echo **************************************************************************
+echo * Extracting FreeImage                                                   *
+echo **************************************************************************
+%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3131.zip -o%D32%\FreeImage3131 > nul
+xcopy /Q/E/Y %D32%\FreeImage3131 %D64%\FreeImage3131\
+
+echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage3131>> build-vars.bat
+echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage3131>> build-vars.bat
 
 
 :sqlite
@@ -215,7 +240,6 @@ IF NOT EXIST %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting sqlite                                                      *
@@ -240,7 +264,6 @@ IF NOT EXIST %DOWNLOADS%\Python-2.6.5.tgz (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting Python 2                                                    *
@@ -252,6 +275,7 @@ xcopy /Q/E/Y %D32%\Python-2.6.5 %D64%\Python-2.6.5\
 
 echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-2.6.5>> build-vars.bat
 echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-2.6.5>> build-vars.bat
+
 
 :python3
 IF NOT EXIST %DOWNLOADS%\Python-3.1.2.tgz (
@@ -266,7 +290,6 @@ IF NOT EXIST %DOWNLOADS%\Python-3.1.2.tgz (
         exit /b -1
     )
 )
-
 echo.
 echo **************************************************************************
 echo * Extracting Python 3                                                    *

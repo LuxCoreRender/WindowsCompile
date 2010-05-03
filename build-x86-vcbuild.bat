@@ -56,14 +56,14 @@ IF NOT EXIST %LUX_X86_BOOST_ROOT% (
     echo %%LUX_X86_BOOST_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X86_WX_ROOT% == "" (
+IF %LUX_X86_QT_ROOT% == "" (
     echo.
-    echo %%LUX_X86_WX_ROOT%% is not set! Aborting.
+    echo %%LUX_X86_QT_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST %LUX_X86_WX_ROOT% (
+IF NOT EXIST %LUX_X86_QT_ROOT% (
     echo.
-    echo %%LUX_X86_WX_ROOT%% not valid! Aborting.
+    echo %%LUX_X86_QT_ROOT%% not valid! Aborting.
     exit /b -1
 )
 IF %LUX_X86_OPENEXR_ROOT% == "" (
@@ -74,6 +74,16 @@ IF %LUX_X86_OPENEXR_ROOT% == "" (
 IF NOT EXIST %LUX_X86_OPENEXR_ROOT% (
     echo.
     echo %%LUX_X86_OPENEXR_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF %LUX_X86_FREEIMAGE_ROOT% == "" (
+    echo.
+    echo %%LUX_X86_FREEIMAGE_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST %LUX_X86_FREEIMAGE_ROOT% (
+    echo.
+    echo %%LUX_X86_FREEIMAGE_ROOT%% not valid! Aborting.
     exit /b -1
 )
 
@@ -183,32 +193,20 @@ bjam --toolset=msvc --with-date_time --with-filesystem --with-program_options --
 
 
 :: ****************************************************************************
-:: ******************************* WXWIDGETS **********************************
+:: ********************************** QT **************************************
 :: ****************************************************************************
-:WxWidgets
+:QT
 echo.
 echo **************************************************************************
-echo * Building WxWidgets                                                     *
+echo * Building QT                                                            *
 echo **************************************************************************
-cd /d %LUX_X86_WX_ROOT%\build\msw
-
-IF NOT EXIST "wx.sln" (
+cd /d %LUX_X86_QT_ROOT%
 echo.
-echo We need to convert the old project files to sln/vcproj files.
-echo I will open the old project for you, and VS should prompt you
-echo to convert the projects. Proceed with the conversion, save the
-echo solution and quit VS. Do not build the solution, I will continue
-echo the build after you have saved the new projects.
-echo.
-echo ADDITIONAL: Open gl\Setup Headers\setup.h ^(the top one^) and make
-echo sure that wxUSE_GLCANVAS is defined as 1 ^(default is 0^) on line 994.
+echo This will probably take a very long time! The QT configure utility will
+echo now ask you a few questions before building commences...
 pause
-start /WAIT wx.dsw
-echo Conversion finished. Building...
-)
-
-vcbuild /nologo wx.sln "Debug|Win32"
-vcbuild /nologo wx.sln "Release|Win32"
+configure
+nmake
 
 
 
@@ -256,9 +254,6 @@ echo to convert the projects. Proceed with the conversion, save the
 echo solution and quit VS. Do not build the solution, I will continue
 echo the build after you have saved the new projects.
 echo.
-::echo ADDITIONAL: For the project IlmImf, please add the zlib source
-::echo path to the "Additional Include Directories"
-::echo (Found under Configuration Properties \ C/C++ \ General)
 pause
 start /WAIT OpenEXR.sln
 echo Do not continue until you save OpenEXR.sln and quit VS. Then,
@@ -268,8 +263,8 @@ echo Conversion finished. Building...
 :: copy zlibs
 copy %LUX_X86_ZLIB_ROOT%\zlib.h include\zlib.h
 copy %LUX_X86_ZLIB_ROOT%\zconf.h include\zconf.h
-copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Debug\*.lib lib\
-copy %LUX_X86_ZLIB_ROOT%\\projects\visualc6\Win32_LIB_Release\*.lib lib\
+copy %LUX_X86_ZLIB_ROOT%\projects\visualc6\Win32_LIB_Debug\*.lib lib\
+copy %LUX_X86_ZLIB_ROOT%\projects\visualc6\Win32_LIB_Release\*.lib lib\
 
 vcbuild /nologo Half_eLut\Half_eLut.vcproj "Debug|Win32"
 vcbuild /nologo Half_toFloat\Half_toFloat.vcproj "Debug|Win32"
@@ -302,24 +297,20 @@ cd /d %BUILD_PATH%
 :: include flex and bison in system PATH
 set PATH=%CD%\support\bin;%PATH%
 
-vcbuild /nologo lux.sln "Debug|Win32"
-del Projects\x64\Debug\binding.obj
-vcbuild /nologo lux.sln "Pylux2Debug|Win32"
-del Projects\x64\Debug\binding.obj
-vcbuild /nologo lux.sln "Pylux3Debug|Win32"
+:: vcbuild /nologo lux.sln "Debug|Win32"
+:: vcbuild /nologo lux.sln "Pylux2Debug|Win32"
+:: vcbuild /nologo lux.sln "Pylux3Debug|Win32"
 
-vcbuild /nologo lux.sln "Release|Win32"
-del Projects\x64\Release\binding.obj
+vcbuild /nologo lux.sln "luxrenderqt|Win32"
 vcbuild /nologo lux.sln "Pylux2Release|Win32"
-del Projects\x64\Release\binding.obj
 vcbuild /nologo lux.sln "Pylux3Release|Win32"
 
 vcbuild /nologo lux.sln "Console|Win32"
 vcbuild /nologo lux.sln "Luxmerge|Win32"
 vcbuild /nologo lux.sln "Luxcomp|Win32"
 
-vcbuild /nologo lux.sln "Console SSE1|Win32"
-vcbuild /nologo lux.sln "Release SSE1|Win32"
+:: vcbuild /nologo lux.sln "Console SSE1|Win32"
+:: vcbuild /nologo lux.sln "Release SSE1|Win32"
 
 echo.
 echo **************************************************************************

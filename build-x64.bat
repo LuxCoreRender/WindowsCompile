@@ -66,14 +66,14 @@ IF NOT EXIST %LUX_X64_BOOST_ROOT% (
     echo %%LUX_X64_BOOST_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_WX_ROOT% == "" (
+IF %LUX_X64_QT_ROOT% == "" (
     echo.
-    echo %%LUX_X64_WX_ROOT%% is not set! Aborting.
+    echo %%LUX_X64_QT_ROOT%% is not set! Aborting.
     exit /b -1
 )
-IF NOT EXIST %LUX_X64_WX_ROOT% (
+IF NOT EXIST %LUX_X64_QT_ROOT% (
     echo.
-    echo %%LUX_X64_WX_ROOT%% not valid! Aborting.
+    echo %%LUX_X64_QT_ROOT%% not valid! Aborting.
     exit /b -1
 )
 IF %LUX_X64_OPENEXR_ROOT% == "" (
@@ -86,12 +86,14 @@ IF NOT EXIST %LUX_X64_OPENEXR_ROOT% (
     echo %%LUX_X64_OPENEXR_ROOT%% not valid! Aborting.
     exit /b -1
 )
-
-msbuild /nologo /version > nul
-if NOT ERRORLEVEL 0 (
+IF %LUX_X64_FREEIMAGE_ROOT% == "" (
     echo.
-    echo Cannot execute the 'msbuild' command. Please run
-    echo this script from the Visual Studio 2008 x64 Win64 Command Prompt.
+    echo %%LUX_X64_FREEIMAGE_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST %LUX_X64_FREEIMAGE_ROOT% (
+    echo.
+    echo %%LUX_X64_FREEIMAGE_ROOT%% not valid! Aborting.
     exit /b -1
 )
 
@@ -142,6 +144,7 @@ cd /d %LUX_X64_PYTHON2_ROOT%\PCbuild
 vcbuild /nologo pcbuild.sln "Debug|x64"
 vcbuild /nologo pcbuild.sln "Release|x64"
 
+
 echo.
 echo **************************************************************************
 echo * Building Python 3                                                      *
@@ -149,6 +152,7 @@ echo **************************************************************************
 cd /d %LUX_X64_PYTHON3_ROOT%\PCbuild
 vcbuild /nologo pcbuild.sln "Debug|x64"
 vcbuild /nologo pcbuild.sln "Release|x64"
+
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -199,36 +203,20 @@ tools\jam\src\bin.ntx86_64\bjam.exe --toolset=msvc-9.0 address-model=64 --with-d
 
 
 :: ****************************************************************************
-:: ******************************* WXWIDGETS **********************************
+:: ********************************** QT **************************************
 :: ****************************************************************************
-:WxWidgets
+:QT
 echo.
 echo **************************************************************************
-echo * Building WxWidgets                                                     *
+echo * Building QT                                                            *
 echo **************************************************************************
-cd /d %LUX_X64_WX_ROOT%\build\msw
-
-IF NOT EXIST "wx.sln" (
+cd /d %LUX_X64_QT_ROOT%
 echo.
-echo We need to convert the old project files to sln/vcproj files.
-echo I will open the old project for you, and VS should prompt you
-echo to convert the projects. Proceed with the conversion, save the
-echo solution and quit VS. Do not build the solution, I will continue
-echo the build after you have saved the new projects.
-echo.
-echo ADDITIONAL: Open gl\Setup Headers\setup.h ^(the top one^) and make
-echo sure that wxUSE_GLCANVAS is defined as 1 ^(default is 0^) on line 994.
-echo.
-echo ADDITIONAL: You also need to create the x64 build platform !
-echo ADDITIONAL: project 'base' needs WIN32 define changed to WIN64 in the
-echo "Debug" and "Release" configurations !
+echo This will probably take a very long time! The QT configure utility will
+echo now ask you a few questions before building commences...
 pause
-start /WAIT wx.dsw
-echo Conversion finished. Building...
-)
-
-vcbuild /nologo wx.sln "Debug|x64"
-vcbuild /nologo wx.sln "Release|x64"
+configure
+nmake
 
 
 
@@ -311,7 +299,7 @@ vcbuild /nologo IlmImf\IlmImf.vcproj "Release|x64"
 
 
 :: ****************************************************************************
-:: ******************************* LuxRender***********************************
+:: ******************************* LuxRender **********************************
 :: ****************************************************************************
 :LuxRender
 echo.
@@ -323,24 +311,20 @@ cd /d %BUILD_PATH%
 :: include flex and bison in system PATH
 set PATH=%CD%\support\bin;%PATH%
 
-vcbuild /nologo lux.sln "Debug|x64"
-del Projects\x64\Debug\binding.obj
-vcbuild /nologo lux.sln "Pylux2Debug|x64"
-del Projects\x64\Debug\binding.obj
-vcbuild /nologo lux.sln "Pylux3Debug|x64"
+:: vcbuild /nologo lux.sln "Debug|x64"
+:: vcbuild /nologo lux.sln "Pylux2Debug|x64"
+:: vcbuild /nologo lux.sln "Pylux3Debug|x64"
 
-vcbuild /nologo lux.sln "Release|x64"
-del Projects\x64\Release\binding.obj
+vcbuild /nologo lux.sln "luxrenderqt|x64"
 vcbuild /nologo lux.sln "Pylux2Release|x64"
-del Projects\x64\Release\binding.obj
 vcbuild /nologo lux.sln "Pylux3Release|x64"
 
 vcbuild /nologo lux.sln "Console|x64"
 vcbuild /nologo lux.sln "Luxmerge|x64"
 vcbuild /nologo lux.sln "Luxcomp|x64"
 
-vcbuild /nologo lux.sln "Console SSE1|x64"
-vcbuild /nologo lux.sln "Release SSE1|x64"
+:: vcbuild /nologo lux.sln "Console SSE1|x64"
+:: vcbuild /nologo lux.sln "Release SSE1|x64"
 
 echo.
 echo **************************************************************************
