@@ -19,6 +19,6 @@
 	/>
 	<Tool
 		Name="VCResourceCompilerTool"
-		AdditionalIncludeDirectories="&quot;$(LUX_X86_WX_ROOT)/include&quot;"
+		AdditionalIncludeDirectories=""
 	/>
 </VisualStudioPropertySheet>
