@@ -6,7 +6,7 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;"
+		AdditionalIncludeDirectories="&quot;$(LUX_X64_BOOST_ROOT)&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/include/OpenEXR&quot;"
 		PreprocessorDefinitions="LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;WIN64;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
 		RuntimeLibrary="2"
 		DebugInformationFormat="3"
@@ -14,7 +14,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Source/FreeImageLib/Release&quot;"
+		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_OPENEXR_ROOT)/vc/vc8/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;"
 		TargetMachine="17"
 	/>
 	<Tool

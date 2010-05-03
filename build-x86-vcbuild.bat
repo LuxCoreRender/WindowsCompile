@@ -202,9 +202,10 @@ echo * Building FreeImage                                                     *
 echo **************************************************************************
 cd /d %LUX_X86_FREEIMAGE_ROOT%\FreeImage
 
-vcbuild /nologo FreeImage.2005.sln
+:: vcbuild /nologo FreeImage.2005.sln
 vcbuild /upgrade Source\FreeImageLib\FreeImageLib.2005.vcproj
-vcbuild /nologo Source\FreeImageLib\FreeImageLib.2005.vcproj
+vcbuild /nologo Source\FreeImageLib\FreeImageLib.2005.vcproj "Debug|Win32"
+vcbuild /nologo Source\FreeImageLib\FreeImageLib.2005.vcproj "Release|Win32"
 
 
 
@@ -221,8 +222,8 @@ echo.
 echo This will probably take a very long time! The QT configure utility will
 echo now ask you a few questions before building commences...
 pause
-configure
-nmake
+:: configure
+:: nmake
 
 
 

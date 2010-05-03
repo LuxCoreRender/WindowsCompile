@@ -17,7 +17,7 @@ echo   FreeImage 3.13.1                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python 2.6.5 ^& Python 3.1.2              http://www.python.org/
 echo.
-echo Downloading and extracting all this source code will require 995 MB, and
+echo Downloading and extracting all this source code will require over 1GB, and
 echo building it will require a few gigs more. Make sure you have plenty of space
 echo available on this drive.
 echo.
@@ -97,7 +97,7 @@ echo **************************************************************************
 echo * Extracting Boost                                                       *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\boost_1_42_0.zip -o%D32% > nul
-xcopy /Q/E/Y %D32%\boost_1_42_0 %D64%\boost_1_42_0\
+%UNZIPBIN% x -y %DOWNLOADS%\boost_1_42_0.zip -o%D64% > nul
 
 echo set LUX_X86_BOOST_ROOT=%D32%\boost_1_42_0>> build-vars.bat
 echo set LUX_X64_BOOST_ROOT=%D64%\boost_1_42_0>> build-vars.bat
@@ -120,8 +120,8 @@ echo.
 echo **************************************************************************
 echo * Extracting QT                                                          *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D32% > nul
-xcopy /Q/E/Y %D32%\qt-everywhere-opensource-src-4.6.2 %D64%\qt-everywhere-opensource-src-4.6.2\
+:: %UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D32% > nul
+:: %UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D64% > nul
 
 echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
 echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
@@ -145,7 +145,7 @@ echo **************************************************************************
 echo * Extracting zlib                                                        *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\zlib123.zip -o%D32%\zlib-1.2.3 > nul
-xcopy /Q/E/Y %D32%\zlib-1.2.3 %D64%\zlib-1.2.3\
+%UNZIPBIN% x -y %DOWNLOADS%\zlib123.zip -o%D64%\zlib-1.2.3 > nul
 
 echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-1.2.3>> build-vars.bat
 echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-1.2.3>> build-vars.bat
@@ -170,8 +170,8 @@ echo * Extracting bzip                                                        *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\bzip2-1.0.5.tar.gz > nul
 %UNZIPBIN% x -y bzip2-1.0.5.tar -o%D32% > nul
+%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D64% > nul
 del bzip2-1.0.5.tar
-xcopy /Q/E/Y %D32%\bzip2-1.0.5 %D64%\bzip2-1.0.5\
 
 echo set LUX_X86_BZIP_ROOT=%D32%\bzip2-1.0.5>> build-vars.bat
 echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
@@ -196,8 +196,8 @@ echo * Extracting OpenEXR                                                     *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\openexr-1.4.0a.tar.gz > nul
 %UNZIPBIN% x -y openexr-1.4.0a.tar -o%D32% > nul
+%UNZIPBIN% x -y openexr-1.4.0a.tar -o%D64% > nul
 del openexr-1.4.0a.tar
-xcopy /Q/E/Y %D32%\openexr-1.4.0 %D64%\openexr-1.4.0\
 
 echo set LUX_X86_OPENEXR_ROOT=%D32%\openexr-1.4.0>> build-vars.bat
 echo set LUX_X64_OPENEXR_ROOT=%D64%\openexr-1.4.0>> build-vars.bat
@@ -220,8 +220,8 @@ echo.
 echo **************************************************************************
 echo * Extracting FreeImage                                                   *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3131.zip -o%D32%\FreeImage3131 > nul
-xcopy /Q/E/Y %D32%\FreeImage3131 %D64%\FreeImage3131\
+:: %UNZIPBIN% x -y %DOWNLOADS%\FreeImage3131.zip -o%D32%\FreeImage3131 > nul
+:: %UNZIPBIN% x -y %DOWNLOADS%\FreeImage3131.zip -o%D64%\FreeImage3131 > nul
 
 echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage3131>> build-vars.bat
 echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage3131>> build-vars.bat
@@ -245,7 +245,7 @@ echo **************************************************************************
 echo * Extracting sqlite                                                      *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D32%\sqlite-3.5.9 > nul
-xcopy /Q/E/Y %D32%\sqlite-3.5.9 %D64%\sqlite-3.5.9\
+%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D64%\sqlite-3.5.9 > nul
 
 echo set LUX_X86_SQLITE_ROOT=%D32%\sqlite-3.5.9>> build-vars.bat
 echo set LUX_X64_SQLITE_ROOT=%D64%\sqlite-3.5.9>> build-vars.bat
@@ -270,8 +270,8 @@ echo * Extracting Python 2                                                    *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\Python-2.6.5.tgz > nul
 %UNZIPBIN% x -y Python-2.6.5.tar -o%D32% > nul
+%UNZIPBIN% x -y Python-2.6.5.tar -o%D64% > nul
 del Python-2.6.5.tar
-xcopy /Q/E/Y %D32%\Python-2.6.5 %D64%\Python-2.6.5\
 
 echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-2.6.5>> build-vars.bat
 echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-2.6.5>> build-vars.bat
@@ -296,8 +296,8 @@ echo * Extracting Python 3                                                    *
 echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\Python-3.1.2.tgz > nul
 %UNZIPBIN% x -y Python-3.1.2.tar -o%D32% > nul
+%UNZIPBIN% x -y Python-3.1.2.tar -o%D64% > nul
 del Python-3.1.2.tar
-xcopy /Q/E/Y %D32%\Python-3.1.2 %D64%\Python-3.1.2\
 
 echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-3.1.2>> build-vars.bat
 echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-3.1.2>> build-vars.bat
