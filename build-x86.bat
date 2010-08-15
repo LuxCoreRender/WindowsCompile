@@ -104,7 +104,7 @@ set BUILDCHOICE=''
 :: choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
 :: IF ERRORLEVEL 2 GOTO LuxRender
 
-set /P BUILDCHOICE="Build dependencies? (You can choose Y if you've already build the dependecies) [y/n] "
+set /P BUILDCHOICE="Build dependencies? (You can choose N if you've already build the dependecies) [y/n] "
 IF %BUILDCHOICE% == n ( GOTO LuxRender )
 IF %BUILDCHOICE% == y ( GOTO Python )
 echo Invalid choice
