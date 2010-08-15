@@ -206,7 +206,7 @@ cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
 rem Patch solution file to enable FreeImageLib as a build target
 %BUILD_PATH%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %BUILD_PATH%\support\FreeImage.2008.sln.patch
 
-msbuild /verbosity:minimal /property:"Configuration=Release;Platform=x64" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"FreeImageLib" FreeImage.2008.sln
+msbuild /verbosity:minimal /property:"Configuration=Release" /property:"Platform=x64" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"FreeImageLib" FreeImage.2008.sln
 
 
 :: ****************************************************************************
