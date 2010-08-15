@@ -7,9 +7,10 @@ echo **************************************************************************
 echo * Startup                                                                *
 echo **************************************************************************
 echo.
-echo This script will use 2 pre-built binaries to help build LuxRender:
+echo This script will use 3 pre-built binaries to help build LuxRender:
 echo  1: GNU flex.exe       from http://gnuwin32.sourceforge.net/packages/flex.htm
 echo  2: GNU bison.exe      from http://gnuwin32.sourceforge.net/packages/bison.htm
+echo  3: GNU patch.exe      from http://gnuwin32.sourceforge.net/packages/patch.htm
 echo.
 echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C NOW
 echo Otherwise,
@@ -125,9 +126,9 @@ set BUILDCHOICE=''
 :: choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
 :: IF ERRORLEVEL 2 GOTO LuxRender
 
-set /P BUILDCHOICE="Build LuxRender only? (You can choose Y if you've already build the libraries) [y/n] "
-IF %BUILDCHOICE% == n ( GOTO Python )
-IF %BUILDCHOICE% == y ( GOTO LuxRender )
+set /P BUILDCHOICE="Build dependencies? (You can choose Y if you've already build the dependecies) [y/n] "
+IF %BUILDCHOICE% == n ( GOTO LuxRender )
+IF %BUILDCHOICE% == y ( GOTO Python )
 echo Invalid choice
 GOTO StartChoice
 
@@ -212,11 +213,10 @@ echo * Building FreeImage                                                     *
 echo **************************************************************************
 cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
 
-:: vcbuild /nologo FreeImage.2005.sln
-vcbuild /upgrade Source\FreeImageLib\FreeImageLib.2005.vcproj
-vcbuild /nologo Source\FreeImageLib\FreeImageLib.2005.vcproj  "Debug|x64"
-vcbuild /nologo Source\FreeImageLib\FreeImageLib.2005.vcproj  "Release|x64"
+rem Patch solution file to enable FreeImageLib as a build target
+%BUILD_PATH%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %BUILD_PATH%\support\FreeImage.2008.sln.patch
 
+msbuild /verbosity:minimal /property:"Configuration=Release;Platform=x64" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"FreeImageLib" FreeImage.2008.sln
 
 
 :: ****************************************************************************
@@ -232,8 +232,12 @@ echo.
 echo This will probably take a very long time! The QT configure utility will
 echo now ask you a few questions before building commences...
 pause
-:: configure
-:: nmake
+
+rem Patch qmake.conf file to enable multithreaded compilation
+%BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
+
+configure -opensource  -nomake demos -nomake examples
+nmake
 
 
 
@@ -241,6 +245,8 @@ pause
 :: ******************************* ZLIB ***************************************
 :: ****************************************************************************
 :zlib
+rem Not needed, contained in boost
+GOTO postzlib
 echo.
 echo **************************************************************************
 echo * Building zlib                                                          *
@@ -265,13 +271,15 @@ echo Conversion finished. Building...
 
 vcbuild /nologo zlib.sln "LIB Debug|x64"
 vcbuild /nologo zlib.sln "LIB Release|x64"
-
+:postzlib
 
 
 :: ****************************************************************************
 :: ******************************* OPENEXR ************************************
 :: ****************************************************************************
 :OpenEXR
+rem Not needed, contained in FreeImage
+GOTO postOpenEXR
 echo.
 echo **************************************************************************
 echo * Building OpenEXR                                                       *
@@ -312,6 +320,19 @@ vcbuild /nologo Iex\Iex.vcproj "Release|x64"
 vcbuild /nologo IlmThread\IlmThread.vcproj "Release|x64"
 vcbuild /nologo Imath\Imath.vcproj "Release|x64"
 vcbuild /nologo IlmImf\IlmImf.vcproj "Release|x64"
+:postOpenEXR
+
+
+
+
+:BuildChoiceLux
+set BUILDCHOICE=''
+
+set /P BUILDCHOICE="Build LuxRender? [y/n] "
+IF %BUILDCHOICE% == n ( GOTO postLuxRender )
+IF %BUILDCHOICE% == y ( GOTO LuxRender )
+echo Invalid choice
+GOTO BuildChoiceLux
 
 
 
@@ -342,6 +363,8 @@ vcbuild /nologo lux.sln "Luxcomp|x64"
 
 :: vcbuild /nologo lux.sln "Console SSE1|x64"
 :: vcbuild /nologo lux.sln "Release SSE1|x64"
+
+:postLuxRender
 
 echo.
 echo **************************************************************************

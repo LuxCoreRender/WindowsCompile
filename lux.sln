@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "Projects\core.vcproj", "{8C159477-7802-4C52-865E-131537BBAD83}"
 EndProject
 Global
@@ -10,12 +10,12 @@ Global
 		Console|x64 = Console|x64
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
-		Luxcomp|Win32 = Luxcomp|Win32
-		Luxcomp|x64 = Luxcomp|x64
-		Luxmerge|Win32 = Luxmerge|Win32
-		Luxmerge|x64 = Luxmerge|x64
-		luxrenderqt|Win32 = luxrenderqt|Win32
-		luxrenderqt|x64 = luxrenderqt|x64
+		LuxComp|Win32 = LuxComp|Win32
+		LuxComp|x64 = LuxComp|x64
+		LuxMerge|Win32 = LuxMerge|Win32
+		LuxMerge|x64 = LuxMerge|x64
+		LuxRender|Win32 = LuxRender|Win32
+		LuxRender|x64 = LuxRender|x64
 		Pylux2Debug|Win32 = Pylux2Debug|Win32
 		Pylux2Debug|x64 = Pylux2Debug|x64
 		Pylux2Release|Win32 = Pylux2Release|Win32
@@ -24,10 +24,6 @@ Global
 		Pylux3Debug|x64 = Pylux3Debug|x64
 		Pylux3Release|Win32 = Pylux3Release|Win32
 		Pylux3Release|x64 = Pylux3Release|x64
-		Release SSE1|Win32 = Release SSE1|Win32
-		Release SSE1|x64 = Release SSE1|x64
-		Release|Win32 = Release|Win32
-		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console SSE1|Win32.ActiveCfg = Console SSE1|Win32
@@ -42,18 +38,17 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|Win32.Build.0 = Debug|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|x64.ActiveCfg = Debug|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Debug|x64.Build.0 = Debug|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|Win32.ActiveCfg = Luxcomp|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|Win32.Build.0 = Luxcomp|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|x64.ActiveCfg = Luxcomp|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxcomp|x64.Build.0 = Luxcomp|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|Win32.ActiveCfg = Luxmerge|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|Win32.Build.0 = Luxmerge|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|x64.ActiveCfg = Luxmerge|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Luxmerge|x64.Build.0 = Luxmerge|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.luxrenderqt|Win32.ActiveCfg = luxrenderqt|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.luxrenderqt|Win32.Build.0 = luxrenderqt|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.luxrenderqt|x64.ActiveCfg = luxrenderqt|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.luxrenderqt|x64.Build.0 = luxrenderqt|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxComp|Win32.ActiveCfg = LuxComp|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxComp|Win32.Build.0 = LuxComp|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxComp|x64.ActiveCfg = LuxComp|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxComp|x64.Build.0 = LuxComp|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|Win32.ActiveCfg = LuxMerge|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|Win32.Build.0 = LuxMerge|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.ActiveCfg = LuxMerge|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.Build.0 = LuxMerge|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.ActiveCfg = LuxRender|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|x64.ActiveCfg = LuxRender|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|x64.Build.0 = LuxRender|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux2Debug|Win32.ActiveCfg = Pylux2Debug|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux2Debug|Win32.Build.0 = Pylux2Debug|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux2Debug|x64.ActiveCfg = Pylux2Debug|x64
@@ -70,14 +65,6 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux3Release|Win32.Build.0 = Pylux3Release|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux3Release|x64.ActiveCfg = Pylux3Release|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux3Release|x64.Build.0 = Pylux3Release|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|Win32.ActiveCfg = Release SSE1|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|Win32.Build.0 = Release SSE1|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|x64.ActiveCfg = Release SSE1|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release SSE1|x64.Build.0 = Release SSE1|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release|Win32.ActiveCfg = Release|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release|Win32.Build.0 = Release|Win32
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release|x64.ActiveCfg = Release|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
