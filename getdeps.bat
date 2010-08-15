@@ -205,8 +205,8 @@ echo.
 echo **************************************************************************
 echo * Extracting FreeImage                                                   *
 echo **************************************************************************
-:: %UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D32%\FreeImage3140 > nul
-:: %UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D64%\FreeImage3140 > nul
+%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D32%\FreeImage3140 > nul
+%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D64%\FreeImage3140 > nul
 
 echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage3140>> build-vars.bat
 echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage3140>> build-vars.bat
