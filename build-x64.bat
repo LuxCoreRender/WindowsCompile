@@ -77,16 +77,6 @@ IF NOT EXIST %LUX_X64_QT_ROOT% (
     echo %%LUX_X64_QT_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_OPENEXR_ROOT% == "" (
-    echo.
-    echo %%LUX_X64_OPENEXR_ROOT%% is not set! Aborting.
-    exit /b -1
-)
-IF NOT EXIST %LUX_X64_OPENEXR_ROOT% (
-    echo.
-    echo %%LUX_X64_OPENEXR_ROOT%% not valid! Aborting.
-    exit /b -1
-)
 IF %LUX_X64_FREEIMAGE_ROOT% == "" (
     echo.
     echo %%LUX_X64_FREEIMAGE_ROOT%% is not set! Aborting.
