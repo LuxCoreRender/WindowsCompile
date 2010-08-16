@@ -327,7 +327,7 @@ set PATH=%CD%\support\bin;%PATH%
 :: vcbuild /nologo lux.sln "Pylux2Debug|Win32"
 :: vcbuild /nologo lux.sln "Pylux3Debug|Win32"
 
-vcbuild /nologo lux.sln "luxrenderqt|Win32"
+vcbuild /nologo lux.sln "LuxRender|Win32"
 vcbuild /nologo lux.sln "Pylux2Release|Win32"
 vcbuild /nologo lux.sln "Pylux3Release|Win32"
 
