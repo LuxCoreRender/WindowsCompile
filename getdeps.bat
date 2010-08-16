@@ -67,7 +67,7 @@ set D64="%CD%\..\deps\x64"
 FOR %%G in (%D64%) do (
     set D64="%%~fG"
 )
-set D64R=%D32:"=%
+set D64R=%D64:"=%
 
 mkdir %DOWNLOADS% 2> nul
 mkdir %D32% 2> nul
