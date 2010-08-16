@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+# Visual C++ Express 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "Projects\core.vcproj", "{8C159477-7802-4C52-865E-131537BBAD83}"
 EndProject
 Global
@@ -46,7 +46,8 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|Win32.Build.0 = LuxMerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.ActiveCfg = LuxMerge|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.Build.0 = LuxMerge|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.ActiveCfg = LuxRender|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.ActiveCfg = LuxRender|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.Build.0 = LuxRender|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|x64.ActiveCfg = LuxRender|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|x64.Build.0 = LuxRender|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Pylux2Debug|Win32.ActiveCfg = Pylux2Debug|Win32
