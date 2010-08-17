@@ -9,7 +9,7 @@ using python : 2.6
 	: #
 	;
 using python : 2.6
-	: $(LUX_X64_PYTHON2_ROOT)\\PCbuild\\python_d
+	: $(LUX_X64_PYTHON2_ROOT)\\PCbuild\\amd64\\python_d
 	: $(LUX_X64_PYTHON2_ROOT)\\Include
 	: #
 	: <python-debugging>on	;

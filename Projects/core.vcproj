@@ -1002,7 +1002,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\python3\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python3/lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"
@@ -1155,7 +1155,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\python3\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python/lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON3_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python3/lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OUTDIR)/core.pdb"

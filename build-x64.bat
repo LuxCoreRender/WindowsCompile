@@ -192,7 +192,6 @@ echo **************************************************************************
 tools\jam\src\bin.ntx86_64\bjam.exe --toolset=msvc-9.0 address-model=64 --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 
-
 :: ****************************************************************************
 :: ********************************** FreeImage *******************************
 :: ****************************************************************************
@@ -354,7 +353,6 @@ vcbuild /nologo lux.sln "Luxcomp|x64"
 :: vcbuild /nologo lux.sln "Console SSE1|x64"
 :: vcbuild /nologo lux.sln "Release SSE1|x64"
 
-:postLuxRender
 
 :: ****************************************************************************
 :: *********************************** Install ********************************
@@ -365,6 +363,9 @@ cd /d %BUILD_PATH%
 IF EXIST ./install-x64.bat (
     call install-x64.bat
 )
+
+:postLuxRender
+
 
 echo.
 echo **************************************************************************

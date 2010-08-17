@@ -9,7 +9,7 @@ using python : 3.1
 	: #
 	;
 using python : 3.1
-	: $(LUX_X64_PYTHON3_ROOT)\\PCbuild\\python_d
+	: $(LUX_X64_PYTHON3_ROOT)\\PCbuild\\amd64\\python_d
 	: $(LUX_X64_PYTHON3_ROOT)\\Include
 	: #
 	: <python-debugging>on	;
