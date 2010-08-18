@@ -1,6 +1,10 @@
 Echo off
 
+set BOOST_VER_U=1_39_0
+set BOOST_VER_P=1.39.0
 
+set PYTHON2_VER=2.6.5
+set PYTHON3_VER=3.1.2
 
 echo.
 echo **************************************************************************
@@ -8,14 +12,14 @@ echo * Startup                                                                *
 echo **************************************************************************
 echo.
 echo We are going to download and extract sources for:
-echo   Boost 1.39                               http://www.boost.org/
+echo   Boost %BOOST_VER_P%                             http://www.boost.org/
 echo   QT 4.6.2                                 http://qt.nokia.com/
 echo   zlib 1.2.3                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   OpenEXR 1.4.0a                           http://www.openexr.com/
 echo   FreeImage 3.14.0                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
-echo   Python 2.6.5 ^& Python 3.1.2              http://www.python.org/
+echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo.
 echo Downloading and extracting all this source code will require over 1GB, and
 echo building it will require several gigs more. Make sure you have plenty of space
@@ -85,12 +89,12 @@ echo. >> build-vars.reg
 echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]>> build-vars.reg
 
 :boost
-IF NOT EXIST %DOWNLOADS%\boost_1_39_0.zip (
+IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (
     echo.
     echo **************************************************************************
     echo * Downloading Boost                                                      *
     echo **************************************************************************
-    %WGET% http://sourceforge.net/projects/boost/files/boost/1.39.0/boost_1_39_0.zip/download -O %DOWNLOADS%\boost_1_39_0.zip
+    %WGET% http://sourceforge.net/projects/boost/files/boost/%BOOST_VER_P%/boost_%BOOST_VER_U%.zip/download -O %DOWNLOADS%\boost_%BOOST_VER_U%.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -101,14 +105,14 @@ echo.
 echo **************************************************************************
 echo * Extracting Boost                                                       *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\boost_1_39_0.zip -o%D32% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\boost_1_39_0.zip -o%D64% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D32% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D64% > nul
 
-echo set LUX_X86_BOOST_ROOT=%D32%\boost_1_39_0>> build-vars.bat
-echo set LUX_X64_BOOST_ROOT=%D64%\boost_1_39_0>> build-vars.bat
+echo set LUX_X86_BOOST_ROOT=%D32%\boost_%BOOST_VER_U%>> build-vars.bat
+echo set LUX_X64_BOOST_ROOT=%D64%\boost_%BOOST_VER_U%>> build-vars.bat
 
-echo "LUX_X86_BOOST_ROOT"="%D32R:\=\\%\\boost_1_39_0">> build-vars.reg
-echo "LUX_X64_BOOST_ROOT"="%D64R:\=\\%\\boost_1_39_0">> build-vars.reg
+echo "LUX_X86_BOOST_ROOT"="%D32R:\=\\%\\boost_%BOOST_VER_U%">> build-vars.reg
+echo "LUX_X64_BOOST_ROOT"="%D64R:\=\\%\\boost_%BOOST_VER_U%">> build-vars.reg
 
 
 :qt
@@ -242,12 +246,12 @@ echo set LUX_X64_SQLITE_ROOT=%D64%\sqlite-3.5.9>> build-vars.bat
 
 
 :python2
-IF NOT EXIST %DOWNLOADS%\Python-2.6.5.tgz (
+IF NOT EXIST %DOWNLOADS%\Python-%PYTHON2_VER%.tgz (
     echo.
     echo **************************************************************************
     echo * Downloading Python 2                                                   *
     echo **************************************************************************
-    %WGET% http://python.org/ftp/python/2.6.5/Python-2.6.5.tgz -O %DOWNLOADS%\Python-2.6.5.tgz
+    %WGET% http://python.org/ftp/python/%PYTHON2_VER%/Python-%PYTHON2_VER%.tgz -O %DOWNLOADS%\Python-%PYTHON2_VER%.tgz
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -258,25 +262,25 @@ echo.
 echo **************************************************************************
 echo * Extracting Python 2                                                    *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\Python-2.6.5.tgz > nul
-%UNZIPBIN% x -y Python-2.6.5.tar -o%D32% > nul
-%UNZIPBIN% x -y Python-2.6.5.tar -o%D64% > nul
-del Python-2.6.5.tar
+%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON2_VER%.tgz > nul
+%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D32% > nul
+%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D64% > nul
+del Python-%PYTHON2_VER%.tar
 
-echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-2.6.5>> build-vars.bat
-echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-2.6.5>> build-vars.bat
+echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-%PYTHON2_VER%>> build-vars.bat
+echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-%PYTHON2_VER%>> build-vars.bat
 
-echo "LUX_X86_PYTHON2_ROOT"="%D32R:\=\\%\\Python-2.6.5">> build-vars.reg
-echo "LUX_X64_PYTHON2_ROOT"="%D64R:\=\\%\\Python-2.6.5">> build-vars.reg
+echo "LUX_X86_PYTHON2_ROOT"="%D32R:\=\\%\\Python-%PYTHON2_VER%">> build-vars.reg
+echo "LUX_X64_PYTHON2_ROOT"="%D64R:\=\\%\\Python-%PYTHON2_VER%">> build-vars.reg
 
 
 :python3
-IF NOT EXIST %DOWNLOADS%\Python-3.1.2.tgz (
+IF NOT EXIST %DOWNLOADS%\Python-%PYTHON3_VER%.tgz (
     echo.
     echo **************************************************************************
     echo * Downloading Python 3                                                   *
     echo **************************************************************************
-    %WGET% http://python.org/ftp/python/3.1.2/Python-3.1.2.tgz -O %DOWNLOADS%\Python-3.1.2.tgz
+    %WGET% http://python.org/ftp/python/%PYTHON3_VER%/Python-%PYTHON3_VER%.tgz -O %DOWNLOADS%\Python-%PYTHON3_VER%.tgz
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -287,16 +291,16 @@ echo.
 echo **************************************************************************
 echo * Extracting Python 3                                                    *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\Python-3.1.2.tgz > nul
-%UNZIPBIN% x -y Python-3.1.2.tar -o%D32% > nul
-%UNZIPBIN% x -y Python-3.1.2.tar -o%D64% > nul
-del Python-3.1.2.tar
+%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON3_VER%.tgz > nul
+%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D32% > nul
+%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D64% > nul
+del Python-%PYTHON3_VER%.tar
 
-echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-3.1.2>> build-vars.bat
-echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-3.1.2>> build-vars.bat
+echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-%PYTHON3_VER%>> build-vars.bat
+echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-%PYTHON3_VER%>> build-vars.bat
 
-echo "LUX_X86_PYTHON3_ROOT"="%D32R:\=\\%\\Python-3.1.2">> build-vars.reg
-echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-3.1.2">> build-vars.reg
+echo "LUX_X86_PYTHON3_ROOT"="%D32R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
+echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
 
 
 echo.
