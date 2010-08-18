@@ -6,6 +6,8 @@ set BOOST_VER_P=1.39.0
 set PYTHON2_VER=2.6.5
 set PYTHON3_VER=3.1.2
 
+set QT_VER=4.6.2
+
 echo.
 echo **************************************************************************
 echo * Startup                                                                *
@@ -13,10 +15,9 @@ echo **************************************************************************
 echo.
 echo We are going to download and extract sources for:
 echo   Boost %BOOST_VER_P%                             http://www.boost.org/
-echo   QT 4.6.2                                 http://qt.nokia.com/
+echo   QT %QT_VER%                                 http://qt.nokia.com/
 echo   zlib 1.2.3                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
-echo   OpenEXR 1.4.0a                           http://www.openexr.com/
 echo   FreeImage 3.14.0                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
@@ -116,12 +117,12 @@ echo "LUX_X64_BOOST_ROOT"="%D64R:\=\\%\\boost_%BOOST_VER_U%">> build-vars.reg
 
 
 :qt
-IF NOT EXIST %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip (
+IF NOT EXIST %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip (
     echo.
     echo **************************************************************************
     echo * Downloading QT                                                         *
     echo **************************************************************************
-    %WGET% http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.6.2.zip -O %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip
+    %WGET% http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%QT_VER%.zip -O %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -132,14 +133,14 @@ echo.
 echo **************************************************************************
 echo * Extracting QT                                                          *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D32% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-4.6.2.zip -o%D64% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D32% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D64% > nul
 
-echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
-echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-4.6.2>> build-vars.bat
+echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
+echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
 
-echo "LUX_X86_QT_ROOT"="%D32R:\=\\%\\qt-everywhere-opensource-src-4.6.2">> build-vars.reg
-echo "LUX_X64_QT_ROOT"="%D64R:\=\\%\\qt-everywhere-opensource-src-4.6.2">> build-vars.reg
+echo "LUX_X86_QT_ROOT"="%D32R:\=\\%\\qt-everywhere-opensource-src-%QT_VER%">> build-vars.reg
+echo "LUX_X64_QT_ROOT"="%D64R:\=\\%\\qt-everywhere-opensource-src-%QT_VER%">> build-vars.reg
 
 
 :zlib
