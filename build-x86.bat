@@ -124,6 +124,7 @@ vcbuild /nologo pcbuild.sln "Debug|Win32"
 vcbuild /nologo pcbuild.sln "Release|Win32"
 
 
+GOTO Boost
 echo.
 echo **************************************************************************
 echo * Building Python 3                                                      *
@@ -144,6 +145,7 @@ echo **************************************************************************
 cd /d %LUX_X86_BOOST_ROOT%
 call bootstrap.bat
 
+:Boost_IOStreams
 echo.
 echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
@@ -153,22 +155,26 @@ bjam.exe -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --
 :: hax boost script to force acceptance of python versions
 copy /Y %BUILD_PATH%\support\python.jam .\tools\build\v2\tools
 
+:Boost_Python2
 echo.
 echo **************************************************************************
-echo * Building Boost::Python (2 and 3)                                       *
+echo * Building Boost::Python2                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
-bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python --build-dir=bin/python2 python=2.6 target-os=windows stage
+bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
-rem echo.
-rem echo **************************************************************************
-rem echo * Building Boost::Python3                                                *
-rem echo **************************************************************************
-rem copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
-rem copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
-rem bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
+GOTO Boost_Remainder
+:Boost_Python3
+echo.
+echo **************************************************************************
+echo * Building Boost::Python3                                                *
+echo **************************************************************************
+copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
+copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
+bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
+:Boost_Remainder
 echo.
 echo **************************************************************************
 echo * Building Boost::FileSystem                                             *
@@ -215,7 +221,6 @@ rem Patch qmake.conf file to enable multithreaded compilation
 
 configure -opensource  -nomake demos -nomake examples
 nmake
-
 
 
 :: ****************************************************************************
@@ -328,7 +333,7 @@ set PATH=%CD%\support\bin;%PATH%
 
 vcbuild /nologo lux.sln "LuxRender|Win32"
 vcbuild /nologo lux.sln "Pylux2Release|Win32"
-vcbuild /nologo lux.sln "Pylux3Release|Win32"
+:: vcbuild /nologo lux.sln "Pylux3Release|Win32"
 
 vcbuild /nologo lux.sln "Console|Win32"
 vcbuild /nologo lux.sln "Luxmerge|Win32"
