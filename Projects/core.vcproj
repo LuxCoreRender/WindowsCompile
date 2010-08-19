@@ -16535,7 +16535,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Console|Win32"
-					ExcludedFromBuild="true"
 					>
 					<Tool
 						Name="VCResourceCompilerTool"
