@@ -30,7 +30,7 @@ copy %BUILD_PATH%\Projects\Win32\Pylux2Release\python2\pylux.pyd Python2\
 :: copy %BUILD_PATH%\Projects\Win32\Pylux3Release\python3\pylux.pyd Python3\
 copy %LUX_X86_QT_ROOT%\bin\QtCore4.dll QtCore4.dll
 copy %LUX_X86_QT_ROOT%\bin\QtGui4.dll QtGui4.dll
-copy %LUX_X86_QT_ROOT%\bin\QtOpenGL4.dll QtOpenGL4.dll
+:: copy %LUX_X86_QT_ROOT%\bin\QtOpenGL4.dll QtOpenGL4.dll
 
 cd /d %BUILD_PATH%
 

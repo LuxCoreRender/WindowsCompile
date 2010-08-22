@@ -142,9 +142,10 @@ pause
 rem Patch qmake.conf file to enable multithreaded compilation
 %BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
 
-configure -opensource  -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit 
+configure -opensource -release -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-sse2
 nmake
 
+goto :postLuxRender
 
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
@@ -185,7 +186,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
 echo **************************************************************************
-bjam.exe -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --toolset=msvc-9.0  --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
+bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
 
 :: hax boost script to force acceptance of python versions
 copy /Y %BUILD_PATH%\support\python.jam .\tools\build\v2\tools
@@ -197,7 +198,7 @@ echo * Building Boost::Python2                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
-bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
+bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
 GOTO Boost_Remainder
 :Boost_Python3
@@ -207,7 +208,7 @@ echo * Building Boost::Python3                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
-bjam.exe -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --toolset=msvc-9.0  --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
+bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
 :Boost_Remainder
 echo.
@@ -218,7 +219,7 @@ echo *          Boost::Regex                                                  *
 echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
-bjam.exe --toolset=msvc-9.0 --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
+bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 
 :: ****************************************************************************
