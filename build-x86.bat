@@ -142,10 +142,9 @@ pause
 rem Patch qmake.conf file to enable multithreaded compilation
 %BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
 
-configure -opensource -release -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-sse2
+configure -opensource -release -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-sse2
 nmake
 
-goto :postLuxRender
 
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
