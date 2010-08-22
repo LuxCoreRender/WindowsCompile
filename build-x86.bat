@@ -100,15 +100,50 @@ echo **************************************************************************
 set BUILD_PATH="%CD%"
 
 :StartChoice
-set BUILDCHOICE=''
+set DEPBUILDCHOICE=''
 :: choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
 :: IF ERRORLEVEL 2 GOTO LuxRender
 
-set /P BUILDCHOICE="Build dependencies? (You can choose N if you've already build the dependecies) [y/n] "
-IF %BUILDCHOICE% == n ( GOTO LuxRender )
-IF %BUILDCHOICE% == y ( GOTO Python )
+set /P DEPBUILDCHOICE="Build dependencies? (You can choose N if you've already build the dependecies) [y/n] "
+IF /I %DEPBUILDCHOICE% EQU n ( GOTO BuildChoiceLux )
+IF /I %DEPBUILDCHOICE% EQU y ( GOTO BuildChoiceLux )
 echo Invalid choice
 GOTO StartChoice
+
+:BuildChoiceLux
+set LUXBUILDCHOICE=''
+
+set /P LUXBUILDCHOICE="Build LuxRender? [y/n] "
+IF /I %LUXBUILDCHOICE% EQU n ( GOTO BuildDeps )
+IF /I %LUXBUILDCHOICE% EQU y ( GOTO BuildDeps )
+echo Invalid choice
+GOTO BuildChoiceLux
+
+
+:BuildDeps
+IF /I %DEPBUILDCHOICE% NEQ y ( GOTO LuxRender )
+
+
+:: ****************************************************************************
+:: ********************************** QT **************************************
+:: ****************************************************************************
+:QT
+echo.
+echo **************************************************************************
+echo * Building QT                                                            *
+echo **************************************************************************
+cd /d %LUX_X86_QT_ROOT%
+echo.
+echo This may take a very long time! The QT configure utility will now ask you 
+echo a few questions before building commences. The rest of the build process 
+echo should be autonomous.
+pause
+
+rem Patch qmake.conf file to enable multithreaded compilation
+%BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
+
+configure -opensource  -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit 
+nmake
 
 
 :: ****************************************************************************
@@ -203,27 +238,6 @@ msbuild /verbosity:minimal /property:"Configuration=Release" /property:"Platform
 
 
 :: ****************************************************************************
-:: ********************************** QT **************************************
-:: ****************************************************************************
-:QT
-echo.
-echo **************************************************************************
-echo * Building QT                                                            *
-echo **************************************************************************
-cd /d %LUX_X86_QT_ROOT%
-echo.
-echo This will probably take a very long time! The QT configure utility will
-echo now ask you a few questions before building commences...
-pause
-
-rem Patch qmake.conf file to enable multithreaded compilation
-%BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
-
-configure -opensource  -nomake demos -nomake examples
-nmake
-
-
-:: ****************************************************************************
 :: ******************************* ZLIB ***************************************
 :: ****************************************************************************
 :zlib
@@ -303,14 +317,6 @@ vcbuild /nologo IlmImf\IlmImf.vcproj "Release|Win32"
 
 
 
-:BuildChoiceLux
-set BUILDCHOICE=''
-
-set /P BUILDCHOICE="Build LuxRender? [y/n] "
-IF %BUILDCHOICE% == n ( GOTO postLuxRender )
-IF %BUILDCHOICE% == y ( GOTO LuxRender )
-echo Invalid choice
-GOTO BuildChoiceLux
 
 
 
@@ -318,6 +324,7 @@ GOTO BuildChoiceLux
 :: ******************************* LuxRender **********************************
 :: ****************************************************************************
 :LuxRender
+IF /I %LUXBUILDCHOICE% NEQ y ( GOTO postLuxRender )
 echo.
 echo **************************************************************************
 echo * Building LuxRender                                                     *
@@ -354,6 +361,7 @@ IF EXIST ./install-x86.bat (
 )
 
 :postLuxRender
+cd /d %BUILD_PATH%
 
 
 echo.
