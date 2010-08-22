@@ -5,4 +5,6 @@ syntax: glob
 *.xml
 Projects\Win32\*
 Projects\x64\*
+BuildTemp\*
 *.vcproj.*
+build-vars.*

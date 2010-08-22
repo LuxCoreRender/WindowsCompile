@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "Projects\core.vcproj", "{8C159477-7802-4C52-865E-131537BBAD83}"
 EndProject
 Global
@@ -14,6 +14,8 @@ Global
 		LuxComp|x64 = LuxComp|x64
 		LuxMerge|Win32 = LuxMerge|Win32
 		LuxMerge|x64 = LuxMerge|x64
+		LuxRender SSE1|Win32 = LuxRender SSE1|Win32
+		LuxRender SSE1|x64 = LuxRender SSE1|x64
 		LuxRender|Win32 = LuxRender|Win32
 		LuxRender|x64 = LuxRender|x64
 		Pylux2Debug|Win32 = Pylux2Debug|Win32
@@ -29,7 +31,6 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console SSE1|Win32.ActiveCfg = Console SSE1|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console SSE1|Win32.Build.0 = Console SSE1|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console SSE1|x64.ActiveCfg = Console SSE1|x64
-		{8C159477-7802-4C52-865E-131537BBAD83}.Console SSE1|x64.Build.0 = Console SSE1|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console|Win32.ActiveCfg = Console|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console|Win32.Build.0 = Console|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.Console|x64.ActiveCfg = Console|x64
@@ -46,6 +47,9 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|Win32.Build.0 = LuxMerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.ActiveCfg = LuxMerge|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.Build.0 = LuxMerge|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|Win32.ActiveCfg = LuxRender SSE1|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|Win32.Build.0 = LuxRender SSE1|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|x64.ActiveCfg = LuxRender SSE1|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.ActiveCfg = LuxRender|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|Win32.Build.0 = LuxRender|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender|x64.ActiveCfg = LuxRender|x64

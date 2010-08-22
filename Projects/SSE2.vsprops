@@ -8,4 +8,8 @@
 		Name="VCCLCompilerTool"
 		EnableEnhancedInstructionSet="2"
 	/>
+	<UserMacro
+		Name="SSE_Version"
+		Value="SSE2"
+	/>
 </VisualStudioPropertySheet>

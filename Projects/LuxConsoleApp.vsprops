@@ -5,7 +5,7 @@
 	Name="LuxConsoleApp"
 	>
 	<Tool
-		Name="VCCLCompilerTool"
-		RuntimeLibrary="2"
+		Name="VCLinkerTool"
+		SubSystem="1"
 	/>
 </VisualStudioPropertySheet>
