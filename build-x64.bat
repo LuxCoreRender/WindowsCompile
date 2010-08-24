@@ -37,7 +37,7 @@ IF EXIST build-vars.bat (
     call build-vars.bat
 )
 
-IF %LUX_X64_PYTHON2_ROOT% == "" (
+IF "%LUX_X64_PYTHON2_ROOT%" == "" (
     echo.
     echo %%LUX_X64_PYTHON2_ROOT%% is not set! Aborting.
     exit /b -1
@@ -47,7 +47,7 @@ IF NOT EXIST %LUX_X64_PYTHON2_ROOT% (
     echo %%LUX_X64_PYTHON2_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_PYTHON3_ROOT% == "" (
+IF "%LUX_X64_PYTHON3_ROOT%" == "" (
     echo.
     echo %%LUX_X64_PYTHON3_ROOT%% is not set! Aborting.
     exit /b -1
@@ -57,7 +57,7 @@ IF NOT EXIST %LUX_X64_PYTHON3_ROOT% (
     echo %%LUX_X64_PYTHON3_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_BOOST_ROOT% == "" (
+IF "%LUX_X64_BOOST_ROOT%" == "" (
     echo.
     echo %%LUX_X64_BOOST_ROOT%% is not set! Aborting.
     exit /b -1
@@ -67,7 +67,7 @@ IF NOT EXIST %LUX_X64_BOOST_ROOT% (
     echo %%LUX_X64_BOOST_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_QT_ROOT% == "" (
+IF "%LUX_X64_QT_ROOT%" == "" (
     echo.
     echo %%LUX_X64_QT_ROOT%% is not set! Aborting.
     exit /b -1
@@ -77,7 +77,7 @@ IF NOT EXIST %LUX_X64_QT_ROOT% (
     echo %%LUX_X64_QT_ROOT%% not valid! Aborting.
     exit /b -1
 )
-IF %LUX_X64_FREEIMAGE_ROOT% == "" (
+IF "%LUX_X64_FREEIMAGE_ROOT%" == "" (
     echo.
     echo %%LUX_X64_FREEIMAGE_ROOT%% is not set! Aborting.
     exit /b -1
@@ -85,6 +85,16 @@ IF %LUX_X64_FREEIMAGE_ROOT% == "" (
 IF NOT EXIST %LUX_X64_FREEIMAGE_ROOT% (
     echo.
     echo %%LUX_X64_FREEIMAGE_ROOT%% not valid! Aborting.
+    exit /b -1
+)
+IF "%LUX_X64_ZLIB_ROOT%" == "" (
+    echo.
+    echo %%LUX_X64_ZLIB_ROOT%% is not set! Aborting.
+    exit /b -1
+)
+IF NOT EXIST %LUX_X64_ZLIB_ROOT% (
+    echo.
+    echo %%LUX_X64_ZLIB_ROOT%% not valid! Aborting.
     exit /b -1
 )
 

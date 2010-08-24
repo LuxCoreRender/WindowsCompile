@@ -6,6 +6,12 @@ set BOOST_VER_P=1.39.0
 set PYTHON2_VER=2.6.5
 set PYTHON3_VER=3.1.2
 
+set ZLIB_VER_P=1.2.3
+set ZLIB_VER_N=123
+
+set FREEIMAGE_VER_P=3.14.0
+set FREEIMAGE_VER_N=3140
+
 set QT_VER=4.6.2
 
 echo.
@@ -16,9 +22,9 @@ echo.
 echo We are going to download and extract sources for:
 echo   Boost %BOOST_VER_P%                             http://www.boost.org/
 echo   QT %QT_VER%                                 http://qt.nokia.com/
-echo   zlib 1.2.3                               http://www.zlib.net/
+echo   zlib %ZLIB_VER_P%                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
-echo   FreeImage 3.14.0                         http://freeimage.sf.net/
+echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo.
@@ -144,12 +150,12 @@ echo "LUX_X64_QT_ROOT"="%D64R:\=\\%\\qt-everywhere-opensource-src-%QT_VER%">> bu
 
 
 :zlib
-IF NOT EXIST %DOWNLOADS%\zlib123.zip (
+IF NOT EXIST %DOWNLOADS%\zlib%ZLIB_VER_N%.zip (
     echo.
     echo **************************************************************************
     echo * Downloading zlib                                                       *
     echo **************************************************************************
-    %WGET% http://sourceforge.net/projects/libpng/files/zlib/1.2.3/zlib123.zip/download -O %DOWNLOADS%\zlib123.zip
+    %WGET% http://sourceforge.net/projects/libpng/files/zlib/%ZLIB_VER_P%/zlib%ZLIB_VER_N%.zip/download -O %DOWNLOADS%\zlib%ZLIB_VER_N%.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -160,11 +166,11 @@ echo.
 echo **************************************************************************
 echo * Extracting zlib                                                        *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\zlib123.zip -o%D32%\zlib-1.2.3 > nul
-%UNZIPBIN% x -y %DOWNLOADS%\zlib123.zip -o%D64%\zlib-1.2.3 > nul
+%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D32%\zlib-%ZLIB_VER_P% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D64%\zlib-%ZLIB_VER_P% > nul
 
-echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-1.2.3>> build-vars.bat
-echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-1.2.3>> build-vars.bat
+echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-%ZLIB_VER_P%>> build-vars.bat
+echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-%ZLIB_VER_P%>> build-vars.bat
 
 
 :bzip
@@ -194,12 +200,12 @@ echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
 
 
 :freeimage
-IF NOT EXIST %DOWNLOADS%\FreeImage3140.zip (
+IF NOT EXIST %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip (
     echo.
     echo **************************************************************************
     echo * Downloading FreeImage                                                  *
     echo **************************************************************************
-    %WGET% http://downloads.sourceforge.net/freeimage/FreeImage3140.zip -O %DOWNLOADS%\FreeImage3140.zip
+    %WGET% http://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip -O %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -210,15 +216,15 @@ echo.
 echo **************************************************************************
 echo * Extracting FreeImage                                                   *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D32%\FreeImage3140 > nul
-%UNZIPBIN% x -y %DOWNLOADS%\FreeImage3140.zip -o%D64%\FreeImage3140 > nul
+%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D32%\FreeImage%FREEIMAGE_VER_N% > nul
+%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D64%\FreeImage%FREEIMAGE_VER_N% > nul
 
-echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage3140>> build-vars.bat
-echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage3140>> build-vars.bat
+echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
+echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
 
 
-echo "LUX_X86_FREEIMAGE_ROOT"="%D32R:\=\\%\\FreeImage3140">> build-vars.reg
-echo "LUX_X64_FREEIMAGE_ROOT"="%D64R:\=\\%\\FreeImage3140">> build-vars.reg
+echo "LUX_X86_FREEIMAGE_ROOT"="%D32R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
+echo "LUX_X64_FREEIMAGE_ROOT"="%D64R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
 
 
 
