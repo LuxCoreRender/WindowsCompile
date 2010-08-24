@@ -122,28 +122,45 @@ echo **************************************************************************
 set BUILD_PATH="%CD%"
 
 :StartChoice
-set DEPBUILDCHOICE=''
-:: choice /C NY /M "Build LuxRender only? (You can choose Y if you've already build the libraries)"
-:: IF ERRORLEVEL 2 GOTO LuxRender
+set BUILDCHOICE=''
 
-set /P DEPBUILDCHOICE="Build dependencies? (You can choose N if you've already build the dependecies) [y/n] "
-IF /I %DEPBUILDCHOICE% EQU n ( GOTO BuildChoiceLux )
-IF /I %DEPBUILDCHOICE% EQU y ( GOTO BuildChoiceLux )
+echo.
+echo If this is your first time building LuxRender, you'll need to build the 
+echo dependencies as well. After they've been built you'll shouldn't need to
+echo rebuild them unless there's a change in versions.
+echo.
+echo If you've successfully built the dependencies before, you only need to
+echo build LuxRender.
+echo.
+IF "%BUILD_PYTHON3%" == "" (
+  echo Python 3 target is disabled, to enable set the %%BUILD_PYTHON3%% variable 
+  echo before running this script.
+  echo.
+)
+echo Build options:
+echo 1: Build everything (all dependencies and LuxRender)
+echo 2: Build everything but Qt
+echo 3: Build dependencies only
+echo 4: Build luxrender only (default)
+echo q: Quit (do nothing)
+echo.
+
+set BUILDCHOICE=4
+set /P BUILDCHOICE="Selection? "
+
+IF %BUILDCHOICE% == 1 ( GOTO QT )
+IF %BUILDCHOICE% == 2 ( GOTO Python )
+IF %BUILDCHOICE% == 3 ( GOTO QT )
+IF %BUILDCHOICE% == 4 ( GOTO LuxRender )
+IF /I %BUILDCHOICE% EQU q ( GOTO :EOF )
+
 echo Invalid choice
+
 GOTO StartChoice
-
-:BuildChoiceLux
-set LUXBUILDCHOICE=''
-
-set /P LUXBUILDCHOICE="Build LuxRender? [y/n] "
-IF /I %LUXBUILDCHOICE% EQU n ( GOTO BuildDeps )
-IF /I %LUXBUILDCHOICE% EQU y ( GOTO BuildDeps )
-echo Invalid choice
-GOTO BuildChoiceLux
 
 
 :BuildDeps
-IF /I %DEPBUILDCHOICE% NEQ y ( GOTO LuxRender )
+IF /I %BUILDCHOICE% GEQ 4 ( GOTO LuxRender )
 
 
 :: ****************************************************************************
@@ -181,7 +198,7 @@ vcbuild /nologo pcbuild.sln "Debug|x64"
 vcbuild /nologo pcbuild.sln "Release|x64"
 
 
-GOTO Boost
+IF "%BUILD_PYTHON3%" == "" ( GOTO Boost )
 echo.
 echo **************************************************************************
 echo * Building Python 3                                                      *
@@ -221,7 +238,7 @@ copy /Y %LUX_X64_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x64-project-config-26.jam .\project-config.jam
 tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
-GOTO Boost_Remainder
+IF "%BUILD_PYTHON3%" == "" ( GOTO Boost_Remainder )
 :Boost_Python3
 echo.
 echo **************************************************************************
@@ -259,87 +276,6 @@ rem Patch solution file to enable FreeImageLib as a build target
 msbuild /verbosity:minimal /property:"Configuration=Release" /property:"Platform=x64" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"FreeImageLib" FreeImage.2008.sln
 
 
-:: ****************************************************************************
-:: ******************************* ZLIB ***************************************
-:: ****************************************************************************
-:zlib
-rem Not needed, contained in boost
-GOTO postzlib
-echo.
-echo **************************************************************************
-echo * Building zlib                                                          *
-echo **************************************************************************
-cd /d %LUX_X64_ZLIB_ROOT%\projects\visualc6
-
-IF NOT EXIST "zlib.sln" (
-echo.
-echo We need to convert the old project files to sln/vcproj files.
-echo I will open the old project for you, and VS should prompt you
-echo to convert the projects. Proceed with the conversion, save the
-echo solution and quit VS. Do not build the solution, I will continue
-echo the build after you have saved the new projects.
-echo.
-echo ADDITIONAL: You also need to create the x64 build platform !
-echo ADDITIONAL: projects needs WIN32 define changed to WIN64 in these
-echo configurations: "LIB Debug" and "LIB Release" !
-pause
-start /WAIT zlib.dsw
-echo Conversion finished. Building...
-)
-
-vcbuild /nologo zlib.sln "LIB Debug|x64"
-vcbuild /nologo zlib.sln "LIB Release|x64"
-:postzlib
-
-
-:: ****************************************************************************
-:: ******************************* OPENEXR ************************************
-:: ****************************************************************************
-:OpenEXR
-rem Not needed, contained in FreeImage
-GOTO postOpenEXR
-echo.
-echo **************************************************************************
-echo * Building OpenEXR                                                       *
-echo **************************************************************************
-cd /d %LUX_X64_OPENEXR_ROOT%\vc\vc8
-echo.
-echo We need to convert the old project files to sln/vcproj files.
-echo I will open the old project for you, and VS should prompt you
-echo to convert the projects. Proceed with the conversion, save the
-echo solution and quit VS. Do not build the solution, I will continue
-echo the build after you have saved the new projects.
-echo.
-echo ADDITIONAL: You also need to create the x64 build platform !
-pause
-start /WAIT OpenEXR.sln
-echo Do not continue until you save OpenEXR.sln and quit VS. Then,
-pause
-echo Conversion finished. Building...
-
-:: copy zlibs
-copy /Y %LUX_X64_ZLIB_ROOT%\zlib.h include\zlib.h
-copy /Y %LUX_X64_ZLIB_ROOT%\zconf.h include\zconf.h
-copy /Y %LUX_X64_ZLIB_ROOT%\projects\visualc6\Win32_LIB_Debug\*.lib lib\
-copy /Y %LUX_X64_ZLIB_ROOT%\projects\visualc6\Win32_LIB_Release\*.lib lib\
-
-vcbuild /nologo Half_eLut\Half_eLut.vcproj "Debug|x64"
-vcbuild /nologo Half_toFloat\Half_toFloat.vcproj "Debug|x64"
-vcbuild /nologo Half\Half.vcproj "Debug|x64"
-vcbuild /nologo Iex\Iex.vcproj "Debug|x64"
-vcbuild /nologo IlmThread\IlmThread.vcproj "Debug|x64"
-vcbuild /nologo Imath\Imath.vcproj "Debug|x64"
-vcbuild /nologo IlmImf\IlmImf.vcproj "Debug|x64"
-
-vcbuild /nologo Half_eLut\Half_eLut.vcproj "Release|x64"
-vcbuild /nologo Half_toFloat\Half_toFloat.vcproj "Release|x64"
-vcbuild /nologo Half\Half.vcproj "Release|x64"
-vcbuild /nologo Iex\Iex.vcproj "Release|x64"
-vcbuild /nologo IlmThread\IlmThread.vcproj "Release|x64"
-vcbuild /nologo Imath\Imath.vcproj "Release|x64"
-vcbuild /nologo IlmImf\IlmImf.vcproj "Release|x64"
-:postOpenEXR
-
 
 
 
@@ -350,7 +286,7 @@ vcbuild /nologo IlmImf\IlmImf.vcproj "Release|x64"
 :: ******************************* LuxRender **********************************
 :: ****************************************************************************
 :LuxRender
-IF /I %LUXBUILDCHOICE% NEQ y ( GOTO postLuxRender )
+IF %BUILDCHOICE% EQU 3 ( GOTO postLuxRender )
 echo.
 echo **************************************************************************
 echo * Building LuxRender                                                     *
@@ -366,7 +302,9 @@ set PATH=%CD%\support\bin;%PATH%
 
 vcbuild /nologo lux.sln "LuxRender|x64"
 vcbuild /nologo lux.sln "Pylux2Release|x64"
-:: vcbuild /nologo lux.sln "Pylux3Release|x64"
+IF NOT "%BUILD_PYTHON3%" == "" (
+  vcbuild /nologo lux.sln "Pylux3Release|x64"
+)
 
 vcbuild /nologo lux.sln "Console|x64"
 vcbuild /nologo lux.sln "Luxmerge|x64"
