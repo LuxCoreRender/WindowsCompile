@@ -292,9 +292,10 @@ set PATH=%CD%\support\bin;%PATH%
 :: vcbuild /nologo lux.sln "Pylux3Debug|Win32"
 
 vcbuild /nologo lux.sln "LuxRender|Win32"
+del Projects\BuildTemp\Release\SSE2\binding.*
 vcbuild /nologo lux.sln "Pylux2Release|Win32"
 IF NOT "%BUILD_PYTHON3%" == "" (
-  vcbuild /nologo /clean lux.sln "Pylux3Release|Win32"
+  del Projects\BuildTemp\Release\SSE2\binding.*
   vcbuild /nologo lux.sln "Pylux3Release|Win32"
 )
 
