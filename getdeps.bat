@@ -1,9 +1,9 @@
 Echo off
 
-set BOOST_VER_U=1_39_0
-set BOOST_VER_P=1.39.0
+set BOOST_VER_U=1_43_0
+set BOOST_VER_P=1.43.0
 
-set PYTHON2_VER=2.6.5
+set PYTHON2_VER=2.6.6
 set PYTHON3_VER=3.1.2
 
 set ZLIB_VER_P=1.2.3
