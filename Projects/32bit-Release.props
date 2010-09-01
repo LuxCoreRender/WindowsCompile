@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <LUX_QT_ROOT>$(LUX_X86_QT_ROOT)</LUX_QT_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <IntDir>BuildTemp\Release\$(SSE_Version)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(LUX_X86_BOOST_ROOT);$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/ZLib;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Dist;$(LUX_X86_QT_ROOT)\include;$(LUX_X86_QT_ROOT)\include\Qt;$(LUX_X86_QT_ROOT)\include\QtCore;$(LUX_X86_QT_ROOT)\include\QtGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4244;4305;4996;4267;4311;4312;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(LUX_X86_BOOST_ROOT)/stage/boost/lib;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Dist;$(LUX_X86_QT_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_QT_ROOT">
+      <Value>$(LUX_QT_ROOT)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

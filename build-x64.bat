@@ -266,9 +266,6 @@ echo * Building LuxRender                                                     *
 echo **************************************************************************
 cd /d %BUILD_PATH%
 
-:: include flex and bison in system PATH
-set PATH=%CD%\support\bin;%PATH%
-
 :: vcbuild /nologo lux.sln "Debug|x64"
 :: vcbuild /nologo lux.sln "Pylux2Debug|x64"
 :: vcbuild /nologo lux.sln "Pylux3Debug|x64"

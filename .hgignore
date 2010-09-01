@@ -8,3 +8,6 @@ Projects\x64\*
 BuildTemp\*
 *.vcproj.*
 build-vars.*
+
+syntax: regexp
+^lux\.sdf$
