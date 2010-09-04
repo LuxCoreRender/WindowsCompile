@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="32bit-Debug"
-	IntermediateDirectory="BuildTemp\Debug\$(SSE_Version)\"
+	IntermediateDirectory="BuildTemp\$(ProjectName)\$(SSE_Version)\$(ConfigurationName)"
 	>
 	<Tool
 		Name="VCCLCompilerTool"

@@ -22,8 +22,8 @@
 		Name="VCLinkerTool"
 		AdditionalDependencies="ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib FreeImage.lib"
 		LinkIncremental="1"
-		ProgramDatabaseFile="$(OUTDIR)/luxrender.pdb"
+		ProgramDatabaseFile="$(OUTDIR)/liblux.pdb"
 		RandomizedBaseAddress="2"
-		ImportLibrary="$(OUTDIR)/luxrender.lib"
+		ImportLibrary="$(OUTDIR)/liblux.lib"
 	/>
 </VisualStudioPropertySheet>
