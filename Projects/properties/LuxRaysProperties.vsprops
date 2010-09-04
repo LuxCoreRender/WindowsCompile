@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="LuxRaysProperties"
+	OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+	IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalOptions="/MP"
+		AdditionalIncludeDirectories="..\..\..\luxrays\include;C:\Development\SDKs\ATI\Stream\include"
+		PreprocessorDefinitions="FREEIMAGE_LIB;BOOST_STATIC_LIB"
+		RuntimeLibrary="2"
+		BufferSecurityCheck="false"
+		FloatingPointModel="0"
+		UsePrecompiledHeader="0"
+		WarningLevel="3"
+		CallingConvention="0"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libboost_filesystem-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib FreeImage.lib OpenCL.lib OpenGL32.lib"
+		LinkIncremental="1"
+		AdditionalLibraryDirectories="C:\Development\SDKs\ATI\Stream\lib;C:\Development\SDKs\ATI\Stream\lib\x86"
+		IgnoreDefaultLibraryNames=""
+		ProgramDatabaseFile="$(OUTDIR)/luxrays.pdb"
+		SubSystem="0"
+		ImportLibrary="$(OUTDIR)/luxrays.lib"
+	/>
+</VisualStudioPropertySheet>

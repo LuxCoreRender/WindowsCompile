@@ -4,8 +4,9 @@ syntax: glob
 *.suo
 *.ncb
 *.xml
-Projects\luxrays\Release\*
-Projects\luxrays\Debug\*
+Projects\luxrays\Win32\*
+Projects\luxrays\x64\*
+Projects\luxrays\BuildTemp\*
 Projects\luxrender\Win32\*
 Projects\luxrender\x64\*
 Projects\luxrender\BuildTemp\*

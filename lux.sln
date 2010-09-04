@@ -16,6 +16,8 @@ Global
 		LuxComp|x64 = LuxComp|x64
 		LuxMerge|Win32 = LuxMerge|Win32
 		LuxMerge|x64 = LuxMerge|x64
+		LuxRays-BenchPixel|Win32 = LuxRays-BenchPixel|Win32
+		LuxRays-BenchPixel|x64 = LuxRays-BenchPixel|x64
 		LuxRender SSE1|Win32 = LuxRender SSE1|Win32
 		LuxRender SSE1|x64 = LuxRender SSE1|x64
 		LuxRender|Win32 = LuxRender|Win32
@@ -52,6 +54,8 @@ Global
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|Win32.Build.0 = LuxMerge|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.ActiveCfg = LuxMerge|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxMerge|x64.Build.0 = LuxMerge|x64
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRays-BenchPixel|Win32.ActiveCfg = LuxRays-BenchPixel|Win32
+		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRays-BenchPixel|x64.ActiveCfg = LuxRays-BenchPixel|x64
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|Win32.ActiveCfg = LuxRender SSE1|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|Win32.Build.0 = LuxRender SSE1|Win32
 		{8C159477-7802-4C52-865E-131537BBAD83}.LuxRender SSE1|x64.ActiveCfg = LuxRender SSE1|x64
@@ -95,6 +99,10 @@ Global
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxMerge|Win32.ActiveCfg = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxMerge|Win32.Build.0 = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxMerge|x64.ActiveCfg = Release|Win32
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRays-BenchPixel|Win32.ActiveCfg = LuxRays-BenchPixel|Win32
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRays-BenchPixel|Win32.Build.0 = LuxRays-BenchPixel|Win32
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRays-BenchPixel|x64.ActiveCfg = LuxRays-BenchPixel|x64
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRays-BenchPixel|x64.Build.0 = LuxRays-BenchPixel|x64
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRender SSE1|Win32.ActiveCfg = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRender SSE1|Win32.Build.0 = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.LuxRender SSE1|x64.ActiveCfg = Release|Win32
@@ -115,7 +123,7 @@ Global
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Pylux3Release|x64.ActiveCfg = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|Win32.ActiveCfg = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|Win32.Build.0 = Release|Win32
-		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.ActiveCfg = Release|Win32
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -223,7 +223,7 @@ echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-
+bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 :: ****************************************************************************
 :: ********************************** FreeImage *******************************

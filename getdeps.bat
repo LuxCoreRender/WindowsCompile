@@ -14,6 +14,23 @@ set FREEIMAGE_VER_N=3141
 
 set QT_VER=4.6.2
 
+:: NVIDIA CUDA Toolkits
+:: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_32.exe
+:: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_64.exe
+:: Cannot be extracted with 7z and don't work OOTB with luxrays src
+:: Older NV kits
+:: http://developer.download.nvidia.com/compute/cuda/2_3/opencl/sdk/gpucomputingsdk_2.3a_win_32.exe
+:: http://developer.download.nvidia.com/compute/cuda/2_3/opencl/sdk/gpucomputingsdk_2.3a_win_64.exe
+
+:: AMD/ATI STREAM SDKs
+:: Need to detect or ask about vista/win7 or XP variant
+:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-vista-win7-32.exe
+:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-vista-win7-64.exe
+:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-xp32.exe
+:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-xp64.exe
+:: Can be extracted with 7z - provides ati-stream-sdk-v2.2-vista-win7-32\Packages\Apps\ATIStreamSDK_Dev.msi
+:: .msi can be extracted with 7z - but provides junk/obfuscated files :(
+
 echo.
 echo **************************************************************************
 echo * Startup                                                                *
