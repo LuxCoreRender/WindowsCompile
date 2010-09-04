@@ -238,9 +238,18 @@ msbuild /verbosity:minimal /property:"Configuration=Release" /property:"Platform
 
 
 
+goto LuxRender
+:: ****************************************************************************
+:: ******************************* LuxRays ************************************
+:: ****************************************************************************
+:LuxRays
+echo.
+echo **************************************************************************
+echo * Building LuxRays                                                       *
+echo **************************************************************************
 
-
-
+:: msbuild /property:"Configuration=Debug" /property:"Platform=Win32" /target:"luxrays" lux.sln
+msbuild /property:"Configuration=Release" /property:"Platform=Win32" /target:"luxrays" lux.sln
 
 
 :: ****************************************************************************
@@ -257,24 +266,25 @@ cd /d %BUILD_PATH%
 :: include flex and bison in system PATH
 set PATH=%CD%\support\bin;%PATH%
 
-:: vcbuild /nologo lux.sln "Debug|Win32"
-:: vcbuild /nologo lux.sln "Pylux2Debug|Win32"
-:: vcbuild /nologo lux.sln "Pylux3Debug|Win32"
+:: msbuild /property:"Configuration=Debug" /property:"Platform=Win32" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Pylux2Debug" /property:"Platform=Win32" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Pylux3Debug" /property:"Platform=Win32" /target:"core" lux.sln
 
-vcbuild /nologo lux.sln "LuxRender|Win32"
-del Projects\BuildTemp\Release\SSE2\binding.*
-vcbuild /nologo lux.sln "Pylux2Release|Win32"
+msbuild /property:"Configuration=LuxRender" /property:"Platform=Win32" /target:"core" lux.sln
+del Projects\BuildTemp\Release\Win32\binding.*
+msbuild /property:"Configuration=Pylux2Release" /property:"Platform=Win32" /target:"core" lux.sln
 IF NOT "%BUILD_PYTHON3%" == "" (
-  del Projects\BuildTemp\Release\SSE2\binding.*
-  vcbuild /nologo lux.sln "Pylux3Release|Win32"
+  del Projects\BuildTemp\Release\Win32\binding.*
+  msbuild /property:"Configuration=Pylux3Release" /property:"Platform=Win32" /target:"core" lux.sln
 )
 
-vcbuild /nologo lux.sln "Console|Win32"
-vcbuild /nologo lux.sln "Luxmerge|Win32"
-vcbuild /nologo lux.sln "Luxcomp|Win32"
+msbuild /property:"Configuration=Console" /property:"Platform=Win32" /target:"core" lux.sln
+msbuild /property:"Configuration=Luxmerge" /property:"Platform=Win32" /target:"core" lux.sln
+msbuild /property:"Configuration=Luxcomp" /property:"Platform=Win32" /target:"core" lux.sln
 
-:: vcbuild /nologo lux.sln "Console SSE1|Win32"
-:: vcbuild /nologo lux.sln "Release SSE1|Win32"
+:: msbuild /property:"Configuration=Console SSE1" /property:"Platform=Win32" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Release SSE1" /property:"Platform=Win32" /target:"core" lux.sln
+
 
 
 :: ****************************************************************************

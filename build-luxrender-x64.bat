@@ -250,9 +250,18 @@ msbuild /verbosity:minimal /property:"Configuration=Release" /property:"Platform
 
 
 
+goto LuxRender
+:: ****************************************************************************
+:: ******************************* LuxRays ************************************
+:: ****************************************************************************
+:LuxRays
+echo.
+echo **************************************************************************
+echo * Building LuxRays                                                       *
+echo **************************************************************************
 
-
-
+:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"luxrays" lux.sln
+msbuild /property:"Configuration=Release" /property:"Platform=x64" /target:"luxrays" lux.sln
 
 
 :: ****************************************************************************
@@ -269,24 +278,25 @@ cd /d %BUILD_PATH%
 :: include flex and bison in system PATH
 set PATH=%CD%\support\bin;%PATH%
 
-:: vcbuild /nologo lux.sln "Debug|x64"
-:: vcbuild /nologo lux.sln "Pylux2Debug|x64"
-:: vcbuild /nologo lux.sln "Pylux3Debug|x64"
+:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Pylux2Debug" /property:"Platform=x64" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Pylux3Debug" /property:"Platform=x64" /target:"core" lux.sln
 
-vcbuild /nologo lux.sln "LuxRender|x64"
+msbuild /property:"Configuration=LuxRender" /property:"Platform=x64" /target:"core" lux.sln
 del Projects\BuildTemp\Release\x64\binding.*
-vcbuild /nologo lux.sln "Pylux2Release|x64"
+msbuild /property:"Configuration=Pylux2Release" /property:"Platform=x64" /target:"core" lux.sln
 IF NOT "%BUILD_PYTHON3%" == "" (
   del Projects\BuildTemp\Release\x64\binding.*
-  vcbuild /nologo lux.sln "Pylux3Release|x64"
+  msbuild /property:"Configuration=Pylux3Release" /property:"Platform=x64" /target:"core" lux.sln
 )
 
-vcbuild /nologo lux.sln "Console|x64"
-vcbuild /nologo lux.sln "Luxmerge|x64"
-vcbuild /nologo lux.sln "Luxcomp|x64"
+msbuild /property:"Configuration=Console" /property:"Platform=x64" /target:"core" lux.sln
+msbuild /property:"Configuration=Luxmerge" /property:"Platform=x64" /target:"core" lux.sln
+msbuild /property:"Configuration=Luxcomp" /property:"Platform=x64" /target:"core" lux.sln
 
-:: vcbuild /nologo lux.sln "Console SSE1|x64"
-:: vcbuild /nologo lux.sln "Release SSE1|x64"
+:: msbuild /property:"Configuration=Console SSE1" /property:"Platform=x64" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Release SSE1" /property:"Platform=x64" /target:"core" lux.sln
+
 
 
 :: ****************************************************************************
