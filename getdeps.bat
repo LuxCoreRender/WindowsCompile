@@ -1,16 +1,16 @@
 Echo off
 
-set BOOST_VER_U=1_39_0
-set BOOST_VER_P=1.39.0
+set BOOST_VER_U=1_43_0
+set BOOST_VER_P=1.43.0
 
-set PYTHON2_VER=2.6.5
+set PYTHON2_VER=2.6.6
 set PYTHON3_VER=3.1.2
 
 set ZLIB_VER_P=1.2.3
 set ZLIB_VER_N=123
 
-set FREEIMAGE_VER_P=3.14.0
-set FREEIMAGE_VER_N=3140
+set FREEIMAGE_VER_P=3.14.1
+set FREEIMAGE_VER_N=3141
 
 set QT_VER=4.6.2
 
@@ -90,10 +90,12 @@ echo %D64%
 echo OK
 
 echo @Echo off > build-vars.bat
+echo set LUX_WINDOWS_BUILD_ROOT="%CD%" >> build-vars.bat
 
 echo Windows Registry Editor Version 5.00 > build-vars.reg
 echo. >> build-vars.reg
 echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]>> build-vars.reg
+echo "LUX_WINDOWS_BUILD_ROOT"="%CD:\=\\%" >> build-vars.reg
 
 :boost
 IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (

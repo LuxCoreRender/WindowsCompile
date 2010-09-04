@@ -16,7 +16,6 @@ echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C N
 echo Otherwise,
 pause
 
-
 echo.
 echo **************************************************************************
 echo * Note for VC Express users who have 'hacked-in' 64bit support...        *
@@ -68,11 +67,11 @@ IF NOT EXIST %LUX_X64_ZLIB_ROOT% (
     exit /b -1
 )
 
-vcbuild /? > nul
+msbuild /? > nul
 if NOT ERRORLEVEL 0 (
     echo.
-    echo Cannot execute the 'vcbuild' command. Please run
-    echo this script from the Visual Studio 2008 x64 Win64 Command Prompt.
+    echo Cannot execute the 'msbuild' command. Please run
+    echo this script from the Visual Studio 2008 Command Prompt.
     exit /b -1
 )
 
@@ -102,8 +101,8 @@ echo.
 echo If you've successfully built the dependencies before, you only need to
 echo build LuxRender.
 echo.
-IF "%BUILD_PYTHON3%" == "" (
-  echo Python 3 target is disabled, to enable set the %%BUILD_PYTHON3%% variable 
+IF "%LUX_BUILD_PYTHON3%" == "" (
+  echo Python 3 target is disabled, to enable set the LUX_BUILD_PYTHON3 variable 
   echo before running this script.
   echo.
 )
@@ -166,19 +165,23 @@ echo.
 echo **************************************************************************
 echo * Building Python 2                                                      *
 echo **************************************************************************
-cd /d %LUX_X64_PYTHON2_ROOT%\PCbuild
-vcbuild /nologo /rebuild pcbuild.sln "Debug|x64"
-vcbuild /nologo /rebuild pcbuild.sln "Release|x64"
+cd /d %LUX_X86_PYTHON2_ROOT%\PCbuild
+:: vcbuild /nologo /rebuild pcbuild.sln "Debug|x64"
+:: vcbuild /nologo /rebuild pcbuild.sln "Release|x64"
+:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"python" pcbuild.sln
+msbuild /property:"Configuration=Release" /property:"Platform=x64" /target:"python" pcbuild.sln
 
 
-IF "%BUILD_PYTHON3%" == "" ( GOTO Boost )
+IF "%LUX_BUILD_PYTHON3%" == "" ( GOTO Boost )
 echo.
 echo **************************************************************************
 echo * Building Python 3                                                      *
 echo **************************************************************************
-cd /d %LUX_X64_PYTHON3_ROOT%\PCbuild
-vcbuild /nologo /rebuild pcbuild.sln "Debug|x64"
-vcbuild /nologo /rebuild pcbuild.sln "Release|x64"
+cd /d %LUX_X86_PYTHON3_ROOT%\PCbuild
+:: vcbuild /nologo /rebuild pcbuild.sln "Debug|x64"
+:: vcbuild /nologo /rebuild pcbuild.sln "Release|x64"
+:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"python" pcbuild.sln
+msbuild /property:"Configuration=Release" /property:"Platform=x64" /target:"python" pcbuild.sln
 
 
 :: ****************************************************************************
@@ -211,7 +214,7 @@ copy /Y %LUX_X64_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x64-project-config-26.jam .\project-config.jam
 tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
-IF "%BUILD_PYTHON3%" == "" ( GOTO Boost_Remainder )
+IF "%LUX_BUILD_PYTHON3%" == "" ( GOTO Boost_Remainder )
 :Boost_Python3
 echo.
 echo **************************************************************************
@@ -278,24 +281,24 @@ cd /d %BUILD_PATH%
 :: include flex and bison in system PATH
 set PATH=%CD%\support\bin;%PATH%
 
-:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"core" lux.sln
-:: msbuild /property:"Configuration=Pylux2Debug" /property:"Platform=x64" /target:"core" lux.sln
-:: msbuild /property:"Configuration=Pylux3Debug" /property:"Platform=x64" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Debug" /property:"Platform=x64" /target:"luxrender" lux.sln
+:: msbuild /property:"Configuration=Pylux2Debug" /property:"Platform=x64" /target:"luxrender" lux.sln
+:: msbuild /property:"Configuration=Pylux3Debug" /property:"Platform=x64" /target:"luxrender" lux.sln
 
-msbuild /property:"Configuration=LuxRender" /property:"Platform=x64" /target:"core" lux.sln
-del Projects\BuildTemp\Release\x64\binding.*
-msbuild /property:"Configuration=Pylux2Release" /property:"Platform=x64" /target:"core" lux.sln
-IF NOT "%BUILD_PYTHON3%" == "" (
-  del Projects\BuildTemp\Release\x64\binding.*
-  msbuild /property:"Configuration=Pylux3Release" /property:"Platform=x64" /target:"core" lux.sln
+msbuild /property:"Configuration=LuxRender" /property:"Platform=x64" /target:"luxrender" lux.sln
+del Projects\luxrender\BuildTemp\Release\x64\binding.* > nul
+msbuild /property:"Configuration=Pylux2Release" /property:"Platform=x64" /target:"luxrender" lux.sln
+IF NOT "%LUX_BUILD_PYTHON3%" == "" (
+  del Projects\luxrender\BuildTemp\Release\x64\binding.* > nul
+  msbuild /property:"Configuration=Pylux3Release" /property:"Platform=x64" /target:"luxrender" lux.sln
 )
 
-msbuild /property:"Configuration=Console" /property:"Platform=x64" /target:"core" lux.sln
-msbuild /property:"Configuration=Luxmerge" /property:"Platform=x64" /target:"core" lux.sln
-msbuild /property:"Configuration=Luxcomp" /property:"Platform=x64" /target:"core" lux.sln
+msbuild /property:"Configuration=Console" /property:"Platform=x64" /target:"luxrender" lux.sln
+msbuild /property:"Configuration=Luxmerge" /property:"Platform=x64" /target:"luxrender" lux.sln
+msbuild /property:"Configuration=Luxcomp" /property:"Platform=x64" /target:"luxrender" lux.sln
 
-:: msbuild /property:"Configuration=Console SSE1" /property:"Platform=x64" /target:"core" lux.sln
-:: msbuild /property:"Configuration=Release SSE1" /property:"Platform=x64" /target:"core" lux.sln
+:: msbuild /property:"Configuration=Console SSE1" /property:"Platform=x64" /target:"luxrender" lux.sln
+:: msbuild /property:"Configuration=Release SSE1" /property:"Platform=x64" /target:"luxrender" lux.sln
 
 
 

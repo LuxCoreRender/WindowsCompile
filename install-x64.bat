@@ -16,7 +16,7 @@ IF NOT EXIST .\Dist\64 (
 IF NOT EXIST .\Dist\64\Python2 (
     mkdir Dist\64\Python2
 )
-IF NOT "%BUILD_PYTHON3%" == "" (
+IF NOT "%LUX_BUILD_PYTHON3%" == "" (
   IF NOT EXIST .\Dist\64\Python3 (
     mkdir Dist\64\Python3
   )
@@ -26,16 +26,16 @@ cd Dist\64
 set INSTALL_PATH="%CD%"
 
 echo Copying luxrender.exe
-copy "%BUILD_PATH%"\Projects\x64\LuxRender\luxrender.exe luxrender.exe
+copy "%BUILD_PATH%"\Projects\luxrender\x64\LuxRender\luxrender.exe luxrender.exe
 echo Copying luxconsole.exe
-copy "%BUILD_PATH%"\Projects\x64\Console\luxconsole.exe luxconsole.exe
+copy "%BUILD_PATH%"\Projects\luxrender\x64\Console\luxconsole.exe luxconsole.exe
 echo Copying luxmerger.exe
-copy "%BUILD_PATH%"\Projects\x64\LuxMerge\luxmerger.exe luxmerger.exe
+copy "%BUILD_PATH%"\Projects\luxrender\x64\LuxMerge\luxmerger.exe luxmerger.exe
 echo Copying Python 2 pylux.pyd
-copy "%BUILD_PATH%"\Projects\x64\Pylux2Release\python2\pylux.pyd Python2\
-IF NOT "%BUILD_PYTHON3%" == "" (
+copy "%BUILD_PATH%"\Projects\luxrender\x64\Pylux2Release\python2\pylux.pyd Python2\
+IF NOT "%LUX_BUILD_PYTHON3%" == "" (
   echo Copying Python 3 pylux.pyd
-  copy "%BUILD_PATH%"\Projects\x64\Pylux3Release\python3\pylux.pyd Python3\
+  copy "%BUILD_PATH%"\Projects\luxrender\x64\Pylux3Release\python3\pylux.pyd Python3\
 )
 echo Copying Qt DLL's
 copy "%LUX_X64_QT_ROOT%"\bin\QtCore4.dll QtCore4.dll

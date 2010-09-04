@@ -1,10 +1,15 @@
 syntax: glob
 *.old
+*.sln.cache
 *.suo
 *.ncb
 *.xml
-Projects\Win32\*
-Projects\x64\*
-BuildTemp\*
+Projects\luxrays\Release\*
+Projects\luxrays\Debug\*
+Projects\luxrender\Win32\*
+Projects\luxrender\x64\*
+Projects\luxrender\BuildTemp\*
 *.vcproj.*
 build-vars.*
+.project
+.pydevproject
