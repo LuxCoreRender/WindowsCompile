@@ -1853,6 +1853,10 @@
 					RelativePath="..\..\..\lux\materials\shinymetal.cpp"
 					>
 				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\velvet.cpp"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="renderers"
@@ -3038,6 +3042,10 @@
 					<Filter
 						Name="bxdf"
 						>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\asperity.cpp"
+							>
+						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\brdftobtdf.cpp"
 							>
@@ -9343,6 +9351,10 @@
 						/>
 					</FileConfiguration>
 				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\velvet.h"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="samplers"
@@ -11737,6 +11749,10 @@
 					<Filter
 						Name="bxdf"
 						>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\asperity.h"
+							>
+						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\brdftobtdf.h"
 							>
