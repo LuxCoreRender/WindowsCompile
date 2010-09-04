@@ -20,7 +20,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -81,7 +81,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -143,7 +143,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
@@ -203,7 +203,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
