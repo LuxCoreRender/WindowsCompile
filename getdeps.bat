@@ -14,6 +14,8 @@ set FREEIMAGE_VER_N=3141
 
 set QT_VER=4.6.2
 
+set GLEW_VER=1.5.5
+
 :: NVIDIA CUDA Toolkits
 :: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_32.exe
 :: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_64.exe
@@ -31,6 +33,7 @@ set QT_VER=4.6.2
 :: Can be extracted with 7z - provides ati-stream-sdk-v2.2-vista-win7-32\Packages\Apps\ATIStreamSDK_Dev.msi
 :: .msi can be extracted with 7z - but provides junk/obfuscated files :(
 
+
 echo.
 echo **************************************************************************
 echo * Startup                                                                *
@@ -44,6 +47,7 @@ echo   bzip 1.0.5                               http://www.bzip.org/
 echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
+echo   GLEW %GLEW_VER%                               http://glew.sourceforge.net/
 echo.
 echo Downloading and extracting all this source code will require over 1GB, and
 echo building it will require several gigs more. Make sure you have plenty of space
@@ -113,6 +117,7 @@ echo Windows Registry Editor Version 5.00 > build-vars.reg
 echo. >> build-vars.reg
 echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]>> build-vars.reg
 echo "LUX_WINDOWS_BUILD_ROOT"="%CD:\=\\%" >> build-vars.reg
+
 
 :boost
 IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (
@@ -246,7 +251,6 @@ echo "LUX_X86_FREEIMAGE_ROOT"="%D32R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-
 echo "LUX_X64_FREEIMAGE_ROOT"="%D64R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
 
 
-
 :sqlite
 IF NOT EXIST %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip (
     echo.
@@ -327,6 +331,33 @@ echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-%PYTHON3_VER%>> build-vars.bat
 
 echo "LUX_X86_PYTHON3_ROOT"="%D32R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
 echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
+
+
+:glew
+IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%.zip (
+    echo.
+    echo **************************************************************************
+    echo * Downloading GLEW                                                       *
+    echo **************************************************************************
+    %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%.zip
+    if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
+    )
+)
+echo.
+echo **************************************************************************
+echo * Extracting GLEW                                                        *
+echo **************************************************************************
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%.zip -o%D32%\ > nul
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%.zip -o%D64%\ > nul
+
+echo set LUX_X86_GLEW_ROOT=%D32%\glew-%GLEW_VER%>> build-vars.bat
+echo set LUX_X64_GLEW_ROOT=%D64%\glew-%GLEW_VER%>> build-vars.bat
+
+echo "LUX_X86_GLEW_ROOT"="%D32R:\=\\%\\glew-%GLEW_VER%">> build-vars.reg
+echo "LUX_X64_GLEW_ROOT"="%D64R:\=\\%\\glew-%GLEW_VER%">> build-vars.reg
 
 
 echo.
