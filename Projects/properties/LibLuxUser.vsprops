@@ -9,5 +9,7 @@
 		UseLibraryDependencyInputs="true"
 		AdditionalDependencies="liblux.lib"
 		AdditionalLibraryDirectories="$(OutDir)"
+		ModuleDefinitionFile=""
+		OptimizeReferences="1"
 	/>
 </VisualStudioPropertySheet>
