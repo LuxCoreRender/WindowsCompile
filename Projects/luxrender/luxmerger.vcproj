@@ -23,6 +23,7 @@
 			Name="Release|Win32"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -82,6 +83,7 @@
 			Name="Release|x64"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -141,6 +143,8 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -197,6 +201,8 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -253,6 +259,8 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -309,6 +317,8 @@
 		<Configuration
 			Name="Debug SSE1|x64"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -365,6 +375,8 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -421,6 +433,8 @@
 		<Configuration
 			Name="Release SSE1|x64"
 			ConfigurationType="1"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"

@@ -23,6 +23,7 @@
 			Name="Debug|Win32"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -86,6 +87,7 @@
 			Name="Debug|x64"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python2.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -149,6 +151,7 @@
 			Name="Release|Win32"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -212,6 +215,7 @@
 			Name="Release|x64"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python2.vsprops"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool

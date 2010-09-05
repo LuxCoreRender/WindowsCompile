@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="64bit-Debug"
 	IntermediateDirectory="BuildTemp\$(ProjectName)\x64\$(ConfigurationName)"
+	OutputDirectory="$(PlatformName)\x64\$(ConfigurationName)"
 	>
 	<Tool
 		Name="VCCLCompilerTool"

@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="32bit-Release"
 	IntermediateDirectory="BuildTemp\$(ProjectName)\$(SSE_Version)\$(ConfigurationName)"
+	OutputDirectory="$(PlatformName)\$(SSE_Version)\$(ConfigurationName)"
 	>
 	<Tool
 		Name="VCCLCompilerTool"
