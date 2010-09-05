@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -82,7 +82,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

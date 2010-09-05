@@ -22,6 +22,6 @@
 		LinkIncremental="1"
 		ProgramDatabaseFile="$(OUTDIR)/liblux.pdb"
 		RandomizedBaseAddress="2"
-		ImportLibrary="$(OUTDIR)/liblux.lib"
+		ImportLibrary=""
 	/>
 </VisualStudioPropertySheet>
