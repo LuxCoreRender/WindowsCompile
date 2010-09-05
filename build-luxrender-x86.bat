@@ -78,7 +78,6 @@ echo **************************************************************************
 set BUILD_PATH="%CD%"
 
 :StartChoice
-set BUILDCHOICE=''
 
 echo.
 echo If this is your first time building LuxRender, you'll need to build the 
@@ -93,6 +92,20 @@ IF "%LUX_BUILD_PYTHON3%" == "" (
   echo before running this script.
   echo.
 )
+
+:DebugChoice
+echo Build Debug binaries ?
+echo 0: No (default)
+echo 1: Yes
+set BUILD_DEBUG=0
+set /P BUILD_DEBUG="Selection? "
+IF %BUILD_DEBUG% EQU 0 GOTO BuildDepsChoice 
+IF %BUILD_DEBUG% EQU 1 GOTO BuildDepsChoice
+echo Invalid choice
+GOTO DebugChoice
+
+:BuildDepsChoice
+echo.
 echo Build options:
 echo 1: Build everything (all dependencies and LuxRender)
 echo 2: Build everything but Qt
@@ -153,9 +166,7 @@ echo **************************************************************************
 echo * Building Python 2                                                      *
 echo **************************************************************************
 cd /d %LUX_X86_PYTHON2_ROOT%\PCbuild
-:: vcbuild /nologo /rebuild pcbuild.sln "Debug|Win32"
-:: vcbuild /nologo /rebuild pcbuild.sln "Release|Win32"
-:: msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln )
 msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"python" pcbuild.sln
 
 
@@ -165,9 +176,7 @@ echo **************************************************************************
 echo * Building Python 3                                                      *
 echo **************************************************************************
 cd /d %LUX_X86_PYTHON3_ROOT%\PCbuild
-:: vcbuild /nologo /rebuild pcbuild.sln "Debug|Win32"
-:: vcbuild /nologo /rebuild pcbuild.sln "Release|Win32"
-:: msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln )
 msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"python" pcbuild.sln
 
 
@@ -187,6 +196,7 @@ echo.
 echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
 echo **************************************************************************
+IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost debug stage )
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
 
 :: hax boost script to force acceptance of python versions
@@ -199,6 +209,7 @@ echo * Building Boost::Python2                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
+IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
 IF "%LUX_BUILD_PYTHON3%" == "" ( GOTO Boost_Remainder )
@@ -209,6 +220,7 @@ echo * Building Boost::Python3                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
 copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
+IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows debug stage ) 
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
 :Boost_Remainder
@@ -220,8 +232,9 @@ echo *          Boost::Regex                                                  *
 echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
+IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage ) 
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
+:: bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 
 :: ****************************************************************************
@@ -237,10 +250,11 @@ cd /d %LUX_X86_FREEIMAGE_ROOT%\FreeImage
 rem Patch solution file to enable FreeImageLib as a build target
 %BUILD_PATH%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %BUILD_PATH%\support\FreeImage.2008.sln.patch
 
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
 msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
 
 
-goto LuxRender
+goto LuxRays
 
 :: ****************************************************************************
 :: ********************************** GLEW ************************************
@@ -252,6 +266,7 @@ echo * Building GLEW                                                          *
 echo **************************************************************************
 cd /d %LUX_X86_GLEW_ROOT%\build\vc6
 
+msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" glew.dsw
 msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" glew.dsw
 
 
@@ -265,8 +280,12 @@ echo **************************************************************************
 echo * Building LuxRays                                                       *
 echo **************************************************************************
 
-:: msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"luxrays" lux.sln
-msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"luxrays" lux.sln
+IF %BUILD_DEBUG% EQU 1 (
+	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"luxrays;benchsimple;benchpixel" lux.sln
+)
+
+msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"luxrays;benchpixel;benchsimple" lux.sln
+
 
 
 :: ****************************************************************************
@@ -280,30 +299,17 @@ echo * Building LuxRender                                                     *
 echo **************************************************************************
 cd /d %BUILD_PATH%
 
-:: include flex and bison in system PATH
-set PATH=%CD%\support\bin;%PATH%
-
-:: msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"luxrender" lux.sln
-:: msbuild /m /property:"Configuration=Pylux2Debug" /property:"Platform=Win32" /target:"luxrender" lux.sln
-:: msbuild /m /property:"Configuration=Pylux3Debug" /property:"Platform=Win32" /target:"luxrender" lux.sln
-
-msbuild /m /property:"Configuration=LuxRender" /property:"Platform=Win32" /target:"luxrender" lux.sln
-del Projects\luxrender\BuildTemp\Release\SSE2\binding.* > nul
-msbuild /m /property:"Configuration=Pylux2Release" /property:"Platform=Win32" /target:"luxrender" lux.sln
-IF NOT "%LUX_BUILD_PYTHON3%" == "" (
-  del Projects\luxrender\BuildTemp\Release\SSE2\binding.* > nul
-  msbuild /m /property:"Configuration=Pylux3Release" /property:"Platform=Win32" /target:"luxrender" lux.sln
+IF %BUILD_DEBUG% EQU 1 (
+	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
+	msbuild /m /property:"Configuration=Debug SSE1" /property:"Platform=Win32" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
 )
 
-msbuild /m /property:"Configuration=Console" /property:"Platform=Win32" /target:"luxrender" lux.sln
-msbuild /m /property:"Configuration=Luxmerge" /property:"Platform=Win32" /target:"luxrender" lux.sln
-msbuild /m /property:"Configuration=Luxcomp" /property:"Platform=Win32" /target:"luxrender" lux.sln
-
-:: msbuild /m /property:"Configuration=Console SSE1" /property:"Platform=Win32" /target:"luxrender" lux.sln
-:: msbuild /m /property:"Configuration=Release SSE1" /property:"Platform=Win32" /target:"luxrender" lux.sln
+msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
+msbuild /m /property:"Configuration=Release SSE1" /property:"Platform=Win32" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
 
 
 
+goto postLuxRender
 :: ****************************************************************************
 :: *********************************** Install ********************************
 :: ****************************************************************************
@@ -314,9 +320,12 @@ IF EXIST ./install-x86.bat (
     call install-x86.bat
 )
 
-:postLuxRender
-cd /d %BUILD_PATH%
 
+:postLuxRender
+:: ****************************************************************************
+:: *********************************** Finished *******************************
+:: ****************************************************************************
+cd /d %BUILD_PATH%
 
 echo.
 echo **************************************************************************
