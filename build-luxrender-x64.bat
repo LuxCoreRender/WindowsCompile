@@ -281,10 +281,10 @@ echo * Building LuxRays                                                       *
 echo **************************************************************************
 
 IF %BUILD_DEBUG% EQU 1 (
-	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:"luxrays;benchsimple;benchpixel" lux.sln
+	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:luxrays;benchpixel;benchsimple lux.sln
 )
 
-msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:"luxrays;benchpixel;benchsimple" lux.sln
+msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:luxrays;benchpixel;benchsimple lux.sln
 
 
 
@@ -300,10 +300,10 @@ echo **************************************************************************
 cd /d %BUILD_PATH%
 
 IF %BUILD_DEBUG% EQU 1 (
-	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
+	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 )
 
-msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:"liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3" lux.sln
+msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 
 
 
