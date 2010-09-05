@@ -74,9 +74,6 @@ echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
 
-:: Store known location
-set BUILD_PATH="%CD%"
-
 :StartChoice
 
 echo.
@@ -151,7 +148,7 @@ echo process should be autonomous.
 pause
 
 rem Patch qmake.conf file to enable multithreaded compilation
-%BUILD_PATH%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %BUILD_PATH%\support\qmake.conf.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %LUX_WINDOWS_BUILD_ROOT%\support\qmake.conf.patch
 
 configure -opensource -release -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-sse2
 nmake
@@ -200,7 +197,7 @@ IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static thr
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
 
 :: hax boost script to force acceptance of python versions
-copy /Y %BUILD_PATH%\support\python.jam .\tools\build\v2\tools
+copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\python.jam .\tools\build\v2\tools
 
 :Boost_Python2
 echo.
@@ -208,7 +205,7 @@ echo **************************************************************************
 echo * Building Boost::Python2                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
-copy /Y %BUILD_PATH%\support\x86-project-config-26.jam .\project-config.jam
+copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-26.jam .\project-config.jam
 IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
@@ -219,7 +216,7 @@ echo **************************************************************************
 echo * Building Boost::Python3                                                *
 echo **************************************************************************
 copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
-copy /Y %BUILD_PATH%\support\x86-project-config-31.jam .\project-config.jam
+copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-31.jam .\project-config.jam
 IF %BUILD_DEBUG% EQU 1 ( bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows debug stage ) 
 bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
 
@@ -248,10 +245,10 @@ echo **************************************************************************
 cd /d %LUX_X86_FREEIMAGE_ROOT%\FreeImage
 
 rem Patch solution file to enable FreeImageLib as a build target
-%BUILD_PATH%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %BUILD_PATH%\support\FreeImage.2008.sln.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage.2008.sln.patch
 
-IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
-msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%BUILD_PATH%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
 
 
 goto LuxRays
@@ -279,7 +276,7 @@ echo.
 echo **************************************************************************
 echo * Building LuxRays                                                       *
 echo **************************************************************************
-
+cd /d %LUX_WINDOWS_BUILD_ROOT%
 IF %BUILD_DEBUG% EQU 1 (
 	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:luxrays;benchpixel;benchsimple lux.sln
 )
@@ -297,8 +294,7 @@ echo.
 echo **************************************************************************
 echo * Building LuxRender                                                     *
 echo **************************************************************************
-cd /d %BUILD_PATH%
-
+cd /d %LUX_WINDOWS_BUILD_ROOT%
 IF %BUILD_DEBUG% EQU 1 (
 	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 	msbuild /m /property:"Configuration=Debug SSE1" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
@@ -314,7 +310,7 @@ goto postLuxRender
 :: *********************************** Install ********************************
 :: ****************************************************************************
 
-cd /d %BUILD_PATH%
+cd /d %LUX_WINDOWS_BUILD_ROOT%
 
 IF EXIST ./install-x86.bat (
     call install-x86.bat
@@ -325,7 +321,7 @@ IF EXIST ./install-x86.bat (
 :: ****************************************************************************
 :: *********************************** Finished *******************************
 :: ****************************************************************************
-cd /d %BUILD_PATH%
+cd /d %LUX_WINDOWS_BUILD_ROOT%
 
 echo.
 echo **************************************************************************
