@@ -181,8 +181,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
@@ -235,8 +233,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release SSE1|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
@@ -289,8 +285,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release SSE1|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
@@ -343,8 +337,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug SSE1|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
@@ -397,8 +389,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug SSE1|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
@@ -2455,12 +2445,82 @@
 				RelativePath="..\..\..\lux\core\luxlex.l"
 				>
 				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Lexing $(InputName)"
-						CommandLine="flex -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
 						Outputs="$(InputDir)/luxlex.cpp"
 					/>
 				</FileConfiguration>
@@ -2469,12 +2529,82 @@
 				RelativePath="..\..\..\lux\core\luxparse.y"
 				>
 				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Yacc&apos;ing $(InputName)"
-						CommandLine="bison -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;"
 						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
 					/>
 				</FileConfiguration>
