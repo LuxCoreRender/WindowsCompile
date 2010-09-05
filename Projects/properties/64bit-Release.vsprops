@@ -3,8 +3,8 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="64bit-Release"
-	IntermediateDirectory="BuildTemp\$(ProjectName)\x64\$(ConfigurationName)"
 	OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+	IntermediateDirectory="BuildTemp\$(ProjectName)\x64\$(ConfigurationName)"
 	>
 	<Tool
 		Name="VCCLCompilerTool"
@@ -19,7 +19,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X64_QT_ROOT)\lib&quot;"
+		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X64_QT_ROOT)\lib&quot;;C:\Development\SDKs\ATI\Stream\lib\x86_64"
 		OptimizeReferences="2"
 		EnableCOMDATFolding="2"
 		TargetMachine="17"

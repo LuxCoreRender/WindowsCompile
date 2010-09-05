@@ -82,7 +82,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -143,8 +143,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
-			CharacterSet="0"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -176,68 +175,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OUTDIR)/luxconsole.exe"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release SSE1|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops;..\properties\LuxCoreProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
-			CharacterSet="0"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				OutputFile="$(OUTDIR)/luxconsole.exe"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -435,64 +372,6 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
-		<Configuration
-			Name="Debug SSE1|x64"
-			ConfigurationType="1"
-			CharacterSet="0"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -521,22 +400,6 @@
 			<File
 				RelativePath="..\Resources\core.rc"
 				>
-				<FileConfiguration
-					Name="Release SSE1|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release SSE1|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\Resources\lux.ico"

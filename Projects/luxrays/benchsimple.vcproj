@@ -207,6 +207,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

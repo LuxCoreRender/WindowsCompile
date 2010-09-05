@@ -214,7 +214,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -253,6 +253,123 @@
 				OutputFile="$(OutDir)\python2\pylux.pyd"
 				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python2/lib&quot;"
 				SubSystem="2"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release SSE1|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python2.vsprops;..\properties\SSE1.vsprops"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\python2\pylux.pyd"
+				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug SSE1|Win32"
+			ConfigurationType="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
