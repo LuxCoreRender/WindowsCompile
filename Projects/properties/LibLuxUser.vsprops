@@ -6,6 +6,7 @@
 	>
 	<Tool
 		Name="VCLinkerTool"
+		UseLibraryDependencyInputs="true"
 		AdditionalDependencies="liblux.lib"
 		AdditionalLibraryDirectories="$(OutDir)"
 	/>
