@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -86,7 +86,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -396,7 +396,7 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE1.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
