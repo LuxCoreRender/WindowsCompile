@@ -117,7 +117,7 @@ set /P BUILDCHOICE="Selection? "
 IF %BUILDCHOICE% == 1 ( GOTO QT )
 IF %BUILDCHOICE% == 2 ( GOTO Python )
 IF %BUILDCHOICE% == 3 ( GOTO QT )
-IF %BUILDCHOICE% == 4 ( GOTO LuxRender )
+IF %BUILDCHOICE% == 4 ( GOTO LuxRays )
 IF /I %BUILDCHOICE% EQU q ( GOTO :EOF )
 
 echo Invalid choice
@@ -126,7 +126,7 @@ GOTO StartChoice
 
 
 :BuildDeps
-IF /I %BUILDCHOICE% GEQ 4 ( GOTO LuxRender )
+IF /I %BUILDCHOICE% GEQ 4 ( GOTO LuxRays )
 
 
 :: ****************************************************************************
