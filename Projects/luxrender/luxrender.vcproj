@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

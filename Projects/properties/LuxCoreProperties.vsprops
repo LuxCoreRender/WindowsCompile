@@ -11,6 +11,7 @@
 		PreprocessorDefinitions="FREEIMAGE_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"
+		EnableFunctionLevelLinking="true"
 		FloatingPointModel="0"
 		UsePrecompiledHeader="0"
 		WarningLevel="3"

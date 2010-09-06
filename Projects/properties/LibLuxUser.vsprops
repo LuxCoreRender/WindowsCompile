@@ -10,6 +10,5 @@
 		AdditionalDependencies="liblux.lib"
 		AdditionalLibraryDirectories="$(OutDir)"
 		OptimizeReferences="1"
-		EnableCOMDATFolding="1"
 	/>
 </VisualStudioPropertySheet>

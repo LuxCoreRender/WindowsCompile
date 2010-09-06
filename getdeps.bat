@@ -115,7 +115,7 @@ echo set LUX_WINDOWS_BUILD_ROOT="%CD%">> build-vars.bat
 
 echo Windows Registry Editor Version 5.00 > build-vars.reg
 echo. >> build-vars.reg
-echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]>> build-vars.reg
+echo [HKEY_CURRENT_USER\Environment]>> build-vars.reg
 echo "LUX_WINDOWS_BUILD_ROOT"="%CD:\=\\%">> build-vars.reg
 
 
