@@ -84,11 +84,6 @@ echo.
 echo If you've successfully built the dependencies before, you only need to
 echo build LuxRender.
 echo.
-IF "%LUX_BUILD_PYTHON3%" == "" (
-  echo Python 3 target is disabled, to enable set the LUX_BUILD_PYTHON3 variable 
-  echo before running this script.
-  echo.
-)
 
 :DebugChoice
 echo Build Debug binaries ?
@@ -167,7 +162,6 @@ IF %BUILD_DEBUG% EQU 1 ( msbuild /m /property:"Configuration=Debug" /property:"P
 msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:"python" pcbuild.sln
 
 
-IF "%LUX_BUILD_PYTHON3%" == "" ( GOTO Boost )
 echo.
 echo **************************************************************************
 echo * Building Python 3                                                      *
@@ -209,7 +203,6 @@ copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-26.jam .\project-con
 IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
 tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
-IF "%LUX_BUILD_PYTHON3%" == "" ( GOTO Boost_Remainder )
 :Boost_Python3
 echo.
 echo **************************************************************************
