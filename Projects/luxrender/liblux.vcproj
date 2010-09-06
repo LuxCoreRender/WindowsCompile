@@ -710,6 +710,10 @@
 				Name="renderers"
 				>
 				<File
+					RelativePath="..\..\..\lux\renderers\hybridrenderer.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
 					>
 				</File>
@@ -1965,6 +1969,10 @@
 			<Filter
 				Name="renderers"
 				>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridrenderer.h"
+					>
+				</File>
 				<File
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.h"
 					>
