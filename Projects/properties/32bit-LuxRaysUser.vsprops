@@ -1,7 +1,12 @@
-<?xml version="1.0"?>
-<VisualStudioPropertySheet 
-	ProjectType="Visual C++" 
-	Version="8.00" 
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
 	Name="32bit-LuxRaysUser"
 	>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="luxrays.lib OpenCL.lib"
+		AdditionalLibraryDirectories="E:\SDKs\ATI\Stream\lib\x86;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
+	/>
 </VisualStudioPropertySheet>
