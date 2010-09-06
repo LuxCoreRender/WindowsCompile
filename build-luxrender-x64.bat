@@ -230,8 +230,9 @@ echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
 IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
 tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-:: tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
+tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 
 :: ****************************************************************************
