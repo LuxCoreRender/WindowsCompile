@@ -43,8 +43,6 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X86_GLEW_ROOT)/include&quot;"
-				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -169,7 +167,6 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X86_GLEW_ROOT)/include&quot;"
-				EnableFunctionLevelLinking="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool

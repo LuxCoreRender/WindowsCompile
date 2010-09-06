@@ -42,7 +42,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -97,7 +96,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -151,7 +149,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				EnableFunctionLevelLinking="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -206,7 +203,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				EnableFunctionLevelLinking="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -261,7 +257,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				EnableFunctionLevelLinking="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -317,7 +312,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				EnableFunctionLevelLinking="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -372,7 +366,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -428,7 +421,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

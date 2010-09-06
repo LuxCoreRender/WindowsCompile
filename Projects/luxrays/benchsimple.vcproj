@@ -42,8 +42,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -163,7 +161,6 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				EnableFunctionLevelLinking="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
