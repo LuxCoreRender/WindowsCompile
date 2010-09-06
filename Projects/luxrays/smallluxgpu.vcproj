@@ -55,8 +55,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
-				AdditionalLibraryDirectories="Win32\Debug"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -117,8 +115,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
-				AdditionalLibraryDirectories="x64\Debug"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -180,9 +176,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
-				AdditionalLibraryDirectories="Win32\Release"
-				GenerateDebugInformation="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -243,8 +236,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
-				AdditionalLibraryDirectories="x64\Release"
 			/>
 			<Tool
 				Name="VCALinkTool"

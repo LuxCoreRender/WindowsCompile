@@ -22,8 +22,7 @@
 		LinkIncremental="1"
 		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib&quot;"
 		IgnoreDefaultLibraryNames=""
-		ProgramDatabaseFile="$(OUTDIR)/luxrays.pdb"
+		ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
 		SubSystem="0"
-		ImportLibrary="$(OUTDIR)/luxrays.lib"
 	/>
 </VisualStudioPropertySheet>

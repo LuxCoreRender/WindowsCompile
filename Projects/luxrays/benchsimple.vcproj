@@ -54,7 +54,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -174,8 +173,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="luxrays.lib"
-				GenerateDebugInformation="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
