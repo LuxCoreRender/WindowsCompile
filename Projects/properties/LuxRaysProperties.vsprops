@@ -7,7 +7,7 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
-		AdditionalIncludeDirectories="..\..\..\luxrays\include;E:\SDKs\ATI\Stream\include"
+		AdditionalIncludeDirectories="..\..\..\luxrays\include;&quot;$(ATISTREAMSDKROOT)\include&quot;"
 		PreprocessorDefinitions="FREEIMAGE_LIB;BOOST_STATIC_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"
@@ -20,7 +20,7 @@
 		Name="VCLinkerTool"
 		AdditionalDependencies="libboost_filesystem-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib FreeImage.lib OpenCL.lib OpenGL32.lib"
 		LinkIncremental="1"
-		AdditionalLibraryDirectories="E:\SDKs\ATI\Stream\lib"
+		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib&quot;"
 		IgnoreDefaultLibraryNames=""
 		ProgramDatabaseFile="$(OUTDIR)/luxrays.pdb"
 		SubSystem="0"

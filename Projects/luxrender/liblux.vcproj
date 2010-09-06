@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -76,7 +76,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -185,7 +185,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -239,7 +239,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -349,7 +349,7 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE1.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

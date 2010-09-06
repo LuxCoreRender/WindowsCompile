@@ -2,11 +2,11 @@
 <VisualStudioPropertySheet
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="32bit-LuxRaysUser"
+	Name="64bit-LuxRaysUser"
 	>
 	<Tool
 		Name="VCLinkerTool"
 		AdditionalDependencies="luxrays.lib OpenCL.lib"
-		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib\x86&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
+		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib\x86_64&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(ConfigurationName)&quot;"
 	/>
 </VisualStudioPropertySheet>

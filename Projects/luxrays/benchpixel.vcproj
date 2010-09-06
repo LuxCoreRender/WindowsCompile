@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -56,7 +56,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -83,7 +82,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -116,7 +115,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -143,7 +141,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -178,7 +176,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 			/>
 			<Tool
@@ -206,7 +203,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -239,7 +236,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
