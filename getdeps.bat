@@ -194,17 +194,18 @@ IF NOT EXIST %DOWNLOADS%\%OPENCL_PKG% (
 echo.
 echo I will now launch the SDK installer. You can install anywhere you like, but to be
 echo on the safe side, please choose a path that doesn't contain spaces.
-start /WAIT %DOWNLOADS%\%OPENCL_PKG%
+start /WAIT "" %DOWNLOADS%\%OPENCL_PKG%
 echo Waiting for installer. When finished,
 pause
 goto %OPENCL_VARS%
 
 :SetCUDAVars
 :: Use %% to insert literal env var name, for expansion later
+:: Add LUX_WINDOWS_BUILD_ROOT\include for cl.hpp because CUDA doesn't include it
 echo set LUX_X86_OCL_LIBS=%%CUDA_LIB_PATH%%\..\lib\>> build-vars.bat
-echo set LUX_X86_OCL_INCLUDE=%%CUDA_INC_PATH%%>> build-vars.bat
+echo set LUX_X86_OCL_INCLUDE=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\include>> build-vars.bat
 echo set LUX_X64_OCL_LIBS=%%CUDA_LIB_PATH%%>> build-vars.bat
-echo set LUX_X64_OCL_INCLUDE=%%CUDA_INC_PATH%%>> build-vars.bat
+echo set LUX_X64_OCL_INCLUDE=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\include>> build-vars.bat
 
 echo "LUX_X86_OCL_LIBS"=%%CUDA_LIB_PATH%%\\..\\lib\\>> build-vars.reg
 echo "LUX_X86_OCL_INCLUDE"=%%CUDA_INC_PATH%%>> build-vars.reg
