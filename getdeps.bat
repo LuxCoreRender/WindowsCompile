@@ -206,18 +206,15 @@ goto %OPENCL_VARS%
 
 :SetCUDAVars
 :: Use another cmd instance to get new env vars expanded
-:: Add LUX_WINDOWS_BUILD_ROOT\include for cl.hpp because CUDA doesn't include it
-set LWBR_SAFE=%LUX_WINDOWS_BUILD_ROOT:\=\\%
-set LWBR_SAFE=%LWBR_SAFE:"=%
-cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_LIB_PATH:\=\\%\..\lib\">> build-vars.bat
-cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_INC_PATH:\=\\%";"%LWBR_SAFE%\include">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_LIB_PATH:\=\\%">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_INC_PATH:\=\\%";"%LWBR_SAFE%\include">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_LIB_PATH%\..\lib\">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_LIB_PATH%">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
 
 cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%\\..\\lib\\">> build-vars.reg
-cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%;%LWBR_SAFE%\\include">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%;%LWBR_SAFE%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
 goto OpenCLFinished
 
 :SetStreamVars
