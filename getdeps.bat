@@ -16,30 +16,13 @@ set QT_VER=4.6.2
 
 set GLEW_VER=1.5.5
 
-:: NVIDIA CUDA Toolkits
-:: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_32.exe
-:: http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/cudatoolkit_3.1_win_64.exe
-:: Cannot be extracted with 7z and don't work OOTB with luxrays src
-:: Older NV kits
-:: http://developer.download.nvidia.com/compute/cuda/2_3/opencl/sdk/gpucomputingsdk_2.3a_win_32.exe
-:: http://developer.download.nvidia.com/compute/cuda/2_3/opencl/sdk/gpucomputingsdk_2.3a_win_64.exe
-
-:: AMD/ATI STREAM SDKs
-:: Need to detect or ask about vista/win7 or XP variant
-:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-vista-win7-32.exe
-:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-vista-win7-64.exe
-:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-xp32.exe
-:: http://developer.amd.com/Downloads/ati-stream-sdk-v2.2-xp64.exe
-:: Can be extracted with 7z - provides ati-stream-sdk-v2.2-vista-win7-32\Packages\Apps\ATIStreamSDK_Dev.msi
-:: .msi can be extracted with 7z - but provides junk/obfuscated files :(
-
 
 echo.
 echo **************************************************************************
 echo * Startup                                                                *
 echo **************************************************************************
 echo.
-echo We are going to download and extract sources for:
+echo We are going to download and extract these libraries:
 echo   Boost %BOOST_VER_P%                             http://www.boost.org/
 echo   QT %QT_VER%                                 http://qt.nokia.com/
 echo   zlib %ZLIB_VER_P%                               http://www.zlib.net/
@@ -48,9 +31,16 @@ echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.n
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo   GLEW %GLEW_VER%                               http://glew.sourceforge.net/
+echo   GLUT 3.7.6                               http://www.idfun.de/glut64/
+echo   and EITHER:
+echo   NVIDIA CUDA ToolKit 3.1
+echo       http://developer.nvidia.com/object/cuda_3_1_downloads.html
+echo   OR:
+echo   ATI Stream SDK 2.2
+echo       http://developer.amd.com/gpu/atistreamsdk/pages/default.aspx
 echo.
-echo Downloading and extracting all this source code will require over 1GB, and
-echo building it will require several gigs more. Make sure you have plenty of space
+echo Downloading and extracting all this source code will require several gigabytes,
+echo and building it will require a lot more. Make sure you have plenty of space
 echo available on this drive, at least 15GB.
 echo.
 echo This script will use 2 pre-built binaries to download and extract source
@@ -118,6 +108,124 @@ echo. >> build-vars.reg
 echo [HKEY_CURRENT_USER\Environment]>> build-vars.reg
 echo "LUX_WINDOWS_BUILD_ROOT"="%CD:\=\\%">> build-vars.reg
 
+
+:OpenCL
+echo.
+echo **************************************************************************
+echo * OpenCL SDK                                                             *
+echo **************************************************************************
+:OpenCLChoice
+echo.
+echo Please select which OpenCL SDK you wish to use:
+echo.
+echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
+echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
+echo 3. ATI Stream SDK 2.2 for Vista/Win7 32 bit
+echo 4. ATI Stream SDK 2.2 for Vista/Win7 64 bit (also contains 32bit libs)
+echo 5. ATI Stream SDK 2.2 for XP SP3 32 bit
+echo 6. ATI Stream SDK 2.2 for XP SP3 64 bit (also contains 32bit libs)
+echo.
+set OPENCL_CHOICE=0
+set /p OPENCL_CHOICE="Selection? "
+IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_32
+IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_64
+IF %OPENCL_CHOICE% EQU 3 GOTO STREAM_1_32
+IF %OPENCL_CHOICE% EQU 4 GOTO STREAM_1_64
+IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_2_32
+IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_2_64
+echo Invalid choice
+GOTO OpenCLChoice
+
+:CUDA_32
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
+set OPENCL_PKG=cudatoolkit_3.1_win_32.exe
+GOTO OpenCLInstall
+
+:CUDA_64
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
+set OPENCL_PKG=cudatoolkit_3.1_win_64.exe
+GOTO OpenCLInstall
+
+:STREAM_1_32
+set OPENCL_VARS=SetStreamVars
+set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 32 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-32.exe
+GOTO OpenCLInstall
+
+:STREAM_1_64
+set OPENCL_VARS=SetStreamVars
+set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 64 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-64.exe
+GOTO OpenCLInstall
+
+:STREAM_2_32
+set OPENCL_VARS=SetStreamVars
+set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 32 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=ati-stream-sdk-v2.2-xp32.exe
+GOTO OpenCLInstall
+
+:STREAM_2_64
+set OPENCL_VARS=SetStreamVars
+set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 64 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=ati-stream-sdk-v2.2-xp64.exe
+GOTO OpenCLInstall
+
+:OpenCLInstall
+IF NOT EXIST %DOWNLOADS%\%OPENCL_PKG% (
+    echo.
+    echo **************************************************************************
+    echo * Downloading %OPENCL_NAME%
+    echo **************************************************************************
+    %WGET% %OPENCL_URL%%OPENCL_PKG% -O %DOWNLOADS%\%OPENCL_PKG%
+    if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
+    )
+)
+echo.
+echo I will now launch the SDK installer. You can install anywhere you like, but to be
+echo on the safe side, please choose a path that doesn't contain spaces.
+start /WAIT %DOWNLOADS%\%OPENCL_PKG%
+echo Waiting for installer. When finished,
+pause
+goto %OPENCL_VARS%
+
+:SetCUDAVars
+:: Use %% to insert literal env var name, for expansion later
+echo set LUX_X86_OCL_LIBS=%%CUDA_LIB_PATH%%\..\lib\>> build-vars.bat
+echo set LUX_X86_OCL_INCLUDE=%%CUDA_INC_PATH%%>> build-vars.bat
+echo set LUX_X64_OCL_LIBS=%%CUDA_LIB_PATH%%>> build-vars.bat
+echo set LUX_X64_OCL_INCLUDE=%%CUDA_INC_PATH%%>> build-vars.bat
+
+echo "LUX_X86_OCL_LIBS"=%%CUDA_LIB_PATH%%\\..\\lib\\>> build-vars.reg
+echo "LUX_X86_OCL_INCLUDE"=%%CUDA_INC_PATH%%>> build-vars.reg
+echo "LUX_X64_OCL_LIBS"=%%CUDA_LIB_PATH%%>> build-vars.reg
+echo "LUX_X64_OCL_INCLUDE"=%%CUDA_INC_PATH%%>> build-vars.reg
+goto OpenCLFinished
+
+:SetStreamVars
+:: Use %% to insert literal env var name, for expansion later
+echo set LUX_X86_OCL_LIBS=%%ATISTREAMSDKROOT%%\lib\x86>> build-vars.bat
+echo set LUX_X86_OCL_INCLUDE=%%ATISTREAMSDKROOT%%\include>> build-vars.bat
+echo set LUX_X64_OCL_LIBS=%%ATISTREAMSDKROOT%%\lib\x86_64>> build-vars.bat
+echo set LUX_X64_OCL_INCLUDE=%%ATISTREAMSDKROOT%%\include>> build-vars.bat
+
+echo "LUX_X86_OCL_LIBS"=%%ATISTREAMSDKROOT%%\\lib\\x86>> build-vars.reg
+echo "LUX_X86_OCL_INCLUDE"=%%ATISTREAMSDKROOT%%\\include>> build-vars.reg
+echo "LUX_X64_OCL_LIBS"=%%ATISTREAMSDKROOT%%\\lib\\x86_64>> build-vars.reg
+echo "LUX_X64_OCL_INCLUDE"=%%ATISTREAMSDKROOT%%\\include>> build-vars.reg
+goto OpenCLFinished
+
+:OpenCLFinished
 
 :boost
 IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (
@@ -334,24 +442,38 @@ echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
 
 
 :glew
-IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%.zip (
+IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win32.zip (
     echo.
     echo **************************************************************************
-    echo * Downloading GLEW                                                       *
+    echo * Downloading GLEW 32 bit                                                *
     echo **************************************************************************
-    %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%.zip
+    %WGET% https://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
         exit /b -1
     )
+    
+)
+IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win64.zip (
+    echo.
+    echo **************************************************************************
+    echo * Downloading GLEW 64 bit                                                *
+    echo **************************************************************************
+    %WGET% https://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+    if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
+    )
+    
 )
 echo.
 echo **************************************************************************
 echo * Extracting GLEW                                                        *
 echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%.zip -o%D32%\ > nul
-%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%.zip -o%D64%\ > nul
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win32.zip -o%D32%\ > nul
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win64.zip -o%D64%\ > nul
 
 echo set LUX_X86_GLEW_ROOT=%D32%\glew-%GLEW_VER%>> build-vars.bat
 echo set LUX_X64_GLEW_ROOT=%D64%\glew-%GLEW_VER%>> build-vars.bat
@@ -360,21 +482,52 @@ echo "LUX_X86_GLEW_ROOT"="%D32R:\=\\%\\glew-%GLEW_VER%">> build-vars.reg
 echo "LUX_X64_GLEW_ROOT"="%D64R:\=\\%\\glew-%GLEW_VER%">> build-vars.reg
 
 
+:glut
+IF NOT EXIST %DOWNLOADS%\glut-3.7.6-bin-32and64.zip (
+    echo.
+    echo **************************************************************************
+    echo * Downloading GLUT                                                       *
+    echo **************************************************************************
+	%WGET% http://www.idfun.de/glut64/glut-3.7.6-bin-32and64.zip -O %DOWNLOADS%\glut-3.7.6-bin-32and64.zip
+	if ERRORLEVEL 1 (
+	)
+)
+echo.
+echo **************************************************************************
+echo * Extracting GLUT                                                        *
+echo **************************************************************************
+:: Technically, we only need to extract once, because it conatins both 32 and 64 bit
+:: binaries, but that's awkward given the convention we've set up, and it's not very big
+%UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D32%\ > nul
+%UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D64%\ > nul
+
+echo set LUX_X86_GLUT_ROOT=%D32%\glut-3.7.6-bin>> build-vars.bat
+echo set LUX_X64_GLUT_ROOT=%D64%\glut-3.7.6-bin>> build-vars.bat
+
+echo "LUX_X86_GLUT_ROOT"="%D32R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
+echo "LUX_X64_GLUT_ROOT"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
+
+
 echo.
 echo **************************************************************************
 echo * DONE                                                                   *
 echo **************************************************************************
 echo.
-echo I have created a batch file build-vars.bat that will set the required path
-echo variables for building.
-echo.
+:: echo I have created a batch file build-vars.bat that will set the required path
+:: echo variables for building.
+:: echo.
 echo I have also created a registry file build-vars.reg that will permanently set 
 echo the required path variables for building. After importing this into the 
 echo registry, you'll need to log out and back in for the changes to take effect.
+echo You need to do this before building LuxRender with Visual Studio.
 echo.
-echo To build for x86 you can now run build-x86.bat from a Visual Studio Command
-echo Prompt window.
+:: echo To build for x86 you can now run build-x86.bat from a Visual Studio Command
+:: echo Prompt window.
+echo To build dependencies for x86 you can now run build-luxrender-x86.bat from a Visual
+echo Studio Command Prompt window.
 echo.
-echo To build for x64 you can now run build-x64.bat from a Visual Studio Command
-echo Prompt window.
+:: echo To build for x64 you can now run build-x64.bat from a Visual Studio Command
+:: echo Prompt window.
+echo To build dependencies for x64 you can now run build-luxrender-x64.bat from a Visual
+echo Studio Command Prompt window.
 echo.
