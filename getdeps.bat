@@ -101,6 +101,7 @@ echo %D64%
 echo OK
 
 echo @Echo off > build-vars.bat
+set LUX_WINDOWS_BUILD_ROOT="%CD%"
 echo set LUX_WINDOWS_BUILD_ROOT="%CD%">> build-vars.bat
 
 echo Windows Registry Editor Version 5.00 > build-vars.reg
@@ -204,30 +205,30 @@ pause
 goto %OPENCL_VARS%
 
 :SetCUDAVars
-:: Use %% to insert literal env var name, for expansion later
+:: Use another cmd instance to get new env vars expanded
 :: Add LUX_WINDOWS_BUILD_ROOT\include for cl.hpp because CUDA doesn't include it
-echo set LUX_X86_OCL_LIBS=%%CUDA_LIB_PATH%%\..\lib\>> build-vars.bat
-echo set LUX_X86_OCL_INCLUDE=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\include>> build-vars.bat
-echo set LUX_X64_OCL_LIBS=%%CUDA_LIB_PATH%%>> build-vars.bat
-echo set LUX_X64_OCL_INCLUDE=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\include>> build-vars.bat
+cmd /C echo set LUX_X86_OCL_LIBS=%CUDA_LIB_PATH%\..\lib\>> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE=%CUDA_INC_PATH%;%LUX_WINDOWS_BUILD_ROOT%\include>> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS=%CUDA_LIB_PATH%>> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE=%CUDA_INC_PATH%;%LUX_WINDOWS_BUILD_ROOT%\include>> build-vars.bat
 
-echo "LUX_X86_OCL_LIBS"=%%CUDA_LIB_PATH%%\\..\\lib\\>> build-vars.reg
-echo "LUX_X86_OCL_INCLUDE"=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\\include>> build-vars.reg
-echo "LUX_X64_OCL_LIBS"=%%CUDA_LIB_PATH%%>> build-vars.reg
-echo "LUX_X64_OCL_INCLUDE"=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\\include>> build-vars.reg
+cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_LIB_PATH%\\..\\lib\\">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_INC_PATH%;%LUX_WINDOWS_BUILD_ROOT%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_LIB_PATH%">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH%;%LUX_WINDOWS_BUILD_ROOT%\\include">> build-vars.reg
 goto OpenCLFinished
 
 :SetStreamVars
-:: Use %% to insert literal env var name, for expansion later
-echo set LUX_X86_OCL_LIBS=%%ATISTREAMSDKROOT%%\lib\x86>> build-vars.bat
-echo set LUX_X86_OCL_INCLUDE=%%ATISTREAMSDKROOT%%\include>> build-vars.bat
-echo set LUX_X64_OCL_LIBS=%%ATISTREAMSDKROOT%%\lib\x86_64>> build-vars.bat
-echo set LUX_X64_OCL_INCLUDE=%%ATISTREAMSDKROOT%%\include>> build-vars.bat
+:: Use another cmd instance to get new env vars expanded
+cmd /C echo set LUX_X86_OCL_LIBS=%ATISTREAMSDKROOT%\lib\x86>> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE=%ATISTREAMSDKROOT%\include>> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS=%ATISTREAMSDKROOT%\lib\x86_64>> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE=%ATISTREAMSDKROOT%\include>> build-vars.bat
 
-echo "LUX_X86_OCL_LIBS"=%%ATISTREAMSDKROOT%%\\lib\\x86>> build-vars.reg
-echo "LUX_X86_OCL_INCLUDE"=%%ATISTREAMSDKROOT%%\\include>> build-vars.reg
-echo "LUX_X64_OCL_LIBS"=%%ATISTREAMSDKROOT%%\\lib\\x86_64>> build-vars.reg
-echo "LUX_X64_OCL_INCLUDE"=%%ATISTREAMSDKROOT%%\\include>> build-vars.reg
+cmd /C echo "LUX_X86_OCL_LIBS"="%ATISTREAMSDKROOT%\\lib\\x86">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT%\\lib\\x86_64">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT%\\include">> build-vars.reg
 goto OpenCLFinished
 
 :OpenCLFinished
