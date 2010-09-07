@@ -7,7 +7,7 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
-		AdditionalIncludeDirectories="..\..\..\luxrays\include;&quot;$(ATISTREAMSDKROOT)\include&quot;"
+		AdditionalIncludeDirectories="..\..\..\luxrays\include;&quot;$(LUX_X86_OCL_INCLUDE)&quot;"
 		PreprocessorDefinitions="FREEIMAGE_LIB;BOOST_STATIC_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"

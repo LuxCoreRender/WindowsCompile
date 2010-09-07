@@ -7,6 +7,6 @@
 	<Tool
 		Name="VCLinkerTool"
 		AdditionalDependencies="luxrays.lib OpenCL.lib"
-		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib\x86&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
+		AdditionalLibraryDirectories="&quot;$(LUX_X86_OCL_LIBS)&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
 	/>
 </VisualStudioPropertySheet>
