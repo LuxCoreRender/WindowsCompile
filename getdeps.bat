@@ -471,7 +471,6 @@ IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win64.zip (
         echo Download failed. Are you connected to the internet?
         exit /b -1
     )
-    
 )
 echo.
 echo **************************************************************************
@@ -495,6 +494,9 @@ IF NOT EXIST %DOWNLOADS%\glut-3.7.6-bin-32and64.zip (
     echo **************************************************************************
 	%WGET% http://www.idfun.de/glut64/glut-3.7.6-bin-32and64.zip -O %DOWNLOADS%\glut-3.7.6-bin-32and64.zip
 	if ERRORLEVEL 1 (
+        echo.
+        echo Download failed. Are you connected to the internet?
+        exit /b -1
 	)
 )
 echo.
