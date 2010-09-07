@@ -124,6 +124,8 @@ echo 3. ATI Stream SDK 2.2 for Vista/Win7 32 bit
 echo 4. ATI Stream SDK 2.2 for Vista/Win7 64 bit (also contains 32bit libs)
 echo 5. ATI Stream SDK 2.2 for XP SP3 32 bit
 echo 6. ATI Stream SDK 2.2 for XP SP3 64 bit (also contains 32bit libs)
+echo N. I have already installed an NVIDIA CUDA Toolkit
+echo A. I have already installed an ATI Stream Toolkit
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
@@ -133,6 +135,8 @@ IF %OPENCL_CHOICE% EQU 3 GOTO STREAM_1_32
 IF %OPENCL_CHOICE% EQU 4 GOTO STREAM_1_64
 IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_2_32
 IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_2_64
+IF "%OPENCL_CHOICE%" == "N" GOTO SetCUDAVars
+IF "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
 echo Invalid choice
 GOTO OpenCLChoice
 
@@ -208,9 +212,9 @@ echo set LUX_X64_OCL_LIBS=%%CUDA_LIB_PATH%%>> build-vars.bat
 echo set LUX_X64_OCL_INCLUDE=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\include>> build-vars.bat
 
 echo "LUX_X86_OCL_LIBS"=%%CUDA_LIB_PATH%%\\..\\lib\\>> build-vars.reg
-echo "LUX_X86_OCL_INCLUDE"=%%CUDA_INC_PATH%%>> build-vars.reg
+echo "LUX_X86_OCL_INCLUDE"=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\\include>> build-vars.reg
 echo "LUX_X64_OCL_LIBS"=%%CUDA_LIB_PATH%%>> build-vars.reg
-echo "LUX_X64_OCL_INCLUDE"=%%CUDA_INC_PATH%%>> build-vars.reg
+echo "LUX_X64_OCL_INCLUDE"=%%CUDA_INC_PATH%%;%%LUX_WINDOWS_BUILD_ROOT%%\\include>> build-vars.reg
 goto OpenCLFinished
 
 :SetStreamVars
