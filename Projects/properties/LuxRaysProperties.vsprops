@@ -20,7 +20,6 @@
 		Name="VCLinkerTool"
 		AdditionalDependencies="libboost_filesystem-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib FreeImage.lib OpenCL.lib OpenGL32.lib"
 		LinkIncremental="1"
-		AdditionalLibraryDirectories="&quot;$(ATISTREAMSDKROOT)\lib&quot;"
 		IgnoreDefaultLibraryNames=""
 		ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
 		SubSystem="0"

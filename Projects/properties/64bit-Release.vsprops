@@ -19,7 +19,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X64_QT_ROOT)\lib&quot;;C:\Development\SDKs\ATI\Stream\lib\x86_64"
+		AdditionalLibraryDirectories="&quot;$(LUX_X64_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_X64_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X64_QT_ROOT)\lib&quot;"
 		TargetMachine="17"
 	/>
 	<Tool
