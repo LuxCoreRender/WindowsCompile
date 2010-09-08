@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -81,7 +81,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -141,7 +141,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -258,7 +258,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying GL DLL&apos;s to target directory if needed"
-				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_ROOT)\glut$(LUX_ARCH).dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_ROOT)\bin\glew32.dll&quot; &quot;$(TargetDir)&quot;"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_ROOT)\glut$(LUX_ARCH).dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_ROOT)\bin\glew32.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 	</Configurations>
