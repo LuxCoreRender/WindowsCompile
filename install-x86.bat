@@ -25,7 +25,7 @@ goto Done
 :: This is a batch file equiv of a function
 :Install32
 
-set INSTALL_PATH="%CD%"\Dist\32\%SSE_VER%
+set INSTALL_PATH="%CD%"\Dist\32_%SSE_VER%
 
 IF NOT EXIST %INSTALL_PATH% (
 	echo.
