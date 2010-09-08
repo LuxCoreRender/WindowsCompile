@@ -508,6 +508,12 @@ echo **************************************************************************
 %UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D32%\ > nul
 %UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D64%\ > nul
 
+:: Move the headers into the GL/ folder
+mkdir %D32%\glut-3.7.6-bin\GL
+move %D32%\glut-3.7.6-bin\glut.h %D32%\glut-3.7.6-bin\GL\
+mkdir %D64%\glut-3.7.6-bin\GL
+move %D64%\glut-3.7.6-bin\glut.h %D32%\glut-3.7.6-bin\GL\
+
 echo set LUX_X86_GLUT_ROOT=%D32%\glut-3.7.6-bin>> build-vars.bat
 echo set LUX_X64_GLUT_ROOT=%D64%\glut-3.7.6-bin>> build-vars.bat
 

@@ -30,4 +30,16 @@
 		Name="LUX_QT_ROOT"
 		Value="$(LUX_X64_QT_ROOT)"
 	/>
+	<UserMacro
+		Name="LUX_ARCH"
+		Value="64"
+	/>
+	<UserMacro
+		Name="LUX_GLUT_ROOT"
+		Value="$(LUX_X64_GLUT_ROOT)"
+	/>
+	<UserMacro
+		Name="LUX_GLEW_ROOT"
+		Value="$(LUX_X64_GLEW_ROOT)"
+	/>
 </VisualStudioPropertySheet>

@@ -5,8 +5,12 @@
 	Name="32bit-LuxRaysUser"
 	>
 	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(LUX_X86_GLUT_ROOT)&quot;"
+	/>
+	<Tool
 		Name="VCLinkerTool"
-		AdditionalDependencies="luxrays.lib OpenCL.lib"
-		AdditionalLibraryDirectories="&quot;$(LUX_X86_OCL_LIBS)&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
+		AdditionalDependencies="OpenCL.lib glut32.lib glew32.lib luxrays.lib"
+		AdditionalLibraryDirectories="&quot;$(LUX_X86_OCL_LIBS)&quot;;&quot;$(LUX_X86_GLUT_ROOT)&quot;;&quot;$(LUX_X86_GLEW_ROOT)\lib&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(ConfigurationName)&quot;"
 	/>
 </VisualStudioPropertySheet>
