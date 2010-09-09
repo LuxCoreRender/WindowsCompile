@@ -452,7 +452,7 @@ IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win32.zip (
     echo **************************************************************************
     echo * Downloading GLEW 32 bit                                                *
     echo **************************************************************************
-    %WGET% https://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
+    %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
@@ -465,7 +465,7 @@ IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win64.zip (
     echo **************************************************************************
     echo * Downloading GLEW 64 bit                                                *
     echo **************************************************************************
-    %WGET% https://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+    %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
     if ERRORLEVEL 1 (
         echo.
         echo Download failed. Are you connected to the internet?
