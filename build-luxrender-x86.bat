@@ -245,22 +245,6 @@ IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=
 msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
 
 
-goto LuxRays
-
-:: ****************************************************************************
-:: ********************************** GLEW ************************************
-:: ****************************************************************************
-:GLEW
-echo.
-echo **************************************************************************
-echo * Building GLEW                                                          *
-echo **************************************************************************
-cd /d %LUX_X86_GLEW_ROOT%\build\vc6
-
-msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" glew.dsw
-msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" glew.dsw
-
-
 
 :: ****************************************************************************
 :: ******************************* LuxRays ************************************

@@ -6,11 +6,11 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="&quot;$(LUX_X64_GLUT_ROOT)&quot;"
+		AdditionalIncludeDirectories="&quot;$(LUX_X64_GLUT_INCLUDE)&quot;"
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalDependencies="OpenCL.lib glut64.lib glew32.lib luxrays.lib"
-		AdditionalLibraryDirectories="&quot;$(LUX_X64_OCL_LIBS)&quot;;&quot;$(LUX_X64_GLUT_ROOT)&quot;;&quot;$(LUX_X64_GLEW_ROOT)\lib&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(ConfigurationName)&quot;"
+		AdditionalDependencies="OpenCL.lib glut64.lib $(LUX_X64_GLEW_LIBNAME).lib luxrays.lib"
+		AdditionalLibraryDirectories="&quot;$(LUX_X64_OCL_LIBS)&quot;;&quot;$(LUX_X64_GLUT_LIBS)&quot;;&quot;$(LUX_X64_GLEW_LIBS)&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(ConfigurationName)&quot;"
 	/>
 </VisualStudioPropertySheet>
