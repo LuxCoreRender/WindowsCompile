@@ -28,7 +28,6 @@ echo   QT %QT_VER%                                 http://qt.nokia.com/
 echo   zlib %ZLIB_VER_P%                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
-echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
@@ -74,9 +73,7 @@ if ERRORLEVEL 9009 (
 
 :: TODO: Add option to place deps and/or downloads elsewhere
 
-:: TODO: Add option to force extract
-set FORCE_EXTRACT=0
-
+:ConfigDepsDir
 set DOWNLOADS="%CD%\..\downloads"
 :: resolve relative path
 FOR %%G in (%DOWNLOADS%) do (
@@ -104,6 +101,28 @@ echo %D32%
 echo %D64%
 echo OK
 
+
+set FORCE_EXTRACT=0
+:ForceExtractChoice
+echo.
+echo **************************************************************************
+echo * Extract Option                                                         *
+echo **************************************************************************
+echo.
+echo Should all sources be decompressed regardless of whether they have already
+echo been extracted ?
+echo.
+echo 0. No (default)
+echo 1. Yes
+echo.
+set /p FORCE_EXTRACT="Selection? "
+IF %FORCE_EXTRACT% EQU 0 GOTO CreateBuildVars
+IF %FORCE_EXTRACT% EQU 1 GOTO CreateBuildVars
+echo Invalid choice
+goto ForceExtractChoice
+
+
+:CreateBuildVars
 echo @Echo off > build-vars.bat
 set LUX_WINDOWS_BUILD_ROOT="%CD%"
 echo set LUX_WINDOWS_BUILD_ROOT="%CD%">> build-vars.bat
@@ -131,7 +150,7 @@ echo 4. ATI Stream SDK 2.2 for Vista/Win7 64 bit (also contains 32bit libs)
 echo 5. ATI Stream SDK 2.2 for XP SP3 32 bit
 echo 6. ATI Stream SDK 2.2 for XP SP3 64 bit (also contains 32bit libs)
 echo N. I have already installed an NVIDIA CUDA Toolkit
-echo A. I have already installed an ATI Stream Toolkit
+echo A. I have already installed an ATI Stream SDK
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
@@ -395,33 +414,6 @@ echo "LUX_X86_FREEIMAGE_ROOT"="%D32R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-
 echo "LUX_X64_FREEIMAGE_ROOT"="%D64R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
 
 
-:sqlite
-IF NOT EXIST %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip (
-	echo.
-	echo **************************************************************************
-	echo * Downloading sqlite                                                     *
-	echo **************************************************************************
-	%WGET% http://www.sqlite.org/sqlite-amalgamation-3_5_9.zip -O %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
-
-set EXTRACT_SQLITE=1
-IF EXIST %D32%\sqlite-3.5.9 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_SQLITE=0
-IF %EXTRACT_SQLITE% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting sqlite                                                      *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D32%\sqlite-3.5.9 > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D64%\sqlite-3.5.9 > nul
-)
-echo set LUX_X86_SQLITE_ROOT=%D32%\sqlite-3.5.9>> build-vars.bat
-echo set LUX_X64_SQLITE_ROOT=%D64%\sqlite-3.5.9>> build-vars.bat
-
 
 :python2
 IF NOT EXIST %DOWNLOADS%\Python-%PYTHON2_VER%.tgz (
@@ -579,9 +571,6 @@ IF %SKIP_GLEWGLUT% EQU 0 (
 	echo "LUX_X86_GLUT_BIN"="%D32R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
 	echo "LUX_X64_GLUT_BIN"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
 ) ELSE (
-	echo **************************************************************************
-	echo * Using GLEW AND GLUT from ATI Stream SDK Samples                        *
-	echo **************************************************************************
 	
 	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
 	cmd /C echo set LUX_X64_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
@@ -625,21 +614,24 @@ echo **************************************************************************
 echo * DONE                                                                   *
 echo **************************************************************************
 echo.
-:: echo I have created a batch file build-vars.bat that will set the required path
-:: echo variables for building.
-:: echo.
-echo I have also created a registry file build-vars.reg that will permanently set 
+
+echo I have created a registry file build-vars.reg that will permanently set 
 echo the required path variables for building. After importing this into the 
 echo registry, you'll need to log out and back in for the changes to take effect.
 echo You need to do this before building LuxRender with Visual Studio.
 echo.
-:: echo To build for x86 you can now run build-x86.bat from a Visual Studio Command
-:: echo Prompt window.
-echo To build dependencies for x86 you can now run build-luxrender-x86.bat from a Visual
-echo Studio Command Prompt window.
+
+echo To build dependencies for x86 you can now run build-deps-x86.bat from a
+echo Visual Studio Command Prompt for x86 window.
 echo.
-:: echo To build for x64 you can now run build-x64.bat from a Visual Studio Command
-:: echo Prompt window.
-echo To build dependencies for x64 you can now run build-luxrender-x64.bat from a Visual
-echo Studio Command Prompt window.
+
+echo To build dependencies for x64 you can now run build-deps-x64.bat from a
+echo Visual Studio Command Prompt for x64 window.
 echo.
+
+echo Building LuxRender is not currently supported from the command line, so
+echo after building the dependecies, please import the build-vars.reg file,
+echo and log out and back in again in order to build LuxRender with the 
+echo Visual Studio IDE.
+echo.
+

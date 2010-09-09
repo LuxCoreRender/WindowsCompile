@@ -82,6 +82,17 @@ echo **************************************************************************
 echo **************************************************************************
 
 
+:DebugChoice
+echo Build Debug binaries ?
+echo 0: No (default)
+echo 1: Yes
+set BUILD_DEBUG=0
+set /P BUILD_DEBUG="Selection? "
+IF %BUILD_DEBUG% EQU 0 GOTO LuxRender 
+IF %BUILD_DEBUG% EQU 1 GOTO LuxRender
+echo Invalid choice
+GOTO DebugChoice
+
 
 :: ****************************************************************************
 :: ******************************* LuxRender **********************************
