@@ -433,8 +433,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug SSE1|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			>
 			<Tool

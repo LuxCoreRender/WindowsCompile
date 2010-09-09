@@ -600,6 +600,9 @@ IF %SKIP_GLEWGLUT% EQU 0 (
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew64>> build-vars.bat
 	
+	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
+	echo "LUX_X64_GLEW_LIBNAME"="glew64">> build-vars.reg
+	
 	cmd /C echo set LUX_X86_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
 	cmd /C echo set LUX_X64_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
 	cmd /C echo set LUX_X86_GLUT_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
