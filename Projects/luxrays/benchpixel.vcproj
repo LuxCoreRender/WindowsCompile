@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -139,7 +139,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

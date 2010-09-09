@@ -36,4 +36,8 @@
 		Name="LUX_GLEW_DLL"
 		Value="$(LUX_X86_GLEW_BIN)\$(LUX_X86_GLEW_LIBNAME).dll"
 	/>
+	<UserMacro
+		Name="SSE_Version"
+		Value="SSE2"
+	/>
 </VisualStudioPropertySheet>
