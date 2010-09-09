@@ -29,9 +29,9 @@ echo   zlib %ZLIB_VER_P%                               http://www.zlib.net/
 echo   bzip 1.0.5                               http://www.bzip.org/
 echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
+echo   freeglut 2.6.0                           http://freeglut.sourceforge.net/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
-echo       GLUT 3.7.6                           http://www.idfun.de/glut64/
 echo       NVIDIA CUDA ToolKit 3.1
 echo           http://developer.nvidia.com/object/cuda_3_1_downloads.html
 echo   OR:
@@ -139,7 +139,7 @@ echo **************************************************************************
 echo * OpenCL SDK                                                             *
 echo **************************************************************************
 :OpenCLChoice
-set SKIP_GLEWGLUT=0
+set SKIP_GLEW=0
 echo.
 echo Please select which OpenCL SDK you wish to use:
 echo.
@@ -258,7 +258,7 @@ cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-var
 cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
 
-set SKIP_GLEWGLUT=1
+set SKIP_GLEW=1
 goto OpenCLFinished
 
 :OpenCLFinished
@@ -481,7 +481,28 @@ echo "LUX_X86_PYTHON3_ROOT"="%D32R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
 echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
 
 
-IF %SKIP_GLEWGLUT% EQU 0 (
+set EXTRACT_FREEGLUT=1
+IF EXIST %D32%\freeglut-2.6.0 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_FREEGLUT=0
+IF %EXTRACT_FREEGLUT% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting freeglut                                                    *
+	echo **************************************************************************
+	%UNZIPBIN% x -y "%LUX_WINDOWS_BUILD_ROOT%"\support\freeglut-2.6.0.7z -o%D32%\ > nul
+	%UNZIPBIN% x -y "%LUX_WINDOWS_BUILD_ROOT%"\support\freeglut-2.6.0.7z -o%D64%\ > nul
+)
+echo set LUX_X86_GLUT_INCLUDE=%D32%\freeglut-2.6.0\include>> build-vars.bat
+echo set LUX_X64_GLUT_INCLUDE=%D64%\freeglut-2.6.0\include>> build-vars.bat
+echo set LUX_X86_GLUT_LIBS=%D32%\freeglut-2.6.0\VisualStudio2008Static\Win32\Release>> build-vars.bat
+echo set LUX_X64_GLUT_LIBS=%D64%\freeglut-2.6.0\VisualStudio2008Static\x64\Release>> build-vars.bat
+
+echo "LUX_X86_GLUT_INCLUDE"="%D32R:\=\\%\\freeglut-2.6.0\\include">> build-vars.reg
+echo "LUX_X64_GLUT_INCLUDE"="%D64R:\=\\%\\freeglut-2.6.0\\include">> build-vars.reg
+echo "LUX_X86_GLUT_LIBS"="%D32R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\Win32\\Release">> build-vars.reg
+echo "LUX_X64_GLUT_LIBS"="%D64R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\x64\\Release">> build-vars.reg
+
+
+IF %SKIP_GLEW% EQU 0 (
 	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win32.zip (
 		echo.
 		echo **************************************************************************
@@ -529,47 +550,6 @@ IF %SKIP_GLEWGLUT% EQU 0 (
 	
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew32>> build-vars.bat
-	
-	IF NOT EXIST %DOWNLOADS%\glut-3.7.6-bin-32and64.zip (
-		echo.
-		echo **************************************************************************
-		echo * Downloading GLUT                                                       *
-		echo **************************************************************************
-		%WGET% http://www.idfun.de/glut64/glut-3.7.6-bin-32and64.zip -O %DOWNLOADS%\glut-3.7.6-bin-32and64.zip
-		if ERRORLEVEL 1 (
-			echo.
-			echo Download failed. Are you connected to the internet?
-			exit /b -1
-		)
-	)
-	echo.
-	echo **************************************************************************
-	echo * Extracting GLUT                                                        *
-	echo **************************************************************************
-	:: Technically, we only need to extract once, because it conatins both 32 and 64 bit
-	:: binaries, but that's awkward given the convention we've set up, and it's not very big
-	%UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D32%\ > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\glut-3.7.6-bin-32and64.zip -o%D64%\ > nul
-	
-	:: Move the headers into the GL/ folder
-	mkdir %D32%\glut-3.7.6-bin\GL
-	move %D32%\glut-3.7.6-bin\glut.h %D32%\glut-3.7.6-bin\GL\
-	mkdir %D64%\glut-3.7.6-bin\GL
-	move %D64%\glut-3.7.6-bin\glut.h %D32%\glut-3.7.6-bin\GL\
-	
-	echo set LUX_X86_GLUT_INCLUDE=%D32%\glut-3.7.6-bin>> build-vars.bat
-	echo set LUX_X64_GLUT_INCLUDE=%D64%\glut-3.7.6-bin>> build-vars.bat
-	echo set LUX_X86_GLUT_LIBS=%D32%\glut-3.7.6-bin>> build-vars.bat
-	echo set LUX_X64_GLUT_LIBS=%D64%\glut-3.7.6-bin>> build-vars.bat
-	echo set LUX_X86_GLUT_BIN=%D32%\glut-3.7.6-bin>> build-vars.bat
-	echo set LUX_X64_GLUT_BIN=%D64%\glut-3.7.6-bin>> build-vars.bat
-	
-	echo "LUX_X86_GLUT_INCLUDE"="%D32R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
-	echo "LUX_X64_GLUT_INCLUDE"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
-	echo "LUX_X86_GLUT_LIBS"="%D32R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
-	echo "LUX_X64_GLUT_LIBS"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
-	echo "LUX_X86_GLUT_BIN"="%D32R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
-	echo "LUX_X64_GLUT_BIN"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
 ) ELSE (
 	
 	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
@@ -591,20 +571,6 @@ IF %SKIP_GLEWGLUT% EQU 0 (
 	
 	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
 	echo "LUX_X64_GLEW_LIBNAME"="glew64">> build-vars.reg
-	
-	cmd /C echo set LUX_X86_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLUT_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLUT_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86_64">> build-vars.bat
-	
-	cmd /C echo "LUX_X86_GLUT_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLUT_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLUT_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 )
 
 

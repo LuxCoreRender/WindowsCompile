@@ -77,7 +77,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying GL DLL&apos;s to target directory if needed"
-				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration
@@ -139,7 +139,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying GL DLL&apos;s to target directory if needed"
-				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration
@@ -202,7 +202,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying GL DLL&apos;s to target directory if needed"
-				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration
@@ -264,7 +264,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying GL DLL&apos;s to target directory if needed"
-				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLUT_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_GLEW_DLL)&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 	</Configurations>

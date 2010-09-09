@@ -10,7 +10,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalDependencies="OpenCL.lib glut64.lib $(LUX_X64_GLEW_LIBNAME).lib luxrays.lib"
+		AdditionalDependencies="OpenCL.lib freeglut_static.lib $(LUX_X64_GLEW_LIBNAME).lib luxrays.lib"
 		AdditionalLibraryDirectories="&quot;$(LUX_X64_OCL_LIBS)&quot;;&quot;$(LUX_X64_GLUT_LIBS)&quot;;&quot;$(LUX_X64_GLEW_LIBS)&quot;;&quot;$(ProjectDir)\..\luxrays\$(PlatformName)\$(ConfigurationName)&quot;"
 	/>
 </VisualStudioPropertySheet>

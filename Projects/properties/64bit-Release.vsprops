@@ -31,10 +31,6 @@
 		Value="$(LUX_X64_QT_ROOT)"
 	/>
 	<UserMacro
-		Name="LUX_GLUT_DLL"
-		Value="$(LUX_X64_GLUT_BIN)\glut64.dll"
-	/>
-	<UserMacro
 		Name="LUX_GLEW_DLL"
 		Value="$(LUX_X64_GLEW_BIN)\$(LUX_X64_GLEW_LIBNAME).dll"
 	/>
