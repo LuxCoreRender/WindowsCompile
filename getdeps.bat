@@ -1,4 +1,4 @@
-Echo off
+@Echo off
 
 set BOOST_VER_U=1_43_0
 set BOOST_VER_P=1.43.0
@@ -31,8 +31,8 @@ echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.n
 echo   sqlite 3.5.9                             http://www.sqlite.org/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo   and EITHER:
-echo       GLEW %GLEW_VER%                               http://glew.sourceforge.net/
-echo       GLUT 3.7.6                               http://www.idfun.de/glut64/
+echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
+echo       GLUT 3.7.6                           http://www.idfun.de/glut64/
 echo       NVIDIA CUDA ToolKit 3.1
 echo           http://developer.nvidia.com/object/cuda_3_1_downloads.html
 echo   OR:
@@ -73,6 +73,9 @@ if ERRORLEVEL 9009 (
 )
 
 :: TODO: Add option to place deps and/or downloads elsewhere
+
+:: TODO: Add option to force extract
+set FORCE_EXTRACT=0
 
 set DOWNLOADS="%CD%\..\downloads"
 :: resolve relative path
@@ -201,6 +204,11 @@ IF NOT EXIST %DOWNLOADS%\%OPENCL_PKG% (
 echo.
 echo I will now launch the SDK installer. You can install anywhere you like, but to be
 echo on the safe side, please choose a path that doesn't contain spaces.
+IF %OPENCL_VARS% EQU "SetStreamVars" (
+	echo.
+	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
+	echo.
+)
 start /WAIT "" %DOWNLOADS%\%OPENCL_PKG%
 echo Waiting for installer. When finished,
 pause
@@ -249,13 +257,17 @@ IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting Boost                                                       *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D32% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D64% > nul
 
+set EXTRACT_BOOST=1
+IF EXIST %D32%\boost_%BOOST_VER_U% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_BOOST=0
+IF %EXTRACT_BOOST% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting Boost                                                       *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D32% > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D64% > nul
+)
 echo set LUX_X86_BOOST_ROOT=%D32%\boost_%BOOST_VER_U%>> build-vars.bat
 echo set LUX_X64_BOOST_ROOT=%D64%\boost_%BOOST_VER_U%>> build-vars.bat
 
@@ -276,13 +288,17 @@ IF NOT EXIST %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting QT                                                          *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D32% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D64% > nul
 
+set EXTRACT_QT=1
+IF EXIST %D32%\qt-everywhere-opensource-src-%QT_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_QT=0
+IF %EXTRACT_QT% EQU 1 ( 
+	echo.
+	echo **************************************************************************
+	echo * Extracting QT                                                          *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D32% > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D64% > nul
+)	
 echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
 echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
 
@@ -303,13 +319,17 @@ IF NOT EXIST %DOWNLOADS%\zlib%ZLIB_VER_N%.zip (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting zlib                                                        *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D32%\zlib-%ZLIB_VER_P% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D64%\zlib-%ZLIB_VER_P% > nul
 
+set EXTRACT_ZLIB=1
+IF EXIST %D32%\zlib-%ZLIB_VER_P% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_ZLIB=0
+IF %EXTRACT_ZLIB% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting zlib                                                        *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D32%\zlib-%ZLIB_VER_P% > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D64%\zlib-%ZLIB_VER_P% > nul
+)
 echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-%ZLIB_VER_P%>> build-vars.bat
 echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-%ZLIB_VER_P%>> build-vars.bat
 
@@ -327,15 +347,19 @@ IF NOT EXIST %DOWNLOADS%\bzip2-1.0.5.tar.gz (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting bzip                                                        *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\bzip2-1.0.5.tar.gz > nul
-%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D32% > nul
-%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D64% > nul
-del bzip2-1.0.5.tar
 
+set EXTRACT_BZIP=1
+IF EXIST %D32%\bzip2-1.0.5 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_BZIP=0
+IF %EXTRACT_BZIP% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting bzip                                                        *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\bzip2-1.0.5.tar.gz > nul
+	%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D32% > nul
+	%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D64% > nul
+	del bzip2-1.0.5.tar
+)
 echo set LUX_X86_BZIP_ROOT=%D32%\bzip2-1.0.5>> build-vars.bat
 echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
 
@@ -353,13 +377,17 @@ IF NOT EXIST %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting FreeImage                                                   *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D32%\FreeImage%FREEIMAGE_VER_N% > nul
-%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D64%\FreeImage%FREEIMAGE_VER_N% > nul
 
+set EXTRACT_FREEIMAGE=1
+IF EXIST %D32%\FreeImage%FREEIMAGE_VER_N% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_FREEIMAGE=0
+IF %EXTRACT_FREEIMAGE% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting FreeImage                                                   *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D32%\FreeImage%FREEIMAGE_VER_N% > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D64%\FreeImage%FREEIMAGE_VER_N% > nul
+)
 echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
 echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
 
@@ -380,13 +408,17 @@ IF NOT EXIST %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting sqlite                                                      *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D32%\sqlite-3.5.9 > nul
-%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D64%\sqlite-3.5.9 > nul
 
+set EXTRACT_SQLITE=1
+IF EXIST %D32%\sqlite-3.5.9 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_SQLITE=0
+IF %EXTRACT_SQLITE% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting sqlite                                                      *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D32%\sqlite-3.5.9 > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\sqlite-amalgamation-3_5_9.zip -o%D64%\sqlite-3.5.9 > nul
+)
 echo set LUX_X86_SQLITE_ROOT=%D32%\sqlite-3.5.9>> build-vars.bat
 echo set LUX_X64_SQLITE_ROOT=%D64%\sqlite-3.5.9>> build-vars.bat
 
@@ -404,15 +436,19 @@ IF NOT EXIST %DOWNLOADS%\Python-%PYTHON2_VER%.tgz (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting Python 2                                                    *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON2_VER%.tgz > nul
-%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D32% > nul
-%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D64% > nul
-del Python-%PYTHON2_VER%.tar
 
+set EXTRACT_PYTHON2=1
+IF EXIST %D32%\Python-%PYTHON2_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_PYTHON2=0
+IF %EXTRACT_PYTHON2% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting Python 2                                                    *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON2_VER%.tgz > nul
+	%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D32% > nul
+	%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D64% > nul
+	del Python-%PYTHON2_VER%.tar
+)
 echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-%PYTHON2_VER%>> build-vars.bat
 echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-%PYTHON2_VER%>> build-vars.bat
 
@@ -433,15 +469,19 @@ IF NOT EXIST %DOWNLOADS%\Python-%PYTHON3_VER%.tgz (
 		exit /b -1
 	)
 )
-echo.
-echo **************************************************************************
-echo * Extracting Python 3                                                    *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON3_VER%.tgz > nul
-%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D32% > nul
-%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D64% > nul
-del Python-%PYTHON3_VER%.tar
 
+set EXTRACT_PYTHON3=1
+IF EXIST %D32%\Python-%PYTHON3_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_PYTHON3=0
+IF %EXTRACT_PYTHON3% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting Python 3                                                    *
+	echo **************************************************************************
+	%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON3_VER%.tgz > nul
+	%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D32% > nul
+	%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D64% > nul
+	del Python-%PYTHON3_VER%.tar
+)
 echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-%PYTHON3_VER%>> build-vars.bat
 echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-%PYTHON3_VER%>> build-vars.bat
 
@@ -540,39 +580,39 @@ IF %SKIP_GLEWGLUT% EQU 0 (
 	echo "LUX_X64_GLUT_BIN"="%D64R:\=\\%\\glut-3.7.6-bin">> build-vars.reg
 ) ELSE (
 	echo **************************************************************************
-	echo * Using GLEW AND GLUT from ATI Stream SDK                                *
+	echo * Using GLEW AND GLUT from ATI Stream SDK Samples                        *
 	echo **************************************************************************
 	
-	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_LIBS="%ATISTREAMSDKROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_LIBS="%ATISTREAMSDKROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_BIN="%ATISTREAMSDKROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_BIN="%ATISTREAMSDKROOT%\bin\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86_64">> build-vars.bat
 	
-	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_BIN"="%ATISTREAMSDKROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_BIN"="%ATISTREAMSDKROOT:\=\\%\\bin\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 	
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew64>> build-vars.bat
 	
-	cmd /C echo set LUX_X86_GLUT_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLUT_LIBS="%ATISTREAMSDKROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_LIBS="%ATISTREAMSDKROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLUT_BIN="%ATISTREAMSDKROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLUT_BIN="%ATISTREAMSDKROOT%\bin\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X64_GLUT_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X86_GLUT_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLUT_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLUT_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLUT_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86_64">> build-vars.bat
 	
-	cmd /C echo "LUX_X86_GLUT_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLUT_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLUT_BIN"="%ATISTREAMSDKROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLUT_BIN"="%ATISTREAMSDKROOT:\=\\%\\bin\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLUT_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X64_GLUT_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X86_GLUT_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLUT_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLUT_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLUT_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 )
 
 
