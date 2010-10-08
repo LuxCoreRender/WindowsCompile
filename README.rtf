@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fmodern\fprq1\fcharset0 Courier New;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\fnil\fcharset0 Arial;}{\f4\fnil\fcharset0 Courier New;}{\f5\fnil\fcharset0 Courier;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\lang1044\f0\fs28 Building LuxRender with Visual Studio (Express) 2008 - Semi-Automatic Method\par
+\fs20\par
+\par
+\b\fs24 Overview\b0\fs20\par
+\par
+The solution file is configured for building both x86 and x64 targets. It assumes that all required libraries are built from sources (see below for details). Thus, while precompiled libraries may work, it has not been tested. In addition it has only been tested with:\par
+- Visual Studio 2008 (32 bit and 64 bit compilation)\par
+- Visual Studio Express 2008 (32bit compilation only)\par
+\par
+The solution file \b requires\b0  that the directory that solution file is located in (eg \f1\fs18 windows\f0\fs20 ) and the \f1\fs18 lux\f0\fs20  source directory has a common parent directory (\f1\fs18 C:\\Prog\\Lux\f0\fs20  in the example below).\par
+\par
+\f1\fs18 C:\\Prog\par
+\tab\\Lux\par
+\tab\tab\\lux\f2\tab\tab\i LuxRender source code\f1\par
+\i0\tab\tab\\windows\f2\tab\i Visual Studio solution and support files\i0\f0\fs20\par
+\par
+The steps for building the required libraries assumes that the libraries for a particular platform (either x86 or x64) is located in the same directory. The \i getdeps.bat \i0 file will download and unpack the libraries into the following structure:\par
+\par
+\f1\fs18 C:\\Prog\par
+\tab\\Lux\par
+\tab\tab\\downloads\\\tab\tab\tab\tab\i\f3 Downloaded source distributions\i0\par
+\f1\tab\tab\\deps\\\tab\tab\tab\tab\tab\i\f3 Unpacked source distributions\i0\f1\par
+\tab\tab\tab\\x64\par
+\tab\tab\tab\tab\\boost_1_39_0\par
+\tab\tab\tab\tab\\bzip2-1.0.5\par
+\tab\tab\tab\tab\\FreeImage3140\par
+\tab\tab\tab\tab\\Python-2.6.5\par
+\tab\tab\tab\tab\\Python-3.1.2\par
+\tab\tab\tab\tab\\qt-everywhere-opensource-src-4.6.2\par
+\tab\tab\tab\tab\\sqlite-3.5.9\par
+\tab\tab\tab\tab\\zlib-1.2.3\tab\tab\par
+\tab\tab\tab\\x86\par
+\tab\tab\tab\tab\\boost_1_39_0\par
+\tab\tab\tab\tab\\bzip2-1.0.5\par
+\tab\tab\tab\tab\\FreeImage3140\par
+\tab\tab\tab\tab\\Python-2.6.5\par
+\tab\tab\tab\tab\\Python-3.1.2\par
+\tab\tab\tab\tab\\qt-everywhere-opensource-src-4.6.2\par
+\tab\tab\tab\tab\\sqlite-3.5.9\par
+\tab\tab\tab\tab\\zlib-1.2.3\tab\tab\par
+\f0\fs20\par
+To start with, the folders\f4\fs18  \\x64 \f0\fs20 and \f4\fs18\\x86 \f0\fs20 are exact copies of each other.\par
+\par
+The solution file assumes that the various library directories are defined via environment variables. The \i getdeps.bat \i0 file will generate another batch file \i build-vars.bat \i0 that will define these locations for the solution and other build scripts. \par
+\par
+The \i getdeps.bat\i0  file will also generate a registry file \i build-vars.reg\i0  which you can import into the registry to set these environment variables permanently, which you'll want to do if you indend to build via the Visual Studio GUI. Note that you will have to log out and back in (or reboot) for the changes to take effect after the import.\par
+\par
+\lang1033\b\fs24 Required libraries\par
+\b0\fs20\par
+List of required libraries (version used):\par
+\tab Boost and Boost Jam: {\field{\*\fldinst{HYPERLINK "http://www.boost.org/users/download/"}}{\fldrslt{\ul\cf1 http://www.boost.org/users/download/}}}\f0\fs20  (1.39.0)\par
+\tab Qt: {\field{\*\fldinst{HYPERLINK "http://qt.nokia.com/"}}{\fldrslt{\ul\cf1 http://qt.nokia.com/}}}\f0\fs20  (4.6.2)\par
+\tab FreeImage: {\field{\*\fldinst{HYPERLINK "http://freeimage.sourceforge.net/"}}{\fldrslt{\ul\cf1 http://freeimage.sourceforge.net/}}}\f0\fs20  (3.14.0)\par
+\tab bzip2: {\field{\*\fldinst{HYPERLINK "http://www.bzip.org/downloads.html"}}{\fldrslt{\ul\cf1 http://www.bzip.org/downloads.html}}}\f0\fs20  (1.0.5)\par
+\tab zlib: {\field{\*\fldinst{HYPERLINK "http://www.zlib.net/"}}{\fldrslt{\ul\cf1 http://www.zlib.net/}}}\f0\fs20  (1.2.3)\par
+\tab sqlite: {\field{\*\fldinst{HYPERLINK "http://www.sqlite.org/"}}{\fldrslt{\ul\cf1 http://www.sqlite.org/}}}\f0\fs20  (3.5.9)\par
+\tab Python: {\field{\*\fldinst{HYPERLINK "http://python.org/"}}{\fldrslt{\ul\cf1 http://python.org/}}}\f0\fs20  (2.6.5 and 3.1.2)\par
+\par
+\b\fs24 Required tools\b0\fs20\par
+\par
+List of required tools:\par
+\tab flex: {\field{\*\fldinst{HYPERLINK "http://gnuwin32.sourceforge.net/packages/flex.htm"}}{\fldrslt{\ul\cf1 http://gnuwin32.sourceforge.net/packages/flex.htm}}}\f0\fs20\par
+\tab bison: {\field{\*\fldinst{HYPERLINK "http://gnuwin32.sourceforge.net/packages/bison.htm"}}{\fldrslt{\ul\cf1 http://gnuwin32.sourceforge.net/packages/bison.htm}}}\f0\fs20\par
+\tab patch: {\field{\*\fldinst{HYPERLINK "http://gnuwin32.sourceforge.net/packages/patch.htm"}}{\fldrslt{\ul\cf1 http://gnuwin32.sourceforge.net/packages/patch.htm}}}\f0\fs20\par
+\tab wget: {\field{\*\fldinst{HYPERLINK "http://gnuwin32.sourceforge.net/packages/wget.htm"}}{\fldrslt{\ul\cf1 http://gnuwin32.sourceforge.net/packages/wget.htm}}}\f0\fs20\par
+\tab 7za: {\field{\*\fldinst{HYPERLINK "http://7-zip.org/download.html"}}{\fldrslt{\ul\cf1 http://7-zip.org/download.html}}}\f0\fs20\par
+\par
+These tools are included in the windows\\support\\bin directory and will be found and used automatically by the build batch files.\par
+\par
+\par
+\b\fs24 Building LuxRender\b0\fs20\par
+\par
+For building x86 targets, open up the "Visual Studio 2008 Command Prompt".\par
+For building x64 targets, open up the "Visual Studio 2008 x64 Win64 Command Prompt".\par
+\par
+In either case, navigate your way to your Lux\\windows directory. eg.\par
+\par
+\f4\fs18\tab cd /d C:\\Prog\\Lux\\windows\f5\par
+\f0\fs20\par
+First, execute the batch file to download and unpack the required libraries:\par
+\par
+\f4\fs18\tab getdeps.bat\f0\fs20\par
+\par
+Then execute the appropriate batch file for the platform you wish to build:\par
+\par
+\f4\fs18\tab build-x86.bat\par
+\f0\fs20 or\f4\fs18\par
+\tab build-x64.bat\f5\par
+\f0\fs20\par
+These batch files are not completely automatic, they will prompt you to perform a few manual actions. Please read the on-screen instructions carefully. Be warned that this process may take a while, and quite a lot of disk space. For building both platforms you should have at least 15Gbyte free.\par
+\par
+If all succeeds, you will find your release binaries in the Lux\\windows\\Projects\\<Platform>\\<Target> folders:\par
+\par
+\f4\fs18\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\LuxRender\tab\tab LuxRender.exe (32bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\Console\tab\tab LuxConsole.exe (32bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\LuxComp\tab\tab Luxcomp.exe (32bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\LuxMerge\tab\tab Luxmerge.exe (32bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\Pylux2Release\tab pylux.so (Python 2.x 32bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\Win32\\Pylux3Release\tab pylux.so (Python 3.x 32bit)\par
+\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\LuxRender\tab\tab LuxRender.exe (64bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\Console\tab\tab\tab LuxConsole.exe (64bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\LuxComp\tab\tab\tab Luxcomp.exe (64bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\LuxMerge\tab\tab\tab Luxmerge.exe (64bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\Pylux2Release\tab\tab pylux.so (Python 2.x 64bit)\par
+\tab C:\\Prog\\Lux\\windows\\Projects\\x64\\Pylux3Release\tab\tab pylux.so (Python 3.x 64bit)\par
+\f0\fs20\par
+In order to run the LuxRender GUI, you'll need the following Qt DLLs:\par
+\f4\fs18\tab QtCore4.dll\par
+\tab QtGui4.dll\par
+\tab QtOpenGL4.dll\fs20\par
+\f0\par
+which can be found in\par
+\par
+\f4\fs18\tab C:\\Prog\\Lux\\deps\\<Platform>\\qt-everywhere-opensource-src-4.6.2\\bin\par
+\f0\fs20\par
+Good luck!\par
+\par
+\par
+\par
+}
+ 
