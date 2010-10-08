@@ -15,6 +15,7 @@
 		OmitFramePointers="true"
 		AdditionalIncludeDirectories="&quot;$(LUX_X86_BOOST_ROOT)&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;;&quot;$(LUX_X86_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_X86_QT_ROOT)\include&quot;;&quot;$(LUX_X86_QT_ROOT)\include\Qt&quot;;&quot;$(LUX_X86_QT_ROOT)\include\QtCore&quot;;&quot;$(LUX_X86_QT_ROOT)\include\QtGui&quot;"
 		PreprocessorDefinitions="LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0500;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS"
+		DebugInformationFormat="3"
 		DisableSpecificWarnings="4244;4305;4996;4267;4311;4312;4819"
 	/>
 	<Tool

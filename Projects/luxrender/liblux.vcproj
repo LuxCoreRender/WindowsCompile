@@ -24,7 +24,7 @@
 			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
-			WholeProgramOptimization="1"
+			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -43,6 +43,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				WholeProgramOptimization="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -78,7 +79,7 @@
 			ConfigurationType="4"
 			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
-			WholeProgramOptimization="1"
+			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
