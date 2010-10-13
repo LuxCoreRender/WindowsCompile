@@ -15,6 +15,7 @@
 		UsePrecompiledHeader="0"
 		WarningLevel="3"
 		CallingConvention="0"
+		DisableSpecificWarnings="4290"
 	/>
 	<Tool
 		Name="VCLinkerTool"
