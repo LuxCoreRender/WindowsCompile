@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -76,7 +76,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -131,7 +131,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -185,7 +185,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -239,7 +239,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -351,7 +351,7 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE1.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -714,11 +714,7 @@
 				Name="renderers"
 				>
 				<File
-					RelativePath="..\..\..\lux\renderers\hybridrenderer.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
+					RelativePath="..\..\..\lux\renderer\renderserver.cpp"
 					>
 				</File>
 			</Filter>
@@ -1321,10 +1317,6 @@
 							>
 						</File>
 						<File
-							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\schlickdistribution.cpp"
-							>
-						</File>
-						<File
 							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\wardisotropic.cpp"
 							>
 						</File>
@@ -1419,10 +1411,6 @@
 			<Filter
 				Name="server"
 				>
-				<File
-					RelativePath="..\..\..\lux\server\renderserver.cpp"
-					>
-				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -1974,11 +1962,7 @@
 				Name="renderers"
 				>
 				<File
-					RelativePath="..\..\..\lux\renderers\hybridrenderer.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\samplerrenderer.h"
+					RelativePath="..\..\..\lux\renderer\renderserver.h"
 					>
 				</File>
 			</Filter>
@@ -2344,10 +2328,6 @@
 							>
 						</File>
 						<File
-							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\schlickdistribution.h"
-							>
-						</File>
-						<File
 							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\wardisotropic.h"
 							>
 						</File>
@@ -2461,10 +2441,6 @@
 			<Filter
 				Name="server"
 				>
-				<File
-					RelativePath="..\..\..\lux\server\renderserver.h"
-					>
-				</File>
 			</Filter>
 		</Filter>
 		<Filter
