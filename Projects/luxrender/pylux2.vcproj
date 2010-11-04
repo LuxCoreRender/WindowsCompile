@@ -535,7 +535,31 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath="..\..\..\lux\python\binding.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\python\pycontext.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\python\pydoc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\python\pydoc_context.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\python\pydoc_renderserver.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\python\pyfleximage.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\python\pyrenderserver.h"
 				>
 			</File>
 		</Filter>
