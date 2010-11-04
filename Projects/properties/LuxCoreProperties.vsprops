@@ -7,7 +7,7 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
-		AdditionalIncludeDirectories="../Resources;../../include;../../../lux;../../../lux/core;../../../lux/core/external;../../../lux/core/queryable;../../../lux/core/reflection;../../../lux/core/reflection/bxdf;../../../lux/core/reflection/fresnel;../../../lux/core/reflection/microfacetdistribution;../../../lux/lights/sphericalfunction;../../../lux/spds"
+		AdditionalIncludeDirectories="../Resources;../../include;../../../lux;../../../lux/core;../../../lux/core/external;../../../lux/core/queryable;../../../lux/core/reflection;../../../lux/core/reflection/bxdf;../../../lux/core/reflection/fresnel;../../../lux/core/reflection/microfacetdistribution;../../../lux/film;../../../lux/lights/sphericalfunction;../../../lux/spds"
 		PreprocessorDefinitions="FREEIMAGE_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"

@@ -1164,6 +1164,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\stats.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\texture.cpp"
 					>
 				</File>
