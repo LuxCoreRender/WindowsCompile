@@ -1052,6 +1052,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\cameraresponse.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\color.cpp"
 					>
 				</File>
@@ -1996,6 +2000,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\camera.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\cameraresponse.h"
 					>
 				</File>
 				<File
