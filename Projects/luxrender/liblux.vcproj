@@ -666,6 +666,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\glossytranslucent.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\matte.cpp"
 					>
 				</File>
@@ -1278,6 +1282,10 @@
 							>
 						</File>
 						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\schlicktranslucentbtdf.cpp"
+							>
+						</File>
+						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\specularreflection.cpp"
 							>
 						</File>
@@ -1644,6 +1652,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\materials\glossy2.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\glossytranslucent.h"
 					>
 				</File>
 				<File
@@ -2302,6 +2314,10 @@
 						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\schlickbrdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\schlicktranslucentbtdf.h"
 							>
 						</File>
 						<File
