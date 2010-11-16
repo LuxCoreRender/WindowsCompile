@@ -723,6 +723,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\renderers\hybridsamplerrenderer.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppmrenderer.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
 					>
 				</File>
@@ -1996,6 +2004,14 @@
 				>
 				<File
 					RelativePath="..\..\..\lux\renderers\hybridrenderer.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsamplerrenderer.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppmrenderer.h"
 					>
 				</File>
 				<File
