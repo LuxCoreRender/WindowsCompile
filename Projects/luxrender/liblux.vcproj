@@ -461,6 +461,115 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
+		<Configuration
+			Name="Release NoOpenCL|Win32"
+			ConfigurationType="4"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\NoOpenCL.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				ModuleDefinitionFile=""
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release NoOpenCL|x64"
+			ConfigurationType="4"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\NoOpenCL.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				ModuleDefinitionFile=""
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -2578,6 +2687,26 @@
 						Outputs="$(InputDir)/luxlex.cpp"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Lexing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/luxlex.cpp"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\core\luxparse.y"
@@ -2634,6 +2763,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Yacc&apos;ing $(InputName)"
+						CommandLine="$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o&quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName).cpp;$(InputDir)/$(InputName).hpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"

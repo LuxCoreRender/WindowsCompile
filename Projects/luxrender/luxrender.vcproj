@@ -493,6 +493,128 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
+		<Configuration
+			Name="Release NoOpenCL|Win32"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\SSE2.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OUTDIR)/luxrender.exe"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release NoOpenCL|x64"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OUTDIR)/luxrender.exe"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -640,1317 +762,1617 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-				<File
-					RelativePath="..\..\..\lux\qtgui\aboutdialog.hxx"
+			<File
+				RelativePath="..\..\..\lux\qtgui\aboutdialog.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\batchprocessdialog.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\colorspacewidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\gammawidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\histogramview.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\histogramwidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\lenseffectswidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\lightgroupwidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\luxapp.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\mainwindow.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\noisereductionwidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\batchprocessdialog.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\openexroptionsdialog.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\panewidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\renderview.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\qtgui\tonemapwidget.hxx"
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
 					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-							Description="Compiling QT HXX File $(InputName)"
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName)-hxx.cpp"
-						/>
-					</FileConfiguration>
-				</File>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\colorspacewidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\gammawidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\histogramview.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\histogramwidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\lenseffectswidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\lightgroupwidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\luxapp.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\mainwindow.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\noisereductionwidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\openexroptionsdialog.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\panewidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\renderview.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\tonemapwidget.hxx"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+			</File>
 			<Filter
 				Name="generated"
 				>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_aboutdialog.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_batchprocessdialog.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_colorspace.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_gamma.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_histogram.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_lenseffects.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_lightgroup.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_luxrender.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_noisereduction.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_openexroptionsdialog.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_pane.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\qtgui\ui_tonemap.h"
-				>
-			</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_aboutdialog.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_batchprocessdialog.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_colorspace.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_gamma.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_histogram.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_lenseffects.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_lightgroup.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_luxrender.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_noisereduction.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_openexroptionsdialog.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_pane.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\ui_tonemap.h"
+					>
+				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -2044,6 +2466,26 @@
 							Outputs="$(InputDir)/$(InputName).cpp"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName).cpp"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName).cpp"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\qtgui\images.qrc"
@@ -2109,6 +2551,25 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)"
+							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName).cpp"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2186,6 +2647,25 @@
 							Name="VCCustomBuildTool"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)"
+							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName).cpp"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -2204,6 +2684,22 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64"
+						>
+						<Tool
+							Name="VCResourceCompilerTool"
+							AdditionalIncludeDirectories=""
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						>
+						<Tool
+							Name="VCResourceCompilerTool"
+							AdditionalIncludeDirectories=""
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
 						>
 						<Tool
 							Name="VCResourceCompilerTool"
@@ -2303,6 +2799,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\batchprocessdialog.ui"
@@ -2379,6 +2895,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -2471,6 +3007,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\gamma.ui"
@@ -2547,6 +3103,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -2639,6 +3215,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\lenseffects.ui"
@@ -2715,6 +3311,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -2807,6 +3423,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\luxrender.ui"
@@ -2883,6 +3519,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -2975,6 +3631,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\openexroptionsdialog.ui"
@@ -3051,6 +3727,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -3143,6 +3839,26 @@
 						Outputs="$(InputDir)/ui_$(InputName).h"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\tonemap.ui"
@@ -3219,6 +3935,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X64_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_X86_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
