@@ -240,7 +240,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops;..\properties\NoOpenCL.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
