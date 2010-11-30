@@ -192,7 +192,8 @@ echo **************************************************************************
 echo * Building Boost::Python2                                                *
 echo **************************************************************************
 copy /Y %LUX_X64_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON2_ROOT%\Include
-copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-26.jam .\project-config.jam
+:: copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-26.jam .\project-config.jam
+del project-config.jam
 IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
 tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
