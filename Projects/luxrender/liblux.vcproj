@@ -843,6 +843,28 @@
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
 					>
 				</File>
+			<Filter
+				Name="hybridsppm"
+				>
+
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\kdtree.cpp"
+					>
+				</File>
+			</Filter>
+
 			</Filter>
 			<Filter
 				Name="shapes"
@@ -2127,6 +2149,19 @@
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.h"
 					>
 				</File>
+			<Filter
+				Name="hybridsppm"
+				>
+
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\hybridsppm\lookupaccel.h"
+					>
+				</File>
+			</Filter>
 			</Filter>
 			<Filter
 				Name="core"
