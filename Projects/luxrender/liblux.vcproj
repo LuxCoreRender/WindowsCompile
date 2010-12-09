@@ -843,28 +843,26 @@
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
 					>
 				</File>
-			<Filter
-				Name="hybridsppm"
-				>
-
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp"
+				<Filter
+					Name="hybridsppm"
 					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\kdtree.cpp"
-					>
-				</File>
-			</Filter>
-
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\kdtree.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="shapes"
@@ -965,6 +963,10 @@
 			<Filter
 				Name="textures"
 				>
+				<File
+					RelativePath="..\..\..\lux\textures\band.cpp"
+					>
+				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\bilerp.cpp"
 					>
@@ -1922,6 +1924,10 @@
 				Name="textures"
 				>
 				<File
+					RelativePath="..\..\..\lux\textures\band.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\textures\bilerp.h"
 					>
 				</File>
@@ -2149,25 +2155,28 @@
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.h"
 					>
 				</File>
-			<Filter
-				Name="hybridsppm"
-				>
-
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.h"
+				<Filter
+					Name="hybridsppm"
 					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppm\lookupaccel.h"
-					>
-				</File>
-			</Filter>
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\hybridsppm\lookupaccel.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="core"
 				>
 				<File
 					RelativePath="..\..\..\lux\core\api.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\bsh.h"
 					>
 				</File>
 				<File
