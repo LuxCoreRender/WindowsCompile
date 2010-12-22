@@ -797,15 +797,6 @@
 				<File
 					RelativePath="..\..\..\lux\materials\mixmaterial.cpp"
 					>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\materials\null.cpp"
@@ -817,6 +808,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\materials\shinymetal.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\scattermaterial.cpp"
 					>
 				</File>
 				<File
@@ -974,15 +969,6 @@
 				<File
 					RelativePath="..\..\..\lux\textures\blackbody.cpp"
 					>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\blender_base.cpp"
@@ -1423,6 +1409,10 @@
 							>
 						</File>
 						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\schlickscatter.cpp"
+							>
+						</File>
+						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\schlicktranslucentbtdf.cpp"
 							>
 						</File>
@@ -1519,15 +1509,6 @@
 				<File
 					RelativePath="..\..\..\lux\pixelsamplers\lowdiscrepancypx.cpp"
 					>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							ObjectFile="$(IntDir)\$(InputName)1.obj"
-							XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\pixelsamplers\tilepx.cpp"
@@ -1829,6 +1810,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\materials\shinymetal.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\scattermaterial.h"
 					>
 				</File>
 				<File
@@ -2483,6 +2468,10 @@
 						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\schlickbrdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\schlickscatter.h"
 							>
 						</File>
 						<File
