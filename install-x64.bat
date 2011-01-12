@@ -69,6 +69,8 @@ copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifes
 copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.CRT\msvcm90.dll . > nul
 copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.CRT\msvcp90.dll . > nul
 copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.CRT\msvcr90.dll . > nul
+copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.OpenMP\Microsoft.VC90.OpenMP.manifest . > nul
+copy "%VCINSTALLDIR%"\redist\amd64\Microsoft.VC90.OpenMP\vcomp90.dll . > nul
 
 echo.
 echo 64 bit %OCL_VER% binaries are available for use in
