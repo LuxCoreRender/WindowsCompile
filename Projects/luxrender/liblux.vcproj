@@ -899,6 +899,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\shapes\meshmicrodisplacementtriangle.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\shapes\meshquadrilateral.cpp"
 					>
 				</File>
