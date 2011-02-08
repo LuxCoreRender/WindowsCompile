@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+# Visual C++ Express 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblux", "Projects\luxrender\liblux.vcproj", "{8C159477-7802-4C52-865E-131537BBAD83}"
 	ProjectSection(ProjectDependencies) = postProject
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
@@ -50,6 +50,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pylux3", "Projects\luxrender\pylux3.vcproj", "{75615F8E-4A95-4A88-A810-5F5C8DE3BA9E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8C159477-7802-4C52-865E-131537BBAD83} = {8C159477-7802-4C52-865E-131537BBAD83}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luxmark", "Projects\luxrays\luxmark.vcproj", "{90985C9B-9BA1-43CA-96D3-56C1305E532A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
 	EndProjectSection
 EndProject
 Global
@@ -250,6 +255,24 @@ Global
 		{75615F8E-4A95-4A88-A810-5F5C8DE3BA9E}.Release|Win32.Build.0 = Release|Win32
 		{75615F8E-4A95-4A88-A810-5F5C8DE3BA9E}.Release|x64.ActiveCfg = Release|x64
 		{75615F8E-4A95-4A88-A810-5F5C8DE3BA9E}.Release|x64.Build.0 = Release|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug SSE1|Win32.ActiveCfg = Debug|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug SSE1|x64.ActiveCfg = Debug|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug SSE1|x64.Build.0 = Debug|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug|Win32.Build.0 = Debug|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug|x64.ActiveCfg = Debug|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Debug|x64.Build.0 = Debug|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release NoOpenCL|Win32.ActiveCfg = Release NoOpenCL|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release NoOpenCL|Win32.Build.0 = Release NoOpenCL|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release NoOpenCL|x64.ActiveCfg = Release NoOpenCL|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release NoOpenCL|x64.Build.0 = Release NoOpenCL|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release SSE1|Win32.ActiveCfg = Release NoOpenCL|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release SSE1|x64.ActiveCfg = Release NoOpenCL|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release SSE1|x64.Build.0 = Release NoOpenCL|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release|Win32.ActiveCfg = Release|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release|Win32.Build.0 = Release|Win32
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release|x64.ActiveCfg = Release|x64
+		{90985C9B-9BA1-43CA-96D3-56C1305E532A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -691,6 +691,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\lux\python\pyrenderer.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\python\pyrenderserver.h"
 				>
 			</File>
