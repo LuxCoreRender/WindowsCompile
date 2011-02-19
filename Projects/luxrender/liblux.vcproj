@@ -687,6 +687,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\integrators\multi.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\integrators\path.cpp"
 					>
 				</File>
@@ -811,11 +815,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\materials\shinymetal.cpp"
+					RelativePath="..\..\..\lux\materials\scattermaterial.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\materials\scattermaterial.cpp"
+					RelativePath="..\..\..\lux\materials\shinymetal.cpp"
 					>
 				</File>
 				<File
@@ -1685,6 +1689,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\integrators\multi.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\integrators\path.h"
 					>
 				</File>
@@ -1821,11 +1829,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\materials\shinymetal.h"
+					RelativePath="..\..\..\lux\materials\scattermaterial.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\materials\scattermaterial.h"
+					RelativePath="..\..\..\lux\materials\shinymetal.h"
 					>
 				</File>
 				<File
