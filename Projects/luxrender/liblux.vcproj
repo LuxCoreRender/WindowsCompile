@@ -1139,10 +1139,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\tonemaps\highcontrast.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\tonemaps\lineartonemap.cpp"
 					>
 				</File>
@@ -2094,10 +2090,6 @@
 				>
 				<File
 					RelativePath="..\..\..\lux\tonemaps\contrast.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\tonemaps\highcontrast.h"
 					>
 				</File>
 				<File

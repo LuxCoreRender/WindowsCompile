@@ -687,6 +687,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\lux\python\pydynload.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\python\pyfleximage.h"
 				>
 			</File>
