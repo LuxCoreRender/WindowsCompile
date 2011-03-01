@@ -691,7 +691,6 @@
 					>
 					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -699,7 +698,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -707,7 +705,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -715,7 +712,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -723,7 +719,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -731,7 +726,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -739,7 +733,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -747,7 +740,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -755,7 +747,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -763,7 +754,6 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -1224,10 +1214,6 @@
 				>
 				<File
 					RelativePath="..\..\..\lux\tonemaps\contrast.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\tonemaps\highcontrast.cpp"
 					>
 				</File>
 				<File
