@@ -174,14 +174,18 @@ echo * Building BJam                                                          *
 echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
 call bootstrap.bat
+SET BOOST_JOBS=8
+
+rem Patch boost file to fix py 3.2 build
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch libs\python\src\converter\builtin_converters.cpp %LUX_WINDOWS_BUILD_ROOT%\support\boost-builtin_converters.patch
 
 :Boost_IOStreams
 echo.
 echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
 echo **************************************************************************
-IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost debug stage )
-tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost debug stage )
+tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
 
 :: hax boost script to force acceptance of python versions
 copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\python.jam .\tools\build\v2\tools
@@ -194,8 +198,8 @@ echo **************************************************************************
 copy /Y %LUX_X64_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON2_ROOT%\Include
 :: copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-26.jam .\project-config.jam
 del project-config.jam
-IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
-tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
+tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
 
 :Boost_Python3
 echo.
@@ -203,9 +207,9 @@ echo **************************************************************************
 echo * Building Boost::Python3                                                *
 echo **************************************************************************
 copy /Y %LUX_X64_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X64_PYTHON3_ROOT%\Include
-copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-31.jam .\project-config.jam
-IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% --toolset=msvc-9.0 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows debug stage )
-tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% --toolset=msvc-9.0 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.1 target-os=windows stage
+copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-3.jam .\project-config.jam
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% --toolset=msvc-9.0 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.2 target-os=windows debug stage )
+tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% --toolset=msvc-9.0 --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.2 target-os=windows stage
 
 :Boost_Remainder
 echo.
@@ -216,10 +220,10 @@ echo *          Boost::Regex                                                  *
 echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
-IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
-IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
-tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-tools\jam\src\bin.ntx86_64\bjam.exe toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
+IF %BUILD_DEBUG% EQU 1 ( tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
+tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
+tools\jam\src\bin.ntx86_64\bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static address-model=64 -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
 
 
 
