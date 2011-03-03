@@ -3,12 +3,12 @@ using msvc ;
 import os ;
 local LUX_X86_PYTHON3_ROOT = [ os.environ LUX_X86_PYTHON3_ROOT ] ;
 
-using python : 3.1
+using python : 3.2
 	: $(LUX_X86_PYTHON3_ROOT)
 	: $(LUX_X86_PYTHON3_ROOT)\\Include
 	: #
 	;
-using python : 3.1
+using python : 3.2
 	: $(LUX_X86_PYTHON3_ROOT)\\PCbuild\\python_d
 	: $(LUX_X86_PYTHON3_ROOT)\\Include
 	: #

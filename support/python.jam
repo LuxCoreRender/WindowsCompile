@@ -394,7 +394,7 @@ local rule split-version ( version )
 # version, e.g. 2.10 -- let us hope that never happens.
 #
 .version-countdown = ;
-for local v in [ numbers.range 15 31 ]
+for local v in [ numbers.range 15 32 ]
 {
     .version-countdown = [ SUBST $(v) (.)(.*) $1.$2 ] $(.version-countdown) ;
 }
