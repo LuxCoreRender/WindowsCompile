@@ -591,10 +591,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\accelerators\grid.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\accelerators\qbvhaccel.cpp"
 					>
 				</File>
@@ -689,76 +685,6 @@
 				<File
 					RelativePath="..\..\..\lux\integrators\multi.cpp"
 					>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug SSE1|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release NoOpenCL|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release NoOpenCL|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\integrators\path.cpp"
@@ -924,6 +850,10 @@
 					Name="sppm"
 					>
 					<File
+						RelativePath="..\..\..\lux\renderers\sppm\grid.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\..\lux\renderers\sppm\hashgrid.cpp"
 						>
 					</File>
@@ -941,6 +871,10 @@
 					</File>
 					<File
 						RelativePath="..\..\..\lux\renderers\sppm\lookupaccel.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\sppm\stochastichashgrid.cpp"
 						>
 					</File>
 				</Filter>
@@ -1664,10 +1598,6 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\accelerators\bvhaccel.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\accelerators\grid.h"
 					>
 				</File>
 				<File
