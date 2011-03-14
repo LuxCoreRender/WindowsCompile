@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}</ProjectGuid>
+    <RootNamespace>smallluxgpu</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\32bit-Debug.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\64bit-Debug.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copying GL DLL%27s to target directory if needed</Message>
+      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\renderconfig.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\slgscene.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\smallluxgpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\telnet.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\volume.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hashgrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hybridhashgrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\kdtree.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\renderconfig.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\renderengine.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sampler.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\slgcfg.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\slgscene.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\smalllux.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\telnet.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\volume.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\lookupaccel.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\kernels.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\path\path.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="luxrays.vcxproj">
+      <Project>{712cfe41-8a81-492a-89a6-d38b1eacc54b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

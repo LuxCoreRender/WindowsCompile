@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\sppm">
+      <UniqueIdentifier>{1d3bd72f-ddc9-4d83-978a-7fe62e926209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathgpu">
+      <UniqueIdentifier>{9f510a5d-3918-4dce-92bb-600d1213b98c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathgpu\kernels">
+      <UniqueIdentifier>{1faad974-0da0-4dcf-b5ae-85a35abcef1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\path">
+      <UniqueIdentifier>{14338ffd-14ec-4b64-8eb1-1961f41daf06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\sppm">
+      <UniqueIdentifier>{1cb982bf-f414-46ec-a101-c7112dea1bed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pathgpu">
+      <UniqueIdentifier>{118bf59b-7d3b-4c5e-8d38-ffd67b110111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pathgpu\kernels">
+      <UniqueIdentifier>{47a5ed30-ea86-44d2-943e-ea4526dfc09d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\path">
+      <UniqueIdentifier>{0c3b9664-f20e-4aa7-b914-941b3a9cdc4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\renderconfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\slgscene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\smallluxgpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\telnet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\volume.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hashgrid.cpp">
+      <Filter>Source Files\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.cpp">
+      <Filter>Source Files\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hybridhashgrid.cpp">
+      <Filter>Source Files\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\kdtree.cpp">
+      <Filter>Source Files\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.cpp">
+      <Filter>Source Files\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.cpp">
+      <Filter>Source Files\pathgpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cpp">
+      <Filter>Source Files\pathgpu\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp">
+      <Filter>Source Files\path</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cl">
+      <Filter>Source Files\pathgpu\kernels</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\renderconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\renderengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sampler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\slgcfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\slgscene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\smalllux.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\telnet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.h">
+      <Filter>Header Files\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\lookupaccel.h">
+      <Filter>Header Files\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.h">
+      <Filter>Header Files\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.h">
+      <Filter>Header Files\pathgpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\kernels.h">
+      <Filter>Header Files\pathgpu\kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\path\path.h">
+      <Filter>Header Files\path</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

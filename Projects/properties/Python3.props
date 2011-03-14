@@ -7,6 +7,7 @@
     <ClCompile>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PreprocessorDefinitions>BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(LUX_PYTHON3_ROOT)/Include;$(LUX_PYTHON3_ROOT)/PC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libboost_python3-vc90-mt.lib;libboost_wserialization-vc90-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>

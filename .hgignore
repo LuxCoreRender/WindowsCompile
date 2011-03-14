@@ -1,13 +1,19 @@
 syntax: glob
 *.old
+*.sln.cache
 *.suo
 *.ncb
 *.xml
-Projects\Win32\*
-Projects\x64\*
-BuildTemp\*
+*.sdf
+*.opensdf
+*.user
+Projects\luxrays\Win32\*
+Projects\luxrays\x64\*
+Projects\luxrays\BuildTemp\*
+Projects\luxrender\Win32\*
+Projects\luxrender\x64\*
+Projects\luxrender\BuildTemp\*
 *.vcproj.*
 build-vars.*
-
-syntax: regexp
-^lux\.sdf$
+.project
+.pydevproject

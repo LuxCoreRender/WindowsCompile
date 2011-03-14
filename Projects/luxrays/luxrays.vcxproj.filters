@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\accelerators">
+      <UniqueIdentifier>{32d0793b-7e45-4d79-989b-e35e812535b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{a8615786-da96-4155-bcf1-3f254081a170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\geometry">
+      <UniqueIdentifier>{7080e50e-3c38-494f-9f01-913fcf0f6663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\idevices">
+      <UniqueIdentifier>{93c3d128-698b-48cc-adc2-c7f41837b534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernels">
+      <UniqueIdentifier>{1d0d55b2-099b-4480-a823-4b08fcbad81c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pdevices">
+      <UniqueIdentifier>{6f83c669-6a25-4c2a-b708-0cef939cb891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{9086e266-9ae7-48ae-9fe4-afd78b11aa18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\core">
+      <UniqueIdentifier>{8fd4a3f9-deba-461d-9f75-16725ce0c2de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\plymesh">
+      <UniqueIdentifier>{3dfb81c3-0939-4979-9fdb-ff8e49170e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\sdl">
+      <UniqueIdentifier>{05df0fad-f315-4e02-a5c3-4a6fdc8f45e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\accelerators">
+      <UniqueIdentifier>{d0cce4d1-0928-42de-9286-a4db18681956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{bb426f3b-c4b8-4dd8-9116-09959454b188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\geometry">
+      <UniqueIdentifier>{3d0861a5-328e-4c00-ace2-beb76fcbdd5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\pixel">
+      <UniqueIdentifier>{ffbd92da-c12d-418b-bb69-9fdef8cb786d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kernels">
+      <UniqueIdentifier>{c331fcc3-ed49-48aa-b6d0-8007f3137bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{7ba1ab6e-8e61-4e32-ac18-ea2cd3f6e27b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\core">
+      <UniqueIdentifier>{6427d727-3332-443c-a3d1-69d2ada34bc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\film">
+      <UniqueIdentifier>{d38c1c89-4fc3-4bf2-adfe-ca2b84c51916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\plymesh">
+      <UniqueIdentifier>{2e1e83d4-a7c4-4df2-ae93-0347ccd340bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\sdl">
+      <UniqueIdentifier>{ddc15151-8d05-44a9-abc6-eabea205b751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\sdl\data">
+      <UniqueIdentifier>{b0c2678c-0299-4ca6-a5ff-717e6468cbdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\src\accelerators\bvhaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\accelerators\mqbvhaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\accelerators\qbvhaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\context.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\dataset.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\device.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\trianglemesh.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\geometry\bbox.cpp">
+      <Filter>Source Files\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\geometry\matrix4x4.cpp">
+      <Filter>Source Files\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\geometry\ray.cpp">
+      <Filter>Source Files\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\core\geometry\transform.cpp">
+      <Filter>Source Files\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\idevices\nativeidevice.cpp">
+      <Filter>Source Files\idevices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\idevices\openclidevice.cpp">
+      <Filter>Source Files\idevices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\idevices\virtualidevice.cpp">
+      <Filter>Source Files\idevices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\bvh_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\pdevices\nativepdevice.cpp">
+      <Filter>Source Files\pdevices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\pdevices\openclpdevice.cpp">
+      <Filter>Source Files\pdevices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\properties.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\core\exttrianglemesh.cpp">
+      <Filter>Source Files\utils\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\plymesh\rply.cpp">
+      <Filter>Source Files\utils\plymesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\extmeshcache.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\light.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\scene.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\spd.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\texmap.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\luxrays\src\kernels\bvh_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\luxrays.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h">
+      <Filter>Header Files\accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\mqbvhaccel.h">
+      <Filter>Header Files\accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\qbvhaccel.h">
+      <Filter>Header Files\accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\acceleretor.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\context.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\dataset.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\device.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\intersectiondevice.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixeldevice.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\trianglemesh.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\utils.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\virtualdevice.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\bbox.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\bsphere.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\normal.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\point.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\ray.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\raybuffer.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\transform.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\triangle.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\uv.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\vector.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\vector_normal.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\filter.h">
+      <Filter>Header Files\core\pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\framebuffer.h">
+      <Filter>Header Files\core\pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\samplebuffer.h">
+      <Filter>Header Files\core\pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\spectrum.h">
+      <Filter>Header Files\core\pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\kernels\kernels.h">
+      <Filter>Header Files\kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\properties.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\atomic.h">
+      <Filter>Header Files\utils\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\exttrianglemesh.h">
+      <Filter>Header Files\utils\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\randomgen.h">
+      <Filter>Header Files\utils\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\spectrum.h">
+      <Filter>Header Files\utils\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\film.h">
+      <Filter>Header Files\utils\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\plymesh\rply.h">
+      <Filter>Header Files\utils\plymesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\camera.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\extmeshcache.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\light.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\material.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\mc.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\scene.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\spd.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\texmap.h">
+      <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\rgbD65_32.h">
+      <Filter>Header Files\utils\sdl\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\rgbE_32.h">
+      <Filter>Header Files\utils\sdl\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\sun_spect.h">
+      <Filter>Header Files\utils\sdl\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\xyzbasis.h">
+      <Filter>Header Files\utils\sdl\data</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\include;$(LUX_WINDOWS_BUILD_ROOT)\include;$(LUX_BOOST_ROOT);$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist;$(LUX_X86_OCL_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FREEIMAGE_LIB;BOOST_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libboost_thread-vc90-mt.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

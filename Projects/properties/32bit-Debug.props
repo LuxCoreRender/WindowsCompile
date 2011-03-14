@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <LUX_QT_ROOT>$(LUX_X86_QT_ROOT)</LUX_QT_ROOT>
+    <LUX_GLEW_DLL>$(LUX_X86_GLEW_BIN)\$(LUX_X86_GLEW_LIBNAME).dll</LUX_GLEW_DLL>
+    <SSE_Version>SSE2</SSE_Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir>$(PlatformName)\$(SSE_Version)\$(Configuration)\</OutDir>
+    <IntDir>BuildTemp\$(ProjectName)\$(SSE_Version)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>LUX_USE_SSE;LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_QT_ROOT">
+      <Value>$(LUX_QT_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_GLEW_DLL">
+      <Value>$(LUX_GLEW_DLL)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SSE_Version">
+      <Value>$(SSE_Version)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>liblux.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OptimizeReferences>false</OptimizeReferences>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LUX_BOOST_ROOT);$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>
