@@ -133,10 +133,7 @@ echo ask you a few questions before building commences. The rest of the build
 echo process should be autonomous.
 pause
 
-rem Patch qmake.conf file to enable multithreaded compilation
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch mkspecs\win32-msvc2008\qmake.conf %LUX_WINDOWS_BUILD_ROOT%\support\qmake.conf.patch
-
-configure -opensource -release -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools
+configure -opensource -release -fast -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools
 nmake
 
 
