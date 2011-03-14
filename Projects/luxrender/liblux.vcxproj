@@ -748,72 +748,16 @@
     <None Include="..\..\..\lux\core\geometry\transform-sse.inl" />
     <None Include="..\..\..\lux\core\geometry\transform.inl" />
     <CustomBuild Include="..\..\..\lux\core\luxlex.l">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
+      <Message>Lexing %(Filename)</Message>
+      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Lexing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
+      <Outputs>%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\core\luxparse.y">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
+      <Message>Yacc%27ing %(Filename)</Message>
+      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/%(Filename).cpp;$(IntDir)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Yacc%27ing %(Filename)</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
+      <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -825,4 +769,5 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+
 </Project>
