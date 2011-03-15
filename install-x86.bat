@@ -5,50 +5,83 @@ echo ***************************************************************************
 echo * Install
 echo ****************************************************************************
 
-cd /d %BUILD_PATH%
+cd /d %LUX_WINDOWS_BUILD_ROOT%
 cd ..
 
-IF NOT EXIST .\Dist\32 (
-    echo.
-    echo making Dist directory
-    mkdir Dist\32
+set SSE_VER=SSE1
+set OCL_VER=NoOpenCL
+set REL_DIR="\Release SSE1"
+call :Install32
+
+cd /d %LUX_WINDOWS_BUILD_ROOT%
+cd ..
+
+set SSE_VER=SSE2
+set OCL_VER=OpenCL
+set REL_DIR=Release
+call :Install32
+
+cd /d %LUX_WINDOWS_BUILD_ROOT%
+cd ..
+
+set SSE_VER=SSE2
+set OCL_VER=NoOpenCL
+set REL_DIR="\Release NoOpenCL"
+call :Install32
+
+goto Done
+
+:: ------------------------------------------------------------------------------
+:: This is a batch file equiv of a function
+:Install32
+
+set INSTALL_PATH="%CD%"\Dist\LuxRender_32_%SSE_VER%_%OCL_VER%
+
+IF NOT EXIST %INSTALL_PATH% (
+	echo.
+	echo making %INSTALL_PATH% directory
+	mkdir %INSTALL_PATH%
 )
-IF NOT EXIST .\Dist\32\Python2 (
-    mkdir Dist\32\Python2
+IF NOT EXIST %INSTALL_PATH%\PyLux (
+	mkdir %INSTALL_PATH%\PyLux
 )
-IF NOT "%BUILD_PYTHON3%" == "" (
-  IF NOT EXIST .\Dist\32\Python3 (
-    mkdir Dist\32\Python3
-  )
+IF NOT EXIST %INSTALL_PATH%\PyLux\Python2 (
+	mkdir %INSTALL_PATH%\PyLux\Python2
+)
+IF NOT EXIST %INSTALL_PATH%\PyLux\Python3 (
+	mkdir %INSTALL_PATH%\PyLux\Python3
+)
+IF NOT EXIST %INSTALL_PATH%\imageformats (
+	mkdir %INSTALL_PATH%\imageformats
 )
 
-cd Dist\32
-set INSTALL_PATH="%CD%"
+cd %INSTALL_PATH%
 
 echo Copying luxrender.exe
-copy "%BUILD_PATH%"\Projects\Win32\LuxRender\luxrender.exe luxrender.exe
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\Win32\%SSE_VER%\%REL_DIR%\luxrender.exe .\ > nul
 echo Copying luxconsole.exe
-copy "%BUILD_PATH%"\Projects\Win32\Console\luxconsole.exe luxconsole.exe
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\Win32\%SSE_VER%\%REL_DIR%\luxconsole.exe .\ > nul
 echo Copying luxmerger.exe
-copy "%BUILD_PATH%"\Projects\Win32\LuxMerge\luxmerger.exe luxmerger.exe
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\Win32\%SSE_VER%\%REL_DIR%\luxmerger.exe .\ > nul
 echo Copying Python 2 pylux.pyd
-copy "%BUILD_PATH%"\Projects\Win32\Pylux2Release\python2\pylux.pyd Python2\
-IF NOT "%BUILD_PYTHON3%" == "" (
-  echo Copying Python 3 pylux.pyd
-  copy "%BUILD_PATH%"\Projects\Win32\Pylux3Release\python3\pylux.pyd Python3\
-)
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\Win32\%SSE_VER%\%REL_DIR%\python2\pylux.pyd PyLux\Python2\ > nul
+echo Copying Python 3 pylux.pyd
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\Win32\%SSE_VER%\%REL_DIR%\python3\pylux.pyd PyLux\Python3\ > nul
+
 echo Copying Qt DLL's
-copy "%LUX_X86_QT_ROOT%"\bin\QtCore4.dll QtCore4.dll
-copy "%LUX_X86_QT_ROOT%"\bin\QtGui4.dll QtGui4.dll
-:: copy "%LUX_X86_QT_ROOT%\bin\QtOpenGL4.dll" QtOpenGL4.dll
-echo Copying Visual C++ CRT DLL's
-copy "%VCINSTALLDIR%"\redist\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest Microsoft.VC90.CRT.manifest
-copy "%VCINSTALLDIR%"\redist\x86\Microsoft.VC90.CRT\msvcm90.dll msvcm90.dll
-copy "%VCINSTALLDIR%"\redist\x86\Microsoft.VC90.CRT\msvcp90.dll msvcp90.dll
-copy "%VCINSTALLDIR%"\redist\x86\Microsoft.VC90.CRT\msvcr90.dll msvcr90.dll
-
-cd /d %BUILD_PATH%
+copy "%LUX_X86_QT_ROOT%"\bin\QtCore4.dll . > nul
+copy "%LUX_X86_QT_ROOT%"\bin\QtGui4.dll . > nul
+:: copy "%LUX_X86_QT_ROOT%"\bin\QtOpenGL4.dll . > nul
+copy "%LUX_X86_QT_ROOT%"\plugins\imageformats\qjpeg4.dll imageformats\ > nul
+copy "%LUX_X86_QT_ROOT%"\plugins\imageformats\qtiff4.dll imageformats\ > nul
 
 echo.
-echo 32 bit binaries are availabe for use in %INSTALL_PATH%
+echo 32 bit %SSE_VER% %OCL_VER% binaries are available for use in:
+echo     %INSTALL_PATH%
 echo.
+
+goto :EOF
+:: ------------------------------------------------------------------------------
+
+:Done
+cd /d %LUX_WINDOWS_BUILD_ROOT%
