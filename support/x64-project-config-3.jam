@@ -4,7 +4,7 @@ import os ;
 local LUX_X64_PYTHON3_ROOT = [ os.environ LUX_X64_PYTHON3_ROOT ] ;
 
 using python : 3.2
-	: $(LUX_X64_PYTHON3_ROOT)
+	: $(LUX_X64_PYTHON3_ROOT)\\PCbuild\\amd64\\python
 	: $(LUX_X64_PYTHON3_ROOT)\\Include
 	: #
 	;
