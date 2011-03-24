@@ -395,6 +395,7 @@
     <ClCompile Include="..\..\..\lux\textures\lampspectrum.cpp" />
     <ClCompile Include="..\..\..\lux\textures\marble.cpp" />
     <ClCompile Include="..\..\..\lux\textures\mix.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\multimix.cpp" />
     <ClCompile Include="..\..\..\lux\textures\regulardata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\scale.cpp" />
     <ClCompile Include="..\..\..\lux\textures\sellmeiertexture.cpp" />
@@ -513,6 +514,7 @@
     <ClInclude Include="..\..\..\lux\cameras\perspective.h" />
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
+    <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
     <ClInclude Include="..\..\..\lux\filters\box.h" />
     <ClInclude Include="..\..\..\lux\filters\gaussian.h" />
@@ -607,6 +609,7 @@
     <ClInclude Include="..\..\..\lux\textures\lampspectrum.h" />
     <ClInclude Include="..\..\..\lux\textures\marble.h" />
     <ClInclude Include="..\..\..\lux\textures\mix.h" />
+    <ClInclude Include="..\..\..\lux\textures\multimix.h" />
     <ClInclude Include="..\..\..\lux\textures\regulardata.h" />
     <ClInclude Include="..\..\..\lux\textures\scale.h" />
     <ClInclude Include="..\..\..\lux\textures\sellmeiertexture.h" />
@@ -769,5 +772,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-
 </Project>

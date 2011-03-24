@@ -183,6 +183,9 @@
     <Filter Include="Parser Files\Input">
       <UniqueIdentifier>{70d52030-3909-4075-beff-d48012f3a415}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\film\data">
+      <UniqueIdentifier>{3678b055-bdd4-4ee8-ac5a-4b743f917f0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
@@ -847,6 +850,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\core\luxparse.cpp">
       <Filter>Parser Files\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\multimix.cpp">
+      <Filter>Source Files\textures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1572,6 +1578,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp">
       <Filter>Parser Files\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h">
+      <Filter>Header Files\film\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\multimix.h">
+      <Filter>Header Files\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

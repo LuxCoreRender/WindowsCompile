@@ -23,6 +23,9 @@
     <ResourceCompile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <Link>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="LUX_QT_ROOT">

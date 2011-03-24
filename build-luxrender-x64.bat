@@ -91,7 +91,7 @@ IF %BUILD_DEBUG% EQU 1 (
 	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 )
 
-msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
+msbuild /v:m /m /property:"Configuration=Release" /property:"Platform=x64" /target:luxrays;liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 
 
 

@@ -268,9 +268,7 @@
       <AdditionalLibraryDirectories>$(OutDir)../;$(LUX_PYTHON3_ROOT)/PCbuild/amd64;$(LUX_BOOST_ROOT)/stage/python3/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -292,9 +290,7 @@
       <AdditionalLibraryDirectories>$(OutDir)../;$(LUX_PYTHON3_ROOT)/PCbuild/amd64;$(LUX_BOOST_ROOT)/stage/python3/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">
     <ClCompile />
@@ -332,9 +328,7 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
-    <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
-    </ProjectReference>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">
     <ClCompile />
