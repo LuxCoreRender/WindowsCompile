@@ -552,7 +552,7 @@ IF %SKIP_GLEW% EQU 0 (
 	echo set LUX_X64_GLEW_LIBNAME=glew32>> build-vars.bat
 
 	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
-	echo "LUX_X64_GLEW_LIBNAME"="glew64">> build-vars.reg
+	echo "LUX_X64_GLEW_LIBNAME"="glew32">> build-vars.reg
 ) ELSE (
 	
 	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
