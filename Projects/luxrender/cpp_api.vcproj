@@ -668,6 +668,10 @@
 				RelativePath="..\..\..\lux\cpp_api\lux_api.cpp"
 				>
 			</File>
+			<File
+				RelativePath="..\..\..\lux\cpp_api\lux_wrapper_factories.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
