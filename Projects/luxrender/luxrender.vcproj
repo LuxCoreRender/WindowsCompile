@@ -641,6 +641,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\lux\qtgui\guiutil.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\qtgui\histogramview.cpp"
 				>
 			</File>
@@ -1177,6 +1181,10 @@
 						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\guiutil.h"
+				>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\histogramview.hxx"

@@ -480,6 +480,26 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="pathgpu2"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.cpp"
+					>
+				</File>
+				<Filter
+					Name="kernels"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel.cpp"
+						>
+					</File>
+				</Filter>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -561,6 +581,22 @@
 					RelativePath="..\..\..\luxrays\samples\smallluxgpu\path\path.h"
 					>
 				</File>
+			</Filter>
+			<Filter
+				Name="pathgpu2"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.h"
+					>
+				</File>
+				<Filter
+					Name="kernels"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\kernels.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter
