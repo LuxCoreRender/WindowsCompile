@@ -2,11 +2,11 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="pylux2"
-	ProjectGUID="{11C54FC4-B9A3-49E8-8284-2782A590DEB6}"
-	RootNamespace="pylux2"
-	Keyword="LRTProj"
-	TargetFrameworkVersion="131072"
+	Name="cpp_api"
+	ProjectGUID="{F437CB40-F4F7-4663-93AA-B61BF95F0EC9}"
+	RootNamespace="cpp_api"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
 		<Platform
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -44,8 +44,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				WholeProgramOptimization="false"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -58,8 +58,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 			/>
 			<Tool
@@ -87,7 +87,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -108,22 +108,23 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_VC80_UPGRADE=0x0710"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 			/>
 			<Tool
@@ -151,7 +152,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -172,8 +173,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -186,8 +187,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 			/>
 			<Tool
@@ -215,7 +216,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -236,8 +237,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -251,8 +252,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 			/>
 			<Tool
@@ -280,7 +281,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python2.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -300,7 +301,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -313,8 +315,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -361,6 +363,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -399,7 +402,7 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python2.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE1.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -419,7 +422,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -432,8 +436,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -480,6 +484,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -518,7 +523,7 @@
 		<Configuration
 			Name="Release NoOpenCL|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python2.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -539,8 +544,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X86_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -553,8 +558,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X86_PYTHON2_ROOT)/PCbuild/&quot;;&quot;$(LUX_X86_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 			/>
 			<Tool
@@ -582,7 +587,7 @@
 		<Configuration
 			Name="Release NoOpenCL|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -604,8 +609,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/Include&quot;;&quot;$(LUX_X64_PYTHON2_ROOT)/PC&quot;"
-				PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
+				AdditionalIncludeDirectories=""
+				PreprocessorDefinitions="CPP_API_EXPORTS"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -619,8 +624,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\python2\pylux.pyd"
-				AdditionalLibraryDirectories="&quot;$(LUX_X64_PYTHON2_ROOT)/PCbuild/amd64&quot;;&quot;$(LUX_X64_BOOST_ROOT)/stage/python2/lib&quot;"
+				OutputFile="$(OutDir)\lux.dll"
+				AdditionalLibraryDirectories=""
 				SubSystem="2"
 				TargetMachine="17"
 			/>
@@ -652,11 +657,19 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\..\lux\python\binding.cpp"
+				RelativePath="..\..\..\lux\cpp_api\dllmain.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\cpp_api\lux_api.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\cpp_api\lux_wrapper_factories.cpp"
 				>
 			</File>
 		</Filter>
@@ -666,37 +679,27 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\..\lux\python\binding.h"
+				RelativePath="..\..\..\lux\cpp_api\export_defs.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\lux\python\pycontext.h"
+				RelativePath="..\..\..\lux\cpp_api\lux_api.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\lux\python\pydoc.h"
+				RelativePath="..\..\..\lux\cpp_api\lux_instance.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\lux\python\pydoc_context.h"
+				RelativePath="..\..\..\lux\cpp_api\lux_paramset.h"
 				>
 			</File>
-			<File
-				RelativePath="..\..\..\lux\python\pydoc_renderserver.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\python\pydynload.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\python\pyfleximage.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\lux\python\pyrenderserver.h"
-				>
-			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 		</Filter>
 	</Files>
 	<Globals>

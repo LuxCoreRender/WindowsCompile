@@ -850,6 +850,10 @@
 					Name="sppm"
 					>
 					<File
+						RelativePath="..\..\..\lux\renderers\sppm\cuckoohashgrid.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\..\lux\renderers\sppm\grid.cpp"
 						>
 					</File>
@@ -866,6 +870,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\..\lux\renderers\sppm\hybridmultihashgrid.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\..\lux\renderers\sppm\kdtree.cpp"
 						>
 					</File>
@@ -875,6 +883,10 @@
 					</File>
 					<File
 						RelativePath="..\..\..\lux\renderers\sppm\stochastichashgrid.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\sppm\stochasticmultihashgrid.cpp"
 						>
 					</File>
 				</Filter>
@@ -2102,10 +2114,6 @@
 				>
 				<File
 					RelativePath="..\..\..\lux\tonemaps\contrast.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\tonemaps\highcontrast.h"
 					>
 				</File>
 				<File

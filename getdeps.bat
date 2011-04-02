@@ -3,8 +3,8 @@
 set BOOST_VER_U=1_43_0
 set BOOST_VER_P=1.43.0
 
-set PYTHON2_VER=2.6.6
-set PYTHON3_VER=3.1.2
+set PYTHON2_VER=2.7.1
+set PYTHON3_VER=3.2
 
 set ZLIB_VER_P=1.2.3
 set ZLIB_VER_N=123
@@ -12,7 +12,7 @@ set ZLIB_VER_N=123
 set FREEIMAGE_VER_P=3.14.1
 set FREEIMAGE_VER_N=3141
 
-set QT_VER=4.6.2
+set QT_VER=4.7.2
 
 set GLEW_VER=1.5.5
 
@@ -550,6 +550,9 @@ IF %SKIP_GLEW% EQU 0 (
 	
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew32>> build-vars.bat
+
+	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
+	echo "LUX_X64_GLEW_LIBNAME"="glew32">> build-vars.reg
 ) ELSE (
 	
 	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat

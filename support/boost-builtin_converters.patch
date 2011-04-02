@@ -1,0 +1,14 @@
+--- builtin_converters.cpp
++++ builtin_converters.cpp
+@@ -431,7 +431,11 @@
+           if (!result.empty())
+           {
+               int err = PyUnicode_AsWideChar(
++#if PY_VERSION_HEX >= 0x03020000
++                  intermediate
++#else
+                   (PyUnicodeObject *)intermediate
++#endif
+                 , &result[0]
+                 , result.size());
+ 
