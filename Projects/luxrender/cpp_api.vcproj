@@ -694,6 +694,14 @@
 				RelativePath="..\..\..\lux\cpp_api\lux_paramset.h"
 				>
 			</File>
+			<Filter
+				Name="preview_scenes"
+				>
+				<File
+					RelativePath="..\..\..\lux\cpp_api\preview_scenes\standard_material.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
