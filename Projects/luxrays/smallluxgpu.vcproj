@@ -491,11 +491,51 @@
 					Name="kernels"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel.cl"
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cl"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel.cpp"
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cl"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp"
 						>
 					</File>
 				</Filter>
