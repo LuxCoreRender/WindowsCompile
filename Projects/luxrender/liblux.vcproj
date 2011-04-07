@@ -1219,6 +1219,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\filedata.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\film.cpp"
 					>
 				</File>
@@ -2214,6 +2218,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\fastmutex.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\filedata.h"
 					>
 				</File>
 				<File
