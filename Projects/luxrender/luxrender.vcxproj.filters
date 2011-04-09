@@ -126,6 +126,15 @@
     <ClCompile Include="..\..\..\lux\qtgui\tonemapwidget-hxx.cpp">
       <Filter>Source Files\generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\guiutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget-hxx.cpp">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h">
@@ -162,6 +171,12 @@
       <Filter>Header Files\generated</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\qtgui\ui_tonemap.h">
+      <Filter>Header Files\generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\qtgui\guiutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\qtgui\ui_advancedinfo.h">
       <Filter>Header Files\generated</Filter>
     </ClInclude>
   </ItemGroup>
@@ -264,6 +279,12 @@
       <Filter>QT UI</Filter>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\tonemap.ui">
+      <Filter>QT UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\lux\qtgui\advancedinfowidget.hxx">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
       <Filter>QT UI</Filter>
     </CustomBuild>
   </ItemGroup>

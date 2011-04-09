@@ -214,6 +214,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\renderconfig.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\slgscene.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\smallluxgpu.cpp" />

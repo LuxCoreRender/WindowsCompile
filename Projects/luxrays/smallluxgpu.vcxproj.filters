@@ -37,6 +37,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\pathgpu2">
+      <UniqueIdentifier>{89c18b8a-006b-422f-beb3-3ae43dba9feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathgpu2\kernels">
+      <UniqueIdentifier>{04101af8-2764-4628-a961-e5108d5db8ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp">
@@ -80,6 +86,27 @@
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp">
       <Filter>Source Files\path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.cpp">
+      <Filter>Source Files\pathgpu2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cpp">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

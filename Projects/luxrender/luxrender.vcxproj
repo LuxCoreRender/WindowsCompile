@@ -262,9 +262,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\qtgui\aboutdialog.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget-hxx.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\batchprocessdialog.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\colorspacewidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\gammawidget.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\guiutil.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\histogramview.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\histogramwidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\icons.cpp" />
@@ -385,7 +388,15 @@
 </Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <CustomBuild Include="..\..\..\lux\qtgui\advancedinfowidget.hxx">
+      <Message>Compiling QT HXX File %(Filename)</Message>
+      <Command>$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .
+</Command>
+      <Outputs>%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\lux\qtgui\guiutil.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h" />
+    <ClInclude Include="..\..\..\lux\qtgui\ui_advancedinfo.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_batchprocessdialog.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_colorspace.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_gamma.h" />
@@ -420,6 +431,12 @@
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
 </Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
+      <FileType>Document</FileType>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message>Compiling QT UI File %(Filename)</Message>
+      <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <None Include="..\Resources\lux.ico" />
     <CustomBuild Include="..\..\..\lux\qtgui\aboutdialog.ui">
@@ -469,6 +486,7 @@
       <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
 </Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
+      <SubType>Designer</SubType>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\noisereduction.ui">
       <Message>Compiling QT UI File %(Filename)</Message>

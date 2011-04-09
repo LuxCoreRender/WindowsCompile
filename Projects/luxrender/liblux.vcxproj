@@ -238,6 +238,8 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Lib>
+    <ClCompile />
+    <ClCompile />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Lib>
@@ -285,6 +287,7 @@
     <ClCompile Include="..\..\..\lux\accelerators\qbvhaccel.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\tabreckdtree.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\unsafekdtree.cpp" />
+    <ClCompile Include="..\..\..\lux\core\filedata.cpp" />
     <ClCompile Include="..\..\..\lux\core\luxlex.cpp" />
     <ClCompile Include="..\..\..\lux\core\luxparse.cpp" />
     <ClCompile Include="..\..\..\lux\film\fleximage.cpp" />
@@ -358,6 +361,7 @@
     <ClCompile Include="..\..\..\lux\shapes\paraboloid.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\plymesh.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\sphere.cpp" />
+    <ClCompile Include="..\..\..\lux\shapes\stlmesh.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\torus.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\plymesh\rply.c" />
     <ClCompile Include="..\..\..\lux\samplers\erpt.cpp" />
@@ -513,6 +517,7 @@
     <ClInclude Include="..\..\..\lux\cameras\orthographic.h" />
     <ClInclude Include="..\..\..\lux\cameras\perspective.h" />
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
+    <ClInclude Include="..\..\..\lux\core\filedata.h" />
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
@@ -576,6 +581,7 @@
     <ClInclude Include="..\..\..\lux\shapes\paraboloid.h" />
     <ClInclude Include="..\..\..\lux\shapes\plymesh.h" />
     <ClInclude Include="..\..\..\lux\shapes\sphere.h" />
+    <ClInclude Include="..\..\..\lux\shapes\stlmesh.h" />
     <ClInclude Include="..\..\..\lux\shapes\torus.h" />
     <ClInclude Include="..\..\..\lux\shapes\plymesh\rply.h" />
     <ClInclude Include="..\..\..\lux\textures\band.h" />

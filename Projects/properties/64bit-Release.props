@@ -23,6 +23,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
