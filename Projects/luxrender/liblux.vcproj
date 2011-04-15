@@ -1119,6 +1119,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\textures\multimix.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\textures\regulardata.cpp"
 					>
 				</File>
@@ -1240,6 +1244,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\exrio.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\filedata.cpp"
 					>
 				</File>
 				<File
@@ -2073,6 +2081,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\textures\multimix.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\textures\regulardata.h"
 					>
 				</File>
@@ -2238,6 +2250,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\fastmutex.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\filedata.h"
 					>
 				</File>
 				<File
