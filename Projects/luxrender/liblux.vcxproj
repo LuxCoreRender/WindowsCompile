@@ -519,6 +519,7 @@
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
     <ClInclude Include="..\..\..\lux\core\filedata.h" />
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
+    <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
     <ClInclude Include="..\..\..\lux\filters\box.h" />
@@ -604,6 +605,7 @@
     <ClInclude Include="..\..\..\lux\textures\cauchytexture.h" />
     <ClInclude Include="..\..\..\lux\textures\checkerboard.h" />
     <ClInclude Include="..\..\..\lux\textures\constant.h" />
+    <ClInclude Include="..\..\..\lux\textures\convert.h" />
     <ClInclude Include="..\..\..\lux\textures\dots.h" />
     <ClInclude Include="..\..\..\lux\textures\equalenergy.h" />
     <ClInclude Include="..\..\..\lux\textures\fbm.h" />

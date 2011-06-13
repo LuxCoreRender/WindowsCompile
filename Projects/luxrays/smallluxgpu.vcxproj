@@ -149,9 +149,10 @@
       <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -159,9 +160,10 @@
       <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -170,9 +172,10 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -180,9 +183,10 @@
       <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
@@ -191,9 +195,10 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
@@ -207,9 +212,10 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Message>Copying GL DLL%27s to target directory if needed</Message>
-      <Command>xcopy /Y /D /F "$(LUX_GLEW_DLL)" "$(TargetDir)"
-</Command>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -236,6 +242,12 @@
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cl" />
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cl" />
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cl" />
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cl" />
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cl" />
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cl" />
     <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cl" />
   </ItemGroup>
   <ItemGroup>

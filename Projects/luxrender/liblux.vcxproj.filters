@@ -1597,6 +1597,12 @@
     <ClInclude Include="..\..\..\lux\core\filedata.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\version.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\convert.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\lux\core\geometry\transform-sse.inl">

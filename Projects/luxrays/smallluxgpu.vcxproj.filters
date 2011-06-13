@@ -113,6 +113,24 @@
     <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cl">
       <Filter>Source Files\pathgpu\kernels</Filter>
     </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cl">
+      <Filter>Source Files\pathgpu2\kernels</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.h">

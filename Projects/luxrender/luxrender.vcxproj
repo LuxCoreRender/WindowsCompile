@@ -415,8 +415,7 @@
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(RootDir)%(Directory)/images.qrc" "%(RootDir)%(Directory)/icons.qrc" "%(RootDir)%(Directory)/splash.qrc"
 </Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"%(RootDir)%(Directory)/images.qrc" "%(RootDir)%(Directory)/splash.qrc"</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\images.qrc">
       <ExcludedFromBuild>true</ExcludedFromBuild>
