@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -43,6 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				WholeProgramOptimization="false"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -81,7 +82,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -102,6 +103,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -140,7 +142,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -161,6 +163,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -221,7 +224,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 				EnableFunctionLevelLinking="true"
 			/>
 			<Tool
@@ -236,7 +239,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				OptimizeReferences="1"
-				RandomizedBaseAddress="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -263,7 +265,7 @@
 		<Configuration
 			Name="Release NoOpenCL|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -284,6 +286,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -323,7 +326,7 @@
 		<Configuration
 			Name="Release NoOpenCL|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -345,6 +348,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

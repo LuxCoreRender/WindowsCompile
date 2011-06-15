@@ -657,10 +657,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\lux\qtgui\icons.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\..\lux\qtgui\lenseffectswidget.cpp"
 				>
 			</File>
@@ -732,6 +728,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\qtgui\icons-qrc.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\images-qrc.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\qtgui\lenseffectswidget-hxx.cpp"
 					>
 				</File>
@@ -761,6 +765,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\qtgui\renderview-hxx.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\qtgui\splash-qrc.cpp"
 					>
 				</File>
 				<File
@@ -2516,8 +2524,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2526,8 +2534,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2536,8 +2544,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2546,8 +2554,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2556,8 +2564,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2566,8 +2574,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2576,8 +2584,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2586,8 +2594,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2596,8 +2604,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X86_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
@@ -2606,8 +2614,8 @@
 						<Tool
 							Name="VCCustomBuildTool"
 							Description="Compiling QT Resource File $(InputName)."
-							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputDir)/images.qrc&quot; &quot;$(InputDir)/icons.qrc&quot; &quot;$(InputDir)/splash.qrc&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 				</File>
@@ -2616,88 +2624,102 @@
 					>
 					<FileConfiguration
 						Name="Release|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
-							Description="Compiling QT Resource File $(InputName)"
-							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
-							Description="Compiling QT Resource File $(InputName)"
-							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 				</File>
@@ -2706,88 +2728,102 @@
 					>
 					<FileConfiguration
 						Name="Release|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
-							Description="Compiling QT Resource File $(InputName)"
-							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release SSE1|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
-							Description="Compiling QT Resource File $(InputName)"
-							CommandLine="$(LUX_X86_QT_DIR)bin\rcc.exe -o &quot;$(InputDir)/$(InputName).cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
-							Outputs="$(InputDir)/$(InputName).cpp"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release NoOpenCL|x64"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_X64_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/$(InputName)-qrc.cpp&quot; &quot;$(InputPath)&quot;&#x0D;&#x0A;"
+							Outputs="$(InputDir)/$(InputName)-qrc.cpp"
 						/>
 					</FileConfiguration>
 				</File>
