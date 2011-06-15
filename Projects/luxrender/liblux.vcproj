@@ -591,10 +591,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\accelerators\grid.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\accelerators\qbvhaccel.cpp"
 					>
 				</File>
@@ -709,6 +705,90 @@
 				<File
 					RelativePath="..\..\..\lux\lights\distant.cpp"
 					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\lights\iblinfinitesample.cpp"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug SSE1|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug SSE1|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\..\..\lux\lights\infinite.cpp"
@@ -839,30 +919,38 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppmrenderer.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.cpp"
 					>
 				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\sppmrenderer.cpp"
+					>
+				</File>
 				<Filter
-					Name="hybridsppm"
+					Name="sppm"
 					>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp"
+						RelativePath="..\..\..\lux\renderers\sppm\hashgrid.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp"
+						RelativePath="..\..\..\lux\renderers\sppm\hitpoints.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp"
+						RelativePath="..\..\..\lux\renderers\sppm\hybridhashgrid.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\kdtree.cpp"
+						RelativePath="..\..\..\lux\renderers\sppm\kdtree.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\sppm\lookupaccel.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\sppm\photonsampler.cpp"
 						>
 					</File>
 				</Filter>
@@ -1713,6 +1801,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\lights\iblinfinitesample.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\lights\infinite.h"
 					>
 				</File>
@@ -2157,22 +2249,26 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\renderers\hybridsppmrenderer.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\renderers\samplerrenderer.h"
 					>
 				</File>
+				<File
+					RelativePath="..\..\..\lux\renderers\sppmrenderer.h"
+					>
+				</File>
 				<Filter
-					Name="hybridsppm"
+					Name="sppm"
 					>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\hitpoints.h"
+						RelativePath="..\..\..\lux\renderers\sppm\hitpoints.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\renderers\hybridsppm\lookupaccel.h"
+						RelativePath="..\..\..\lux\renderers\sppm\lookupaccel.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\sppm\photonsampler.h"
 						>
 					</File>
 				</Filter>
@@ -2374,6 +2470,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\transport.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\version.h"
 					>
 				</File>
 				<File

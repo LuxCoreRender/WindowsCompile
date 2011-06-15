@@ -8,7 +8,7 @@
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
 		AdditionalIncludeDirectories="..\..\..\luxrays\include;&quot;$(LUX_WINDOWS_BUILD_ROOT)\include&quot;;&quot;$(LUX_X86_OCL_INCLUDE)&quot;"
-		PreprocessorDefinitions="FREEIMAGE_LIB;BOOST_STATIC_LIB"
+		PreprocessorDefinitions="GLEW_STATIC;FREEIMAGE_LIB;BOOST_STATIC_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"
 		FloatingPointModel="0"

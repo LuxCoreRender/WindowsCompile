@@ -767,11 +767,23 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\..\luxrays\src\utils\sdl\sdl.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\..\luxrays\src\utils\sdl\spd.cpp"
 						>
 					</File>
 					<File
 						RelativePath="..\..\..\luxrays\src\utils\sdl\texmap.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="ocl"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\ocl\utils.cpp"
 						>
 					</File>
 				</Filter>

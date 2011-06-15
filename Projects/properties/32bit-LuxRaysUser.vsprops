@@ -6,7 +6,8 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="&quot;$(LUX_X86_GLUT_INCLUDE)&quot;"
+		AdditionalIncludeDirectories="&quot;$(LUX_X86_GLUT_INCLUDE)&quot;;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
+		PreprocessorDefinitions="FREEGLUT_STATIC"
 	/>
 	<Tool
 		Name="VCLinkerTool"
