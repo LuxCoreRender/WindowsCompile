@@ -694,6 +694,10 @@
 					RelativePath="..\..\..\lux\integrators\single.cpp"
 					>
 				</File>
+				<File
+					RelativePath="..\..\..\lux\integrators\sppm.cpp"
+					>
+				</File>
 			</Filter>
 			<Filter
 				Name="lights"
@@ -1790,6 +1794,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\integrators\single.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\integrators\sppm.h"
 					>
 				</File>
 			</Filter>
