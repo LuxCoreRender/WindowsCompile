@@ -32,9 +32,6 @@
     <Filter Include="Source Files\renderers">
       <UniqueIdentifier>{05ec54a0-689c-47c2-9e36-cac7b80dc725}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\renderers\hybridsppm">
-      <UniqueIdentifier>{4322cec9-bd1d-4447-af84-d9456e82b097}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\shapes">
       <UniqueIdentifier>{2974a7a4-3f68-4a4c-b6d9-aa1f06202ae1}</UniqueIdentifier>
     </Filter>
@@ -135,9 +132,6 @@
     <Filter Include="Header Files\renderers">
       <UniqueIdentifier>{3bd200b2-9b48-4c7c-890e-278701bea6a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\renderers\hybridsppm">
-      <UniqueIdentifier>{1a2c33d7-092b-437d-9a4d-da0e0fae5eb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\core">
       <UniqueIdentifier>{34b0e95c-9729-4b1e-ae5f-3115221c3bcb}</UniqueIdentifier>
     </Filter>
@@ -186,15 +180,18 @@
     <Filter Include="Header Files\film\data">
       <UniqueIdentifier>{3678b055-bdd4-4ee8-ac5a-4b743f917f0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\renderers\sppm">
+      <UniqueIdentifier>{4322cec9-bd1d-4447-af84-d9456e82b097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\renderers\sppm">
+      <UniqueIdentifier>{1a2c33d7-092b-437d-9a4d-da0e0fae5eb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
       <Filter>Source Files\accelerators</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\accelerators\bvhaccel.cpp">
-      <Filter>Source Files\accelerators</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\accelerators\grid.cpp">
       <Filter>Source Files\accelerators</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\accelerators\qbvhaccel.cpp">
@@ -353,23 +350,8 @@
     <ClCompile Include="..\..\..\lux\renderers\hybridsamplerrenderer.cpp">
       <Filter>Source Files\renderers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppmrenderer.cpp">
-      <Filter>Source Files\renderers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\renderers\samplerrenderer.cpp">
       <Filter>Source Files\renderers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp">
-      <Filter>Source Files\renderers\hybridsppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp">
-      <Filter>Source Files\renderers\hybridsppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp">
-      <Filter>Source Files\renderers\hybridsppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\kdtree.cpp">
-      <Filter>Source Files\renderers\hybridsppm</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp">
       <Filter>Source Files\shapes</Filter>
@@ -860,6 +842,30 @@
     <ClCompile Include="..\..\..\lux\core\filedata.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hashgrid.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hitpoints.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hybridhashgrid.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\lookupaccel.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\photonsampler.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppmrenderer.cpp">
+      <Filter>Source Files\renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\kdtree.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\integrators\sppm.cpp">
+      <Filter>Source Files\integrators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1237,17 +1243,8 @@
     <ClInclude Include="..\..\..\lux\renderers\hybridsamplerrenderer.h">
       <Filter>Header Files\renderers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppmrenderer.h">
-      <Filter>Header Files\renderers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\renderers\samplerrenderer.h">
       <Filter>Header Files\renderers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppm\hitpoints.h">
-      <Filter>Header Files\renderers\hybridsppm</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppm\lookupaccel.h">
-      <Filter>Header Files\renderers\hybridsppm</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\api.h">
       <Filter>Header Files\core</Filter>
@@ -1602,6 +1599,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\textures\convert.h">
       <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h">
+      <Filter>Header Files\renderers\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h">
+      <Filter>Header Files\renderers\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h">
+      <Filter>Header Files\renderers\sppm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\integrators\sppm.h">
+      <Filter>Header Files\integrators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -22,11 +22,11 @@
     <Filter Include="Resource Files\QT Resources">
       <UniqueIdentifier>{d40eff4f-5f10-407a-b754-5d11dd1aec63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\WindowsResources">
-      <UniqueIdentifier>{1b9a84f8-fe9c-496e-936b-4f73b1418277}</UniqueIdentifier>
-    </Filter>
     <Filter Include="QT UI">
       <UniqueIdentifier>{9062cba9-a778-48c0-8a11-178927d40a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Windows Resources">
+      <UniqueIdentifier>{1b9a84f8-fe9c-496e-936b-4f73b1418277}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,9 +46,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\qtgui\histogramwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\qtgui\icons.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\qtgui\lenseffectswidget.cpp">
@@ -135,6 +132,15 @@
     <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget-hxx.cpp">
       <Filter>Source Files\generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\icons.cpp">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\images.cpp">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\splash.cpp">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h">
@@ -182,12 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\lux.ico">
-      <Filter>Resource Files\WindowsResources</Filter>
+      <Filter>Resource Files\Windows Resources</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resources\core.rc">
-      <Filter>Resource Files\WindowsResources</Filter>
+      <Filter>Resource Files\Windows Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>

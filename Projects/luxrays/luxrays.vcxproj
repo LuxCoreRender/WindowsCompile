@@ -273,12 +273,14 @@
     <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\pdevices\nativepdevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\pdevices\openclpdevice.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\ocl\utils.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\properties.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\core\exttrianglemesh.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\plymesh\rply.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\extmeshcache.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\light.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\scene.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\sdl.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\spd.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\texmap.cpp" />
   </ItemGroup>

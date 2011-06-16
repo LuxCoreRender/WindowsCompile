@@ -283,7 +283,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\bvhaccel.cpp" />
-    <ClCompile Include="..\..\..\lux\accelerators\grid.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\qbvhaccel.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\tabreckdtree.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\unsafekdtree.cpp" />
@@ -309,6 +308,7 @@
     <ClCompile Include="..\..\..\lux\integrators\multi.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\path.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\single.cpp" />
+    <ClCompile Include="..\..\..\lux\integrators\sppm.cpp" />
     <ClCompile Include="..\..\..\lux\lights\area.cpp" />
     <ClCompile Include="..\..\..\lux\lights\distant.cpp" />
     <ClCompile Include="..\..\..\lux\lights\infinite.cpp" />
@@ -339,12 +339,14 @@
     <ClCompile Include="..\..\..\lux\materials\velvet.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\hybridrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\hybridsamplerrenderer.cpp" />
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppmrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\samplerrenderer.cpp" />
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hashgrid.cpp" />
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hitpoints.cpp" />
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\hybridhashgrid.cpp" />
-    <ClCompile Include="..\..\..\lux\renderers\hybridsppm\kdtree.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppmrenderer.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hashgrid.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hitpoints.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\hybridhashgrid.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\kdtree.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\lookupaccel.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\photonsampler.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\disk.cpp" />
@@ -536,6 +538,7 @@
     <ClInclude Include="..\..\..\lux\integrators\multi.h" />
     <ClInclude Include="..\..\..\lux\integrators\path.h" />
     <ClInclude Include="..\..\..\lux\integrators\single.h" />
+    <ClInclude Include="..\..\..\lux\integrators\sppm.h" />
     <ClInclude Include="..\..\..\lux\lights\distant.h" />
     <ClInclude Include="..\..\..\lux\lights\infinite.h" />
     <ClInclude Include="..\..\..\lux\lights\infinitesample.h" />
@@ -566,6 +569,9 @@
     <ClInclude Include="..\..\..\lux\materials\scattermaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\shinymetal.h" />
     <ClInclude Include="..\..\..\lux\materials\velvet.h" />
+    <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h" />
+    <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h" />
+    <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h" />
     <ClInclude Include="..\..\..\lux\samplers\erpt.h" />
     <ClInclude Include="..\..\..\lux\samplers\lowdiscrepancy.h" />
     <ClInclude Include="..\..\..\lux\samplers\metrosampler.h" />
@@ -639,10 +645,7 @@
     <ClInclude Include="..\..\..\lux\volumes\volumegrid.h" />
     <ClInclude Include="..\..\..\lux\renderers\hybridrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\hybridsamplerrenderer.h" />
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppmrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\samplerrenderer.h" />
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppm\hitpoints.h" />
-    <ClInclude Include="..\..\..\lux\renderers\hybridsppm\lookupaccel.h" />
     <ClInclude Include="..\..\..\lux\core\api.h" />
     <ClInclude Include="..\..\..\lux\core\bsh.h" />
     <ClInclude Include="..\..\..\lux\core\camera.h" />

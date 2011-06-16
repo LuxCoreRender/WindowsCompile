@@ -76,6 +76,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\utils\ocl">
+      <UniqueIdentifier>{3a3e6867-2376-4026-96a0-30aa10096bf4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\src\accelerators\bvhaccel.cpp">
@@ -175,6 +178,12 @@
       <Filter>Source Files\utils\sdl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\texmap.cpp">
+      <Filter>Source Files\utils\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\ocl\utils.cpp">
+      <Filter>Source Files\utils\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\sdl.cpp">
       <Filter>Source Files\utils\sdl</Filter>
     </ClCompile>
   </ItemGroup>

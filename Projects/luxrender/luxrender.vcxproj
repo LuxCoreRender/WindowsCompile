@@ -271,6 +271,8 @@
     <ClCompile Include="..\..\..\lux\qtgui\histogramview.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\histogramwidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\icons.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\images.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\splash.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\lenseffectswidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\lightgroupwidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\luxapp.cpp" />
@@ -412,23 +414,17 @@
   <ItemGroup>
     <CustomBuild Include="..\..\..\lux\qtgui\icons.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
-      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(RootDir)%(Directory)/images.qrc" "%(RootDir)%(Directory)/icons.qrc" "%(RootDir)%(Directory)/splash.qrc"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"%(RootDir)%(Directory)/images.qrc" "%(RootDir)%(Directory)/splash.qrc"</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\images.qrc">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
       <Message>Compiling QT Resource File %(Filename).</Message>
-      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(RootDir)%(Directory)/images.qrc" "%(RootDir)%(Directory)/icons.qrc" "%(RootDir)%(Directory)/splash.qrc"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\splash.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
@@ -440,84 +436,69 @@
     <None Include="..\Resources\lux.ico" />
     <CustomBuild Include="..\..\..\lux\qtgui\aboutdialog.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\batchprocessdialog.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\colorspace.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\gamma.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\histogram.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\lenseffects.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\lightgroup.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\luxrender.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
       <SubType>Designer</SubType>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\noisereduction.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\openexroptionsdialog.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\pane.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\tonemap.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
-      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"
-</Command>
+      <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resources\core.rc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
