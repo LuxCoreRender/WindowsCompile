@@ -584,10 +584,10 @@ IF %SKIP_GLEW% EQU 0 (
 	cmd /C echo set LUX_X86_GLEW_BIN="%SAMPLESROOT%\bin\x86">> build-vars.bat
 	cmd /C echo set LUX_X64_GLEW_BIN="%SAMPLESROOT%\bin\x86_64">> build-vars.bat
 	
-	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%SDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%SDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_LIBS"="%SDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_LIBS"="%SDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 	cmd /C echo "LUX_X86_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
 	cmd /C echo "LUX_X64_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 	
