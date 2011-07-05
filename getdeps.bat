@@ -571,7 +571,7 @@ IF %SKIP_GLEW% EQU 0 (
 	echo "LUX_X64_GLEW_LIBNAME"="glew32">> build-vars.reg
 ) ELSE (
 	
-        IF "%AMDAPPSDKSAMPLESROOT"=="" (
+        IF "%AMDAPPSDKSAMPLESROOT%"=="" (
                SET SAMPLESROOT=%ATISTREAMSDKSAMPLESROOT%
         ) ELSE (
                SET SAMPLESROOT=%AMDAPPSDKSAMPLESROOT%
