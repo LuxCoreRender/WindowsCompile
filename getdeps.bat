@@ -145,10 +145,10 @@ echo Please select which OpenCL SDK you wish to use:
 echo.
 echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
-echo 3. ATI Stream SDK 2.2 for Vista/Win7 32 bit
-echo 4. ATI Stream SDK 2.2 for Vista/Win7 64 bit (also contains 32bit libs)
-echo 5. ATI Stream SDK 2.2 for XP SP3 32 bit
-echo 6. ATI Stream SDK 2.2 for XP SP3 64 bit (also contains 32bit libs)
+echo 3. AMD APP SDK 2.4 for Vista/Win7 32 bit
+echo 4. AMD APP SDK 2.4 for Vista/Win7 64 bit (also contains 32bit libs)
+echo 5. ATI STREAM SDK 2.3 for XP SP3 32 bit
+echo 6. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
 echo N. I have already installed an NVIDIA CUDA Toolkit
 echo A. I have already installed an ATI Stream SDK
 echo.
@@ -180,31 +180,31 @@ set OPENCL_PKG=cudatoolkit_3.1_win_64.exe
 GOTO OpenCLInstall
 
 :STREAM_1_32
-set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 32 bit
-set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-32.exe
+set OPENCL_VARS=SetAMDAPPVars
+set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 32 bit
+set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
+set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-32.exe
 GOTO OpenCLInstall
 
 :STREAM_1_64
-set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 64 bit
-set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-64.exe
+set OPENCL_VARS=SetAMDAPPVars
+set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 64 bit
+set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
+set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-64.exe
 GOTO OpenCLInstall
 
 :STREAM_2_32
 set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 32 bit
+set OPENCL_NAME=ATI Stream SDK 2.3 for XP SP3 32 bit
 set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-xp32.exe
+set OPENCL_PKG=ati-stream-sdk-v2.3-xp32.exe
 GOTO OpenCLInstall
 
 :STREAM_2_64
 set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 64 bit
+set OPENCL_NAME=ATI Stream SDK 2.3 for XP SP3 64 bit
 set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-xp64.exe
+set OPENCL_PKG=ati-stream-sdk-v2.3-xp64.exe
 GOTO OpenCLInstall
 
 :OpenCLInstall
@@ -247,6 +247,7 @@ cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
 goto OpenCLFinished
 
 :SetStreamVars
+IF "%ATISTREAMSDKROOT%"=="" GOTO SetAMDAPPVars
 :: Use another cmd instance to get new env vars expanded
 cmd /C echo set LUX_X86_OCL_LIBS="%ATISTREAMSDKROOT%\lib\x86">> build-vars.bat
 cmd /C echo set LUX_X86_OCL_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
@@ -257,6 +258,21 @@ cmd /C echo "LUX_X86_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86">> build-vars.
 cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
+
+set SKIP_GLEW=1
+goto OpenCLFinished
+
+:SetAMDAPPVars
+:: Use another cmd instance to get new env vars expanded
+cmd /C echo set LUX_X86_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86_64">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
+
+cmd /C echo "LUX_X86_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
 
 set SKIP_GLEW=1
 goto OpenCLFinished
@@ -555,19 +571,25 @@ IF %SKIP_GLEW% EQU 0 (
 	echo "LUX_X64_GLEW_LIBNAME"="glew32">> build-vars.reg
 ) ELSE (
 	
-	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86_64">> build-vars.bat
+        IF "%AMDAPPSDKSAMPLESROOT"=="" (
+               SET SAMPLESROOT=%ATISTREAMSDKSAMPLESROOT%
+        ) ELSE (
+               SET SAMPLESROOT=%AMDAPPSDKSAMPLESROOT%
+        )
+
+	cmd /C echo set LUX_X86_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_LIBS="%SAMPLESROOT%\lib\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_LIBS="%SAMPLESROOT%\lib\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_BIN="%SAMPLESROOT%\bin\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_BIN="%SAMPLESROOT%\bin\x86_64">> build-vars.bat
 	
-	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%SDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%SDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_LIBS"="%SDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_LIBS"="%SDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 	
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew64>> build-vars.bat
