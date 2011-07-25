@@ -1038,6 +1038,18 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="mikktspace"
+					>
+					<File
+						RelativePath="..\..\..\lux\shapes\mikktspace\mikktspace.c"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\shapes\mikktspace\weldmesh.c"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="samplers"
@@ -2025,6 +2037,18 @@
 					>
 					<File
 						RelativePath="..\..\..\lux\shapes\plymesh\rply.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="mikktspace"
+					>
+					<File
+						RelativePath="..\..\..\lux\shapes\mikktspace\mikktspace.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\shapes\mikktspace\weldmesh.h"
 						>
 					</File>
 				</Filter>
