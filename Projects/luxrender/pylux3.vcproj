@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -87,7 +87,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python3.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\Python3.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -152,7 +152,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -216,7 +216,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python3.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -281,7 +281,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE1.vsprops;..\properties\32bit-Variables.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -400,7 +400,7 @@
 		<Configuration
 			Name="Debug SSE1|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python3.vsprops;..\properties\SSE1.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\Python3.vsprops;..\properties\SSE1.vsprops"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -519,7 +519,7 @@
 		<Configuration
 			Name="Release NoOpenCL|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\32bit-LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -583,7 +583,7 @@
 		<Configuration
 			Name="Release NoOpenCL|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\64bit-LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python3.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LibLuxUser.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\Python3.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>

@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Debug.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -75,7 +75,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Debug.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Debug.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -129,7 +129,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -182,7 +182,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Release.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -237,7 +237,7 @@
 		<Configuration
 			Name="Release SSE1|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops;..\properties\NoOpenCL.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE1.vsprops;..\properties\NoOpenCL.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -454,7 +454,7 @@
 		<Configuration
 			Name="Release NoOpenCL|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\NoOpenCL.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\NoOpenCL.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -507,7 +507,7 @@
 		<Configuration
 			Name="Release NoOpenCL|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\NoOpenCL.vsprops"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\64bit-Release.vsprops;..\properties\NoOpenCL.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
