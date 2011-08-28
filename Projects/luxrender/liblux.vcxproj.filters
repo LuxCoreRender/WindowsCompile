@@ -186,6 +186,12 @@
     <Filter Include="Header Files\renderers\sppm">
       <UniqueIdentifier>{1a2c33d7-092b-437d-9a4d-da0e0fae5eb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shapes\mikktspace">
+      <UniqueIdentifier>{d8d4f090-2b23-4180-9b44-403d02f7ac92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shapes\mikktspace">
+      <UniqueIdentifier>{871fe686-30d5-4fc2-a07c-71e69683acc9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
@@ -865,6 +871,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\integrators\sppm.cpp">
       <Filter>Source Files\integrators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\shapes\mikktspace\mikktspace.c">
+      <Filter>Source Files\shapes\mikktspace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\shapes\mikktspace\weldmesh.c">
+      <Filter>Source Files\shapes\mikktspace</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1611,6 +1623,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\integrators\sppm.h">
       <Filter>Header Files\integrators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\shapes\mikktspace\mikktspace.h">
+      <Filter>Header Files\shapes\mikktspace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\shapes\mikktspace\weldmesh.h">
+      <Filter>Header Files\shapes\mikktspace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\streamio.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

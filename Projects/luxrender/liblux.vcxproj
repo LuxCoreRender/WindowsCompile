@@ -220,6 +220,8 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CustomBuildBeforeTargets Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -252,6 +254,11 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Lib>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">
     <Lib>
@@ -359,6 +366,8 @@
     <ClCompile Include="..\..\..\lux\shapes\meshmicrodisplacementtriangle.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\meshquadrilateral.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\meshwaldtriangle.cpp" />
+    <ClCompile Include="..\..\..\lux\shapes\mikktspace\mikktspace.c" />
+    <ClCompile Include="..\..\..\lux\shapes\mikktspace\weldmesh.c" />
     <ClCompile Include="..\..\..\lux\shapes\nurbs.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\paraboloid.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\plymesh.cpp" />
@@ -521,6 +530,7 @@
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
     <ClInclude Include="..\..\..\lux\core\filedata.h" />
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
+    <ClInclude Include="..\..\..\lux\core\streamio.h" />
     <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
@@ -584,6 +594,8 @@
     <ClInclude Include="..\..\..\lux\shapes\lenscomponent.h" />
     <ClInclude Include="..\..\..\lux\shapes\loopsubdiv.h" />
     <ClInclude Include="..\..\..\lux\shapes\mesh.h" />
+    <ClInclude Include="..\..\..\lux\shapes\mikktspace\mikktspace.h" />
+    <ClInclude Include="..\..\..\lux\shapes\mikktspace\weldmesh.h" />
     <ClInclude Include="..\..\..\lux\shapes\nurbs.h" />
     <ClInclude Include="..\..\..\lux\shapes\paraboloid.h" />
     <ClInclude Include="..\..\..\lux\shapes\plymesh.h" />
