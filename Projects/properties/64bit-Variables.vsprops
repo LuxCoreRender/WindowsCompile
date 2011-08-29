@@ -6,7 +6,7 @@
 	>
 	<UserMacro
 		Name="LUX_LUXRAYS_LIBS"
-		Value="$(ProjectDir)\..\luxrays\$(PlatformName)\$(Configuration)"
+		Value="$(ProjectDir)\..\luxrays\$(PlatformName)\$(ConfigurationName)"
 	/>
 	<UserMacro
 		Name="LUX_BOOST_ROOT"
