@@ -337,6 +337,7 @@
     <ClCompile Include="..\..\..\lux\materials\matte.cpp" />
     <ClCompile Include="..\..\..\lux\materials\mattetranslucent.cpp" />
     <ClCompile Include="..\..\..\lux\materials\metal.cpp" />
+    <ClCompile Include="..\..\..\lux\materials\metal2.cpp" />
     <ClCompile Include="..\..\..\lux\materials\mirror.cpp" />
     <ClCompile Include="..\..\..\lux\materials\mixmaterial.cpp" />
     <ClCompile Include="..\..\..\lux\materials\null.cpp" />
@@ -403,6 +404,7 @@
     <ClCompile Include="..\..\..\lux\textures\equalenergy.cpp" />
     <ClCompile Include="..\..\..\lux\textures\fbm.cpp" />
     <ClCompile Include="..\..\..\lux\textures\frequencytexture.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\fresnelcolor.cpp" />
     <ClCompile Include="..\..\..\lux\textures\gaussiantexture.cpp" />
     <ClCompile Include="..\..\..\lux\textures\harlequin.cpp" />
     <ClCompile Include="..\..\..\lux\textures\imagemap.cpp" />
@@ -572,6 +574,7 @@
     <ClInclude Include="..\..\..\lux\materials\matte.h" />
     <ClInclude Include="..\..\..\lux\materials\mattetranslucent.h" />
     <ClInclude Include="..\..\..\lux\materials\metal.h" />
+    <ClInclude Include="..\..\..\lux\materials\metal2.h" />
     <ClInclude Include="..\..\..\lux\materials\mirror.h" />
     <ClInclude Include="..\..\..\lux\materials\mixmaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\null.h" />
@@ -628,6 +631,7 @@
     <ClInclude Include="..\..\..\lux\textures\equalenergy.h" />
     <ClInclude Include="..\..\..\lux\textures\fbm.h" />
     <ClInclude Include="..\..\..\lux\textures\frequencytexture.h" />
+    <ClInclude Include="..\..\..\lux\textures\fresnelcolor.h" />
     <ClInclude Include="..\..\..\lux\textures\gaussiantexture.h" />
     <ClInclude Include="..\..\..\lux\textures\harlequin.h" />
     <ClInclude Include="..\..\..\lux\textures\imagemap.h" />

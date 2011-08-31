@@ -878,6 +878,12 @@
     <ClCompile Include="..\..\..\lux\shapes\mikktspace\weldmesh.c">
       <Filter>Source Files\shapes\mikktspace</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\materials\metal2.cpp">
+      <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\fresnelcolor.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1632,6 +1638,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\streamio.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\materials\metal2.h">
+      <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\fresnelcolor.h">
+      <Filter>Header Files\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
