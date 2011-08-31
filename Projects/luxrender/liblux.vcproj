@@ -879,6 +879,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\metal2.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\mirror.cpp"
 					>
 				</File>
@@ -1168,6 +1172,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\frequencytexture.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\fresnelcolor.cpp"
 					>
 				</File>
 				<File
@@ -1925,6 +1933,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\metal2.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\mirror.h"
 					>
 				</File>
@@ -2150,6 +2162,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\frequencytexture.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\fresnelcolor.h"
 					>
 				</File>
 				<File
