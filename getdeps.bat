@@ -160,8 +160,8 @@ IF %OPENCL_CHOICE% EQU 3 GOTO STREAM_1_32
 IF %OPENCL_CHOICE% EQU 4 GOTO STREAM_1_64
 IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_2_32
 IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_2_64
-IF "%OPENCL_CHOICE%" == "N" GOTO SetCUDAVars
-IF "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
+IF /i "%OPENCL_CHOICE%" == "N" GOTO SetCUDAVars
+IF /i "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
 echo Invalid choice
 GOTO OpenCLChoice
 
@@ -224,9 +224,9 @@ echo.
 echo I will now launch the SDK installer. You can install anywhere you like, but to be
 echo on the safe side, please choose a path that doesn't contain spaces.
 IF %OPENCL_VARS% EQU "SetStreamVars" (
-	echo.
-	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
-	echo.
+rem	echo.
+rem	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
+rem	echo.
 )
 start /WAIT "" %DOWNLOADS%\%OPENCL_PKG%
 echo Waiting for installer. When finished,
@@ -259,7 +259,8 @@ cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-var
 cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
 
-set SKIP_GLEW=1
+rem We use our own glew now
+rem set SKIP_GLEW=1
 goto OpenCLFinished
 
 :SetAMDAPPVars
@@ -274,7 +275,8 @@ cmd /C echo "LUX_X86_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.r
 cmd /C echo "LUX_X64_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
 
-set SKIP_GLEW=1
+rem We use our own glew now
+rem set SKIP_GLEW=1
 goto OpenCLFinished
 
 :OpenCLFinished
@@ -519,24 +521,26 @@ echo "LUX_X64_GLUT_LIBS"="%D64R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\x
 
 
 IF %SKIP_GLEW% EQU 0 (
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win32.zip (
+	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x86.zip (
 		echo.
 		echo **************************************************************************
 		echo * Downloading GLEW 32 bit                                                *
 		echo **************************************************************************
-		%WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
+		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
+		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x86.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x86.zip
 		if ERRORLEVEL 1 (
 			echo.
 			echo Download failed. Are you connected to the internet?
 			exit /b -1
 		)
 	)
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win64.zip (
+	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x64.zip (
 		echo.
 		echo **************************************************************************
 		echo * Downloading GLEW 64 bit                                                *
 		echo **************************************************************************
-		%WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x64.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x64.zip
 		if ERRORLEVEL 1 (
 			echo.
 			echo Download failed. Are you connected to the internet?
@@ -547,8 +551,8 @@ IF %SKIP_GLEW% EQU 0 (
 	echo **************************************************************************
 	echo * Extracting GLEW                                                        *
 	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win32.zip -o%D32%\ > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win64.zip -o%D64%\ > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x86.zip -o%D32%\ > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x64.zip -o%D64%\ > nul
 	
 	echo set LUX_X86_GLEW_INCLUDE=%D32%\glew-%GLEW_VER%\include>> build-vars.bat
 	echo set LUX_X64_GLEW_INCLUDE=%D64%\glew-%GLEW_VER%\include>> build-vars.bat
@@ -564,11 +568,11 @@ IF %SKIP_GLEW% EQU 0 (
 	echo "LUX_X86_GLEW_BIN"="%D32R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
 	echo "LUX_X64_GLEW_BIN"="%D64R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
 	
-	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
-	echo set LUX_X64_GLEW_LIBNAME=glew32>> build-vars.bat
+	echo set LUX_X86_GLEW_LIBNAME=glew32s>> build-vars.bat
+	echo set LUX_X64_GLEW_LIBNAME=glew64s>> build-vars.bat
 
-	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
-	echo "LUX_X64_GLEW_LIBNAME"="glew32">> build-vars.reg
+	echo "LUX_X86_GLEW_LIBNAME"="glew32s">> build-vars.reg
+	echo "LUX_X64_GLEW_LIBNAME"="glew64s">> build-vars.reg
 ) ELSE (
 	
         IF "%AMDAPPSDKSAMPLESROOT%"=="" (
