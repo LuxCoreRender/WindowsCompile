@@ -21,6 +21,7 @@
 		Name="VCLinkerTool"
 		AdditionalDependencies="libboost_filesystem-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib FreeImage.lib OpenCL.lib OpenGL32.lib"
 		LinkIncremental="1"
+		AdditionalLibraryDirectories="&quot;$(LUX_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_GLEW_LIBS)&quot;"
 		IgnoreDefaultLibraryNames=""
 		ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
 		SubSystem="0"
