@@ -7,7 +7,7 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
-		AdditionalIncludeDirectories="../Resources;../../include;../../../lux;../../../lux/core;../../../lux/core/external;../../../lux/core/queryable;../../../lux/core/reflection;../../../lux/core/reflection/bxdf;../../../lux/core/reflection/fresnel;../../../lux/core/reflection/microfacetdistribution;../../../lux/lights/sphericalfunction;../../../lux/spds;&quot;$(LUX_BOOST_ROOT)&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_QT_ROOT)\include&quot;;&quot;$(LUX_QT_ROOT)\include\Qt&quot;;&quot;$(LUX_QT_ROOT)\include\QtCore&quot;;&quot;$(LUX_QT_ROOT)\include\QtGui&quot;"
+		AdditionalIncludeDirectories="../Resources;../../include;../../../lux;../../../lux/core;../../../lux/core/external;../../../lux/core/queryable;../../../lux/core/reflection;../../../lux/core/reflection/bxdf;../../../lux/core/reflection/fresnel;../../../lux/core/reflection/microfacetdistribution;../../../lux/lights/sphericalfunction;../../../lux/spds;&quot;$(LUX_BOOST_ROOT)&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;"
 		PreprocessorDefinitions="FREEIMAGE_LIB"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"
@@ -20,8 +20,8 @@
 	<Tool
 		Name="VCLinkerTool"
 		AdditionalDependencies="ws2_32.lib comctl32.lib OpenGL32.lib libboost_date_time-vc90-mt.lib libboost_filesystem-vc90-mt.lib libboost_iostreams-vc90-mt.lib libboost_program_options-vc90-mt.lib libboost_regex-vc90-mt.lib libboost_serialization-vc90-mt.lib libboost_system-vc90-mt.lib libboost_thread-vc90-mt.lib libboost_bzip2-vc90-mt.lib libboost_zlib-vc90-mt.lib FreeImage.lib"
-		AdditionalLibraryDirectories="&quot;$(LUX_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_QT_ROOT)\lib&quot;;&quot;$(LUX_GLEW_LIBS)&quot;"
 		LinkIncremental="1"
+		AdditionalLibraryDirectories="&quot;$(LUX_BOOST_ROOT)/stage/boost/lib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;;&quot;$(LUX_GLEW_LIBS)&quot;"
 		ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
 		RandomizedBaseAddress="1"
 		ImportLibrary=""
