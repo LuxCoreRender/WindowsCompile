@@ -787,6 +787,22 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="film"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\film\film.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\film\nativefilm.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\film\pixeldevicefilm.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter

@@ -6,13 +6,13 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories=""
+		AdditionalIncludeDirectories="&quot;$(LUX_QT_ROOT)\include&quot;;&quot;$(LUX_QT_ROOT)\include\Qt&quot;;&quot;$(LUX_QT_ROOT)\include\QtCore&quot;;&quot;$(LUX_QT_ROOT)\include\QtGui&quot;"
 		PreprocessorDefinitions="QT_LARGEFILE_SUPPORT;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_GUI_LIB"
 	/>
 	<Tool
 		Name="VCLinkerTool"
 		AdditionalDependencies="qtmain.lib QtCore4.lib QtGui4.lib QtOpenGL4.lib QtUITools.lib"
-		AdditionalLibraryDirectories=""
+		AdditionalLibraryDirectories="$(LUX_QT_ROOT)\lib"
 		SubSystem="2"
 	/>
 	<Tool

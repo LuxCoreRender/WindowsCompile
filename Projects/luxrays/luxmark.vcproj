@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Debug.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -82,7 +82,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="0"
 			>
@@ -142,7 +142,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -203,7 +203,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -265,7 +265,7 @@
 		<Configuration
 			Name="Release NoOpenCL|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\32bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
@@ -326,7 +326,7 @@
 		<Configuration
 			Name="Release NoOpenCL|x64"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
+			InheritedPropertySheets="..\properties\LuxCoreProperties.vsprops;..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\QtGUI.vsprops;..\properties\64bit-Variables.vsprops"
 			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
