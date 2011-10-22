@@ -867,6 +867,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\layeredmaterial.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\matte.cpp"
 					>
 				</File>
@@ -1152,6 +1156,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\checkerboard.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\colordepth.cpp"
 					>
 				</File>
 				<File
@@ -1487,6 +1495,10 @@
 					</File>
 					<File
 						RelativePath="..\..\..\lux\core\reflection\fresnel.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\core\reflection\layeredbsdf.cpp"
 						>
 					</File>
 					<File
@@ -1921,6 +1933,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\layeredmaterial.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\matte.h"
 					>
 				</File>
@@ -2142,6 +2158,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\checkerboard.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\colordepth.h"
 					>
 				</File>
 				<File
@@ -2597,6 +2617,10 @@
 					</File>
 					<File
 						RelativePath="..\..\..\lux\core\reflection\fresnel.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\core\reflection\layeredbsdf.h"
 						>
 					</File>
 					<File
