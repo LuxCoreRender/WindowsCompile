@@ -296,6 +296,7 @@
     <ClCompile Include="..\..\..\lux\core\filedata.cpp" />
     <ClCompile Include="..\..\..\lux\core\luxlex.cpp" />
     <ClCompile Include="..\..\..\lux\core\luxparse.cpp" />
+    <ClCompile Include="..\..\..\lux\core\reflection\layeredbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\film\fleximage.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\environment.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\orthographic.cpp" />
@@ -334,6 +335,7 @@
     <ClCompile Include="..\..\..\lux\materials\glossy.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glossy2.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glossytranslucent.cpp" />
+    <ClCompile Include="..\..\..\lux\materials\layeredmaterial.cpp" />
     <ClCompile Include="..\..\..\lux\materials\matte.cpp" />
     <ClCompile Include="..\..\..\lux\materials\mattetranslucent.cpp" />
     <ClCompile Include="..\..\..\lux\materials\metal.cpp" />
@@ -399,6 +401,7 @@
     <ClCompile Include="..\..\..\lux\textures\brick.cpp" />
     <ClCompile Include="..\..\..\lux\textures\cauchytexture.cpp" />
     <ClCompile Include="..\..\..\lux\textures\checkerboard.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\colordepth.cpp" />
     <ClCompile Include="..\..\..\lux\textures\constant.cpp" />
     <ClCompile Include="..\..\..\lux\textures\dots.cpp" />
     <ClCompile Include="..\..\..\lux\textures\equalenergy.cpp" />
@@ -532,6 +535,7 @@
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
     <ClInclude Include="..\..\..\lux\core\filedata.h" />
     <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
+    <ClInclude Include="..\..\..\lux\core\reflection\layeredbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\streamio.h" />
     <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
@@ -571,6 +575,7 @@
     <ClInclude Include="..\..\..\lux\materials\glossy.h" />
     <ClInclude Include="..\..\..\lux\materials\glossy2.h" />
     <ClInclude Include="..\..\..\lux\materials\glossytranslucent.h" />
+    <ClInclude Include="..\..\..\lux\materials\layeredmaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\matte.h" />
     <ClInclude Include="..\..\..\lux\materials\mattetranslucent.h" />
     <ClInclude Include="..\..\..\lux\materials\metal.h" />
@@ -625,6 +630,7 @@
     <ClInclude Include="..\..\..\lux\textures\brick.h" />
     <ClInclude Include="..\..\..\lux\textures\cauchytexture.h" />
     <ClInclude Include="..\..\..\lux\textures\checkerboard.h" />
+    <ClInclude Include="..\..\..\lux\textures\colordepth.h" />
     <ClInclude Include="..\..\..\lux\textures\constant.h" />
     <ClInclude Include="..\..\..\lux\textures\convert.h" />
     <ClInclude Include="..\..\..\lux\textures\dots.h" />
