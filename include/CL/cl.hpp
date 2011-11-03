@@ -469,7 +469,7 @@ public:
         if (!empty_) {
             data_[size_].~T();
             size_--;
-            if (size_ == -1)	{
+            if (size_ == -1) {
                 empty_ = true;
             }
         }
@@ -786,11 +786,11 @@ struct GetInfoHelper<Func, CPP_TYPE> \
     F(cl_device_info, CL_DEVICE_VENDOR_ID, cl_uint) \
     F(cl_device_info, CL_DEVICE_MAX_COMPUTE_UNITS, cl_uint) \
     F(cl_device_info, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, cl_uint) \
-    F(cl_device_info, CL_DEVICE_MAX_WORK_GROUP_SIZE, ::size_t)               \
+    F(cl_device_info, CL_DEVICE_MAX_WORK_GROUP_SIZE, ::size_t) \
     F(cl_device_info, CL_DEVICE_MAX_WORK_ITEM_SIZES, VECTOR_CLASS< ::size_t>) \
-    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR, cl_uint)	\
-    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT, cl_uint)	\
-    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT, cl_uint)	\
+    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR, cl_uint) \
+    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT, cl_uint) \
+    F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT, cl_uint) \
     F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG, cl_uint) \
     F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT, cl_uint) \
     F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE, cl_uint) \
@@ -826,12 +826,12 @@ struct GetInfoHelper<Func, CPP_TYPE> \
     F(cl_device_info, CL_DEVICE_EXECUTION_CAPABILITIES, cl_device_exec_capabilities) \
     F(cl_device_info, CL_DEVICE_QUEUE_PROPERTIES, cl_command_queue_properties) \
     F(cl_device_info, CL_DEVICE_PLATFORM, cl_platform_id) \
-    F(cl_device_info, CL_DEVICE_NAME, STRING_CLASS)                        \
-    F(cl_device_info, CL_DEVICE_VENDOR, STRING_CLASS)                        \
-    F(cl_device_info, CL_DRIVER_VERSION, STRING_CLASS)                        \
-    F(cl_device_info, CL_DEVICE_PROFILE, STRING_CLASS)                        \
-    F(cl_device_info, CL_DEVICE_VERSION, STRING_CLASS)                        \
-    F(cl_device_info, CL_DEVICE_EXTENSIONS, STRING_CLASS)                \
+    F(cl_device_info, CL_DEVICE_NAME, STRING_CLASS) \
+    F(cl_device_info, CL_DEVICE_VENDOR, STRING_CLASS) \
+    F(cl_device_info, CL_DRIVER_VERSION, STRING_CLASS) \
+    F(cl_device_info, CL_DEVICE_PROFILE, STRING_CLASS) \
+    F(cl_device_info, CL_DEVICE_VERSION, STRING_CLASS) \
+    F(cl_device_info, CL_DEVICE_EXTENSIONS, STRING_CLASS) \
     \
     F(cl_context_info, CL_CONTEXT_REFERENCE_COUNT, cl_uint) \
     F(cl_context_info, CL_CONTEXT_DEVICES, VECTOR_CLASS<Device>) \
@@ -873,7 +873,7 @@ struct GetInfoHelper<Func, CPP_TYPE> \
     F(cl_program_info, CL_PROGRAM_CONTEXT, cl::Context) \
     F(cl_program_info, CL_PROGRAM_NUM_DEVICES, cl_uint) \
     F(cl_program_info, CL_PROGRAM_DEVICES, VECTOR_CLASS<cl_device_id>) \
-    F(cl_program_info, CL_PROGRAM_SOURCE, STRING_CLASS)	\
+    F(cl_program_info, CL_PROGRAM_SOURCE, STRING_CLASS) \
     F(cl_program_info, CL_PROGRAM_BINARY_SIZES, VECTOR_CLASS< ::size_t>) \
     F(cl_program_info, CL_PROGRAM_BINARIES, VECTOR_CLASS<char *>) \
     \
@@ -898,11 +898,11 @@ struct GetInfoHelper<Func, CPP_TYPE> \
 
 #if defined(CL_VERSION_1_1)
 #define __PARAM_NAME_INFO_1_1(F) \
-	F(cl_context_info, CL_CONTEXT_NUM_DEVICES, cl_uint)\
+    F(cl_context_info, CL_CONTEXT_NUM_DEVICES, cl_uint)\
     F(cl_device_info, CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF, cl_uint) \
-    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR, cl_uint)      \
-    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_SHORT, cl_uint)     \
-    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_INT, cl_uint)       \
+    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR, cl_uint) \
+    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_SHORT, cl_uint) \
+    F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_INT, cl_uint) \
     F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_LONG, cl_uint) \
     F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_FLOAT, cl_uint) \
     F(cl_device_info, CL_DEVICE_NATIVE_VECTOR_WIDTH_DOUBLE, cl_uint) \
@@ -1159,7 +1159,7 @@ static inline cl_int errHandler (cl_int err, const char * errStr = NULL)
  */
 struct ImageFormat : public cl_image_format
 {
-	ImageFormat(){}
+    ImageFormat(){}
 
     ImageFormat(cl_channel_order order, cl_channel_type type)
     {
@@ -1170,8 +1170,8 @@ struct ImageFormat : public cl_image_format
     ImageFormat& operator = (const ImageFormat& rhs)
     {
         if (this != &rhs) {
-			this->image_channel_data_type = rhs.image_channel_data_type;
-			this->image_channel_order     = rhs.image_channel_order;
+            this->image_channel_data_type = rhs.image_channel_data_type;
+            this->image_channel_order     = rhs.image_channel_order;
         }
         return *this;
     }
@@ -1318,10 +1318,10 @@ public:
    /*! \brief Get the list of available D3D10 devices.
      *
      *  \param d3d_device_source.
-	 *
-	 *  \param d3d_object.
-	 *
-	 *  \param d3d_device_set.
+     *
+     *  \param d3d_object.
+     *
+     *  \param d3d_device_set.
      *
      *  \param devices returns a vector of OpenCL D3D10 devices found. The cl::Device
      *  values returned in devices can be used to identify a specific OpenCL
@@ -1339,45 +1339,45 @@ public:
      * generated.
      */
     cl_int getDevices(
-		cl_d3d10_device_source_khr d3d_device_source,
-		void *                     d3d_object,
-		cl_d3d10_device_set_khr    d3d_device_set,
+        cl_d3d10_device_source_khr d3d_device_source,
+        void *                     d3d_object,
+        cl_d3d10_device_set_khr    d3d_device_set,
         VECTOR_CLASS<Device>* devices) const
     {
-		typedef CL_API_ENTRY cl_int (CL_API_CALL *PFN_clGetDeviceIDsFromD3D10KHR)(
-		cl_platform_id platform, 
-		cl_d3d10_device_source_khr d3d_device_source, 
-		void * d3d_object,
-		cl_d3d10_device_set_khr d3d_device_set,
-		cl_uint num_entries,
-		cl_device_id * devices,
-		cl_uint* num_devices);
+        typedef CL_API_ENTRY cl_int (CL_API_CALL *PFN_clGetDeviceIDsFromD3D10KHR)(
+            cl_platform_id platform, 
+            cl_d3d10_device_source_khr d3d_device_source, 
+            void * d3d_object,
+            cl_d3d10_device_set_khr d3d_device_set,
+            cl_uint num_entries,
+            cl_device_id * devices,
+            cl_uint* num_devices);
 
-		static PFN_clGetDeviceIDsFromD3D10KHR pfn_clGetDeviceIDsFromD3D10KHR = NULL;
-		__INIT_CL_EXT_FCN_PTR(clGetDeviceIDsFromD3D10KHR);
+        static PFN_clGetDeviceIDsFromD3D10KHR pfn_clGetDeviceIDsFromD3D10KHR = NULL;
+        __INIT_CL_EXT_FCN_PTR(clGetDeviceIDsFromD3D10KHR);
 
         cl_uint n = 0;
         cl_int err = pfn_clGetDeviceIDsFromD3D10KHR(
-			object_, 
-			d3d_device_source, 
-			d3d_object,
-			d3d_device_set, 
-			0, 
-			NULL, 
-			&n);
+            object_, 
+            d3d_device_source, 
+            d3d_object,
+            d3d_device_set, 
+            0, 
+            NULL, 
+            &n);
         if (err != CL_SUCCESS) {
             return detail::errHandler(err, __GET_DEVICE_IDS_ERR);
         }
 
         cl_device_id* ids = (cl_device_id*) alloca(n * sizeof(cl_device_id));
         err = pfn_clGetDeviceIDsFromD3D10KHR(
-			object_, 
-			d3d_device_source, 
-			d3d_object,
-			d3d_device_set,
-			n, 
-			ids, 
-			NULL);
+            object_, 
+            d3d_device_source, 
+            d3d_object,
+            d3d_device_set,
+            n, 
+            ids, 
+            NULL);
         if (err != CL_SUCCESS) {
             return detail::errHandler(err, __GET_DEVICE_IDS_ERR);
         }
@@ -1599,29 +1599,29 @@ public:
     }
 
 #if defined(CL_VERSION_1_1)
-	cl_int setCallback(
-		cl_int type,
+    cl_int setCallback(
+        cl_int type,
         void (CL_CALLBACK * pfn_notify)(cl_event, cl_int, void *),		
-		void * user_data = NULL)
-	{
+        void * user_data = NULL)
+    {
         return detail::errHandler(
-			::clSetEventCallback(
-				object_,
-				type,
-				pfn_notify,
-				user_data), 
-			__SET_EVENT_CALLBACK_ERR);
-	}
+            ::clSetEventCallback(
+                object_,
+                type,
+                pfn_notify,
+                user_data), 
+            __SET_EVENT_CALLBACK_ERR);
+    }
 #endif
 
-	static cl_int
-	waitForEvents(const VECTOR_CLASS<Event>& events)
-	{
-		return detail::errHandler(
-			::clWaitForEvents(
-				(cl_uint) events.size(), (cl_event*)&events.front()),
-				__WAIT_FOR_EVENTS_ERR);
-	}
+    static cl_int
+    waitForEvents(const VECTOR_CLASS<Event>& events)
+    {
+        return detail::errHandler(
+            ::clWaitForEvents(
+                (cl_uint) events.size(), (cl_event*)&events.front()),
+            __WAIT_FOR_EVENTS_ERR);
+    }
 };
 
 __GET_INFO_HELPER_WITH_RETAIN(cl::Event)
@@ -1648,7 +1648,7 @@ public:
         }
     }
 
-	UserEvent() : Event() { }
+    UserEvent() : Event() { }
 
     UserEvent(const UserEvent& event) : Event(event) { }
 
@@ -1660,12 +1660,12 @@ public:
         return *this;
     }
 
-	cl_int setStatus(cl_int status)
-	{
+    cl_int setStatus(cl_int status)
+    {
         return detail::errHandler(
-			::clSetUserEventStatus(object_,status), 
-			__SET_USER_EVENT_STATUS_ERR);
-	}
+            ::clSetUserEventStatus(object_,status), 
+            __SET_USER_EVENT_STATUS_ERR);
+    }
 };
 #endif
 
@@ -1675,7 +1675,7 @@ WaitForEvents(const VECTOR_CLASS<Event>& events)
     return detail::errHandler(
         ::clWaitForEvents(
             (cl_uint) events.size(), (cl_event*)&events.front()),
-            __WAIT_FOR_EVENTS_ERR);
+        __WAIT_FOR_EVENTS_ERR);
 }
 
 /*! \class Memory
@@ -1718,17 +1718,17 @@ public:
     }
 
 #if defined(CL_VERSION_1_1)
-	cl_int setDestructorCallback(
+    cl_int setDestructorCallback(
         void (CL_CALLBACK * pfn_notify)(cl_mem, void *),		
-		void * user_data = NULL)
-	{
+        void * user_data = NULL)
+    {
         return detail::errHandler(
-			::clSetMemObjectDestructorCallback(
-				object_,
-				pfn_notify,
-				user_data), 
-			__SET_MEM_OBJECT_DESTRUCTOR_CALLBACK_ERR);
-	}
+            ::clSetMemObjectDestructorCallback(
+                object_,
+                pfn_notify,
+                user_data), 
+            __SET_MEM_OBJECT_DESTRUCTOR_CALLBACK_ERR);
+    }
 #endif
 
 };
@@ -1770,20 +1770,20 @@ public:
     }
 
 #if defined(CL_VERSION_1_1)
-	Buffer createSubBuffer(
-		cl_mem_flags flags,
-		cl_buffer_create_type buffer_create_type,
-		const void * buffer_create_info,
-		cl_int * err = NULL)
-	{
-		Buffer result;
-		cl_int error;
+    Buffer createSubBuffer(
+        cl_mem_flags flags,
+        cl_buffer_create_type buffer_create_type,
+        const void * buffer_create_info,
+        cl_int * err = NULL)
+    {
+        Buffer result;
+        cl_int error;
         result.object_ = ::clCreateSubBuffer(
-			object_, 
-			flags, 
-			buffer_create_type, 
-			buffer_create_info, 
-			&error);
+            object_, 
+            flags, 
+            buffer_create_type, 
+            buffer_create_info, 
+            &error);
 
         detail::errHandler(error, __CREATE_SUBBUFFER_ERR);
         if (err != NULL) {
@@ -1799,7 +1799,7 @@ public:
 class BufferD3D10 : public Buffer
 {
 public:
-	typedef CL_API_ENTRY cl_mem (CL_API_CALL *PFN_clCreateFromD3D10BufferKHR)(
+    typedef CL_API_ENTRY cl_mem (CL_API_CALL *PFN_clCreateFromD3D10BufferKHR)(
     cl_context context, cl_mem_flags flags, ID3D10Buffer*  buffer,
     cl_int* errcode_ret);
 
@@ -1809,8 +1809,8 @@ public:
         ID3D10Buffer* bufobj,
         cl_int * err = NULL)
     {
-		static PFN_clCreateFromD3D10BufferKHR pfn_clCreateFromD3D10BufferKHR = NULL;
-		__INIT_CL_EXT_FCN_PTR(clCreateFromD3D10BufferKHR);
+        static PFN_clCreateFromD3D10BufferKHR pfn_clCreateFromD3D10BufferKHR = NULL;
+        __INIT_CL_EXT_FCN_PTR(clCreateFromD3D10BufferKHR);
 
         cl_int error;
         object_ = pfn_clCreateFromD3D10BufferKHR(
@@ -1825,7 +1825,7 @@ public:
         }
     }
 
-	BufferD3D10() : Buffer() { }
+    BufferD3D10() : Buffer() { }
 
     BufferD3D10(const BufferD3D10& buffer) : Buffer(buffer) { }
 
@@ -1864,7 +1864,7 @@ public:
         }
     }
 
-	BufferGL() : Buffer() { }
+    BufferGL() : Buffer() { }
 
     BufferGL(const BufferGL& buffer) : Buffer(buffer) { }
 
@@ -1876,14 +1876,14 @@ public:
         return *this;
     }
 
-	cl_int getObjectInfo(
-		cl_gl_object_type *type,
-		GLuint * gl_object_name)
-	{
-		return detail::errHandler(
-			::clGetGLObjectInfo(object_,type,gl_object_name),
+    cl_int getObjectInfo(
+        cl_gl_object_type *type,
+        GLuint * gl_object_name)
+    {
+        return detail::errHandler(
+            ::clGetGLObjectInfo(object_,type,gl_object_name),
             __GET_GL_OBJECT_INFO_ERR);
-	}
+    }
 };
 
 /*! \class BufferRenderGL
@@ -1911,7 +1911,7 @@ public:
         }
     }
 
-	BufferRenderGL() : Buffer() { }
+    BufferRenderGL() : Buffer() { }
 
     BufferRenderGL(const BufferGL& buffer) : Buffer(buffer) { }
 
@@ -1923,14 +1923,14 @@ public:
         return *this;
     }
 
-	cl_int getObjectInfo(
-		cl_gl_object_type *type,
-		GLuint * gl_object_name)
-	{
-		return detail::errHandler(
-			::clGetGLObjectInfo(object_,type,gl_object_name),
+    cl_int getObjectInfo(
+        cl_gl_object_type *type,
+        GLuint * gl_object_name)
+    {
+        return detail::errHandler(
+            ::clGetGLObjectInfo(object_,type,gl_object_name),
             __GET_GL_OBJECT_INFO_ERR);
-	}
+    }
 };
 
 /*! \class Image
@@ -2021,8 +2021,8 @@ public:
     Image2DGL(
         const Context& context,
         cl_mem_flags flags,
-		GLenum target,
-		GLint  miplevel,
+        GLenum target,
+        GLint  miplevel,
         GLuint texobj,
         cl_int * err = NULL)
     {
@@ -2030,8 +2030,8 @@ public:
         object_ = ::clCreateFromGLTexture2D(
             context(),
             flags,
-			target,
-			miplevel,
+            target,
+            miplevel,
             texobj,
             &error);
 
@@ -2041,7 +2041,7 @@ public:
         }
     }
 
-	Image2DGL() : Image2D() { }
+    Image2DGL() : Image2D() { }
 
     Image2DGL(const Image2DGL& image) : Image2D(image) { }
 
@@ -2105,8 +2105,8 @@ public:
     Image3DGL(
         const Context& context,
         cl_mem_flags flags,
-		GLenum target,
-		GLint  miplevel,
+        GLenum target,
+        GLint  miplevel,
         GLuint texobj,
         cl_int * err = NULL)
     {
@@ -2114,8 +2114,8 @@ public:
         object_ = ::clCreateFromGLTexture3D(
             context(),
             flags,
-			target,
-			miplevel,
+            target,
+            miplevel,
             texobj,
             &error);
 
@@ -2125,7 +2125,7 @@ public:
         }
     }
 
-	Image3DGL() : Image3D() { }
+    Image3DGL() : Image3D() { }
 
     Image3DGL(const Image3DGL& image) : Image3D(image) { }
 
@@ -2150,16 +2150,16 @@ public:
         const Context& context,
         cl_bool normalized_coords,
         cl_addressing_mode addressing_mode,
-		cl_filter_mode filter_mode,
+        cl_filter_mode filter_mode,
         cl_int* err = NULL)
     {
         cl_int error;
         object_ = ::clCreateSampler(
             context(), 
-			normalized_coords,
-			addressing_mode,
-			filter_mode,
-			&error);
+            normalized_coords,
+            addressing_mode,
+            filter_mode,
+            &error);
 
         detail::errHandler(error, __CREATE_SAMPLER_ERR);
         if (err != NULL) {
@@ -2336,10 +2336,10 @@ public:
 
     template <cl_int name> typename
     detail::param_traits<detail::cl_kernel_work_group_info, name>::param_type
-	getWorkGroupInfo(const Device& device, cl_int* err = NULL) const
+        getWorkGroupInfo(const Device& device, cl_int* err = NULL) const
     {
         typename detail::param_traits<
-            detail::cl_kernel_work_group_info, name>::param_type param;
+        detail::cl_kernel_work_group_info, name>::param_type param;
         cl_int result = getWorkGroupInfo(device, name, &param);
         if (err != NULL) {
             *err = result;
@@ -2396,7 +2396,7 @@ public:
     {
         cl_int error;
 
-		const ::size_t n = (::size_t)sources.size();
+        const ::size_t n = (::size_t)sources.size();
         ::size_t* lengths = (::size_t*) alloca(n * sizeof(::size_t));
         const char** strings = (const char**) alloca(n * sizeof(const char*));
 
@@ -2669,29 +2669,29 @@ public:
     cl_int enqueueReadBufferRect(
         const Buffer& buffer,
         cl_bool blocking,
-		const size_t<3>& buffer_offset,
-		const size_t<3>& host_offset,
-		const size_t<3>& region,
-		::size_t buffer_row_pitch,
-		::size_t buffer_slice_pitch,
-		::size_t host_row_pitch,
-		::size_t host_slice_pitch,
-		void *ptr,
+        const size_t<3>& buffer_offset,
+        const size_t<3>& host_offset,
+        const size_t<3>& region,
+        ::size_t buffer_row_pitch,
+        ::size_t buffer_slice_pitch,
+        ::size_t host_row_pitch,
+        ::size_t host_slice_pitch,
+        void *ptr,
         const VECTOR_CLASS<Event>* events = NULL,
         Event* event = NULL) const
     {
         return detail::errHandler(
             ::clEnqueueReadBufferRect(
                 object_, 
-				buffer(), 
-				blocking, 
-				(const ::size_t *)buffer_offset,
-				(const ::size_t *)host_offset,
-				(const ::size_t *)region,
-				buffer_row_pitch,
-				buffer_slice_pitch,
-				host_row_pitch,
-				host_slice_pitch,
+                buffer(), 
+                blocking, 
+                (const ::size_t *)buffer_offset,
+                (const ::size_t *)host_offset,
+                (const ::size_t *)region,
+                buffer_row_pitch,
+                buffer_slice_pitch,
+                host_row_pitch,
+                host_slice_pitch,
                 ptr,
                 (events != NULL) ? (cl_uint) events->size() : 0,
                 (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
@@ -2703,29 +2703,29 @@ public:
     cl_int enqueueWriteBufferRect(
         const Buffer& buffer,
         cl_bool blocking,
-		const size_t<3>& buffer_offset,
-		const size_t<3>& host_offset,
-		const size_t<3>& region,
-		::size_t buffer_row_pitch,
-		::size_t buffer_slice_pitch,
-		::size_t host_row_pitch,
-		::size_t host_slice_pitch,
-		void *ptr,
+        const size_t<3>& buffer_offset,
+        const size_t<3>& host_offset,
+        const size_t<3>& region,
+        ::size_t buffer_row_pitch,
+        ::size_t buffer_slice_pitch,
+        ::size_t host_row_pitch,
+        ::size_t host_slice_pitch,
+        void *ptr,
         const VECTOR_CLASS<Event>* events = NULL,
         Event* event = NULL) const
     {
         return detail::errHandler(
             ::clEnqueueWriteBufferRect(
                 object_, 
-				buffer(), 
-				blocking, 
-				(const ::size_t *)buffer_offset,
-				(const ::size_t *)host_offset,
-				(const ::size_t *)region,
-				buffer_row_pitch,
-				buffer_slice_pitch,
-				host_row_pitch,
-				host_slice_pitch,
+                buffer(), 
+                blocking, 
+                (const ::size_t *)buffer_offset,
+                (const ::size_t *)host_offset,
+                (const ::size_t *)region,
+                buffer_row_pitch,
+                buffer_slice_pitch,
+                host_row_pitch,
+                host_slice_pitch,
                 ptr,
                 (events != NULL) ? (cl_uint) events->size() : 0,
                 (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
@@ -2736,28 +2736,28 @@ public:
     cl_int enqueueCopyBufferRect(
         const Buffer& src,
         const Buffer& dst,
-		const size_t<3>& src_origin,
-		const size_t<3>& dst_origin,
-		const size_t<3>& region,
-		::size_t src_row_pitch,
-		::size_t src_slice_pitch,
-		::size_t dst_row_pitch,
-		::size_t dst_slice_pitch,
+        const size_t<3>& src_origin,
+        const size_t<3>& dst_origin,
+        const size_t<3>& region,
+        ::size_t src_row_pitch,
+        ::size_t src_slice_pitch,
+        ::size_t dst_row_pitch,
+        ::size_t dst_slice_pitch,
         const VECTOR_CLASS<Event>* events = NULL,
         Event* event = NULL) const
     {
         return detail::errHandler(
             ::clEnqueueCopyBufferRect(
                 object_, 
-				src(), 
-				dst(), 
-				(const ::size_t *)src_origin, 
-				(const ::size_t *)dst_origin, 
-				(const ::size_t *)region,
-				src_row_pitch,
-				src_slice_pitch,
-				dst_row_pitch,
-				dst_slice_pitch,
+                src(), 
+                dst(), 
+                (const ::size_t *)src_origin, 
+                (const ::size_t *)dst_origin, 
+                (const ::size_t *)region,
+                src_row_pitch,
+                src_slice_pitch,
+                dst_row_pitch,
+                dst_slice_pitch,
                 (events != NULL) ? (cl_uint) events->size() : 0,
                 (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
                 (cl_event*) event),
@@ -2876,11 +2876,11 @@ public:
     {
         cl_int error;
         void * result = ::clEnqueueMapBuffer(
-	    object_, buffer(), blocking, flags, offset, size,
-	    (events != NULL) ? (cl_uint) events->size() : 0,
-	    (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
-	    (cl_event*) event,
-	    &error);
+            object_, buffer(), blocking, flags, offset, size,
+            (events != NULL) ? (cl_uint) events->size() : 0,
+            (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
+            (cl_event*) event,
+            &error);
 
         detail::errHandler(error, __ENQUEUE_MAP_BUFFER_ERR);
         if (err != NULL) {
@@ -2903,13 +2903,13 @@ public:
     {
         cl_int error;
         void * result = ::clEnqueueMapImage(
-	    object_, buffer(), blocking, flags,
-	    (const ::size_t *) origin, (const ::size_t *) region,
-	    row_pitch, slice_pitch,
-	    (events != NULL) ? (cl_uint) events->size() : 0,
-	    (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
-	    (cl_event*) event,
-	    &error);
+            object_, buffer(), blocking, flags,
+            (const ::size_t *) origin, (const ::size_t *) region,
+            row_pitch, slice_pitch,
+            (events != NULL) ? (cl_uint) events->size() : 0,
+            (events != NULL && events->size() > 0) ? (cl_event*) &events->front() : NULL,
+            (cl_event*) event,
+            &error);
 
         detail::errHandler(error, __ENQUEUE_MAP_IMAGE_ERR);
         if (err != NULL) {
@@ -2968,7 +2968,7 @@ public:
     }
 
     cl_int enqueueNativeKernel(
-        void (CL_CALLBACK *userFptr)(void *),
+        void (*userFptr)(void *),
         std::pair<void*, ::size_t> args,
         const VECTOR_CLASS<Memory>* mem_objects = NULL,
         const VECTOR_CLASS<const void*>* mem_locs = NULL,
@@ -2980,10 +2980,10 @@ public:
             : NULL;
 
         if (mems != NULL) {
-			for (unsigned int i = 0; i < mem_objects->size(); i++) {
-				mems[i] = ((*mem_objects)[i])();
-			}
-		}
+            for (unsigned int i = 0; i < mem_objects->size(); i++) {
+                mems[i] = ((*mem_objects)[i])();
+            }
+        }
 
         return detail::errHandler(
             ::clEnqueueNativeKernel(
@@ -3056,15 +3056,15 @@ typedef CL_API_ENTRY cl_int (CL_API_CALL *PFN_clEnqueueReleaseD3D10ObjectsKHR)(
     const cl_mem* mem_objects,  cl_uint num_events_in_wait_list,
     const cl_event* event_wait_list, cl_event* event);
 
-   cl_int enqueueAcquireD3D10Objects(
+    cl_int enqueueAcquireD3D10Objects(
          const VECTOR_CLASS<Memory>* mem_objects = NULL,
          const VECTOR_CLASS<Event>* events = NULL,
          Event* event = NULL) const
      {
-		static PFN_clEnqueueAcquireD3D10ObjectsKHR pfn_clEnqueueAcquireD3D10ObjectsKHR = NULL;
-		__INIT_CL_EXT_FCN_PTR(clEnqueueAcquireD3D10ObjectsKHR);
+         static PFN_clEnqueueAcquireD3D10ObjectsKHR pfn_clEnqueueAcquireD3D10ObjectsKHR = NULL;
+         __INIT_CL_EXT_FCN_PTR(clEnqueueAcquireD3D10ObjectsKHR);
 		
-		 return detail::errHandler(
+         return detail::errHandler(
              pfn_clEnqueueAcquireD3D10ObjectsKHR(
                  object_,
                  (mem_objects != NULL) ? (cl_uint) mem_objects->size() : 0,
@@ -3079,20 +3079,20 @@ typedef CL_API_ENTRY cl_int (CL_API_CALL *PFN_clEnqueueReleaseD3D10ObjectsKHR)(
          const VECTOR_CLASS<Memory>* mem_objects = NULL,
          const VECTOR_CLASS<Event>* events = NULL,
          Event* event = NULL) const
-     {
-		 static PFN_clEnqueueReleaseD3D10ObjectsKHR pfn_clEnqueueReleaseD3D10ObjectsKHR = NULL;
-		 __INIT_CL_EXT_FCN_PTR(clEnqueueReleaseD3D10ObjectsKHR);
+    {
+        static PFN_clEnqueueReleaseD3D10ObjectsKHR pfn_clEnqueueReleaseD3D10ObjectsKHR = NULL;
+        __INIT_CL_EXT_FCN_PTR(clEnqueueReleaseD3D10ObjectsKHR);
 
-         return detail::errHandler(
-             pfn_clEnqueueReleaseD3D10ObjectsKHR(
-                 object_,
-                 (mem_objects != NULL) ? (cl_uint) mem_objects->size() : 0,
-                 (mem_objects != NULL) ? (const cl_mem *) &mem_objects->front(): NULL,
-                 (events != NULL) ? (cl_uint) events->size() : 0,
-                 (events != NULL) ? (cl_event*) &events->front() : NULL,
-                 (cl_event*) event),
-             __ENQUEUE_RELEASE_GL_ERR);
-     }
+        return detail::errHandler(
+            pfn_clEnqueueReleaseD3D10ObjectsKHR(
+                object_,
+                (mem_objects != NULL) ? (cl_uint) mem_objects->size() : 0,
+                (mem_objects != NULL) ? (const cl_mem *) &mem_objects->front(): NULL,
+                (events != NULL) ? (cl_uint) events->size() : 0,
+                (events != NULL) ? (cl_event*) &events->front() : NULL,
+                (cl_event*) event),
+            __ENQUEUE_RELEASE_GL_ERR);
+    }
 #endif
 
     cl_int enqueueBarrier() const
@@ -3410,8 +3410,8 @@ Event KernelFunctor::operator()(const VECTOR_CLASS<Event>* events)
 
 template<typename A1>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const VECTOR_CLASS<Event>* events)
+    const A1& a1, 
+    const VECTOR_CLASS<Event>* events)
 {
     Event event;
 
@@ -3430,8 +3430,8 @@ Event KernelFunctor::operator()(
 
 template<typename A1, typename A2>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2,
+    const A1& a1, 
+    const A2& a2,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3452,9 +3452,9 @@ Event KernelFunctor::operator()(
 
 template<typename A1, typename A2, typename A3>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2, 
-	const A3& a3,
+    const A1& a1, 
+    const A2& a2, 
+    const A3& a3,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3477,9 +3477,9 @@ Event KernelFunctor::operator()(
 template<typename A1, typename A2, typename A3, typename A4>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3503,10 +3503,10 @@ Event KernelFunctor::operator()(
 template<typename A1, typename A2, typename A3, typename A4, typename A5>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3532,11 +3532,11 @@ template<typename A1, typename A2, typename A3, typename A4, typename A5,
          typename A6>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3562,13 +3562,13 @@ Event KernelFunctor::operator()(
 template<typename A1, typename A2, typename A3, typename A4,
          typename A5, typename A6, typename A7>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6, 
-	const A7& a7,
+    const A1& a1, 
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6, 
+    const A7& a7,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3595,14 +3595,14 @@ Event KernelFunctor::operator()(
 template<typename A1, typename A2, typename A3, typename A4, typename A5,
          typename A6, typename A7, typename A8>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6, 
-	const A7& a7, 
-	const A8& a8,
+    const A1& a1, 
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6, 
+    const A7& a7, 
+    const A8& a8,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3630,15 +3630,15 @@ Event KernelFunctor::operator()(
 template<typename A1, typename A2, typename A3, typename A4, typename A5,
          typename A6, typename A7, typename A8, typename A9>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5,
+    const A1& a1, 
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5,
     const A6& a6, 
-	const A7& a7, 
-	const A8& a8, 
-	const A9& a9,
+    const A7& a7, 
+    const A8& a8, 
+    const A9& a9,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3665,18 +3665,18 @@ Event KernelFunctor::operator()(
 }
 
 template<typename A1, typename A2, typename A3, typename A4, typename A5,
-        typename A6, typename A7, typename A8, typename A9, typename A10>
+         typename A6, typename A7, typename A8, typename A9, typename A10>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10,
     const VECTOR_CLASS<Event>* events)
 {
     Event event;
@@ -3704,23 +3704,23 @@ Event KernelFunctor::operator()(
 }
 
 template<class A1, class A2, class A3, class A4, class A5,
-             class A6, class A7, class A8, class A9, class A10,
-			 class A11>
+         class A6, class A7, class A8, class A9, class A10,
+         class A11>
 Event KernelFunctor::operator()(
-	const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A1& a1, 
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10, 
-	const A11& a11,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10, 
+    const A11& a11,
     const VECTOR_CLASS<Event>* events)
 {
-	    Event event;
+    Event event;
 
     kernel_.setArg(0,a1);
     kernel_.setArg(1,a2);
@@ -3746,24 +3746,24 @@ Event KernelFunctor::operator()(
 }
 
 template<class A1, class A2, class A3, class A4, class A5,
-            class A6, class A7, class A8, class A9, class A10,
-			 class A11, class A12>
+         class A6, class A7, class A8, class A9, class A10,
+         class A11, class A12>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10, 
-	const A11& a11, 
-	const A12& a12,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10, 
+    const A11& a11, 
+    const A12& a12,
     const VECTOR_CLASS<Event>* events)
 {
-	    Event event;
+    Event event;
 
     kernel_.setArg(0,a1);
     kernel_.setArg(1,a2);
@@ -3790,26 +3790,26 @@ Event KernelFunctor::operator()(
 }
 
 template<class A1, class A2, class A3, class A4, class A5,
-             class A6, class A7, class A8, class A9, class A10,
-			 class A11, class A12, class A13>
+         class A6, class A7, class A8, class A9, class A10,
+         class A11, class A12, class A13>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10, 
-	const A11& a11, 
-	const A12& a12, 
-	const A13& a13,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10, 
+    const A11& a11, 
+    const A12& a12, 
+    const A13& a13,
     const VECTOR_CLASS<Event>* events)
 {
-	Event event;
-
+    Event event;
+    
     kernel_.setArg(0,a1);
     kernel_.setArg(1,a2);
     kernel_.setArg(2,a3);
@@ -3837,26 +3837,26 @@ Event KernelFunctor::operator()(
 
 template<class A1, class A2, class A3, class A4, class A5,
          class A6, class A7, class A8, class A9, class A10,
-		 class A11, class A12, class A13, class A14>
+         class A11, class A12, class A13, class A14>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5, 
+    const A6& a6,
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10, 
-	const A11& a11,
-	const A12& a12, 
-	const A13& a13, 
-	const A14& a14,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10, 
+    const A11& a11,
+    const A12& a12, 
+    const A13& a13, 
+    const A14& a14,
     const VECTOR_CLASS<Event>* events)
 {
-	Event event;
-
+    Event event;
+    
     kernel_.setArg(0,a1);
     kernel_.setArg(1,a2);
     kernel_.setArg(2,a3);
@@ -3885,27 +3885,27 @@ Event KernelFunctor::operator()(
 
 template<class A1, class A2, class A3, class A4, class A5,
          class A6, class A7, class A8, class A9, class A10,
-		 class A11, class A12, class A13, class A14, class A15>
+         class A11, class A12, class A13, class A14, class A15>
 Event KernelFunctor::operator()(
     const A1& a1, 
-	const A2& a2, 
-	const A3& a3, 
-	const A4& a4, 
-	const A5& a5, 
-	const A6& a6,
+    const A2& a2, 
+    const A3& a3, 
+    const A4& a4, 
+    const A5& a5,
+    const A6& a6, 
     const A7& a7, 
-	const A8& a8, 
-	const A9& a9, 
-	const A10& a10, 
-	const A11& a11,
-	const A12& a12, 
-	const A13& a13, 
-	const A14& a14, 
-	const A15& a15,
+    const A8& a8, 
+    const A9& a9, 
+    const A10& a10, 
+    const A11& a11,
+    const A12& a12, 
+    const A13& a13, 
+    const A14& a14, 
+    const A15& a15,
     const VECTOR_CLASS<Event>* events)
 {
-	Event event;
-
+    Event event;
+    
     kernel_.setArg(0,a1);
     kernel_.setArg(1,a2);
     kernel_.setArg(2,a3);
@@ -3920,7 +3920,7 @@ Event KernelFunctor::operator()(
     kernel_.setArg(11,a12);
     kernel_.setArg(12,a13);
     kernel_.setArg(13,a14);
-	kernel_.setArg(14,a15);
+    kernel_.setArg(14,a15);
 
     err_ = queue_.enqueueNDRangeKernel(
         kernel_,
