@@ -32,10 +32,11 @@ echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.pyth
 echo   freeglut 2.6.0                           http://freeglut.sourceforge.net/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
-echo       NVIDIA CUDA ToolKit 3.1
+echo       NVIDIA CUDA ToolKit 3.1 / 4.0
 echo           http://developer.nvidia.com/object/cuda_3_1_downloads.html
+echo           http://developer.nvidia.com/cuda-toolkit-40
 echo   OR:
-echo       ATI Stream SDK 2.2
+echo       ATI Stream SDK 2.3 / 2.4
 echo           http://developer.amd.com/gpu/atistreamsdk/pages/default.aspx
 echo.
 echo Downloading and extracting all this source code will require several gigabytes,
@@ -145,38 +146,58 @@ echo Please select which OpenCL SDK you wish to use:
 echo.
 echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
-echo 3. AMD APP SDK 2.4 for Vista/Win7 32 bit
-echo 4. AMD APP SDK 2.4 for Vista/Win7 64 bit (also contains 32bit libs)
-echo 5. ATI STREAM SDK 2.3 for XP SP3 32 bit
-echo 6. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
-echo N. I have already installed an NVIDIA CUDA Toolkit
+echo 3. NVIDIA CUDA ToolKit 4.0 for Win 32 bit
+echo 4. NVIDIA CUDA ToolKit 4.0 for Win 64 bit (also contains 32bit libs)
+echo 5. AMD APP SDK 2.4 for Vista/Win7 32 bit
+echo 6. AMD APP SDK 2.4 for Vista/Win7 64 bit (also contains 32bit libs)
+echo 7. ATI STREAM SDK 2.3 for XP SP3 32 bit
+echo 8. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
+echo N3. I have already installed an NVIDIA CUDA 3.1 Toolkit
+echo N4. I have already installed an NVIDIA CUDA 4.0 Toolkit
 echo A. I have already installed an ATI Stream SDK
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
-IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_32
-IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_64
-IF %OPENCL_CHOICE% EQU 3 GOTO STREAM_1_32
-IF %OPENCL_CHOICE% EQU 4 GOTO STREAM_1_64
-IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_2_32
-IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_2_64
-IF /i "%OPENCL_CHOICE%" == "N" GOTO SetCUDAVars
+IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_1_32
+IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_1_64
+IF %OPENCL_CHOICE% EQU 3 GOTO CUDA_2_32
+IF %OPENCL_CHOICE% EQU 4 GOTO CUDA_2_64
+IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_1_32
+IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_1_64
+IF %OPENCL_CHOICE% EQU 7 GOTO STREAM_2_32
+IF %OPENCL_CHOICE% EQU 8 GOTO STREAM_2_64
+IF /i "%OPENCL_CHOICE%" == "N3" GOTO SetCUDAVars1
+IF /i "%OPENCL_CHOICE%" == "N4" GOTO SetCUDAVars2
 IF /i "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
 echo Invalid choice
 GOTO OpenCLChoice
 
-:CUDA_32
-set OPENCL_VARS=SetCUDAVars
+:CUDA_1_32
+set OPENCL_VARS=SetCUDAVars1
 set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
 set OPENCL_PKG=cudatoolkit_3.1_win_32.exe
 GOTO OpenCLInstall
 
-:CUDA_64
-set OPENCL_VARS=SetCUDAVars
+:CUDA_1_64
+set OPENCL_VARS=SetCUDAVars1
 set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 64 bit
 set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
 set OPENCL_PKG=cudatoolkit_3.1_win_64.exe
+GOTO OpenCLInstall
+
+:CUDA_2_32
+set OPENCL_VARS=SetCUDAVars2
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
+set OPENCL_PKG=cudatoolkit_4.0.17_win_32.msi
+GOTO OpenCLInstall
+
+:CUDA_2_64
+set OPENCL_VARS=SetCUDAVars2
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
+set OPENCL_PKG=cudatoolkit_4.0.17_win_64.msi
 GOTO OpenCLInstall
 
 :STREAM_1_32
@@ -233,7 +254,7 @@ echo Waiting for installer. When finished,
 pause
 goto %OPENCL_VARS%
 
-:SetCUDAVars
+:SetCUDAVars1
 :: Use another cmd instance to get new env vars expanded
 cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_LIB_PATH%\..\lib\">> build-vars.bat
 cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
@@ -244,6 +265,19 @@ cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%\\..\\lib\\">> build-vars.re
 cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
+goto OpenCLFinished
+
+:SetCUDAVars2
+:: Use another cmd instance to get new env vars expanded
+cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_PATH%\lib\Win32">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_PATH%\lib\x64">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
+
+cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\Win32">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\x64">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
 goto OpenCLFinished
 
 :SetStreamVars
