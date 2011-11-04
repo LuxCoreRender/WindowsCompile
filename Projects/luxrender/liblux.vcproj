@@ -1498,10 +1498,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\core\reflection\layeredbsdf.cpp"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\lux\core\reflection\microfacetdistribution.cpp"
 						>
 					</File>
@@ -1614,6 +1610,30 @@
 						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\wardisotropic.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="bsdf"
+						>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\layeredbsdf.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\mixbsdf.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\multibsdf.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp"
 							>
 						</File>
 					</Filter>
@@ -2620,10 +2640,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\core\reflection\layeredbsdf.h"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\lux\core\reflection\microfacetdistribution.h"
 						>
 					</File>
@@ -2736,6 +2752,30 @@
 						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\microfacetdistribution\wardisotropic.h"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="bsdf"
+						>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\layeredbsdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\mixbsdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\multibsdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\schlickbsdf.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bsdf\singlebsdf.h"
 							>
 						</File>
 					</Filter>
