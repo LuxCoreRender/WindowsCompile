@@ -72,35 +72,62 @@ if ERRORLEVEL 9009 (
 	exit /b -1
 )
 
-:: TODO: Add option to place deps and/or downloads elsewhere
+set DOWNLOADS="%CD%\..\downloads"
+set DEPSROOT=%CD%\..\deps
 
 :ConfigDepsDir
-set DOWNLOADS="%CD%\..\downloads"
 :: resolve relative path
 FOR %%G in (%DOWNLOADS%) do (
 	set DOWNLOADS="%%~fG"
 )
 
-set D32="%CD%\..\deps\x86"
-FOR %%G in (%D32%) do (
-	set D32="%%~fG"
+for %%G in (%DEPSROOT%) do (
+	set DEPSROOT=%%~fG
 )
+
+set D32="%DEPSROOT%\x86"
+::FOR %%G in (%D32%) do (
+::	set D32="%%~fG"
+::)
 set D32R=%D32:"=%
 
-set D64="%CD%\..\deps\x64"
-FOR %%G in (%D64%) do (
-	set D64="%%~fG"
-)
+set D64="%DEPSROOT%\x64"
+::FOR %%G in (%D64%) do (
+::	set D64="%%~fG"
+::)
 set D64R=%D64:"=%
+
+echo.
+echo Downloads will be stored in %DOWNLOADS%
+echo Dependencies will be extracted to "%DEPSROOT%"
+echo.
+echo Change these locations?
+echo.
+echo 0. No (default)
+echo 1. Yes
+echo.
+set /P CHANGE_DEPSROOT="Selection? "
+IF %CHANGE_DEPSROOT% EQU 0 GOTO DepsRootAccepted
+IF %CHANGE_DEPSROOT% EQU 1 GOTO ChangeDepsRoot
+echo Invalid selection
+GOTO ConfigDepsDir
+
+
+:ChangeDepsRoot
+set /P DOWNLOADS="Enter path for downloads: "
+set /P DEPSROOT="Enter path for dependencies: "
+GOTO ConfigDepsDir
+
+:DepsRootAccepted
 
 mkdir %DOWNLOADS% 2> nul
 mkdir %D32% 2> nul
 mkdir %D64% 2> nul
 
-echo %DOWNLOADS%
-echo %D32%
-echo %D64%
-echo OK
+::echo %DOWNLOADS%
+::echo %D32%
+::echo %D64%
+::echo OK
 
 
 set FORCE_EXTRACT=0
