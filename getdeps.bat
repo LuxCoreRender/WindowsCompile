@@ -3,7 +3,7 @@
 set BOOST_VER_U=1_43_0
 set BOOST_VER_P=1.43.0
 
-set PYTHON2_VER=2.6.6
+set PYTHON2_VER=2.7.1
 set PYTHON3_VER=3.2
 
 set ZLIB_VER_P=1.2.3
@@ -32,10 +32,11 @@ echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.pyth
 echo   freeglut 2.6.0                           http://freeglut.sourceforge.net/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
-echo       NVIDIA CUDA ToolKit 3.1
+echo       NVIDIA CUDA ToolKit 3.1 / 4.0
 echo           http://developer.nvidia.com/object/cuda_3_1_downloads.html
+echo           http://developer.nvidia.com/cuda-toolkit-40
 echo   OR:
-echo       ATI Stream SDK 2.2
+echo       ATI Stream SDK 2.3 / 2.4
 echo           http://developer.amd.com/gpu/atistreamsdk/pages/default.aspx
 echo.
 echo Downloading and extracting all this source code will require several gigabytes,
@@ -71,35 +72,62 @@ if ERRORLEVEL 9009 (
 	exit /b -1
 )
 
-:: TODO: Add option to place deps and/or downloads elsewhere
+set DOWNLOADS="%CD%\..\downloads"
+set DEPSROOT=%CD%\..\deps
 
 :ConfigDepsDir
-set DOWNLOADS="%CD%\..\downloads"
 :: resolve relative path
 FOR %%G in (%DOWNLOADS%) do (
 	set DOWNLOADS="%%~fG"
 )
 
-set D32="%CD%\..\deps\x86"
-FOR %%G in (%D32%) do (
-	set D32="%%~fG"
+for %%G in (%DEPSROOT%) do (
+	set DEPSROOT=%%~fG
 )
+
+set D32="%DEPSROOT%\x86"
+::FOR %%G in (%D32%) do (
+::	set D32="%%~fG"
+::)
 set D32R=%D32:"=%
 
-set D64="%CD%\..\deps\x64"
-FOR %%G in (%D64%) do (
-	set D64="%%~fG"
-)
+set D64="%DEPSROOT%\x64"
+::FOR %%G in (%D64%) do (
+::	set D64="%%~fG"
+::)
 set D64R=%D64:"=%
+
+echo.
+echo Downloads will be stored in %DOWNLOADS%
+echo Dependencies will be extracted to "%DEPSROOT%"
+echo.
+echo Change these locations?
+echo.
+echo 0. No (default)
+echo 1. Yes
+echo.
+set /P CHANGE_DEPSROOT="Selection? "
+IF %CHANGE_DEPSROOT% EQU 0 GOTO DepsRootAccepted
+IF %CHANGE_DEPSROOT% EQU 1 GOTO ChangeDepsRoot
+echo Invalid selection
+GOTO ConfigDepsDir
+
+
+:ChangeDepsRoot
+set /P DOWNLOADS="Enter path for downloads: "
+set /P DEPSROOT="Enter path for dependencies: "
+GOTO ConfigDepsDir
+
+:DepsRootAccepted
 
 mkdir %DOWNLOADS% 2> nul
 mkdir %D32% 2> nul
 mkdir %D64% 2> nul
 
-echo %DOWNLOADS%
-echo %D32%
-echo %D64%
-echo OK
+::echo %DOWNLOADS%
+::echo %D32%
+::echo %D64%
+::echo OK
 
 
 set FORCE_EXTRACT=0
@@ -145,66 +173,86 @@ echo Please select which OpenCL SDK you wish to use:
 echo.
 echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
-echo 3. ATI Stream SDK 2.2 for Vista/Win7 32 bit
-echo 4. ATI Stream SDK 2.2 for Vista/Win7 64 bit (also contains 32bit libs)
-echo 5. ATI Stream SDK 2.2 for XP SP3 32 bit
-echo 6. ATI Stream SDK 2.2 for XP SP3 64 bit (also contains 32bit libs)
-echo N. I have already installed an NVIDIA CUDA Toolkit
+echo 3. NVIDIA CUDA ToolKit 4.0 for Win 32 bit
+echo 4. NVIDIA CUDA ToolKit 4.0 for Win 64 bit (also contains 32bit libs)
+echo 5. AMD APP SDK 2.4 for Vista/Win7 32 bit
+echo 6. AMD APP SDK 2.4 for Vista/Win7 64 bit (also contains 32bit libs)
+echo 7. ATI STREAM SDK 2.3 for XP SP3 32 bit
+echo 8. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
+echo N3. I have already installed an NVIDIA CUDA 3.1 Toolkit
+echo N4. I have already installed an NVIDIA CUDA 4.0 Toolkit
 echo A. I have already installed an ATI Stream SDK
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
-IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_32
-IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_64
-IF %OPENCL_CHOICE% EQU 3 GOTO STREAM_1_32
-IF %OPENCL_CHOICE% EQU 4 GOTO STREAM_1_64
-IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_2_32
-IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_2_64
-IF "%OPENCL_CHOICE%" == "N" GOTO SetCUDAVars
-IF "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
+IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_1_32
+IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_1_64
+IF %OPENCL_CHOICE% EQU 3 GOTO CUDA_2_32
+IF %OPENCL_CHOICE% EQU 4 GOTO CUDA_2_64
+IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_1_32
+IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_1_64
+IF %OPENCL_CHOICE% EQU 7 GOTO STREAM_2_32
+IF %OPENCL_CHOICE% EQU 8 GOTO STREAM_2_64
+IF /i "%OPENCL_CHOICE%" == "N3" GOTO SetCUDAVars1
+IF /i "%OPENCL_CHOICE%" == "N4" GOTO SetCUDAVars2
+IF /i "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
 echo Invalid choice
 GOTO OpenCLChoice
 
-:CUDA_32
-set OPENCL_VARS=SetCUDAVars
+:CUDA_1_32
+set OPENCL_VARS=SetCUDAVars1
 set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
 set OPENCL_PKG=cudatoolkit_3.1_win_32.exe
 GOTO OpenCLInstall
 
-:CUDA_64
-set OPENCL_VARS=SetCUDAVars
+:CUDA_1_64
+set OPENCL_VARS=SetCUDAVars1
 set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 64 bit
 set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
 set OPENCL_PKG=cudatoolkit_3.1_win_64.exe
 GOTO OpenCLInstall
 
+:CUDA_2_32
+set OPENCL_VARS=SetCUDAVars2
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
+set OPENCL_PKG=cudatoolkit_4.0.17_win_32.msi
+GOTO OpenCLInstall
+
+:CUDA_2_64
+set OPENCL_VARS=SetCUDAVars2
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
+set OPENCL_PKG=cudatoolkit_4.0.17_win_64.msi
+GOTO OpenCLInstall
+
 :STREAM_1_32
-set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 32 bit
-set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-32.exe
+set OPENCL_VARS=SetAMDAPPVars
+set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 32 bit
+set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
+set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-32.exe
 GOTO OpenCLInstall
 
 :STREAM_1_64
-set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for Vista/Win7 64 bit
-set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-vista-win7-64.exe
+set OPENCL_VARS=SetAMDAPPVars
+set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 64 bit
+set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
+set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-64.exe
 GOTO OpenCLInstall
 
 :STREAM_2_32
 set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 32 bit
+set OPENCL_NAME=ATI Stream SDK 2.3 for XP SP3 32 bit
 set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-xp32.exe
+set OPENCL_PKG=ati-stream-sdk-v2.3-xp32.exe
 GOTO OpenCLInstall
 
 :STREAM_2_64
 set OPENCL_VARS=SetStreamVars
-set OPENCL_NAME=ATI Stream SDK 2.2 for XP SP3 64 bit
+set OPENCL_NAME=ATI Stream SDK 2.3 for XP SP3 64 bit
 set OPENCL_URL=http://developer.amd.com/Downloads/
-set OPENCL_PKG=ati-stream-sdk-v2.2-xp64.exe
+set OPENCL_PKG=ati-stream-sdk-v2.3-xp64.exe
 GOTO OpenCLInstall
 
 :OpenCLInstall
@@ -224,16 +272,16 @@ echo.
 echo I will now launch the SDK installer. You can install anywhere you like, but to be
 echo on the safe side, please choose a path that doesn't contain spaces.
 IF %OPENCL_VARS% EQU "SetStreamVars" (
-	echo.
-	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
-	echo.
+rem	echo.
+rem	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
+rem	echo.
 )
 start /WAIT "" %DOWNLOADS%\%OPENCL_PKG%
 echo Waiting for installer. When finished,
 pause
 goto %OPENCL_VARS%
 
-:SetCUDAVars
+:SetCUDAVars1
 :: Use another cmd instance to get new env vars expanded
 cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_LIB_PATH%\..\lib\">> build-vars.bat
 cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
@@ -246,7 +294,21 @@ cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
 goto OpenCLFinished
 
+:SetCUDAVars2
+:: Use another cmd instance to get new env vars expanded
+cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_PATH%\lib\Win32">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_PATH%\lib\x64">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
+
+cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\Win32">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\x64">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
+goto OpenCLFinished
+
 :SetStreamVars
+IF "%ATISTREAMSDKROOT%"=="" GOTO SetAMDAPPVars
 :: Use another cmd instance to get new env vars expanded
 cmd /C echo set LUX_X86_OCL_LIBS="%ATISTREAMSDKROOT%\lib\x86">> build-vars.bat
 cmd /C echo set LUX_X86_OCL_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
@@ -258,7 +320,24 @@ cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-var
 cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
 cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
 
-set SKIP_GLEW=1
+rem We use our own glew now
+rem set SKIP_GLEW=1
+goto OpenCLFinished
+
+:SetAMDAPPVars
+:: Use another cmd instance to get new env vars expanded
+cmd /C echo set LUX_X86_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86">> build-vars.bat
+cmd /C echo set LUX_X86_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86_64">> build-vars.bat
+cmd /C echo set LUX_X64_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
+
+cmd /C echo "LUX_X86_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
+cmd /C echo "LUX_X86_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+cmd /C echo "LUX_X64_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
+
+rem We use our own glew now
+rem set SKIP_GLEW=1
 goto OpenCLFinished
 
 :OpenCLFinished
@@ -503,24 +582,26 @@ echo "LUX_X64_GLUT_LIBS"="%D64R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\x
 
 
 IF %SKIP_GLEW% EQU 0 (
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win32.zip (
+	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x86.zip (
 		echo.
 		echo **************************************************************************
 		echo * Downloading GLEW 32 bit                                                *
 		echo **************************************************************************
-		%WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
+		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
+		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x86.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x86.zip
 		if ERRORLEVEL 1 (
 			echo.
 			echo Download failed. Are you connected to the internet?
 			exit /b -1
 		)
 	)
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%-win64.zip (
+	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x64.zip (
 		echo.
 		echo **************************************************************************
 		echo * Downloading GLEW 64 bit                                                *
 		echo **************************************************************************
-		%WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
+		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x64.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x64.zip
 		if ERRORLEVEL 1 (
 			echo.
 			echo Download failed. Are you connected to the internet?
@@ -531,8 +612,8 @@ IF %SKIP_GLEW% EQU 0 (
 	echo **************************************************************************
 	echo * Extracting GLEW                                                        *
 	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win32.zip -o%D32%\ > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%-win64.zip -o%D64%\ > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x86.zip -o%D32%\ > nul
+	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x64.zip -o%D64%\ > nul
 	
 	echo set LUX_X86_GLEW_INCLUDE=%D32%\glew-%GLEW_VER%\include>> build-vars.bat
 	echo set LUX_X64_GLEW_INCLUDE=%D64%\glew-%GLEW_VER%\include>> build-vars.bat
@@ -548,23 +629,32 @@ IF %SKIP_GLEW% EQU 0 (
 	echo "LUX_X86_GLEW_BIN"="%D32R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
 	echo "LUX_X64_GLEW_BIN"="%D64R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
 	
-	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
-	echo set LUX_X64_GLEW_LIBNAME=glew32>> build-vars.bat
+	echo set LUX_X86_GLEW_LIBNAME=glew32s>> build-vars.bat
+	echo set LUX_X64_GLEW_LIBNAME=glew64s>> build-vars.bat
+
+	echo "LUX_X86_GLEW_LIBNAME"="glew32s">> build-vars.reg
+	echo "LUX_X64_GLEW_LIBNAME"="glew64s">> build-vars.reg
 ) ELSE (
 	
-	cmd /C echo set LUX_X86_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_INCLUDE="%ATISTREAMSDKSAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_LIBS="%ATISTREAMSDKSAMPLESROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_BIN="%ATISTREAMSDKSAMPLESROOT%\bin\x86_64">> build-vars.bat
+        IF "%AMDAPPSDKSAMPLESROOT%"=="" (
+               SET SAMPLESROOT=%ATISTREAMSDKSAMPLESROOT%
+        ) ELSE (
+               SET SAMPLESROOT=%AMDAPPSDKSAMPLESROOT%
+        )
+
+	cmd /C echo set LUX_X86_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_LIBS="%SAMPLESROOT%\lib\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_LIBS="%SAMPLESROOT%\lib\x86_64">> build-vars.bat
+	cmd /C echo set LUX_X86_GLEW_BIN="%SAMPLESROOT%\bin\x86">> build-vars.bat
+	cmd /C echo set LUX_X64_GLEW_BIN="%SAMPLESROOT%\bin\x86_64">> build-vars.bat
 	
-	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_LIBS"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_BIN"="%ATISTREAMSDKSAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
+	cmd /C echo "LUX_X86_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
+	cmd /C echo "LUX_X64_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
 	
 	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
 	echo set LUX_X64_GLEW_LIBNAME=glew64>> build-vars.bat

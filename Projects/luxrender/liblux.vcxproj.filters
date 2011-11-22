@@ -192,6 +192,12 @@
     <Filter Include="Header Files\shapes\mikktspace">
       <UniqueIdentifier>{871fe686-30d5-4fc2-a07c-71e69683acc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\core\reflection\bsdf">
+      <UniqueIdentifier>{acf1157f-216e-411b-8e16-2f3abcabe38e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\reflection\bsdf">
+      <UniqueIdentifier>{4ee1ac1f-e21b-4fc4-ae68-150291766fee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
@@ -887,11 +893,23 @@
     <ClCompile Include="..\..\..\lux\textures\colordepth.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\reflection\layeredbsdf.cpp">
-      <Filter>Source Files\core\reflection</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\materials\layeredmaterial.cpp">
       <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\multibsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1456,15 +1474,6 @@
     <ClInclude Include="..\..\..\lux\core\geometry\vector_normal.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\reflection\bxdf.h">
-      <Filter>Header Files\core\reflection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\reflection\fresnel.h">
-      <Filter>Header Files\core\reflection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h">
-      <Filter>Header Files\core\reflection</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf\asperity.h">
       <Filter>Header Files\core\reflection\bxdf</Filter>
     </ClInclude>
@@ -1657,11 +1666,32 @@
     <ClInclude Include="..\..\..\lux\textures\colordepth.h">
       <Filter>Header Files\textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\reflection\layeredbsdf.h">
-      <Filter>Header Files\core\reflection</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\materials\layeredmaterial.h">
       <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bxdf.h">
+      <Filter>Header Files\core\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\fresnel.h">
+      <Filter>Header Files\core\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h">
+      <Filter>Header Files\core\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\multibsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
