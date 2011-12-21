@@ -13,6 +13,7 @@
     <LUX_GLUT_LIBS>$(LUX_X64_GLUT_LIBS)</LUX_GLUT_LIBS>
     <LUX_PYTHON3_ROOT>$(LUX_X64_PYTHON3_ROOT)</LUX_PYTHON3_ROOT>
     <LUX_PYTHON2_ROOT>$(LUX_X64_PYTHON2_ROOT)</LUX_PYTHON2_ROOT>
+    <LUX_HOARD_ROOT>$(LUX_BOOST_ROOT)\..\hoard-38</LUX_HOARD_ROOT>
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
@@ -53,6 +54,9 @@
     </BuildMacro>
     <BuildMacro Include="LUX_PYTHON2_ROOT">
       <Value>$(LUX_PYTHON2_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_HOARD_ROOT">
+      <Value>$(LUX_HOARD_ROOT)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

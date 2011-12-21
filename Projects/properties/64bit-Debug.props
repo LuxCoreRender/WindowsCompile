@@ -5,11 +5,12 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <IntDir>BuildTemp\$(ProjectName)\x64\$(Configuration)\</IntDir>
     <OutDir>$(PlatformName)\$(Configuration)\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;WIN64;_WIN32_WINNT=0x0501;NDEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;WIN32;WIN64;_WIN32_WINNT=0x0501;DEBUG;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>

@@ -43,6 +43,12 @@
     <Filter Include="Source Files\pathgpu2\kernels">
       <UniqueIdentifier>{04101af8-2764-4628-a961-e5108d5db8ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pathgpu\kernels\Generated">
+      <UniqueIdentifier>{1b3d28e7-6712-474d-b37b-f68edd18711c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathgpu2\kernels\Generated">
+      <UniqueIdentifier>{db671052-490a-409d-b42d-15fa77c3e637}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp">
@@ -81,32 +87,32 @@
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.cpp">
       <Filter>Source Files\pathgpu</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cpp">
-      <Filter>Source Files\pathgpu\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp">
       <Filter>Source Files\path</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.cpp">
       <Filter>Source Files\pathgpu2</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cpp">
+      <Filter>Source Files\pathgpu\kernels\Generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cpp">
-      <Filter>Source Files\pathgpu2\kernels</Filter>
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp">
+      <Filter>Source Files\pathgpu2\kernels\Generated</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

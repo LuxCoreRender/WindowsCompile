@@ -79,6 +79,9 @@
     <Filter Include="Source Files\utils\ocl">
       <UniqueIdentifier>{3a3e6867-2376-4026-96a0-30aa10096bf4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\kernels\Generated">
+      <UniqueIdentifier>{5d4c024c-88fd-4f0d-bb77-85f47a5560d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\src\accelerators\bvhaccel.cpp">
@@ -123,33 +126,6 @@
     <ClCompile Include="..\..\..\luxrays\src\idevices\virtualidevice.cpp">
       <Filter>Source Files\idevices</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\bvh_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\pdevices\nativepdevice.cpp">
       <Filter>Source Files\pdevices</Filter>
     </ClCompile>
@@ -186,11 +162,35 @@
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\sdl.cpp">
       <Filter>Source Files\utils\sdl</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\bvh_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\luxrays\src\kernels\bvh_kernel.cl">
-      <Filter>Source Files\kernels</Filter>
-    </None>
     <None Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cl">
       <Filter>Source Files\kernels</Filter>
     </None>
@@ -213,6 +213,9 @@
       <Filter>Source Files\kernels</Filter>
     </None>
     <None Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cl">
+      <Filter>Source Files\kernels</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\src\kernels\bvh_kernel.cl">
       <Filter>Source Files\kernels</Filter>
     </None>
   </ItemGroup>

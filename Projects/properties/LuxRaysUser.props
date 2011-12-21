@@ -10,8 +10,8 @@
       <PreprocessorDefinitions>FREEGLUT_STATIC;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(LUX_OCL_LIBS);$(LUX_GLUT_LIBS);$(LUX_GLEW_LIBS);$(LUX_LUXRAYS_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenGL32.lib;OpenCL.lib;freeglut_static.lib;$(LUX_GLEW_LIBNAME).lib;luxrays.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(LUX_GLUT_LIBS);$(LUX_GLEW_LIBS);$(LUX_LUXRAYS_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;freeglut_static.lib;$(LUX_GLEW_LIBNAME).lib;luxrays.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 </Project>
