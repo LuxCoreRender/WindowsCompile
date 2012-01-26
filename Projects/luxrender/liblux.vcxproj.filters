@@ -911,6 +911,9 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp">
       <Filter>Source Files\core\reflection\bsdf</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Prog\Lux\lux\renderers\sppm\parallelhashgrid.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">

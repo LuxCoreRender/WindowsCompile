@@ -525,6 +525,7 @@
     <ClCompile Include="..\..\..\lux\spds\rgbillum.cpp" />
     <ClCompile Include="..\..\..\lux\spds\rgbrefl.cpp" />
     <ClCompile Include="..\..\..\lux\server\renderserver.cpp" />
+    <ClCompile Include="C:\Prog\Lux\lux\renderers\sppm\parallelhashgrid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h" />
