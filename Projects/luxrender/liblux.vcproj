@@ -962,6 +962,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\..\lux\renderers\sppm\photonsampler.cpp"
 						>
 					</File>
