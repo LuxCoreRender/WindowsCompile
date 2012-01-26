@@ -113,6 +113,7 @@
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'" Label="PropertySheets">
@@ -123,6 +124,7 @@
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\SSE1.props" />
     <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="PropertySheets">
@@ -143,6 +145,7 @@
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Debug.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
@@ -153,6 +156,7 @@
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
@@ -162,6 +166,7 @@
     <Import Project="..\properties\LibLuxUser.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'" Label="PropertySheets">
@@ -177,6 +182,7 @@
     <Import Project="..\properties\LibLuxUser.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\64bit-Debug.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
@@ -186,6 +192,7 @@
     <Import Project="..\properties\LibLuxUser.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
