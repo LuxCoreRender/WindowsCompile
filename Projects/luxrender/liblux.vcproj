@@ -595,6 +595,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\accelerators\sqbvhaccel.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\accelerators\tabreckdtree.cpp"
 					>
 				</File>
@@ -1750,6 +1754,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\accelerators\qbvhaccel.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\accelerators\sqbvhaccel.h"
 					>
 				</File>
 				<File
