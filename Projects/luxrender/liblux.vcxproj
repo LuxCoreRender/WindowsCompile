@@ -291,6 +291,7 @@
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\bvhaccel.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\qbvhaccel.cpp" />
+    <ClCompile Include="..\..\..\lux\accelerators\sqbvhaccel.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\tabreckdtree.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\unsafekdtree.cpp" />
     <ClCompile Include="..\..\..\lux\core\filedata.cpp" />
@@ -532,6 +533,7 @@
     <ClInclude Include="..\..\..\lux\accelerators\bvhaccel.h" />
     <ClInclude Include="..\..\..\lux\accelerators\grid.h" />
     <ClInclude Include="..\..\..\lux\accelerators\qbvhaccel.h" />
+    <ClInclude Include="..\..\..\lux\accelerators\sqbvhaccel.h" />
     <ClInclude Include="..\..\..\lux\accelerators\tabreckdtreeaccel.h" />
     <ClInclude Include="..\..\..\lux\accelerators\unsafekdtreeaccel.h" />
     <ClInclude Include="..\..\..\lux\cameras\environment.h" />

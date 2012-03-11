@@ -914,6 +914,9 @@
     <ClCompile Include="C:\Prog\Lux\lux\renderers\sppm\parallelhashgrid.cpp">
       <Filter>Source Files\renderers\sppm</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\accelerators\sqbvhaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1695,6 +1698,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.h">
       <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\accelerators\sqbvhaccel.h">
+      <Filter>Header Files\accelerators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
