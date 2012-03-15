@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				WholeProgramOptimization="false"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -77,6 +77,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -103,7 +104,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -137,6 +138,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -163,7 +165,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -198,6 +200,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -224,7 +227,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 				EnableFunctionLevelLinking="true"
 			/>
 			<Tool
@@ -260,6 +263,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -286,7 +290,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -321,6 +325,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -348,7 +353,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -383,6 +388,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtCore4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtGui4.dll&quot; &quot;$(TargetDir)&quot;&#x0D;&#x0A;xcopy /Y /D /F &quot;$(LUX_QT_ROOT)\bin\QtNetwork4.dll&quot; &quot;$(TargetDir)&quot;"
 			/>
 		</Configuration>
 	</Configurations>
@@ -415,19 +421,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\renderconfig.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\resultdialog.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\slgscene.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\volume.cpp"
+				RelativePath="..\..\..\luxrays\samples\luxmark\submitdialog.cpp"
 				>
 			</File>
 			<Filter
@@ -454,61 +452,73 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\moc_submitdialog.cxx"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\luxrays\samples\luxmark\qrc_resources.cxx"
 					>
 				</File>
 			</Filter>
 			<Filter
-				Name="path"
+				Name="slg2"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\path\path.cpp"
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\renderconfig.cpp"
 					>
 				</File>
-			</Filter>
-			<Filter
-				Name="pathgpu"
-				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\pathgpu\pathgpu.cpp"
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\renderengine.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\rendersession.cpp"
 					>
 				</File>
 				<Filter
-					Name="kernels"
+					Name="pathocl"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\pathgpu_kernel.cl"
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\compiledscene.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\pathgpu_kernel.cpp"
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\pathocl.cpp"
 						>
 					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\renderthread.cpp"
+						>
+					</File>
+					<Filter
+						Name="kernels"
+						>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_core.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_datatypes.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_filters.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_samplers.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_scene.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernels.cpp"
+							>
+						</File>
+					</Filter>
 				</Filter>
-			</Filter>
-			<Filter
-				Name="sppm"
-				>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\hashgrid.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\hitpoints.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\hybridhashgrid.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\kdtree.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\sppm.cpp"
-					>
-				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -537,27 +547,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\renderconfig.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\renderengine.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\resultdialog.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\sampler.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\slgcfg.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\slgscene.h"
 				>
 			</File>
 			<File
@@ -565,7 +555,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\luxmark\volume.h"
+				RelativePath="..\..\..\luxrays\samples\luxmark\submitdialog.h"
 				>
 			</File>
 			<Filter
@@ -583,46 +573,58 @@
 					RelativePath="..\..\..\luxrays\samples\luxmark\ui_resultdialog.h"
 					>
 				</File>
-			</Filter>
-			<Filter
-				Name="sppm"
-				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\hitpoints.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\lookupaccel.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\sppm\sppm.h"
+					RelativePath="..\..\..\luxrays\samples\luxmark\ui_submitdialog.h"
 					>
 				</File>
 			</Filter>
 			<Filter
-				Name="pathgpu"
+				Name="slg2"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\pathgpu\pathgpu.h"
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\editaction.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\renderconfig.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\renderengine.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\rendersession.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\luxmark\slg2\slgcfg.h"
 					>
 				</File>
 				<Filter
-					Name="kernels"
+					Name="pathocl"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\kernels.h"
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\compiledscene.h"
 						>
 					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\ocldatatypes.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\pathocl.h"
+						>
+					</File>
+					<Filter
+						Name="kernels"
+						>
+						<File
+							RelativePath="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\kernels.h"
+							>
+						</File>
+					</Filter>
 				</Filter>
-			</Filter>
-			<Filter
-				Name="path"
-				>
-				<File
-					RelativePath="..\..\..\luxrays\samples\luxmark\path\path.h"
-					>
-				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -664,6 +666,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\resultdialog.ui"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\luxrays\samples\luxmark\submitdialog.ui"
 				>
 			</File>
 		</Filter>

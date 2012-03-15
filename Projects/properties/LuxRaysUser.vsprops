@@ -11,7 +11,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalDependencies="OpenCL.lib freeglut_static.lib $(LUX_GLEW_LIBNAME).lib luxrays.lib"
+		AdditionalDependencies="OpenGL32.lib OpenCL.lib freeglut_static.lib $(LUX_GLEW_LIBNAME).lib luxrays.lib"
 		AdditionalLibraryDirectories="&quot;$(LUX_OCL_LIBS)&quot;;&quot;$(LUX_GLUT_LIBS)&quot;;&quot;$(LUX_GLEW_LIBS)&quot;;&quot;$(LUX_LUXRAYS_LIBS)&quot;"
 	/>
 </VisualStudioPropertySheet>
