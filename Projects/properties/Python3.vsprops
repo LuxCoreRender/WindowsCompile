@@ -6,11 +6,7 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		RuntimeLibrary="2"
 		PreprocessorDefinitions="BOOST_PYTHON_STATIC_LIB"
-	/>
-	<Tool
-		Name="VCLinkerTool"
-		AdditionalDependencies="libboost_python3-vc90-mt.lib libboost_wserialization-vc90-mt.lib "
+		RuntimeLibrary="2"
 	/>
 </VisualStudioPropertySheet>
