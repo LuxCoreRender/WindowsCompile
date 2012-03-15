@@ -529,14 +529,194 @@
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\aboutdialog.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\hardwaretree.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\luxmarkapp.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\luxmarkcfg.h"
@@ -545,10 +725,130 @@
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\mainwindow.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\resultdialog.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\smalllux.h"
@@ -557,6 +857,66 @@
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\submitdialog.h"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/moc_$(InputName).cxx&quot; &quot;$(InputPath)&quot; -p ."
+						Outputs="$(InputDir)/moc_$(InputName).cxx"
+					/>
+				</FileConfiguration>
 			</File>
 			<Filter
 				Name="generated"
@@ -650,6 +1010,66 @@
 				<File
 					RelativePath="..\..\..\luxrays\samples\luxmark\resources.qrc"
 					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release NoOpenCL|x64"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling QT Resource File $(InputName)."
+							CommandLine="$(LUX_QT_ROOT)\bin\rcc.exe -name $(InputName) -o &quot;$(InputDir)/qrc_$(InputName).cxx&quot; &quot;$(InputPath)&quot;"
+							Outputs="$(InputDir)/qrc_$(InputName).cxx"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 		</Filter>
@@ -659,18 +1079,258 @@
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\aboutdialog.ui"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\mainwindow.ui"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\resultdialog.ui"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\luxrays\samples\luxmark\submitdialog.ui"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT UI File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\uic.exe -o &quot;$(InputDir)/ui_$(InputName).h&quot; &quot;$(InputPath)&quot;"
+						Outputs="$(InputDir)/ui_$(InputName).h"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 	</Files>
