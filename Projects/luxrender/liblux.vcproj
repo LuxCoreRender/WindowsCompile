@@ -974,6 +974,22 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="statistics"
+					>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\samplerstatistics.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\sppmstatistics.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="shapes"
@@ -1411,6 +1427,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\rendererstatistics.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\renderfarm.cpp"
 					>
 				</File>
@@ -1440,10 +1460,6 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\spectrumwavelengths.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\core\stats.cpp"
 					>
 				</File>
 				<File
@@ -2372,6 +2388,22 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="statistics"
+					>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\samplerstatistics.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\lux\renderers\statistics\sppmstatistics.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="core"
@@ -2513,6 +2545,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\rendererstatistics.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\renderfarm.h"
 					>
 				</File>
@@ -2542,10 +2578,6 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\spectrumwavelengths.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\lux\core\stats.h"
 					>
 				</File>
 				<File
