@@ -226,6 +226,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <CallingConvention>
+      </CallingConvention>
     </ClCompile>
     <Lib>
       <ModuleDefinitionFile>
@@ -248,6 +250,10 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Lib>
+    <ClCompile>
+      <CallingConvention>
+      </CallingConvention>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Lib>
@@ -265,6 +271,10 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Lib>
+    <ClCompile>
+      <CallingConvention>
+      </CallingConvention>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">
     <Lib>
@@ -277,6 +287,10 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Lib>
+    <ClCompile>
+      <CallingConvention>
+      </CallingConvention>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
     <Midl>
@@ -302,6 +316,7 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\multibsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp" />
+    <ClCompile Include="..\..\..\lux\core\rendererstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\film\fleximage.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\environment.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\orthographic.cpp" />
@@ -362,6 +377,9 @@
     <ClCompile Include="..\..\..\lux\renderers\sppm\kdtree.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\lookupaccel.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\photonsampler.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\statistics\samplerstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\disk.cpp" />
@@ -469,7 +487,6 @@
     <ClCompile Include="..\..\..\lux\core\spd.cpp" />
     <ClCompile Include="..\..\..\lux\core\spectrum.cpp" />
     <ClCompile Include="..\..\..\lux\core\spectrumwavelengths.cpp" />
-    <ClCompile Include="..\..\..\lux\core\stats.cpp" />
     <ClCompile Include="..\..\..\lux\core\texture.cpp" />
     <ClCompile Include="..\..\..\lux\core\tgaio.cpp" />
     <ClCompile Include="..\..\..\lux\core\timer.cpp" />
@@ -550,6 +567,7 @@
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\fresnel.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h" />
+    <ClInclude Include="..\..\..\lux\core\rendererstatistics.h" />
     <ClInclude Include="..\..\..\lux\core\streamio.h" />
     <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
@@ -604,6 +622,9 @@
     <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h" />
+    <ClInclude Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.h" />
+    <ClInclude Include="..\..\..\lux\renderers\statistics\samplerstatistics.h" />
+    <ClInclude Include="..\..\..\lux\renderers\statistics\sppmstatistics.h" />
     <ClInclude Include="..\..\..\lux\samplers\erpt.h" />
     <ClInclude Include="..\..\..\lux\samplers\lowdiscrepancy.h" />
     <ClInclude Include="..\..\..\lux\samplers\metrosampler.h" />
@@ -723,7 +744,6 @@
     <ClInclude Include="..\..\..\lux\core\spd.h" />
     <ClInclude Include="..\..\..\lux\core\spectrum.h" />
     <ClInclude Include="..\..\..\lux\core\spectrumwavelengths.h" />
-    <ClInclude Include="..\..\..\lux\core\stats.h" />
     <ClInclude Include="..\..\..\lux\core\texture.h" />
     <ClInclude Include="..\..\..\lux\core\texturecolor.h" />
     <ClInclude Include="..\..\..\lux\core\tgaio.h" />

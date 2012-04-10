@@ -198,6 +198,12 @@
     <Filter Include="Source Files\core\reflection\bsdf">
       <UniqueIdentifier>{4ee1ac1f-e21b-4fc4-ae68-150291766fee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\renderers\statistics">
+      <UniqueIdentifier>{33d50f60-358d-40f7-8193-ef772bcfa0b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\renderers\statistics">
+      <UniqueIdentifier>{a2d1a757-cbe1-4f49-ab58-5ed8366f48fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
@@ -668,9 +674,6 @@
     <ClCompile Include="..\..\..\lux\core\spectrumwavelengths.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\stats.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\core\texture.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -916,6 +919,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\accelerators\sqbvhaccel.cpp">
       <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\rendererstatistics.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.cpp">
+      <Filter>Source Files\renderers\statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\statistics\samplerstatistics.cpp">
+      <Filter>Source Files\renderers\statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp">
+      <Filter>Source Files\renderers\statistics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1420,9 +1435,6 @@
     <ClInclude Include="..\..\..\lux\core\spectrumwavelengths.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\stats.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\texture.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -1701,6 +1713,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\accelerators\sqbvhaccel.h">
       <Filter>Header Files\accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\rendererstatistics.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.h">
+      <Filter>Header Files\renderers\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\statistics\samplerstatistics.h">
+      <Filter>Header Files\renderers\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\statistics\sppmstatistics.h">
+      <Filter>Header Files\renderers\statistics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

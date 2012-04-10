@@ -13,8 +13,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>$(LUX_BOOST_ROOT);$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>LUX_USE_OPENGL;CORE_SOURCE;BOOST_IOSTREAMS_NO_LIB;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LUX_USE_OPENGL;CORE_SOURCE;WIN32_LEAN_AND_MEAN;NDEBUG;WIN32;_WIN32_WINNT=0x0501;_WINDOWS;WINDOWS;_USRDLL;undefined_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4244;4305;4996;4267;4311;4312;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>

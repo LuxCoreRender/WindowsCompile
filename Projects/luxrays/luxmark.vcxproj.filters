@@ -8,36 +8,12 @@
     <Filter Include="Source Files\generated">
       <UniqueIdentifier>{2988e94e-ce5b-4497-83d9-5f79c2e53436}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\path">
-      <UniqueIdentifier>{c6112aaa-1d28-4925-a1b0-7b917213751b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\pathgpu">
-      <UniqueIdentifier>{3d9d47e3-525a-465f-972b-7f22dbc6c598}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\pathgpu\kernels">
-      <UniqueIdentifier>{7d0824b3-fcf8-4a67-8809-25dd69e96e6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\sppm">
-      <UniqueIdentifier>{329570cf-4998-4663-aa78-d6827255fc3f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Header Files\generated">
       <UniqueIdentifier>{430da642-b6fd-401d-ad5f-43771e70338a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\sppm">
-      <UniqueIdentifier>{623dc0c9-289d-4726-a3fb-738c40ac3b30}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\pathgpu">
-      <UniqueIdentifier>{efad8024-749c-4beb-8226-886f72ad41df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\pathgpu\kernels">
-      <UniqueIdentifier>{8a2036f4-f014-4802-82c4-73fea087865f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\path">
-      <UniqueIdentifier>{e6e1f8d4-7fc1-432b-8087-e01413717023}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
@@ -52,8 +28,62 @@
     <Filter Include="QT UI">
       <UniqueIdentifier>{ce08fc9a-823f-4a43-b16a-4acb0f7bb209}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\slg2">
+      <UniqueIdentifier>{b011718c-ed61-465e-a499-ccc9393c3383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\slg2\pathocl">
+      <UniqueIdentifier>{cae77989-adb9-4fec-bad3-839a4149b4d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\slg2\pathocl\kernels">
+      <UniqueIdentifier>{b340762a-c1cd-4324-a026-94c4d8e36566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\slg2">
+      <UniqueIdentifier>{e29549ee-776e-46da-862f-6b07ff9865fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\slg2\pathocl">
+      <UniqueIdentifier>{7dafd3ad-e059-4b81-b86b-d204b7f7e46a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\slg2\pathocl\kernels">
+      <UniqueIdentifier>{1bd682a9-94d2-4e72-8fa5-0abdaf486276}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\renderconfig.cpp">
+      <Filter>Source Files\slg2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\renderengine.cpp">
+      <Filter>Source Files\slg2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\rendersession.cpp">
+      <Filter>Source Files\slg2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\compiledscene.cpp">
+      <Filter>Source Files\slg2\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\pathocl.cpp">
+      <Filter>Source Files\slg2\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\renderthread.cpp">
+      <Filter>Source Files\slg2\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_core.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_datatypes.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_filters.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_samplers.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernel_scene.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\pathocl_kernels.cpp">
+      <Filter>Source Files\slg2\pathocl\kernels</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\aboutdialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -69,16 +99,10 @@
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\renderconfig.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\resultdialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\slgscene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\volume.cpp">
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\submitdialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\moc_aboutdialog.cxx">
@@ -96,38 +120,14 @@
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\moc_resultdialog.cxx">
       <Filter>Source Files\generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\luxmark\moc_submitdialog.cxx">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\qrc_resources.cxx">
       <Filter>Source Files\generated</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\path\path.cpp">
-      <Filter>Source Files\path</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\pathgpu\pathgpu.cpp">
-      <Filter>Source Files\pathgpu</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\pathgpu_kernel.cpp">
-      <Filter>Source Files\pathgpu\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\sppm\hashgrid.cpp">
-      <Filter>Source Files\sppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\sppm\hitpoints.cpp">
-      <Filter>Source Files\sppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\sppm\hybridhashgrid.cpp">
-      <Filter>Source Files\sppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\sppm\kdtree.cpp">
-      <Filter>Source Files\sppm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\luxmark\sppm\sppm.cpp">
-      <Filter>Source Files\sppm</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\pathgpu_kernel.cl">
-      <Filter>Source Files\pathgpu\kernels</Filter>
-    </None>
     <None Include="..\Resources\lux.ico">
       <Filter>Resource Files\WindowsResources</Filter>
     </None>
@@ -193,23 +193,32 @@
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_resultdialog.h">
       <Filter>Header Files\generated</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\sppm\hitpoints.h">
-      <Filter>Header Files\sppm</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\editaction.h">
+      <Filter>Header Files\slg2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\sppm\lookupaccel.h">
-      <Filter>Header Files\sppm</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\renderconfig.h">
+      <Filter>Header Files\slg2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\sppm\sppm.h">
-      <Filter>Header Files\sppm</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\renderengine.h">
+      <Filter>Header Files\slg2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\pathgpu\pathgpu.h">
-      <Filter>Header Files\pathgpu</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\rendersession.h">
+      <Filter>Header Files\slg2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\pathgpu\kernels\kernels.h">
-      <Filter>Header Files\pathgpu\kernels</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\slgcfg.h">
+      <Filter>Header Files\slg2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\path\path.h">
-      <Filter>Header Files\path</Filter>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\compiledscene.h">
+      <Filter>Header Files\slg2\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\ocldatatypes.h">
+      <Filter>Header Files\slg2\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\pathocl.h">
+      <Filter>Header Files\slg2\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\kernels.h">
+      <Filter>Header Files\slg2\pathocl\kernels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

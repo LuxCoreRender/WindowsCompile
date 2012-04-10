@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
     <LUX_LUXRAYS_LIBS>$(ProjectDir)\..\luxrays\$(PlatformName)\$(SSE_Version)\$(Configuration)</LUX_LUXRAYS_LIBS>
-    <LUX_BOOST_ROOT>$(LUX_X86_BOOST_ROOT)</LUX_BOOST_ROOT>
+    <LUX_BOOST_ROOT>C:\Prog\Lux\deps\x86\boost_1_47_0</LUX_BOOST_ROOT>
     <LUX_QT_ROOT>$(LUX_X86_QT_ROOT)</LUX_QT_ROOT>
     <LUX_FREEIMAGE_ROOT>$(LUX_X86_FREEIMAGE_ROOT)</LUX_FREEIMAGE_ROOT>
     <LUX_OCL_LIBS>$(LUX_X86_OCL_LIBS)</LUX_OCL_LIBS>
