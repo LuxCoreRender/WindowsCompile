@@ -19,47 +19,21 @@ echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
 
-IF EXIST build-vars.bat (
-	call build-vars.bat
-)
+IF EXIST build-vars.bat CALL build-vars.bat
 
-IF NOT EXIST %LUX_X64_PYTHON2_ROOT% (
-	echo.
-	echo %%LUX_X64_PYTHON2_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X64_PYTHON3_ROOT% (
-	echo.
-	echo %%LUX_X64_PYTHON3_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X64_BOOST_ROOT% (
-	echo.
-	echo %%LUX_X64_BOOST_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X64_QT_ROOT% (
-	echo.
-	echo %%LUX_X64_QT_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X64_FREEIMAGE_ROOT% (
-	echo.
-	echo %%LUX_X64_FREEIMAGE_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X64_ZLIB_ROOT% (
-	echo.
-	echo %%LUX_X64_ZLIB_ROOT%% not valid! Aborting.
-	exit /b -1
-)
+CALL:checkEnvVarValid "LUX_X64_PYTHON2_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON3_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_BOOST_ROOT"     || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_FREEIMAGE_ROOT" || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
 
-msbuild /? > nul
-if NOT ERRORLEVEL 0 (
+msbuild /? > NUL
+IF NOT ERRORLEVEL 0 (
 	echo.
 	echo Cannot execute the 'msbuild' command. Please run
 	echo this script from the Visual Studio 2008 Command Prompt.
-	exit /b -1
+	EXIT /b -1
 )
 
 echo Environment OK.
@@ -87,11 +61,11 @@ echo.
 
 
 :DebugChoice
-echo Build Debug binaries ?
+echo Build Debug binaries?
 echo 0: No (default)
 echo 1: Yes
-set BUILD_DEBUG=0
-set /P BUILD_DEBUG="Selection? "
+SET BUILD_DEBUG=0
+SET /P BUILD_DEBUG="Selection? "
 IF %BUILD_DEBUG% EQU 0 GOTO BuildDepsChoice 
 IF %BUILD_DEBUG% EQU 1 GOTO BuildDepsChoice
 echo Invalid choice
@@ -105,11 +79,11 @@ echo 1: Build all dependencies (default)
 echo 2: Build all but Qt
 echo q: Quit (do nothing)
 echo.
-set BUILDCHOICE=1
-set /P BUILDCHOICE="Selection? "
-IF %BUILDCHOICE% == 1 ( GOTO QT )
-IF %BUILDCHOICE% == 2 ( GOTO Python )
-IF /I %BUILDCHOICE% EQU q ( GOTO :EOF )
+SET BUILDCHOICE=1
+SET /P BUILDCHOICE="Selection? "
+IF %BUILDCHOICE% EQU 1 GOTO QT
+IF %BUILDCHOICE% EQU 2 GOTO Python
+IF /I %BUILDCHOICE% EQU q GOTO:EOF
 echo Invalid choice
 GOTO BuildDepsChoice
 
@@ -126,14 +100,14 @@ echo **************************************************************************
 cd /d %LUX_X64_QT_ROOT%
 echo.
 echo Cleaning Qt, this may take a few moments...
-nmake confclean 1>nul 2>nul
+nmake confclean 1>NUL 2>NUL
 echo.
 echo Building Qt may take a very long time! The Qt configure utility will now 
 echo ask you a few questions before building commences. The rest of the build 
 echo process should be autonomous.
 pause
 
-configure -opensource -release -fast -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools
+configure -opensource -release -fast -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-qt3support
 nmake
 
 
@@ -170,7 +144,7 @@ echo **************************************************************************
 echo * Building BJam                                                          *
 echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
-call bootstrap.bat
+CALL bootstrap.bat
 SET BOOST_JOBS=8
 
 rem Patch boost file to fix py 3.2 build
@@ -239,8 +213,6 @@ rem Patch solution file to enable FreeImageLib as a build target
 IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=x64" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
 msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=x64" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
 
-
-
 :: ****************************************************************************
 :: ******************************* LuxRays ************************************
 :: ****************************************************************************
@@ -272,3 +244,27 @@ echo *        Building Completed                                              *
 echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
+
+:: Functions below this point
+GOTO:EOF
+
+:checkEnvVarValid
+:: Checks whether an environment variable is set to an existing directory
+:: %1 - Environment variable to check
+
+SETLOCAL
+CALL SET ENVVAR=%%%~1%%
+IF "%ENVVAR%" == "" (
+	echo.
+	echo %%%~1%% not set! Aborting.
+	EXIT /b 1
+)
+
+IF NOT EXIST "%ENVVAR%" (
+	echo.
+	echo %~1="%ENVVAR%"
+	echo but "%ENVVAR%" does not exist! Aborting.
+	EXIT /b 1
+)
+ENDLOCAL
+GOTO:EOF

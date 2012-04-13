@@ -1,22 +1,26 @@
-@Echo off
+@Echo OFF
 
-set BOOST_VER_U=1_43_0
-set BOOST_VER_P=1.43.0
+:: Versions to download / install
+SET BOOST_VER_U=1_43_0
+SET BOOST_VER_P=1.43.0
 
-set PYTHON2_VER=2.7.1
-set PYTHON3_VER=3.2
+SET PYTHON2_VER=2.7.1
+SET PYTHON3_VER=3.2
 
-set ZLIB_VER_P=1.2.3
-set ZLIB_VER_N=123
+SET FREEIMAGE_VER_P=3.14.1
+SET FREEIMAGE_VER_N=3141
 
-set FREEIMAGE_VER_P=3.14.1
-set FREEIMAGE_VER_N=3141
+SET ZLIB_VER=1.2.3
 
-set QT_VER=4.7.2
+SET BZIP2_VER=1.0.5
 
-set GLEW_VER=1.5.5
+SET QT_VER=4.7.2
 
+SET GLEW_VER=1.5.5
 
+SET FREEGLUT_VER=2.6.0
+
+:: Initial message to display to user
 echo.
 echo **************************************************************************
 echo * Startup                                                                *
@@ -25,11 +29,11 @@ echo.
 echo We are going to download and extract these libraries:
 echo   Boost %BOOST_VER_P%                             http://www.boost.org/
 echo   QT %QT_VER%                                 http://qt.nokia.com/
-echo   zlib %ZLIB_VER_P%                               http://www.zlib.net/
-echo   bzip 1.0.5                               http://www.bzip.org/
+echo   zlib %ZLIB_VER%                               http://www.zlib.net/
+echo   bzip %BZIP2_VER%                               http://www.bzip.org/
 echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
-echo   freeglut 2.6.0                           http://freeglut.sourceforge.net/
+echo   freeglut %FREEGLUT_VER%                           http://freeglut.sourceforge.net/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
 echo       NVIDIA CUDA ToolKit 3.1 / 4.0
@@ -52,53 +56,40 @@ echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C N
 echo Otherwise,
 pause
 
-
+:: Check for required binaries and set variables
 echo.
 echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
-set WGET="%CD%\support\bin\wget.exe"
-%WGET% --version 1> nul 2>&1
-if ERRORLEVEL 9009 (
+SET WGET="%CD%\support\bin\wget.exe"
+%WGET% --version 1> NUL 2>&1
+IF ERRORLEVEL 9009 (
 	echo.
 	echo Cannot execute wget. Aborting.
-	exit /b -1
+	EXIT /b -1
 )
-set UNZIPBIN="%CD%\support\bin\7za.exe"
-%UNZIPBIN% > nul
-if ERRORLEVEL 9009 (
+SET UNZIPBIN="%CD%\support\bin\7za.exe"
+%UNZIPBIN% > NUL
+IF ERRORLEVEL 9009 (
 	echo.
 	echo Cannot execute unzip. Aborting.
-	exit /b -1
+	EXIT /b -1
 )
 
 set DOWNLOADS="%CD%\..\downloads"
-set DEPSROOT=%CD%\..\deps
+set DEPSROOT="%CD%\..\deps"
+
 
 :ConfigDepsDir
-:: resolve relative path
-FOR %%G in (%DOWNLOADS%) do (
-	set DOWNLOADS="%%~fG"
-)
+:: Resolve relative paths
+FOR %%G IN (%DOWNLOADS%) DO SET DOWNLOADS=%%~fG
+FOR %%G IN (%DEPSROOT%) DO SET DEPSROOT=%%~fG
 
-for %%G in (%DEPSROOT%) do (
-	set DEPSROOT=%%~fG
-)
-
-set D32="%DEPSROOT%\x86"
-::FOR %%G in (%D32%) do (
-::	set D32="%%~fG"
-::)
-set D32R=%D32:"=%
-
-set D64="%DEPSROOT%\x64"
-::FOR %%G in (%D64%) do (
-::	set D64="%%~fG"
-::)
-set D64R=%D64:"=%
+set D32=%DEPSROOT%\x86
+set D64=%DEPSROOT%\x64
 
 echo.
-echo Downloads will be stored in %DOWNLOADS%
+echo Downloads will be stored in "%DOWNLOADS%"
 echo Dependencies will be extracted to "%DEPSROOT%"
 echo.
 echo Change these locations?
@@ -118,16 +109,11 @@ set /P DOWNLOADS="Enter path for downloads: "
 set /P DEPSROOT="Enter path for dependencies: "
 GOTO ConfigDepsDir
 
+
 :DepsRootAccepted
-
-mkdir %DOWNLOADS% 2> nul
-mkdir %D32% 2> nul
-mkdir %D64% 2> nul
-
-::echo %DOWNLOADS%
-::echo %D32%
-::echo %D64%
-::echo OK
+mkdir %DOWNLOADS% 2> NUL
+mkdir %D32% 2> NUL
+mkdir %D64% 2> NUL
 
 
 set FORCE_EXTRACT=0
@@ -147,19 +133,16 @@ set /p FORCE_EXTRACT="Selection? "
 IF %FORCE_EXTRACT% EQU 0 GOTO CreateBuildVars
 IF %FORCE_EXTRACT% EQU 1 GOTO CreateBuildVars
 echo Invalid choice
-goto ForceExtractChoice
+GOTO ForceExtractChoice
 
 
 :CreateBuildVars
-echo @Echo off > build-vars.bat
+>  build-vars.bat echo @Echo off
+>  build-vars.reg echo Windows Registry Editor Version 5.00
+>> build-vars.reg echo.
+>> build-vars.reg echo [HKEY_CURRENT_USER\Environment]
+CALL:addBuildPathVar "LUX_WINDOWS_BUILD_ROOT", "%CD%"
 set LUX_WINDOWS_BUILD_ROOT="%CD%"
-echo set LUX_WINDOWS_BUILD_ROOT="%CD%">> build-vars.bat
-
-echo Windows Registry Editor Version 5.00 > build-vars.reg
-echo. >> build-vars.reg
-echo [HKEY_CURRENT_USER\Environment]>> build-vars.reg
-echo "LUX_WINDOWS_BUILD_ROOT"="%CD:\=\\%">> build-vars.reg
-
 
 :OpenCL
 echo.
@@ -167,7 +150,6 @@ echo **************************************************************************
 echo * OpenCL SDK                                                             *
 echo **************************************************************************
 :OpenCLChoice
-set SKIP_GLEW=0
 echo.
 echo Please select which OpenCL SDK you wish to use:
 echo.
@@ -256,415 +238,130 @@ set OPENCL_PKG=ati-stream-sdk-v2.3-xp64.exe
 GOTO OpenCLInstall
 
 :OpenCLInstall
-IF NOT EXIST %DOWNLOADS%\%OPENCL_PKG% (
-	echo.
-	echo **************************************************************************
-	echo * Downloading %OPENCL_NAME%
-	echo **************************************************************************
-	%WGET% %OPENCL_URL%%OPENCL_PKG% -O %DOWNLOADS%\%OPENCL_PKG%
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "%OPENCL_NAME%", "%OPENCL_URL%%OPENCL_PKG%", "%OPENCL_PKG%" || EXIT /b -1
+
 echo.
 echo I will now launch the SDK installer. You can install anywhere you like, but to be
 echo on the safe side, please choose a path that doesn't contain spaces.
-IF %OPENCL_VARS% EQU "SetStreamVars" (
-rem	echo.
-rem	echo. IMPORTANT: You should install the samples from the SDK in order to install GLUT/GLEW
-rem	echo.
-)
 start /WAIT "" %DOWNLOADS%\%OPENCL_PKG%
 echo Waiting for installer. When finished,
 pause
-goto %OPENCL_VARS%
+GOTO %OPENCL_VARS%
 
 :SetCUDAVars1
-:: Use another cmd instance to get new env vars expanded
-cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_LIB_PATH%\..\lib\">> build-vars.bat
-cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_LIB_PATH%">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_INC_PATH%">> build-vars.bat
-
-cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%\\..\\lib\\">> build-vars.reg
-cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_LIB_PATH:\=\\%">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_INC_PATH:\=\\%">> build-vars.reg
-goto OpenCLFinished
+CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%CUDA_LIB_PATH%\..\lib\"
+CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%CUDA_LIB_PATH%"
+CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%CUDA_INC_PATH%"
+CALL:addBuildPathVar "LUX_X64_OCL_INCLUDE", "%CUDA_INC_PATH%"
+GOTO OpenCLFinished
 
 :SetCUDAVars2
-:: Use another cmd instance to get new env vars expanded
-cmd /C echo set LUX_X86_OCL_LIBS="%CUDA_PATH%\lib\Win32">> build-vars.bat
-cmd /C echo set LUX_X86_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_LIBS="%CUDA_PATH%\lib\x64">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_INCLUDE="%CUDA_PATH%\include">> build-vars.bat
-
-cmd /C echo "LUX_X86_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\Win32">> build-vars.reg
-cmd /C echo "LUX_X86_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_LIBS"="%CUDA_PATH:\=\\%\\lib\\x64">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_INCLUDE"="%CUDA_PATH:\=\\%\\include">> build-vars.reg
-goto OpenCLFinished
+CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%CUDA_PATH%\lib\Win32"
+CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%CUDA_PATH%\lib\x64"
+CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%CUDA_PATH%\include"
+CALL:addBuildPathVar "LUX_X64_OCL_INCLUDE", "%CUDA_PATH%\include"
+GOTO OpenCLFinished
 
 :SetStreamVars
 IF "%ATISTREAMSDKROOT%"=="" GOTO SetAMDAPPVars
-:: Use another cmd instance to get new env vars expanded
-cmd /C echo set LUX_X86_OCL_LIBS="%ATISTREAMSDKROOT%\lib\x86">> build-vars.bat
-cmd /C echo set LUX_X86_OCL_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_LIBS="%ATISTREAMSDKROOT%\lib\x86_64">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_INCLUDE="%ATISTREAMSDKROOT%\include">> build-vars.bat
-
-cmd /C echo "LUX_X86_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
-cmd /C echo "LUX_X86_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_LIBS"="%ATISTREAMSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_INCLUDE"="%ATISTREAMSDKROOT:\=\\%\\include">> build-vars.reg
-
-rem We use our own glew now
-rem set SKIP_GLEW=1
-goto OpenCLFinished
+CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%ATISTREAMSDKROOT%\lib\x86"
+CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%ATISTREAMSDKROOT%\lib\x86_64"
+CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%ATISTREAMSDKROOT%\include"
+CALL:addBuildPathVar "LUX_X64_OCL_INCLUDE", "%ATISTREAMSDKROOT%\include"
+GOTO OpenCLFinished
 
 :SetAMDAPPVars
-:: Use another cmd instance to get new env vars expanded
-cmd /C echo set LUX_X86_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86">> build-vars.bat
-cmd /C echo set LUX_X86_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_LIBS="%AMDAPPSDKROOT%\lib\x86_64">> build-vars.bat
-cmd /C echo set LUX_X64_OCL_INCLUDE="%AMDAPPSDKROOT%\include">> build-vars.bat
-
-cmd /C echo "LUX_X86_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86">> build-vars.reg
-cmd /C echo "LUX_X86_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_LIBS"="%AMDAPPSDKROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-cmd /C echo "LUX_X64_OCL_INCLUDE"="%AMDAPPSDKROOT:\=\\%\\include">> build-vars.reg
-
-rem We use our own glew now
-rem set SKIP_GLEW=1
-goto OpenCLFinished
+CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%AMDAPPSDKROOT%\lib\x86"
+CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%AMDAPPSDKROOT%\lib\x86_64"
+CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%AMDAPPSDKROOT%\include"
+CALL:addBuildPathVar "LUX_X64_OCL_INCLUDE", "%AMDAPPSDKROOT%\include"
+GOTO OpenCLFinished
 
 :OpenCLFinished
 
 :boost
-IF NOT EXIST %DOWNLOADS%\boost_%BOOST_VER_U%.zip (
-	echo.
-	echo **************************************************************************
-	echo * Downloading Boost                                                      *
-	echo **************************************************************************
-	%WGET% http://sourceforge.net/projects/boost/files/boost/%BOOST_VER_P%/boost_%BOOST_VER_U%.zip/download -O %DOWNLOADS%\boost_%BOOST_VER_U%.zip
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "Boost %BOOST_VER_P%", "http://sourceforge.net/projects/boost/files/boost/%BOOST_VER_P%/boost_%BOOST_VER_U%.7z/download", "boost_%BOOST_VER_U%.7z" || EXIT /b -1
+CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
 
-set EXTRACT_BOOST=1
-IF EXIST %D32%\boost_%BOOST_VER_U% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_BOOST=0
-IF %EXTRACT_BOOST% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting Boost                                                       *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D32% > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\boost_%BOOST_VER_U%.zip -o%D64% > nul
-)
-echo set LUX_X86_BOOST_ROOT=%D32%\boost_%BOOST_VER_U%>> build-vars.bat
-echo set LUX_X64_BOOST_ROOT=%D64%\boost_%BOOST_VER_U%>> build-vars.bat
-
-echo "LUX_X86_BOOST_ROOT"="%D32R:\=\\%\\boost_%BOOST_VER_U%">> build-vars.reg
-echo "LUX_X64_BOOST_ROOT"="%D64R:\=\\%\\boost_%BOOST_VER_U%">> build-vars.reg
-
+CALL:addBuildPathVar "LUX_X86_BOOST_ROOT", "%D32%\boost_%BOOST_VER_U%"
+CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"
 
 :qt
-IF NOT EXIST %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip (
-	echo.
-	echo **************************************************************************
-	echo * Downloading QT                                                         *
-	echo **************************************************************************
-	%WGET% http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%QT_VER%.zip -O %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "QT %QT_VER%", "http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.tar.gz"
 
-set EXTRACT_QT=1
-IF EXIST %D32%\qt-everywhere-opensource-src-%QT_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_QT=0
-IF %EXTRACT_QT% EQU 1 ( 
-	echo.
-	echo **************************************************************************
-	echo * Extracting QT                                                          *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D32% > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.zip -o%D64% > nul
-)	
-echo set LUX_X86_QT_ROOT=%D32%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
-echo set LUX_X64_QT_ROOT=%D64%\qt-everywhere-opensource-src-%QT_VER%>> build-vars.bat
-
-echo "LUX_X86_QT_ROOT"="%D32R:\=\\%\\qt-everywhere-opensource-src-%QT_VER%">> build-vars.reg
-echo "LUX_X64_QT_ROOT"="%D64R:\=\\%\\qt-everywhere-opensource-src-%QT_VER%">> build-vars.reg
-
+CALL:addBuildPathVar "LUX_X86_QT_ROOT", "%D32%\qt-everywhere-opensource-src-%QT_VER%"
+CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
 
 :zlib
-IF NOT EXIST %DOWNLOADS%\zlib%ZLIB_VER_N%.zip (
-	echo.
-	echo **************************************************************************
-	echo * Downloading zlib                                                       *
-	echo **************************************************************************
-	%WGET% http://sourceforge.net/projects/libpng/files/zlib/%ZLIB_VER_P%/zlib%ZLIB_VER_N%.zip/download -O %DOWNLOADS%\zlib%ZLIB_VER_N%.zip
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "zlib %ZLIB_VER%", "http://sourceforge.net/projects/libpng/files/zlib/%ZLIB_VER%/zlib-%ZLIB_VER%.tar.gz/download", "zlib-%ZLIB_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "zlib %ZLIB_VER%", "%DOWNLOADS%\zlib-%ZLIB_VER%.tar.gz"
 
-set EXTRACT_ZLIB=1
-IF EXIST %D32%\zlib-%ZLIB_VER_P% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_ZLIB=0
-IF %EXTRACT_ZLIB% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting zlib                                                        *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D32%\zlib-%ZLIB_VER_P% > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\zlib%ZLIB_VER_N%.zip -o%D64%\zlib-%ZLIB_VER_P% > nul
-)
-echo set LUX_X86_ZLIB_ROOT=%D32%\zlib-%ZLIB_VER_P%>> build-vars.bat
-echo set LUX_X64_ZLIB_ROOT=%D64%\zlib-%ZLIB_VER_P%>> build-vars.bat
-
+CALL:addBuildPathVar "LUX_X86_ZLIB_ROOT", "%D32%\zlib-%ZLIB_VER%"
+CALL:addBuildPathVar "LUX_X64_ZLIB_ROOT", "%D64%\zlib-%ZLIB_VER%"
 
 :bzip
-IF NOT EXIST %DOWNLOADS%\bzip2-1.0.5.tar.gz (
-	echo.
-	echo **************************************************************************
-	echo * Downloading bzip                                                       *
-	echo **************************************************************************
-	%WGET% http://www.bzip.org/1.0.5/bzip2-1.0.5.tar.gz -O %DOWNLOADS%\bzip2-1.0.5.tar.gz
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "bzip2 %BZIP2_VER%", "http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz", "bzip2-%BZIP2_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "bzip2 %BZIP2_VER%", "%DOWNLOADS%\bzip2-%BZIP2_VER%.tar.gz"
 
-set EXTRACT_BZIP=1
-IF EXIST %D32%\bzip2-1.0.5 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_BZIP=0
-IF %EXTRACT_BZIP% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting bzip                                                        *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\bzip2-1.0.5.tar.gz > nul
-	%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D32% > nul
-	%UNZIPBIN% x -y bzip2-1.0.5.tar -o%D64% > nul
-	del bzip2-1.0.5.tar
-)
-echo set LUX_X86_BZIP_ROOT=%D32%\bzip2-1.0.5>> build-vars.bat
-echo set LUX_X64_BZIP_ROOT=%D64%\bzip2-1.0.5>> build-vars.bat
-
+CALL:addBuildPathVar "LUX_X86_BZIP_ROOT", "%D32%\bzip2-%BZIP2_VER%"
+CALL:addBuildPathVar "LUX_X64_BZIP_ROOT", "%D64%\bzip2-%BZIP2_VER%"
 
 :freeimage
-IF NOT EXIST %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip (
-	echo.
-	echo **************************************************************************
-	echo * Downloading FreeImage                                                  *
-	echo **************************************************************************
-	%WGET% http://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip -O %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "http://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip" || EXIT /b -1
+CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%"
 
-set EXTRACT_FREEIMAGE=1
-IF EXIST %D32%\FreeImage%FREEIMAGE_VER_N% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_FREEIMAGE=0
-IF %EXTRACT_FREEIMAGE% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting FreeImage                                                   *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D32%\FreeImage%FREEIMAGE_VER_N% > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip -o%D64%\FreeImage%FREEIMAGE_VER_N% > nul
-)
-echo set LUX_X86_FREEIMAGE_ROOT=%D32%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
-echo set LUX_X64_FREEIMAGE_ROOT=%D64%\FreeImage%FREEIMAGE_VER_N%>> build-vars.bat
-
-echo "LUX_X86_FREEIMAGE_ROOT"="%D32R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
-echo "LUX_X64_FREEIMAGE_ROOT"="%D64R:\=\\%\\FreeImage%FREEIMAGE_VER_N%">> build-vars.reg
-
-
+CALL:addBuildPathVar "LUX_X86_FREEIMAGE_ROOT", "%D32%\FreeImage%FREEIMAGE_VER_N%"
+CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
 
 :python2
-IF NOT EXIST %DOWNLOADS%\Python-%PYTHON2_VER%.tgz (
-	echo.
-	echo **************************************************************************
-	echo * Downloading Python 2                                                   *
-	echo **************************************************************************
-	%WGET% http://python.org/ftp/python/%PYTHON2_VER%/Python-%PYTHON2_VER%.tgz -O %DOWNLOADS%\Python-%PYTHON2_VER%.tgz
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "Python %PYTHON2_VER%", "http://python.org/ftp/python/%PYTHON2_VER%/Python-%PYTHON2_VER%.tgz", "Python-%PYTHON2_VER%.tgz" || EXIT /b -1
+CALL:extractFile "Python %PYTHON2_VER%", "%DOWNLOADS%\Python-%PYTHON2_VER%.tgz"
 
-set EXTRACT_PYTHON2=1
-IF EXIST %D32%\Python-%PYTHON2_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_PYTHON2=0
-IF %EXTRACT_PYTHON2% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting Python 2                                                    *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON2_VER%.tgz > nul
-	%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D32% > nul
-	%UNZIPBIN% x -y Python-%PYTHON2_VER%.tar -o%D64% > nul
-	del Python-%PYTHON2_VER%.tar
-)
-echo set LUX_X86_PYTHON2_ROOT=%D32%\Python-%PYTHON2_VER%>> build-vars.bat
-echo set LUX_X64_PYTHON2_ROOT=%D64%\Python-%PYTHON2_VER%>> build-vars.bat
-
-echo "LUX_X86_PYTHON2_ROOT"="%D32R:\=\\%\\Python-%PYTHON2_VER%">> build-vars.reg
-echo "LUX_X64_PYTHON2_ROOT"="%D64R:\=\\%\\Python-%PYTHON2_VER%">> build-vars.reg
-
+CALL:addBuildPathVar "LUX_X86_PYTHON2_ROOT", "%D32%\Python-%PYTHON2_VER%"
+CALL:addBuildPathVar "LUX_X64_PYTHON2_ROOT", "%D64%\Python-%PYTHON2_VER%"
 
 :python3
-IF NOT EXIST %DOWNLOADS%\Python-%PYTHON3_VER%.tgz (
-	echo.
-	echo **************************************************************************
-	echo * Downloading Python 3                                                   *
-	echo **************************************************************************
-	%WGET% http://python.org/ftp/python/%PYTHON3_VER%/Python-%PYTHON3_VER%.tgz -O %DOWNLOADS%\Python-%PYTHON3_VER%.tgz
-	if ERRORLEVEL 1 (
-		echo.
-		echo Download failed. Are you connected to the internet?
-		exit /b -1
-	)
-)
+CALL:downloadFile "Python %PYTHON3_VER%", "http://python.org/ftp/python/%PYTHON3_VER%/Python-%PYTHON3_VER%.tgz", "Python-%PYTHON3_VER%.tgz" || EXIT /b -1
+CALL:extractFile "Python %PYTHON3_VER%", "%DOWNLOADS%\Python-%PYTHON3_VER%.tgz"
 
-set EXTRACT_PYTHON3=1
-IF EXIST %D32%\Python-%PYTHON3_VER% IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_PYTHON3=0
-IF %EXTRACT_PYTHON3% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting Python 3                                                    *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\Python-%PYTHON3_VER%.tgz > nul
-	%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D32% > nul
-	%UNZIPBIN% x -y Python-%PYTHON3_VER%.tar -o%D64% > nul
-	del Python-%PYTHON3_VER%.tar
-)
-echo set LUX_X86_PYTHON3_ROOT=%D32%\Python-%PYTHON3_VER%>> build-vars.bat
-echo set LUX_X64_PYTHON3_ROOT=%D64%\Python-%PYTHON3_VER%>> build-vars.bat
+CALL:addBuildPathVar "LUX_X86_PYTHON3_ROOT", "%D32%\Python-%PYTHON3_VER%"
+CALL:addBuildPathVar "LUX_X64_PYTHON3_ROOT", "%D64%\Python-%PYTHON3_VER%"
 
-echo "LUX_X86_PYTHON3_ROOT"="%D32R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
-echo "LUX_X64_PYTHON3_ROOT"="%D64R:\=\\%\\Python-%PYTHON3_VER%">> build-vars.reg
+:freeglut
+REM CALL:downloadFile "freeglut %FREEGLUT_VER%", "http://downloads.sourceforge.net/freeglut/freeglut-%FREEGLUT_VER%.tar.gz", "freeglut-%FREEGLUT_VER%.tar.gz" || EXIT /b -1
+REM CALL:extractFile "freeglut %FREEGLUT_VER%", "%DOWNLOADS%\freeglut-%FREEGLUT_VER%.tar.gz"
+CALL:extractFile "freeglut %FREEGLUT_VER%", "%LUX_WINDOWS_BUILD_ROOT%\support\freeglut-2.6.0.7z"
 
+CALL:addBuildPathVar "LUX_X86_GLUT_ROOT",    "%D32%\freeglut-%FREEGLUT_VER%"
+CALL:addBuildPathVar "LUX_X64_GLUT_ROOT",    "%D64%\freeglut-%FREEGLUT_VER%"
+CALL:addBuildPathVar "LUX_X86_GLUT_INCLUDE", "%D32%\freeglut-%FREEGLUT_VER%\include"
+CALL:addBuildPathVar "LUX_X64_GLUT_INCLUDE", "%D64%\freeglut-%FREEGLUT_VER%\include"
+CALL:addBuildPathVar "LUX_X86_GLUT_LIBS",    "%D32%\freeglut-%FREEGLUT_VER%\VisualStudio2008Static\Win32\Release"
+CALL:addBuildPathVar "LUX_X64_GLUT_LIBS",    "%D64%\freeglut-%FREEGLUT_VER%\VisualStudio2008Static\x64\Release"
 
-set EXTRACT_FREEGLUT=1
-IF EXIST %D32%\freeglut-2.6.0 IF %FORCE_EXTRACT% NEQ 1 set EXTRACT_FREEGLUT=0
-IF %EXTRACT_FREEGLUT% EQU 1 (
-	echo.
-	echo **************************************************************************
-	echo * Extracting freeglut                                                    *
-	echo **************************************************************************
-	%UNZIPBIN% x -y "%LUX_WINDOWS_BUILD_ROOT%"\support\freeglut-2.6.0.7z -o%D32%\ > nul
-	%UNZIPBIN% x -y "%LUX_WINDOWS_BUILD_ROOT%"\support\freeglut-2.6.0.7z -o%D64%\ > nul
-)
-echo set LUX_X86_GLUT_INCLUDE=%D32%\freeglut-2.6.0\include>> build-vars.bat
-echo set LUX_X64_GLUT_INCLUDE=%D64%\freeglut-2.6.0\include>> build-vars.bat
-echo set LUX_X86_GLUT_LIBS=%D32%\freeglut-2.6.0\VisualStudio2008Static\Win32\Release>> build-vars.bat
-echo set LUX_X64_GLUT_LIBS=%D64%\freeglut-2.6.0\VisualStudio2008Static\x64\Release>> build-vars.bat
+:glew
+CALL:downloadFile "GLEW %GLEW_VER% 32 bit", "http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x86.zip", "glew-%GLEW_VER%_x86.zip" || EXIT /b -1
+CALL:downloadFile "GLEW %GLEW_VER% 64 bit", "http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x64.zip", "glew-%GLEW_VER%_x64.zip" || EXIT /b -1
 
-echo "LUX_X86_GLUT_INCLUDE"="%D32R:\=\\%\\freeglut-2.6.0\\include">> build-vars.reg
-echo "LUX_X64_GLUT_INCLUDE"="%D64R:\=\\%\\freeglut-2.6.0\\include">> build-vars.reg
-echo "LUX_X86_GLUT_LIBS"="%D32R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\Win32\\Release">> build-vars.reg
-echo "LUX_X64_GLUT_LIBS"="%D64R:\=\\%\\freeglut-2.6.0\\VisualStudio2008Static\\x64\\Release">> build-vars.reg
+echo.
+echo **************************************************************************
+echo * Extracting GLEW                                                        *
+echo **************************************************************************
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x86.zip -o%D32%\ > NUL
+%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x64.zip -o%D64%\ > NUL
 
+CALL:addBuildPathVar "LUX_X86_GLEW_INCLUDE", "%D32%\glew-%GLEW_VER%\include"
+CALL:addBuildPathVar "LUX_X64_GLEW_INCLUDE", "%D64%\glew-%GLEW_VER%\include"
+CALL:addBuildPathVar "LUX_X86_GLEW_LIBS",    "%D32%\glew-%GLEW_VER%\lib"
+CALL:addBuildPathVar "LUX_X64_GLEW_LIBS",    "%D64%\glew-%GLEW_VER%\lib"
+CALL:addBuildPathVar "LUX_X86_GLEW_BIN",     "%D32%\glew-%GLEW_VER%\bin"
+CALL:addBuildPathVar "LUX_X64_GLEW_BIN",     "%D64%\glew-%GLEW_VER%\bin"
 
-IF %SKIP_GLEW% EQU 0 (
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x86.zip (
-		echo.
-		echo **************************************************************************
-		echo * Downloading GLEW 32 bit                                                *
-		echo **************************************************************************
-		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win32.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win32.zip
-		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x86.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x86.zip
-		if ERRORLEVEL 1 (
-			echo.
-			echo Download failed. Are you connected to the internet?
-			exit /b -1
-		)
-	)
-	IF NOT EXIST %DOWNLOADS%\glew-%GLEW_VER%_x64.zip (
-		echo.
-		echo **************************************************************************
-		echo * Downloading GLEW 64 bit                                                *
-		echo **************************************************************************
-		rem %WGET% http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%-win64.zip/download -O %DOWNLOADS%\glew-%GLEW_VER%-win64.zip
-		%WGET% http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x64.zip -O %DOWNLOADS%\glew-%GLEW_VER%_x64.zip
-		if ERRORLEVEL 1 (
-			echo.
-			echo Download failed. Are you connected to the internet?
-			exit /b -1
-		)
-	)
-	echo.
-	echo **************************************************************************
-	echo * Extracting GLEW                                                        *
-	echo **************************************************************************
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x86.zip -o%D32%\ > nul
-	%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x64.zip -o%D64%\ > nul
-	
-	echo set LUX_X86_GLEW_INCLUDE=%D32%\glew-%GLEW_VER%\include>> build-vars.bat
-	echo set LUX_X64_GLEW_INCLUDE=%D64%\glew-%GLEW_VER%\include>> build-vars.bat
-	echo set LUX_X86_GLEW_LIBS=%D32%\glew-%GLEW_VER%\lib>> build-vars.bat
-	echo set LUX_X64_GLEW_LIBS=%D64%\glew-%GLEW_VER%\lib>> build-vars.bat
-	echo set LUX_X86_GLEW_BIN=%D32%\glew-%GLEW_VER%\bin>> build-vars.bat
-	echo set LUX_X64_GLEW_BIN=%D64%\glew-%GLEW_VER%\bin>> build-vars.bat
-	
-	echo "LUX_X86_GLEW_INCLUDE"="%D32R:\=\\%\\glew-%GLEW_VER%\\include">> build-vars.reg
-	echo "LUX_X64_GLEW_INCLUDE"="%D64R:\=\\%\\glew-%GLEW_VER%\\include">> build-vars.reg
-	echo "LUX_X86_GLEW_LIBS"="%D32R:\=\\%\\glew-%GLEW_VER%\\lib">> build-vars.reg
-	echo "LUX_X64_GLEW_LIBS"="%D64R:\=\\%\\glew-%GLEW_VER%\\lib">> build-vars.reg
-	echo "LUX_X86_GLEW_BIN"="%D32R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
-	echo "LUX_X64_GLEW_BIN"="%D64R:\=\\%\\glew-%GLEW_VER%\\bin">> build-vars.reg
-	
-	echo set LUX_X86_GLEW_LIBNAME=glew32s>> build-vars.bat
-	echo set LUX_X64_GLEW_LIBNAME=glew64s>> build-vars.bat
+CALL:addBuildVar "LUX_X86_GLEW_LIBNAME", "glew32s"
+CALL:addBuildVar "LUX_X64_GLEW_LIBNAME", "glew64s"
 
-	echo "LUX_X86_GLEW_LIBNAME"="glew32s">> build-vars.reg
-	echo "LUX_X64_GLEW_LIBNAME"="glew64s">> build-vars.reg
-) ELSE (
-	
-        IF "%AMDAPPSDKSAMPLESROOT%"=="" (
-               SET SAMPLESROOT=%ATISTREAMSDKSAMPLESROOT%
-        ) ELSE (
-               SET SAMPLESROOT=%AMDAPPSDKSAMPLESROOT%
-        )
-
-	cmd /C echo set LUX_X86_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_INCLUDE="%SAMPLESROOT%\include">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_LIBS="%SAMPLESROOT%\lib\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_LIBS="%SAMPLESROOT%\lib\x86_64">> build-vars.bat
-	cmd /C echo set LUX_X86_GLEW_BIN="%SAMPLESROOT%\bin\x86">> build-vars.bat
-	cmd /C echo set LUX_X64_GLEW_BIN="%SAMPLESROOT%\bin\x86_64">> build-vars.bat
-	
-	cmd /C echo "LUX_X86_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_INCLUDE"="%SAMPLESROOT:\=\\%\\include">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_LIBS"="%SAMPLESROOT:\=\\%\\lib\\x86_64">> build-vars.reg
-	cmd /C echo "LUX_X86_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86">> build-vars.reg
-	cmd /C echo "LUX_X64_GLEW_BIN"="%SAMPLESROOT:\=\\%\\bin\\x86_64">> build-vars.reg
-	
-	echo set LUX_X86_GLEW_LIBNAME=glew32>> build-vars.bat
-	echo set LUX_X64_GLEW_LIBNAME=glew64>> build-vars.bat
-	
-	echo "LUX_X86_GLEW_LIBNAME"="glew32">> build-vars.reg
-	echo "LUX_X64_GLEW_LIBNAME"="glew64">> build-vars.reg
-)
-
-
-
+:: Final message to display to user
 echo.
 echo **************************************************************************
 echo * DONE                                                                   *
@@ -691,3 +388,91 @@ echo and log out and back in again in order to build LuxRender with the
 echo Visual Studio IDE.
 echo.
 
+:: Functions below this point
+GOTO:EOF
+
+:downloadFile
+:: Downloads a file
+:: %1 - Description
+:: %2 - URI to download
+:: %3 - Filename to save as
+
+IF NOT EXIST %DOWNLOADS%\%~3 (
+	echo.
+	echo **************************************************************************
+	echo * Downloading %~1
+	echo **************************************************************************
+	%WGET% %2 -O %DOWNLOADS%\%~3
+	IF ERRORLEVEL 1 (
+		echo.
+		echo Download failed. Are you connected to the internet?
+		EXIT /b -1
+	)
+)
+GOTO:EOF
+
+:extractFile
+:: Extracts a file
+:: %1 - Description
+:: %2 - File to extract
+:: %3 - Relative directory to extract into
+
+SETLOCAL
+:: Parse filename
+FOR %%G IN (%2) DO SET FILENAME=%%~nG
+FOR %%G IN (%2) DO SET FILEEXTENSION=%%~xG
+
+:: Check if double extraction is called for (compressed tar files)
+SET TAR=0
+IF /i "%FILEEXTENSION%" == ".gz" (
+	FOR %%G IN (%FILENAME%) DO SET FILEEXTENSION=%%~xG
+	FOR %%G IN (%FILENAME%) DO SET FILENAME=%%~nG
+)
+IF /i "%FILEEXTENSION%" == ".tar" SET TAR=1
+IF /i "%FILEEXTENSION%" == ".tgz" SET TAR=1
+
+:: Decide if extraction is required
+SET EXTRACT=1
+IF EXIST %D32%\%FILENAME% IF %FORCE_EXTRACT% NEQ 1 SET EXTRACT=0
+IF %EXTRACT% EQU 1 (
+	echo.
+	echo **************************************************************************
+	echo * Extracting %~1
+	echo **************************************************************************
+	IF %TAR% EQU 1 (
+		%UNZIPBIN% x -y %2 > NUL
+		%UNZIPBIN% x -y %FILENAME%.tar -o%D32% > NUL
+		%UNZIPBIN% x -y %FILENAME%.tar -o%D64% > NUL
+		del %FILENAME%.tar
+	) ELSE (
+		%UNZIPBIN% x -y %2 -o%D32%\%3 > NUL
+		%UNZIPBIN% x -y %2 -o%D64%\%3 > NUL
+	)
+)
+ENDLOCAL
+GOTO:EOF
+
+:addBuildVar
+:: Creates build-vars.{bat,reg}
+:: %1 - Variable to set
+:: %2 - Value to set
+
+SETLOCAL
+SET VALUE=%~2
+:: Use another cmd instance to get new environment variables expanded
+>> build-vars.bat cmd /C echo SET %~1=%VALUE%
+>> build-vars.reg cmd /C echo "%~1"="%VALUE:\=\\%"
+ENDLOCAL
+GOTO:EOF
+
+:addBuildPathVar
+:: Calls addBuildVar after cleaning up the path in %2
+:: %1 - Variable to set
+:: %2 - Path value to set
+
+SETLOCAL
+:: Clean up the path value
+FOR %%G IN (%2) DO SET VALUE=%%~fG
+CALL:addBuildVar "%~1" "%VALUE%"
+ENDLOCAL
+GOTO:EOF
