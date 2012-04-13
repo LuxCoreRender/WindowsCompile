@@ -8,7 +8,7 @@
 		Name="VCCLCompilerTool"
 		AdditionalOptions="/MP"
 		AdditionalIncludeDirectories="..\..\..\luxrays\include;&quot;$(LUX_WINDOWS_BUILD_ROOT)\include&quot;;&quot;$(LUX_OCL_INCLUDE)&quot;;&quot;$(LUX_BOOST_ROOT)&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibJPEG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibPNG&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/LibTIFF&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Half&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/IlmImf&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Imath&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/OpenEXR/Iex&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source/ZLib&quot;;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist&quot;"
-		PreprocessorDefinitions="GLEW_STATIC;FREEIMAGE_LIB;BOOST_STATIC_LIB"
+		PreprocessorDefinitions="GLEW_STATIC;FREEIMAGE_LIB;BOOST_STATIC_LIB;BOOST_FILESYSTEM_NO_DEPRECATED;BOOST_FILESYSTEM_VERSION=3"
 		RuntimeLibrary="2"
 		BufferSecurityCheck="false"
 		FloatingPointModel="0"
