@@ -273,6 +273,9 @@
     <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\pdevices\nativepdevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\pdevices\openclpdevice.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\film.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\nativefilm.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\pixeldevicefilm.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\ocl\utils.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\properties.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\core\exttrianglemesh.cpp" />
@@ -327,6 +330,8 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\samplebuffer.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\spectrum.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\kernels\kernels.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\nativefilm.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\pixeldevicefilm.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\properties.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\atomic.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\exttrianglemesh.h" />

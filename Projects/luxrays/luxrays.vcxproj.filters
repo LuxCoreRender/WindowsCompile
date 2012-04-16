@@ -82,6 +82,9 @@
     <Filter Include="Source Files\kernels\Generated">
       <UniqueIdentifier>{5d4c024c-88fd-4f0d-bb77-85f47a5560d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\utils\film">
+      <UniqueIdentifier>{527f679b-1d5f-4a9d-96b1-6cbd58faf8b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\src\accelerators\bvhaccel.cpp">
@@ -188,6 +191,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp">
       <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\film.cpp">
+      <Filter>Source Files\utils\film</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\nativefilm.cpp">
+      <Filter>Source Files\utils\film</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\utils\film\pixeldevicefilm.cpp">
+      <Filter>Source Files\utils\film</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +381,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\xyzbasis.h">
       <Filter>Header Files\utils\sdl\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\nativefilm.h">
+      <Filter>Header Files\utils\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\pixeldevicefilm.h">
+      <Filter>Header Files\utils\film</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
