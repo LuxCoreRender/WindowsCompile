@@ -19,7 +19,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libboost_thread-vc90-mt.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 </Project>
