@@ -145,7 +145,7 @@ echo * Building BJam                                                          *
 echo **************************************************************************
 cd /d %LUX_X86_BOOST_ROOT%
 CALL bootstrap.bat
-SET BJAM_OPTS=-a -q -j8 --layout=system toolset=msvc-9.0 link=static threading=multi runtime-link=shared
+SET BJAM_OPTS=-a -q -j8 toolset=msvc-9.0 link=static threading=multi runtime-link=shared
 
 :Boost_Python2
 echo.
