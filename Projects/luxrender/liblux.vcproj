@@ -1471,6 +1471,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\tigerhash.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\timer.cpp"
 					>
 				</File>
@@ -2590,6 +2594,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\tgaio.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\tigerhash.h"
 					>
 				</File>
 				<File
