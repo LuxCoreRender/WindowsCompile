@@ -111,6 +111,7 @@
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\Python2.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="PropertySheets">
@@ -162,6 +163,7 @@
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\64bit-Release.props" />
     <Import Project="..\properties\Python2.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'" Label="PropertySheets">

@@ -72,10 +72,6 @@
     <Filter Include="Header Files\utils\sdl\data">
       <UniqueIdentifier>{b0c2678c-0299-4ca6-a5ff-717e6468cbdb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
     <Filter Include="Source Files\utils\ocl">
       <UniqueIdentifier>{3a3e6867-2376-4026-96a0-30aa10096bf4}</UniqueIdentifier>
     </Filter>
@@ -84,6 +80,10 @@
     </Filter>
     <Filter Include="Source Files\utils\film">
       <UniqueIdentifier>{527f679b-1d5f-4a9d-96b1-6cbd58faf8b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>

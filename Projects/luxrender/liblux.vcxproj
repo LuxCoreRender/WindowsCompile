@@ -317,6 +317,7 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\rendererstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\core\tigerhash.cpp" />
     <ClCompile Include="..\..\..\lux\film\fleximage.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\environment.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\orthographic.cpp" />
@@ -334,6 +335,7 @@
     <ClCompile Include="..\..\..\lux\integrators\exphotonmap.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\igi.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\multi.cpp" />
+    <ClCompile Include="..\..\..\lux\integrators\none.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\path.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\single.cpp" />
     <ClCompile Include="..\..\..\lux\integrators\sppm.cpp" />
@@ -569,6 +571,7 @@
     <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h" />
     <ClInclude Include="..\..\..\lux\core\rendererstatistics.h" />
     <ClInclude Include="..\..\..\lux\core\streamio.h" />
+    <ClInclude Include="..\..\..\lux\core\tigerhash.h" />
     <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
@@ -584,6 +587,7 @@
     <ClInclude Include="..\..\..\lux\integrators\exphotonmap.h" />
     <ClInclude Include="..\..\..\lux\integrators\igi.h" />
     <ClInclude Include="..\..\..\lux\integrators\multi.h" />
+    <ClInclude Include="..\..\..\lux\integrators\none.h" />
     <ClInclude Include="..\..\..\lux\integrators\path.h" />
     <ClInclude Include="..\..\..\lux\integrators\single.h" />
     <ClInclude Include="..\..\..\lux\integrators\sppm.h" />

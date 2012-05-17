@@ -18,7 +18,7 @@
       <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
       <AdditionalDependencies>FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

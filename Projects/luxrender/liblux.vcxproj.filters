@@ -932,6 +932,12 @@
     <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp">
       <Filter>Source Files\renderers\statistics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\tigerhash.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\integrators\none.cpp">
+      <Filter>Source Files\integrators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1725,6 +1731,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\renderers\statistics\sppmstatistics.h">
       <Filter>Header Files\renderers\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\tigerhash.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\integrators\none.h">
+      <Filter>Header Files\integrators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
