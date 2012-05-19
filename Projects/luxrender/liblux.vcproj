@@ -691,6 +691,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\integrators\none.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\integrators\path.cpp"
 					>
 				</File>
@@ -1870,6 +1874,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\integrators\multi.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\integrators\none.h"
 					>
 				</File>
 				<File

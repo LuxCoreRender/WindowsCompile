@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="smallluxgpu"
+	Name="smallluxgpu2"
 	ProjectGUID="{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
 	RootNamespace="smallluxgpu"
 	TargetFrameworkVersion="196613"
@@ -243,6 +243,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
 			/>
 			<Tool
 				Name="VCALinkTool"
