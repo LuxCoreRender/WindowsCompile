@@ -317,6 +317,7 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\rendererstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\core\scheduler.cpp" />
     <ClCompile Include="..\..\..\lux\core\tigerhash.cpp" />
     <ClCompile Include="..\..\..\lux\film\fleximage.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\environment.cpp" />
@@ -545,7 +546,7 @@
     <ClCompile Include="..\..\..\lux\spds\rgbillum.cpp" />
     <ClCompile Include="..\..\..\lux\spds\rgbrefl.cpp" />
     <ClCompile Include="..\..\..\lux\server\renderserver.cpp" />
-    <ClCompile Include="C:\Prog\Lux\lux\renderers\sppm\parallelhashgrid.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h" />
@@ -570,6 +571,7 @@
     <ClInclude Include="..\..\..\lux\core\reflection\fresnel.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h" />
     <ClInclude Include="..\..\..\lux\core\rendererstatistics.h" />
+    <ClInclude Include="..\..\..\lux\core\scheduler.h" />
     <ClInclude Include="..\..\..\lux\core\streamio.h" />
     <ClInclude Include="..\..\..\lux\core\tigerhash.h" />
     <ClInclude Include="..\..\..\lux\core\version.h" />

@@ -914,9 +914,6 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp">
       <Filter>Source Files\core\reflection\bsdf</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Prog\Lux\lux\renderers\sppm\parallelhashgrid.cpp">
-      <Filter>Source Files\renderers\sppm</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\accelerators\sqbvhaccel.cpp">
       <Filter>Source Files\accelerators</Filter>
     </ClCompile>
@@ -937,6 +934,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\integrators\none.cpp">
       <Filter>Source Files\integrators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\scheduler.cpp">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1737,6 +1740,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\integrators\none.h">
       <Filter>Header Files\integrators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\scheduler.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
