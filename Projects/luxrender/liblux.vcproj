@@ -1451,6 +1451,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\scheduler.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\shape.cpp"
 					>
 				</File>
@@ -2574,6 +2578,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\scene.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\scheduler.h"
 					>
 				</File>
 				<File
