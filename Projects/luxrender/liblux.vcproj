@@ -1111,6 +1111,10 @@
 				Name="textures"
 				>
 				<File
+					RelativePath="..\..\..\lux\textures\add.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\textures\band.cpp"
 					>
 				</File>
@@ -1256,6 +1260,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\sellmeiertexture.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\subtract.cpp"
 					>
 				</File>
 				<File
@@ -2149,6 +2157,10 @@
 				Name="textures"
 				>
 				<File
+					RelativePath="..\..\..\lux\textures\add.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\textures\band.h"
 					>
 				</File>
@@ -2294,6 +2306,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\textures\sellmeiertexture.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\textures\subtract.h"
 					>
 				</File>
 				<File
