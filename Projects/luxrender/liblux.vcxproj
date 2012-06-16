@@ -408,6 +408,7 @@
     <ClCompile Include="..\..\..\lux\samplers\lowdiscrepancy.cpp" />
     <ClCompile Include="..\..\..\lux\samplers\metrosampler.cpp" />
     <ClCompile Include="..\..\..\lux\samplers\random.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\add.cpp" />
     <ClCompile Include="..\..\..\lux\textures\band.cpp" />
     <ClCompile Include="..\..\..\lux\textures\bilerp.cpp" />
     <ClCompile Include="..\..\..\lux\textures\blackbody.cpp" />
@@ -445,6 +446,7 @@
     <ClCompile Include="..\..\..\lux\textures\regulardata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\scale.cpp" />
     <ClCompile Include="..\..\..\lux\textures\sellmeiertexture.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\subtract.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulateddata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulatedfresnel.cpp" />
     <ClCompile Include="..\..\..\lux\textures\uv.cpp" />
@@ -652,6 +654,7 @@
     <ClInclude Include="..\..\..\lux\shapes\stlmesh.h" />
     <ClInclude Include="..\..\..\lux\shapes\torus.h" />
     <ClInclude Include="..\..\..\lux\shapes\plymesh\rply.h" />
+    <ClInclude Include="..\..\..\lux\textures\add.h" />
     <ClInclude Include="..\..\..\lux\textures\band.h" />
     <ClInclude Include="..\..\..\lux\textures\bilerp.h" />
     <ClInclude Include="..\..\..\lux\textures\blackbody.h" />
@@ -690,6 +693,7 @@
     <ClInclude Include="..\..\..\lux\textures\regulardata.h" />
     <ClInclude Include="..\..\..\lux\textures\scale.h" />
     <ClInclude Include="..\..\..\lux\textures\sellmeiertexture.h" />
+    <ClInclude Include="..\..\..\lux\textures\subtract.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulateddata.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulatedfresnel.h" />
     <ClInclude Include="..\..\..\lux\textures\uv.h" />

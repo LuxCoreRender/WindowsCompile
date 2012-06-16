@@ -941,6 +941,12 @@
     <ClCompile Include="..\..\..\lux\core\scheduler.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\add.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\subtract.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1743,6 +1749,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\scheduler.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\add.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\subtract.h">
+      <Filter>Header Files\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
