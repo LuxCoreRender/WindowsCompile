@@ -803,6 +803,18 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="pdiff"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\pdiff\LPyramid.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\src\utils\pdiff\Metric.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter
@@ -1052,6 +1064,18 @@
 							>
 						</File>
 					</Filter>
+				</Filter>
+				<Filter
+					Name="pdiff"
+					>
+					<File
+						RelativePath="..\..\..\luxrays\include\luxrays\utils\pdiff\LPyramid.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\include\luxrays\utils\pdiff\Metric.h"
+						>
+					</File>
 				</Filter>
 			</Filter>
 		</Filter>
