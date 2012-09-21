@@ -804,16 +804,24 @@
 					</File>
 				</Filter>
 				<Filter
-					Name="pdiff"
+					Name="convtest"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\src\utils\pdiff\LPyramid.cpp"
+						RelativePath="..\..\..\luxrays\src\utils\convtest\convtest.cpp"
 						>
 					</File>
-					<File
-						RelativePath="..\..\..\luxrays\src\utils\pdiff\Metric.cpp"
+					<Filter
+						Name="pdiff"
 						>
-					</File>
+						<File
+							RelativePath="..\..\..\luxrays\src\utils\convtest\pdiff\lpyramid.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\src\utils\convtest\pdiff\metric.cpp"
+							>
+						</File>
+					</Filter>
 				</Filter>
 			</Filter>
 		</Filter>
@@ -1066,16 +1074,24 @@
 					</Filter>
 				</Filter>
 				<Filter
-					Name="pdiff"
+					Name="convtest"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\include\luxrays\utils\pdiff\LPyramid.h"
+						RelativePath="..\..\..\luxrays\include\luxrays\utils\convtest\convtest.h"
 						>
 					</File>
-					<File
-						RelativePath="..\..\..\luxrays\include\luxrays\utils\pdiff\Metric.h"
+					<Filter
+						Name="pdiff"
 						>
-					</File>
+						<File
+							RelativePath="..\..\..\luxrays\include\luxrays\utils\convtest\pdiff\lpyramid.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\luxrays\include\luxrays\utils\convtest\pdiff\metric.h"
+							>
+						</File>
+					</Filter>
 				</Filter>
 			</Filter>
 		</Filter>
