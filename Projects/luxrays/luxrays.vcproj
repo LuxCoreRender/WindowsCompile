@@ -600,6 +600,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\luxrays\src\core\epsilon.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\luxrays\src\core\trianglemesh.cpp"
 					>
 				</File>
@@ -871,6 +875,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\luxrays\include\luxrays\core\device.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\core\epsilon.h"
 					>
 				</File>
 				<File
