@@ -1371,10 +1371,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\core\epsilon.cpp"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\core\exrio.cpp"
 					>
 				</File>
@@ -1509,14 +1505,6 @@
 				<Filter
 					Name="geometry"
 					>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\bbox.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\matrix4x4.cpp"
-						>
-					</File>
 					<File
 						RelativePath="..\..\..\lux\core\geometry\quaternion.cpp"
 						>
@@ -2473,10 +2461,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\lux\core\epsilon.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\..\lux\core\error.h"
 					>
 				</File>
@@ -2656,19 +2640,7 @@
 					Name="geometry"
 					>
 					<File
-						RelativePath="..\..\..\lux\core\geometry\bbox.h"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\lux\core\geometry\matrix3x3.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\matrix4x4-sse.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\matrix4x4.h"
 						>
 					</File>
 					<File
