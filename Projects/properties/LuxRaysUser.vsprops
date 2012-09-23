@@ -6,7 +6,7 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories="&quot;$(LUX_GLUT_INCLUDE)&quot;;&quot;$(LUX_GLEW_INCLUDE)&quot;"
+		AdditionalIncludeDirectories="../../../luxrays/include;&quot;$(LUX_GLUT_INCLUDE)&quot;;&quot;$(LUX_GLEW_INCLUDE)&quot;"
 		PreprocessorDefinitions="FREEGLUT_STATIC"
 	/>
 	<Tool
