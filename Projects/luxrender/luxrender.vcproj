@@ -641,6 +641,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\lux\console\commandline.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\qtgui\gammawidget.cpp"
 				>
 			</File>
@@ -1197,6 +1201,10 @@
 						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\console\commandline.h"
+				>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\gammawidget.hxx"
