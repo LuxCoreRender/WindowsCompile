@@ -619,10 +619,6 @@
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\luxrays\src\core\geometry\ray.cpp"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\luxrays\src\core\geometry\transform.cpp"
 						>
 					</File>
