@@ -7,7 +7,7 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalIncludeDirectories="../../../luxrays/include;&quot;$(LUX_GLUT_INCLUDE)&quot;;&quot;$(LUX_GLEW_INCLUDE)&quot;"
-		PreprocessorDefinitions="FREEGLUT_STATIC"
+		PreprocessorDefinitions="FREEGLUT_STATIC;NOMINMAX"
 	/>
 	<Tool
 		Name="VCLinkerTool"
