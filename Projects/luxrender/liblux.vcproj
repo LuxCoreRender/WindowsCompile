@@ -1513,10 +1513,6 @@
 						RelativePath="..\..\..\lux\core\geometry\raydifferential.cpp"
 						>
 					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\transform.cpp"
-						>
-					</File>
 				</Filter>
 				<Filter
 					Name="reflection"
@@ -2644,43 +2640,11 @@
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\core\geometry\normal.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\point.h"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\lux\core\geometry\quaternion.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\lux\core\geometry\ray.h"
-						>
-					</File>
-					<File
 						RelativePath="..\..\..\lux\core\geometry\raydifferential.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\transform-sse.inl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\transform.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\transform.inl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\vector.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\lux\core\geometry\vector_normal.h"
 						>
 					</File>
 				</Filter>
