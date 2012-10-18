@@ -858,7 +858,7 @@
 				Name="core"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\include\luxrays\core\acceleretor.h"
+					RelativePath="..\..\..\luxrays\include\luxrays\core\accelerator.h"
 					>
 				</File>
 				<File
