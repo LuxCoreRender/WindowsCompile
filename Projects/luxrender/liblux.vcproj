@@ -855,6 +855,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\materials\cloth.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\materials\glass.cpp"
 					>
 				</File>
@@ -1549,6 +1553,10 @@
 							>
 						</File>
 						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\irawan.cpp"
+							>
+						</File>
+						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\lafortune.cpp"
 							>
 						</File>
@@ -1966,6 +1974,10 @@
 				>
 				<File
 					RelativePath="..\..\..\lux\materials\carpaint.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\materials\cloth.h"
 					>
 				</File>
 				<File
@@ -2680,6 +2692,10 @@
 						</File>
 						<File
 							RelativePath="..\..\..\lux\core\reflection\bxdf\fresnelblend.h"
+							>
+						</File>
+						<File
+							RelativePath="..\..\..\lux\core\reflection\bxdf\irawan.h"
 							>
 						</File>
 						<File
