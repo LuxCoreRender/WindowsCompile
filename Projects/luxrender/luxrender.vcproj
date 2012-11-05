@@ -693,6 +693,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\lux\qtgui\queue.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\lux\qtgui\renderview.cpp"
 				>
 			</File>
@@ -2249,6 +2253,10 @@
 						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\lux\qtgui\queue.hxx"
+				>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\renderview.hxx"
