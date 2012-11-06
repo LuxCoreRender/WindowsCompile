@@ -1098,6 +1098,30 @@
 					</Filter>
 				</Filter>
 			</Filter>
+			<Filter
+				Name="opencl"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\opencl\device.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\opencl\intersectiondevice.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\opencl\opencl.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\opencl\pixeldevice.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\include\luxrays\opencl\utils.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
