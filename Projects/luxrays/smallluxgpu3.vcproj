@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="smallluxgpu2"
-	ProjectGUID="{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
-	RootNamespace="smallluxgpu"
+	Name="smallluxgpu3"
+	ProjectGUID="{19A01C2D-1535-4A96-8373-8C31F9BA36A4}"
+	RootNamespace="smallluxgpu3"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -43,194 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				WholeProgramOptimization="false"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-				Description=""
-				CommandLine=""
-			/>
-		</Configuration>
-		<Configuration
-			Name="Debug|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\64bit-Variables.vsprops"
-			CharacterSet="0"
-			WholeProgramOptimization="0"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-				Description=""
-				CommandLine=""
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
-			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
-			CharacterSet="0"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-				Description=""
-				CommandLine=""
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\64bit-Variables.vsprops"
-			CharacterSet="0"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -265,7 +78,193 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
+				CommandLine=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Debug.vsprops;..\properties\64bit-Variables.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\32bit-Release.vsprops;..\properties\SSE2.vsprops;..\properties\32bit-Variables.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			ConfigurationType="1"
+			InheritedPropertySheets="..\properties\LuxRaysProperties.vsprops;..\properties\LuxConsoleApp.vsprops;..\properties\LuxRaysUser.vsprops;..\properties\64bit-Release.vsprops;..\properties\64bit-Variables.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
 				CommandLine=""
 			/>
 		</Configuration>
@@ -293,7 +292,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X86_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -307,6 +306,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -328,7 +328,6 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 			/>
 		</Configuration>
@@ -357,7 +356,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
+				AdditionalIncludeDirectories="..\..\..\luxrays\samples\smallluxgpu3;&quot;$(LUX_FREEIMAGE_ROOT)/FreeImage/Source&quot;;&quot;$(LUX_X64_GLEW_INCLUDE)&quot;"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -370,6 +369,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				IgnoreDefaultLibraryNames="LIBCMT"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -392,7 +392,6 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 			/>
 		</Configuration>
@@ -406,140 +405,108 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\displayfunc.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\displayfunc.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\renderconfig.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\slgscene.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\renderengine.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\smallluxgpu.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\rendersession.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\telnet.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\smallluxgpu.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\volume.cpp"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\telnet.cpp"
 				>
 			</File>
 			<Filter
-				Name="sppm"
+				Name="pathocl"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\hashgrid.cpp"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.cpp"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\hybridhashgrid.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\kdtree.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.cpp"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="pathgpu"
-				>
-				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.cpp"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathoclthread.cpp"
 					>
 				</File>
 				<Filter
 					Name="kernels"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cl"
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_core.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\pathgpu_kernel.cpp"
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_datatypes.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_filters.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_samplers.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_scene.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernels.cpp"
 						>
 					</File>
 				</Filter>
 			</Filter>
 			<Filter
-				Name="path"
+				Name="pathcpu"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\path\path.cpp"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcputhread.cpp"
 					>
 				</File>
 			</Filter>
 			<Filter
-				Name="pathgpu2"
+				Name="bidircpu"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.cpp"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.cpp"
 					>
 				</File>
-				<Filter
-					Name="kernels"
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircputhread.cpp"
 					>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_core.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_datatypes.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_filters.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_samplers.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernel_scene.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cl"
-						>
-					</File>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\pathgpu2_kernels.cpp"
-						>
-					</File>
-				</Filter>
+				</File>
+			</Filter>
+			<Filter
+				Name="lightcpu"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcputhread.cpp"
+					>
+				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -548,96 +515,84 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\displayfunc.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\displayfunc.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\renderconfig.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\editaction.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\renderengine.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\sampler.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\renderengine.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\slgcfg.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\rendersession.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\slgscene.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\slgcfg.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\smalllux.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\smalllux.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\telnet.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\luxrays\samples\smallluxgpu\volume.h"
+				RelativePath="..\..\..\luxrays\samples\smallluxgpu3\telnet.h"
 				>
 			</File>
 			<Filter
-				Name="sppm"
+				Name="pathocl"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\hitpoints.h"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\lookupaccel.h"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\ocldatatypes.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\sppm\sppm.h"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="pathgpu"
-				>
-				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu\pathgpu.h"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.h"
 					>
 				</File>
 				<Filter
 					Name="kernels"
 					>
 					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu\kernels\kernels.h"
+						RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\kernels.h"
 						>
 					</File>
 				</Filter>
 			</Filter>
 			<Filter
-				Name="path"
+				Name="pathcpu"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\path\path.h"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.h"
 					>
 				</File>
 			</Filter>
 			<Filter
-				Name="pathgpu2"
+				Name="lightcpu"
 				>
 				<File
-					RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\pathgpu2.h"
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.h"
 					>
 				</File>
-				<Filter
-					Name="kernels"
+			</Filter>
+			<Filter
+				Name="bidircpu"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.h"
 					>
-					<File
-						RelativePath="..\..\..\luxrays\samples\smallluxgpu\pathgpu2\kernels\kernels.h"
-						>
-					</File>
-				</Filter>
+				</File>
 			</Filter>
 		</Filter>
 		<Filter

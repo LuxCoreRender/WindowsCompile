@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblux", "Projects\luxrender\liblux.vcproj", "{8C159477-7802-4C52-865E-131537BBAD83}"
 	ProjectSection(ProjectDependencies) = postProject
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
@@ -7,17 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblux", "Projects\luxrende
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luxrays", "Projects\luxrays\luxrays.vcproj", "{712CFE41-8A81-492A-89A6-D38B1EACC54B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchpixel", "Projects\luxrays\benchpixel.vcproj", "{B08B8FA6-2D5A-440E-9037-65A2509B5536}"
-	ProjectSection(ProjectDependencies) = postProject
-		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchsimple", "Projects\luxrays\benchsimple.vcproj", "{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}"
 	ProjectSection(ProjectDependencies) = postProject
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu", "Projects\luxrays\smallluxgpu.vcproj", "{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu2", "Projects\luxrays\smallluxgpu2.vcproj", "{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
 	EndProjectSection
@@ -60,6 +55,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp_api", "Projects\luxrender\cpp_api.vcproj", "{F437CB40-F4F7-4663-93AA-B61BF95F0EC9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8C159477-7802-4C52-865E-131537BBAD83} = {8C159477-7802-4C52-865E-131537BBAD83}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu3", "Projects\luxrays\smallluxgpu3.vcproj", "{19A01C2D-1535-4A96-8373-8C31F9BA36A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{712CFE41-8A81-492A-89A6-D38B1EACC54B} = {712CFE41-8A81-492A-89A6-D38B1EACC54B}
 	EndProjectSection
 EndProject
 Global
@@ -116,16 +116,6 @@ Global
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|Win32.Build.0 = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.ActiveCfg = Release|x64
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.Build.0 = Release|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug SSE1|Win32.ActiveCfg = Debug|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug SSE1|x64.ActiveCfg = Debug|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug|x64.ActiveCfg = Debug|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release NoOpenCL|Win32.ActiveCfg = Release NoOpenCL|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release NoOpenCL|x64.ActiveCfg = Release NoOpenCL|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release SSE1|Win32.ActiveCfg = Release|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release SSE1|x64.ActiveCfg = Release|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release|Win32.ActiveCfg = Release|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release|x64.ActiveCfg = Release|x64
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug SSE1|Win32.ActiveCfg = Debug|Win32
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug SSE1|x64.ActiveCfg = Debug|x64
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -316,6 +306,22 @@ Global
 		{F437CB40-F4F7-4663-93AA-B61BF95F0EC9}.Release|Win32.Build.0 = Release|Win32
 		{F437CB40-F4F7-4663-93AA-B61BF95F0EC9}.Release|x64.ActiveCfg = Release|x64
 		{F437CB40-F4F7-4663-93AA-B61BF95F0EC9}.Release|x64.Build.0 = Release|x64
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug SSE1|Win32.ActiveCfg = Debug|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug SSE1|Win32.Build.0 = Debug|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug SSE1|x64.ActiveCfg = Debug|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug|Win32.Build.0 = Debug|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug|x64.ActiveCfg = Debug|x64
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Debug|x64.Build.0 = Debug|x64
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release NoOpenCL|Win32.ActiveCfg = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release NoOpenCL|Win32.Build.0 = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release NoOpenCL|x64.ActiveCfg = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release SSE1|Win32.ActiveCfg = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release SSE1|Win32.Build.0 = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release SSE1|x64.ActiveCfg = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release|Win32.ActiveCfg = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release|Win32.Build.0 = Release|Win32
+		{19A01C2D-1535-4A96-8373-8C31F9BA36A4}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
