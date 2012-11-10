@@ -508,6 +508,22 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="bidirhybrid"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybridthread.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirstate.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -591,6 +607,14 @@
 				>
 				<File
 					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="bidirhybrid"
+				>
+				<File
+					RelativePath="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.h"
 					>
 				</File>
 			</Filter>
