@@ -26,6 +26,8 @@ CALL:checkEnvVarValid "LUX_X86_PYTHON3_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_BOOST_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_FREEIMAGE_ROOT" || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_GLUT_ROOT"      || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_GLEW_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_ZLIB_ROOT"      || EXIT /b -1
 
 msbuild /? > NUL
@@ -106,6 +108,8 @@ echo Building Qt may take a very long time! The Qt configure utility will now
 echo ask you a few questions before building commences. The rest of the build 
 echo process should be autonomous.
 pause
+
+IF EXIST bin\syncqt.bat move bin\syncqt.bat bin\syncqt.bat.disabled
 
 configure -opensource -release -fast -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-qt3support -no-sse2
 nmake
@@ -195,6 +199,36 @@ rem Patch solution file to enable FreeImageLib as a build target
 
 IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
 msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
+
+:: ****************************************************************************
+:: ********************************** freeglut ********************************
+:: ****************************************************************************
+:freeglut
+echo.
+echo **************************************************************************
+echo * Building freeglut
+echo **************************************************************************
+cd /d %LUX_X86_GLUT_ROOT%
+
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2008\freeglut.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2008\freeglut.sln
+
+:: ****************************************************************************
+:: ********************************** GLEW ************************************
+:: ****************************************************************************
+:GLEW
+echo.
+echo **************************************************************************
+echo * Building GLEW
+echo **************************************************************************
+cd /d %LUX_X86_GLEW_ROOT%
+
+rem Install new solution and project files
+copy %LUX_WINDOWS_BUILD_ROOT%\support\glew.sln build\vc6\glew.sln
+copy %LUX_WINDOWS_BUILD_ROOT%\support\glew_static.vcproj build\vc6\glew_static.vcproj
+
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" build\vc6\glew.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" build\vc6\glew.sln
 
 :: ****************************************************************************
 :: ******************************* LuxRays ************************************

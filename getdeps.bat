@@ -4,21 +4,21 @@
 SET BOOST_VER_U=1_47_0
 SET BOOST_VER_P=1.47.0
 
-SET PYTHON2_VER=2.7.1
-SET PYTHON3_VER=3.2
+SET PYTHON2_VER=2.7.3
+SET PYTHON3_VER=3.2.3
 
-SET FREEIMAGE_VER_P=3.14.1
-SET FREEIMAGE_VER_N=3141
+SET FREEIMAGE_VER_P=3.15.4
+SET FREEIMAGE_VER_N=3154
 
-SET ZLIB_VER=1.2.3
+SET ZLIB_VER=1.2.7
 
-SET BZIP2_VER=1.0.5
+SET BZIP2_VER=1.0.6
 
-SET QT_VER=4.7.2
+SET QT_VER=4.8.3
 
-SET GLEW_VER=1.5.5
+SET GLEW_VER=1.9.0
 
-SET FREEGLUT_VER=2.6.0
+SET FREEGLUT_VER=2.8.0
 
 :: Initial message to display to user
 echo.
@@ -36,12 +36,11 @@ echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.pyth
 echo   freeglut %FREEGLUT_VER%                           http://freeglut.sourceforge.net/
 echo   and EITHER:
 echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
-echo       NVIDIA CUDA ToolKit 3.1 / 4.0
-echo           http://developer.nvidia.com/object/cuda_3_1_downloads.html
-echo           http://developer.nvidia.com/cuda-toolkit-40
+echo       NVIDIA CUDA ToolKit 3.1 / 4.2
+echo           http://developer.nvidia.com/cuda-downloads
 echo   OR:
-echo       ATI Stream SDK 2.3 / 2.4
-echo           http://developer.amd.com/gpu/atistreamsdk/pages/default.aspx
+echo       ATI Stream SDK 2.3 / 2.7
+echo           http://developer.amd.com/sdks/AMDAPPSDK/
 echo.
 echo Downloading and extracting all this source code will require several gigabytes,
 echo and building it will require a lot more. Make sure you have plenty of space
@@ -155,15 +154,15 @@ echo Please select which OpenCL SDK you wish to use:
 echo.
 echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
 echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
-echo 3. NVIDIA CUDA ToolKit 4.0 for Win 32 bit
-echo 4. NVIDIA CUDA ToolKit 4.0 for Win 64 bit (also contains 32bit libs)
-echo 5. AMD APP SDK 2.4 for Vista/Win7 32 bit
-echo 6. AMD APP SDK 2.4 for Vista/Win7 64 bit (also contains 32bit libs)
+echo 3. NVIDIA CUDA ToolKit 4.2 for Win 32 bit
+echo 4. NVIDIA CUDA ToolKit 4.2 for Win 64 bit (also contains 32bit libs)
+echo 5. AMD APP SDK 2.7 for Vista/Win7 32 bit
+echo 6. AMD APP SDK 2.7 for Vista/Win7 64 bit (also contains 32bit libs)
 echo 7. ATI STREAM SDK 2.3 for XP SP3 32 bit
 echo 8. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
 echo N3. I have already installed an NVIDIA CUDA 3.1 Toolkit
-echo N4. I have already installed an NVIDIA CUDA 4.0 Toolkit
-echo A. I have already installed an ATI Stream SDK
+echo N4. I have already installed an NVIDIA CUDA 4.x Toolkit
+echo A. I have already installed an AMD APP or ATI Stream SDK
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
@@ -197,30 +196,30 @@ GOTO OpenCLInstall
 
 :CUDA_2_32
 set OPENCL_VARS=SetCUDAVars2
-set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
-set OPENCL_PKG=cudatoolkit_4.0.17_win_32.msi
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.2 for Win 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/
+set OPENCL_PKG=cudatoolkit_4.2.9_win_32.msi
 GOTO OpenCLInstall
 
 :CUDA_2_64
 set OPENCL_VARS=SetCUDAVars2
-set OPENCL_NAME=NVIDIA CUDA ToolKit 4.0 for Win 64 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_0/toolkit/
-set OPENCL_PKG=cudatoolkit_4.0.17_win_64.msi
+set OPENCL_NAME=NVIDIA CUDA ToolKit 4.2 for Win 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/
+set OPENCL_PKG=cudatoolkit_4.2.9_win_64.msi
 GOTO OpenCLInstall
 
 :STREAM_1_32
 set OPENCL_VARS=SetAMDAPPVars
-set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 32 bit
-set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
-set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-32.exe
+set OPENCL_NAME=AMD APP SDK 2.7 for Vista/Win7 32 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=AMD-APP-SDK-v2.7-Windows-32.exe
 GOTO OpenCLInstall
 
 :STREAM_1_64
 set OPENCL_VARS=SetAMDAPPVars
-set OPENCL_NAME=AMD APP SDK 2.4 for Vista/Win7 64 bit
-set OPENCL_URL=http://download2-developer.amd.com/amd/APPSDK/
-set OPENCL_PKG=AMD-APP-SDK-v2.4-Windows-64.exe
+set OPENCL_NAME=AMD APP SDK 2.7 for Vista/Win7 64 bit
+set OPENCL_URL=http://developer.amd.com/Downloads/
+set OPENCL_PKG=AMD-APP-SDK-v2.7-Windows-64.exe
 GOTO OpenCLInstall
 
 :STREAM_2_32
@@ -287,14 +286,14 @@ CALL:addBuildPathVar "LUX_X86_BOOST_ROOT", "%D32%\boost_%BOOST_VER_U%"
 CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"
 
 :qt
-CALL:downloadFile "QT %QT_VER%", "http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
+CALL:downloadFile "QT %QT_VER%", "http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
 CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X86_QT_ROOT", "%D32%\qt-everywhere-opensource-src-%QT_VER%"
 CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
 
 :zlib
-CALL:downloadFile "zlib %ZLIB_VER%", "http://sourceforge.net/projects/libpng/files/zlib/%ZLIB_VER%/zlib-%ZLIB_VER%.tar.gz/download", "zlib-%ZLIB_VER%.tar.gz" || EXIT /b -1
+CALL:downloadFile "zlib %ZLIB_VER%", "http://zlib.net/zlib-%ZLIB_VER%.tar.gz", "zlib-%ZLIB_VER%.tar.gz" || EXIT /b -1
 CALL:extractFile "zlib %ZLIB_VER%", "%DOWNLOADS%\zlib-%ZLIB_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X86_ZLIB_ROOT", "%D32%\zlib-%ZLIB_VER%"
@@ -329,28 +328,22 @@ CALL:addBuildPathVar "LUX_X86_PYTHON3_ROOT", "%D32%\Python-%PYTHON3_VER%"
 CALL:addBuildPathVar "LUX_X64_PYTHON3_ROOT", "%D64%\Python-%PYTHON3_VER%"
 
 :freeglut
-REM CALL:downloadFile "freeglut %FREEGLUT_VER%", "http://downloads.sourceforge.net/freeglut/freeglut-%FREEGLUT_VER%.tar.gz", "freeglut-%FREEGLUT_VER%.tar.gz" || EXIT /b -1
-REM CALL:extractFile "freeglut %FREEGLUT_VER%", "%DOWNLOADS%\freeglut-%FREEGLUT_VER%.tar.gz"
-CALL:extractFile "freeglut %FREEGLUT_VER%", "%LUX_WINDOWS_BUILD_ROOT%\support\freeglut-2.6.0.7z"
+CALL:downloadFile "freeglut %FREEGLUT_VER%", "http://downloads.sourceforge.net/freeglut/freeglut-%FREEGLUT_VER%.tar.gz", "freeglut-%FREEGLUT_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "freeglut %FREEGLUT_VER%", "%DOWNLOADS%\freeglut-%FREEGLUT_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X86_GLUT_ROOT",    "%D32%\freeglut-%FREEGLUT_VER%"
 CALL:addBuildPathVar "LUX_X64_GLUT_ROOT",    "%D64%\freeglut-%FREEGLUT_VER%"
 CALL:addBuildPathVar "LUX_X86_GLUT_INCLUDE", "%D32%\freeglut-%FREEGLUT_VER%\include"
 CALL:addBuildPathVar "LUX_X64_GLUT_INCLUDE", "%D64%\freeglut-%FREEGLUT_VER%\include"
-CALL:addBuildPathVar "LUX_X86_GLUT_LIBS",    "%D32%\freeglut-%FREEGLUT_VER%\VisualStudio2008Static\Win32\Release"
-CALL:addBuildPathVar "LUX_X64_GLUT_LIBS",    "%D64%\freeglut-%FREEGLUT_VER%\VisualStudio2008Static\x64\Release"
+CALL:addBuildPathVar "LUX_X86_GLUT_LIBS",    "%D32%\freeglut-%FREEGLUT_VER%\lib\x86"
+CALL:addBuildPathVar "LUX_X64_GLUT_LIBS",    "%D64%\freeglut-%FREEGLUT_VER%\lib\x64"
 
 :glew
-CALL:downloadFile "GLEW %GLEW_VER% 32 bit", "http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x86.zip", "glew-%GLEW_VER%_x86.zip" || EXIT /b -1
-CALL:downloadFile "GLEW %GLEW_VER% 64 bit", "http://www.luxrender.net/release/luxrender/dev/win/libs/glew-%GLEW_VER%_x64.zip", "glew-%GLEW_VER%_x64.zip" || EXIT /b -1
+CALL:downloadFile "GLEW %GLEW_VER%", "http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%.tgz/download", "glew-%GLEW_VER%.tgz" || EXIT /b -1
+CALL:extractFile "GLEW %GLEW_VER%", "%DOWNLOADS%\glew-%GLEW_VER%.tgz"
 
-echo.
-echo **************************************************************************
-echo * Extracting GLEW                                                        *
-echo **************************************************************************
-%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x86.zip -o%D32%\ > NUL
-%UNZIPBIN% x -y %DOWNLOADS%\glew-%GLEW_VER%_x64.zip -o%D64%\ > NUL
-
+CALL:addBuildPathVar "LUX_X86_GLEW_ROOT",    "%D32%\glew-%GLEW_VER%"
+CALL:addBuildPathVar "LUX_X64_GLEW_ROOT",    "%D64%\glew-%GLEW_VER%"
 CALL:addBuildPathVar "LUX_X86_GLEW_INCLUDE", "%D32%\glew-%GLEW_VER%\include"
 CALL:addBuildPathVar "LUX_X64_GLEW_INCLUDE", "%D64%\glew-%GLEW_VER%\include"
 CALL:addBuildPathVar "LUX_X86_GLEW_LIBS",    "%D32%\glew-%GLEW_VER%\lib"
