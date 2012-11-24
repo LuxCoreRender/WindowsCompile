@@ -34,8 +34,8 @@ echo   bzip %BZIP2_VER%                               http://www.bzip.org/
 echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.net/
 echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.python.org/
 echo   freeglut %FREEGLUT_VER%                           http://freeglut.sourceforge.net/
+echo   GLEW %GLEW_VER%                               http://glew.sourceforge.net/
 echo   and EITHER:
-echo       GLEW %GLEW_VER%                           http://glew.sourceforge.net/
 echo       NVIDIA CUDA ToolKit 3.1 / 4.2
 echo           http://developer.nvidia.com/cuda-downloads
 echo   OR:
