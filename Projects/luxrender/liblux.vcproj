@@ -1347,6 +1347,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\core\partialcontribution.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\core\photonmap.cpp"
 					>
 				</File>
@@ -2466,6 +2470,10 @@
 				</File>
 				<File
 					RelativePath="..\..\..\lux\core\paramset.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\lux\core\partialcontribution.h"
 					>
 				</File>
 				<File
