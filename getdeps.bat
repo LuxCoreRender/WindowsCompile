@@ -36,7 +36,7 @@ echo   Python %PYTHON2_VER% ^& Python %PYTHON3_VER%              http://www.pyth
 echo   freeglut %FREEGLUT_VER%                           http://freeglut.sourceforge.net/
 echo   GLEW %GLEW_VER%                               http://glew.sourceforge.net/
 echo   and EITHER:
-echo       NVIDIA CUDA ToolKit 3.1 / 4.2
+echo       NVIDIA CUDA ToolKit 5.0
 echo           http://developer.nvidia.com/cuda-downloads
 echo   OR:
 echo       ATI Stream SDK 2.3 / 2.7
@@ -152,60 +152,60 @@ echo **************************************************************************
 echo.
 echo Please select which OpenCL SDK you wish to use:
 echo.
-echo 1. NVIDIA CUDA ToolKit 3.1 for Win 32 bit
-echo 2. NVIDIA CUDA ToolKit 3.1 for Win 64 bit (also contains 32bit libs)
-echo 3. NVIDIA CUDA ToolKit 4.2 for Win 32 bit
-echo 4. NVIDIA CUDA ToolKit 4.2 for Win 64 bit (also contains 32bit libs)
+echo 1. NVIDIA CUDA ToolKit 5.0 for Win XP 32 bit
+echo 2. NVIDIA CUDA ToolKit 5.0 for Win XP 64 bit (also contains 32bit libs)
+echo 3. NVIDIA CUDA ToolKit 5.0 for Win 8/7/Vista 32 bit
+echo 4. NVIDIA CUDA ToolKit 5.0 for Win 8/7/Vista 64 bit (also contains 32bit libs)
 echo 5. AMD APP SDK 2.7 for Vista/Win7 32 bit
 echo 6. AMD APP SDK 2.7 for Vista/Win7 64 bit (also contains 32bit libs)
 echo 7. ATI STREAM SDK 2.3 for XP SP3 32 bit
 echo 8. ATI STREAM SDK 2.3 for XP SP3 64 bit (also contains 32bit libs)
 echo N3. I have already installed an NVIDIA CUDA 3.1 Toolkit
-echo N4. I have already installed an NVIDIA CUDA 4.x Toolkit
+echo N4. I have already installed an NVIDIA CUDA 4.x or 5.x Toolkit
 echo A. I have already installed an AMD APP or ATI Stream SDK
 echo.
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
-IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_1_32
-IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_1_64
-IF %OPENCL_CHOICE% EQU 3 GOTO CUDA_2_32
-IF %OPENCL_CHOICE% EQU 4 GOTO CUDA_2_64
+IF %OPENCL_CHOICE% EQU 1 GOTO CUDA_XP_32
+IF %OPENCL_CHOICE% EQU 2 GOTO CUDA_XP_64
+IF %OPENCL_CHOICE% EQU 3 GOTO CUDA_87V_32
+IF %OPENCL_CHOICE% EQU 4 GOTO CUDA_87V_64
 IF %OPENCL_CHOICE% EQU 5 GOTO STREAM_1_32
 IF %OPENCL_CHOICE% EQU 6 GOTO STREAM_1_64
 IF %OPENCL_CHOICE% EQU 7 GOTO STREAM_2_32
 IF %OPENCL_CHOICE% EQU 8 GOTO STREAM_2_64
-IF /i "%OPENCL_CHOICE%" == "N3" GOTO SetCUDAVars1
-IF /i "%OPENCL_CHOICE%" == "N4" GOTO SetCUDAVars2
+IF /i "%OPENCL_CHOICE%" == "N3" GOTO SetCUDAVars3x
+IF /i "%OPENCL_CHOICE%" == "N4" GOTO SetCUDAVars
 IF /i "%OPENCL_CHOICE%" == "A" GOTO SetStreamVars
 echo Invalid choice
 GOTO OpenCLChoice
 
-:CUDA_1_32
-set OPENCL_VARS=SetCUDAVars1
-set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
-set OPENCL_PKG=cudatoolkit_3.1_win_32.exe
+:CUDA_XP_32
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 5.0 for Win XP 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_0/rel-update-1/installers/
+set OPENCL_PKG=cuda_5.0.35_winxp_general_32-1.msi
 GOTO OpenCLInstall
 
-:CUDA_1_64
-set OPENCL_VARS=SetCUDAVars1
-set OPENCL_NAME=NVIDIA CUDA ToolKit 3.1 for Win 64 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/3_1/toolkit/
-set OPENCL_PKG=cudatoolkit_3.1_win_64.exe
+:CUDA_XP_64
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 5.0 for Win XP 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_0/rel-update-1/installers/
+set OPENCL_PKG=cuda_5.0.35_winxp_general_64-1.msi
 GOTO OpenCLInstall
 
-:CUDA_2_32
-set OPENCL_VARS=SetCUDAVars2
-set OPENCL_NAME=NVIDIA CUDA ToolKit 4.2 for Win 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/
-set OPENCL_PKG=cudatoolkit_4.2.9_win_32.msi
+:CUDA_87V_32
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 5.0 for Win 8/7/Vista 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_0/rel-update-1/installers/
+set OPENCL_PKG=cuda_5.0.35_winvista_win7_win8_general_32-1.msi
 GOTO OpenCLInstall
 
-:CUDA_2_64
-set OPENCL_VARS=SetCUDAVars2
-set OPENCL_NAME=NVIDIA CUDA ToolKit 4.2 for Win 64 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/4_2/rel/toolkit/
-set OPENCL_PKG=cudatoolkit_4.2.9_win_64.msi
+:CUDA_87V_64
+set OPENCL_VARS=SetCUDAVars
+set OPENCL_NAME=NVIDIA CUDA ToolKit 5.0 for Win 8/7/Vista 64 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_0/rel-update-1/installers/
+set OPENCL_PKG=cuda_5.0.35_winvista_win7_win8_general_64-1.msi
 GOTO OpenCLInstall
 
 :STREAM_1_32
@@ -247,14 +247,14 @@ echo Waiting for installer. When finished,
 pause
 GOTO %OPENCL_VARS%
 
-:SetCUDAVars1
+:SetCUDAVars3x
 CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%CUDA_LIB_PATH%\..\lib\"
 CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%CUDA_LIB_PATH%"
 CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%CUDA_INC_PATH%"
 CALL:addBuildPathVar "LUX_X64_OCL_INCLUDE", "%CUDA_INC_PATH%"
 GOTO OpenCLFinished
 
-:SetCUDAVars2
+:SetCUDAVars
 CALL:addBuildPathVar "LUX_X86_OCL_LIBS",    "%CUDA_PATH%\lib\Win32"
 CALL:addBuildPathVar "LUX_X64_OCL_LIBS",    "%CUDA_PATH%\lib\x64"
 CALL:addBuildPathVar "LUX_X86_OCL_INCLUDE", "%CUDA_PATH%\include"
