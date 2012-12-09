@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug SSE1|Win32">
@@ -52,7 +52,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -64,25 +64,25 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -94,13 +94,13 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -308,14 +308,15 @@
     <ClCompile Include="..\..\..\lux\accelerators\sqbvhaccel.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\tabreckdtree.cpp" />
     <ClCompile Include="..\..\..\lux\accelerators\unsafekdtree.cpp" />
+    <ClCompile Include="..\..\..\lux\core\asyncstream.cpp" />
     <ClCompile Include="..\..\..\lux\core\filedata.cpp" />
-    <ClCompile Include="..\..\..\lux\core\luxlex.cpp" />
-    <ClCompile Include="..\..\..\lux\core\luxparse.cpp" />
+    <ClCompile Include="..\..\..\lux\core\partialcontribution.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\multibsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.cpp" />
+    <ClCompile Include="..\..\..\lux\core\reflection\bxdf\irawan.cpp" />
     <ClCompile Include="..\..\..\lux\core\rendererstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\core\scheduler.cpp" />
     <ClCompile Include="..\..\..\lux\core\tigerhash.cpp" />
@@ -347,12 +348,14 @@
     <ClCompile Include="..\..\..\lux\lights\pointlight.cpp" />
     <ClCompile Include="..\..\..\lux\lights\projection.cpp" />
     <ClCompile Include="..\..\..\lux\lights\sky.cpp" />
+    <ClCompile Include="..\..\..\lux\lights\sky2.cpp" />
     <ClCompile Include="..\..\..\lux\lights\spot.cpp" />
     <ClCompile Include="..\..\..\lux\lights\sun.cpp" />
     <ClCompile Include="..\..\..\lux\lights\sphericalfunction\photometricdata_ies.cpp" />
     <ClCompile Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction.cpp" />
     <ClCompile Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction_ies.cpp" />
     <ClCompile Include="..\..\..\lux\materials\carpaint.cpp" />
+    <ClCompile Include="..\..\..\lux\materials\cloth.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glass.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glass2.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glossy.cpp" />
@@ -446,6 +449,8 @@
     <ClCompile Include="..\..\..\lux\textures\regulardata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\scale.cpp" />
     <ClCompile Include="..\..\..\lux\textures\sellmeiertexture.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\simplexnoise\srdnoise23.cpp" />
     <ClCompile Include="..\..\..\lux\textures\subtract.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulateddata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulatedfresnel.cpp" />
@@ -470,7 +475,6 @@
     <ClCompile Include="..\..\..\lux\core\context.cpp" />
     <ClCompile Include="..\..\..\lux\core\contribution.cpp" />
     <ClCompile Include="..\..\..\lux\core\dynload.cpp" />
-    <ClCompile Include="..\..\..\lux\core\epsilon.cpp" />
     <ClCompile Include="..\..\..\lux\core\exrio.cpp" />
     <ClCompile Include="..\..\..\lux\core\film.cpp" />
     <ClCompile Include="..\..\..\lux\core\igiio.cpp" />
@@ -498,11 +502,8 @@
     <ClCompile Include="..\..\..\lux\core\transport.cpp" />
     <ClCompile Include="..\..\..\lux\core\util.cpp" />
     <ClCompile Include="..\..\..\lux\core\volume.cpp" />
-    <ClCompile Include="..\..\..\lux\core\geometry\bbox.cpp" />
-    <ClCompile Include="..\..\..\lux\core\geometry\matrix4x4.cpp" />
     <ClCompile Include="..\..\..\lux\core\geometry\quaternion.cpp" />
     <ClCompile Include="..\..\..\lux\core\geometry\raydifferential.cpp" />
-    <ClCompile Include="..\..\..\lux\core\geometry\transform.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bxdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\fresnel.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\microfacetdistribution.cpp" />
@@ -549,11 +550,12 @@
     <ClCompile Include="..\..\..\lux\spds\rgbrefl.cpp" />
     <ClCompile Include="..\..\..\lux\server\renderserver.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp" />
+    <ClCompile Include="$(IntDir)luxlex.cpp" />
+    <ClCompile Include="$(IntDir)luxparse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h" />
     <ClInclude Include="..\..\..\lux\accelerators\bvhaccel.h" />
-    <ClInclude Include="..\..\..\lux\accelerators\grid.h" />
     <ClInclude Include="..\..\..\lux\accelerators\qbvhaccel.h" />
     <ClInclude Include="..\..\..\lux\accelerators\sqbvhaccel.h" />
     <ClInclude Include="..\..\..\lux\accelerators\tabreckdtreeaccel.h" />
@@ -562,14 +564,17 @@
     <ClInclude Include="..\..\..\lux\cameras\orthographic.h" />
     <ClInclude Include="..\..\..\lux\cameras\perspective.h" />
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
+    <ClInclude Include="..\..\..\lux\core\asyncstream.h" />
     <ClInclude Include="..\..\..\lux\core\filedata.h" />
-    <ClInclude Include="..\..\..\lux\core\luxparse.hpp" />
+    <ClInclude Include="..\..\..\lux\core\geometry\transform.h" />
+    <ClInclude Include="..\..\..\lux\core\partialcontribution.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\multibsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\schlickbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\singlebsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf.h" />
+    <ClInclude Include="..\..\..\lux\core\reflection\bxdf\irawan.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\fresnel.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\microfacetdistribution.h" />
     <ClInclude Include="..\..\..\lux\core\rendererstatistics.h" />
@@ -601,6 +606,7 @@
     <ClInclude Include="..\..\..\lux\lights\pointlight.h" />
     <ClInclude Include="..\..\..\lux\lights\projection.h" />
     <ClInclude Include="..\..\..\lux\lights\sky.h" />
+    <ClInclude Include="..\..\..\lux\lights\sky2.h" />
     <ClInclude Include="..\..\..\lux\lights\spot.h" />
     <ClInclude Include="..\..\..\lux\lights\sun.h" />
     <ClInclude Include="..\..\..\lux\lights\data\lamp_spect.h" />
@@ -610,6 +616,7 @@
     <ClInclude Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction.h" />
     <ClInclude Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction_ies.h" />
     <ClInclude Include="..\..\..\lux\materials\carpaint.h" />
+    <ClInclude Include="..\..\..\lux\materials\cloth.h" />
     <ClInclude Include="..\..\..\lux\materials\glass.h" />
     <ClInclude Include="..\..\..\lux\materials\glass2.h" />
     <ClInclude Include="..\..\..\lux\materials\glossy.h" />
@@ -676,7 +683,6 @@
     <ClInclude Include="..\..\..\lux\textures\checkerboard.h" />
     <ClInclude Include="..\..\..\lux\textures\colordepth.h" />
     <ClInclude Include="..\..\..\lux\textures\constant.h" />
-    <ClInclude Include="..\..\..\lux\textures\convert.h" />
     <ClInclude Include="..\..\..\lux\textures\dots.h" />
     <ClInclude Include="..\..\..\lux\textures\equalenergy.h" />
     <ClInclude Include="..\..\..\lux\textures\fbm.h" />
@@ -693,6 +699,8 @@
     <ClInclude Include="..\..\..\lux\textures\regulardata.h" />
     <ClInclude Include="..\..\..\lux\textures\scale.h" />
     <ClInclude Include="..\..\..\lux\textures\sellmeiertexture.h" />
+    <ClInclude Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.h" />
+    <ClInclude Include="..\..\..\lux\textures\simplexnoise\srdnoise23.h" />
     <ClInclude Include="..\..\..\lux\textures\subtract.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulateddata.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulatedfresnel.h" />
@@ -721,7 +729,6 @@
     <ClInclude Include="..\..\..\lux\core\context.h" />
     <ClInclude Include="..\..\..\lux\core\contribution.h" />
     <ClInclude Include="..\..\..\lux\core\dynload.h" />
-    <ClInclude Include="..\..\..\lux\core\epsilon.h" />
     <ClInclude Include="..\..\..\lux\core\error.h" />
     <ClInclude Include="..\..\..\lux\core\exrio.h" />
     <ClInclude Include="..\..\..\lux\core\fastmutex.h" />
@@ -761,18 +768,9 @@
     <ClInclude Include="..\..\..\lux\core\tonemap.h" />
     <ClInclude Include="..\..\..\lux\core\transport.h" />
     <ClInclude Include="..\..\..\lux\core\volume.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\bbox.h" />
     <ClInclude Include="..\..\..\lux\core\geometry\matrix3x3.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\matrix4x4-sse.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\matrix4x4.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\normal.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\point.h" />
     <ClInclude Include="..\..\..\lux\core\geometry\quaternion.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\ray.h" />
     <ClInclude Include="..\..\..\lux\core\geometry\raydifferential.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\transform.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\vector.h" />
-    <ClInclude Include="..\..\..\lux\core\geometry\vector_normal.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf\asperity.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf\brdftobtdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf\cooktorrance.h" />
@@ -820,21 +818,20 @@
     <ClInclude Include="..\..\..\lux\spds\data\rgbE_32.h" />
     <ClInclude Include="..\..\..\lux\spds\data\xyzbasis.h" />
     <ClInclude Include="..\..\..\lux\server\renderserver.h" />
+    <ClInclude Include="$(IntDir)luxparse.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\lux\core\geometry\transform-sse.inl" />
-    <None Include="..\..\..\lux\core\geometry\transform.inl" />
     <CustomBuild Include="..\..\..\lux\core\luxlex.l">
       <Message>Lexing %(Filename)</Message>
-      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
+      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"$(ProjectDir)$(IntDir)%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs>%(RootDir)%(Directory)/luxlex.cpp;%(Outputs)</Outputs>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename);%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\core\luxparse.y">
       <Message>Yacc%27ing %(Filename)</Message>
-      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"
+      <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\bison_on_path.bat -d -v -t -o"$(ProjectDir)$(IntDir)%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(RootDir)%(Directory)/%(Filename).hpp;%(Outputs)</Outputs>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cpp;$(ProjectDir)$(IntDir)%(Filename).hpp;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

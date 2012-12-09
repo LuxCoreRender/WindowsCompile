@@ -51,7 +51,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -63,25 +63,25 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -97,13 +97,13 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -254,34 +254,31 @@
     <ClCompile Include="..\..\..\luxrays\src\core\context.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\dataset.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\device.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\core\epsilon.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\trianglemesh.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\geometry\bbox.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\geometry\matrix4x4.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\core\geometry\ray.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\core\geometry\transform.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\idevices\nativeidevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\idevices\openclidevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\idevices\virtualidevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\kernels\bvh_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\pdevices\nativepdevice.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\pdevices\openclpdevice.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\convtest\convtest.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\convtest\pdiff\lpyramid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\convtest\pdiff\metric.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\film\film.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\utils\film\nativefilm.cpp" />
-    <ClCompile Include="..\..\..\luxrays\src\utils\film\pixeldevicefilm.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\ocl\utils.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\properties.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\core\exttrianglemesh.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\plymesh\rply.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\sampler\sampler.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\bsdf.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\camera.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\extmeshcache.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\light.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\utils\sdl\material.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\scene.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\sdl.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\utils\sdl\spd.cpp" />
@@ -290,16 +287,11 @@
   <ItemGroup>
     <None Include="..\..\..\luxrays\src\kernels\bvh_kernel.cl" />
     <None Include="..\..\..\luxrays\src\kernels\mqbvh_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffer_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebuffergaussian2x2_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_addsamplebufferpreview_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_clearfb_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_clearsamplefb_kernel.cl" />
-    <None Include="..\..\..\luxrays\src\kernels\pixel_updateframebuffer_kernel.cl" />
     <None Include="..\..\..\luxrays\src\kernels\qbvh_kernel.cl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\cfg.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\epsilon.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\luxrays.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\mqbvhaccel.h" />
@@ -325,32 +317,40 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\uv.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\vector.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\vector_normal.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\filter.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\framebuffer.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\samplebuffer.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixel\spectrum.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\kernels\kernels.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\nativefilm.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\pixeldevicefilm.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\opencl\device.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\opencl\intersectiondevice.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\opencl\opencl.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\opencl\utils.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\convtest\convtest.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\convtest\pdiff\lpyramid.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\convtest\pdiff\metric.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\mc.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\film.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\filter.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\framebuffer.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\tonemapping.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\properties.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\atomic.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\exttrianglemesh.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\randomgen.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\core\spectrum.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\film\film.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\plymesh\rply.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sampler\sampler.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\bsdf.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\bsdfevents.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\camera.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\extmeshcache.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\light.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\material.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\mc.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\scene.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\spd.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\texmap.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\rgbD65_32.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\rgbE_32.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\sun_spect.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\data\xyzbasis.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\extmeshcache.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\light.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\material.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\scene.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\sdl.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\spd.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\texmap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

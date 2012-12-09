@@ -52,13 +52,13 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -70,19 +70,19 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -94,13 +94,13 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v90</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -267,6 +267,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\lux\console\commandline.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\aboutdialog.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget-hxx.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\advancedinfowidget.cpp" />
@@ -278,6 +279,7 @@
     <ClCompile Include="..\..\..\lux\qtgui\histogramwidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\icons.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\images.cpp" />
+    <ClCompile Include="..\..\..\lux\qtgui\queue.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\splash.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\lenseffectswidget.cpp" />
     <ClCompile Include="..\..\..\lux\qtgui\lightgroupwidget.cpp" />
@@ -402,7 +404,40 @@
 </Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <ClInclude Include="..\..\..\lux\console\commandline.h" />
     <ClInclude Include="..\..\..\lux\qtgui\guiutil.h" />
+    <ClInclude Include="..\..\..\lux\qtgui\queue.hxx">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUX_QT_ROOT)\bin\moc.exe -o "%(RootDir)%(Directory)/%(Filename)-hxx.cpp" "%(FullPath)" -p .</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling QT HXX File %(Filename)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/%(Filename)-hxx.cpp;%(Outputs)</Outputs>
+    </ClInclude>
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_advancedinfo.h" />
     <ClInclude Include="..\..\..\lux\qtgui\ui_batchprocessdialog.h" />
@@ -422,16 +457,46 @@
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\images.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\splash.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
       <FileType>Document</FileType>
@@ -439,6 +504,39 @@
       <Message>Compiling QT UI File %(Filename)</Message>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="..\..\..\lux\qtgui\icons\advancedicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\clipboardicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\clipboardicon_alpha.png" />
+    <None Include="..\..\..\lux\qtgui\icons\collapsedicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\colorspaceicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\colouredv2cbisfx4.png" />
+    <None Include="..\..\..\lux\qtgui\icons\erroricon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\expandedicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\gammaicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\histogramicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\lenseffectsicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\lightgroupsicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\logtabicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\luxrender.png" />
+    <None Include="..\..\..\lux\qtgui\icons\minusicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\networktabicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\noisereductionicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\pauseicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\plusicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\powerofficon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\poweronicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\queuetabicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\rendertabicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\resolutionicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\resumeicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\stopicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\tonemapicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\warningicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\zoomicon.png" />
+    <None Include="..\..\..\lux\qtgui\images\checkerboard.png" />
+    <None Include="..\..\..\lux\qtgui\images\colortemp.png" />
+    <None Include="..\..\..\lux\qtgui\images\luxlogo_bg.png" />
+    <None Include="..\..\..\lux\qtgui\images\splash.png" />
     <None Include="..\Resources\lux.ico" />
     <CustomBuild Include="..\..\..\lux\qtgui\aboutdialog.ui">
       <Message>Compiling QT UI File %(Filename)</Message>
@@ -500,6 +598,7 @@
       <Message>Compiling QT UI File %(Filename)</Message>
       <Command>$(LUX_QT_ROOT)\bin\uic.exe -o "%(RootDir)%(Directory)/ui_%(Filename).h" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
+      <SubType>Designer</SubType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

@@ -50,10 +50,14 @@ cd %INSTALL_PATH%
 
 echo Copying smallluxgpu2.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\smallluxgpu2.exe .\ > nul
+echo Copying smallluxgpu3.exe
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\smallluxgpu3.exe .\ > nul
 echo Copying luxrender.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxrender.exe .\ > nul
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxrender.pdb .\ > nul
 echo Copying luxconsole.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxconsole.exe .\ > nul
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxconsole.pdb .\ > nul
 echo Copying luxmerger.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxmerger.exe .\ > nul
 echo Copying Python 2 pylux.pyd

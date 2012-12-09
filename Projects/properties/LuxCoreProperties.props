@@ -13,14 +13,16 @@
       <FloatingPointModel>Precise</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level4</WarningLevel>
       <CallingConvention>Cdecl</CallingConvention>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DisableSpecificWarnings>4127;4100;4512</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4127;4100;4512;4324;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <MinimalRebuild>false</MinimalRebuild>
+      <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
 </Project>

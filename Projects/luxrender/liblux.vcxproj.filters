@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -203,6 +203,12 @@
     </Filter>
     <Filter Include="Header Files\renderers\statistics">
       <UniqueIdentifier>{a2d1a757-cbe1-4f49-ab58-5ed8366f48fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textures\simplexnoise">
+      <UniqueIdentifier>{6d7846a4-3664-4dc8-960a-4d7f8d5a090c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\textures\simplexnoise">
+      <UniqueIdentifier>{8bd8afa1-7635-4521-9994-8ba37c30c23f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -608,9 +614,6 @@
     <ClCompile Include="..\..\..\lux\core\dynload.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\epsilon.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\core\exrio.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -692,19 +695,10 @@
     <ClCompile Include="..\..\..\lux\core\volume.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\geometry\bbox.cpp">
-      <Filter>Source Files\core\geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\geometry\matrix4x4.cpp">
-      <Filter>Source Files\core\geometry</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\core\geometry\quaternion.cpp">
       <Filter>Source Files\core\geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\core\geometry\raydifferential.cpp">
-      <Filter>Source Files\core\geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\geometry\transform.cpp">
       <Filter>Source Files\core\geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\core\reflection\bxdf.cpp">
@@ -842,12 +836,6 @@
     <ClCompile Include="..\..\..\lux\server\renderserver.cpp">
       <Filter>Source Files\server</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\luxlex.cpp">
-      <Filter>Parser Files\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\core\luxparse.cpp">
-      <Filter>Parser Files\Output</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\textures\multimix.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
@@ -935,9 +923,6 @@
     <ClCompile Include="..\..\..\lux\integrators\none.cpp">
       <Filter>Source Files\integrators</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\core\scheduler.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -947,15 +932,36 @@
     <ClCompile Include="..\..\..\lux\textures\subtract.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.cpp">
+      <Filter>Source Files\textures\simplexnoise</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\simplexnoise\srdnoise23.cpp">
+      <Filter>Source Files\textures\simplexnoise</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp">
+      <Filter>Source Files\renderers\sppm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\asyncstream.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\lights\sky2.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bxdf\irawan.cpp">
+      <Filter>Source Files\core\reflection\bxdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\materials\cloth.cpp">
+      <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\partialcontribution.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
       <Filter>Header Files\accelerators</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\accelerators\bvhaccel.h">
-      <Filter>Header Files\accelerators</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\accelerators\grid.h">
       <Filter>Header Files\accelerators</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\accelerators\qbvhaccel.h">
@@ -1351,9 +1357,6 @@
     <ClInclude Include="..\..\..\lux\core\dynload.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\epsilon.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\error.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -1471,40 +1474,13 @@
     <ClInclude Include="..\..\..\lux\core\volume.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\bbox.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\matrix3x3.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\matrix4x4-sse.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\matrix4x4.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\normal.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\point.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\quaternion.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\ray.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\raydifferential.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\transform.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\vector.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\geometry\vector_normal.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\reflection\bxdf\asperity.h">
@@ -1648,9 +1624,6 @@
     <ClInclude Include="..\..\..\lux\server\renderserver.h">
       <Filter>Header Files\server</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\core\luxparse.hpp">
-      <Filter>Parser Files\Output</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h">
       <Filter>Header Files\film\data</Filter>
     </ClInclude>
@@ -1665,9 +1638,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\version.h">
       <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\textures\convert.h">
-      <Filter>Header Files\textures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h">
       <Filter>Header Files\renderers\sppm</Filter>
@@ -1756,14 +1726,30 @@
     <ClInclude Include="..\..\..\lux\textures\subtract.h">
       <Filter>Header Files\textures</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\lux\core\geometry\transform-sse.inl">
+    <ClInclude Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.h">
+      <Filter>Header Files\textures\simplexnoise</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\simplexnoise\srdnoise23.h">
+      <Filter>Header Files\textures\simplexnoise</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\asyncstream.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\lights\sky2.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bxdf\irawan.h">
+      <Filter>Header Files\core\reflection\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\materials\cloth.h">
+      <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\partialcontribution.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\geometry\transform.h">
       <Filter>Header Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\lux\core\geometry\transform.inl">
-      <Filter>Header Files\core\geometry</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\..\lux\core\luxlex.l">
@@ -1772,5 +1758,14 @@
     <CustomBuild Include="..\..\..\lux\core\luxparse.y">
       <Filter>Parser Files\Input</Filter>
     </CustomBuild>
+    <ClCompile Include="$(IntDir)luxlex.cpp">
+      <Filter>Parser Files\Output</Filter>
+    </ClCompile>
+    <ClInclude Include="$(IntDir)luxparse.hpp">
+      <Filter>Parser Files\Output</Filter>
+    </ClInclude>
+    <ClCompile Include="$(IntDir)luxparse.cpp">
+      <Filter>Parser Files\Output</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

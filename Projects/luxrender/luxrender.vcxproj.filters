@@ -28,6 +28,12 @@
     <Filter Include="Resource Files\Windows Resources">
       <UniqueIdentifier>{1b9a84f8-fe9c-496e-936b-4f73b1418277}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\QT Resources\images">
+      <UniqueIdentifier>{d4d4fa0a-146d-4585-b5c7-695c7203a762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources\icons">
+      <UniqueIdentifier>{460dfb2a-6301-477c-8d20-7d6f06fcab1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\qtgui\aboutdialog.cpp">
@@ -141,6 +147,12 @@
     <ClCompile Include="..\..\..\lux\qtgui\splash.cpp">
       <Filter>Source Files\generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\console\commandline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h">
@@ -185,10 +197,115 @@
     <ClInclude Include="..\..\..\lux\qtgui\ui_advancedinfo.h">
       <Filter>Header Files\generated</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\lux\console\commandline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\qtgui\queue.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\lux.ico">
       <Filter>Resource Files\Windows Resources</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\images\checkerboard.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\images\colortemp.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\images\luxlogo_bg.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\images\splash.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\advancedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\clipboardicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\clipboardicon_alpha.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\collapsedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\colorspaceicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\colouredv2cbisfx4.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\erroricon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\expandedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\gammaicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\histogramicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\lenseffectsicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\lightgroupsicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\logtabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\luxrender.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\minusicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\networktabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\noisereductionicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\pauseicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\plusicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\powerofficon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\poweronicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\queuetabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\rendertabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\resolutionicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\resumeicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\stopicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\tonemapicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\warningicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\zoomicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
