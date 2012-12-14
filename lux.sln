@@ -8,7 +8,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchpixel", "Projects\luxr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchsimple", "Projects\luxrays\benchsimple.vcxproj", "{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu2", "Projects\luxrays\smallluxgpu.vcxproj", "{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu2", "Projects\luxrays\smallluxgpu2.vcxproj", "{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu3", "Projects\luxrays\smallluxgpu3.vcxproj", "{1EB8420E-95DF-4F37-B594-33F920BDB910}"
 EndProject
