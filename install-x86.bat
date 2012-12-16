@@ -8,10 +8,10 @@ echo ***************************************************************************
 cd /d %LUX_WINDOWS_BUILD_ROOT%
 cd ..
 
-set SSE_VER=SSE1
-set OCL_VER=NoOpenCL
-set REL_DIR="\Release SSE1"
-call :Install32
+rem set SSE_VER=SSE1
+rem set OCL_VER=NoOpenCL
+rem set REL_DIR="\Release SSE1"
+rem call :Install32
 
 cd /d %LUX_WINDOWS_BUILD_ROOT%
 cd ..
@@ -57,8 +57,8 @@ IF NOT EXIST %INSTALL_PATH%\imageformats (
 
 cd %INSTALL_PATH%
 
-echo Copying smallluxgpu2.exe
-copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\Win32\%SSE_VER%\%REL_DIR%\smallluxgpu2.exe .\ > nul
+rem echo Copying smallluxgpu2.exe
+rem copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\Win32\%SSE_VER%\%REL_DIR%\smallluxgpu2.exe .\ > nul
 echo Copying smallluxgpu3.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\Win32\%SSE_VER%\%REL_DIR%\smallluxgpu3.exe .\ > nul
 echo Copying luxrender.exe

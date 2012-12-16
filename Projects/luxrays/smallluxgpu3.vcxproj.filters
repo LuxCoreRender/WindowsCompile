@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\bidircpu">
+      <UniqueIdentifier>{7291097f-5a21-4e8f-a37e-453535473981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bidirhybrid">
+      <UniqueIdentifier>{391b5dbb-cae1-4676-a60a-e785a65996f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lightcpu">
+      <UniqueIdentifier>{c00cf86e-144a-43ab-bdba-f3c4c9e4baa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pathocl">
+      <UniqueIdentifier>{3dcd5454-3503-4c23-aee1-c1789dea66a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pathcpu">
+      <UniqueIdentifier>{bf6e671e-898f-49a7-acca-d6996a8d6016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bidircpu">
+      <UniqueIdentifier>{09dd83fd-82f8-4684-9b8e-68049c5e24f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bidirhybrid">
+      <UniqueIdentifier>{6a27b929-ff1e-4f18-985f-7e1ff40c3658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lightcpu">
+      <UniqueIdentifier>{6e133fc5-b94d-4524-a0e6-ee8e3463397f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathocl">
+      <UniqueIdentifier>{f99b9e0f-4d62-4ff3-bfde-3d49bcb14b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathcpu">
+      <UniqueIdentifier>{7aa54306-b0a2-457b-a11f-11207c932986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathocl\kernels">
+      <UniqueIdentifier>{c7e31417-7f68-4473-ac26-786704ff4f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pathocl\kernels">
+      <UniqueIdentifier>{397c0efb-1a0b-4dfe-b2e2-1df953291c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pathocl\kernels\Generated">
+      <UniqueIdentifier>{d6386a42-bc8c-425e-9057-25e0258b7431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cbidirhybrid">
+      <UniqueIdentifier>{8b6c649d-9208-4d59-bd71-7ea6e4db19da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\cbidirhybrid">
+      <UniqueIdentifier>{517020c0-7d50-4791-bd7e-9e48109ec017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bidirvmcpu">
+      <UniqueIdentifier>{fb4af742-dc64-4888-b6c5-6e8c939f85c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bidirvmcpu">
+      <UniqueIdentifier>{fc744cb4-ed03-4fca-b8b0-49559df8cacb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\displayfunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\editaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\renderengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\slgcfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\telnet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.h">
+      <Filter>Header Files\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\ocldatatypes.h">
+      <Filter>Header Files\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.h">
+      <Filter>Header Files\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\kernels.h">
+      <Filter>Header Files\pathocl\kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.h">
+      <Filter>Header Files\pathcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.h">
+      <Filter>Header Files\lightcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.h">
+      <Filter>Header Files\bidirhybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.h">
+      <Filter>Header Files\bidircpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\cbidirhybrid\cbidirhybrid.h">
+      <Filter>Header Files\cbidirhybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcpu.h">
+      <Filter>Header Files\bidirvmcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\slg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.cpp">
+      <Filter>Source Files\bidircpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircputhread.cpp">
+      <Filter>Source Files\bidircpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.cpp">
+      <Filter>Source Files\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybridthread.cpp">
+      <Filter>Source Files\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirstate.cpp">
+      <Filter>Source Files\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.cpp">
+      <Filter>Source Files\lightcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcputhread.cpp">
+      <Filter>Source Files\lightcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.cpp">
+      <Filter>Source Files\pathcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcputhread.cpp">
+      <Filter>Source Files\pathcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.cpp">
+      <Filter>Source Files\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.cpp">
+      <Filter>Source Files\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathoclthread.cpp">
+      <Filter>Source Files\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernel_core.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernel_datatypes.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernel_filters.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernel_samplers.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernel_scene.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="$(IntDir)pathocl_kernels.cl.cpp">
+      <Filter>Source Files\pathocl\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\displayfunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\smallluxgpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\telnet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\cbidirhybrid\cbidirhybrid.cpp">
+      <Filter>Source Files\cbidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcpu.cpp">
+      <Filter>Source Files\bidirvmcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcputhread.cpp">
+      <Filter>Source Files\bidirvmcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\hashgrid.cpp">
+      <Filter>Source Files\bidirvmcpu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_datatypes.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_filters.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_samplers.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_scene.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernels.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_core.cl">
+      <Filter>Source Files\pathocl\kernels</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

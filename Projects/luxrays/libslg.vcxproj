@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B8320940-79D0-429B-837C-1767230CC8AC}</ProjectGuid>
+    <RootNamespace>libslg</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
+    <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\OpenCL.props" />
+    <Import Project="..\properties\32bit-Release.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\OpenCL.props" />
+    <Import Project="..\properties\32bit-Debug.props" />
+    <Import Project="..\properties\32bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
+    <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\OpenCL.props" />
+    <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\properties\LuxRaysProperties.props" />
+    <Import Project="..\properties\LuxConsoleApp.props" />
+    <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\OpenCL.props" />
+    <Import Project="..\properties\64bit-Debug.props" />
+    <Import Project="..\properties\64bit-Variables.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu3;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="luxrays.vcxproj">
+      <Project>{712cfe41-8a81-492a-89a6-d38b1eacc54b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcpu.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\cbidirhybrid\cbidirhybrid.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\editaction.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\kernels.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\ocldatatypes.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\renderengine.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\slg.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\slgcfg.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu3\telnet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidircpu\bidircputhread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirhybridthread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirhybrid\bidirstate.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\bidirvmcputhread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\bidirvmcpu\hashgrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\cbidirhybrid\cbidirhybrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\lightcpu\lightcputhread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcpu.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathcpu\pathcputhread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\compiledscene.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernels.cl.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernel_core.cl.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernel_datatypes.cl.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernel_filters.cl.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernel_samplers.cl.cpp" />
+    <ClCompile Include="$(IntDir)pathocl_kernel_scene.cl.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathocl.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\pathoclthread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderengine.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\telnet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernels.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_core.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_datatypes.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_filters.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_samplers.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\luxrays\samples\smallluxgpu3\pathocl\kernels\pathocl_kernel_scene.cl">
+      <FileType>Document</FileType>
+      <Command>echo #include "pathocl/kernels/kernels.h" &gt; "$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /f "delims=_ tokens=1*" %%a in ("%(Filename)") do echo std::string luxrays::KernelSource_PathOCL_%%b = &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+for /F "tokens=*" %%a in (%(FullPath)) do echo "%%a\n" &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+echo ; &gt;&gt;"$(ProjectDir)$(IntDir)%(Filename).cl.cpp"
+</Command>
+      <Message>Processing kernel file %(Filename)</Message>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cl.cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

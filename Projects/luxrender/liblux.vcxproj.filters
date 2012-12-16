@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -956,6 +956,12 @@
     <ClCompile Include="..\..\..\lux\core\partialcontribution.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\slgrenderer.cpp">
+      <Filter>Source Files\renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\renderers\statistics\slgstatistics.cpp">
+      <Filter>Source Files\renderers\statistics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1749,6 +1755,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\transform.h">
       <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\slgrenderer.h">
+      <Filter>Header Files\renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\statistics\slgstatistics.h">
+      <Filter>Header Files\renderers\statistics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

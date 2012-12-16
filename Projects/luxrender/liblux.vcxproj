@@ -110,9 +110,10 @@
     <Import Project="..\properties\LuxCoreProperties.props" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\SSE2.props" />
-    <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\NoOpenCL.props" />
+    <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'" Label="PropertySheets">
@@ -140,6 +141,7 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
     <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\32bit-Variables.props" />
   </ImportGroup>
@@ -148,6 +150,7 @@
     <Import Project="..\properties\LuxCoreProperties.props" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Debug.props" />
     <Import Project="..\properties\32bit-Variables.props" />
@@ -157,8 +160,9 @@
     <Import Project="..\properties\LuxCoreProperties.props" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
-    <Import Project="..\properties\64bit-Release.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\NoOpenCL.props" />
+    <Import Project="..\properties\64bit-Release.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'" Label="PropertySheets">
@@ -172,6 +176,7 @@
     <Import Project="..\properties\LuxCoreProperties.props" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\64bit-Release.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
@@ -180,6 +185,7 @@
     <Import Project="..\properties\LuxCoreProperties.props" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\LibSLGUser.props" />
     <Import Project="..\properties\64bit-Debug.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
@@ -376,6 +382,7 @@
     <ClCompile Include="..\..\..\lux\renderers\hybridrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\hybridsamplerrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\samplerrenderer.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\slgrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppmrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\hashgrid.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\hitpoints.cpp" />
@@ -385,6 +392,7 @@
     <ClCompile Include="..\..\..\lux\renderers\sppm\photonsampler.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\samplerstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\statistics\slgstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
@@ -634,11 +642,13 @@
     <ClInclude Include="..\..\..\lux\materials\scattermaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\shinymetal.h" />
     <ClInclude Include="..\..\..\lux\materials\velvet.h" />
+    <ClInclude Include="..\..\..\lux\renderers\slgrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\samplerstatistics.h" />
+    <ClInclude Include="..\..\..\lux\renderers\statistics\slgstatistics.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\sppmstatistics.h" />
     <ClInclude Include="..\..\..\lux\samplers\erpt.h" />
     <ClInclude Include="..\..\..\lux\samplers\lowdiscrepancy.h" />
@@ -825,7 +835,7 @@
       <Message>Lexing %(Filename)</Message>
       <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"$(ProjectDir)$(IntDir)%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs>$(ProjectDir)$(IntDir)%(Filename);%(Outputs)</Outputs>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\core\luxparse.y">
       <Message>Yacc%27ing %(Filename)</Message>
@@ -835,6 +845,14 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\luxrays\libslg.vcxproj">
+      <Project>{b8320940-79d0-429b-837c-1767230cc8ac}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
     <ProjectReference Include="..\luxrays\luxrays.vcxproj">
       <Project>{712cfe41-8a81-492a-89a6-d38b1eacc54b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

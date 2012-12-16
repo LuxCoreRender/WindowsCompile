@@ -48,8 +48,8 @@ IF NOT EXIST %INSTALL_PATH%\imageformats (
 
 cd %INSTALL_PATH%
 
-echo Copying smallluxgpu2.exe
-copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\smallluxgpu2.exe .\ > nul
+rem echo Copying smallluxgpu2.exe
+rem copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\smallluxgpu2.exe .\ > nul
 echo Copying smallluxgpu3.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\smallluxgpu3.exe .\ > nul
 echo Copying luxrender.exe
