@@ -4,8 +4,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblux", "Projects\luxrende
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luxrays", "Projects\luxrays\luxrays.vcxproj", "{712CFE41-8A81-492A-89A6-D38B1EACC54B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchpixel", "Projects\luxrays\benchpixel.vcxproj", "{B08B8FA6-2D5A-440E-9037-65A2509B5536}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "benchsimple", "Projects\luxrays\benchsimple.vcxproj", "{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu2", "Projects\luxrays\smallluxgpu2.vcxproj", "{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}"
@@ -78,17 +76,6 @@ Global
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|Win32.Build.0 = Release|Win32
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.ActiveCfg = Release|x64
 		{712CFE41-8A81-492A-89A6-D38B1EACC54B}.Release|x64.Build.0 = Release|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug SSE1|Win32.ActiveCfg = Debug|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug SSE1|x64.ActiveCfg = Debug|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug|Win32.Build.0 = Debug|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Debug|x64.ActiveCfg = Debug|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release NoOpenCL|Win32.ActiveCfg = Release NoOpenCL|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release NoOpenCL|x64.ActiveCfg = Release NoOpenCL|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release SSE1|Win32.ActiveCfg = Release|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release SSE1|x64.ActiveCfg = Release|x64
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release|Win32.ActiveCfg = Release|Win32
-		{B08B8FA6-2D5A-440E-9037-65A2509B5536}.Release|x64.ActiveCfg = Release|x64
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug SSE1|Win32.ActiveCfg = Debug|Win32
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug SSE1|x64.ActiveCfg = Debug|x64
 		{9420AE03-7533-4DD6-B046-7FBAE5E3FC90}.Debug|Win32.ActiveCfg = Debug|Win32
