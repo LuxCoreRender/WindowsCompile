@@ -19,46 +19,21 @@ echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
 
-IF EXIST build-vars.bat (
-	call build-vars.bat
-)
+IF EXIST build-vars.bat CALL build-vars.bat
 
-IF NOT EXIST %LUX_X86_PYTHON2_ROOT% (
-	echo.
-	echo %%LUX_X86_PYTHON2_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_PYTHON3_ROOT% (
-	echo.
-	echo %%LUX_X86_PYTHON3_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_BOOST_ROOT% (
-	echo.
-	echo %%LUX_X86_BOOST_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_QT_ROOT% (
-	echo.
-	echo %%LUX_X86_QT_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_FREEIMAGE_ROOT% (
-	echo.
-	echo %%LUX_X86_FREEIMAGE_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_ZLIB_ROOT% (
-	echo.
-	echo %%LUX_X86_ZLIB_ROOT%% not valid! Aborting.
-	exit /b -1
-)
+CALL:checkEnvVarValid "LUX_X86_PYTHON3_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_BOOST_ROOT"     || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_QT_ROOT"        || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_FREEIMAGE_ROOT" || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_GLUT_ROOT"      || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_GLEW_ROOT"      || EXIT /b -1
 
-msbuild /? > nul
-if NOT ERRORLEVEL 0 (
+set MSBUILD_VERSION=
+FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION=%%a.%%b
+IF "%MSBUILD_VERSION%" NEQ "4.0" (
 	echo.
-	echo Cannot execute the 'msbuild' command. Please run
-	echo this script from the Visual Studio 2008 Command Prompt.
+	echo Could not find 'msbuild' version 4.0.
+	echo Please run this script from the Visual Studio 2010 Command Prompt.
 	exit /b -1
 )
 
@@ -87,11 +62,11 @@ echo.
 
 
 :DebugChoice
-echo Build Debug binaries ?
+echo Build Debug binaries?
 echo 0: No (default)
 echo 1: Yes
-set BUILD_DEBUG=0
-set /P BUILD_DEBUG="Selection? "
+SET BUILD_DEBUG=0
+SET /P BUILD_DEBUG="Selection? "
 IF %BUILD_DEBUG% EQU 0 GOTO BuildDepsChoice 
 IF %BUILD_DEBUG% EQU 1 GOTO BuildDepsChoice
 echo Invalid choice
@@ -105,11 +80,11 @@ echo 1: Build all dependencies (default)
 echo 2: Build all but Qt
 echo q: Quit (do nothing)
 echo.
-set BUILDCHOICE=1
-set /P BUILDCHOICE="Selection? "
-IF %BUILDCHOICE% == 1 ( GOTO QT )
-IF %BUILDCHOICE% == 2 ( GOTO Python )
-IF /I %BUILDCHOICE% EQU q ( GOTO :EOF )
+SET BUILDCHOICE=1
+SET /P BUILDCHOICE="Selection? "
+IF %BUILDCHOICE% EQU 1 GOTO QT
+IF %BUILDCHOICE% EQU 2 GOTO Python
+IF /I %BUILDCHOICE% EQU q GOTO:EOF
 echo Invalid choice
 GOTO BuildDepsChoice
 
@@ -126,14 +101,14 @@ echo **************************************************************************
 cd /d %LUX_X86_QT_ROOT%
 echo.
 echo Cleaning Qt, this may take a few moments...
-nmake confclean 1>nul 2>nul
+nmake confclean 1>NUL 2>NUL
 echo.
 echo Building Qt may take a very long time! The Qt configure utility will now 
 echo ask you a few questions before building commences. The rest of the build 
 echo process should be autonomous.
 pause
 
-configure -opensource -release -fast -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-sse2
+configure -opensource -release -fast -ltcg -mp -plugin-manifests -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-qt3support
 nmake
 
 
@@ -144,18 +119,10 @@ nmake
 :Python
 echo.
 echo **************************************************************************
-echo * Building Python 2                                                      *
-echo **************************************************************************
-cd /d %LUX_X86_PYTHON2_ROOT%\PCbuild
-IF %BUILD_DEBUG% EQU 1 ( msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln )
-msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"python" pcbuild.sln
-
-
-echo.
-echo **************************************************************************
 echo * Building Python 3                                                      *
 echo **************************************************************************
 cd /d %LUX_X86_PYTHON3_ROOT%\PCbuild
+copy ..\PC\pyconfig.h ..\Include
 IF %BUILD_DEBUG% EQU 1 ( msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:"python" pcbuild.sln )
 msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:"python" pcbuild.sln
 
@@ -167,62 +134,20 @@ msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:
 :Boost
 echo.
 echo **************************************************************************
-echo * Building BJam                                                          *
-echo **************************************************************************
-cd /d %LUX_X86_BOOST_ROOT%
-call bootstrap.bat
-SET BOOST_JOBS=8
-
-rem Patch boost file to fix py 3.2 build
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch libs\python\src\converter\builtin_converters.cpp %LUX_WINDOWS_BUILD_ROOT%\support\boost-builtin_converters.patch
-
-:Boost_IOStreams
-echo.
-echo **************************************************************************
 echo * Building Boost::IOStreams                                              *
-echo **************************************************************************
-IF %BUILD_DEBUG% EQU 1 ( bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost debug stage )
-bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT% -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% --with-iostreams --stagedir=stage/boost --build-dir=bin/boost stage
-
-:: hax boost script to force acceptance of python versions
-copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\python.jam .\tools\build\v2\tools
-
-:Boost_Python2
-echo.
-echo **************************************************************************
-echo * Building Boost::Python2                                                *
-echo **************************************************************************
-copy /Y %LUX_X86_PYTHON2_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON2_ROOT%\Include
-:: copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-26.jam .\project-config.jam
-del project-config.jam
-IF %BUILD_DEBUG% EQU 1 ( bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows debug stage )
-bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON2_ROOT% --with-python --stagedir=stage/python2 --build-dir=bin/python2 python=2.6 target-os=windows stage
-
-:Boost_Python3
-echo.
-echo **************************************************************************
-echo * Building Boost::Python3                                                *
-echo **************************************************************************
-copy /Y %LUX_X86_PYTHON3_ROOT%\PC\pyconfig.h %LUX_X86_PYTHON3_ROOT%\Include
-copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-3.jam .\project-config.jam
-IF %BUILD_DEBUG% EQU 1 ( bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.2 target-os=windows debug stage ) 
-bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% --with-python --stagedir=stage/python3 --build-dir=bin/python3 python=3.2 target-os=windows stage
-
-:Boost_Remainder
-echo.
-echo **************************************************************************
-echo * Building Boost::FileSystem                                             *
+echo *          Boost::FileSystem                                             *
 echo *          Boost::Program_Options                                        *
+echo *          Boost::Python3                                                *
 echo *          Boost::Regex                                                  *
 echo *          Boost::Serialization                                          *
 echo *          Boost::Thread                                                 *
 echo **************************************************************************
-IF %BUILD_DEBUG% EQU 1 ( bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=shared -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage ) 
-IF %BUILD_DEBUG% EQU 1 ( bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=debug link=static threading=multi runtime-link=static -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost debug stage )
-bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=shared -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-bjam.exe -j%BOOST_JOBS% toolset=msvc-9.0 variant=release link=static threading=multi runtime-link=static -a --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-thread --stagedir=stage/boost --build-dir=bin/boost stage
-
-
+cd /d %LUX_X86_BOOST_ROOT%
+CALL bootstrap.bat
+type %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-3.jam >> project-config.jam
+SET BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread --stagedir=stage/boost --build-dir=bin/boost -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% -sZLIB_SOURCE=%LUX_X86_FREEIMAGE_ROOT%\FreeImage\Source\ZLib
+IF %BUILD_DEBUG% EQU 1 ( bjam %BJAM_OPTS% variant=debug debug stage )
+bjam %BJAM_OPTS% variant=release stage
 
 :: ****************************************************************************
 :: ********************************** FreeImage *******************************
@@ -234,13 +159,40 @@ echo * Building FreeImage                                                     *
 echo **************************************************************************
 cd /d %LUX_X86_FREEIMAGE_ROOT%\FreeImage
 
-rem Patch solution file to enable FreeImageLib as a build target
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch FreeImage.2008.sln %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage.2008.sln.patch
+rem Install solution and project files for VS2010
+xcopy /S /Y %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 
-IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln )
-msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /property:"VCBuildOverride=%LUX_WINDOWS_BUILD_ROOT%\support\LuxFreeImage.vsprops" /target:"Clean" /target:"FreeImageLib" FreeImage.2008.sln
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /target:"Clean" /target:"FreeImageLib" FreeImage.2010.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /target:"Clean" /target:"FreeImageLib" FreeImage.2010.sln
 
+:: ****************************************************************************
+:: ********************************** freeglut ********************************
+:: ****************************************************************************
+:freeglut
+echo.
+echo **************************************************************************
+echo * Building freeglut
+echo **************************************************************************
+cd /d %LUX_X86_GLUT_ROOT%
 
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2010\freeglut.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2010\freeglut.sln
+
+:: ****************************************************************************
+:: ********************************** GLEW ************************************
+:: ****************************************************************************
+:GLEW
+echo.
+echo **************************************************************************
+echo * Building GLEW
+echo **************************************************************************
+cd /d %LUX_X86_GLEW_ROOT%
+
+rem Update solution and project files for VS2010
+copy /Y %LUX_WINDOWS_BUILD_ROOT%\support\glew\*.* build\vc10
+
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" build\vc10\glew.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=Win32" /target:"Clean" /target:"glew_static" build\vc10\glew.sln
 
 :: ****************************************************************************
 :: ******************************* LuxRays ************************************
@@ -252,10 +204,10 @@ echo * Building LuxRays                                                       *
 echo **************************************************************************
 cd /d %LUX_WINDOWS_BUILD_ROOT%
 IF %BUILD_DEBUG% EQU 1 (
-	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:luxrays;benchpixel;benchsimple lux.sln
+	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:luxrays lux.sln
 )
 
-msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:luxrays;benchpixel;benchsimple lux.sln
+msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:luxrays lux.sln
 
 
 
@@ -273,3 +225,27 @@ echo *        Building Completed                                              *
 echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
+
+:: Functions below this point
+GOTO:EOF
+
+:checkEnvVarValid
+:: Checks whether an environment variable is set to an existing directory
+:: %1 - Environment variable to check
+
+SETLOCAL
+CALL SET ENVVAR=%%%~1%%
+IF "%ENVVAR%" == "" (
+	echo.
+	echo %%%~1%% not set! Aborting.
+	EXIT /b 1
+)
+
+IF NOT EXIST "%ENVVAR%" (
+	echo.
+	echo %~1="%ENVVAR%"
+	echo but "%ENVVAR%" does not exist! Aborting.
+	EXIT /b 1
+)
+ENDLOCAL
+GOTO:EOF

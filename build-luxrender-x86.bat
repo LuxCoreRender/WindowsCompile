@@ -9,11 +9,6 @@ IF EXIST build-vars.bat (
 	call build-vars.bat
 )
 
-IF NOT EXIST %LUX_X86_PYTHON2_ROOT% (
-	echo.
-	echo %%LUX_X86_PYTHON2_ROOT%% not valid! Aborting.
-	exit /b -1
-)
 IF NOT EXIST %LUX_X86_PYTHON3_ROOT% (
 	echo.
 	echo %%LUX_X86_PYTHON3_ROOT%% not valid! Aborting.
@@ -34,11 +29,6 @@ IF NOT EXIST %LUX_X86_FREEIMAGE_ROOT% (
 	echo %%LUX_X86_FREEIMAGE_ROOT%% not valid! Aborting.
 	exit /b -1
 )
-IF NOT EXIST %LUX_X86_ZLIB_ROOT% (
-	echo.
-	echo %%LUX_X86_ZLIB_ROOT%% not valid! Aborting.
-	exit /b -1
-)
 
 set MSBUILD_VERSION=
 FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION=%%a.%%b
@@ -52,7 +42,6 @@ IF "%MSBUILD_VERSION%" NEQ "4.0" (
 
 echo Environment OK.
 
-set LUX_WINDOWS_BUILD_ROOT=%CD%
 
 
 echo.

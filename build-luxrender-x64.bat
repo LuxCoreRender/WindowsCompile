@@ -9,12 +9,6 @@ IF EXIST build-vars.bat (
 	call build-vars.bat
 )
 
-
-IF NOT EXIST %LUX_X64_PYTHON2_ROOT% (
-	echo.
-	echo %%LUX_X64_PYTHON2_ROOT%% not valid! Aborting.
-	exit /b -1
-)
 IF NOT EXIST %LUX_X64_PYTHON3_ROOT% (
 	echo.
 	echo %%LUX_X64_PYTHON3_ROOT%% not valid! Aborting.
@@ -35,11 +29,6 @@ IF NOT EXIST %LUX_X64_FREEIMAGE_ROOT% (
 	echo %%LUX_X64_FREEIMAGE_ROOT%% not valid! Aborting.
 	exit /b -1
 )
-IF NOT EXIST %LUX_X64_ZLIB_ROOT% (
-	echo.
-	echo %%LUX_X64_ZLIB_ROOT%% not valid! Aborting.
-	exit /b -1
-)
 
 set MSBUILD_VERSION=
 FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION=%%a.%%b
@@ -53,7 +42,6 @@ IF "%MSBUILD_VERSION%" NEQ "4.0" (
 
 echo Environment OK.
 
-set LUX_WINDOWS_BUILD_ROOT=%CD%
 
 
 echo.
@@ -91,7 +79,7 @@ IF %BUILD_DEBUG% EQU 1 (
 	msbuild /m /property:"Configuration=Debug" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 )
 
-msbuild /v:m /m /property:"Configuration=Release" /property:"Platform=x64" /target:luxrays;liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
+msbuild /m /property:"Configuration=Release" /property:"Platform=x64" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
 
 
 
