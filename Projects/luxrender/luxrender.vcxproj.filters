@@ -153,6 +153,9 @@
     <ClCompile Include="..\..\..\lux\qtgui\queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\qtgui\queue-hxx.cpp">
+      <Filter>Source Files\generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\qtgui\ui_aboutdialog.h">
@@ -198,9 +201,6 @@
       <Filter>Header Files\generated</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\console\commandline.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\qtgui\queue.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -409,6 +409,9 @@
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
       <Filter>QT UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\lux\qtgui\queue.hxx">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>
