@@ -193,6 +193,9 @@
       <Command>
       </Command>
     </PostBuildEvent>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
     <ClCompile>
