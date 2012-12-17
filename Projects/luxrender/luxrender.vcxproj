@@ -428,46 +428,19 @@
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
+      <AdditionalInputs>%(RootDir)%(Directory)/icons/*.*</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\images.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
+      <AdditionalInputs>%(RootDir)%(Directory)/images/*.*</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\splash.qrc">
       <Message>Compiling QT Resource File %(Filename).</Message>
       <Command>$(LUX_QT_ROOT)\bin\rcc.exe -name %(Filename) -o "%(RootDir)%(Directory)/%(Filename).cpp" "%(FullPath)"</Command>
       <Outputs>%(RootDir)%(Directory)/%(Filename).cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug SSE1|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release SSE1|x64'">%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
+      <AdditionalInputs>%(RootDir)%(Directory)/images/splash.png</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\qtgui\advancedinfo.ui">
       <FileType>Document</FileType>
