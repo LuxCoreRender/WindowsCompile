@@ -140,9 +140,6 @@
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\slglibdemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\smallluxgpu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

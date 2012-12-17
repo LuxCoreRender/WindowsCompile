@@ -277,7 +277,6 @@
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderconfig.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\renderengine.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\rendersession.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\slglibdemo.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\smallluxgpu.cpp" />
     <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu3\telnet.cpp" />
   </ItemGroup>
