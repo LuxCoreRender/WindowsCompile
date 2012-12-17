@@ -823,7 +823,7 @@
       <Message>Lexing %(Filename)</Message>
       <Command>call $(LUX_WINDOWS_BUILD_ROOT)\support\bin\flex_on_path.bat -o"$(ProjectDir)$(IntDir)%(Filename).cpp" "%(FullPath)"
 </Command>
-      <Outputs>$(ProjectDir)$(IntDir)%(Filename);%(Outputs)</Outputs>
+      <Outputs>$(ProjectDir)$(IntDir)%(Filename).cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\lux\core\luxparse.y">
       <Message>Yacc%27ing %(Filename)</Message>
