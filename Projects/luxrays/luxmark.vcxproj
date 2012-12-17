@@ -75,6 +75,7 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\QtGUI.props" />
     <Import Project="..\properties\32bit-Variables.props" />
@@ -84,6 +85,8 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\QtGUI.props" />
     <Import Project="..\properties\32bit-Variables.props" />
@@ -93,6 +96,8 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\SSE2.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\32bit-Debug.props" />
     <Import Project="..\properties\QtGUI.props" />
     <Import Project="..\properties\32bit-Variables.props" />
@@ -110,6 +115,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\64bit-Release.props" />
     <Import Project="..\properties\QtGUI.props" />
     <Import Project="..\properties\64bit-Variables.props" />
@@ -119,6 +125,7 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\OpenCL.props" />
     <Import Project="..\properties\64bit-Debug.props" />
     <Import Project="..\properties\QtGUI.props" />
     <Import Project="..\properties\64bit-Variables.props" />
@@ -148,27 +155,40 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
       <OptimizeReferences>false</OptimizeReferences>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
     <ClCompile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
     <Midl>
@@ -176,6 +196,18 @@
     </Midl>
     <Link>
       <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\luxmark;..\..\..\luxrays\samples\luxmark\slg2;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
