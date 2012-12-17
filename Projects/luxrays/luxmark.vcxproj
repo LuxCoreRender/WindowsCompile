@@ -207,6 +207,7 @@
     <ClCompile Include="..\..\..\luxrays\samples\luxmark\submitdialog.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\luxrays\samples\luxmark\submitdialog.ui" />
     <None Include="..\Resources\lux.ico" />
     <None Include="..\..\..\luxrays\samples\luxmark\resources.qrc" />
     <None Include="..\..\..\luxrays\samples\luxmark\aboutdialog.ui" />
@@ -219,10 +220,7 @@
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\luxmarkapp.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\luxmarkcfg.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\mainwindow.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\renderconfig.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\renderengine.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\resultdialog.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\sampler.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\editaction.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\compiledscene.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\kernels.h" />
@@ -232,13 +230,12 @@
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\renderengine.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\rendersession.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\slgcfg.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slgcfg.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slgscene.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\smalllux.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\volume.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\submitdialog.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_aboutdialog.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_mainwindow.h" />
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_resultdialog.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_submitdialog.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resources\core.rc" />

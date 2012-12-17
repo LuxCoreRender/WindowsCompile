@@ -292,6 +292,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\cfg.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\epsilon.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\frame.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\luxrays.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\mqbvhaccel.h" />
@@ -301,7 +302,6 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\dataset.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\device.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\intersectiondevice.h" />
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixeldevice.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\trianglemesh.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\utils.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\virtualdevice.h" />

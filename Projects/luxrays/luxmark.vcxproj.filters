@@ -143,6 +143,9 @@
     <None Include="..\..\..\luxrays\samples\luxmark\resultdialog.ui">
       <Filter>QT UI</Filter>
     </None>
+    <None Include="..\..\..\luxrays\samples\luxmark\submitdialog.ui">
+      <Filter>QT UI</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\aboutdialog.h">
@@ -160,28 +163,10 @@
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\renderconfig.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\renderengine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\resultdialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\sampler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slgcfg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\slgscene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\smalllux.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\samples\luxmark\volume.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_aboutdialog.h">
@@ -219,6 +204,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\samples\luxmark\slg2\pathocl\kernels\kernels.h">
       <Filter>Header Files\slg2\pathocl\kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\submitdialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\samples\luxmark\ui_submitdialog.h">
+      <Filter>Header Files\generated</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

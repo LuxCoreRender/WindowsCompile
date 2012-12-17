@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug SSE1|Win32">
@@ -449,8 +449,6 @@
     <ClCompile Include="..\..\..\lux\textures\regulardata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\scale.cpp" />
     <ClCompile Include="..\..\..\lux\textures\sellmeiertexture.cpp" />
-    <ClCompile Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.cpp" />
-    <ClCompile Include="..\..\..\lux\textures\simplexnoise\srdnoise23.cpp" />
     <ClCompile Include="..\..\..\lux\textures\subtract.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulateddata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\tabulatedfresnel.cpp" />
@@ -566,6 +564,7 @@
     <ClInclude Include="..\..\..\lux\cameras\realistic.h" />
     <ClInclude Include="..\..\..\lux\core\asyncstream.h" />
     <ClInclude Include="..\..\..\lux\core\filedata.h" />
+    <ClInclude Include="..\..\..\lux\core\geometry\matrix2x2.h" />
     <ClInclude Include="..\..\..\lux\core\geometry\transform.h" />
     <ClInclude Include="..\..\..\lux\core\partialcontribution.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.h" />
@@ -634,6 +633,7 @@
     <ClInclude Include="..\..\..\lux\materials\scattermaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\shinymetal.h" />
     <ClInclude Include="..\..\..\lux\materials\velvet.h" />
+    <ClInclude Include="..\..\..\lux\renderers\sppmrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h" />
@@ -699,8 +699,6 @@
     <ClInclude Include="..\..\..\lux\textures\regulardata.h" />
     <ClInclude Include="..\..\..\lux\textures\scale.h" />
     <ClInclude Include="..\..\..\lux\textures\sellmeiertexture.h" />
-    <ClInclude Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.h" />
-    <ClInclude Include="..\..\..\lux\textures\simplexnoise\srdnoise23.h" />
     <ClInclude Include="..\..\..\lux\textures\subtract.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulateddata.h" />
     <ClInclude Include="..\..\..\lux\textures\tabulatedfresnel.h" />

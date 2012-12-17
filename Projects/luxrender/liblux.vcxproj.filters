@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -203,12 +203,6 @@
     </Filter>
     <Filter Include="Header Files\renderers\statistics">
       <UniqueIdentifier>{a2d1a757-cbe1-4f49-ab58-5ed8366f48fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\textures\simplexnoise">
-      <UniqueIdentifier>{6d7846a4-3664-4dc8-960a-4d7f8d5a090c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\textures\simplexnoise">
-      <UniqueIdentifier>{8bd8afa1-7635-4521-9994-8ba37c30c23f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -931,12 +925,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\textures\subtract.cpp">
       <Filter>Source Files\textures</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.cpp">
-      <Filter>Source Files\textures\simplexnoise</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\textures\simplexnoise\srdnoise23.cpp">
-      <Filter>Source Files\textures\simplexnoise</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\lux\renderers\sppm\parallelhashgrid.cpp">
       <Filter>Source Files\renderers\sppm</Filter>
@@ -1726,12 +1714,6 @@
     <ClInclude Include="..\..\..\lux\textures\subtract.h">
       <Filter>Header Files\textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\lux\textures\simplexnoise\sdnoise1234.h">
-      <Filter>Header Files\textures\simplexnoise</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\textures\simplexnoise\srdnoise23.h">
-      <Filter>Header Files\textures\simplexnoise</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\lux\core\asyncstream.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -1748,6 +1730,12 @@
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\transform.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\renderers\sppmrenderer.h">
+      <Filter>Header Files\renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\geometry\matrix2x2.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
   </ItemGroup>

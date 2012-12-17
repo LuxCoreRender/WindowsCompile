@@ -250,9 +250,6 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\intersectiondevice.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\pixeldevice.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\trianglemesh.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -402,6 +399,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\utils\sdl\texmap.h">
       <Filter>Header Files\utils\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\geometry\frame.h">
+      <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
