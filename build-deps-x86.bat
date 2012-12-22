@@ -175,6 +175,9 @@ echo * Building freeglut
 echo **************************************************************************
 cd /d %LUX_X86_GLUT_ROOT%
 
+rem Update project files
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch VisualStudio\2010\freeglut.vcxproj %LUX_WINDOWS_BUILD_ROOT%\support\freeglut.vcxproj.patch
+
 IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Debug_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2010\freeglut.sln )
 msbuild /m /verbosity:minimal /property:"Configuration=Release_Static" /property:"Platform=Win32" /target:"Clean" /target:"freeglut" VisualStudio\2010\freeglut.sln
 

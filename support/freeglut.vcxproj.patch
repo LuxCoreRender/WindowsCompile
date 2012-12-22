@@ -1,0 +1,45 @@
+--- D:\LuxSource\deps\x86\freeglut-2.8.0\VisualStudio\2010\freeglut.vcxproj	2011-11-06 13:18:26.000000000 -0700
++++ D:\LuxSource\deps\x64\freeglut-2.8.0\VisualStudio\2010\freeglut.vcxproj	2012-12-22 13:41:40.235323200 -0700
+@@ -194,7 +194,7 @@
+       <PreprocessorDefinitions>_DEBUG;FREEGLUT_STATIC;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MinimalRebuild>true</MinimalRebuild>
+       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <WarningLevel>Level3</WarningLevel>
+       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+       <CompileAs>CompileAsC</CompileAs>
+@@ -214,7 +214,7 @@
+       <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_DEBUG;FREEGLUT_STATIC;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <WarningLevel>Level3</WarningLevel>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+       <CompileAs>CompileAsC</CompileAs>
+@@ -284,7 +284,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>NDEBUG;FREEGLUT_STATIC;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <WarningLevel>Level3</WarningLevel>
+       <CompileAs>CompileAsC</CompileAs>
+@@ -305,7 +305,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>NDEBUG;FREEGLUT_STATIC;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <WarningLevel>Level3</WarningLevel>
+       <CompileAs>CompileAsC</CompileAs>
+@@ -363,4 +363,4 @@
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+   <ImportGroup Label="ExtensionTargets">
+   </ImportGroup>
+-</Project>
+\ No newline at end of file
++</Project>
