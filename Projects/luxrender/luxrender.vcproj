@@ -772,6 +772,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\..\lux\qtgui\queue-hxx.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\..\lux\qtgui\renderview-hxx.cpp"
 					>
 				</File>
@@ -2257,6 +2261,106 @@
 			<File
 				RelativePath="..\..\..\lux\qtgui\queue.hxx"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release SSE1|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release NoOpenCL|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling QT HXX File $(InputName)"
+						CommandLine="$(LUX_QT_ROOT)\bin\moc.exe -o &quot;$(InputDir)/$(InputName)-hxx.cpp&quot; &quot;$(InputPath)&quot; -p .&#x0D;&#x0A;"
+						Outputs="$(InputDir)/$(InputName)-hxx.cpp"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\..\..\lux\qtgui\renderview.hxx"
