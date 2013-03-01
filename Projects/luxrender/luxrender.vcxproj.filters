@@ -307,6 +307,15 @@
     <None Include="..\..\..\lux\qtgui\icons\zoomicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
+    <None Include="..\..\..\lux\qtgui\icons\analogclockicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\flmicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\viewicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resources\core.rc">

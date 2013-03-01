@@ -449,6 +449,7 @@
       <Outputs>%(RootDir)%(Directory)/ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <None Include="..\..\..\lux\qtgui\icons\advancedicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\analogclockicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\clipboardicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\clipboardicon_alpha.png" />
     <None Include="..\..\..\lux\qtgui\icons\collapsedicon.png" />
@@ -456,6 +457,7 @@
     <None Include="..\..\..\lux\qtgui\icons\colouredv2cbisfx4.png" />
     <None Include="..\..\..\lux\qtgui\icons\erroricon.png" />
     <None Include="..\..\..\lux\qtgui\icons\expandedicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\flmicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\gammaicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\histogramicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\lenseffectsicon.png" />
@@ -475,6 +477,7 @@
     <None Include="..\..\..\lux\qtgui\icons\resumeicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\stopicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\tonemapicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\viewicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\warningicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\zoomicon.png" />
     <None Include="..\..\..\lux\qtgui\images\checkerboard.png" />
