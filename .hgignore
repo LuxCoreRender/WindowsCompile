@@ -17,3 +17,4 @@ Projects\luxrender\BuildTemp\*
 build-vars.*
 .project
 .pydevproject
+*_changeset*.txt
