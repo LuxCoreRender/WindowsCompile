@@ -76,6 +76,7 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\SSE2.props" />
     <Import Project="..\properties\32bit-Release.props" />
     <Import Project="..\properties\32bit-Variables.props" />
@@ -105,6 +106,7 @@
     <Import Project="..\properties\LuxRaysProperties.props" />
     <Import Project="..\properties\LuxConsoleApp.props" />
     <Import Project="..\properties\LuxRaysUser.props" />
+    <Import Project="..\properties\NoOpenCL.props" />
     <Import Project="..\properties\64bit-Release.props" />
     <Import Project="..\properties\64bit-Variables.props" />
   </ImportGroup>
