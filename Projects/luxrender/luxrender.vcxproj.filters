@@ -223,6 +223,12 @@
     <None Include="..\..\..\lux\qtgui\icons\advancedicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
+    <None Include="..\..\..\lux\qtgui\icons\analogclockicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\arrowicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
     <None Include="..\..\..\lux\qtgui\icons\clipboardicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
@@ -250,6 +256,9 @@
     <None Include="..\..\..\lux\qtgui\icons\histogramicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
+    <None Include="..\..\..\lux\qtgui\icons\imageicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
     <None Include="..\..\..\lux\qtgui\icons\lenseffectsicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
@@ -260,6 +269,9 @@
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
     <None Include="..\..\..\lux\qtgui\icons\luxrender.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
+    <None Include="..\..\..\lux\qtgui\icons\mappainticon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
     <None Include="..\..\..\lux\qtgui\icons\minusicon.png">
@@ -301,19 +313,13 @@
     <None Include="..\..\..\lux\qtgui\icons\tonemapicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
+    <None Include="..\..\..\lux\qtgui\icons\viewicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </None>
     <None Include="..\..\..\lux\qtgui\icons\warningicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
     <None Include="..\..\..\lux\qtgui\icons\zoomicon.png">
-      <Filter>Resource Files\QT Resources\icons</Filter>
-    </None>
-    <None Include="..\..\..\lux\qtgui\icons\analogclockicon.png">
-      <Filter>Resource Files\QT Resources\icons</Filter>
-    </None>
-    <None Include="..\..\..\lux\qtgui\icons\flmicon.png">
-      <Filter>Resource Files\QT Resources\icons</Filter>
-    </None>
-    <None Include="..\..\..\lux\qtgui\icons\viewicon.png">
       <Filter>Resource Files\QT Resources\icons</Filter>
     </None>
   </ItemGroup>

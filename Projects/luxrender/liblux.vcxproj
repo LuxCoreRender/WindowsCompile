@@ -376,6 +376,7 @@
     <ClCompile Include="..\..\..\lux\renderers\hybridrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\hybridsamplerrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\samplerrenderer.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\slgrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppmrenderer.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\hashgrid.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\sppm\hitpoints.cpp" />
@@ -385,6 +386,7 @@
     <ClCompile Include="..\..\..\lux\renderers\sppm\photonsampler.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\samplerstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\renderers\statistics\slgstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
@@ -633,12 +635,14 @@
     <ClInclude Include="..\..\..\lux\materials\scattermaterial.h" />
     <ClInclude Include="..\..\..\lux\materials\shinymetal.h" />
     <ClInclude Include="..\..\..\lux\materials\velvet.h" />
+    <ClInclude Include="..\..\..\lux\renderers\slgrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppmrenderer.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\hitpoints.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\lookupaccel.h" />
     <ClInclude Include="..\..\..\lux\renderers\sppm\photonsampler.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\hybridsamplerstatistics.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\samplerstatistics.h" />
+    <ClInclude Include="..\..\..\lux\renderers\statistics\slgstatistics.h" />
     <ClInclude Include="..\..\..\lux\renderers\statistics\sppmstatistics.h" />
     <ClInclude Include="..\..\..\lux\samplers\erpt.h" />
     <ClInclude Include="..\..\..\lux\samplers\lowdiscrepancy.h" />
@@ -833,6 +837,14 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\luxrays\libslg.vcxproj">
+      <Project>{96e9a13c-53cb-4035-9a85-f5de8ca831c6}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
     <ProjectReference Include="..\luxrays\luxrays.vcxproj">
       <Project>{712cfe41-8a81-492a-89a6-d38b1eacc54b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

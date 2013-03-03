@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\camera">
+      <UniqueIdentifier>{d1b62136-f711-4ab7-8a96-d5e499f73ff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{a8dd5db2-8154-4874-bbba-410ad13ff2c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\data">
+      <UniqueIdentifier>{f6d889de-b239-4c4e-b0df-a32ccbf5604e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines">
+      <UniqueIdentifier>{7c222280-b6ae-4f4a-9768-0e7fb9ad15a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\bidircpu">
+      <UniqueIdentifier>{fbb4cafb-7446-427d-8085-7c1a40d3cd1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\bidirhybrid">
+      <UniqueIdentifier>{8f8291e6-3b97-43cc-a676-55cfbaab9330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\bidirvmcpu">
+      <UniqueIdentifier>{5ac9d2b8-2918-4afa-8c9a-85e9d38a3110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\cbidirhybrid">
+      <UniqueIdentifier>{43f144c0-ddb4-4738-8883-4ce76fe5a908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\filesaver">
+      <UniqueIdentifier>{b5dfc4b7-c6f9-4f9d-b294-c7448b0b568f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\lightcpu">
+      <UniqueIdentifier>{724aeafe-253f-4fc8-8ab2-29a99a684dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\pathcpu">
+      <UniqueIdentifier>{1f8dc679-fa78-4cca-a295-500db3e7a0d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engines\pathocl">
+      <UniqueIdentifier>{340ec2ab-3cd1-4f80-a493-fbd96c5ebbb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels">
+      <UniqueIdentifier>{782fdb53-6f62-4f2c-ad4b-bf9c8c8fb069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\engines">
+      <UniqueIdentifier>{181224e3-90a7-419c-a167-b8407abad32c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\engines\pathocl">
+      <UniqueIdentifier>{14a05acb-1f8b-491b-b5cb-b8a6c2be63e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines">
+      <UniqueIdentifier>{3948d72b-965b-4804-954f-b58fdbf013f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\bidircpu">
+      <UniqueIdentifier>{8eb2eb17-6cff-4b09-8d1a-b2571f7cbd4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\bidirhybrid">
+      <UniqueIdentifier>{c23f2500-24a2-4c35-8f5a-5bca0b3f3979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\bidirvmcpu">
+      <UniqueIdentifier>{ba734ec8-1a7e-4b73-b436-263dc2616325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\cbidirhybrid">
+      <UniqueIdentifier>{ca904cf2-dd52-4dfb-987a-35be96728788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\filesaver">
+      <UniqueIdentifier>{5f4a972d-15fd-4357-98c9-ed38288e8e11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\lightcpu">
+      <UniqueIdentifier>{67f5e16e-d3b0-4196-96f4-645ca0072784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\pathcpu">
+      <UniqueIdentifier>{8a5746a1-157e-4ff4-abaf-b5a411d7bb82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\pathocl">
+      <UniqueIdentifier>{eb4cdbb4-72b6-4bba-b3d4-792819155760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\film">
+      <UniqueIdentifier>{d10bce82-60d3-4b99-a86d-336701cba717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernels">
+      <UniqueIdentifier>{e3e986b9-66bc-456d-a2b0-ad1c69e1390d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sampler">
+      <UniqueIdentifier>{e2acefd1-f534-4812-8ca2-a5946439f4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdl">
+      <UniqueIdentifier>{6e31b0be-7d89-4fe5-9196-292308efcee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\telnet">
+      <UniqueIdentifier>{dd45bfcb-1250-4397-a4fe-e64a818c3f43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{4ad1c02f-5c46-4426-9675-77236c3b673f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\convtest">
+      <UniqueIdentifier>{942285d4-f36e-4c5c-9cd9-fd36855d1fc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\convtest\pdiff">
+      <UniqueIdentifier>{c240cd8f-399d-4dc3-a7d8-f960e77b4312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\camera">
+      <UniqueIdentifier>{d33f308c-992c-4d4f-b4e5-6c2f0598c730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\core">
+      <UniqueIdentifier>{740a0ccb-71c4-4c1c-9ccd-a248bb32fa07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\film">
+      <UniqueIdentifier>{81ee2f45-a751-42ba-90cf-9c11fb7f0365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\sampler">
+      <UniqueIdentifier>{a7fbecae-1b05-4fcc-a46d-7e874ee29cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels\sdl">
+      <UniqueIdentifier>{5b1ab9d1-2b9a-43d8-8817-ed1162348944}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\luxrays\include\slg\cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\editaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\renderconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\renderengine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\rendersession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\slg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\camera\camera.h">
+      <Filter>Header Files\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\data\rgbD65_32.h">
+      <Filter>Header Files\core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\data\rgbE_32.h">
+      <Filter>Header Files\core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\data\sun_spect.h">
+      <Filter>Header Files\core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\data\xyzbasis.h">
+      <Filter>Header Files\core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\mc.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\spd.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\core\spectrum.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidircpu\bidircpu.h">
+      <Filter>Header Files\engines\bidircpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidirhybrid\bidirhybrid.h">
+      <Filter>Header Files\engines\bidirhybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidirvmcpu\bidirvmcpu.h">
+      <Filter>Header Files\engines\bidirvmcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\cbidirhybrid\cbidirhybrid.h">
+      <Filter>Header Files\engines\cbidirhybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\filesaver\filesaver.h">
+      <Filter>Header Files\engines\filesaver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\lightcpu\lightcpu.h">
+      <Filter>Header Files\engines\lightcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathcpu\pathcpu.h">
+      <Filter>Header Files\engines\pathcpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\compiledscene.h">
+      <Filter>Header Files\engines\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\ocldatatypes.h">
+      <Filter>Header Files\engines\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\pathocl.h">
+      <Filter>Header Files\engines\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\rtpathocl.h">
+      <Filter>Header Files\engines\pathocl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\datatypes.cl">
+      <Filter>Kernels\engines\pathocl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl">
+      <Filter>Kernels\engines\pathocl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\rtpathocl_kernels.cl">
+      <Filter>Kernels\engines\pathocl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\camera\camera_funcs.cl">
+      <Filter>Kernels\camera</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\camera\camera_types.cl">
+      <Filter>Kernels\camera</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\core\mc_funcs.cl">
+      <Filter>Kernels\core</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\core\spectrum_funcs.cl">
+      <Filter>Kernels\core</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\core\spectrum_types.cl">
+      <Filter>Kernels\core</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\film\filter_funcs.cl">
+      <Filter>Kernels\film</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\film\filter_types.cl">
+      <Filter>Kernels\film</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl">
+      <Filter>Kernels\sampler</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sampler\sampler_types.cl">
+      <Filter>Kernels\sampler</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\bsdf_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\light_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\light_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\mapping_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\material_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\material_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\scene_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\texture_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\texture_types.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidircpu\bidircpu.cpp">
+      <Filter>Source Files\engines\bidircpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidircpu\bidircputhread.cpp">
+      <Filter>Source Files\engines\bidircpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirhybrid.cpp">
+      <Filter>Source Files\engines\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirhybridthread.cpp">
+      <Filter>Source Files\engines\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirstate.cpp">
+      <Filter>Source Files\engines\bidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirvmcpu\bidirvmcpu.cpp">
+      <Filter>Source Files\engines\bidirvmcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirvmcpu\bidirvmcputhread.cpp">
+      <Filter>Source Files\engines\bidirvmcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidirvmcpu\hashgrid.cpp">
+      <Filter>Source Files\engines\bidirvmcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\cbidirhybrid\cbidirhybrid.cpp">
+      <Filter>Source Files\engines\cbidirhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\filesaver\filesaver.cpp">
+      <Filter>Source Files\engines\filesaver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\lightcpu\lightcpu.cpp">
+      <Filter>Source Files\engines\lightcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\lightcpu\lightcputhread.cpp">
+      <Filter>Source Files\engines\lightcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathcpu\pathcpu.cpp">
+      <Filter>Source Files\engines\pathcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathcpu\pathcputhread.cpp">
+      <Filter>Source Files\engines\pathcpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\compiledscene.cpp">
+      <Filter>Source Files\engines\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\pathocl.cpp">
+      <Filter>Source Files\engines\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\pathoclthread.cpp">
+      <Filter>Source Files\engines\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\rtpathocl.cpp">
+      <Filter>Source Files\engines\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\rtpathoclthread.cpp">
+      <Filter>Source Files\engines\pathocl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\film\film.cpp">
+      <Filter>Source Files\film</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\bsdf_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\bsdf_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\camera_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\camera_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\datatypes_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\filter_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\filter_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\hitpoint_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\light_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\light_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mapping_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mapping_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\material_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\material_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mc_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\pathocl_kernels_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\rtpathocl_kernels_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\sampler_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\sampler_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\scene_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\spectrum_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\spectrum_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\texture_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\texture_types_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sampler\sampler.cpp">
+      <Filter>Source Files\sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sampler\sobol.cpp">
+      <Filter>Source Files\sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\bsdf.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\camera.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\extmeshcache.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\light.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\material.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\scene.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\sdl.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\spd.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\sdl\texture.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\telnet\telnet.cpp">
+      <Filter>Source Files\telnet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\utils\convtest\convtest.cpp">
+      <Filter>Source Files\utils\convtest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\utils\convtest\pdiff\lpyramid.cpp">
+      <Filter>Source Files\utils\convtest\pdiff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\utils\convtest\pdiff\metric.cpp">
+      <Filter>Source Files\utils\convtest\pdiff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\renderconfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\renderengine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\rendersession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

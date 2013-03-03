@@ -27,9 +27,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{52E8DD6E-8FC5-4770-BDB0-E9E9AB9EF11F}</ProjectGuid>
-    <RootNamespace>smallluxgpu2</RootNamespace>
-    <ProjectName>smallluxgpu2</ProjectName>
+    <ProjectGuid>{1EB8420E-95DF-4F37-B594-33F920BDB910}</ProjectGuid>
+    <RootNamespace>smallluxgpu4</RootNamespace>
+    <ProjectName>smallluxgpu4</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
@@ -151,7 +151,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Message>
@@ -162,7 +162,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Message>
@@ -173,7 +173,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
@@ -185,7 +185,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Message>
@@ -196,7 +196,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X86_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
@@ -211,7 +211,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu2;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\luxrays\samples\smallluxgpu4;$(LUX_X64_GLEW_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX64</TargetMachine>
@@ -224,49 +224,26 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\displayfunc.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\compiledscene.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernels.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_core.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_datatypes.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_filters.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_samplers.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_scene.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\pathocl.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\pathoclthread.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\renderconfig.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\renderengine.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\rendersession.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\smallluxgpu.cpp" />
-    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu2\telnet.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\displayfunc.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\editaction.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\compiledscene.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\kernels.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\ocldatatypes.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\pathocl.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\renderconfig.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\renderengine.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\rendersession.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\slgcfg.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\smalllux.h" />
-    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu2\telnet.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="libslg.vcxproj">
+      <Project>{96e9a13c-53cb-4035-9a85-f5de8ca831c6}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
     <ProjectReference Include="luxrays.vcxproj">
       <Project>{712cfe41-8a81-492a-89a6-d38b1eacc54b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernels.cl" />
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_core.cl" />
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_datatypes.cl" />
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_filters.cl" />
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_samplers.cl" />
-    <None Include="..\..\..\luxrays\samples\smallluxgpu2\pathocl\kernels\pathocl_kernel_scene.cl" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu4\displayfunc.h" />
+    <ClInclude Include="..\..\..\luxrays\samples\smallluxgpu4\smallluxgpu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu4\displayfunc.cpp" />
+    <ClCompile Include="..\..\..\luxrays\samples\smallluxgpu4\smallluxgpu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

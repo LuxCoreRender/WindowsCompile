@@ -450,6 +450,7 @@
     </CustomBuild>
     <None Include="..\..\..\lux\qtgui\icons\advancedicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\analogclockicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\arrowicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\clipboardicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\clipboardicon_alpha.png" />
     <None Include="..\..\..\lux\qtgui\icons\collapsedicon.png" />
@@ -457,13 +458,14 @@
     <None Include="..\..\..\lux\qtgui\icons\colouredv2cbisfx4.png" />
     <None Include="..\..\..\lux\qtgui\icons\erroricon.png" />
     <None Include="..\..\..\lux\qtgui\icons\expandedicon.png" />
-    <None Include="..\..\..\lux\qtgui\icons\flmicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\gammaicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\histogramicon.png" />
+    <None Include="..\..\..\lux\qtgui\icons\imageicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\lenseffectsicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\lightgroupsicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\logtabicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\luxrender.png" />
+    <None Include="..\..\..\lux\qtgui\icons\mappainticon.png" />
     <None Include="..\..\..\lux\qtgui\icons\minusicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\networktabicon.png" />
     <None Include="..\..\..\lux\qtgui\icons\noisereductionicon.png" />
