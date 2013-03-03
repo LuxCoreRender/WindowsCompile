@@ -1,0 +1,28 @@
+[repository]
+native = CRLF
+
+[patterns]
+**.c = LF
+**.h = LF
+**.cpp = LF
+**.hpp = LF
+**.txt = LF
+**.ui = LF
+**.hxx = LF
+**.l = LF
+**.y = LF
+**.cmake = LF
+**.vcproj = CRLF
+**.vcxproj = CRLF
+**.vcxproj.filters = CRLF
+**.sln = CRLF
+**.props = CRLF
+**.rc = CRLF
+**.bat = CRLF
+**.cmd = CRLF
+**.py = LF
+**.png = BIN
+**.ply = BIN
+support/** = CRLF
+** = native
+
