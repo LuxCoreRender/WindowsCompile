@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -18,9 +18,6 @@
     <ClCompile Include="..\..\..\lux\vr\luxvr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\console\commandline.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resources\core.rc">
@@ -31,10 +28,5 @@
     <None Include="..\Resources\lux.ico">
       <Filter>Resource Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\lux\console\commandline.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

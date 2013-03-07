@@ -265,7 +265,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\lux\console\commandline.cpp" />
     <ClCompile Include="..\..\..\lux\vr\luxvr.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -279,9 +278,6 @@
       <Project>{8c159477-7802-4c52-865e-131537bbad83}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\lux\console\commandline.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
