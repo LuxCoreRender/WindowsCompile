@@ -204,6 +204,9 @@
     <Filter Include="Header Files\renderers\statistics">
       <UniqueIdentifier>{a2d1a757-cbe1-4f49-ab58-5ed8366f48fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\shapes\cyhair">
+      <UniqueIdentifier>{37d12da5-e173-4686-93c9-7a79927c1255}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\lux\accelerators\bruteforce.cpp">
@@ -949,6 +952,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\lux\renderers\statistics\slgstatistics.cpp">
       <Filter>Source Files\renderers\statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\shapes\hairfile.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\hitpointcolor.cpp">
+      <Filter>Source Files\textures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1749,6 +1758,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\geometry\matrix2x2.h">
       <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\shapes\hairfile.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\shapes\cyhair\cyHairFile.h">
+      <Filter>Header Files\shapes\cyhair</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\hitpointcolor.h">
+      <Filter>Header Files\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

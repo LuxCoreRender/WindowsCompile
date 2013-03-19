@@ -391,6 +391,7 @@
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\disk.cpp" />
+    <ClCompile Include="..\..\..\lux\shapes\hairfile.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\heightfield.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\hyperboloid.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\lenscomponent.cpp" />
@@ -442,6 +443,7 @@
     <ClCompile Include="..\..\..\lux\textures\fresnelcolor.cpp" />
     <ClCompile Include="..\..\..\lux\textures\gaussiantexture.cpp" />
     <ClCompile Include="..\..\..\lux\textures\harlequin.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\hitpointcolor.cpp" />
     <ClCompile Include="..\..\..\lux\textures\imagemap.cpp" />
     <ClCompile Include="..\..\..\lux\textures\irregulardata.cpp" />
     <ClCompile Include="..\..\..\lux\textures\lampspectrum.cpp" />
@@ -649,8 +651,10 @@
     <ClInclude Include="..\..\..\lux\samplers\metrosampler.h" />
     <ClInclude Include="..\..\..\lux\samplers\random.h" />
     <ClInclude Include="..\..\..\lux\shapes\cone.h" />
+    <ClInclude Include="..\..\..\lux\shapes\cyhair\cyHairFile.h" />
     <ClInclude Include="..\..\..\lux\shapes\cylinder.h" />
     <ClInclude Include="..\..\..\lux\shapes\disk.h" />
+    <ClInclude Include="..\..\..\lux\shapes\hairfile.h" />
     <ClInclude Include="..\..\..\lux\shapes\heightfield.h" />
     <ClInclude Include="..\..\..\lux\shapes\hyperboloid.h" />
     <ClInclude Include="..\..\..\lux\shapes\lenscomponent.h" />
@@ -694,6 +698,7 @@
     <ClInclude Include="..\..\..\lux\textures\fresnelcolor.h" />
     <ClInclude Include="..\..\..\lux\textures\gaussiantexture.h" />
     <ClInclude Include="..\..\..\lux\textures\harlequin.h" />
+    <ClInclude Include="..\..\..\lux\textures\hitpointcolor.h" />
     <ClInclude Include="..\..\..\lux\textures\imagemap.h" />
     <ClInclude Include="..\..\..\lux\textures\irregulardata.h" />
     <ClInclude Include="..\..\..\lux\textures\lampspectrum.h" />
