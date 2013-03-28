@@ -50,6 +50,8 @@ cd %INSTALL_PATH%
 
 echo Copying slg4.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrays\x64\%REL_DIR%\slg4.exe .\ > nul
+echo Copying luxvr.exe
+copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxvr.exe .\ > nul
 echo Copying luxrender.exe
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxrender.exe .\ > nul
 copy "%LUX_WINDOWS_BUILD_ROOT%"\Projects\luxrender\x64\%REL_DIR%\luxrender.pdb .\ > nul
