@@ -388,6 +388,7 @@
     <ClCompile Include="..\..\..\lux\renderers\statistics\samplerstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\slgstatistics.cpp" />
     <ClCompile Include="..\..\..\lux\renderers\statistics\sppmstatistics.cpp" />
+    <ClCompile Include="..\..\..\lux\samplers\sobol.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cone.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\cylinder.cpp" />
     <ClCompile Include="..\..\..\lux\shapes\disk.cpp" />
@@ -650,6 +651,7 @@
     <ClInclude Include="..\..\..\lux\samplers\lowdiscrepancy.h" />
     <ClInclude Include="..\..\..\lux\samplers\metrosampler.h" />
     <ClInclude Include="..\..\..\lux\samplers\random.h" />
+    <ClInclude Include="..\..\..\lux\samplers\sobol.h" />
     <ClInclude Include="..\..\..\lux\shapes\cone.h" />
     <ClInclude Include="..\..\..\lux\shapes\cyhair\cyHairFile.h" />
     <ClInclude Include="..\..\..\lux\shapes\cylinder.h" />

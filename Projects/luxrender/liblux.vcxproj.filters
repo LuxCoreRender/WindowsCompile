@@ -959,6 +959,9 @@
     <ClCompile Include="..\..\..\lux\textures\hitpointcolor.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\samplers\sobol.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1767,6 +1770,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\textures\hitpointcolor.h">
       <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\samplers\sobol.h">
+      <Filter>Header Files\samplers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
