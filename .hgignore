@@ -18,3 +18,5 @@ build-vars.*
 .project
 .pydevproject
 *_changeset*.txt
+*changelog*.txt
+
