@@ -177,7 +177,6 @@
     <ClInclude Include="..\..\..\luxrays\include\slg\core\data\xyzbasis.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\core\mc.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\core\spd.h" />
-    <ClInclude Include="..\..\..\luxrays\include\slg\core\spectrum.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\editaction.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidircpu\bidircpu.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidirhybrid\bidirhybrid.h" />
@@ -199,8 +198,6 @@
     <None Include="..\..\..\luxrays\include\slg\camera\camera_funcs.cl" />
     <None Include="..\..\..\luxrays\include\slg\camera\camera_types.cl" />
     <None Include="..\..\..\luxrays\include\slg\core\mc_funcs.cl" />
-    <None Include="..\..\..\luxrays\include\slg\core\spectrum_funcs.cl" />
-    <None Include="..\..\..\luxrays\include\slg\core\spectrum_types.cl" />
     <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\datatypes.cl" />
     <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl" />
     <None Include="..\..\..\luxrays\include\slg\engines\pathocl\kernels\rtpathocl_kernels.cl" />

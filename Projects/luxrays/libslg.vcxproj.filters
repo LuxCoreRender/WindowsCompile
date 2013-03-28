@@ -165,9 +165,6 @@
     <ClInclude Include="..\..\..\luxrays\include\slg\core\spd.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\luxrays\include\slg\core\spectrum.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\bidircpu\bidircpu.h">
       <Filter>Header Files\engines\bidircpu</Filter>
     </ClInclude>
@@ -219,12 +216,6 @@
       <Filter>Kernels\camera</Filter>
     </None>
     <None Include="..\..\..\luxrays\include\slg\core\mc_funcs.cl">
-      <Filter>Kernels\core</Filter>
-    </None>
-    <None Include="..\..\..\luxrays\include\slg\core\spectrum_funcs.cl">
-      <Filter>Kernels\core</Filter>
-    </None>
-    <None Include="..\..\..\luxrays\include\slg\core\spectrum_types.cl">
       <Filter>Kernels\core</Filter>
     </None>
     <None Include="..\..\..\luxrays\include\slg\film\filter_funcs.cl">

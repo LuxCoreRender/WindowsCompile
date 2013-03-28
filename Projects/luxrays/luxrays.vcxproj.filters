@@ -311,5 +311,8 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\luxrays.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\spectrum.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

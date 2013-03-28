@@ -299,6 +299,7 @@
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\ocldevice.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\oclintersectiondevice.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\randomgen.h" />
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\core\spectrum.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\trianglemesh.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\utils.h" />
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\virtualdevice.h" />
