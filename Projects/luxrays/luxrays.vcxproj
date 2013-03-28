@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug SSE1|Win32">
@@ -254,6 +254,8 @@
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\randomgen_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\ray_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\ray_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\spectrum_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\spectrum_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\transform_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\transform_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\trianglemesh_funcs_kernel.cpp" />

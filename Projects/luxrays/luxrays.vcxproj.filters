@@ -192,6 +192,12 @@
     <ClCompile Include="..\..\..\luxrays\src\luxrays\utils\ply\rply.cpp">
       <Filter>Source Files\utils\ply</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\spectrum_funcs_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\spectrum_types_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h">

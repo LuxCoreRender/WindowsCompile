@@ -397,12 +397,6 @@
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\scene_funcs_kernel.cpp">
       <Filter>Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\spectrum_funcs_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\spectrum_types_kernel.cpp">
-      <Filter>Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\texture_funcs_kernel.cpp">
       <Filter>Source Files\kernels</Filter>
     </ClCompile>
