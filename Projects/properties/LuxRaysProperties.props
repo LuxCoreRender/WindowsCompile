@@ -15,7 +15,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <CallingConvention>Cdecl</CallingConvention>
-      <DisableSpecificWarnings>4324;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4267;4324;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_BOOST_ROOT)/stage/boost/lib;$(LUX_FREEIMAGE_ROOT)/FreeImage/Dist</AdditionalLibraryDirectories>

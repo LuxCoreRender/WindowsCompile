@@ -8,6 +8,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\luxrays\include;$(LUX_GLUT_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>FREEGLUT_STATIC;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4324;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_GLUT_LIBS);$(LUX_GLEW_LIBS);$(LUX_LUXRAYS_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
