@@ -28,6 +28,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smallluxgpu4", "Projects\lu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luxvr", "Projects\luxrender\luxvr.vcxproj", "{EE134B7A-0406-48CE-BA83-0EFB917EC7A5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp_api_test", "Projects\luxrender\cpp_api_test.vcxproj", "{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C5F47DE-F46C-45C2-A117-2ED84BBED934} = {7C5F47DE-F46C-45C2-A117-2ED84BBED934}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -190,6 +195,16 @@ Global
 		{EE134B7A-0406-48CE-BA83-0EFB917EC7A5}.Release|Win32.Build.0 = Release|Win32
 		{EE134B7A-0406-48CE-BA83-0EFB917EC7A5}.Release|x64.ActiveCfg = Release|x64
 		{EE134B7A-0406-48CE-BA83-0EFB917EC7A5}.Release|x64.Build.0 = Release|x64
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Debug|Win32.Build.0 = Debug|Win32
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Debug|x64.ActiveCfg = Debug|x64
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Debug|x64.Build.0 = Debug|x64
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release NoOpenCL|Win32.ActiveCfg = Release|Win32
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release NoOpenCL|x64.ActiveCfg = Release|x64
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release|Win32.ActiveCfg = Release|Win32
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release|Win32.Build.0 = Release|Win32
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release|x64.ActiveCfg = Release|x64
+		{1B96EFA5-18F9-4B1C-B1F4-C1AB564BF6F2}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
