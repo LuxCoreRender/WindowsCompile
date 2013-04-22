@@ -962,6 +962,9 @@
     <ClCompile Include="..\..\..\lux\samplers\sobol.cpp">
       <Filter>Source Files\samplers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\tonemaps\falsecolors.cpp">
+      <Filter>Source Files\tonemaps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1773,6 +1776,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\samplers\sobol.h">
       <Filter>Header Files\samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\tonemaps\falsecolors.h">
+      <Filter>Header Files\tonemaps</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

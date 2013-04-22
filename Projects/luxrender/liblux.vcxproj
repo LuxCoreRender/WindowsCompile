@@ -462,6 +462,7 @@
     <ClCompile Include="..\..\..\lux\textures\windy.cpp" />
     <ClCompile Include="..\..\..\lux\textures\wrinkled.cpp" />
     <ClCompile Include="..\..\..\lux\tonemaps\contrast.cpp" />
+    <ClCompile Include="..\..\..\lux\tonemaps\falsecolors.cpp" />
     <ClCompile Include="..\..\..\lux\tonemaps\lineartonemap.cpp" />
     <ClCompile Include="..\..\..\lux\tonemaps\maxwhite.cpp" />
     <ClCompile Include="..\..\..\lux\tonemaps\nonlinear.cpp" />
@@ -718,6 +719,7 @@
     <ClInclude Include="..\..\..\lux\textures\windy.h" />
     <ClInclude Include="..\..\..\lux\textures\wrinkled.h" />
     <ClInclude Include="..\..\..\lux\tonemaps\contrast.h" />
+    <ClInclude Include="..\..\..\lux\tonemaps\falsecolors.h" />
     <ClInclude Include="..\..\..\lux\tonemaps\lineartonemap.h" />
     <ClInclude Include="..\..\..\lux\tonemaps\maxwhite.h" />
     <ClInclude Include="..\..\..\lux\tonemaps\nonlinear.h" />
