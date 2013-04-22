@@ -311,6 +311,7 @@
     <ClCompile Include="..\..\..\lux\core\asyncstream.cpp" />
     <ClCompile Include="..\..\..\lux\core\filedata.cpp" />
     <ClCompile Include="..\..\..\lux\core\partialcontribution.cpp" />
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.cpp" />
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\multibsdf.cpp" />
@@ -356,6 +357,7 @@
     <ClCompile Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction_ies.cpp" />
     <ClCompile Include="..\..\..\lux\materials\carpaint.cpp" />
     <ClCompile Include="..\..\..\lux\materials\cloth.cpp" />
+    <ClCompile Include="..\..\..\lux\materials\doubleside.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glass.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glass2.cpp" />
     <ClCompile Include="..\..\..\lux\materials\glossy.cpp" />
@@ -573,6 +575,7 @@
     <ClInclude Include="..\..\..\lux\core\geometry\matrix2x2.h" />
     <ClInclude Include="..\..\..\lux\core\geometry\transform.h" />
     <ClInclude Include="..\..\..\lux\core\partialcontribution.h" />
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\layeredbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\mixbsdf.h" />
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\multibsdf.h" />
@@ -622,6 +625,7 @@
     <ClInclude Include="..\..\..\lux\lights\sphericalfunction\sphericalfunction_ies.h" />
     <ClInclude Include="..\..\..\lux\materials\carpaint.h" />
     <ClInclude Include="..\..\..\lux\materials\cloth.h" />
+    <ClInclude Include="..\..\..\lux\materials\doubleside.h" />
     <ClInclude Include="..\..\..\lux\materials\glass.h" />
     <ClInclude Include="..\..\..\lux\materials\glass2.h" />
     <ClInclude Include="..\..\..\lux\materials\glossy.h" />

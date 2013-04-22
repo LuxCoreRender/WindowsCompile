@@ -965,6 +965,12 @@
     <ClCompile Include="..\..\..\lux\tonemaps\falsecolors.cpp">
       <Filter>Source Files\tonemaps</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\materials\doubleside.cpp">
+      <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.cpp">
+      <Filter>Source Files\core\reflection\bsdf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1779,6 +1785,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\tonemaps\falsecolors.h">
       <Filter>Header Files\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\materials\doubleside.h">
+      <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.h">
+      <Filter>Header Files\core\reflection\bsdf</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
