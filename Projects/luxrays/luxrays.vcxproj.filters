@@ -198,6 +198,12 @@
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\spectrum_types_kernel.cpp">
       <Filter>Source Files\kernels\Generated</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\accelerators\mbvhaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\mbvh_kernel.cpp">
+      <Filter>Source Files\kernels\Generated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h">
@@ -313,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\luxrays\core\spectrum.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\luxrays\accelerators\mbvhaccel.h">
+      <Filter>Header Files\accelerators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
