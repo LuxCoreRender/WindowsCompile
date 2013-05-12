@@ -971,6 +971,9 @@
     <ClCompile Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.cpp">
       <Filter>Source Files\core\reflection\bsdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\shapes\deferred.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1791,6 +1794,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\core\reflection\bsdf\doublesidebsdf.h">
       <Filter>Header Files\core\reflection\bsdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\shapes\deferred.h">
+      <Filter>Header Files\shapes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
