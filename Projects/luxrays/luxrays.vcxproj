@@ -226,6 +226,7 @@
     <ClCompile Include="..\..\..\luxrays\src\luxrays\accelerators\mbvhaccel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\accelerators\mqbvhaccel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\accelerators\qbvhaccel.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\core\accelerator.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\core\context.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\core\dataset.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\core\device.cpp" />
@@ -238,6 +239,7 @@
     <ClCompile Include="..\..\..\luxrays\src\luxrays\idevices\nativeidevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\idevices\openclidevice.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\idevices\virtualidevice.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\bbox_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\bbox_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\bvh_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\luxrays\kernels\epsilon_funcs_kernel.cpp" />
