@@ -207,6 +207,9 @@ echo * Building FFTW
 echo **************************************************************************
 cd /d %LUX_X64_FFTW_ROOT%
 
+rem Update project files
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch fftw-3.3-libs\libfftw-3.3\libfftw-3.3.vcxproj %LUX_WINDOWS_BUILD_ROOT%\support\libfftw-3.3.vcxproj.patch
+
 IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Static-Debug" /property:"Platform=x64" /target:"Clean" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln )
 msbuild /m /verbosity:minimal /property:"Configuration=Static-Release" /property:"Platform=x64" /target:"Clean" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
 
