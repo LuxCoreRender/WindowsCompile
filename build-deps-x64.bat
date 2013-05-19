@@ -198,6 +198,19 @@ IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=
 msbuild /m /verbosity:minimal /property:"Configuration=Release" /property:"Platform=x64" /target:"Clean" /target:"glew_static" build\vc10\glew.sln
 
 :: ****************************************************************************
+:: ********************************** FFTW ************************************
+:: ****************************************************************************
+:FFTW
+echo.
+echo **************************************************************************
+echo * Building FFTW
+echo **************************************************************************
+cd /d %LUX_X64_FFTW_ROOT%
+
+IF %BUILD_DEBUG% EQU 1 ( msbuild /m /verbosity:minimal /property:"Configuration=Static-Debug" /property:"Platform=x64" /target:"Clean" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln )
+msbuild /m /verbosity:minimal /property:"Configuration=Static-Release" /property:"Platform=x64" /target:"Clean" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
+
+:: ****************************************************************************
 :: ******************************* LuxRays ************************************
 :: ****************************************************************************
 :LuxRays

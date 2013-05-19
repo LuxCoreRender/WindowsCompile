@@ -9,6 +9,8 @@
     <LUX_GLEW_DLL>$(LUX_X64_GLEW_BIN)\$(LUX_X64_GLEW_LIBNAME).dll</LUX_GLEW_DLL>
     <LUX_GLEW_LIBNAME>$(LUX_X64_GLEW_LIBNAME)</LUX_GLEW_LIBNAME>
     <LUX_GLEW_LIBS>$(LUX_X64_GLEW_LIBS)</LUX_GLEW_LIBS>
+    <LUX_FFTW_INCLUDE>$(LUX_X64_FFTW_ROOT)/api</LUX_FFTW_INCLUDE>
+    <LUX_FFTW_LIBS>$(LUX_X64_FFTW_ROOT)/fftw-3.3-libs/x64/Release</LUX_FFTW_LIBS>
     <LUX_GLUT_INCLUDE>$(LUX_X64_GLUT_INCLUDE)</LUX_GLUT_INCLUDE>
     <LUX_GLUT_LIBS>$(LUX_X64_GLUT_LIBS)</LUX_GLUT_LIBS>
     <LUX_PYTHON3_ROOT>$(LUX_X64_PYTHON3_ROOT)</LUX_PYTHON3_ROOT>
@@ -41,6 +43,12 @@
     </BuildMacro>
     <BuildMacro Include="LUX_GLEW_LIBS">
       <Value>$(LUX_GLEW_LIBS)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FFTW_INCLUDE">
+      <Value>$(LUX_FFTW_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FFTW_LIBS">
+      <Value>$(LUX_FFTW_LIBS)</Value>
     </BuildMacro>
     <BuildMacro Include="LUX_GLUT_INCLUDE">
       <Value>$(LUX_GLUT_INCLUDE)</Value>

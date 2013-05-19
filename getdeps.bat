@@ -17,6 +17,8 @@ SET GLEW_VER=1.9.0
 
 SET FREEGLUT_VER=2.8.0
 
+SET FFTW_VER=3.3.3
+
 :: Initial message to display to user
 echo.
 echo **************************************************************************
@@ -31,6 +33,7 @@ echo   FreeImage %FREEIMAGE_VER_P%                         http://freeimage.sf.n
 echo   Python %PYTHON3_VER%                             http://www.python.org/
 echo   freeglut %FREEGLUT_VER%                           http://freeglut.sourceforge.net/
 echo   GLEW %GLEW_VER%                               http://glew.sourceforge.net/
+echo   FFTW %FFTW_VER%                               http://www.fftw.org/
 echo   and EITHER:
 echo       NVIDIA CUDA ToolKit 5.0
 echo           http://developer.nvidia.com/cuda-downloads
@@ -335,6 +338,16 @@ CALL:addBuildPathVar "LUX_X64_GLEW_BIN",     "%D64%\glew-%GLEW_VER%\bin"
 
 CALL:addBuildVar "LUX_X86_GLEW_LIBNAME", "glew32s"
 CALL:addBuildVar "LUX_X64_GLEW_LIBNAME", "glew64s"
+
+:fftw
+CALL:downloadFile "FFTW %FFTW_VER%", "http://www.fftw.org/fftw-%FFTW_VER%.tar.gz", "fftw-%FFTW_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "FFTW %FFTW_VER%", "%DOWNLOADS%\fftw-%FFTW_VER%.tar.gz"
+
+CALL:downloadFile "FFTW 3.3 VS Solution", "ftp://ftp.fftw.org/pub/fftw/fftw-3.3-libs-visual-studio-2010.zip", "fftw-3.3-libs-visual-studio-2010.zip" || EXIT /b -1
+CALL:extractFile "FFTW 3.3 VS Solution", "%DOWNLOADS%\fftw-3.3-libs-visual-studio-2010.zip", "fftw-%FFTW_VER%"
+
+CALL:addBuildPathVar "LUX_X86_FFTW_ROOT",    "%D32%\fftw-%FFTW_VER%"
+CALL:addBuildPathVar "LUX_X64_FFTW_ROOT",    "%D64%\fftw-%FFTW_VER%"
 
 :: Final message to display to user
 echo.
