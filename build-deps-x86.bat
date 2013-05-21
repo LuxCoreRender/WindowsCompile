@@ -27,6 +27,7 @@ CALL:checkEnvVarValid "LUX_X86_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_FREEIMAGE_ROOT" || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_GLUT_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_GLEW_ROOT"      || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_FFTW_ROOT"      || EXIT /b -1
 
 set MSBUILD_VERSION=
 FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION=%%a.%%b
