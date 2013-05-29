@@ -124,6 +124,12 @@
     <Filter Include="Kernels\sdl">
       <UniqueIdentifier>{5b1ab9d1-2b9a-43d8-8817-ed1162348944}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\engines\pathhybrid">
+      <UniqueIdentifier>{e66618f8-9f95-4462-9fcc-84c5d2a497c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engines\pathhybrid">
+      <UniqueIdentifier>{660da3ff-bcc0-4801-be94-56e3e814092e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\luxrays\include\slg\cfg.h">
@@ -197,6 +203,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\rtpathocl.h">
       <Filter>Header Files\engines\pathocl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathhybrid\pathhybrid.h">
+      <Filter>Header Files\engines\pathhybrid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -447,6 +456,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\slg\rendersession.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybrid.cpp">
+      <Filter>Source Files\engines\pathhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybridthread.cpp">
+      <Filter>Source Files\engines\pathhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathstate.cpp">
+      <Filter>Source Files\engines\pathhybrid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

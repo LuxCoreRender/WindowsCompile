@@ -185,6 +185,7 @@
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\filesaver\filesaver.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\lightcpu\lightcpu.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathcpu\pathcpu.h" />
+    <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathhybrid\pathhybrid.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\compiledscene.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\ocldatatypes.h" />
     <ClInclude Include="..\..\..\luxrays\include\slg\engines\pathocl\pathocl.h" />
@@ -233,6 +234,9 @@
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\lightcpu\lightcputhread.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathcpu\pathcpu.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathcpu\pathcputhread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybrid.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybridthread.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathstate.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\compiledscene.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\pathocl.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathocl\pathoclthread.cpp" />
