@@ -974,6 +974,9 @@
     <ClCompile Include="..\..\..\lux\shapes\deferred.cpp">
       <Filter>Source Files\shapes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\volumes\heterogeneous.cpp">
+      <Filter>Source Files\volumes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1797,6 +1800,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\shapes\deferred.h">
       <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\volumes\heterogeneous.h">
+      <Filter>Header Files\volumes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

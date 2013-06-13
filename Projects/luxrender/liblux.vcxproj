@@ -473,6 +473,7 @@
     <ClCompile Include="..\..\..\lux\volumes\clearvolume.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\cloud.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\exponential.cpp" />
+    <ClCompile Include="..\..\..\lux\volumes\heterogeneous.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\homogeneous.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\volumegrid.cpp" />
     <ClCompile Include="..\..\..\lux\core\api.cpp" />
@@ -733,6 +734,7 @@
     <ClInclude Include="..\..\..\lux\volumes\clearvolume.h" />
     <ClInclude Include="..\..\..\lux\volumes\cloud.h" />
     <ClInclude Include="..\..\..\lux\volumes\exponential.h" />
+    <ClInclude Include="..\..\..\lux\volumes\heterogeneous.h" />
     <ClInclude Include="..\..\..\lux\volumes\homogeneous.h" />
     <ClInclude Include="..\..\..\lux\volumes\volumegrid.h" />
     <ClInclude Include="..\..\..\lux\renderers\hybridrenderer.h" />
