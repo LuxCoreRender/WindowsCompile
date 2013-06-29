@@ -977,6 +977,15 @@
     <ClCompile Include="..\..\..\lux\volumes\heterogeneous.cpp">
       <Filter>Source Files\volumes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\cloud.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\densitygrid.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\textures\exponential.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1803,6 +1812,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\volumes\heterogeneous.h">
       <Filter>Header Files\volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\cloud.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\densitygrid.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\textures\exponential.h">
+      <Filter>Header Files\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

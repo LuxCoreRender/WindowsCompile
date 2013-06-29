@@ -438,10 +438,13 @@
     <ClCompile Include="..\..\..\lux\textures\brick.cpp" />
     <ClCompile Include="..\..\..\lux\textures\cauchytexture.cpp" />
     <ClCompile Include="..\..\..\lux\textures\checkerboard.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\cloud.cpp" />
     <ClCompile Include="..\..\..\lux\textures\colordepth.cpp" />
     <ClCompile Include="..\..\..\lux\textures\constant.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\densitygrid.cpp" />
     <ClCompile Include="..\..\..\lux\textures\dots.cpp" />
     <ClCompile Include="..\..\..\lux\textures\equalenergy.cpp" />
+    <ClCompile Include="..\..\..\lux\textures\exponential.cpp" />
     <ClCompile Include="..\..\..\lux\textures\fbm.cpp" />
     <ClCompile Include="..\..\..\lux\textures\frequencytexture.cpp" />
     <ClCompile Include="..\..\..\lux\textures\fresnelcolor.cpp" />
@@ -699,10 +702,13 @@
     <ClInclude Include="..\..\..\lux\textures\brick.h" />
     <ClInclude Include="..\..\..\lux\textures\cauchytexture.h" />
     <ClInclude Include="..\..\..\lux\textures\checkerboard.h" />
+    <ClInclude Include="..\..\..\lux\textures\cloud.h" />
     <ClInclude Include="..\..\..\lux\textures\colordepth.h" />
     <ClInclude Include="..\..\..\lux\textures\constant.h" />
+    <ClInclude Include="..\..\..\lux\textures\densitygrid.h" />
     <ClInclude Include="..\..\..\lux\textures\dots.h" />
     <ClInclude Include="..\..\..\lux\textures\equalenergy.h" />
+    <ClInclude Include="..\..\..\lux\textures\exponential.h" />
     <ClInclude Include="..\..\..\lux\textures\fbm.h" />
     <ClInclude Include="..\..\..\lux\textures\frequencytexture.h" />
     <ClInclude Include="..\..\..\lux\textures\fresnelcolor.h" />
