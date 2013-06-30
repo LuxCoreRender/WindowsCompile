@@ -578,12 +578,6 @@
     <ClCompile Include="..\..\..\lux\volumes\clearvolume.cpp">
       <Filter>Source Files\volumes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\lux\volumes\cloud.cpp">
-      <Filter>Source Files\volumes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\lux\volumes\exponential.cpp">
-      <Filter>Source Files\volumes</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\lux\volumes\homogeneous.cpp">
       <Filter>Source Files\volumes</Filter>
     </ClCompile>
@@ -986,6 +980,12 @@
     <ClCompile Include="..\..\..\lux\textures\exponential.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\volumes\cloudvolume.cpp">
+      <Filter>Source Files\volumes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\volumes\exponentialvolume.cpp">
+      <Filter>Source Files\volumes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1340,12 +1340,6 @@
       <Filter>Header Files\tonemaps</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\volumes\clearvolume.h">
-      <Filter>Header Files\volumes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\volumes\cloud.h">
-      <Filter>Header Files\volumes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\lux\volumes\exponential.h">
       <Filter>Header Files\volumes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\lux\volumes\homogeneous.h">
@@ -1821,6 +1815,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\textures\exponential.h">
       <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\volumes\cloudvolume.h">
+      <Filter>Header Files\volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\volumes\exponentialvolume.h">
+      <Filter>Header Files\volumes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

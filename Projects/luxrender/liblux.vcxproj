@@ -474,8 +474,8 @@
     <ClCompile Include="..\..\..\lux\tonemaps\nonlinear.cpp" />
     <ClCompile Include="..\..\..\lux\tonemaps\reinhard.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\clearvolume.cpp" />
-    <ClCompile Include="..\..\..\lux\volumes\cloud.cpp" />
-    <ClCompile Include="..\..\..\lux\volumes\exponential.cpp" />
+    <ClCompile Include="..\..\..\lux\volumes\cloudvolume.cpp" />
+    <ClCompile Include="..\..\..\lux\volumes\exponentialvolume.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\heterogeneous.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\homogeneous.cpp" />
     <ClCompile Include="..\..\..\lux\volumes\volumegrid.cpp" />
@@ -738,8 +738,8 @@
     <ClInclude Include="..\..\..\lux\tonemaps\nonlinear.h" />
     <ClInclude Include="..\..\..\lux\tonemaps\reinhard.h" />
     <ClInclude Include="..\..\..\lux\volumes\clearvolume.h" />
-    <ClInclude Include="..\..\..\lux\volumes\cloud.h" />
-    <ClInclude Include="..\..\..\lux\volumes\exponential.h" />
+    <ClInclude Include="..\..\..\lux\volumes\cloudvolume.h" />
+    <ClInclude Include="..\..\..\lux\volumes\exponentialvolume.h" />
     <ClInclude Include="..\..\..\lux\volumes\heterogeneous.h" />
     <ClInclude Include="..\..\..\lux\volumes\homogeneous.h" />
     <ClInclude Include="..\..\..\lux\volumes\volumegrid.h" />
