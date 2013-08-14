@@ -326,7 +326,9 @@
     <ClCompile Include="..\..\..\lux\cameras\orthographic.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\perspective.cpp" />
     <ClCompile Include="..\..\..\lux\cameras\realistic.cpp" />
+    <ClCompile Include="..\..\..\lux\filters\blackmanharris.cpp" />
     <ClCompile Include="..\..\..\lux\filters\box.cpp" />
+    <ClCompile Include="..\..\..\lux\filters\catmullrom.cpp" />
     <ClCompile Include="..\..\..\lux\filters\gaussian.cpp" />
     <ClCompile Include="..\..\..\lux\filters\mitchell.cpp" />
     <ClCompile Include="..\..\..\lux\filters\sinc.cpp" />
@@ -597,7 +599,9 @@
     <ClInclude Include="..\..\..\lux\core\version.h" />
     <ClInclude Include="..\..\..\lux\film\data\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\lux\film\fleximage.h" />
+    <ClInclude Include="..\..\..\lux\filters\blackmanharris.h" />
     <ClInclude Include="..\..\..\lux\filters\box.h" />
+    <ClInclude Include="..\..\..\lux\filters\catmullrom.h" />
     <ClInclude Include="..\..\..\lux\filters\gaussian.h" />
     <ClInclude Include="..\..\..\lux\filters\mitchell.h" />
     <ClInclude Include="..\..\..\lux\filters\sinc.h" />

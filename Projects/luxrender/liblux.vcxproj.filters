@@ -986,6 +986,12 @@
     <ClCompile Include="..\..\..\lux\volumes\exponentialvolume.cpp">
       <Filter>Source Files\volumes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lux\filters\blackmanharris.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lux\filters\catmullrom.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\lux\accelerators\bruteforce.h">
@@ -1821,6 +1827,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\lux\volumes\exponentialvolume.h">
       <Filter>Header Files\volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\filters\blackmanharris.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lux\filters\catmullrom.h">
+      <Filter>Header Files\filters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
