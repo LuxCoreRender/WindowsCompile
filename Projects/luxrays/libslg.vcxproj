@@ -213,6 +213,7 @@
     <None Include="..\..\..\luxrays\include\slg\sdl\light_types.cl" />
     <None Include="..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl" />
     <None Include="..\..\..\luxrays\include\slg\sdl\mapping_types.cl" />
+    <None Include="..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl" />
     <None Include="..\..\..\luxrays\include\slg\sdl\material_funcs.cl" />
     <None Include="..\..\..\luxrays\include\slg\sdl\material_types.cl" />
     <None Include="..\..\..\luxrays\include\slg\sdl\scene_funcs.cl" />
@@ -255,6 +256,7 @@
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\light_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mapping_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mapping_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\materialdefs_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\material_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\material_types_kernel.cpp" />
     <ClCompile Include="..\..\..\luxrays\src\slg\kernels\mc_funcs_kernel.cpp" />

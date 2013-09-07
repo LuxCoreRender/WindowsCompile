@@ -275,6 +275,9 @@
     <None Include="..\..\..\luxrays\include\slg\sdl\texture_types.cl">
       <Filter>Kernels\sdl</Filter>
     </None>
+    <None Include="..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl">
+      <Filter>Kernels\sdl</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\bidircpu\bidircpu.cpp">
@@ -465,6 +468,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\luxrays\src\slg\engines\pathhybrid\pathstate.cpp">
       <Filter>Source Files\engines\pathhybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\luxrays\src\slg\kernels\materialdefs_funcs_kernel.cpp">
+      <Filter>Source Files\kernels</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
