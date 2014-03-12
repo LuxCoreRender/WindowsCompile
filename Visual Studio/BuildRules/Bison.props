@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(BisonBeforeTargets)' == '' and '$(BisonAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <BisonBeforeTargets>ClCompile</BisonBeforeTargets>
+    <BisonAfterTargets>CustomBuild</BisonAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Bison>
+      <OutputFileName>$(IntDir)%(Filename).c</OutputFileName>
+      <OutputHeaderFileName>$(IntDir)%(Filename).h</OutputHeaderFileName>
+      <EmulateYacc>False</EmulateYacc>
+      <CommandLineTemplate>$(LUX_WINDOWS_BUILD_ROOT)\support\bin\win_bison.exe [AllOptions] [AdditionalOptions]</CommandLineTemplate>
+      <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
+    </Bison>
+  </ItemDefinitionGroup>
+</Project>

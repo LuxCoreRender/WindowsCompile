@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\QT UI">
+      <UniqueIdentifier>{defb2f3d-0404-4a43-8780-c24ff40c7c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Header Files">
+      <UniqueIdentifier>{74caec1c-8545-4705-ab4f-d1348c06c762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files">
+      <UniqueIdentifier>{99ecaf98-b2ac-4f87-8b3b-6af67a820e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Header Files\QT UI">
+      <UniqueIdentifier>{9c5b12e4-64a5-4c86-b640-f8707a30db2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files\QT UI">
+      <UniqueIdentifier>{5b329c82-9777-49c6-8a4f-3bbf9c478687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files\QT Resources">
+      <UniqueIdentifier>{a0b79948-c6c7-4fac-b181-3553f3b09c82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources">
+      <UniqueIdentifier>{6dd261b3-aefe-4723-85b1-29a30fdfaacd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources\images">
+      <UniqueIdentifier>{ae79d601-3e6d-42c3-b0cf-9b328a1daee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QT UI">
+      <UniqueIdentifier>{d1213488-f25a-40b7-8fe7-c07d696f83bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxrendersession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\aboutdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\hardwaretree.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkapp.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxvrdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\mainwindow.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\resultdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\submitdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_aboutdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_luxvrdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_mainwindow.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_resultdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_submitdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\luxmark\src\resources\luxlogo_bg.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\luxmark\src\resources\SLG_luxball_sppm_small.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\luxmark\src\resources\SLG_Splash.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\aboutdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\hardwaretree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxmarkapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxrendersession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxvrdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\resultdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\submitdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\resources_qrc.cpp">
+      <Filter>Generated Source Files\QT Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\aboutdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\hardwaretree_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\luxmarkapp_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\luxvrdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\mainwindow_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\resultdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\submitdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtResource Include="..\..\..\..\..\luxmark\src\resources.qrc">
+      <Filter>Resource Files\QT Resources</Filter>
+    </QtResource>
+  </ItemGroup>
+  <ItemGroup>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\aboutdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\luxvrdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\mainwindow.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\resultdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\submitdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+  </ItemGroup>
+</Project>

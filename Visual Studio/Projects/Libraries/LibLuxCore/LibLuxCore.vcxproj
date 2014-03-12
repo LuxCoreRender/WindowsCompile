@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4DD92E4E-AF4F-4861-9F7D-22C6AF78F914}</ProjectGuid>
+    <RootNamespace>LibLuxCore</RootNamespace>
+    <ProjectName>LibLuxCore</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\BuildRules\Flex.props" />
+    <Import Project="..\..\..\BuildRules\Bison.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-Python.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Bison>
+    <Bison>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Bison>
+    <Bison>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Bison>
+    <Bison>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Bison>
+    <Bison>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\luxrays\include\luxcore\cfg.h.in" />
+    <Flex Include="..\..\..\..\..\luxrays\src\luxcore\luxparser\luxlex.l">
+      <FileType>Document</FileType>
+    </Flex>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\cfg.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\luxcore.h" />
+    <ClInclude Include="..\..\..\..\Build\LibLuxCore\Generated\luxparse.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\luxcore.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcore.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxCore\Generated\luxlex.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxCore\Generated\luxparse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="..\..\..\..\..\luxrays\src\luxcore\luxparser\luxparse.y" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\BuildRules\Flex.targets" />
+    <Import Project="..\..\..\BuildRules\Bison.targets" />
+  </ImportGroup>
+</Project>

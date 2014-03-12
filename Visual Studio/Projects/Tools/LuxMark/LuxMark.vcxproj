@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7879E3C8-F5A5-49CE-8223-B20D16D57582}</ProjectGuid>
+    <RootNamespace>LuxMark</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\BuildRules\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtResource>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtResource>
+    <QtDesignerUI>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtDesignerUI>
+    <QtDesignerUI>
+      <OutputExtension>.h</OutputExtension>
+    </QtDesignerUI>
+    <QtMetaObject>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtMetaObject>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtResource>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtResource>
+    <QtDesignerUI>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtDesignerUI>
+    <QtDesignerUI>
+      <OutputExtension>.h</OutputExtension>
+    </QtDesignerUI>
+    <QtMetaObject>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtMetaObject>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtResource>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtResource>
+    <QtDesignerUI>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtDesignerUI>
+    <QtDesignerUI>
+      <OutputExtension>.h</OutputExtension>
+    </QtDesignerUI>
+    <QtMetaObject>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtMetaObject>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtResource>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtResource>
+    <QtDesignerUI>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtDesignerUI>
+    <QtDesignerUI>
+      <OutputExtension>.h</OutputExtension>
+    </QtDesignerUI>
+    <QtMetaObject>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtMetaObject>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_aboutdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_luxvrdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_mainwindow.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_resultdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_submitdialog.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\aboutdialog.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\hardwaretree.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\luxmarkapp.h" />
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkdefs.h" />
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxrendersession.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\luxvrdialog.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\mainwindow.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\resultdialog.h" />
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\submitdialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\luxmark\src\resources\luxlogo_bg.png" />
+    <Image Include="..\..\..\..\..\luxmark\src\resources\SLG_luxball_sppm_small.png" />
+    <Image Include="..\..\..\..\..\luxmark\src\resources\SLG_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxmark\src\aboutdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\hardwaretree.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxmarkapp.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxrendersession.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\luxvrdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\mainwindow.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\resultdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxmark\src\submitdialog.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\aboutdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\hardwaretree_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\luxmarkapp_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\luxvrdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\mainwindow_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\resources_qrc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\resultdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxMark\Generated\submitdialog_moc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtResource Include="..\..\..\..\..\luxmark\src\resources.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\aboutdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\luxvrdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\mainwindow.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\resultdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\luxmark\src\submitdialog.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\LibLuxCore\LibLuxCore.vcxproj">
+      <Project>{4dd92e4e-af4f-4861-9f7d-22c6af78f914}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibLuxRays\LibLuxRays.vcxproj">
+      <Project>{c51a362c-fecc-4889-99e2-e2e5e2a40ce9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibSLG\LibSLG.vcxproj">
+      <Project>{65f29865-cb96-4539-b047-498acec6bc4a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\BuildRules\Qt.targets" />
+  </ImportGroup>
+</Project>

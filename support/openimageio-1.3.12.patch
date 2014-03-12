@@ -1,0 +1,86 @@
+--- src\include\export.h.orig	2014-01-25 18:32:20.000000000 -0700
++++ src\include\export.h	2014-03-01 14:05:17.000000000 -0700
+@@ -71,9 +71,15 @@
+ /// 
+ 
+ #if defined(_MSC_VER) || defined(__CYGWIN__)
+-  #define OIIO_IMPORT __declspec(dllimport)
+-  #define OIIO_EXPORT __declspec(dllexport)
+-  #define OIIO_LOCAL
++  #if !defined(OIIO_STATIC_BUILD)
++    #define OIIO_IMPORT __declspec(dllimport)
++    #define OIIO_EXPORT __declspec(dllexport)
++    #define OIIO_LOCAL
++  #else
++    #define OIIO_IMPORT
++    #define OIIO_EXPORT
++    #define OIIO_LOCAL
++  #endif
+ #else
+   #if (10000*__GNUC__ + 100*__GNUC_MINOR__ + __GNUC_PATCHLEVEL__) > 40102
+     #define OIIO_IMPORT __attribute__ ((visibility ("default")))
+--- src\libOpenImageIO\CMakeLists.txt.orig	2014-01-25 18:32:20.000000000 -0700
++++ src\libOpenImageIO\CMakeLists.txt	2014-02-26 01:19:54.258936417 -0700
+@@ -81,6 +81,10 @@
+ # If the 'EMBEDPLUGINS' option is set, we want to compile the source for
+ # all the plugins into libOpenImageIO.
+ if (EMBEDPLUGINS)
++    if (LINKSTATIC)
++        # If building static, need to define this for Ptex
++        add_definitions ("-DPTEX_STATIC")
++    endif ()
+     set (libOpenImageIO_srcs ${libOpenImageIO_srcs}
+         ../bmp.imageio/bmpinput.cpp ../bmp.imageio/bmpoutput.cpp
+         ../bmp.imageio/bmp_pvt.cpp
+@@ -177,6 +179,10 @@
+              ../jpeg2000.imageio/jpeg2000input.cpp ../jpeg2000.imageio/jpeg2000output.cpp)
+         include_directories (${OPENJPEG_INCLUDE_DIR})
+         add_definitions("-DUSE_OPENJPEG")
++        if (LINKSTATIC)
++            # If building static, need to define this for OpenJPEG
++            add_definitions ("-DOPJ_STATIC")
++        endif ()
+     else()
+         message (STATUS "Jpeg-2000 plugin will not be built")
+     endif()
+--- src\libutil\argparse.cpp.orig	2014-02-24 00:00:08.399493013 -0700
++++ src\libutil\argparse.cpp	2014-02-24 00:00:18.851361615 -0700
+@@ -30,6 +30,7 @@
+ */
+ 
+ 
++#include <algorithm>
+ #include <cstring>
+ #include <cctype>
+ #include <cassert>
+--- src\pnm.imageio\pnminput.cpp.orig	2014-02-24 00:28:38.533993711 -0700
++++ src\pnm.imageio\pnminput.cpp	2014-02-24 00:28:54.449793622 -0700
+@@ -28,6 +28,7 @@
+   (This is the Modified BSD License)
+ */
+ 
++#include <algorithm>
+ #include <string>
+ #include <fstream>
+ #include <cstdlib>
+--- src\psd.imageio\psdinput.cpp.orig	2014-01-25 18:32:20.000000000 -0700
++++ src\psd.imageio\psdinput.cpp	2014-03-02 21:11:34.000000000 -0700
+@@ -389,7 +389,7 @@
+         // For debugging, numeric_cast will throw if precision is lost:
+         // value = boost::numeric_cast<TVariable>(buffer);
+         value = buffer;
+-        return m_file;
++        return m_file.good();
+     }
+ 
+     int read_pascal_string (std::string &s, uint16_t mod_padding);
+--- src\tiff.imageio\tiffoutput.cpp.orig	2014-02-24 00:17:42.234244516 -0700
++++ src\tiff.imageio\tiffoutput.cpp	2014-02-24 00:17:53.294105475 -0700
+@@ -29,6 +29,7 @@
+ */
+ 
+ 
++#include <algorithm>
+ #include <cstdio>
+ #include <cstdlib>
+ #include <cmath>

@@ -1,0 +1,10 @@
+--- ImathMatrixAlgo.cpp.orig	2014-02-23 15:38:04.422202694 -0700
++++ ImathMatrixAlgo.cpp	2014-02-23 15:38:14.974070039 -0700
+@@ -43,6 +43,7 @@
+ //----------------------------------------------------------------------------
+ 
+ #include "ImathMatrixAlgo.h"
++#include <algorithm>
+ #include <cmath>
+ 
+ #if defined(OPENEXR_DLL)

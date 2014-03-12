@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{65F29865-CB96-4539-B047-498ACEC6BC4A}</ProjectGuid>
+    <RootNamespace>LibSLG</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\camera\camera.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\cfg.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\data\sun_spect.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\photometricdataies.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\sphericalfunction.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\editaction.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathcpu\biaspathcpu.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\biaspathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\biaspathocl_datatypes.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\bidircpu\bidircpu.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\bidirhybrid\bidirhybrid.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\bidirvmcpu\bidirvmcpu.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\cbidirhybrid\cbidirhybrid.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\filesaver\filesaver.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\lightcpu\lightcpu.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathcpu\pathcpu.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathhybrid\pathhybrid.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\compiledscene.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\pathoclbase.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\pathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\pathocl_datatypes.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtbiaspathocl\rtbiaspathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtpathocl\rtpathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\film.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filter.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\framebuffer.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipelineplugins.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\tonemap.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\kernels\kernels.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\renderconfig.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\renderengine.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\rendersession.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfevents.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\light.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\lightdata\ArHosekSkyModelData.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\material.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\scene.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sceneobject.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sdl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\texture.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\volume.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\slg.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\convtest.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\pdiff\lpyramid.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\pdiff\metric.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_datatypes.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\pathoclbase_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\rtpathoclbase_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_datatypes.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\core\sphericalfunction\photometricdataies.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\core\sphericalfunction\sphericalfunction.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathcpu\biaspathcpu.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathcpu\biaspathcputhread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathocl\biaspathocl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathocl\biaspathoclthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidircpu\bidircpu.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidircpu\bidircputhread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirhybrid.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirhybridthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirhybrid\bidirstate.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirvmcpu\bidirvmcpu.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirvmcpu\bidirvmcputhread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\bidirvmcpu\hashgrid.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\cbidirhybrid\cbidirhybrid.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\filesaver\filesaver.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\lightcpu\lightcpu.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\lightcpu\lightcputhread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathcpu\pathcpu.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathcpu\pathcputhread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybrid.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathhybrid\pathhybridthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathhybrid\pathstate.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathoclbase\compiledscene.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathoclbase\pathoclbase.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathoclbase\pathoclbasethread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathocl\pathocl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\pathocl\pathoclthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\rtbiaspathocl\rtbiaspathocl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\rtbiaspathocl\rtbiaspathoclthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\rtpathocl\rtpathocl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\rtpathocl\rtpathoclthread.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\film.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\filter.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipelineplugins.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\tonemap.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\biaspathocl_datatypes_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\biaspathocl_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\biaspathocl_kernels_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\bsdf_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\bsdf_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\camera_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\camera_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\film_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\film_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\filter_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\filter_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\hitpoint_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\light_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\light_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\mapping_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\mapping_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\materialdefs_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\material_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\material_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\mc_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\pathoclbase_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\pathocl_datatypes_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\pathocl_kernels_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\rtpathoclbase_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\sampler_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\sampler_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\scene_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_blender_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_noise_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderconfig.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderengine.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\rendersession.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sampler.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sobol.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\bsdf.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\camera.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\extmeshcache.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\light.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\material.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\scene.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\sceneobject.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\sdl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\texture.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\volume.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\convtest.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\pdiff\lpyramid.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\pdiff\metric.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
