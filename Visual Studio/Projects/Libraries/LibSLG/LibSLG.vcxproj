@@ -270,39 +270,6 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\pdiff\metric.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_datatypes.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\pathoclbase_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\rtpathoclbase_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_datatypes.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
-    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\core\sphericalfunction\photometricdataies.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\core\sphericalfunction\sphericalfunction.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathcpu\biaspathcpu.cpp" />
@@ -389,6 +356,39 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\convtest.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\pdiff\lpyramid.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\utils\convtest\pdiff\metric.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\camera\camera_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_datatypes.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\pathoclbase_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\rtpathoclbase_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_datatypes.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\film_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\film\filter_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\light_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
