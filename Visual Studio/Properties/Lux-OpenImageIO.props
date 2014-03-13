@@ -3,9 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
-    <ClCompile>
-      <PreprocessorDefinitions>OIIO_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
+    <ClCompile />
     <Link>
       <AdditionalDependencies>OpenImageIO.lib;zlib1.lib;openjpeg.lib;libpng.lib;libtiff.lib;jpeg.lib;Half.lib;Iex.lib;IlmImf.lib;IlmThread.lib;IMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
