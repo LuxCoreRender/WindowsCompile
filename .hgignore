@@ -7,12 +7,10 @@ syntax: glob
 *.sdf
 *.opensdf
 *.user
-Projects\luxrays\Win32\*
-Projects\luxrays\x64\*
-Projects\luxrays\BuildTemp\*
-Projects\luxrender\Win32\*
-Projects\luxrender\x64\*
-Projects\luxrender\BuildTemp\*
+Build\*
+Debug\*
+Release\*
+Release-NoOpenCL\*
 *.vcproj.*
 build-vars.*
 .project
