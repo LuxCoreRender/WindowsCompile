@@ -568,13 +568,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\mapping_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\pathocl_datatypes_kernel.cpp">
@@ -610,6 +604,48 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_archglass_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_carpaint_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_cloth_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_generic_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glass_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glossy2_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_translucent_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_metal2_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mirror_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_null_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughglass_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_velvet_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in">
@@ -638,13 +674,7 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl">
@@ -706,6 +736,48 @@
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels.cl">
       <Filter>OpenCL Files\engines\biaspathocl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_archglass.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_carpaint.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_cloth.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_generic.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glass.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glossy2.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte_translucent.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_metal2.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mirror.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_null.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughglass.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_velvet.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl">
+      <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
 </Project>
