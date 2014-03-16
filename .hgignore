@@ -3,7 +3,6 @@ syntax: glob
 *.sln.cache
 *.suo
 *.ncb
-*.xml
 *.sdf
 *.opensdf
 *.user
