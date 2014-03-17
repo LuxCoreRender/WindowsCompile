@@ -5,6 +5,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_QT_ROOT)\include;$(LUX_QT_ROOT)\include\Qt;$(LUX_QT_ROOT)\include\QtCore;$(LUX_QT_ROOT)\include\QtGui;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_USE_QTMAIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_QT_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
