@@ -2,16 +2,33 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <PreprocessorDefinitions>NOMINMAX;WIN32;WIN32_LEAN_AND_MEAN;VC_EXTRALEAN;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include;..\..\..\..\..\luxrays\include;$(SolutionDir)..\Build\$(ProjectName)\Generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>true</SDLCheck>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_DEPENDENCIES_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <OpenCLPreprocessor />
+    <Bison>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Bison>
+    <Bison>
+      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
+    </Bison>
+    <Flex>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
+    </Flex>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

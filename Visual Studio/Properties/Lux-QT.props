@@ -11,5 +11,17 @@
       <AdditionalLibraryDirectories>$(LUX_QT_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <QtDesignerUI>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtDesignerUI>
+    <QtDesignerUI>
+      <OutputExtension>.h</OutputExtension>
+    </QtDesignerUI>
+    <QtMetaObject>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtMetaObject>
+    <QtResource>
+      <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
+    </QtResource>
   </ItemDefinitionGroup>
 </Project>

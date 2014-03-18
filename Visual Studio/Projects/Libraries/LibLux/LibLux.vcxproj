@@ -125,163 +125,47 @@
     <Import Project="..\..\..\Properties\Lux-LibLux.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
-    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Bison>
-    <Bison>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Bison>
-    <Bison>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Bison>
-    <Bison>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Bison>
-    <Bison>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <DisableSpecificWarnings>4056</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <DisableSpecificWarnings>4056</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-    <Bison>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-      <OutputHeaderFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).hpp</OutputHeaderFileName>
-    </Bison>
-    <Flex>
-      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename).cpp</OutputFileName>
-    </Flex>
+    <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\lux\accelerators\bruteforce.h" />
@@ -801,9 +685,7 @@
     <ClCompile Include="..\..\..\..\Build\LibLux\Generated\luxparse.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Flex Include="..\..\..\..\..\lux\core\luxlex.l">
-      <FileType>Document</FileType>
-    </Flex>
+    <Flex Include="..\..\..\..\..\lux\core\luxlex.l" />
   </ItemGroup>
   <ItemGroup>
     <Bison Include="..\..\..\..\..\lux\core\luxparse.y" />

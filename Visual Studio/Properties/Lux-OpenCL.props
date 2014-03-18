@@ -10,5 +10,8 @@
       <AdditionalLibraryDirectories>$(LUX_OCL_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <OpenCLPreprocessor>
+      <OutputFileName>$(SolutionDir)..\Build\$(ProjectName)\Generated\%(Filename)_kernel.cpp</OutputFileName>
+    </OpenCLPreprocessor>
   </ItemDefinitionGroup>
 </Project>
