@@ -13,6 +13,7 @@
       <SDLCheck>true</SDLCheck>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <DisableSpecificWarnings>4056;4756</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_DEPENDENCIES_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
