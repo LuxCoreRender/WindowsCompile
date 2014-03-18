@@ -359,102 +359,6 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\idevices\virtualidevice.cpp">
       <Filter>Source Files\idevices</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\bbox_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\bbox_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\bvh_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\color_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\color_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\epsilon_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\epsilon_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\frame_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\frame_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\luxrays_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\matrix4x4_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\matrix4x4_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\mbvh_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\mc_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\mqbvh_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\normal_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\point_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\qbvh_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\randomgen_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\randomgen_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\ray_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\ray_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\transform_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\transform_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\triangle_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\triangle_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\trianglemesh_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\trianglemesh_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\utils_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\uv_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\vector_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\kernels\vector_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\mc.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
@@ -467,106 +371,204 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\ply\rply.cpp">
       <Filter>Source Files\utils\ply</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\epsilon_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\epsilon_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\frame_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\frame_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\luxrays_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\matrix4x4_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\matrix4x4_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mbvh_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mc_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mqbvh_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\normal_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\point_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\ray_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\ray_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\transform_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\transform_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\triangle_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\triangle_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\trianglemesh_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\trianglemesh_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\utils_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\uv_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\vector_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\vector_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\luxrays_types.cl">
-      <Filter>OpenCL Files</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh.cl">
-      <Filter>OpenCL Files\accelerators</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvh.cl">
-      <Filter>OpenCL Files\accelerators</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvh.cl">
-      <Filter>OpenCL Files\accelerators</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh.cl">
-      <Filter>OpenCL Files\accelerators</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_funcs.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_types.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_funcs.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_types.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_funcs.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_types.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\utils_funcs.cl">
-      <Filter>OpenCL Files\core</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_funcs.cl">
-      <Filter>OpenCL Files\core\color</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_types.cl">
-      <Filter>OpenCL Files\core\color</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\uv_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_funcs.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_types.cl">
-      <Filter>OpenCL Files\core\geometry</Filter>
-    </None>
-    <None Include="..\..\..\..\..\luxrays\include\luxrays\utils\mc_funcs.cl">
-      <Filter>OpenCL Files\utils</Filter>
-    </None>
     <None Include="..\..\..\..\..\luxrays\include\luxrays\cfg.h.in">
       <Filter>Header Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvh.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvh.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_funcs.cl">
+      <Filter>OpenCL Files\core\color</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_types.cl">
+      <Filter>OpenCL Files\core\color</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\uv_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\utils\mc_funcs.cl">
+      <Filter>OpenCL Files\utils</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\luxrays_types.cl">
+      <Filter>OpenCL Files</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_funcs.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_types.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_funcs.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_types.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_funcs.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_types.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\utils_funcs.cl">
+      <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
   </ItemGroup>
 </Project>
