@@ -203,14 +203,8 @@
     <ClInclude Include="..\..\..\..\..\lux\cpp_api\preview_scenes\standard_material.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibLuxRays\LibLuxRays.vcxproj">
-      <Project>{c51a362c-fecc-4889-99e2-e2e5e2a40ce9}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\LibLux\LibLux.vcxproj">
       <Project>{e943c01b-e88b-4aa3-ade8-d3fde89a1393}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\LibSLG\LibSLG.vcxproj">
-      <Project>{65f29865-cb96-4539-b047-498acec6bc4a}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

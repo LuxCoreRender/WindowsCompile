@@ -5,6 +5,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\..\lux;..\..\..\..\..\lux\core;..\..\..\..\..\lux\core\external;..\..\..\..\..\lux\core\queryable;..\..\..\..\..\lux\core\reflection;..\..\..\..\..\lux\core\reflection\bsdf;..\..\..\..\..\lux\core\reflection\bxdf;..\..\..\..\..\lux\core\reflection\fresnel;..\..\..\..\..\lux\core\reflection\microfacetdistribution;..\..\..\..\..\lux\lights\sphericalfunction;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LUX_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>
