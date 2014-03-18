@@ -42,33 +42,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkdefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\luxrendersession.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\aboutdialog.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\hardwaretree.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkapp.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\luxvrdialog.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\mainwindow.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\resultdialog.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxmark\src\submitdialog.h">
-      <Filter>Header Files\QT UI</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_aboutdialog.h">
       <Filter>Generated Header Files\QT UI</Filter>
     </ClInclude>
@@ -83,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\Build\LuxMark\Generated\ui_submitdialog.h">
       <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxmarkdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxmark\src\luxrendersession.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -170,5 +149,28 @@
     <QtDesignerUI Include="..\..\..\..\..\luxmark\src\submitdialog.ui">
       <Filter>QT UI</Filter>
     </QtDesignerUI>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\aboutdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\hardwaretree.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\luxmarkapp.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\luxvrdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\mainwindow.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\resultdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\luxmark\src\submitdialog.h">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
   </ItemGroup>
 </Project>
