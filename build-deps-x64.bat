@@ -288,6 +288,7 @@ echo * Building zlib
 echo **************************************************************************
 cd /d %LUX_X64_ZLIB_ROOT%
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
@@ -320,6 +321,7 @@ rem Update project files
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch Imath\ImathMatrixAlgo.cpp %LUX_WINDOWS_BUILD_ROOT%\support\ImathMatrixAlgo.cpp.patch
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 ..
@@ -349,6 +351,7 @@ echo * Building libPNG
 echo **************************************************************************
 cd /d %LUX_X64_LIBPNG_ROOT%
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
@@ -397,6 +400,7 @@ cd /d %LUX_X64_OPENEXR_ROOT%
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openexr-2.1.0.patch
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D ILMBASE_PACKAGE_PREFIX="%INSTALL_DIR%" ..
@@ -419,6 +423,7 @@ echo * Building OpenJPEG
 echo **************************************************************************
 cd /d %LUX_X64_OPENJPEG_ROOT%
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
@@ -445,6 +450,7 @@ rem Update project files
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.3.12.patch
 
+rmdir /s /q build
 mkdir build
 cd build
 %LUX_X64_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_PYTHON=0 ..
