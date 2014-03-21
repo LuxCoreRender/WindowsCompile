@@ -167,10 +167,8 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 
 mkdir %INCLUDE_DIR%\Python3.3
 copy ..\include\*.h %INCLUDE_DIR%\Python3.3
-IF %BUILD_CONFIGURATION%==Release copy python33.lib %LIB_DIR%
-IF %BUILD_CONFIGURATION%==Release copy python33.dll %LIB_DIR%
-IF %BUILD_CONFIGURATION%==Debug   copy python33_d.lib %LIB_DIR%
-IF %BUILD_CONFIGURATION%==Debug   copy python33_d.dll %LIB_DIR%
+copy *.lib %LIB_DIR%\python33.lib
+copy *.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -481,7 +479,7 @@ rem Update source files
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImage" FreeImage.2010.sln
 
 copy Source\FreeImage.h %INCLUDE_DIR%
-copy %BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+copy %BUILD_CONFIGURATION%\*.lib %LIB_DIR%\FreeImage.lib
 copy %BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 
 
