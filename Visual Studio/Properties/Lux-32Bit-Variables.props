@@ -6,7 +6,7 @@
     <LUX_OCL_LIBS>$(LUX_X86_OCL_LIBS)</LUX_OCL_LIBS>
     <LUX_OCL_INCLUDE>$(LUX_X86_OCL_INCLUDE)</LUX_OCL_INCLUDE>
     <LUX_BOOST_ROOT>$(LUX_X86_BOOST_ROOT)</LUX_BOOST_ROOT>
-    <LUX_DEPENDENCIES_ROOT>$(LUX_WINDOWS_DEPS_ROOT)\x86\Release</LUX_DEPENDENCIES_ROOT>
+    <LUX_DEPENDENCIES_ROOT_PREFIX>$(LUX_WINDOWS_DEPS_ROOT)\x86</LUX_DEPENDENCIES_ROOT_PREFIX>
   </PropertyGroup>
   <PropertyGroup>
     <_PropertySheetDisplayName>Lux-32bit-Variables</_PropertySheetDisplayName>
@@ -24,8 +24,8 @@
     <BuildMacro Include="LUX_BOOST_ROOT">
       <Value>$(LUX_BOOST_ROOT)</Value>
     </BuildMacro>
-    <BuildMacro Include="LUX_DEPENDENCIES_ROOT">
-      <Value>$(LUX_DEPENDENCIES_ROOT)</Value>
+    <BuildMacro Include="LUX_DEPENDENCIES_ROOT_PREFIX">
+      <Value>$(LUX_DEPENDENCIES_ROOT_PREFIX)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
