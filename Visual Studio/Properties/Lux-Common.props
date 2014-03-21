@@ -14,6 +14,8 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <DisableSpecificWarnings>4056;4756</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_DEPENDENCIES_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
