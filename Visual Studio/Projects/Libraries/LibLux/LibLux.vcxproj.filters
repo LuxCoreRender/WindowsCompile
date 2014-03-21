@@ -85,9 +85,6 @@
     <Filter Include="Header Files\film\data">
       <UniqueIdentifier>{da765c3e-fc50-4a36-917e-ca853d82c649}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\filter">
-      <UniqueIdentifier>{3eca7999-05c9-43f2-8538-513b7f2df731}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\filters">
       <UniqueIdentifier>{88f7743e-b5bc-4275-8dce-2c093ba01c19}</UniqueIdentifier>
     </Filter>
@@ -204,6 +201,9 @@
     </Filter>
     <Filter Include="Generated Header Files\core">
       <UniqueIdentifier>{3abe242c-7f06-4cea-8776-76f2c88bcb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\filters">
+      <UniqueIdentifier>{3eca7999-05c9-43f2-8538-513b7f2df731}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1257,25 +1257,25 @@
       <Filter>Source Files\film</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\blackmanharris.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\box.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\catmullrom.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\gaussian.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\mitchell.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\sinc.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\filters\triangle.cpp">
-      <Filter>Source Files\filter</Filter>
+      <Filter>Source Files\filters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\integrators\bidirectional.cpp">
       <Filter>Source Files\integrators</Filter>
