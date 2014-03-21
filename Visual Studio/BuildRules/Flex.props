@@ -20,7 +20,7 @@
       <Compression>3</Compression>
       <ScannerTableType>0</ScannerTableType>
       <BypassStdio>False</BypassStdio>
-      <CommandLineTemplate>$(LUX_WINDOWS_BUILD_ROOT)\support\bin\win_flex.exe [AllOptions] [AdditionalOptions]</CommandLineTemplate>
+      <CommandLineTemplate>"$(LUX_WINDOWS_BUILD_ROOT)\support\bin\win_flex.exe" [AllOptions] [AdditionalOptions]</CommandLineTemplate>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
     </Flex>
   </ItemDefinitionGroup>

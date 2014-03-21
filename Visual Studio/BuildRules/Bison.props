@@ -9,7 +9,7 @@
       <OutputFileName>$(IntDir)%(Filename).c</OutputFileName>
       <OutputHeaderFileName>$(IntDir)%(Filename).h</OutputHeaderFileName>
       <EmulateYacc>False</EmulateYacc>
-      <CommandLineTemplate>$(LUX_WINDOWS_BUILD_ROOT)\support\bin\win_bison.exe [AllOptions] [AdditionalOptions]</CommandLineTemplate>
+      <CommandLineTemplate>"$(LUX_WINDOWS_BUILD_ROOT)\support\bin\win_bison.exe" [AllOptions] [AdditionalOptions]</CommandLineTemplate>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
     </Bison>
   </ItemDefinitionGroup>
