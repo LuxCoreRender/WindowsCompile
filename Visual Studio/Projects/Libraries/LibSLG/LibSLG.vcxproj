@@ -183,6 +183,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\renderengine.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\rendersession.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_texture.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfevents.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint.h" />
@@ -243,6 +244,7 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\rendersession.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sampler.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sobol.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_texture.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\bsdf.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\camera.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\extmeshcache.cpp" />
