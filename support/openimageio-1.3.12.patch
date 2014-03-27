@@ -19,6 +19,39 @@
  #else
    #if (10000*__GNUC__ + 100*__GNUC_MINOR__ + __GNUC_PATCHLEVEL__) > 40102
      #define OIIO_IMPORT __attribute__ ((visibility ("default")))
+--- src\include\fmath.h.orig	2014-01-25 18:32:20.000000000 -0700
++++ src\include\fmath.h	2014-03-26 19:59:33.000000000 -0600
+@@ -857,7 +857,7 @@
+ #define hypotf _hypotf
+ #define copysign(x,y) _copysign(x,y)
+ #define copysignf(x,y) copysign(x,y)
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) && _MSC_VER < 1800
+ #define isnan(x) _isnan(x)
+ #define isfinite(x) _finite(x)
+ #endif
+@@ -876,6 +876,7 @@
+ //#define M_SQRT2    1.41421356237309504880
+ //#define M_SQRT1_2  0.707106781186547524401
+ 
++#if !defined(_MSC_VER) || _MSC_VER < 1800
+ inline double
+ round (float val) {
+     return floor (val + 0.5);
+@@ -986,11 +987,12 @@
+ using OIIO::logbf;
+ using OIIO::exp2f;
+ 
++#endif  /* */
+ #endif  /* _WIN32 */
+ 
+ 
+ // Some systems have isnan, isinf and isfinite in the std namespace.
+-#ifndef _MSC_VER
++#if !defined(_MSC_VER) || _MSC_VER >= 1800
+  using std::isnan;
+  using std::isinf;
+  using std::isfinite;
 --- src\libOpenImageIO\CMakeLists.txt.orig	2014-01-25 18:32:20.000000000 -0700
 +++ src\libOpenImageIO\CMakeLists.txt	2014-02-26 01:19:54.258936417 -0700
 @@ -81,6 +81,10 @@
