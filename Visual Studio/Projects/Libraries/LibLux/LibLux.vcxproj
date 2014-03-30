@@ -159,6 +159,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -166,6 +167,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -173,6 +175,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -180,6 +183,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -187,6 +191,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -194,6 +199,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_DEPENDENCIES_ROOT)\include\OpenEXR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LUX_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
