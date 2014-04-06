@@ -2,17 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <LUX_DEPENDENCIES_ROOT>$(LUX_DEPENDENCIES_ROOT_PREFIX)\Release</LUX_DEPENDENCIES_ROOT>
+    <LUX_DEPENDENCIES_PLATFORM_CONFIG_ROOT>$(LUX_DEPENDENCIES_PLATFORM_ROOT)\Release</LUX_DEPENDENCIES_PLATFORM_CONFIG_ROOT>
   </PropertyGroup>
   <ItemGroup>
-    <BuildMacro Include="LUX_DEPENDENCIES_ROOT">
-      <Value>$(LUX_DEPENDENCIES_ROOT)</Value>
+    <BuildMacro Include="LUX_DEPENDENCIES_PLATFORM_CONFIG_ROOT">
+      <Value>$(LUX_DEPENDENCIES_PLATFORM_CONFIG_ROOT)</Value>
     </BuildMacro>
   </ItemGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>

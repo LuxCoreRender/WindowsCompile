@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+	<LUX_OCL_AMD_INCLUDE>$(AMDAPPSDKROOT)include</LUX_OCL_AMD_INCLUDE>
+    <LUX_OCL_AMD_X86_LIBS>$(AMDAPPSDKROOT)lib\x86</LUX_OCL_AMD_X86_LIBS>	
+    <LUX_OCL_AMD_X64_LIBS>$(AMDAPPSDKROOT)lib\x86_64</LUX_OCL_AMD_X64_LIBS>	
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>Lux-OpenCL-AMD-Variables</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_OCL_AMD_INCLUDE">
+      <Value>$(LUX_OCL_AMD_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OCL_AMD_X86_LIBS">
+      <Value>$(LUX_OCL_AMD_X86_LIBS)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OCL_AMD_X64_LIBS">
+      <Value>$(LUX_OCL_AMD_X64_LIBS)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

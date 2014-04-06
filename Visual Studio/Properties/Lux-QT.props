@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(LUX_QT_ROOT)\include;$(LUX_QT_ROOT)\include\Qt;$(LUX_QT_ROOT)\include\QtCore;$(LUX_QT_ROOT)\include\QtGui;$(LUX_QT_ROOT)\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(LUX_QT_INCLUDE_ROOT);$(LUX_QT_INCLUDE_ROOT)\Qt;$(LUX_QT_INCLUDE_ROOT)\QtCore;$(LUX_QT_INCLUDE_ROOT)\QtGui;$(LUX_QT_INCLUDE_ROOT)\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QT_USE_QTMAIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(LUX_QT_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LUX_QT_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtDesignerUI>

@@ -158,7 +158,7 @@ GOTO ForceExtractChoice
 >> build-vars.reg echo.
 >> build-vars.reg echo [HKEY_CURRENT_USER\Environment]
 CALL:addBuildPathVar "LUX_WINDOWS_BUILD_ROOT", "%CD%", 1
-CALL:addBuildPathVar "LUX_WINDOWS_DEPS_ROOT", "%DEPSROOT%", 1
+CALL:addBuildPathVar "LUX_DEPS_ROOT", "%DEPSROOT%", 1
 set LUX_WINDOWS_BUILD_ROOT="%CD%"
 
 :OpenCL
@@ -579,7 +579,7 @@ CALL:addBuildPathVar "LUX_X86_OPENJPEG_ROOT", "%D32%\openjpeg-%OPENJPEG_VER%"
 CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
 
 :python3
-CALL:downloadFile "Python %PYTHON3_VER%", "http://python.org/ftp/python/%PYTHON3_VER%/Python-%PYTHON3_VER%.tgz", "Python-%PYTHON3_VER%.tgz" || EXIT /b -1
+CALL:downloadFile "Python %PYTHON3_VER%", "http://python.org/ftp/python/%PYTHON3_VER%/Python-%PYTHON3_VER%.tgz", "Python-%PYTHON3_VER%.tgz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "Python %PYTHON3_VER%", "%DOWNLOADS%\Python-%PYTHON3_VER%.tgz"
 
 CALL:addBuildPathVar "LUX_X86_PYTHON3_ROOT", "%D32%\Python-%PYTHON3_VER%"
@@ -641,12 +641,16 @@ IF NOT EXIST %DOWNLOADS%\%~3 (
 	echo **************************************************************************
 	echo * Downloading %~1
 	echo **************************************************************************
-	%WGET% %2 -O %DOWNLOADS%\%~3 %~4
+	IF EXIST %DOWNLOADS%\%~3.temp (
+		del %DOWNLOADS%\%~3.temp
+	)
+	%WGET% %2 -O %DOWNLOADS%\%~3.temp %~4
 	IF ERRORLEVEL 1 (
 		echo.
 		echo Download failed. Are you connected to the internet?
 		EXIT /b -1
 	)
+	move /y %DOWNLOADS%\%~3.temp %DOWNLOADS%\%~3
 )
 GOTO:EOF
 

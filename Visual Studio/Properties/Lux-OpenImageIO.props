@@ -1,10 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
-    <ClCompile />
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LUX_OIIO_INCLUDE_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <Link>
+      <AdditionalLibraryDirectories>$(LUX_OIIO_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OpenImageIO.lib;zlib1.lib;openjpeg.lib;libpng.lib;libtiff.lib;jpeg.lib;Half.lib;Iex.lib;IlmImf.lib;IlmThread.lib;IMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -71,48 +71,78 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
     <Import Project="..\..\..\Properties\Lux-Common.props" />
     <Import Project="..\..\..\Properties\Lux-Boost.props" />
     <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />

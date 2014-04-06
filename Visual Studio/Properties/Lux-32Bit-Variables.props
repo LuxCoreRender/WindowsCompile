@@ -1,31 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <LUX_QT_ROOT>$(LUX_X86_QT_ROOT)</LUX_QT_ROOT>
-    <LUX_OCL_LIBS>$(LUX_X86_OCL_LIBS)</LUX_OCL_LIBS>
-    <LUX_OCL_INCLUDE>$(LUX_X86_OCL_INCLUDE)</LUX_OCL_INCLUDE>
-    <LUX_BOOST_ROOT>$(LUX_X86_BOOST_ROOT)</LUX_BOOST_ROOT>
-    <LUX_DEPENDENCIES_ROOT_PREFIX>$(LUX_WINDOWS_DEPS_ROOT)\x86</LUX_DEPENDENCIES_ROOT_PREFIX>
+    <LUX_DEPENDENCIES_ROOT>$(SolutionDir)..\..\windows_deps</LUX_DEPENDENCIES_ROOT>
+    <LUX_DEPENDENCIES_PLATFORM_ROOT>$(LUX_DEPENDENCIES_ROOT)\x86</LUX_DEPENDENCIES_PLATFORM_ROOT>
+    <LUX_OCL_INCLUDE>$(LUX_OCL_X86_INCLUDE)</LUX_OCL_INCLUDE>
+    <LUX_OCL_LIBS>$(LUX_OCL_X86_LIBS)</LUX_OCL_LIBS>
   </PropertyGroup>
   <PropertyGroup>
     <_PropertySheetDisplayName>Lux-32bit-Variables</_PropertySheetDisplayName>
   </PropertyGroup>
   <ItemGroup>
-    <BuildMacro Include="LUX_QT_ROOT">
-      <Value>$(LUX_QT_ROOT)</Value>
+    <BuildMacro Include="LUX_DEPENDENCIES_ROOT">
+      <Value>$(LUX_DEPENDENCIES_ROOT)</Value>
     </BuildMacro>
-    <BuildMacro Include="LUX_OCL_LIBS">
-      <Value>$(LUX_OCL_LIBS)</Value>
+    <BuildMacro Include="LUX_DEPENDENCIES_PLATFORM_ROOT">
+      <Value>$(LUX_DEPENDENCIES_PLATFORM_ROOT)</Value>
     </BuildMacro>
     <BuildMacro Include="LUX_OCL_INCLUDE">
       <Value>$(LUX_OCL_INCLUDE)</Value>
     </BuildMacro>
-    <BuildMacro Include="LUX_BOOST_ROOT">
-      <Value>$(LUX_BOOST_ROOT)</Value>
-    </BuildMacro>
-    <BuildMacro Include="LUX_DEPENDENCIES_ROOT_PREFIX">
-      <Value>$(LUX_DEPENDENCIES_ROOT_PREFIX)</Value>
+    <BuildMacro Include="LUX_OCL_LIBS">
+      <Value>$(LUX_OCL_LIBS)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

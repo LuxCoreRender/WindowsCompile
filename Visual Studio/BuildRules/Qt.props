@@ -22,7 +22,7 @@ Based on: https://code.google.com/p/xr-qt-msvc/  Rev. r18
       <OutputPrefix>ui_</OutputPrefix>
       <OutputPostfix></OutputPostfix>
       <OutputExtension>.hpp</OutputExtension>
-      <CommandLineTemplate>"$(LUX_QT_ROOT)\bin\uic.exe" [AllOptions] [AdditionalOptions] -o "[OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]"</CommandLineTemplate>
+      <CommandLineTemplate>"$(LUX_QT_BINS_ROOT)\uic.exe" [AllOptions] [AdditionalOptions] -o "[OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]"</CommandLineTemplate>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
     </QtDesignerUI>
   </ItemDefinitionGroup>
@@ -46,7 +46,7 @@ Based on: https://code.google.com/p/xr-qt-msvc/  Rev. r18
       <OutputPrefix></OutputPrefix>
       <OutputPostfix>_moc</OutputPostfix>
       <OutputExtension>.cpp</OutputExtension>
-      <CommandLineTemplate>"$(LUX_QT_ROOT)\bin\moc.exe" [AllOptions] [AdditionalOptions] -o [OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]</CommandLineTemplate>
+      <CommandLineTemplate>"$(LUX_QT_BINS_ROOT)\moc.exe" [AllOptions] [AdditionalOptions] -o [OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]</CommandLineTemplate>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
       <ShowOnlyRuleProperties>True</ShowOnlyRuleProperties>
     </QtMetaObject>
@@ -62,7 +62,7 @@ Based on: https://code.google.com/p/xr-qt-msvc/  Rev. r18
       <OutputPrefix></OutputPrefix>
       <OutputPostfix>_qrc</OutputPostfix>
       <OutputExtension>.cpp</OutputExtension>
-      <CommandLineTemplate>"$(LUX_QT_ROOT)\bin\rcc.exe" [AllOptions] [AdditionalOptions] -o [OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]</CommandLineTemplate>
+      <CommandLineTemplate>"$(LUX_QT_BINS_ROOT)\rcc.exe" [AllOptions] [AdditionalOptions] -o [OutputDirectory]\[OutputPrefix]%(FileName)[OutputPostfix][OutputExtension]</CommandLineTemplate>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
     </QtResource>
   </ItemDefinitionGroup>
