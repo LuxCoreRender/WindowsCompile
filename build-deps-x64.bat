@@ -159,7 +159,7 @@ if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Qt
 xcopy /y /s /i include\*.* %INCLUDE_DIR%\Qt\include
-xcopy /y /s /i src\*.* %INCLUDE_DIR%\Qt\src
+xcopy /y /s /i src\*.h?? %INCLUDE_DIR%\Qt\src
 copy /y lib\QtCore4.lib %LIB_DIR%
 copy /y lib\QtCore4.dll %LIB_DIR%
 copy /y lib\QtGui4.lib %LIB_DIR%
