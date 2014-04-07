@@ -158,15 +158,15 @@ nmake
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Qt
-xcopy /y /s /i include\*.* %INCLUDE_DIR%\Qt\include
-xcopy /y /s /i src\*.h?? %INCLUDE_DIR%\Qt\src
-copy /y lib\QtCore4.lib %LIB_DIR%
-copy /y lib\QtCore4.dll %LIB_DIR%
-copy /y lib\QtGui4.lib %LIB_DIR%
-copy /y lib\QtGui4.dll %LIB_DIR%
-copy /y bin\moc.exe %LIB_DIR%
-copy /y bin\uic.exe %LIB_DIR%
-copy /y bin\rcc.exe %LIB_DIR%
+CALL:xcopyFiles include\*.* %INCLUDE_DIR%\Qt\include
+CALL:xcopyFiles src\*.h?? %INCLUDE_DIR%\Qt\src
+CALL:copyFile lib\QtCore4.lib %LIB_DIR%
+CALL:copyFile lib\QtCore4.dll %LIB_DIR%
+CALL:copyFile lib\QtGui4.lib %LIB_DIR%
+CALL:copyFile lib\QtGui4.dll %LIB_DIR%
+CALL:copyFile bin\moc.exe %LIB_DIR%
+CALL:copyFile bin\uic.exe %LIB_DIR%
+CALL:copyFile bin\rcc.exe %LIB_DIR%
 
 :NotQT
 :: ****************************************************************************
@@ -178,7 +178,7 @@ echo **************************************************************************
 echo * Building Python 3                                                      *
 echo **************************************************************************
 cd /d %LUX_X64_PYTHON3_ROOT%\PCbuild
-copy ..\PC\pyconfig.h ..\Include
+CALL:copyFile ..\PC\pyconfig.h ..\Include
 
 rem Update pymath.h
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch ..\include\pymath.h %LUX_WINDOWS_BUILD_ROOT%\support\pymath.h.patch
@@ -187,9 +187,9 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Python3.3
-copy /y ..\include\*.h %INCLUDE_DIR%\Python3.3
-copy /y amd64\*.lib %LIB_DIR%\python33.lib
-copy /y amd64\*.dll %LIB_DIR%
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python3.3
+CALL:copyFile amd64\python33.lib %LIB_DIR%
+CALL:copyFile amd64\python.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -225,8 +225,8 @@ if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
-xcopy /y /s boost\*.* %INCLUDE_DIR%\Boost\boost
-xcopy /y stage\lib\*.lib %LIB_DIR%
+CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
+CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
 :: ****************************************************************************
 :: ********************************** freeglut ********************************
@@ -242,8 +242,8 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%_Static" /t
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\GL
-copy /y include\GL\*.h %INCLUDE_DIR%\GL
-copy /y lib\x64\* %LIB_DIR%
+CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
+CALL:copyFile lib\x64\* %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -259,8 +259,8 @@ cd /d %LUX_X64_FFTW_ROOT%
 msbuild %MSBUILD_OPTS% /property:"Configuration=Static-%BUILD_CONFIGURATION%" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
 if ERRORLEVEL 1 goto :EOF
 
-copy /y api\fftw3.h %INCLUDE_DIR%
-copy /y fftw-3.3-libs\x64\Static-%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile api\fftw3.h %INCLUDE_DIR%
+CALL:copyFile fftw-3.3-libs\x64\Static-%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -280,9 +280,9 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\GL
-copy include\GL\*.h %INCLUDE_DIR%\GL
-IF %BUILD_CONFIGURATION%==Release copy /y lib\Release\x64\glew32s.lib %LIB_DIR%\glew32.lib
-IF %BUILD_CONFIGURATION%==Debug   copy /y lib\Debug\x64\glew32sd.lib %LIB_DIR%\glew32.lib
+CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile lib\Release\x64\glew32s.lib %LIB_DIR%\glew32.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile lib\Debug\x64\glew32sd.lib %LIB_DIR%\glew32.lib
 
 
 :: ****************************************************************************
@@ -295,15 +295,15 @@ echo * Building JPEG
 echo **************************************************************************
 cd /d %LUX_X64_JPEG_ROOT%
 
-copy %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
-copy %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
-copy jconfig.vc jconfig.h
+CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
+CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
+CALL:copyFile jconfig.vc jconfig.h
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
-copy /y *.h %INCLUDE_DIR%
-copy /y x64\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile *.h %INCLUDE_DIR%
+CALL:copyFile x64\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -325,14 +325,13 @@ if ERRORLEVEL 1 goto :EOF
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
 if ERRORLEVEL 1 goto :EOF
 
-rem Put this back so we can build again if necessary
-move ..\zconf.h.included ..\zconf.h
+CALL:copyFile ..\zconf.h.included ..\zconf.h
 
-copy /y zconf.h %INCLUDE_DIR%
-copy /y ..\zlib.h %INCLUDE_DIR%
+CALL:copyFile zconf.h %INCLUDE_DIR%
+CALL:copyFile ..\zlib.h %INCLUDE_DIR%
 
-IF %BUILD_CONFIGURATION%==Release copy /y %BUILD_CONFIGURATION%\zlibstatic.lib %LIB_DIR%\zlib1.lib
-IF %BUILD_CONFIGURATION%==Debug   copy /y %BUILD_CONFIGURATION%\zlibstaticd.lib %LIB_DIR%\zlib1.lib
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile %BUILD_CONFIGURATION%\zlibstatic.lib %LIB_DIR%\zlib1.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile %BUILD_CONFIGURATION%\zlibstaticd.lib %LIB_DIR%\zlib1.lib
 
 
 :: ****************************************************************************
@@ -361,16 +360,16 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
-copy /y ..\config\*.h %INCLUDE_DIR%\OpenEXR
-copy /y ..\Half\*.h %INCLUDE_DIR%\OpenEXR
-copy /y ..\Iex\*.h %INCLUDE_DIR%\OpenEXR
-copy /y ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
-copy /y ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\config\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Half\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Iex\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
 
-copy /y Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
-copy /y Iex\%BUILD_CONFIGURATION%\Iex-2_1.lib %LIB_DIR%\Iex.lib
-copy /y IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_1.lib %LIB_DIR%\IlmThread.lib
-copy /y Imath\%BUILD_CONFIGURATION%\Imath-2_1.lib %LIB_DIR%\Imath.lib
+CALL:copyFile Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
+CALL:copyFile Iex\%BUILD_CONFIGURATION%\Iex-2_1.lib %LIB_DIR%\Iex.lib
+CALL:copyFile IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_1.lib %LIB_DIR%\IlmThread.lib
+CALL:copyFile Imath\%BUILD_CONFIGURATION%\Imath-2_1.lib %LIB_DIR%\Imath.lib
 
 
 :: ****************************************************************************
@@ -392,11 +391,11 @@ if ERRORLEVEL 1 goto :EOF
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
 if ERRORLEVEL 1 goto :EOF
 
-copy /y ..\*.h %INCLUDE_DIR%
-copy /y pnglibconf.h %INCLUDE_DIR%
+CALL:copyFile ..\*.h %INCLUDE_DIR%
+CALL:copyFile pnglibconf.h %INCLUDE_DIR%
 
-IF %BUILD_CONFIGURATION%==Release copy /y %BUILD_CONFIGURATION%\libpng16_static.lib %LIB_DIR%\libpng.lib
-IF %BUILD_CONFIGURATION%==Debug   copy /y %BUILD_CONFIGURATION%\libpng16_staticd.lib %LIB_DIR%\libpng.lib
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile %BUILD_CONFIGURATION%\libpng16_static.lib %LIB_DIR%\libpng.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile %BUILD_CONFIGURATION%\libpng16_staticd.lib %LIB_DIR%\libpng.lib
 
 
 :: ****************************************************************************
@@ -418,8 +417,8 @@ if ERRORLEVEL 1 goto :EOF
 IF %BUILD_CONFIGURATION%==Release nmake /f Makefile.vc 
 IF %BUILD_CONFIGURATION%==Debug nmake /f Makefile.vc DEBUG=1
 
-copy /y libtiff\*.h %INCLUDE_DIR%
-copy /y libtiff\libtiff.lib %LIB_DIR%
+CALL:copyFile libtiff\*.h %INCLUDE_DIR%
+CALL:copyFile libtiff\libtiff.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -445,9 +444,9 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
-copy /y ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
-copy /y ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
-copy /y IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_1.lib %LIB_DIR%\IlmImf.lib
+CALL:copyFile ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_1.lib %LIB_DIR%\IlmImf.lib
 
 
 :: ****************************************************************************
@@ -469,8 +468,8 @@ if ERRORLEVEL 1 goto :EOF
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
-copy /y ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
-copy /y bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
+CALL:copyFile bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -499,10 +498,10 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenImageIO
-copy /y ..\src\include\*.h %INCLUDE_DIR%\OpenImageIO
-copy /y include\version.h %INCLUDE_DIR%\OpenImageIO
-copy /y src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
-copy /y src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
+CALL:copyFile ..\src\include\*.h %INCLUDE_DIR%\OpenImageIO
+CALL:copyFile include\version.h %INCLUDE_DIR%\OpenImageIO
+CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -516,7 +515,7 @@ echo **************************************************************************
 cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
 
 rem Install solution and project files for VS2010
-xcopy /S /Y %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
+CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.15.4.patch
@@ -524,8 +523,8 @@ rem Update source files
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2010.sln
 if ERRORLEVEL 1 goto :EOF
 
-copy /y Source\FreeImage.h %INCLUDE_DIR%
-copy /y Dist\*.lib %LIB_DIR%\FreeImage.lib
+CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
+CALL:copyFile Dist\FreeImage.lib %LIB_DIR%\FreeImage.lib
 
 
 :postLuxRender
@@ -565,5 +564,27 @@ IF NOT EXIST "%ENVVAR%" (
 	echo but "%ENVVAR%" does not exist! Aborting.
 	EXIT /b 1
 )
+ENDLOCAL
+GOTO:EOF
+
+:xcopyFiles
+:: Copy files recursively
+:: %1 - Source filemask
+:: %2 - Desination directory
+
+SETLOCAL
+xcopy /y /s /i %1 %2
+if ERRORLEVEL 1 EXIT /b 1
+ENDLOCAL
+GOTO:EOF
+
+:copyFile
+:: Copy single file
+:: %1 - Source filename
+:: %2 - Desination filename
+
+SETLOCAL
+copy /y /v %1 %2
+if ERRORLEVEL 1 EXIT /b 1
 ENDLOCAL
 GOTO:EOF
