@@ -1,7 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros">
+    <LUX_QT_QTCORE_LIB_PREFIX>QtCore4</LUX_QT_QTCORE_LIB_PREFIX>
+    <LUX_QT_QTCORE_LIB>$(LUX_QT_QTCORE_LIB_PREFIX).lib</LUX_QT_QTCORE_LIB>
+    <LUX_QT_QTCORE_DLL>$(LUX_QT_QTCORE_LIB_PREFIX).dll</LUX_QT_QTCORE_DLL>
+    <LUX_QT_QTGUI_LIB_PREFIX>QtGui4</LUX_QT_QTGUI_LIB_PREFIX>
+    <LUX_QT_QTGUI_LIB>$(LUX_QT_QTGUI_LIB_PREFIX).lib</LUX_QT_QTGUI_LIB>
+    <LUX_QT_QTGUI_DLL>$(LUX_QT_QTGUI_LIB_PREFIX).dll</LUX_QT_QTGUI_DLL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CustomBuildAfterTargets>Build</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_QT_QTCORE_LIB_PREFIX">
+      <Value>$(LUX_QT_QTCORE_LIB_PREFIX)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTCORE_LIB">
+      <Value>$(LUX_QT_QTCORE_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTCORE_DLL">
+      <Value>$(LUX_QT_QTCORE_DLL)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTGUI_LIB_PREFIX">
+      <Value>$(LUX_QT_QTGUI_LIB_PREFIX)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTGUI_LIB">
+      <Value>$(LUX_QT_QTGUI_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTGUI_DLL">
+      <Value>$(LUX_QT_QTGUI_DLL)</Value>
+    </BuildMacro>
+  </ItemGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(LUX_QT_INCLUDE_ROOT);$(LUX_QT_INCLUDE_ROOT)\Qt;$(LUX_QT_INCLUDE_ROOT)\QtCore;$(LUX_QT_INCLUDE_ROOT)\QtGui;$(LUX_QT_INCLUDE_ROOT)\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -9,7 +39,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_QT_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(LUX_QT_QTCORE_LIB);$(LUX_QT_QTGUI_LIB);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtDesignerUI>
       <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
@@ -23,5 +53,25 @@
     <QtResource>
       <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
     </QtResource>
+    <CustomBuildStep>
+      <Command>copy /y "$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTCORE_DLL)" "$(OutDir)" &gt; nul
+if ERRORLEVEL 1 (
+  echo Error copying "$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTCORE_DLL)" to "$(OutDir)"
+  exit /b 1
+)
+copy /y "$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTGUI_DLL)" "$(OutDir)" &gt; nul
+if ERRORLEVEL 1 (
+  echo Error copying "$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTGUI_DLL)" to "$(OutDir)"
+  exit /b 1
+)
+%(Command)
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(OutDir)$(LUX_QT_QTCORE_DLL);$(LUX_QT_QTGUI_DLL);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTCORE_DLL);$(LUX_QT_LIBS_ROOT)\$(LUX_QT_QTGUI_DLL);%(Inputs)</Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
 </Project>
