@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -343,10 +343,10 @@
   </ItemGroup>
   <ItemGroup>
     <QtResource Include="..\..\..\..\..\lux\qtgui\icons.qrc">
-      <AdditionalDependencies>%(RootDir)%(Directory)\icons\*.*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(RootDir)%(Directory)\icons\advancedicon.png;%(RootDir)%(Directory)\icons\analogclockicon.png;%(RootDir)%(Directory)\icons\arrowicon.png;%(RootDir)%(Directory)\icons\clipboardicon.png;%(RootDir)%(Directory)\icons\clipboardicon_alpha.png;%(RootDir)%(Directory)\icons\collapsedicon.png;%(RootDir)%(Directory)\icons\colorspaceicon.png;%(RootDir)%(Directory)\icons\erroricon.png;%(RootDir)%(Directory)\icons\expandedicon.png;%(RootDir)%(Directory)\icons\gammaicon.png;%(RootDir)%(Directory)\icons\histogramicon.png;%(RootDir)%(Directory)\icons\imageicon.png;%(RootDir)%(Directory)\icons\lenseffectsicon.png;%(RootDir)%(Directory)\icons\lightgroupsicon.png;%(RootDir)%(Directory)\icons\logtabicon.png;%(RootDir)%(Directory)\icons\luxrender.png;%(RootDir)%(Directory)\icons\mappainticon.png;%(RootDir)%(Directory)\icons\minusicon.png;%(RootDir)%(Directory)\icons\networktabicon.png;%(RootDir)%(Directory)\icons\noisereductionicon.png;%(RootDir)%(Directory)\icons\pauseicon.png;%(RootDir)%(Directory)\icons\plusicon.png;%(RootDir)%(Directory)\icons\powerofficon.png;%(RootDir)%(Directory)\icons\poweronicon.png;%(RootDir)%(Directory)\icons\queuetabicon.png;%(RootDir)%(Directory)\icons\rendertabicon.png;%(RootDir)%(Directory)\icons\resolutionicon.png;%(RootDir)%(Directory)\icons\resumeicon.png;%(RootDir)%(Directory)\icons\stopicon.png;%(RootDir)%(Directory)\icons\tonemapicon.png;%(RootDir)%(Directory)\icons\viewicon.png;%(RootDir)%(Directory)\icons\warningicon.png;%(RootDir)%(Directory)\icons\zoomicon.png;%(AdditionalDependencies)</AdditionalDependencies>
     </QtResource>
     <QtResource Include="..\..\..\..\..\lux\qtgui\images.qrc">
-      <AdditionalDependencies>%(RootDir)%(Directory)\images\*.*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(RootDir)%(Directory)\images\checkerboard.png;%(RootDir)%(Directory)\images\colortemp.png;%(RootDir)%(Directory)\images\luxlogo_bg.png;%(AdditionalDependencies)</AdditionalDependencies>
     </QtResource>
     <QtResource Include="..\..\..\..\..\lux\qtgui\splash.qrc">
       <AdditionalDependencies>%(RootDir)%(Directory)\images\splash.png;%(AdditionalDependencies)</AdditionalDependencies>
