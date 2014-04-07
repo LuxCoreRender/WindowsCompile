@@ -2,9 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-	<LUX_OCL_INTEL_INCLUDE>.</LUX_OCL_INTEL_INCLUDE>
-    <LUX_OCL_INTEL_X86_LIBS>.</LUX_OCL_INTEL_X86_LIBS>	
-    <LUX_OCL_INTEL_X64_LIBS>.</LUX_OCL_INTEL_X64_LIBS>	
+    <LUX_OCL_INTEL_INCLUDE>$(INTELOCLSDKROOT)include</LUX_OCL_INTEL_INCLUDE>
+    <LUX_OCL_INTEL_X86_LIBS>$(INTELOCLSDKROOT)lib\x86</LUX_OCL_INTEL_X86_LIBS>	
+    <LUX_OCL_INTEL_X64_LIBS>$(INTELOCLSDKROOT)lib\x64</LUX_OCL_INTEL_X64_LIBS>	
   </PropertyGroup>
   <PropertyGroup>
     <_PropertySheetDisplayName>Lux-OpenCL-Intel-Variables</_PropertySheetDisplayName>

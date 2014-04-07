@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-	<LUX_OCL_AMD_INCLUDE>$(AMDAPPSDKROOT)include</LUX_OCL_AMD_INCLUDE>
+    <LUX_OCL_AMD_INCLUDE>$(AMDAPPSDKROOT)include</LUX_OCL_AMD_INCLUDE>
     <LUX_OCL_AMD_X86_LIBS>$(AMDAPPSDKROOT)lib\x86</LUX_OCL_AMD_X86_LIBS>	
     <LUX_OCL_AMD_X64_LIBS>$(AMDAPPSDKROOT)lib\x86_64</LUX_OCL_AMD_X64_LIBS>	
   </PropertyGroup>
