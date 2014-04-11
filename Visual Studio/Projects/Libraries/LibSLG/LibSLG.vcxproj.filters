@@ -356,6 +356,9 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_texture.h">
       <Filter>Header Files\sdl</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_noiselib.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderconfig.cpp">
@@ -650,6 +653,9 @@
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_texture.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_noiselib.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
   </ItemGroup>

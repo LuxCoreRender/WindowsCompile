@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -213,6 +213,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\renderengine.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\rendersession.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_noiselib.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_texture.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfevents.h" />
@@ -274,6 +275,7 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\rendersession.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sampler.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sobol.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_noiselib.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_texture.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\bsdf.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\camera.cpp" />
