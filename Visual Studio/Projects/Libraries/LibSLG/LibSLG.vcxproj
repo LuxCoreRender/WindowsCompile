@@ -270,6 +270,8 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipelineplugins.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\tonemap.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderconfig.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderengine.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\rendersession.cpp" />
@@ -379,6 +381,8 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_types.cl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
