@@ -846,9 +846,6 @@
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_noise.h">
       <Filter>Header Files\textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\lux\textures\blender_noiselib.h">
-      <Filter>Header Files\textures</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_stucci.h">
       <Filter>Header Files\textures</Filter>
     </ClInclude>
@@ -1593,9 +1590,6 @@
       <Filter>Source Files\textures</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_noise.cpp">
-      <Filter>Source Files\textures</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\lux\textures\blender_noiselib.cpp">
       <Filter>Source Files\textures</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_stucci.cpp">

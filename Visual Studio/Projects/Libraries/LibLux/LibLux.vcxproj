@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -447,7 +447,6 @@
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_marble.h" />
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_musgrave.h" />
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_noise.h" />
-    <ClInclude Include="..\..\..\..\..\lux\textures\blender_noiselib.h" />
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_stucci.h" />
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_texlib.h" />
     <ClInclude Include="..\..\..\..\..\lux\textures\blender_voronoi.h" />
@@ -698,7 +697,6 @@
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_marble.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_musgrave.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_noise.cpp" />
-    <ClCompile Include="..\..\..\..\..\lux\textures\blender_noiselib.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_stucci.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_texlib.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\textures\blender_voronoi.cpp" />
