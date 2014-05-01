@@ -95,6 +95,8 @@ set LIB_DIR=%INSTALL_DIR%\lib
 mkdir %LIB_DIR%
 set INCLUDE_DIR=%INSTALL_DIR%\..\..\include
 mkdir %INCLUDE_DIR%
+set BIN_DIR=%INSTALL_DIR%\..\..\bin
+mkdir %BIN_DIR%
 
 :: Make junction to include dir for braindead cmake scripts
 rd %INSTALL_DIR%\include
@@ -526,6 +528,16 @@ if ERRORLEVEL 1 goto :EOF
 CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
 CALL:copyFile Dist\FreeImage.lib %LIB_DIR%\FreeImage.lib
 
+:: ****************************************************************************
+:: ******************************** CMake *************************************
+:: ****************************************************************************
+:CMake
+echo.
+echo **************************************************************************
+echo * Copying CMake
+echo **************************************************************************
+cd /d %LUX_X64_CMAKE_ROOT%
+CALL:xcopyFiles *.* %BIN_DIR%\CMake
 
 :postLuxRender
 :: ****************************************************************************
