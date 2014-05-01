@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName Include="Flex">
+      <Targets>_Flex</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="Flex"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <PropertyGroup>
+    <ContentFilesProjectOutputGroupDependsOn>$(ContentFilesProjectOutputGroupDependsOn);MakeDirsForFlex</ContentFilesProjectOutputGroupDependsOn>
+  </PropertyGroup>
+  <Target Name="MakeDirsForFlex">
+    <ItemGroup Condition="'@(Flex)'!=''">
+      <FlexDirsToMake Include="%(Flex.OutputFileName)" />
+    </ItemGroup>
+    <MakeDir Directories="@(FlexDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_Flex"
+    BeforeTargets="$(FlexBeforeTargets)"
+    AfterTargets="$(FlexAfterTargets)"
+    Condition="'@(Flex)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForFlex"
+    Outputs="%(Flex.OutputFileName)"
+    Inputs="%(Flex.Identity);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <Flex
+        Remove="@(Flex)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <Flex_tlog
+        Include="%(Flex.OutputFileName)"
+        Condition="'%(Flex.OutputFileName)' != '' and '%(Flex.ExcludedFromBuild)' != 'true'">
+        <Source>@(Flex, '|')</Source>
+      </Flex_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(Flex.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(Flex_tlog)' != '' and '%(Flex_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)flex.write.1.tlog"
+      Lines="^%(Flex_tlog.Source);@(Flex_tlog-&gt;'%(Fullpath)')" />
+    <Flex
+      Condition="'@(Flex)' != '' and '%(Flex.ExcludedFromBuild)'!='true'"
+      CommandLineTemplate="%(Flex.CommandLineTemplate)"
+      OutputFileName="%(Flex.OutputFileName)"
+      WinCompat="%(Flex.WinCompat)"
+      NoUnistd="%(Flex.NoUnistd)"
+      Reentrant="%(Flex.Reentrant)"
+      CaseInsensitive="%(Flex.CaseInsensitive)"
+      CompatibilityMode="%(Flex.CompatibilityMode)"
+      Batch="%(Flex.Batch)"
+      Bits="%(Flex.Bits)"
+      Stack="%(Flex.Stack)"
+      Stdinit="%(Flex.Stdinit)"
+      Align="%(Flex.Align)"
+      Compression="%(Flex.Compression)"
+      ScannerTableType="%(Flex.ScannerTableType)"
+      BypassStdio="%(Flex.BypassStdio)"
+      AdditionalOptions="%(Flex.AdditionalOptions)"
+      Inputs="%(Flex.Identity)" />
+  </Target>
+</Project>

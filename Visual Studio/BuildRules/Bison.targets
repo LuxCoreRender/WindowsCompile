@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName Include="Bison">
+      <Targets>_Bison</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="Bison"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <PropertyGroup>
+    <ContentFilesProjectOutputGroupDependsOn>$(ContentFilesProjectOutputGroupDependsOn);MakeDirsForBison</ContentFilesProjectOutputGroupDependsOn>
+  </PropertyGroup>
+  <Target Name="MakeDirsForBison">
+    <ItemGroup Condition="'@(Bison)'!=''">
+      <BisonDirsToMake Include="%(Bison.OutputFileName);%(Bison.OutputHeaderFileName)" />
+    </ItemGroup>
+    <MakeDir Directories="@(BisonDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_Bison"
+    BeforeTargets="$(BisonBeforeTargets)"
+    AfterTargets="$(BisonAfterTargets)"
+    Condition="'@(Bison)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForBison"
+    Outputs="%(Bison.OutputFileName);%(Bison.OutputHeaderFileName)"
+    Inputs="%(Bison.Identity);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <Bison
+        Remove="@(Bison)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <Bison_tlog
+        Include="%(Bison.OutputFileName);%(Bison.OutputHeaderFileName)"
+        Condition="'%(Bison.OutputFileName)' != '' and '%(Bison.ExcludedFromBuild)' != 'true'">
+        <Source>@(Bison, '|')</Source>
+      </Bison_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(Bison.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(Bison_tlog)' != '' and '%(Bison_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)bison.write.1.tlog"
+      Lines="^%(Bison_tlog.Source);@(Bison_tlog-&gt;'%(Fullpath)')" />
+    <Bison
+      Condition="'@(Bison)' != '' and '%(Bison.ExcludedFromBuild)'!='true'"
+      CommandLineTemplate="%(Bison.CommandLineTemplate)"
+      OutputFileName="%(Bison.OutputFileName)"
+      OutputHeaderFileName="%(Bison.OutputHeaderFileName)"
+      EmulateYacc="%(Bison.EmulateYacc)"
+      AdditionalOptions="%(Bison.AdditionalOptions)"
+      Inputs="%(Bison.Identity)" />
+  </Target>
+</Project>

@@ -1,0 +1,18 @@
+<Project DefaultTargets="All" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Config Include="Release"><Platform>x64</Platform></Config>
+    <Config Include="Release NoOpenCL"><Platform>x64</Platform></Config>
+
+    <Config Include="Release"><Platform>Win32</Platform></Config>
+    <Config Include="Release NoOpenCL"><Platform>Win32</Platform></Config>
+<!--        <Config Include="Release SSE1"><Platform>Win32</Platform></Config>  -->
+  </ItemGroup>
+
+  <Target Name="All">
+    <Message Importance="high" Text="--------- Building %(Config.Identity) %(Platform)" />
+<MSBuild Projects="lux.sln" BuildInParallel="true" Properties="Configuration=%(Config.Identity);Platform=%(Platform)" />
+<!--        <MSBuild Projects="lux.sln" BuildInParallel="false" Properties="Configuration=%(Config.Identity);Platform=%(Platform)" />  -->
+  </Target>
+ 
+</Project>

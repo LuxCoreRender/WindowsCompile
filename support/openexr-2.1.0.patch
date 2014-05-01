@@ -1,0 +1,73 @@
+--- IlmImf\ImfAcesFile.cpp.orig	2014-02-23 17:58:02.420625556 -0700
++++ IlmImf\ImfAcesFile.cpp	2014-02-23 17:58:13.024492247 -0700
+@@ -43,6 +43,8 @@
+ #include <ImfStandardAttributes.h>
+ #include <Iex.h>
+ 
++#include <algorithm>
++
+ using namespace std;
+ using namespace IMATH_NAMESPACE;
+ using namespace IEX_NAMESPACE;
+--- IlmImf\ImfDeepScanLineInputFile.cpp.orig	2014-02-23 18:03:24.172580586 -0700
++++ IlmImf\ImfDeepScanLineInputFile.cpp	2014-02-23 18:03:36.120430381 -0700
+@@ -65,6 +65,7 @@
+ 
+ #include "Iex.h"
+ 
++#include <algorithm>
+ #include <string>
+ #include <vector>
+ #include <assert.h>
+--- IlmImf\ImfDeepScanLineOutputFile.cpp.orig	2014-02-23 18:06:11.714474299 -0700
++++ IlmImf\ImfDeepScanLineOutputFile.cpp	2014-02-23 18:06:22.878333951 -0700
+@@ -60,6 +60,8 @@
+ #include "IlmThreadSemaphore.h"
+ #include "IlmThreadMutex.h"
+ #include "Iex.h"
++
++#include <algorithm>
+ #include <string>
+ #include <vector>
+ #include <fstream>
+--- IlmImf\ImfDeepTiledOutputFile.cpp.orig	2014-02-23 18:08:09.840989248 -0700
++++ IlmImf\ImfDeepTiledOutputFile.cpp	2014-02-23 18:08:19.084873036 -0700
+@@ -66,6 +66,7 @@
+ 
+ #include "Iex.h"
+ 
++#include <algorithm>
+ #include <string>
+ #include <vector>
+ #include <fstream>
+--- IlmImf\ImfOutputFile.cpp.orig	2014-02-23 17:42:25.004410474 -0700
++++ IlmImf\ImfOutputFile.cpp	2014-02-23 17:42:41.948197462 -0700
+@@ -64,6 +64,7 @@
+ #include "ImfNamespace.h"
+ #include "ImfOutputPartData.h"
+ 
++#include <algorithm>
+ #include <string>
+ #include <vector>
+ #include <fstream>
+--- IlmImf\ImfTiledMisc.cpp.orig	2014-02-23 17:48:07.100109748 -0700
++++ IlmImf\ImfTiledMisc.cpp	2014-02-23 17:48:33.435778664 -0700
+@@ -47,6 +47,8 @@
+ 
+ #include "ImfNamespace.h"
+ 
++#include <algorithm>
++
+ OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
+ 
+ using IMATH_NAMESPACE::Box2i;
+--- IlmImf\ImfTiledOutputFile.cpp.orig	2014-02-23 17:47:59.628203683 -0700
++++ IlmImf\ImfTiledOutputFile.cpp	2014-02-23 17:48:20.139945815 -0700
+@@ -71,6 +71,7 @@
+ 
+ #include "ImfNamespace.h"
+ 
++#include <algorithm>
+ 
+ OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
+ 
