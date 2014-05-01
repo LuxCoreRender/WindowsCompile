@@ -262,7 +262,7 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=Static-%BUILD_CONFIGURATION%" /t
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile api\fftw3.h %INCLUDE_DIR%
-CALL:copyFile fftw-3.3-libs\x64\Static-%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile fftw-3.3-libs\x64\Static-%BUILD_CONFIGURATION%\*.lib %LIB_DIR%\fftw3.lib
 
 
 :: ****************************************************************************
