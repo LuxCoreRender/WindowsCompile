@@ -202,6 +202,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\pathocl_datatypes.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtbiaspathocl\rtbiaspathocl.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtpathocl\rtpathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\film.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filter.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\framebuffer.h" />
