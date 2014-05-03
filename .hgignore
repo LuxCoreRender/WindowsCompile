@@ -16,4 +16,4 @@ build-vars.*
 .pydevproject
 *_changeset*.txt
 *changelog*.txt
-cmake_build\*
+Build_CMake\*
