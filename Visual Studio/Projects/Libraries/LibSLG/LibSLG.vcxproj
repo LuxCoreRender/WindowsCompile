@@ -202,6 +202,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\pathocl_datatypes.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtbiaspathocl\rtbiaspathocl.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtpathocl\rtpathocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\cameraresponsefunctions.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\film.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filter.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\framebuffer.h" />
@@ -270,6 +271,8 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipelineplugins.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\tonemap.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\bsdfutils_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volumeinfo_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderconfig.cpp" />
@@ -354,6 +357,7 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\film\filter_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfutils_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl" />
@@ -381,6 +385,7 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volumeinfo_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_types.cl" />
   </ItemGroup>
