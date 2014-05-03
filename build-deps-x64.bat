@@ -162,10 +162,12 @@ if ERRORLEVEL 1 goto :EOF
 mkdir %INCLUDE_DIR%\Qt
 CALL:xcopyFiles include\*.* %INCLUDE_DIR%\Qt\include
 CALL:xcopyFiles src\*.h?? %INCLUDE_DIR%\Qt\src
+CALL:copyFile lib\qtmain.lib %LIB_DIR%
 CALL:copyFile lib\QtCore4.lib %LIB_DIR%
 CALL:copyFile lib\QtCore4.dll %LIB_DIR%
 CALL:copyFile lib\QtGui4.lib %LIB_DIR%
 CALL:copyFile lib\QtGui4.dll %LIB_DIR%
+CALL:copyFile bin\qmake.exe %LIB_DIR%
 CALL:copyFile bin\moc.exe %LIB_DIR%
 CALL:copyFile bin\uic.exe %LIB_DIR%
 CALL:copyFile bin\rcc.exe %LIB_DIR%
