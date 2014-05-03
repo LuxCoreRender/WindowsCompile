@@ -673,6 +673,9 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volumeinfo_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_bump_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in">
@@ -816,6 +819,9 @@
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volumeinfo_funcs.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_bump_funcs.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
