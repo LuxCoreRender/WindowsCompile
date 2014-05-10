@@ -518,13 +518,13 @@ echo * Building FreeImage
 echo **************************************************************************
 cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
 
-rem Install solution and project files for VS2010
-CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
+rem Install solution and project files for VS2013
+CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 
 rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.15.4.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2010.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
