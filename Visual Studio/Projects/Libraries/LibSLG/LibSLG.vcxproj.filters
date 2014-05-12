@@ -676,6 +676,27 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_bump_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdfutils_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_clearvol_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mix_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_bump_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volumeinfo_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in">
@@ -822,6 +843,12 @@
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_bump_funcs.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_clearvol.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mix.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>

@@ -299,6 +299,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_datatypes_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_kernels_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdfutils_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdf_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdf_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\camera_funcs_kernel.cpp" />
@@ -314,6 +315,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\mapping_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_archglass_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_carpaint_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_clearvol_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_cloth_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_generic_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glass_kernel.cpp" />
@@ -322,6 +324,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_translucent_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_metal2_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mirror_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mix_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_null_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughglass_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_velvet_kernel.cpp" />
@@ -335,9 +338,13 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\sampler_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\scene_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_bump_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_noise_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volumeinfo_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_types_kernel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in" />
@@ -368,6 +375,7 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_archglass.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_carpaint.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_clearvol.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_cloth.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_generic.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glass.cl" />
@@ -376,6 +384,7 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte_translucent.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_metal2.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mirror.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mix.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_null.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughglass.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_velvet.cl" />
