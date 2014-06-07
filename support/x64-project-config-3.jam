@@ -1,12 +1,12 @@
 import os ;
 local LUX_X64_PYTHON3_ROOT = [ os.environ LUX_X64_PYTHON3_ROOT ] ;
 
-using python : 3.3
+using python : 3.4
 	: $(LUX_X64_PYTHON3_ROOT)\\PCbuild\\amd64\\python
 	: $(LUX_X64_PYTHON3_ROOT)\\Include
 	: #
 	;
-using python : 3.3
+using python : 3.4
 	: $(LUX_X64_PYTHON3_ROOT)\\PCbuild\\amd64\\python_d
 	: $(LUX_X64_PYTHON3_ROOT)\\Include
 	: #

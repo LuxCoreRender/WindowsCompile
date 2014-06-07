@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
@@ -17,7 +17,7 @@
     <LUX_QT_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Qt\include</LUX_QT_INCLUDE_ROOT>
     <LUX_QT_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_QT_LIBS_ROOT>
     <LUX_QT_BINS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_QT_BINS_ROOT>
-    <LUX_PYTHON_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Python3.3</LUX_PYTHON_INCLUDE_ROOT>
+    <LUX_PYTHON_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Python3</LUX_PYTHON_INCLUDE_ROOT>
     <LUX_PYTHON_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_PYTHON_LIBS_ROOT>
   </PropertyGroup>
   <PropertyGroup>
