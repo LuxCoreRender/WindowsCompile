@@ -190,10 +190,10 @@ rem Update pymath.h
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
 
-mkdir %INCLUDE_DIR%\Python3.3
-CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python3.3
-CALL:copyFile amd64\python33.lib %LIB_DIR%
-CALL:copyFile amd64\python.dll %LIB_DIR%
+mkdir %INCLUDE_DIR%\Python3
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python3
+CALL:copyFile amd64\python34.lib %LIB_DIR%
+CALL:copyFile amd64\python34.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************

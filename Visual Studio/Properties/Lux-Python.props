@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <LUX_PYTHON_LIB_PREFIX>python33</LUX_PYTHON_LIB_PREFIX>
+    <LUX_PYTHON_LIB_PREFIX>python34</LUX_PYTHON_LIB_PREFIX>
     <LUX_PYTHON_LIB>$(LUX_PYTHON_LIB_PREFIX).lib</LUX_PYTHON_LIB>
     <LUX_PYTHON_DLL>$(LUX_PYTHON_LIB_PREFIX).dll</LUX_PYTHON_DLL>
   </PropertyGroup>
@@ -28,7 +28,7 @@
       <AdditionalLibraryDirectories>$(LUX_PYTHON_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
-      <Command>copy /y "$(LUX_PYTHON_LIBS_ROOT)\$(LUX_PYTHON_DLL)" "$(OutDir)" > nul
+      <Command>copy /y "$(LUX_PYTHON_LIBS_ROOT)\$(LUX_PYTHON_DLL)" "$(OutDir)" &gt; nul
 if ERRORLEVEL 1 (
   echo Error copying "$(LUX_PYTHON_LIBS_ROOT)\$(LUX_PYTHON_DLL)" to "$(OutDir)"
   exit /b 1
