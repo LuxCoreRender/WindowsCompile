@@ -52,8 +52,8 @@
   using std::isnan;
   using std::isinf;
   using std::isfinite;
---- src\libOpenImageIO\CMakeLists.txt.orig	2014-01-25 18:32:20.000000000 -0700
-+++ src\libOpenImageIO\CMakeLists.txt	2014-02-26 01:19:54.258936417 -0700
+--- src\libOpenImageIO\CMakeLists.txt.orig	2014-06-08 23:50:00.537761270 -0600
++++ src\libOpenImageIO\CMakeLists.txt	2014-06-08 23:52:00.341765704 -0600
 @@ -81,6 +81,10 @@
  # If the 'EMBEDPLUGINS' option is set, we want to compile the source for
  # all the plugins into libOpenImageIO.
@@ -65,7 +65,7 @@
      set (libOpenImageIO_srcs ${libOpenImageIO_srcs}
          ../bmp.imageio/bmpinput.cpp ../bmp.imageio/bmpoutput.cpp
          ../bmp.imageio/bmp_pvt.cpp
-@@ -177,6 +179,10 @@
+@@ -177,6 +181,10 @@
               ../jpeg2000.imageio/jpeg2000input.cpp ../jpeg2000.imageio/jpeg2000output.cpp)
          include_directories (${OPENJPEG_INCLUDE_DIR})
          add_definitions("-DUSE_OPENJPEG")
@@ -76,6 +76,14 @@
      else()
          message (STATUS "Jpeg-2000 plugin will not be built")
      endif()
+@@ -258,6 +266,7 @@
+ 
+ 
+ if (WIN32)
++    add_definitions ("-DPSAPI_VERSION=1")
+     target_link_libraries (OpenImageIO psapi.lib)
+ endif ()
+ link_ilmbase (OpenImageIO)
 --- src\libutil\argparse.cpp.orig	2014-02-24 00:00:08.399493013 -0700
 +++ src\libutil\argparse.cpp	2014-02-24 00:00:18.851361615 -0700
 @@ -30,6 +30,7 @@
