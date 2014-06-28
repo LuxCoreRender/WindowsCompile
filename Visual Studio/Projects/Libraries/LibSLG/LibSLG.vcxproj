@@ -320,6 +320,8 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_generic_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glass_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glossy2_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_heterogeneousvol_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_homogeneousvol_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_translucent_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_metal2_kernel.cpp" />
@@ -380,6 +382,8 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_generic.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glass.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glossy2.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_heterogeneousvol.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_homogeneousvol.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte_translucent.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_metal2.cl" />
