@@ -661,21 +661,6 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_noiselib.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\bsdfutils_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volumeinfo_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_bump_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdfutils_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>

@@ -271,11 +271,6 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipelineplugins.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\tonemap.cpp" />
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\bsdfutils_funcs_kernel.cpp" />
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\texture_bump_funcs_kernel.cpp" />
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volumeinfo_funcs_kernel.cpp" />
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_funcs_kernel.cpp" />
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\kernels\volume_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderconfig.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\renderengine.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\rendersession.cpp" />
