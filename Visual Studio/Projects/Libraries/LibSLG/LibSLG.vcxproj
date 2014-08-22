@@ -324,6 +324,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mix_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_null_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughglass_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughmatte_translucent_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_velvet_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_types_kernel.cpp" />
@@ -335,6 +336,8 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\sampler_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\scene_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs2_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_bump_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_noise_funcs_kernel.cpp" />
@@ -386,11 +389,14 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mix.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_null.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughglass.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughmatte_translucent.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_velvet.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs2.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_bump_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl" />
