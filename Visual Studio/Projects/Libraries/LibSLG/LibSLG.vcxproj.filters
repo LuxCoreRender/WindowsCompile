@@ -688,6 +688,15 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_homogeneousvol_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughmatte_translucent_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs2_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in">
@@ -846,6 +855,15 @@
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_heterogeneousvol.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughmatte_translucent.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs2.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
