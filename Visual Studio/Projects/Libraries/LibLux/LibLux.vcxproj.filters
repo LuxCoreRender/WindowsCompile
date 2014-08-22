@@ -300,9 +300,6 @@
     <ClInclude Include="..\..\..\..\..\lux\core\mipmap.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\lux\core\motionsystem.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\core\octree.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -385,9 +382,6 @@
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\matrix3x3.h">
-      <Filter>Header Files\core\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\lux\core\geometry\quaternion.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\raydifferential.h">
@@ -1067,9 +1061,6 @@
     <ClCompile Include="..\..\..\..\..\lux\core\material.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\lux\core\motionsystem.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\core\osfunc.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -1129,9 +1120,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\core\volume.cpp">
       <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\lux\core\geometry\quaternion.cpp">
-      <Filter>Source Files\core\geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\lux\core\geometry\raydifferential.cpp">
       <Filter>Source Files\core\geometry</Filter>

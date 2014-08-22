@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -217,8 +217,10 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix3x3.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\raybuffer.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform.h" />
@@ -269,6 +271,8 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\exttrianglemesh.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\bbox.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\matrix4x4.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\motionsystem.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\quaternion.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\transform.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\trianglemesh.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\idevices\nativeidevice.cpp" />

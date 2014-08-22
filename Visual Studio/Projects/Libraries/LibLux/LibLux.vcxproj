@@ -262,7 +262,6 @@
     <ClInclude Include="..\..\..\..\..\lux\core\filter.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\matrix2x2.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\matrix3x3.h" />
-    <ClInclude Include="..\..\..\..\..\lux\core\geometry\quaternion.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\raydifferential.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\geometry\transform.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\igiio.h" />
@@ -272,7 +271,6 @@
     <ClInclude Include="..\..\..\..\..\lux\core\lux.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\material.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\mipmap.h" />
-    <ClInclude Include="..\..\..\..\..\lux\core\motionsystem.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\octree.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\osfunc.h" />
     <ClInclude Include="..\..\..\..\..\lux\core\paramset.h" />
@@ -518,13 +516,11 @@
     <ClCompile Include="..\..\..\..\..\lux\core\exrio.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\filedata.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\film.cpp" />
-    <ClCompile Include="..\..\..\..\..\lux\core\geometry\quaternion.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\geometry\raydifferential.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\igiio.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\imagereader.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\light.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\material.cpp" />
-    <ClCompile Include="..\..\..\..\..\lux\core\motionsystem.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\osfunc.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\paramset.cpp" />
     <ClCompile Include="..\..\..\..\..\lux\core\partialcontribution.cpp" />
