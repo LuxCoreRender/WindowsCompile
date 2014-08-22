@@ -270,6 +270,12 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\cfg.h">
       <Filter>Generated Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\bvhaccel.cpp">
@@ -466,6 +472,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\vector_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\motionsystem.cpp">
+      <Filter>Source Files\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\quaternion.cpp">
+      <Filter>Source Files\core\geometry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
