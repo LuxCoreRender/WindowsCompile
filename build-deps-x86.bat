@@ -189,9 +189,6 @@ echo *          Boost::Thread                                                 *
 echo **************************************************************************
 cd /d %LUX_X86_BOOST_ROOT%
 
-rem Patch Boost 1.55.0 to build Serialization with Visual Studio 2013
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p1 -i %LUX_WINDOWS_BUILD_ROOT%\support\boost_1.55.0.patch
-
 CALL bootstrap.bat
 type %LUX_WINDOWS_BUILD_ROOT%\support\x86-project-config-3.jam >> project-config.jam
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X86_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X86_PYTHON3_ROOT% -sZLIB_SOURCE=%LUX_X86_ZLIB_ROOT%
@@ -232,7 +229,7 @@ cd /d %LUX_X86_FFTW_ROOT%
 msbuild %MSBUILD_OPTS% /property:"Configuration=Static-%BUILD_CONFIGURATION%" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
 
 copy api\fftw3.h %INCLUDE_DIR%
-copy fftw-3.3-libs\Static-%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+copy fftw-3.3-libs\Static-%BUILD_CONFIGURATION%\libfftw-3.3.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -244,9 +241,6 @@ echo **************************************************************************
 echo * Building GLEW
 echo **************************************************************************
 cd /d %LUX_X86_GLEW_ROOT%
-
-rem Update resource file (GLEW git c5a3681eae4be587e7533bf2d13c77e7a1fa7404)
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch build\glew.rc %LUX_WINDOWS_BUILD_ROOT%\support\glew.rc.patch
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"glew_static" build\vc10\glew.sln
 
@@ -312,12 +306,6 @@ echo * Building IlmBase
 echo **************************************************************************
 cd /d %LUX_X86_ILMBASE_ROOT%
 
-rem Update project files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch CMakeLists.txt %LUX_WINDOWS_BUILD_ROOT%\support\ilmbase-2.1.0.CMakeLists.txt.patch
-
-rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch Imath\ImathMatrixAlgo.cpp %LUX_WINDOWS_BUILD_ROOT%\support\ImathMatrixAlgo.cpp.patch
-
 rmdir /s /q build
 mkdir build
 cd build
@@ -333,9 +321,9 @@ copy ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
 copy ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
 
 copy Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
-copy Iex\%BUILD_CONFIGURATION%\Iex-2_1.lib %LIB_DIR%\Iex.lib
-copy IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_1.lib %LIB_DIR%\IlmThread.lib
-copy Imath\%BUILD_CONFIGURATION%\Imath-2_1.lib %LIB_DIR%\Imath.lib
+copy Iex\%BUILD_CONFIGURATION%\Iex-2_2.lib %LIB_DIR%\Iex.lib
+copy IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_2.lib %LIB_DIR%\IlmThread.lib
+copy Imath\%BUILD_CONFIGURATION%\Imath-2_2.lib %LIB_DIR%\Imath.lib
 
 
 :: ****************************************************************************
@@ -372,7 +360,7 @@ echo **************************************************************************
 cd /d %LUX_X86_LIBTIFF_ROOT%
 
 rem Update project files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch nmake.opt %LUX_WINDOWS_BUILD_ROOT%\support\libtiff.nmake.opt.x86.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch nmake.opt %LUX_WINDOWS_BUILD_ROOT%\support\libtiff.nmake.opt.patch
 
 nmake /f Makefile.vc Clean
 
@@ -393,8 +381,8 @@ echo * Building OpenEXR
 echo **************************************************************************
 cd /d %LUX_X86_OPENEXR_ROOT%
 
-rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openexr-2.1.0.patch
+rem Update project files
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch CMakeLists.txt %LUX_WINDOWS_BUILD_ROOT%\support\openexr-2.2.0.CMakeLists.txt.patch
 
 rmdir /s /q build
 mkdir build
@@ -406,7 +394,7 @@ msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"
 mkdir %INCLUDE_DIR%\OpenEXR
 copy ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
 copy ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
-copy IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_1.lib %LIB_DIR%\IlmImf.lib
+copy IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_2.lib %LIB_DIR%\IlmImf.lib
 
 
 :: ****************************************************************************
@@ -444,7 +432,7 @@ rem Update project files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch src\cmake\modules\FindOpenJpeg.cmake %LUX_WINDOWS_BUILD_ROOT%\support\FindOpenJpeg.cmake.patch
 
 rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.3.12.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.4.12.patch
 
 rmdir /s /q build
 mkdir build
@@ -454,8 +442,8 @@ cd build
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
 
 mkdir %INCLUDE_DIR%\OpenImageIO
-copy ..\src\include\*.h %INCLUDE_DIR%\OpenImageIO
-copy include\version.h %INCLUDE_DIR%\OpenImageIO
+copy ..\src\include\OpenImageIO\*.h %INCLUDE_DIR%\OpenImageIO
+copy include\OpenImageIO\oiioversion.h %INCLUDE_DIR%\OpenImageIO
 copy src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 copy src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 

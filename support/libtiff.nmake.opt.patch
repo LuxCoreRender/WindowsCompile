@@ -9,7 +9,7 @@
 -#JPEG_INCLUDE	= -I$(JPEGDIR)
 -#JPEG_LIB 	= $(JPEGDIR)/Release/jpeg.lib
 +JPEG_SUPPORT   = 1
-+JPEGDIR        = $(LUX_WINDOWS_DEPS_ROOT)\x86\$(BUILD_CONFIGURATION)
++JPEGDIR        = $(INSTALL_DIR)
 +JPEG_INCLUDE   = -I$(JPEGDIR)\include
 +JPEG_LIB       = $(JPEGDIR)\lib\jpeg.lib
  
@@ -22,7 +22,7 @@
 -#ZLIB_INCLUDE	= -I$(ZLIBDIR)
 -#ZLIB_LIB 	= $(ZLIBDIR)/zlib.lib
 +ZIP_SUPPORT    = 1
-+ZLIBDIR        = $(LUX_WINDOWS_DEPS_ROOT)\x86\$(BUILD_CONFIGURATION)
++ZLIBDIR        = $(INSTALL_DIR)
 +ZLIB_INCLUDE   = -I$(ZLIBDIR)\include
 +ZLIB_LIB       = $(ZLIBDIR)\lib\zlib1.lib
  
