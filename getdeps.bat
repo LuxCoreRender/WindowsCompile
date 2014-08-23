@@ -1,26 +1,26 @@
 @Echo OFF
 
 :: Versions to download / install
-SET BOOST_VER_U=1_55_0
-SET BOOST_VER_P=1.55.0
+SET BOOST_VER_U=1_56_0
+SET BOOST_VER_P=1.56.0
 
 SET FREEIMAGE_VER_P=3.16.0
 SET FREEIMAGE_VER_N=3160
 
 SET BZIP2_VER=1.0.6
 SET CMAKE_VER=2.8.12.2
-SET FFTW_VER=3.3.3
+SET FFTW_VER=3.3.4
 SET FREEGLUT_VER=2.8.1
-SET GLEW_VER=1.10.0
-SET ILMBASE_VER=2.1.0
+SET GLEW_VER=1.11.0
+SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
-SET LIBPNG_VER=1.6.9
+SET LIBPNG_VER=1.6.12
 SET LIBTIFF_VER=4.0.3
-SET OIIO_VER=1.3.12
-SET OPENEXR_VER=2.1.0
+SET OIIO_VER=1.4.12
+SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
 SET PYTHON3_VER=3.4.1
-SET QT_VER=4.8.5
+SET QT_VER=4.8.6
 SET ZLIB_VER=1.2.8
 
 :: Initial message to display to user
@@ -205,8 +205,8 @@ GOTO OpenCL_AMD
 set OPENCL_DISPLAY_NAME=Intel SDK for OpenCL Applications
 echo.
 echo Please select which Intel SDK you wish to use:
-echo 1. %OPENCL_DISPLAY_NAME% 2013 R3 [Win 7/8/8.1] 32 bit
-echo 2. %OPENCL_DISPLAY_NAME% 2013 R3 [Win 7/8/8.1] 64+32 bit
+echo 1. %OPENCL_DISPLAY_NAME% 2014 [Win 7/8/8.1] 32 bit
+echo 2. %OPENCL_DISPLAY_NAME% 2014 [Win 7/8/8.1] 64+32 bit
 echo 3. I have already installed an %OPENCL_DISPLAY_NAME%
 echo 4. Select another vendor
 echo.
@@ -223,13 +223,13 @@ GOTO OpenCL_Intel
 :OpenCL_Intel_Runtime_Common
 echo.
 echo If you do not have an Intel Graphics Driver with OpenCL support you will need
-echo to install the Intel SDK for OpenCL - CPU Only Runtime Package.
+echo to install the OpenCL Runtime 14.2 for Intel Core Processors
 echo.
 echo Please select an option:
-echo 1. Install Intel SDK for OpenCL - CPU Only Runtime Package 2013
+echo 1. Install OpenCL Runtime 14.2 for Intel Core Processors
 echo 2. I have an Intel Graphics Driver with OpenCL support
 echo    OR
-echo    I have already installed Intel SDK for OpenCL - CPU Only Runtime Package 2013
+echo    I have already installed an OpenCL Runtime for Intel Core Processors
 echo 3. Select another vendor
 echo.
 echo Please select which Intel SDK you wish to use:
@@ -257,8 +257,8 @@ GOTO OpenCL_Intel_Runtime_64
 set OPENCL_DISPLAY_NAME=NVIDIA CUDA ToolKit
 echo.
 echo Please select which NVIDIA SDK you wish to use:
-echo 1. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [XP/Vista/7/8/8.1]
-echo 2. %OPENCL_DISPLAY_NAME% 5.5 for Notebook [Vista/7/8/8.1]
+echo 1. %OPENCL_DISPLAY_NAME% 6.5 for Desktop [XP/7/8.1]
+echo 2. %OPENCL_DISPLAY_NAME% 6.5 for Notebook [7/8.1]
 echo 3. I have already installed an %OPENCL_DISPLAY_NAME%
 echo 4. Select another vendor
 echo.
@@ -275,48 +275,38 @@ GOTO OpenCL_NVIDIA
 :OpenCL_NVIDIA_Desktop
 echo.
 echo Please select which NVIDIA SDK you wish to use:
-echo 1. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win XP] 32 bit
-echo 2. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win XP] 64+32 bit
-echo 3. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win Vista/7/8] 32 bit
-echo 4. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win Vista/7/8] 64+32 bit
-echo 5. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win 8.1] 32 bit
-echo 6. %OPENCL_DISPLAY_NAME% 5.5 for Desktop [Win 8.1] 64+32 bit
-echo 7. I have already installed an %OPENCL_DISPLAY_NAME%
-echo 8. Select another vendor
+echo 1. %OPENCL_DISPLAY_NAME% 6.5 for Desktop [Win XP] 32 bit
+echo 2. %OPENCL_DISPLAY_NAME% 6.5 for Desktop [Win 7/8.1] 32 bit
+echo 3. %OPENCL_DISPLAY_NAME% 6.5 for Desktop [Win 7/8.1] 64+32 bit
+echo 4. I have already installed an %OPENCL_DISPLAY_NAME%
+echo 5. Select another vendor
 echo.
 echo Please select which NVIDIA SDK you wish to use:
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
 IF %OPENCL_CHOICE% EQU 1 GOTO NVIDIA_CUDA_Desktop_XP_32
-IF %OPENCL_CHOICE% EQU 2 GOTO NVIDIA_CUDA_Desktop_XP_64
-IF %OPENCL_CHOICE% EQU 3 GOTO NVIDIA_CUDA_Desktop_V78_32
-IF %OPENCL_CHOICE% EQU 4 GOTO NVIDIA_CUDA_Desktop_V78_64
-IF %OPENCL_CHOICE% EQU 5 GOTO NVIDIA_CUDA_Desktop_81_32
-IF %OPENCL_CHOICE% EQU 6 GOTO NVIDIA_CUDA_Desktop_81_64
-IF %OPENCL_CHOICE% EQU 7 GOTO SetNVIDIAVars
-IF %OPENCL_CHOICE% EQU 8 GOTO OpenCLVendorChoice
+IF %OPENCL_CHOICE% EQU 2 GOTO NVIDIA_CUDA_Desktop_781_32
+IF %OPENCL_CHOICE% EQU 3 GOTO NVIDIA_CUDA_Desktop_781_64
+IF %OPENCL_CHOICE% EQU 4 GOTO SetNVIDIAVars
+IF %OPENCL_CHOICE% EQU 5 GOTO OpenCLVendorChoice
 echo Invalid choice
 GOTO OpenCL_NVIDIA
 
 :OpenCL_NVIDIA_Notebook
 echo.
 echo Please select which NVIDIA SDK you wish to use:
-echo 1. %OPENCL_DISPLAY_NAME% 5.5 for Notebook [Win Vista/7/8] 32 bit
-echo 2. %OPENCL_DISPLAY_NAME% 5.5 for Notebook [Win Vista/7/8] 64+32 bit
-echo 3. %OPENCL_DISPLAY_NAME% 5.5 for Notebook [Win 8.1] 32 bit
-echo 4. %OPENCL_DISPLAY_NAME% 5.5 for Notebook [Win 8.1] 64+32 bit
-echo 5. I have already installed an %OPENCL_DISPLAY_NAME%
-echo 6. Select another vendor
+echo 1. %OPENCL_DISPLAY_NAME% 6.5 for Notebook [Win 7/8.1] 32 bit
+echo 2. %OPENCL_DISPLAY_NAME% 6.5 for Notebook [Win 7/8.1] 64+32 bit
+echo 3. I have already installed an %OPENCL_DISPLAY_NAME%
+echo 4. Select another vendor
 echo.
 echo Please select which NVIDIA SDK you wish to use:
 set OPENCL_CHOICE=0
 set /p OPENCL_CHOICE="Selection? "
-IF %OPENCL_CHOICE% EQU 1 GOTO NVIDIA_CUDA_Notebook_V78_32
-IF %OPENCL_CHOICE% EQU 2 GOTO NVIDIA_CUDA_Notebook_V78_64
-IF %OPENCL_CHOICE% EQU 3 GOTO NVIDIA_CUDA_Notebook_81_32
-IF %OPENCL_CHOICE% EQU 4 GOTO NVIDIA_CUDA_Notebook_81_64
-IF %OPENCL_CHOICE% EQU 5 GOTO SetNVIDIAVars
-IF %OPENCL_CHOICE% EQU 6 GOTO OpenCLVendorChoice
+IF %OPENCL_CHOICE% EQU 1 GOTO NVIDIA_CUDA_Notebook_781_32
+IF %OPENCL_CHOICE% EQU 2 GOTO NVIDIA_CUDA_Notebook_781_64
+IF %OPENCL_CHOICE% EQU 3 GOTO SetNVIDIAVars
+IF %OPENCL_CHOICE% EQU 4 GOTO OpenCLVendorChoice
 echo Invalid choice
 GOTO OpenCL_NVIDIA
 
@@ -335,9 +325,9 @@ set OPENCL_PKG=AMD-UnifiedSDKInstaller-v1.0GA-Windows-offline-x64.exe
 GOTO OpenCLInstall
 
 :Intel_Runtime_32
-set OPENCL_NAME=Intel SDK for OpenCL - CPU Only Runtime Package 2013 R3 [Win 7/8/8.1] 32 bit
-set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/3782/
-set OPENCL_PKG=intel_sdk_for_ocl_applications_2013_r3_runtime_x86_setup.msi
+set OPENCL_NAME=OpenCL Runtime 14.2 for Intel Core Processors [Win 7/8/8.1] 32 bit
+set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/4180/
+set OPENCL_PKG=opencl_runtime_14.2_x86_setup.msi
 CALL:downloadFile "%OPENCL_NAME%", "%OPENCL_URL%%OPENCL_PKG%", "%OPENCL_PKG%" || EXIT /b -1
 echo.
 echo I will now launch the runtime installer. You can install anywhere you like, but to be
@@ -348,15 +338,15 @@ pause
 
 :Intel_SDK_32
 set OPENCL_VARS=SetIntelVars
-set OPENCL_NAME=Intel SDK for OpenCL Applications 2013 R3 [Win 7/8/8.1] 32 bit
-set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/3782/
-set OPENCL_PKG=intel_sdk_for_ocl_applications_2013_r3_x86_setup.exe
+set OPENCL_NAME=Intel SDK for OpenCL Applications 2014 [Win 7/8/8.1] 32 bit
+set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/4180/
+set OPENCL_PKG=intel_sdk_for_ocl_applications_2014_x86_setup.msi
 GOTO OpenCLInstall
 
 :Intel_Runtime_64
-set OPENCL_NAME=Intel SDK for OpenCL - CPU Only Runtime Package 2013 R3 [Win 7/8/8.1] 64+32 bit
-set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/3782/
-set OPENCL_PKG=intel_sdk_for_ocl_applications_2013_r3_runtime_x64_setup.msi
+set OPENCL_NAME=OpenCL Runtime 14.2 for Intel Core Processors [Win 7/8/8.1] 64+32 bit
+set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/4180/
+set OPENCL_PKG=opencl_runtime_14.2_x64_setup.msi
 CALL:downloadFile "%OPENCL_NAME%", "%OPENCL_URL%%OPENCL_PKG%", "%OPENCL_PKG%" || EXIT /b -1
 echo.
 echo I will now launch the runtime installer. You can install anywhere you like, but to be
@@ -367,79 +357,44 @@ pause
 
 :Intel_SDK_64
 set OPENCL_VARS=SetIntelVars
-set OPENCL_NAME=Intel SDK for OpenCL Applications 2013 R3 [Win 7/8/8.1] 64+32 bit
-set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/3782/
-set OPENCL_PKG=intel_sdk_for_ocl_applications_2013_r3_x64_setup.exe
+set OPENCL_NAME=Intel SDK for OpenCL Applications 2014 [Win 7/8/8.1] 64+32 bit
+set OPENCL_URL=http://registrationcenter.intel.com/irc_nas/4180/
+set OPENCL_PKG=intel_sdk_for_ocl_applications_2014_x64_setup.msi
 GOTO OpenCLInstall
 
 :NVIDIA_CUDA_Desktop_XP_32
 set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win XP] 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winxp_general_32.exe
+set OPENCL_NAME=NVIDIA CUDA ToolKit 6.5 for Desktop [Win XP] 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/
+set OPENCL_PKG=cuda_6.5.14_winxp_general_32.exe
 GOTO OpenCLInstall
 
-:NVIDIA_CUDA_Desktop_XP_64
+:NVIDIA_CUDA_Desktop_781_32
 set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win XP] 64+32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winxp_general_64.exe
+set OPENCL_NAME=NVIDIA CUDA ToolKit 6.5 for Desktop [Win 7/8.1] 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/
+set OPENCL_PKG=cuda_6.5.14_windows_general_32.exe
 GOTO OpenCLInstall
 
-:NVIDIA_CUDA_Desktop_V78_32
+:NVIDIA_CUDA_Desktop_781_64
 set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win Vista/7/8] 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winvista_win7_win8_general_32.exe
+set OPENCL_NAME=NVIDIA CUDA ToolKit 6.5 for Desktop [Win 7/8.1] 64+32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/
+set OPENCL_PKG=cuda_6.5.14_windows_general_64.exe
 GOTO OpenCLInstall
 
-:NVIDIA_CUDA_Desktop_V78_64
+:NVIDIA_CUDA_Notebook_781_32
 set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win Vista/7/8] 64+32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winvista_win7_win8_general_64.exe
+set OPENCL_NAME=NVIDIA CUDA ToolKit 6.5 for Notebook [Win 7/8.1] 32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/
+set OPENCL_PKG=cuda_6.5.14_windows_notebook_32.exe
 GOTO OpenCLInstall
 
-:NVIDIA_CUDA_Desktop_81_32
+:NVIDIA_CUDA_Notebook_781_64
 set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win 8.1] 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.31_win8.1_general_win32.exe
-GOTO OpenCLInstall
-
-:NVIDIA_CUDA_Desktop_81_64
-set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Desktop [Win 8.1] 64+32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.31_win8.1_general_x64.exe
-GOTO OpenCLInstall
-
-:NVIDIA_CUDA_Notebook_V78_32
-set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Notebook [Win Vista/7/8] 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winvista_win7_win8_notebook_32.exe
-GOTO OpenCLInstall
-
-:NVIDIA_CUDA_Notebook_V78_64
-set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Notebook [Win Vista/7/8] 64+32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.20_winvista_win7_win8_notebook_64.exe
-GOTO OpenCLInstall
-
-:NVIDIA_CUDA_Notebook_81_32
-set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Notebook [Win 8.1] 32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.31_winvista_win7_win8_win8.1_notebook_win32.exe
-GOTO OpenCLInstall
-
-:NVIDIA_CUDA_Notebook_81_64
-set OPENCL_VARS=SetNVIDIAVars
-set OPENCL_NAME=NVIDIA CUDA ToolKit 5.5 for Notebook [Win 8.1] 64+32 bit
-set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/5_5/rel/installers/
-set OPENCL_PKG=cuda_5.5.31_winvista_win7_win8_win8.1_notebook_x64.exe
+set OPENCL_NAME=NVIDIA CUDA ToolKit 6.5 for Notebook [Win 7/8.1] 64+32 bit
+set OPENCL_URL=http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/
+set OPENCL_PKG=cuda_6.5.14_windows_notebook_64.exe
 GOTO OpenCLInstall
 
 

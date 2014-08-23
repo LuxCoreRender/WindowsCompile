@@ -1,0 +1,13 @@
+--- src\libOpenImageIO\CMakeLists.txt.orig	2014-07-31 23:22:02.000000000 -0600
++++ src\libOpenImageIO\CMakeLists.txt	2014-08-22 19:01:47.000000000 -0600
+@@ -140,6 +140,10 @@
+              ../jpeg2000.imageio/jpeg2000input.cpp ../jpeg2000.imageio/jpeg2000output.cpp)
+         include_directories (${OPENJPEG_INCLUDE_DIR})
+         add_definitions("-DUSE_OPENJPEG")
++	if (LINKSTATIC)
++		# If building static, need to define this for OpenJPEG
++		add_definitions ("-DOPJ_STATIC")
++	endif ()
+     else()
+         message (STATUS "Jpeg-2000 plugin will not be built")
+     endif()
