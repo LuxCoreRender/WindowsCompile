@@ -1,5 +1,5 @@
---- src\libOpenImageIO\CMakeLists.txt.orig	2014-07-31 23:22:02.000000000 -0600
-+++ src\libOpenImageIO\CMakeLists.txt	2014-08-22 19:01:47.000000000 -0600
+--- src\libOpenImageIO\CMakeLists.txt.orig	2014-08-23 23:11:14.030900128 -0600
++++ src\libOpenImageIO\CMakeLists.txt	2014-08-23 23:06:41.000000000 -0600
 @@ -140,6 +140,10 @@
               ../jpeg2000.imageio/jpeg2000input.cpp ../jpeg2000.imageio/jpeg2000output.cpp)
          include_directories (${OPENJPEG_INCLUDE_DIR})
@@ -11,3 +11,11 @@
      else()
          message (STATUS "Jpeg-2000 plugin will not be built")
      endif()
+@@ -224,6 +228,7 @@
+ 
+ 
+ if (WIN32)
++    add_definitions ("-DPSAPI_VERSION=1")
+     target_link_libraries (OpenImageIO psapi.lib)
+ endif ()
+ link_ilmbase (OpenImageIO)
