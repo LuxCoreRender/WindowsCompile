@@ -9,7 +9,7 @@ syntax: glob
 Build\*
 Debug\*
 Release\*
-Release-NoOpenCL\*
+Release NoOpenCL\*
 *.vcproj.*
 build-vars.*
 .project
