@@ -51,9 +51,6 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\luxcore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcore.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibLuxCore\Generated\luxlex.cpp">
       <Filter>Generated Source Files\luxparser</Filter>
     </ClCompile>
