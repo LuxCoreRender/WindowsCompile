@@ -22,7 +22,7 @@ echo **************************************************************************
 IF EXIST build-vars.bat CALL build-vars.bat
 
 CALL:checkEnvVarValid "LUX_WINDOWS_BUILD_ROOT" || EXIT /b -1
-CALL:checkEnvVarValid "LUX_WINDOWS_DEPS_ROOT"  || EXIT /b -1
+CALL:checkEnvVarValid "LUX_DEPS_ROOT"          || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_BOOST_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_BZIP_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X86_CMAKE_ROOT"     || EXIT /b -1
@@ -88,8 +88,21 @@ GOTO DebugChoice
 IF %BUILD_DEBUG% EQU 0 set BUILD_CONFIGURATION=Release
 IF %BUILD_DEBUG% EQU 1 set BUILD_CONFIGURATION=Debug
 
+set LUX_WINDOWS_DEPS_ROOT=%LUX_DEPS_ROOT%\..\windows_deps
 set INSTALL_DIR=%LUX_WINDOWS_DEPS_ROOT%\x86\%BUILD_CONFIGURATION%
-set CMAKE_OPTS=-G "Visual Studio 12" -D CMAKE_PREFIX_PATH="%INSTALL_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X86_BOOST_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X86_QT_ROOT%\bin\qmake"
+
+set LIB_DIR=%INSTALL_DIR%\lib
+mkdir %LIB_DIR%
+set INCLUDE_DIR=%INSTALL_DIR%\..\..\include
+mkdir %INCLUDE_DIR%
+set BIN_DIR=%INSTALL_DIR%\..\..\bin
+mkdir %BIN_DIR%
+
+:: Make junction to include dir for braindead cmake scripts
+rd %INSTALL_DIR%\include
+mklink /j %INSTALL_DIR%\include %INCLUDE_DIR%
+
+set CMAKE_OPTS=-G "Visual Studio 12" -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X86_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X86_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X86_QT_ROOT%\bin\qmake"
 
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:12.0 /property:"PlatformToolset=v120" /property:"Platform=Win32" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
 set MSBUILD_RELEASE_OPTS=/property:"WholeProgramOptimization=True"
@@ -108,18 +121,14 @@ echo q: Quit (do nothing)
 echo.
 set BUILDCHOICE=1
 set /P BUILDCHOICE="Selection? "
-IF %BUILDCHOICE% EQU 1 GOTO SetupInstallDirectories
-IF %BUILDCHOICE% EQU 2 GOTO SetupInstallDirectories
+IF %BUILDCHOICE% EQU 1 GOTO StartBuild
+IF %BUILDCHOICE% EQU 2 GOTO StartBuild
 IF /I %BUILDCHOICE% EQU q GOTO:EOF
 echo Invalid choice
 GOTO BuildDepsChoice
 
 
-:SetupInstallDirectories
-set LIB_DIR=%INSTALL_DIR%\lib
-set INCLUDE_DIR=%INSTALL_DIR%\include
-mkdir %LIB_DIR%
-mkdir %INCLUDE_DIR%
+:StartBuild
 IF %BUILDCHOICE% EQU 2 GOTO NotQT
 
 
@@ -145,8 +154,23 @@ set BUILD_CONFIGURATION_QT=-release -ltcg
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_QT=-debug
 
 cmd /S /C ""%VCINSTALLDIR%\vcvarsall" x86 && configure -opensource -fast -mp -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-qt3support %BUILD_CONFIGURATION_QT%"
-cmd /S /C ""%VCINSTALLDIR%\vcvarsall" x86 && nmake"
+if ERRORLEVEL 1 goto :EOF
 
+cmd /S /C ""%VCINSTALLDIR%\vcvarsall" x86 && nmake"
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Qt
+CALL:xcopyFiles include\*.* %INCLUDE_DIR%\Qt\include
+CALL:xcopyFiles src\*.h?? %INCLUDE_DIR%\Qt\src
+CALL:copyFile lib\qtmain.lib %LIB_DIR%
+CALL:copyFile lib\QtCore4.lib %LIB_DIR%
+CALL:copyFile lib\QtCore4.dll %LIB_DIR%
+CALL:copyFile lib\QtGui4.lib %LIB_DIR%
+CALL:copyFile lib\QtGui4.dll %LIB_DIR%
+CALL:copyFile bin\qmake.exe %LIB_DIR%
+CALL:copyFile bin\moc.exe %LIB_DIR%
+CALL:copyFile bin\uic.exe %LIB_DIR%
+CALL:copyFile bin\rcc.exe %LIB_DIR%
 
 :NotQT
 :: ****************************************************************************
@@ -158,17 +182,18 @@ echo **************************************************************************
 echo * Building Python 3                                                      *
 echo **************************************************************************
 cd /d %LUX_X86_PYTHON3_ROOT%\PCbuild
-copy ..\PC\pyconfig.h ..\Include
+CALL:copyFile ..\PC\pyconfig.h ..\Include
 
 rem Update pymath.h
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch ..\include\pymath.h %LUX_WINDOWS_BUILD_ROOT%\support\pymath.h.patch
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+if ERRORLEVEL 1 goto :EOF
 
-mkdir %INCLUDE_DIR%\Python3.3
-copy ..\include\*.h %INCLUDE_DIR%\Python3.3
-copy *.lib %LIB_DIR%\python33.lib
-copy *.dll %LIB_DIR%
+mkdir %INCLUDE_DIR%\Python3
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python3
+CALL:copyFile python34.lib %LIB_DIR%
+CALL:copyFile python34.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -197,7 +222,12 @@ set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
 bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+if ERRORLEVEL 1 goto :EOF
 
+mkdir %INCLUDE_DIR%\Boost
+mkdir %INCLUDE_DIR%\Boost\boost
+CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
+CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
 :: ****************************************************************************
 :: ********************************** freeglut ********************************
@@ -210,10 +240,11 @@ echo **************************************************************************
 cd /d %LUX_X86_GLUT_ROOT%
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%_Static" /target:"freeglut" VisualStudio\2012\freeglut.sln
+if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\GL
-copy include\GL\*.h %INCLUDE_DIR%\GL
-copy lib\x86\* %LIB_DIR%
+CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
+CALL:copyFile lib\x86\* %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -227,9 +258,10 @@ echo **************************************************************************
 cd /d %LUX_X86_FFTW_ROOT%
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=Static-%BUILD_CONFIGURATION%" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
+if ERRORLEVEL 1 goto :EOF
 
-copy api\fftw3.h %INCLUDE_DIR%
-copy fftw-3.3-libs\Static-%BUILD_CONFIGURATION%\libfftw-3.3.lib %LIB_DIR%
+CALL:copyFile api\fftw3.h %INCLUDE_DIR%
+CALL:copyFile fftw-3.3-libs\Static-%BUILD_CONFIGURATION%\libfftw-3.3.lib %LIB_DIR%\fftw3.lib
 
 
 :: ****************************************************************************
@@ -243,11 +275,12 @@ echo **************************************************************************
 cd /d %LUX_X86_GLEW_ROOT%
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"glew_static" build\vc10\glew.sln
+if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\GL
-copy include\GL\*.h %INCLUDE_DIR%\GL
-IF %BUILD_CONFIGURATION%==Release copy lib\Release\Win32\glew32s.lib %LIB_DIR%\glew32.lib
-IF %BUILD_CONFIGURATION%==Debug   copy lib\Debug\Win32\glew32sd.lib %LIB_DIR%\glew32.lib
+CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile lib\Release\Win32\glew32s.lib %LIB_DIR%\glew32.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile lib\Debug\Win32\glew32sd.lib %LIB_DIR%\glew32.lib
 
 
 :: ****************************************************************************
@@ -260,14 +293,15 @@ echo * Building JPEG
 echo **************************************************************************
 cd /d %LUX_X86_JPEG_ROOT%
 
-copy %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
-copy %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
-copy jconfig.vc jconfig.h
+CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
+CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
+CALL:copyFile jconfig.vc jconfig.h
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
+if ERRORLEVEL 1 goto :EOF
 
-copy *.h %INCLUDE_DIR%
-copy %BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile *.h %INCLUDE_DIR%
+CALL:copyFile %BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -284,16 +318,18 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
+if ERRORLEVEL 1 goto :EOF
 
-rem Put this back so we can build again if necessary
-move ..\zconf.h.included ..\zconf.h
+CALL:copyFile ..\zconf.h.included ..\zconf.h
 
-copy zconf.h %INCLUDE_DIR%
-copy ..\zlib.h %INCLUDE_DIR%
-IF %BUILD_CONFIGURATION%==Release copy %BUILD_CONFIGURATION%\zlibstatic.lib %LIB_DIR%\zlib1.lib
-IF %BUILD_CONFIGURATION%==Debug   copy %BUILD_CONFIGURATION%\zlibstaticd.lib %LIB_DIR%\zlib1.lib
+CALL:copyFile zconf.h %INCLUDE_DIR%
+CALL:copyFile ..\zlib.h %INCLUDE_DIR%
+
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile %BUILD_CONFIGURATION%\zlibstatic.lib %LIB_DIR%\zlib1.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile %BUILD_CONFIGURATION%\zlibstaticd.lib %LIB_DIR%\zlib1.lib
 
 
 :: ****************************************************************************
@@ -310,20 +346,22 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
+if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
-copy ..\config\*.h %INCLUDE_DIR%\OpenEXR
-copy ..\Half\*.h %INCLUDE_DIR%\OpenEXR
-copy ..\Iex\*.h %INCLUDE_DIR%\OpenEXR
-copy ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
-copy ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\config\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Half\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Iex\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
 
-copy Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
-copy Iex\%BUILD_CONFIGURATION%\Iex-2_2.lib %LIB_DIR%\Iex.lib
-copy IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_2.lib %LIB_DIR%\IlmThread.lib
-copy Imath\%BUILD_CONFIGURATION%\Imath-2_2.lib %LIB_DIR%\Imath.lib
+CALL:copyFile Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
+CALL:copyFile Iex\%BUILD_CONFIGURATION%\Iex-2_2.lib %LIB_DIR%\Iex.lib
+CALL:copyFile IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_2.lib %LIB_DIR%\IlmThread.lib
+CALL:copyFile Imath\%BUILD_CONFIGURATION%\Imath-2_2.lib %LIB_DIR%\Imath.lib
 
 
 :: ****************************************************************************
@@ -340,13 +378,16 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
+if ERRORLEVEL 1 goto :EOF
 
-copy ..\*.h %INCLUDE_DIR%
-copy pnglibconf.h %INCLUDE_DIR%
-IF %BUILD_CONFIGURATION%==Release copy %BUILD_CONFIGURATION%\libpng16_static.lib %LIB_DIR%\libpng.lib
-IF %BUILD_CONFIGURATION%==Debug   copy %BUILD_CONFIGURATION%\libpng16_staticd.lib %LIB_DIR%\libpng.lib
+CALL:copyFile ..\*.h %INCLUDE_DIR%
+CALL:copyFile pnglibconf.h %INCLUDE_DIR%
+
+IF %BUILD_CONFIGURATION%==Release CALL:copyFile %BUILD_CONFIGURATION%\libpng16_static.lib %LIB_DIR%\libpng.lib
+IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile %BUILD_CONFIGURATION%\libpng16_staticd.lib %LIB_DIR%\libpng.lib
 
 
 :: ****************************************************************************
@@ -363,12 +404,13 @@ rem Update project files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch nmake.opt %LUX_WINDOWS_BUILD_ROOT%\support\libtiff.nmake.opt.patch
 
 nmake /f Makefile.vc Clean
+if ERRORLEVEL 1 goto :EOF
 
 IF %BUILD_CONFIGURATION%==Release cmd /S /C ""%VCINSTALLDIR%\vcvarsall" x86 && nmake /f Makefile.vc"
 IF %BUILD_CONFIGURATION%==Debug cmd /S /C ""%VCINSTALLDIR%\vcvarsall" x86 && nmake /f Makefile.vc DEBUG=1"
 
-copy libtiff\*.h %INCLUDE_DIR%
-copy libtiff\libtiff.lib %LIB_DIR%
+CALL:copyFile libtiff\*.h %INCLUDE_DIR%
+CALL:copyFile libtiff\libtiff.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -388,13 +430,15 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D ILMBASE_PACKAGE_PREFIX="%INSTALL_DIR%" ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
+if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
-copy ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
-copy ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
-copy IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_2.lib %LIB_DIR%\IlmImf.lib
+CALL:copyFile ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_2.lib %LIB_DIR%\IlmImf.lib
 
 
 :: ****************************************************************************
@@ -411,11 +455,13 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
+if ERRORLEVEL 1 goto :EOF
 
-copy ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
-copy bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
+CALL:copyFile bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -438,14 +484,16 @@ rmdir /s /q build
 mkdir build
 cd build
 %LUX_X86_CMAKE_ROOT%\bin\cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_PYTHON=0 ..
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
+if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenImageIO
-copy ..\src\include\OpenImageIO\*.h %INCLUDE_DIR%\OpenImageIO
-copy include\OpenImageIO\oiioversion.h %INCLUDE_DIR%\OpenImageIO
-copy src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
-copy src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
+CALL:copyFile ..\src\include\OpenImageIO\*.h %INCLUDE_DIR%\OpenImageIO
+CALL:copyFile include\OpenImageIO\oiioversion.h %INCLUDE_DIR%\OpenImageIO
+CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -458,23 +506,34 @@ echo * Building FreeImage
 echo **************************************************************************
 cd /d %LUX_X86_FREEIMAGE_ROOT%\FreeImage
 
-rem Install solution and project files for VS2010
-xcopy /S /Y %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
+rem Install solution and project files for VS2013
+CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 
 rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.15.4.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImage" FreeImage.2010.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
+if ERRORLEVEL 1 goto :EOF
 
-copy Source\FreeImage.h %INCLUDE_DIR%
-copy %BUILD_CONFIGURATION%\*.lib %LIB_DIR%\FreeImage.lib
-copy %BUILD_CONFIGURATION%\*.dll %LIB_DIR%
+CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
+CALL:copyFile Dist\FreeImage.lib %LIB_DIR%\FreeImage.lib
 
+:: ****************************************************************************
+:: ******************************** CMake *************************************
+:: ****************************************************************************
+:CMake
+echo.
+echo **************************************************************************
+echo * Copying CMake
+echo **************************************************************************
+cd /d %LUX_X86_CMAKE_ROOT%
+CALL:xcopyFiles *.* %BIN_DIR%\CMake
 
 :postLuxRender
 :: ****************************************************************************
 :: *********************************** Finished *******************************
 :: ****************************************************************************
+rd %INSTALL_DIR%\include
 cd /d %LUX_WINDOWS_BUILD_ROOT%
 
 echo.
@@ -507,5 +566,27 @@ IF NOT EXIST "%ENVVAR%" (
 	echo but "%ENVVAR%" does not exist! Aborting.
 	EXIT /b 1
 )
+ENDLOCAL
+GOTO:EOF
+
+:xcopyFiles
+:: Copy files recursively
+:: %1 - Source filemask
+:: %2 - Desination directory
+
+SETLOCAL
+xcopy /y /s /i %1 %2
+if ERRORLEVEL 1 EXIT /b 1
+ENDLOCAL
+GOTO:EOF
+
+:copyFile
+:: Copy single file
+:: %1 - Source filename
+:: %2 - Desination filename
+
+SETLOCAL
+copy /y /v %1 %2
+if ERRORLEVEL 1 EXIT /b 1
 ENDLOCAL
 GOTO:EOF
