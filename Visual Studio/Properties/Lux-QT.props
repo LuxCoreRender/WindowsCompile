@@ -8,6 +8,7 @@
     <LUX_QT_QTGUI_LIB_PREFIX>QtGui4</LUX_QT_QTGUI_LIB_PREFIX>
     <LUX_QT_QTGUI_LIB>$(LUX_QT_QTGUI_LIB_PREFIX).lib</LUX_QT_QTGUI_LIB>
     <LUX_QT_QTGUI_DLL>$(LUX_QT_QTGUI_LIB_PREFIX).dll</LUX_QT_QTGUI_DLL>
+    <LUX_QT_QTMAIN_LIB>qtmain.lib</LUX_QT_QTMAIN_LIB>
   </PropertyGroup>
   <PropertyGroup>
     <CustomBuildAfterTargets>Build</CustomBuildAfterTargets>
@@ -31,6 +32,9 @@
     <BuildMacro Include="LUX_QT_QTGUI_DLL">
       <Value>$(LUX_QT_QTGUI_DLL)</Value>
     </BuildMacro>
+    <BuildMacro Include="LUX_QT_QTMAIN_LIB">
+      <Value>$(LUX_QT_QTMAIN_LIB)</Value>
+    </BuildMacro>
   </ItemGroup>
   <ItemDefinitionGroup>
     <ClCompile>
@@ -39,7 +43,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(LUX_QT_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(LUX_QT_QTCORE_LIB);$(LUX_QT_QTGUI_LIB);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(LUX_QT_QTCORE_LIB);$(LUX_QT_QTGUI_LIB);$(LUX_QT_QTMAIN_LIB);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtDesignerUI>
       <OutputDirectory>..\..\..\..\Build\$(ProjectName)\Generated\</OutputDirectory>
