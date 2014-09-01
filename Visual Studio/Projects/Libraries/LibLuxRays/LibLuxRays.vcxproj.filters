@@ -479,6 +479,24 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\quaternion.cpp">
       <Filter>Source Files\core\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\luxrays\include\luxrays\cfg.h.in">
@@ -581,6 +599,24 @@
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\utils_funcs.cl">
       <Filter>OpenCL Files\core</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh_types.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh_types.cl">
+      <Filter>OpenCL Files\accelerators</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_funcs.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_types.cl">
+      <Filter>OpenCL Files\core\geometry</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
 </Project>
