@@ -285,6 +285,7 @@
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\epsilon_funcs_kernel.cpp" />
@@ -296,10 +297,15 @@
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\matrix4x4_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mbvh_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mc_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mqbvh_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\normal_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\point_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_types_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\ray_funcs_kernel.cpp" />
@@ -317,9 +323,11 @@
   </ItemGroup>
   <ItemGroup>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvh.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvh.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_funcs.cl" />
@@ -330,8 +338,12 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_funcs.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_types.cl" />
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_funcs.cl" />
