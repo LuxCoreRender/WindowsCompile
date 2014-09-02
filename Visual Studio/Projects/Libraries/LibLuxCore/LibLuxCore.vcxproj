@@ -30,6 +30,7 @@
     <ProjectGuid>{4DD92E4E-AF4F-4861-9F7D-22C6AF78F914}</ProjectGuid>
     <RootNamespace>LibLuxCore</RootNamespace>
     <ProjectName>LibLuxCore</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

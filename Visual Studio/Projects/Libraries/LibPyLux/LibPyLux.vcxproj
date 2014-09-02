@@ -30,6 +30,7 @@
     <ProjectGuid>{B02CEB49-D188-4493-B208-2258A8C93D6B}</ProjectGuid>
     <RootNamespace>LibPyLux3</RootNamespace>
     <ProjectName>LibPyLux</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
