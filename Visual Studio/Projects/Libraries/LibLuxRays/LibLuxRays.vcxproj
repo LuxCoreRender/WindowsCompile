@@ -30,6 +30,7 @@
     <ProjectGuid>{C51A362C-FECC-4889-99E2-E2E5E2A40CE9}</ProjectGuid>
     <RootNamespace>LibLuxRays</RootNamespace>
     <ProjectName>LibLuxRays</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

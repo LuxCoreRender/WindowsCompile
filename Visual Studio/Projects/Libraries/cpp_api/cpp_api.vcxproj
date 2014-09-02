@@ -30,6 +30,7 @@
     <ProjectGuid>{63604820-771E-4D1F-BC32-062C796FAF77}</ProjectGuid>
     <RootNamespace>cpp_api</RootNamespace>
     <ProjectName>cpp_api</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
