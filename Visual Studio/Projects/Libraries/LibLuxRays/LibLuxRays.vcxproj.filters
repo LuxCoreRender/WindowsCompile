@@ -276,6 +276,9 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion.h">
       <Filter>Header Files\core\geometry</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4op.h">
+      <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\bvhaccel.cpp">
