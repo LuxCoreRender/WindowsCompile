@@ -218,6 +218,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix3x3.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4op.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point.h" />
