@@ -190,10 +190,6 @@
     <Filter Include="Source Files\engines\rtpathocl">
       <UniqueIdentifier>{17895c8b-97b1-4ed9-86ed-dd5875cf0d34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Generated Header Files">
-      <UniqueIdentifier>{ba86a518-c64a-44a2-ae15-f19ff12703c3}</UniqueIdentifier>
-      <Extensions>h</Extensions>
-    </Filter>
     <Filter Include="Generated Source Files">
       <UniqueIdentifier>{9e582931-b7de-42ad-8b40-f00390443eef}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -217,9 +213,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\slg.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\cfg.h">
-      <Filter>Generated Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\pdiff\lpyramid.h">
       <Filter>Header Files\utils\convtest\pdiff</Filter>
@@ -697,11 +690,6 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs2_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in">
-      <Filter>Header Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl">

@@ -181,7 +181,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\camera\camera.h" />
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\cfg.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\data\sun_spect.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\photometricdataies.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\sphericalfunction.h" />
@@ -346,9 +345,6 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volumeinfo_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_funcs_kernel.cpp" />
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_types_kernel.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\..\luxrays\include\slg\cfg.h.in" />
   </ItemGroup>
   <ItemGroup>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\camera\camera_funcs.cl" />
