@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <OpenCLPreprocessor>
-      <OutputFileName>$(IntDir)%(Filename)_kernel.cpp</OutputFileName>
+      <OutputFileName>$(IntDir)..\..\Generated\%(Filename)_kernel.cpp</OutputFileName>
       <Namespace>slg</Namespace>
       <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
     </OpenCLPreprocessor>
