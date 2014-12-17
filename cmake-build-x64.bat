@@ -7,12 +7,14 @@ SETLOCAL ENABLEEXTENSIONS
 
 set FULL_REBUILD=0
 set BUILD_LUXRAYS_ONLY=0
+set BUILD_LUXMARK_ONLY=0
 set BUILD_LUXRENDER_ONLY=0
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
 if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "luxrays" set BUILD_LUXRAYS_ONLY=1
+if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "luxrender" set BUILD_LUXRENDER_ONLY=1
 shift
 goto ParseCmdParams
@@ -31,6 +33,7 @@ for %%a in (.) do set LUX_WINDOWS_BUILD_ROOT=%%~fa
 for %%a in (support\bin) do set SUPPORT_BIN=%%~fa
 for %%a in (..\windows_deps\bin\CMake\bin\cmake.exe) do set CMAKE=%%~fa
 for %%a in (..\luxrays) do set LUXRAYS_ROOT=%%~fa
+for %%a in (..\luxmark) do set LUXMARK_ROOT=%%~fa
 for %%a in (..\lux) do set LUX_ROOT=%%~fa
 
 if not exist "%CMAKE%" goto CMakeNotFound
@@ -47,22 +50,24 @@ set LUX_X64_FREEIMAGE_ROOT=%INCLUDE_DIR%
 set LUX_X64_QT_ROOT=%INCLUDE_DIR%\Qt
 
 set CMAKE_OPTS=-G "Visual Studio 12 Win64" -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=RELEASE
-set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:12.0  /property:"Platform=x64" /property:"Configuration=Release"
+set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:12.0  /property:"Platform=x64" /property:"Configuration=Release" /clp:ErrorsOnly
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
 cd Build_CMake
 
 set LUXRAYS_BUILD_ROOT=%CD%\LuxRays
+set LUXMARK_BUILD_ROOT=%CD%\LuxMark
 set LUXRENDER_BUILD_ROOT=%CD%\LuxRender
 
+if %BUILD_LUXMARK_ONLY%==1 goto BuildLuxMark
 if %BUILD_LUXRENDER_ONLY%==1 goto BuildLuxRender
 
 :BuildLuxRays
 mkdir %LUXRAYS_BUILD_ROOT%
 cd /d %LUXRAYS_BUILD_ROOT%
 
-del CMakeCache.txt
+rem del CMakeCache.txt
 %CMAKE% %CMAKE_OPTS% %LUXRAYS_ROOT%
 if ERRORLEVEL 1 goto CMakeError
 
@@ -72,6 +77,25 @@ if ERRORLEVEL 1 goto CMakeError
 cd ..
 
 if %BUILD_LUXRAYS_ONLY%==1 goto exit
+
+:BuildLuxMark
+If Not Exist %LUXMARK_BUILD_ROOT% (goto BuildLuxRender)
+
+set CMAKE_OPTS=%CMAKE_OPTS% -D LuxRays_HOME=%LUXRAYS_BUILD_ROOT% -D LUXRAYS_INCLUDE_DIRS=%LUXRAYS_ROOT%\include
+
+mkdir %LUXMARK_BUILD_ROOT%
+cd /d %LUXMARK_BUILD_ROOT%
+
+del CMakeCache.txt
+%CMAKE% %CMAKE_OPTS% %LUXMARK_ROOT%
+if ERRORLEVEL 1 goto CMakeError
+
+msbuild %MSBUILD_OPTS% LuxMark.sln
+if ERRORLEVEL 1 goto CMakeError
+
+cd ..
+
+if %BUILD_LUXMARK_ONLY%==1 goto exit
 
 :BuildLuxRender
 set CMAKE_OPTS=%CMAKE_OPTS% -D LuxRays_HOME=%LUXRAYS_BUILD_ROOT% -D LUXRAYS_INCLUDE_DIRS=%LUXRAYS_ROOT%\include
