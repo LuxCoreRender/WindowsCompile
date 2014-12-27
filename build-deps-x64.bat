@@ -167,6 +167,8 @@ CALL:copyFile lib\QtCore4.lib %LIB_DIR%
 CALL:copyFile lib\QtCore4.dll %LIB_DIR%
 CALL:copyFile lib\QtGui4.lib %LIB_DIR%
 CALL:copyFile lib\QtGui4.dll %LIB_DIR%
+CALL:copyFile lib\QtNetwork4.lib %LIB_DIR%
+CALL:copyFile lib\QtNetwork4.dll %LIB_DIR%
 CALL:copyFile bin\qmake.exe %LIB_DIR%
 CALL:copyFile bin\moc.exe %LIB_DIR%
 CALL:copyFile bin\uic.exe %LIB_DIR%
