@@ -1,4 +1,4 @@
-REM echo off
+echo off
 
 cls
 
@@ -67,7 +67,7 @@ if %BUILD_LUXRENDER_ONLY%==1 goto BuildLuxRender
 mkdir %LUXRAYS_BUILD_ROOT%
 cd /d %LUXRAYS_BUILD_ROOT%
 
-rem del CMakeCache.txt
+del CMakeCache.txt
 %CMAKE% %CMAKE_OPTS% %LUXRAYS_ROOT%
 if ERRORLEVEL 1 goto CMakeError
 
