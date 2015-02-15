@@ -690,6 +690,9 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs2_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glossytranslucent_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf_funcs.cl">
@@ -852,6 +855,9 @@
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs2.cl">
+      <Filter>OpenCL Files\sdl</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glossytranslucent.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
