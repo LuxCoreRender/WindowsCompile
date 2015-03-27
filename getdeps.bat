@@ -51,8 +51,8 @@ echo  1: GNU wget.exe       from http://gnuwin32.sourceforge.net/packages/wget.h
 echo  2: 7za.exe (7-zip)    from http://7-zip.org/download.html
 echo.
 echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C NOW
-echo Otherwise,
-pause
+echo You will have 5 seconds to stop this script, after that it will continue automatically.
+timeout 5
 
 :: Check for required binaries and set variables
 echo.
@@ -390,7 +390,7 @@ IF NOT EXIST %DOWNLOADS%\%~3 (
 	echo **************************************************************************
 	echo * Downloading %~1
 	echo **************************************************************************
-	%WGET% %2 -O %DOWNLOADS%\%~3
+	%WGET% --no-check-certificate %2 -O %DOWNLOADS%\%~3
 	IF ERRORLEVEL 1 (
 		echo.
 		echo Download failed. Are you connected to the internet?
