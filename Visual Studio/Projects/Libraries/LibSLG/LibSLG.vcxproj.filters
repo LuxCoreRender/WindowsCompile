@@ -13,14 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\camera">
-      <UniqueIdentifier>{9f3ea91f-31cd-462e-84c5-014bd55291f3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\core">
       <UniqueIdentifier>{352f88fe-0c2c-4b24-8002-68fa2cafca01}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\core\data">
-      <UniqueIdentifier>{8fb19ead-f72e-4d20-b37b-bafe0a2d38d0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\core\sphericalfunction">
       <UniqueIdentifier>{546eca7f-e1b8-42c1-b891-062eabefcbf5}</UniqueIdentifier>
@@ -36,12 +30,6 @@
     </Filter>
     <Filter Include="Header Files\sdl">
       <UniqueIdentifier>{c906b5bf-ee15-43dc-a043-4733dd162df3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\sampler">
-      <UniqueIdentifier>{e9011a84-ae06-440f-b2cb-9bdef93762bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\sdl\lightdata">
-      <UniqueIdentifier>{05d9eb3f-fd5f-4d08-8641-fdd6cffba20b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\utils">
       <UniqueIdentifier>{0f287cd8-a876-460a-9763-e32fdb300145}</UniqueIdentifier>
@@ -97,14 +85,8 @@
     <Filter Include="OpenCL Files">
       <UniqueIdentifier>{96b0251e-5fc7-45b1-9b46-12c695cd1a47}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OpenCL Files\camera">
-      <UniqueIdentifier>{0bb5f6d2-08a4-4e57-98cd-1176bb237b28}</UniqueIdentifier>
-    </Filter>
     <Filter Include="OpenCL Files\film">
       <UniqueIdentifier>{990c1390-4c1c-4064-8cb9-52a5eb573ef4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenCL Files\sampler">
-      <UniqueIdentifier>{7a3ea11e-2ca6-40bd-a9cc-f8414afc1cce}</UniqueIdentifier>
     </Filter>
     <Filter Include="OpenCL Files\sdl">
       <UniqueIdentifier>{9fb43e14-5179-44b8-a1cf-fdcb333e2c9a}</UniqueIdentifier>
@@ -132,12 +114,6 @@
     </Filter>
     <Filter Include="Source Files\core\sphericalfunction">
       <UniqueIdentifier>{eea5e7ef-1335-4663-a39a-212f3152b94d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\sampler">
-      <UniqueIdentifier>{15d48d4b-87d2-45e6-aead-c1a47d3f6e7f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\sdl">
-      <UniqueIdentifier>{796cc9a9-ae2e-421c-a147-c1f76b0497f1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\utils">
       <UniqueIdentifier>{7d272262-9b83-4740-98f1-da4643105a30}</UniqueIdentifier>
@@ -197,6 +173,99 @@
     <Filter Include="Generated Source Files\kernels">
       <UniqueIdentifier>{21b30260-b4ee-471f-afab-28d0a877633f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\imagemap">
+      <UniqueIdentifier>{291e66b9-3e96-4189-92e6-e3bae9d32426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenCL Files\imagemap">
+      <UniqueIdentifier>{e49ff6a0-21c3-412d-b97e-4f6654134e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textures">
+      <UniqueIdentifier>{10f4a8f2-2ad1-49de-8f7b-6e2aa037c894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenCL Files\textures">
+      <UniqueIdentifier>{ddb4418c-f2f5-475e-aa74-65021e57dc28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lights">
+      <UniqueIdentifier>{971f3005-c79c-4b7c-8056-9979cf2858f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lights\data">
+      <UniqueIdentifier>{f17d1a70-a7a4-4481-8975-56cabe5cc842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textures\fresnel">
+      <UniqueIdentifier>{e8b0da20-9173-4fed-b330-c7ec40a28dca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lights">
+      <UniqueIdentifier>{ea6f95c5-6f8a-4b8c-bd1c-275bed50a4ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenCL Files\textures\fresnel">
+      <UniqueIdentifier>{e9bb6963-7e8a-4ea8-9426-f6b18620ed9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\samplers">
+      <UniqueIdentifier>{e9011a84-ae06-440f-b2cb-9bdef93762bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\materials">
+      <UniqueIdentifier>{54a1c4a6-0fe6-4df1-8f39-8629bbe16f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\volumes">
+      <UniqueIdentifier>{b46d2908-e88c-41e6-8f90-770247f9a2d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\textures">
+      <UniqueIdentifier>{b2956456-be47-4246-8422-5c087ed2835c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\textures\fresnel">
+      <UniqueIdentifier>{cc1212a0-f1c2-4677-95fb-52718af901ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shapes">
+      <UniqueIdentifier>{f2c3ba7b-fd5e-446b-b964-1e2324e891ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imagemap">
+      <UniqueIdentifier>{23b564df-1d37-4e05-9d1e-ca50526f5fe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\film\filters">
+      <UniqueIdentifier>{152abdf9-a258-4be3-a0ad-2b6e4870c2f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\film\imagepipeline">
+      <UniqueIdentifier>{4f4face0-78d4-4add-b161-c77640edc402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\film\imagepipeline\plugins">
+      <UniqueIdentifier>{1dc0b7c4-710d-4035-aeee-47e4b7afbded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\film\imagepipeline\plugins\tonemaps">
+      <UniqueIdentifier>{ed7fed29-4aab-4365-8407-e52ef4b60abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\cameras">
+      <UniqueIdentifier>{9f3ea91f-31cd-462e-84c5-014bd55291f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\materials">
+      <UniqueIdentifier>{f7e3bf4f-4fac-4d91-b88a-6ce6db50aa7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shapes">
+      <UniqueIdentifier>{99e8c102-a342-4c26-a6d9-e0a8493ee314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cameras">
+      <UniqueIdentifier>{233a37ef-43ff-460c-a416-ec1c81bcd5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\volumes">
+      <UniqueIdentifier>{07d150fb-ccca-46a0-a234-3df9a72e5326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\samplers">
+      <UniqueIdentifier>{fceb6946-b98d-4bda-8884-3308b2ca2fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdl">
+      <UniqueIdentifier>{796cc9a9-ae2e-421c-a147-c1f76b0497f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\film\filters">
+      <UniqueIdentifier>{63045def-84d8-470a-b701-45988895f8df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\film\imagepipeline">
+      <UniqueIdentifier>{3a7b0797-3449-4085-83eb-034e7a64abb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\film\imagepipeline\plugins">
+      <UniqueIdentifier>{d29f47e4-320a-4f68-8b9f-f942472219f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\film\imagepipeline\plugins\tonemaps">
+      <UniqueIdentifier>{218669c7-0723-44d2-8064-7376255793da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\editaction.h">
@@ -223,77 +292,14 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\utils\convtest\convtest.h">
       <Filter>Header Files\utils\convtest</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\lightdata\ArHosekSkyModelData.h">
-      <Filter>Header Files\sdl\lightdata</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfevents.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\light.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\material.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\scene.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sceneobject.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sdl.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\texture.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\volume.h">
-      <Filter>Header Files\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler.h">
-      <Filter>Header Files\sampler</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\kernels\kernels.h">
       <Filter>Header Files\kernels</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\film.h">
-      <Filter>Header Files\film</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filter.h">
-      <Filter>Header Files\film</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\framebuffer.h">
-      <Filter>Header Files\film</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline.h">
-      <Filter>Header Files\film</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipelineplugins.h">
-      <Filter>Header Files\film</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\tonemap.h">
-      <Filter>Header Files\film</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\photometricdataies.h">
       <Filter>Header Files\core\sphericalfunction</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\sphericalfunction\sphericalfunction.h">
       <Filter>Header Files\core\sphericalfunction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\core\data\sun_spect.h">
-      <Filter>Header Files\core\data</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\camera\camera.h">
-      <Filter>Header Files\camera</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\rtpathocl\rtpathocl.h">
       <Filter>Header Files\engines\rtpathocl</Filter>
@@ -346,14 +352,266 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathcpu\biaspathcpu.h">
       <Filter>Header Files\engines\biaspathcpu</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_texture.h">
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\imagemap\imagemap.h">
+      <Filter>Header Files\imagemap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\imagemap\imagemapcache.h">
+      <Filter>Header Files\imagemap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\texturedefs.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\blackbody.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\irregulardata.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\data\lampspect.h">
+      <Filter>Header Files\lights\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\lampspectrum.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresnelcolor.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresnelconst.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresnelluxpop.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresnelpreset.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresnelsopra.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\fresneltexture.h">
+      <Filter>Header Files\textures\fresnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\abs.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\band.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\blender_noiselib.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\blender_texture.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\checkerboard.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\clamp.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\constfloat.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\constfloat3.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fbm.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\fresnelapprox.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\imagemaptex.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\marble.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\mix.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\scale.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\textures\texture.h">
+      <Filter>Header Files\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\data\sunspect.h">
+      <Filter>Header Files\lights\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\constantinfinitelight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\distantlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\infinitelight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\laserlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\light.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\lightsourcedefinition.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\lightstrategy.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\mappointlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\pointlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\projectionlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\sharpdistantlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\sky2light.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\skylight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\spotlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\sunlight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\trianglelight.h">
+      <Filter>Header Files\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\shapes\meshshape.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\shapes\pointiness.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\shapes\shape.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\shapes\strands.h">
+      <Filter>Header Files\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\volumes\volume.h">
+      <Filter>Header Files\volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdf.h">
       <Filter>Header Files\sdl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\blender_noiselib.h">
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfevents.h">
       <Filter>Header Files\sdl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\cameraresponsefunctions.h">
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\extmeshcache.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\scene.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sceneobject.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\sdl\sdl.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\samplers\metropolis.h">
+      <Filter>Header Files\samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\samplers\random.h">
+      <Filter>Header Files\samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\samplers\sampler.h">
+      <Filter>Header Files\samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\samplers\sobol.h">
+      <Filter>Header Files\samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\materials\material.h">
+      <Filter>Header Files\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\lights\data\ArHosekSkyModelData.h">
+      <Filter>Header Files\lights\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\film.h">
       <Filter>Header Files\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\framebuffer.h">
+      <Filter>Header Files\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\blackmanharris.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\box.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\filter.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\gaussian.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\mitchell.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\filters\mitchellss.h">
+      <Filter>Header Files\film\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\imagepipeline.h">
+      <Filter>Header Files\film\imagepipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\cameraresponse.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\cameraresponsefunctions.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\contourlines.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\gammacorrection.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\gaussianblur3x3.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\nop.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\outputswitcher.h">
+      <Filter>Header Files\film\imagepipeline\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\tonemaps\autolinear.h">
+      <Filter>Header Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\tonemaps\linear.h">
+      <Filter>Header Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\tonemaps\luxlinear.h">
+      <Filter>Header Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\tonemaps\reinhard02.h">
+      <Filter>Header Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\film\imagepipeline\plugins\tonemaps\tonemap.h">
+      <Filter>Header Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\cameras\camera.h">
+      <Filter>Header Files\cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\slg\cameras\perspective.h">
+      <Filter>Header Files\cameras</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -378,16 +636,7 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\bsdf.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\camera.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\extmeshcache.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\light.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\material.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\scene.cpp">
@@ -399,31 +648,7 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\sdl.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\texture.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\volume.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sampler.cpp">
-      <Filter>Source Files\sampler</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sampler\sobol.cpp">
-      <Filter>Source Files\sampler</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\film.cpp">
-      <Filter>Source Files\film</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\filter.cpp">
-      <Filter>Source Files\film</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline.cpp">
-      <Filter>Source Files\film</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipelineplugins.cpp">
-      <Filter>Source Files\film</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\tonemap.cpp">
       <Filter>Source Files\film</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\core\sphericalfunction\photometricdataies.cpp">
@@ -522,13 +747,139 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\slg\engines\biaspathcpu\biaspathcputhread.cpp">
       <Filter>Source Files\engines\biaspathcpu</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\imagemap\imagemap.cpp">
+      <Filter>Source Files\imagemap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\imagemap\imagemapcache.cpp">
+      <Filter>Source Files\imagemap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\blender_noiselib.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\blender_texture.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\texturedefs.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\blackbody.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\irregulardata.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\lampspectrum.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\abs.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\band.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\checkerboard.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\clamp.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\constfloat.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\constfloat3.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fbm.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnelapprox.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\imagemaptex.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\marble.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\mix.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\scale.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\texture.cpp">
+      <Filter>Source Files\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresnelcolor.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresnelconst.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresnelluxpop.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresnelpreset.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresnelsopra.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\textures\fresnel\fresneltexture.cpp">
+      <Filter>Source Files\textures\fresnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\constantinfinitelight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\distantlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\infinitelight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\laserlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\light.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\lightsourcedefinitions.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\lightstrategy.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\mappointlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\pointlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\projectionlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\sharpdistantlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\sky2light.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\skylight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\spotlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\sunlight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\lights\trianglelight.cpp">
+      <Filter>Source Files\lights</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_datatypes_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\biaspathocl_kernels_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdf_funcs_kernel.cpp">
@@ -537,10 +888,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdf_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\camera_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\camera_types_kernel.cpp">
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdfutils_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\film_funcs_kernel.cpp">
@@ -549,19 +897,13 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\film_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\filter_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\filter_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\hitpoint_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\light_funcs_kernel.cpp">
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\imagemap_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\light_types_kernel.cpp">
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\imagemap_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\mapping_funcs_kernel.cpp">
@@ -570,13 +912,7 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\mapping_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\pathocl_datatypes_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\pathocl_kernels_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\pathoclbase_funcs_kernel.cpp">
@@ -585,103 +921,16 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\rtpathoclbase_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\sampler_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\sampler_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\scene_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_abs_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blackbody_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_noise_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_archglass_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_carpaint_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_cloth_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_generic_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glass_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glossy2_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_matte_translucent_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_metal2_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mirror_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_null_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughglass_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_velvet_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\material_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_texture.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\blender_noiselib.cpp">
-      <Filter>Source Files\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\bsdfutils_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_clearvol_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_mix_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_bump_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volume_types_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\volumeinfo_funcs_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_heterogeneousvol_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_homogeneousvol_kernel.cpp">
-      <Filter>Generated Source Files\kernels</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_roughmatte_translucent_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs_kernel.cpp">
@@ -690,8 +939,110 @@
     <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_blender_noise_funcs2_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\materialdefs_funcs_glossytranslucent_kernel.cpp">
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_bump_funcs_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_clamp_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_fresnelcolor_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_fresnelconst_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_irregulardata_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_noise_funcs_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibSLG\Generated\texture_types_kernel.cpp">
+      <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\cameras\camera.cpp">
+      <Filter>Source Files\cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\cameras\perspective.cpp">
+      <Filter>Source Files\cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\filters\filter.cpp">
+      <Filter>Source Files\film\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\imagepipeline.cpp">
+      <Filter>Source Files\film\imagepipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\cameraresponse.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\contourlines.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\gammacorrection.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\gaussianblur3x3.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\nop.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\outputswitcher.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\tonemaps\autolinear.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\tonemaps\linear.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\tonemaps\luxlinear.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\tonemaps\reinhard02.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\film\imagepipeline\plugins\tonemaps\tonemap.cpp">
+      <Filter>Source Files\film\imagepipeline\plugins\tonemaps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\materials\material.cpp">
+      <Filter>Source Files\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\samplers\metropolis.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\samplers\random.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\samplers\sampler.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\samplers\sobol.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\samplers\soboldata.cpp">
+      <Filter>Source Files\samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\shapes\meshshape.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\shapes\pointiness.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\shapes\shape.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\shapes\strands.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\volumes\volume.cpp">
+      <Filter>Source Files\volumes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\slg\sdl\spd.cpp">
+      <Filter>Source Files\sdl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -704,59 +1055,20 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\hitpoint_types.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\light_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\light_types.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_funcs.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\mapping_types.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_types.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\scene_funcs.cl">
       <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_noise_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_types.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_funcs.cl">
-      <Filter>OpenCL Files\sampler</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sampler\sampler_types.cl">
-      <Filter>OpenCL Files\sampler</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\film\film_funcs.cl">
       <Filter>OpenCL Files\film</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\film\film_types.cl">
       <Filter>OpenCL Files\film</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\film\filter_funcs.cl">
-      <Filter>OpenCL Files\film</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\film\filter_types.cl">
-      <Filter>OpenCL Files\film</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\camera\camera_funcs.cl">
-      <Filter>OpenCL Files\camera</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\camera\camera_types.cl">
-      <Filter>OpenCL Files\camera</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathoclbase\pathoclbase_funcs.cl">
       <Filter>OpenCL Files\engines\pathoclbase</Filter>
@@ -767,98 +1079,74 @@
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_datatypes.cl">
       <Filter>OpenCL Files\engines\pathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels.cl">
-      <Filter>OpenCL Files\engines\pathocl</Filter>
-    </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_datatypes.cl">
       <Filter>OpenCL Files\engines\biaspathocl</Filter>
     </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_funcs.cl">
       <Filter>OpenCL Files\engines\biaspathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels.cl">
-      <Filter>OpenCL Files\engines\biaspathocl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_archglass.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_carpaint.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_cloth.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_generic.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glass.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glossy2.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_matte_translucent.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_metal2.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mirror.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_null.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughglass.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_velvet.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\material_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volume_types.cl">
-      <Filter>OpenCL Files\sdl</Filter>
-    </OpenCLPreprocessor>
     <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\bsdfutils_funcs.cl">
       <Filter>OpenCL Files\sdl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\volumeinfo_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels_mega.cl">
+      <Filter>OpenCL Files\engines\biaspathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_bump_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\biaspathocl\kernels\biaspathocl_kernels_micro.cl">
+      <Filter>OpenCL Files\engines\biaspathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_clearvol.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_funcs.cl">
+      <Filter>OpenCL Files\engines\pathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_mix.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels_mega.cl">
+      <Filter>OpenCL Files\engines\pathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_homogeneousvol.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\engines\pathocl\kernels\pathocl_kernels_micro.cl">
+      <Filter>OpenCL Files\engines\pathocl</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_heterogeneousvol.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\imagemap\imagemap_funcs.cl">
+      <Filter>OpenCL Files\imagemap</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_roughmatte_translucent.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\imagemap\imagemap_types.cl">
+      <Filter>OpenCL Files\imagemap</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_blackbody_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\texture_blender_noise_funcs2.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_irregulardata_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
     </OpenCLPreprocessor>
-    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\sdl\materialdefs_funcs_glossytranslucent.cl">
-      <Filter>OpenCL Files\sdl</Filter>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_abs_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_blender_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_blender_noise_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_blender_noise_funcs2.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_bump_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_clamp_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_noise_funcs.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\texture_types.cl">
+      <Filter>OpenCL Files\textures</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\texture_fresnelcolor_funcs.cl">
+      <Filter>OpenCL Files\textures\fresnel</Filter>
+    </OpenCLPreprocessor>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\slg\textures\fresnel\texture_fresnelconst_funcs.cl">
+      <Filter>OpenCL Files\textures\fresnel</Filter>
     </OpenCLPreprocessor>
   </ItemGroup>
 </Project>

@@ -94,6 +94,9 @@
       <UniqueIdentifier>{2d31de94-6ed3-4d31-8bb4-1b0ca5dcf21c}</UniqueIdentifier>
       <Extensions>h</Extensions>
     </Filter>
+    <Filter Include="Header Files\utils\cyhair">
+      <UniqueIdentifier>{92793213-8343-4178-b04c-9c3a5bac81c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\luxrays.h">
@@ -124,9 +127,6 @@
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\extmeshcache.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\exttrianglemesh.h">
@@ -278,6 +278,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4op.h">
       <Filter>Header Files\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\embreeaccel.h">
+      <Filter>Header Files\accelerators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\threadsafe.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\cyhair\cyHairFile.h">
+      <Filter>Header Files\utils\cyhair</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -499,6 +508,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_types_kernel.cpp">
       <Filter>Generated Source Files\kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\embreeaccel.cpp">
+      <Filter>Source Files\accelerators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

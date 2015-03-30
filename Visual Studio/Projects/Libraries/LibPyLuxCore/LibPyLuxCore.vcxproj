@@ -28,11 +28,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcore.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcoreforblender.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibLuxCore\LibLuxCore.vcxproj">
       <Project>{4dd92e4e-af4f-4861-9f7d-22c6af78f914}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\pyluxcore\pyluxcoreforblender.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9CCC6DA1-C690-44A9-B1BB-E47207BECBA7}</ProjectGuid>
