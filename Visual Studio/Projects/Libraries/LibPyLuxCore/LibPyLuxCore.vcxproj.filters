@@ -18,5 +18,13 @@
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\pyluxcoreforblender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\pyluxcore\pyluxcoreforblender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

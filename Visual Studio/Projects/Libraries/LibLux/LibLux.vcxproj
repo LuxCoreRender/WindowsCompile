@@ -409,7 +409,6 @@
     <ClInclude Include="..\..\..\..\..\lux\samplers\sobol.h" />
     <ClInclude Include="..\..\..\..\..\lux\server\renderserver.h" />
     <ClInclude Include="..\..\..\..\..\lux\shapes\cone.h" />
-    <ClInclude Include="..\..\..\..\..\lux\shapes\cyhair\cyHairFile.h" />
     <ClInclude Include="..\..\..\..\..\lux\shapes\cylinder.h" />
     <ClInclude Include="..\..\..\..\..\lux\shapes\deferred.h" />
     <ClInclude Include="..\..\..\..\..\lux\shapes\disk.h" />

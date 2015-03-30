@@ -154,9 +154,6 @@
     <Filter Include="Header Files\shapes">
       <UniqueIdentifier>{852f50e4-fa70-4b83-b8a9-1fef9a3b34fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\shapes\cyhair">
-      <UniqueIdentifier>{42e529ea-ea28-409b-86d0-5f34bad385ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\shapes\mikktspace">
       <UniqueIdentifier>{eb6706fd-6601-49be-b95e-96641c26c00a}</UniqueIdentifier>
     </Filter>
@@ -791,9 +788,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\shapes\torus.h">
       <Filter>Header Files\shapes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\lux\shapes\cyhair\cyHairFile.h">
-      <Filter>Header Files\shapes\cyhair</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\lux\shapes\mikktspace\mikktspace.h">
       <Filter>Header Files\shapes\mikktspace</Filter>

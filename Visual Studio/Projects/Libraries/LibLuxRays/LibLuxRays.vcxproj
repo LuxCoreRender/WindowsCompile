@@ -187,6 +187,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\embreeaccel.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvhaccel.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvhaccel.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvhaccel.h" />
@@ -211,7 +212,6 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\dataset.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\device.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon.h" />
-    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\extmeshcache.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\exttrianglemesh.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bsphere.h" />
@@ -240,6 +240,7 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\kernels\kernels.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\luxrays.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\atomic.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\cyhair\cyHairFile.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\exportdefs.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\mc.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\mcdistribution.h" />
@@ -247,9 +248,11 @@
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\ocl.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\ply\rply.h" />
     <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\properties.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\threadsafe.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\bvhaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\embreeaccel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\mbvhaccel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\mqbvhaccel.cpp" />
     <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\qbvhaccel.cpp" />
