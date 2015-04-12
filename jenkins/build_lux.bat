@@ -12,7 +12,10 @@ set BUILD_ARGS=
 :ParseCmdParams
 if NOT "%1"=="" (
   if "%1"=="/no-ocl" (
-  	set BUILD_ARGS=/no-ocl
+    set BUILD_ARGS=/no-ocl
+    set SETUP_ARGS=
+  ) else (
+    set SEUTP_ARGS=--ocl
   )
   shift
   goto :ParseCmdParams
@@ -122,6 +125,7 @@ pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 "C:\Program Files\7-Zip\7z" a -r LuxBlend.zip luxrender\*.*
 popd
 ::Create the Installer by using Inno setup
+python configSetup.py --platform x64 %SETUP_ARGS% luxSetup.iss
 "C:\Program Files (x86)\Inno Setup 5\ISCC" luxSetup.iss
 
 popd
