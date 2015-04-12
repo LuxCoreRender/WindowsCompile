@@ -6,6 +6,18 @@
 ::Removal of double quotes in the PATH to avoid failure in commands
 SET PATH=%PATH:"=%
 ::" just to balance syntax highlight in the editor
+
+set BUILD_ARGS=
+
+:ParseCmdParams
+if NOT "%1"=="" (
+  if "%1"=="/no-ocl" (
+  	set BUILD_ARGS=/no-ocl
+  )
+  shift
+  goto :ParseCmdParams
+)
+
 SET STAGE_DIR=w:\product-deployment\luxbuildno
 SET INSTALLER_DIR=windows_installer
 python "%WORKSPACE%\lux\makeBuildNumber.py" --notime "%WORKSPACE%\lux\core\version.h"
@@ -21,7 +33,7 @@ echo ------------------------------------------------
 
 cd "%WORKSPACE%\windows"
 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64
-call cmake-build-x64
+call cmake-build-x64 /rebuild %BUILD_ARGS% 
 
 echo ------------------------------------------------
 echo Preparing the installer
