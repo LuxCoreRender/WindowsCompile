@@ -125,13 +125,3 @@ popd
 "C:\Program Files (x86)\Inno Setup 5\ISCC" luxSetup.iss
 
 popd
-echo ------------------------------------------------
-echo Delivering the build to the LuxRender.net server
-echo ------------------------------------------------
-
-cd %WORKSPACE%\%INSTALLER_ROOT%\Output
-set LUX_SETUP=LuxRender %LUX_VERSION% %PLATFORM% %OCL% Setup.exe
-scp -i \Users\Paolo\.ssh\id_rsa "%LUX_SETUP%" pciccone@luxrender.net:/home/pciccone
-echo File transferred, moving it to the designated directory and setting the access rights
-ssh -i \Users\Paolo\.ssh\id_rsa pciccone@luxrender.net "sudo mv '/home/pciccone/%LUX_SETUP%' /home/lux_release/release/builds"
-ssh -i \Users\Paolo\.ssh\id_rsa pciccone@luxrender.net "sudo chown -R www:www /home/lux_release/release/builds/*"
