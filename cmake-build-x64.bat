@@ -6,6 +6,8 @@ set FULL_REBUILD=0
 set BUILD_LUXRAYS_ONLY=0
 set BUILD_LUXMARK_ONLY=0
 set BUILD_LUXRENDER_ONLY=0
+set MSBUILD_PLATFORM=x64
+set DISABLE_OPENCL=0
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -13,6 +15,8 @@ if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "luxrays" set BUILD_LUXRAYS_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "luxrender" set BUILD_LUXRENDER_ONLY=1
+if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
+
 shift 
 goto ParseCmdParams
 
@@ -65,8 +69,18 @@ set LUX_X64_GLEW_ROOT=%INCLUDE_DIR%
 set LUX_X64_FREEIMAGE_ROOT=%INCLUDE_DIR%
 set LUX_X64_QT_ROOT=%INCLUDE_DIR%\Qt
 
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=RELEASE
-set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:12.0  /property:"Platform=x64" /property:"Configuration=Release" /clp:ErrorsOnly
+if %DISABLE_OPENCL% EQU 1 (
+  echo -----------------------------------------
+  echo Disabling OpenCL
+  echo -----------------------------------------
+
+  set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
+) else (
+  set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL
+)
+
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=RELEASE %OCL_OPTION%
+set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:12.0  /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=Release" /clp:ErrorsOnly
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
