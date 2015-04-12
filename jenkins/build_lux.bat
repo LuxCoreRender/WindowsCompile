@@ -8,19 +8,25 @@ SET PATH=%PATH:"=%
 ::" just to balance syntax highlight in the editor
 
 set BUILD_ARGS=
+set PLATFORM=x64
+set BITNESS=64
+set LUX_VERSION=1.5
+set OCL=OpenCL
 
 :ParseCmdParams
 if NOT "%1"=="" (
   if "%1"=="/no-ocl" (
     set BUILD_ARGS=/no-ocl
     set SETUP_ARGS=
+    set OCL=NoOpenCL
   ) else (
-    set SEUTP_ARGS=--ocl
+    set SETUP_ARGS=--ocl
   )
   shift
   goto :ParseCmdParams
 )
 
+set BUILD_TYPE=%BITNESS%_$OCL%
 SET STAGE_DIR=w:\product-deployment\luxbuildno
 SET INSTALLER_DIR=windows_installer
 python "%WORKSPACE%\lux\makeBuildNumber.py" --notime "%WORKSPACE%\lux\core\version.h"
@@ -49,11 +55,7 @@ set DEPS_DIR=windows_deps
 
 set INSTALLER_ROOT=windows_installer
 set INSTALLER_SRC=%INSTALLER_ROOT%\Source\Files
-set BUILD_TYPE=64_OpenCL
 set PYLUX_DIR=PyLux
-set PLATFORM=x64
-set LUX_VERSION=1.5
-set OCL=OpenCL
 
 if not exist %INSTALLER_ROOT% (
   hg clone http://src.luxrender.net/%INSTALLER_ROOT% %INSTALLER_ROOT%
@@ -125,7 +127,7 @@ pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 "C:\Program Files\7-Zip\7z" a -r LuxBlend.zip luxrender\*.*
 popd
 ::Create the Installer by using Inno setup
-python configSetup.py --platform x64 %SETUP_ARGS% luxSetup.iss
+python configSetup.py --platform %PLATFORM% %SETUP_ARGS% luxSetup.iss
 "C:\Program Files (x86)\Inno Setup 5\ISCC" luxSetup.iss
 
 popd
