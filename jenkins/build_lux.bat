@@ -8,7 +8,7 @@ SET PATH=%PATH:"=%
 ::" just to balance syntax highlight in the editor
 
 set BUILD_ARGS=
-set PLATFORM=x64
+set CPU_PLATFORM=x64
 set BITNESS=64
 set LUX_VERSION=1.5
 set OCL=OpenCL
@@ -36,9 +36,11 @@ if exist %INSTALLER_DIR% (
 ) else (
   hg clone http://src.luxrender.net/windows_installer %INSTALLER_DIR%
 )
-echo ------------------------------------------------
+
+echo -------------------------------------------------------------
 echo Compiling LuxRender
-echo ------------------------------------------------
+echo Lux %LUX_VERSION%, %CPU_PLATFORM%, %OCL%, %BUILD_TYPE%
+echo -------------------------------------------------------------
 
 cd "%WORKSPACE%\windows"
 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64
@@ -98,7 +100,7 @@ if not exist "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%" md
 pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\lux.dll"               .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\OpenImageIO.dll"       .
-copy "%WORKSPACE%\%DEPS_DIR%\%PLATFORM%\Release\lib\python34.dll"       .
+copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python34.dll"       .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\pylux.pyd"             .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\lib\Release\pyluxcore.pyd" .
 popd
@@ -107,7 +109,7 @@ echo ------------------------------------------------
 echo Copying the Visual Studio 2013 redistributable
 echo ------------------------------------------------
 pushd "%WORKSPACE%\%INSTALLER_ROOT%" 
-copy VCPP_Redist\VisualStudio2013\vcredist_x64.exe Source\Files
+copy VCPP_Redist\VisualStudio2013\vcredist_%CPU_PLATFORM%.exe Source\Files
 
 ::Luxblend
 cd
@@ -115,7 +117,7 @@ robocopy "%LUXBLEND_DIR%\src\luxrender" "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%
 pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxrender"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\lux.dll"               .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\OpenImageIO.dll"       .
-copy "%WORKSPACE%\%DEPS_DIR%\%PLATFORM%\Release\lib\python34.dll"       .
+copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python34.dll"       .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\pylux.pyd"             .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\lib\Release\pyluxcore.pyd" .
 popd
@@ -127,7 +129,7 @@ pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 "C:\Program Files\7-Zip\7z" a -r LuxBlend.zip luxrender\*.*
 popd
 ::Create the Installer by using Inno setup
-python configSetup.py --platform %PLATFORM% %SETUP_ARGS% luxSetup.iss
+python configSetup.py --platform %CPU_PLATFORM% %SETUP_ARGS% luxSetup.iss
 "C:\Program Files (x86)\Inno Setup 5\ISCC" luxSetup.iss
 
 popd
