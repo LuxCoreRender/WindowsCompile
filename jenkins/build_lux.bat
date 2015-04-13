@@ -26,7 +26,7 @@ if NOT "%1"=="" (
   goto :ParseCmdParams
 )
 
-set BUILD_TYPE=%BITNESS%_$OCL%
+set BUILD_TYPE=%BITNESS%_%OCL%
 SET STAGE_DIR=w:\product-deployment\luxbuildno
 SET INSTALLER_DIR=windows_installer
 python "%WORKSPACE%\lux\makeBuildNumber.py" --notime "%WORKSPACE%\lux\core\version.h"
