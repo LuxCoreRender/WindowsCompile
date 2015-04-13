@@ -1,4 +1,4 @@
-echo off
+@echo off
 
 SETLOCAL ENABLEEXTENSIONS
 
@@ -8,6 +8,7 @@ set BUILD_LUXMARK_ONLY=0
 set BUILD_LUXRENDER_ONLY=0
 set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
+set CPU_PLATFORM=x64
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -16,6 +17,10 @@ if /i "%1" EQU "luxrays" set BUILD_LUXRAYS_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "luxrender" set BUILD_LUXRENDER_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
+if /i "%1" EQU "/x86" (
+  set CPU_PLATFORM=x86
+  set MSBUILD_PLATFORM=Win32
+)
 
 shift 
 goto ParseCmdParams
@@ -52,8 +57,13 @@ if not exist "%LUX_ROOT%" goto LuxNotFound
 for /F "tokens=3" %%G in ('cmake --version ^| find "cmake version"') do set CMAKE_VER=%%G
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
+:: Default values
 set CMAKE_GENERATOR="Visual Studio 12 2013"
-set CMAKE_PLATFORM=-A x64
+if "%CPU_PLATFORM%"=="x64" (
+  set CMAKE_PLATFORM=-A %CPU_PLATFORM%
+) else (
+  set CMAKE_PLATFORM=
+)
 
 if %CMAKE_VN_MAJOR%==2 (
   set CMAKE_GENERATOR="Visual Studio 12 Win64"
@@ -61,13 +71,14 @@ if %CMAKE_VN_MAJOR%==2 (
 )
 
 for %%a in (..\windows_deps\include) do set INCLUDE_DIR=%%~fa
-for %%a in (..\windows_deps\x64\Release\lib) do set LIB_DIR=%%~fa
+for %%a in (..\windows_deps\%CPU_PLATFORM%\Release\lib) do set LIB_DIR=%%~fa
+echo LIB_DIR: %LIB_DIR%
 
-set LUX_X64_BOOST_ROOT=%INCLUDE_DIR%\Boost
-set LUX_X64_GLUT_ROOT=%INCLUDE_DIR%
-set LUX_X64_GLEW_ROOT=%INCLUDE_DIR%
-set LUX_X64_FREEIMAGE_ROOT=%INCLUDE_DIR%
-set LUX_X64_QT_ROOT=%INCLUDE_DIR%\Qt
+::set LUX_X64_BOOST_ROOT=%INCLUDE_DIR%\Boost
+::set LUX_X64_GLUT_ROOT=%INCLUDE_DIR%
+::set LUX_X64_GLEW_ROOT=%INCLUDE_DIR%
+::set LUX_X64_FREEIMAGE_ROOT=%INCLUDE_DIR%
+::set LUX_X64_QT_ROOT=%INCLUDE_DIR%\Qt
 
 if %DISABLE_OPENCL% EQU 1 (
   echo -----------------------------------------
@@ -117,7 +128,6 @@ set CMAKE_OPTS=%CMAKE_OPTS% -D LuxRays_HOME=%LUXRAYS_BUILD_ROOT% -D LUXRAYS_INCL
 
 mkdir %LUXMARK_BUILD_ROOT%
 cd /d %LUXMARK_BUILD_ROOT%
-
 
 if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 "%CMAKE%" %CMAKE_OPTS% %LUXMARK_ROOT%
