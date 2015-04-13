@@ -2,7 +2,7 @@
 :: This script builds LuxRender for Windows using the Jenkins CI system
 :: The script is expected to be called from inside Jenkins, in the Build
 :: steps
-
+setlocal
 ::Removal of double quotes in the PATH to avoid failure in commands
 SET PATH=%PATH:"=%
 ::" just to balance syntax highlight in the editor
@@ -12,15 +12,20 @@ set CPU_PLATFORM=x64
 set BITNESS=64
 set LUX_VERSION=1.5
 set OCL=OpenCL
-
+set VC_PLATFORM=amd64
+set SETUP_ARGS=--ocl
 :ParseCmdParams
 if NOT "%1"=="" (
   if "%1"=="/no-ocl" (
     set BUILD_ARGS=/no-ocl
     set SETUP_ARGS=
     set OCL=NoOpenCL
-  ) else (
-    set SETUP_ARGS=--ocl
+  )
+  if "%1"=="/x86" (
+    set CPU_PLATFORM=x86
+    set BITNESS=32
+    set BUILD_ARGS=%BUILD_ARGS% /x86
+    set VC_PLATFORM=x86
   )
   shift
   goto :ParseCmdParams
@@ -43,7 +48,7 @@ echo Lux %LUX_VERSION%, %CPU_PLATFORM%, %OCL%, %BUILD_TYPE%
 echo -------------------------------------------------------------
 
 cd "%WORKSPACE%\windows"
-call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64
+call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" %VC_PLATFORM%
 call cmake-build-x64 /rebuild %BUILD_ARGS% 
 
 echo ------------------------------------------------
