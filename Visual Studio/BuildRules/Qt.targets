@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright © 2010 Daher Alfawares 
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
+for the specific language governing permissions and limitations under the License.
+
+Based on: https://code.google.com/p/xr-qt-msvc/  Rev. r18
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName Include="QtDesignerUI">
+      <Targets>_QtDesignerUI</Targets>
+    </AvailableItemName>
+    <AvailableItemName Include="QtMetaObject">
+      <Targets>_QtMetaObject</Targets>
+    </AvailableItemName>
+    <AvailableItemName Include="QtResource">
+      <Targets>_QtResource</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="QtDesignerUI"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="QtMetaObject"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="QtResource"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <PropertyGroup>
+    <ContentFilesProjectOutputGroupDependsOn>$(ContentFilesProjectOutputGroupDependsOn);MakeDirsForQtDesignerUI;MakeDirsForQtMetaObject;MakeDirsForQtResource</ContentFilesProjectOutputGroupDependsOn>
+  </PropertyGroup>
+  <Target
+    Name="MakeDirsForQtDesignerUI"
+    Condition="'@(QtDesignerUI)' != ''">
+    <ItemGroup>
+      <QtDesignerUIDirsToMake Include="%(QtDesignerUI.OutputDirectory)\%(QtDesignerUI.OutputPrefix)%(QtDesignerUI.FileName)%(QtDesignerUI.OutputPostfix)%(QtDesignerUI.OutputExtension)" />
+    </ItemGroup>
+    <MakeDir Directories="@(QtDesignerUIDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="MakeDirsForQtMetaObject"
+    Condition="'@(QtMetaObject)' != ''">
+    <ItemGroup>
+      <QtMetaObjectDirsToMake Include="%(QtMetaObject.OutputDirectory)\%(QtMetaObject.OutputPrefix)%(QtMetaObject.FileName)%(QtMetaObject.OutputPostfix)%(QtMetaObject.OutputExtension)" />
+    </ItemGroup>
+    <MakeDir Directories="@(QtMetaObjectDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="MakeDirsForQtResource"
+    Condition="'@(QtResource)' != ''">
+    <ItemGroup>
+      <QtResourceDirsToMake Include="%(QtResource.OutputDirectory)\%(QtResource.OutputPrefix)%(QtResource.FileName)%(QtResource.OutputPostfix)%(QtResource.OutputExtension)" />
+    </ItemGroup>
+    <MakeDir Directories="@(QtResourceDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_QtDesignerUI"
+    BeforeTargets="$(QtDesignerUIBeforeTargets)"
+    AfterTargets="$(QtDesignerUIAfterTargets)"
+    Condition="'@(QtDesignerUI)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForQtDesignerUI"
+    Outputs="%(QtDesignerUI.OutputDirectory)\%(QtDesignerUI.OutputPrefix)%(QtDesignerUI.FileName)%(QtDesignerUI.OutputPostfix)%(QtDesignerUI.OutputExtension)"
+    Inputs="%(QtDesignerUI.Identity);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <QtDesignerUI
+        Remove="@(QtDesignerUI)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <QtDesignerUI_tlog
+        Include="%(QtDesignerUI.OutputDirectory)\%(QtDesignerUI.OutputPrefix)%(QtDesignerUI.FileName)%(QtDesignerUI.OutputPostfix)%(QtDesignerUI.OutputExtension)"
+        Condition="'%(QtDesignerUI.OutputDirectory)\%(QtDesignerUI.OutputPrefix)%(QtDesignerUI.FileName)%(QtDesignerUI.OutputPostfix)%(QtDesignerUI.OutputExtension)' != '' and '%(QtDesignerUI.ExcludedFromBuild)' != 'true'">
+        <Source>@(QtDesignerUI, '|')</Source>
+      </QtDesignerUI_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(QtDesignerUI.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(QtDesignerUI_tlog)' != '' and '%(QtDesignerUI_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)uic.write.1.tlog"
+      Lines="^%(QtDesignerUI_tlog.Source);@(QtDesignerUI_tlog-&gt;'%(Fullpath)')" />
+    <QtDesignerUI
+      Condition="'@(QtDesignerUI)' != '' and '%(QtDesignerUI.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(QtDesignerUI.CommandLineTemplate)"
+      OutputDirectory="%(QtDesignerUI.OutputDirectory)"
+      OutputPrefix="%(QtDesignerUI.OutputPrefix)"
+      OutputPostfix="%(QtDesignerUI.OutputPostfix)"
+      OutputExtension="%(QtDesignerUI.OutputExtension)"
+      AdditionalOptions="%(QtDesignerUI.AdditionalOptions)"
+      Inputs="%(QtDesignerUI.Identity)" />
+  </Target>
+  <Target
+    Name="_QtMetaObject"
+    BeforeTargets="$(QtMetaObjectBeforeTargets)"
+    AfterTargets="$(QtMetaObjectAfterTargets)"
+    Condition="'@(QtMetaObject)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForQtMetaObject"
+    Outputs="%(QtMetaObject.OutputDirectory)\%(QtMetaObject.OutputPrefix)%(QtMetaObject.FileName)%(QtMetaObject.OutputPostfix)%(QtMetaObject.OutputExtension)"
+    Inputs="%(QtMetaObject.Identity);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <QtMetaObject
+        Remove="@(QtMetaObject)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <QtMetaObject_tlog
+        Include="%(QtMetaObject.OutputDirectory)\%(QtMetaObject.OutputPrefix)%(QtMetaObject.FileName)%(QtMetaObject.OutputPostfix)%(QtMetaObject.OutputExtension)"
+        Condition="'%(QtMetaObject.OutputDirectory)\%(QtMetaObject.OutputPrefix)%(QtMetaObject.FileName)%(QtMetaObject.OutputPostfix)%(QtMetaObject.OutputExtension)' != '' and '%(QtMetaObject.ExcludedFromBuild)' != 'true'">
+        <Source>@(QtMetaObject, '|')</Source>
+      </QtMetaObject_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(QtMetaObject.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(QtMetaObject_tlog)' != '' and '%(QtMetaObject_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)moc.write.1.tlog"
+      Lines="^%(QtMetaObject_tlog.Source);@(QtMetaObject_tlog-&gt;'%(Fullpath)')" />
+    <QtMetaObject
+      Condition="'@(QtMetaObject)' != '' and '%(QtMetaObject.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(QtMetaObject.CommandLineTemplate)"
+      QtShared="%(QtMetaObject.QtShared)"
+      QtThread="%(QtMetaObject.QtThread)"
+      QtUnicode="%(QtMetaObject.QtUnicode)"
+      QtLargeFile="%(QtMetaObject.QtLargeFile)"
+      QtKeywords="%(QtMetaObject.QtKeywords)"
+      QtNoDebug="%(QtMetaObject.QtNoDebug)"
+      QtGuiLib="%(QtMetaObject.QtGuiLib)"
+      QtCoreLib="%(QtMetaObject.QtCoreLib)"
+      QtOpenGLLib="%(QtMetaObject.QtOpenGLLib)"
+      QtMocNoWarnings="%(QtMetaObject.QtMocNoWarnings)"
+      OutputDirectory="%(QtMetaObject.OutputDirectory)"
+      OutputPrefix="%(QtMetaObject.OutputPrefix)"
+      OutputPostfix="%(QtMetaObject.OutputPostfix)"
+      OutputExtension="%(QtMetaObject.OutputExtension)"
+      AdditionalOptions="%(QtMetaObject.AdditionalOptions)"
+      Inputs="%(QtMetaObject.Identity)" />
+  </Target>
+  <Target
+    Name="_QtResource"
+    BeforeTargets="$(QtResourceBeforeTargets)"
+    AfterTargets="$(QtResourceAfterTargets)"
+    Condition="'@(QtResource)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForQtResource"
+    Outputs="%(QtResource.OutputDirectory)\%(QtResource.OutputPrefix)%(QtResource.FileName)%(QtResource.OutputPostfix)%(QtResource.OutputExtension)"
+    Inputs="%(QtResource.Identity);%(QtResource.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <QtResource
+        Remove="@(QtResource)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <QtResource_tlog
+        Include="%(QtResource.OutputDirectory)\%(QtResource.OutputPrefix)%(QtResource.FileName)%(QtResource.OutputPostfix)%(QtResource.OutputExtension)"
+        Condition="'%(QtResource.OutputDirectory)\%(QtResource.OutputPrefix)%(QtResource.FileName)%(QtResource.OutputPostfix)%(QtResource.OutputExtension)' != '' and '%(QtResource.ExcludedFromBuild)' != 'true'">
+        <Source>@(QtResource, '|')</Source>
+      </QtResource_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(QtResource.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(QtResource_tlog)' != '' and '%(QtResource_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)qrc.write.1.tlog"
+      Lines="^%(QtResource_tlog.Source);@(QtResource_tlog-&gt;'%(Fullpath)')" />
+    <QtResource
+      Condition="'@(QtResource)' != '' and '%(QtResource.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(QtResource.CommandLineTemplate)"
+      InitializationFunctionName="%(QtResource.InitializationFunctionName)"
+      AccessPathPrefix="%(QtResource.AccessPathPrefix)"
+      OutputDirectory="%(QtResource.OutputDirectory)"
+      OutputPrefix="%(QtResource.OutputPrefix)"
+      OutputPostfix="%(QtResource.OutputPostfix)"
+      OutputExtension="%(QtResource.OutputExtension)"
+      AdditionalOptions="%(QtResource.AdditionalOptions)"
+      Inputs="%(QtResource.Identity)" />
+  </Target>
+</Project>

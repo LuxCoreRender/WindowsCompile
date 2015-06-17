@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Source Files">
+      <UniqueIdentifier>{67ffefdb-2ed6-4aa9-9258-c6fabde1c1b8}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Header Files">
+      <UniqueIdentifier>{cbb29f74-8c64-4262-91a6-0f54115af7cd}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="QT UI">
+      <UniqueIdentifier>{da8cd5bb-9598-49c7-be1c-7fd501e52901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources">
+      <UniqueIdentifier>{3afe7f87-8b75-4320-aa1d-766bf3da8e7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources\images">
+      <UniqueIdentifier>{6015c0e5-bab0-4711-b0a7-ded7600276b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\QT Resources\icons">
+      <UniqueIdentifier>{e5a1f561-d54b-4cac-85fd-ecae05aefe2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files\QT UI">
+      <UniqueIdentifier>{577fd333-74d5-4ed7-b95b-bcd03886a962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Source Files\QT Resources">
+      <UniqueIdentifier>{ddf7ebc5-6019-4277-889a-ee04d9f5235c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Header Files\QT UI">
+      <UniqueIdentifier>{9b83c528-779d-44d9-a3c4-06469723068f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QT UI">
+      <UniqueIdentifier>{46f3cf11-ef27-4176-9881-f6c37640468e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\lux\console\commandline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\aboutdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\advancedinfowidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\colorspacewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\gammawidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\guiutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\histogramview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\histogramwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\lenseffectswidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\lightgroupwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\luxapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\noisereductionwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\panewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\renderview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\tonemapwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\aboutdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\advancedinfowidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\batchprocessdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\colorspacewidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\gammawidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\histogramview_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\histogramwidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\lenseffectswidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\lightgroupwidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\luxapp_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\mainwindow_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\noisereductionwidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\openexroptionsdialog_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\panewidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\queue_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\renderview_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\tonemapwidget_moc.cpp">
+      <Filter>Generated Source Files\QT UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\icons_qrc.cpp">
+      <Filter>Generated Source Files\QT Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\images_qrc.cpp">
+      <Filter>Generated Source Files\QT Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\splash_qrc.cpp">
+      <Filter>Generated Source Files\QT Resources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\lux\console\commandline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\lux\qtgui\guiutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_aboutdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_advancedinfo.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_batchprocessdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_colorspace.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_gamma.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_histogram.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_lenseffects.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_lightgroup.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_luxrender.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_noisereduction.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_openexroptionsdialog.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_pane.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_tonemap.h">
+      <Filter>Generated Header Files\QT UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\lux\qtgui\images\checkerboard.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\images\colortemp.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\images\luxlogo_bg.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\images\splash.png">
+      <Filter>Resource Files\QT Resources\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\advancedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\analogclockicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\arrowicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\clipboardicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\clipboardicon_alpha.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\collapsedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\colorspaceicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\erroricon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\expandedicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\gammaicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\histogramicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\imageicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\lenseffectsicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\lightgroupsicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\logtabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\luxrender.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\mappainticon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\minusicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\networktabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\noisereductionicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\pauseicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\plusicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\powerofficon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\poweronicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\queuetabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\rendertabicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\resolutionicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\resumeicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\stopicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\tonemapicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\viewicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\warningicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\zoomicon.png">
+      <Filter>Resource Files\QT Resources\icons</Filter>
+    </Image>
+    <Image Include="..\..\..\Resources\lux.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\Resources\core.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\aboutdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\advancedinfo.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\colorspace.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\gamma.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\histogram.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\lenseffects.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\lightgroup.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\luxrender.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\noisereduction.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\pane.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\tonemap.ui">
+      <Filter>QT UI</Filter>
+    </QtDesignerUI>
+  </ItemGroup>
+  <ItemGroup>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\icons.qrc">
+      <Filter>Resource Files\QT Resources</Filter>
+    </QtResource>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\images.qrc">
+      <Filter>Resource Files\QT Resources</Filter>
+    </QtResource>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\splash.qrc">
+      <Filter>Resource Files\QT Resources</Filter>
+    </QtResource>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\histogramwidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\lenseffectswidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\lightgroupwidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\luxapp.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\mainwindow.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\noisereductionwidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\panewidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\queue.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\renderview.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\tonemapwidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\aboutdialog.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\advancedinfowidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\colorspacewidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\gammawidget.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\histogramview.hxx">
+      <Filter>Header Files\QT UI</Filter>
+    </QtMetaObject>
+  </ItemGroup>
+</Project>

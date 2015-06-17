@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Header Files">
+      <UniqueIdentifier>{1e4d1163-19c5-4609-98a7-56b08a6b826c}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Generated Source Files">
+      <UniqueIdentifier>{3bead4ca-728b-4f3f-b586-86066c904cdb}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Source Files\luxparser">
+      <UniqueIdentifier>{9e4052bb-c429-436d-a395-c65c50803a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\luxparser">
+      <UniqueIdentifier>{ef48a30f-9061-4758-ac7d-a3c92ee63668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Header Files\luxparser">
+      <UniqueIdentifier>{fc723fda-e5ff-4492-ac05-881e49af5c36}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\luxrays\include\luxcore\cfg.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\luxcore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxcore\cfg.h">
+      <Filter>Generated Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Build\LibLuxCore\Generated\luxparse.hpp">
+      <Filter>Generated Header Files\luxparser</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxcore\luxcore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxCore\Generated\luxlex.cpp">
+      <Filter>Generated Source Files\luxparser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Build\LibLuxCore\Generated\luxparse.cpp">
+      <Filter>Generated Source Files\luxparser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="..\..\..\..\..\luxrays\src\luxcore\luxparser\luxparse.y">
+      <Filter>Source Files\luxparser</Filter>
+    </Bison>
+  </ItemGroup>
+  <ItemGroup>
+    <Flex Include="..\..\..\..\..\luxrays\src\luxcore\luxparser\luxlex.l">
+      <Filter>Source Files\luxparser</Filter>
+    </Flex>
+  </ItemGroup>
+</Project>

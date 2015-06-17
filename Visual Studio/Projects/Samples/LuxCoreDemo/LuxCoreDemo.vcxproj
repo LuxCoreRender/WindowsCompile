@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E8B92F22-C4FF-4589-855A-457EC3038F0D}</ProjectGuid>
+    <RootNamespace>LuxCoreDemo</RootNamespace>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenGL.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxrays\samples\luxcoredemo\luxcoredemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\LibLuxCore\LibLuxCore.vcxproj">
+      <Project>{4dd92e4e-af4f-4861-9f7d-22c6af78f914}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibLuxRays\LibLuxRays.vcxproj">
+      <Project>{c51a362c-fecc-4889-99e2-e2e5e2a40ce9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibSLG\LibSLG.vcxproj">
+      <Project>{65f29865-cb96-4539-b047-498acec6bc4a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,10 @@
+--- pymath.h.orig	2014-02-22 22:09:35.853070511 -0700
++++ pymath.h	2014-02-22 22:09:45.432950075 -0700
+@@ -18,6 +18,7 @@
+ extern double copysign(double, double);
+ #endif
+ 
++#define HAVE_ROUND
+ #ifndef HAVE_ROUND
+ extern double round(double);
+ #endif

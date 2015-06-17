@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName Include="OpenCLPreprocessor">
+      <Targets>_OpenCLPreprocessor</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="OpenCLPreprocessor"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="OpenCLPreprocessorEngine"
+    TaskFactory="CodeTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <ParameterGroup>
+      <Input Required="True" />
+      <Output Required="True" />
+      <KernelName Required="True" />
+      <Namespace Required="True" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+String template = "#include <string>\nnamespace {1} {{ namespace ocl {{\nstd::string KernelSource_{0} = \n{2}\n; }} }}\n";
+String[] content = File.ReadAllLines(Input);
+var escapedContent = content.Select(x => "\"" + x.Replace("\\", "\\\\").Replace("\"", "\\\"") + "\\n\"");
+File.WriteAllText(Output, String.Format(template, KernelName, Namespace, String.Join ("\n", escapedContent)));
+]]>
+      </Code>
+    </Task>
+  </UsingTask>
+  <PropertyGroup>
+    <ContentFilesProjectOutputGroupDependsOn>$(ContentFilesProjectOutputGroupDependsOn);MakeDirsForOpenCLPreprocessor</ContentFilesProjectOutputGroupDependsOn>
+  </PropertyGroup>
+  <Target Name="MakeDirsForOpenCLPreprocessor">
+    <ItemGroup Condition="'@(OpenCLPreprocessor)'!=''">
+      <OpenCLPreprocessorDirsToMake Include="%(OpenCLPreprocessor.OutputFileName)" />
+    </ItemGroup>
+    <MakeDir Directories="@(OpenCLPreprocessorDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_OpenCLPreprocessor"
+    BeforeTargets="$(OpenCLPreprocessorBeforeTargets)"
+    AfterTargets="$(OpenCLPreprocessorAfterTargets)"
+    Condition="'@(OpenCLPreprocessor)' != ''"
+    DependsOnTargets="_SelectedFiles;MakeDirsForOpenCLPreprocessor"
+    Outputs="%(OpenCLPreprocessor.OutputFileName)"
+    Inputs="%(OpenCLPreprocessor.Identity);$(MSBuildProjectFile)">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <OpenCLPreprocessor
+        Remove="@(OpenCLPreprocessor)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <OpenCLPreprocessor_tlog
+        Include="%(OpenCLPreprocessor.OutputFileName)"
+        Condition="'%(OpenCLPreprocessor.OutputFileName)' != '' and '%(OpenCLPreprocessor.ExcludedFromBuild)' != 'true'">
+        <Source>@(OpenCLPreprocessor, '|')</Source>
+      </OpenCLPreprocessor_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(OpenCLPreprocessor.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(OpenCLPreprocessor_tlog)' != '' and '%(OpenCLPreprocessor_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)flex.write.1.tlog"
+      Lines="^%(OpenCLPreprocessor_tlog.Source);@(OpenCLPreprocessor_tlog-&gt;'%(Fullpath)')" />
+    <OpenCLPreprocessorEngine
+      Condition="'%(OpenCLPreprocessor.Identity)' != '' and '%(OpenCLPreprocessor.ExcludedFromBuild)' != 'true'"
+      Input="%(OpenCLPreprocessor.Identity)"
+      Output="%(OpenCLPreprocessor.OutputFileName)"
+      KernelName="%(OpenCLPreprocessor.Filename)"
+      Namespace="%(OpenCLPreprocessor.Namespace)" />
+  </Target>
+</Project>

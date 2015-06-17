@@ -1,0 +1,61 @@
+--- FreeImage.rc.orig	2014-03-03 03:31:22.968786418 -0700
++++ FreeImage.rc	2014-03-03 03:31:29.556703596 -0700
+@@ -6,7 +6,7 @@
+ //
+ // Generated from the TEXTINCLUDE 2 resource.
+ //
+-#include "afxres.h"
++#include "WinResrc.h"
+ 
+ /////////////////////////////////////////////////////////////////////////////
+ #undef APSTUDIO_READONLY_SYMBOLS
+--- Source\OpenEXR\Imath\ImathMatrixAlgo.cpp.orig	2014-03-03 03:18:44.934316201 -0700
++++ Source\OpenEXR\Imath\ImathMatrixAlgo.cpp	2014-03-03 03:20:31.548975874 -0700
+@@ -44,6 +44,7 @@
+ 
+ #include "ImathMatrixAlgo.h"
+ #include <cmath>
++#include <algorithm>
+ 
+ #if defined(OPENEXR_DLL)
+     #define EXPORT_CONST __declspec(dllexport)
+--- Source\OpenEXR\IlmImf\ImfOutputFile.cpp.orig	2014-03-03 03:26:16.520638993 -0700
++++ Source\OpenEXR\IlmImf\ImfOutputFile.cpp	2014-03-03 03:26:27.552500303 -0700
+@@ -58,6 +58,7 @@
+ #include <vector>
+ #include <fstream>
+ #include <assert.h>
++#include <algorithm>
+ 
+ 
+ namespace Imf {
+--- Source\OpenEXR\IlmImf\ImfScanLineInputFile.cpp.orig	2014-03-03 03:19:03.186086746 -0700
++++ Source\OpenEXR\IlmImf\ImfScanLineInputFile.cpp	2014-03-03 03:19:58.509391238 -0700
+@@ -56,6 +56,7 @@
+ #include <string>
+ #include <vector>
+ #include <assert.h>
++#include <algorithm>
+ 
+ 
+ namespace Imf {
+--- Source\OpenEXR\IlmImf\ImfTiledMisc.cpp.orig	2014-03-03 03:19:12.945964047 -0700
++++ Source\OpenEXR\IlmImf\ImfTiledMisc.cpp	2014-03-03 03:20:12.173219460 -0700
+@@ -43,6 +43,7 @@
+ #include "Iex.h"
+ #include <ImfMisc.h>
+ #include <ImfChannelList.h>
++#include <algorithm>
+ 
+ 
+ namespace Imf {
+--- Source\OpenEXR\IlmImf\ImfTiledOutputFile.cpp.orig	2014-03-03 03:19:22.273846780 -0700
++++ Source\OpenEXR\IlmImf\ImfTiledOutputFile.cpp	2014-03-03 03:20:25.997045671 -0700
+@@ -63,6 +63,7 @@
+ #include <fstream>
+ #include <assert.h>
+ #include <map>
++#include <algorithm>
+ 
+ 
+ namespace Imf {
