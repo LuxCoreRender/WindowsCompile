@@ -78,7 +78,7 @@ set LUXBLEND_DIR=luxblend
 set LUXBLEND_REPO=luxblend25
 if not exist %LUXBLEND_DIR% (
   echo Pulling a fresh copy of the repository
-  hg clone http://src.luxrender.net/%LUXBLEND_REPO% %LUXBLEND_DIR%
+  hg clone https://bitbucket.org/luxrender/%LUXBLEND_REPO% %LUXBLEND_DIR%
 ) else (
   echo Updating LuxBlend with the changes from the server repository
   pushd %LUXBLEND_DIR%
