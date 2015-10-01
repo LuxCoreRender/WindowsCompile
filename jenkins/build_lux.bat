@@ -65,7 +65,7 @@ set INSTALLER_SRC=%INSTALLER_ROOT%\Source\Files
 set PYLUX_DIR=PyLux
 
 if not exist %INSTALLER_ROOT% (
-  hg clone http://src.luxrender.net/%INSTALLER_ROOT% %INSTALLER_ROOT%
+  hg clone https://bitbucket.org/luxrender/%INSTALLER_ROOT% %INSTALLER_ROOT%
 )
 
 pushd %INSTALLER_ROOT%
