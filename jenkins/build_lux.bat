@@ -39,7 +39,7 @@ if exist %INSTALLER_DIR% (
   cd %INSTALLER_DIR%
   hg pull -u
 ) else (
-  hg clone http://src.luxrender.net/windows_installer %INSTALLER_DIR%
+  hg clone http://bitbucket.org/luxrender/windows_installer %INSTALLER_DIR%
 )
 
 echo -------------------------------------------------------------
