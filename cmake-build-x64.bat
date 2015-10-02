@@ -59,10 +59,12 @@ for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
 set CMAKE_GENERATOR="Visual Studio 12 2013"
+set CMAKE_TOOLSET=-T v120_xp
 if "%CPU_PLATFORM%"=="x64" (
   set CMAKE_PLATFORM=-A %CPU_PLATFORM%
 ) else (
   set CMAKE_PLATFORM=
+  set CMAKE_TOOLSET=
 )
 
 if %CMAKE_VN_MAJOR%==2 (
@@ -94,7 +96,7 @@ if %DISABLE_OPENCL% EQU 1 (
   )
 )
 
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=RELEASE %OCL_OPTION%
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=RELEASE %OCL_OPTION%
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:12.0  /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=Release" /clp:ErrorsOnly
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
