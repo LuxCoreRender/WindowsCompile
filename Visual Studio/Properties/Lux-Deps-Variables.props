@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LUX_DEPENDENCIES_PLATFORM_LIBS>$(LUX_DEPENDENCIES_PLATFORM_CONFIG_ROOT)\lib</LUX_DEPENDENCIES_PLATFORM_LIBS>
+    <LUX_DEPENDENCIES_INCLUDE>$(LUX_DEPENDENCIES_ROOT)\include</LUX_DEPENDENCIES_INCLUDE>
+    <LUX_BOOST_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Boost</LUX_BOOST_INCLUDE_ROOT>
+    <LUX_BOOST_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_BOOST_LIBS_ROOT>
+    <LUX_FFTW_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)</LUX_FFTW_INCLUDE_ROOT>
+    <LUX_FFTW_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_FFTW_LIBS_ROOT>
+    <LUX_FREEGLUT_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)</LUX_FREEGLUT_INCLUDE_ROOT>
+    <LUX_FREEGLUT_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_FREEGLUT_LIBS_ROOT>
+    <LUX_FREEIMAGE_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)</LUX_FREEIMAGE_INCLUDE_ROOT>
+    <LUX_FREEIMAGE_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_FREEIMAGE_LIBS_ROOT>
+    <LUX_OIIO_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)</LUX_OIIO_INCLUDE_ROOT>
+    <LUX_OIIO_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_OIIO_LIBS_ROOT>
+    <LUX_QT_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Qt\include</LUX_QT_INCLUDE_ROOT>
+    <LUX_QT_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_QT_LIBS_ROOT>
+    <LUX_QT_BINS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_QT_BINS_ROOT>
+    <LUX_PYTHON_INCLUDE_ROOT>$(LUX_DEPENDENCIES_INCLUDE)\Python3</LUX_PYTHON_INCLUDE_ROOT>
+    <LUX_PYTHON_LIBS_ROOT>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</LUX_PYTHON_LIBS_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>Lux-Deps-Variables</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_DEPENDENCIES_PLATFORM_LIBS">
+      <Value>$(LUX_DEPENDENCIES_PLATFORM_LIBS)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_DEPENDENCIES_INCLUDE">
+      <Value>$(LUX_DEPENDENCIES_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_BOOST_INCLUDE_ROOT">
+      <Value>$(LUX_BOOST_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_BOOST_LIBS_ROOT">
+      <Value>$(LUX_BOOST_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FFTW_INCLUDE_ROOT">
+      <Value>$(LUX_FFTW_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FFTW_LIBS_ROOT">
+      <Value>$(LUX_FFTW_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FREEGLUT_INCLUDE_ROOT">
+      <Value>$(LUX_FREEGLUT_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FREEGLUT_LIBS_ROOT">
+      <Value>$(LUX_FREEGLUT_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FREEIMAGE_INCLUDE_ROOT">
+      <Value>$(LUX_FREEIMAGE_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_FREEIMAGE_LIBS_ROOT">
+      <Value>$(LUX_FREEIMAGE_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OIIO_INCLUDE_ROOT">
+      <Value>$(LUX_OIIO_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OIIO_LIBS_ROOT">
+      <Value>$(LUX_OIIO_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_INCLUDE_ROOT">
+      <Value>$(LUX_QT_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_LIBS_ROOT">
+      <Value>$(LUX_QT_LIBS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_QT_BINS_ROOT">
+      <Value>$(LUX_QT_BINS_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_PYTHON_INCLUDE_ROOT">
+      <Value>$(LUX_PYTHON_INCLUDE_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_PYTHON_LIBS_ROOT">
+      <Value>$(LUX_PYTHON_LIBS_ROOT)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

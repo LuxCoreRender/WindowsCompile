@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(FlexBeforeTargets)' == '' and '$(FlexAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <FlexBeforeTargets>ClCompile</FlexBeforeTargets>
+    <FlexAfterTargets>CustomBuild</FlexAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Flex>
+      <OutputFileName>$(IntDir)%(Filename).c</OutputFileName>
+      <WinCompat>True</WinCompat>
+      <NoUnistd>False</NoUnistd>
+      <Reentrant>False</Reentrant>
+      <CaseInsensitive>False</CaseInsensitive>
+      <CompatibilityMode>0</CompatibilityMode>
+      <Batch>False</Batch>
+      <Bits>0</Bits>
+      <Stack>False</Stack>
+      <Stdinit>False</Stdinit>
+      <Align>False</Align>
+      <Compression>3</Compression>
+      <ScannerTableType>0</ScannerTableType>
+      <BypassStdio>False</BypassStdio>
+      <CommandLineTemplate>"$(SolutionDir)..\support\bin\win_flex.exe" [AllOptions] [AdditionalOptions]</CommandLineTemplate>
+      <ExecutionDescription>%(Filename)%(Extension)</ExecutionDescription>
+    </Flex>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2014-08-09 22:23:56.000000000 -0600
++++ CMakeLists.txt	2014-08-22 23:48:22.000000000 -0600
+@@ -162,7 +162,7 @@
+ IF (NAMESPACE_VERSIONING)
+   SET ( OPENEXR_LIBSUFFIX "-${OPENEXR_VERSION_API}" )
+   # assume same NAMESPACE_VERSION setting for IlmBase for now
+-  SET ( ILMBASE_LIBSUFFIX "-${OPENEXR_VERSION_API}" )
++  #  SET ( ILMBASE_LIBSUFFIX "-${OPENEXR_VERSION_API}" )
+ ENDIF ()
+ 
+ ##########################

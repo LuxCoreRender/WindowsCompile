@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule Name="Bison"
+        PageTemplate="tool"
+        DisplayName="Bison Parser Generator"
+        Order="200">
+    <Rule.DataSource>
+      <DataSource
+        Persistence="ProjectFile"
+        ItemType="Bison" />
+    </Rule.DataSource>
+    <Rule.Categories>
+      <Category
+        Name="General"
+        DisplayName="General" />
+      <Category
+        Name="Output"
+        DisplayName="Output Files" />
+      <Category
+        Name="Command Line"
+        Subtype="CommandLine"
+        DisplayName="Command Line" />
+    </Rule.Categories>
+    <BoolProperty
+      Name="EmulateYacc"
+      Category="General"
+      HelpUrl="https://www.gnu.org/software/bison/manual/html_node/Yacc-Library.html#Yacc-Library"
+      DisplayName="Emulate POSIX Yacc"
+      Description="Include GPL licensed implementations of the yyerror and main functions.     (-y)"
+      Switch="-y" />
+    <DynamicEnumProperty
+      Name="BisonBeforeTargets"
+      Category="General"
+      EnumProvider="Targets"
+      IncludeInCommandLine="False"
+      DisplayName="Execute Before"
+      Description="Specify a target to run Bison before.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^BisonBeforeTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <DynamicEnumProperty
+      Name="BisonAfterTargets"
+      Category="General"
+      EnumProvider="Targets"
+      IncludeInCommandLine="False"
+      DisplayName="Execute After"
+      Description="Specify a target to run Bison after.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^BisonAfterTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <StringProperty
+      Subtype="file" 
+      Name="OutputFileName" 
+      Category="Output" 
+      DisplayName="Output File Name"
+      Description="Specifies a name to override the default output file name.     (-o)"
+      Switch="-o &quot;[value]&quot;">
+      <StringProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="Bison"
+          HasConfigurationCondition="False" />
+      </StringProperty.DataSource>
+    </StringProperty>
+    <StringProperty
+      Subtype="file" 
+      Name="OutputHeaderFileName" 
+      Category="Output" 
+      DisplayName="Output Header File Name"
+      Description="Specifies the file name of the header file to produce.     (--defines)"
+      Switch="--defines=&quot;[value]&quot;">
+      <StringProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="Bison"
+          HasConfigurationCondition="False" />
+      </StringProperty.DataSource>
+    </StringProperty>
+    <StringProperty
+      Name="ExecutionDescription"
+      DisplayName="Execution Description"
+      IncludeInCommandLine="False"
+      Visible="False" />
+    <StringProperty
+      Subtype="AdditionalOptions"
+      Name="AdditionalOptions"
+      DisplayName="Additional Options"
+      Description="Additional Options"
+      Category="Command Line" />
+    <StringProperty
+      Name="CommandLineTemplate"
+      DisplayName="Command Line"
+      IncludeInCommandLine="False"
+      Visible="False" />
+    <StringProperty
+      Name="Inputs"
+      Category="Command Line"
+      IsRequired="True" />
+    <StringListProperty
+      Name="Outputs"
+      DisplayName="Outputs"
+      IncludeInCommandLine="False"
+      Visible="False" />
+  </Rule>
+  <ItemType
+   Name="Bison"
+   DisplayName="Bison Parser Generator" />
+  <FileExtension
+    Name="*.y"
+    ContentType="Bison" />
+  <ContentType
+    Name="Bison"
+    DisplayName="Bison Parser Generator"
+    ItemType="Bison" />
+</ProjectSchemaDefinitions>
