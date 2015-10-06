@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule Name="Flex"
+        PageTemplate="tool"
+        DisplayName="Fast Lexical Analyzer Generator"
+        Order="200">
+    <Rule.DataSource>
+      <DataSource
+        Persistence="ProjectFile"
+        ItemType="Flex" />
+    </Rule.DataSource>
+    <Rule.Categories>
+      <Category
+        Name="General"
+        DisplayName="General" />
+      <Category
+        Name="CodeGeneration"
+        DisplayName="Code Generation" />
+      <Category
+        Name="ScannerBehavior"
+        DisplayName="Scanner Behavior" />
+      <Category
+        Name="TableCompression"
+        DisplayName="Table Compression" />
+      <Category
+        Name="Output"
+        DisplayName="Output Files" />
+      <Category
+        Name="Command Line"
+        Subtype="CommandLine"
+        DisplayName="Command Line" />
+    </Rule.Categories>
+    <DynamicEnumProperty
+      Name="FlexBeforeTargets"
+      Category="General"
+      EnumProvider="Targets"
+      IncludeInCommandLine="False"
+      DisplayName="Execute Before"
+      Description="Specify a target to run Flex before.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^FlexBeforeTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <DynamicEnumProperty
+      Name="FlexAfterTargets"
+      Category="General"
+      EnumProvider="Targets"
+      IncludeInCommandLine="False"
+      DisplayName="Execute After"
+      Description="Specify a target to run Flex after.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^FlexAfterTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <BoolProperty
+      Name="WinCompat"
+      Category="CodeGeneration" 
+      DisplayName="Enable Windows Compatibility"
+      Description="Use &lt;io.h&gt; instead of &lt;unistd.h&gt; and _isatty and _fileno functions.     (--wincompat)"
+      Switch="--wincompat">
+      <BoolProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="Flex"
+          HasConfigurationCondition="False" />
+      </BoolProperty.DataSource>
+    </BoolProperty>
+    <BoolProperty
+      Name="NoUnistd"
+      Category="CodeGeneration" 
+      DisplayName="No unistd.h"
+      Description="Do not use &lt;unistd.h&gt;.     (--nounistd)"
+      Switch="--nounistd" />
+    <BoolProperty
+      Name="Reentrant"
+      Category="CodeGeneration" 
+      DisplayName="Reentrant"
+      Description="Generate a reentrant C scanner.     (--reentrant)"
+      Switch="--reentrant" />
+    <BoolProperty
+      Name="CaseInsensitive"
+      Category="ScannerBehavior"
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="Case Insensitive"
+      Description="Generate case insensitive scanner.     (-i)"
+      Switch="-i" />
+    <EnumProperty
+      Name="CompatibilityMode"
+      Category="ScannerBehavior"
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="Compatibility Mode"
+      Description="Enable compatibility mode.     (None, -l, -X)">
+      <EnumValue
+        Name="0"
+        DisplayName="None" />
+      <EnumValue
+        Name="1"
+        DisplayName="lex"
+        Switch="-l" />
+      <EnumValue
+        Name="2"
+        DisplayName="POSIX"
+        Switch="-X" />
+    </EnumProperty>
+    <BoolProperty
+      Name="Batch"
+      Category="ScannerBehavior" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="Enable Batch Scanner"
+      Description="Generate a non-interactive scanner for faster performance.     (-B)"
+      Switch="-B" />
+    <EnumProperty
+      Name="Bits"
+      Category="ScannerBehavior"
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="7 or 8 bit"
+      Description="Generate 7 or 8 bit scanner.     (Default, -7, -8)">
+      <EnumValue
+        Name="0"
+        DisplayName="Default" />
+      <EnumValue
+        Name="1"
+        DisplayName="7-bit"
+        Switch="-7" />
+      <EnumValue
+        Name="2"
+        DisplayName="8-bit"
+        Switch="-8" />
+    </EnumProperty>
+    <BoolProperty
+      Name="Stack"
+      Category="ScannerBehavior" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="Enable Start Condition Stacks"
+      Description="Enable the use of start condition stacks.     (--stack)"
+      Switch="--stack" />
+    <BoolProperty
+      Name="Stdinit"
+      Category="ScannerBehavior" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-Affecting-Scanner-Behavior.html#Options-Affecting-Scanner-Behavior"
+      DisplayName="Initialize I/O to stdio."
+      Description="Initialize I/O to stdio.     (--stdinit)"
+      Switch="--stdinit" />
+    <BoolProperty
+      Name="Align"
+      Category="TableCompression" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-for-Scanner-Speed-and-Size.html#Options-for-Scanner-Speed-and-Size"
+      DisplayName="Align Elements"
+      Description="Trade off larger tables in the generated scanner for faster performance.     (-Ca)"
+      Switch="-Ca" />
+    <EnumProperty
+      Name="Compression"
+      Category="TableCompression" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-for-Scanner-Speed-and-Size.html#Options-for-Scanner-Speed-and-Size"
+      DisplayName="Compression"
+      Description="Specifies the type of compression to use.     (-C, -Ce, -Cm, -Cem)">
+      <EnumValue
+        Name="0"
+        DisplayName="Compression Only"
+        Switch="-C" />
+      <EnumValue
+        Name="1"
+        DisplayName="Compression &amp; Equivalence Classes"
+        Switch="-Ce" />
+      <EnumValue
+        Name="2"
+        DisplayName="Compression &amp; Meta Equivalence Classes"
+        Switch="-Cm" />
+      <EnumValue
+        Name="3"
+        DisplayName="Compression &amp; Both Equivalence Classes"
+        Switch="-Cem" />
+    </EnumProperty>
+    <EnumProperty
+      Name="ScannerTableType"
+      Category="TableCompression" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-for-Scanner-Speed-and-Size.html#Options-for-Scanner-Speed-and-Size"
+      DisplayName="Scanner Table"
+      Description="Specifies the type of scanner table to use.     (Default, -Cf, -CF)">
+      <EnumValue
+        Name="0"
+        DisplayName="Default" />
+      <EnumValue
+        Name="1"
+        DisplayName="Full Scanner Tables"
+        Switch="-Cf" />
+      <EnumValue
+        Name="2"
+        DisplayName="Fast Scanner Tables"
+        Switch="-CF" />
+    </EnumProperty>
+    <BoolProperty
+      Name="BypassStdio"
+      Category="TableCompression" 
+      HelpUrl="http://flex.sourceforge.net/manual/Options-for-Scanner-Speed-and-Size.html#Options-for-Scanner-Speed-and-Size"
+      DisplayName="Bypass stdio"
+      Description="Instead of calling fread() or getc(), use the read() system call.     (-CF)"
+      Switch="-CF" />
+    <StringProperty
+      Subtype="file" 
+      Name="OutputFileName" 
+      Category="Output" 
+      DisplayName="Output File Name"
+      Description="Specifies a name to override the default output file name.     (-o)"
+      Switch="-o &quot;[value]&quot;">
+      <StringProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="Flex"
+          HasConfigurationCondition="False" />
+      </StringProperty.DataSource>
+    </StringProperty>
+    <StringProperty
+      Name="ExecutionDescription"
+      DisplayName="Execution Description"
+      IncludeInCommandLine="False"
+      Visible="False" />
+    <StringProperty
+      Subtype="AdditionalOptions"
+      Name="AdditionalOptions"
+      DisplayName="Additional Options"
+      Description="Additional Options"
+      Category="Command Line" />
+    <StringProperty
+      Name="CommandLineTemplate"
+      DisplayName="Command Line"
+      IncludeInCommandLine="False"
+      Visible="False" />
+    <StringProperty
+      Name="Inputs"
+      Category="Command Line"
+      IsRequired="True" />
+    <StringListProperty
+      Name="Outputs"
+      DisplayName="Outputs"
+      IncludeInCommandLine="False"
+      Visible="False" />
+  </Rule>
+  <ItemType
+   Name="Flex"
+   DisplayName="Fast Lexical Analyzer Generator" />
+  <FileExtension
+    Name="*.l"
+    ContentType="Flex" />
+  <ContentType
+    Name="Flex"
+    DisplayName="Fast Lexical Analyzer Generator"
+    ItemType="Flex" />
+</ProjectSchemaDefinitions>

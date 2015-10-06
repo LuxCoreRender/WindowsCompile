@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LUX_OIIO_LIB_PREFIX>OpenImageIO</LUX_OIIO_LIB_PREFIX>
+    <LUX_OIIO_LIB>$(LUX_OIIO_LIB_PREFIX).lib</LUX_OIIO_LIB>
+    <LUX_OIIO_DLL>$(LUX_OIIO_LIB_PREFIX).dll</LUX_OIIO_DLL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CustomBuildAfterTargets>Build</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="LUX_OIIO_LIB_PREFIX">
+      <Value>$(LUX_OIIO_LIB_PREFIX)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OIIO_LIB">
+      <Value>$(LUX_OIIO_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUX_OIIO_DLL">
+      <Value>$(LUX_OIIO_DLL)</Value>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LUX_OIIO_INCLUDE_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(LUX_OIIO_LIBS_ROOT);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(LUX_OIIO_LIB);zlib1.lib;openjpeg.lib;libpng.lib;libtiff.lib;jpeg.lib;Half.lib;Iex.lib;IlmImf.lib;IlmThread.lib;IMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>copy /y "$(LUX_OIIO_LIBS_ROOT)\$(LUX_OIIO_DLL)" "$(OutDir)" > nul
+if ERRORLEVEL 1 (
+  echo Error copying "$(LUX_OIIO_LIBS_ROOT)\$(LUX_OIIO_DLL)" to "$(OutDir)"
+  exit /b 1
+)
+%(Command)
+</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(OutDir)$(LUX_OIIO_DLL);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(LUX_OIIO_LIBS_ROOT)\$(LUX_OIIO_DLL);%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+</Project>

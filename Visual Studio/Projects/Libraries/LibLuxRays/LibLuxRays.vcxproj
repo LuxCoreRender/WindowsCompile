@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C51A362C-FECC-4889-99E2-E2E5E2A40CE9}</ProjectGuid>
+    <RootNamespace>LibLuxRays</RootNamespace>
+    <ProjectName>LibLuxRays</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\BuildRules\OpenCLPreprocessor.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-NoOpenCL.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <OpenCLPreprocessor>
+      <Namespace>luxrays</Namespace>
+    </OpenCLPreprocessor>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvhaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\embreeaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvhaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvhaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvhaccel.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\cfg.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\accelerator.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spd.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\blackbodyspd.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\data\rgbD65_32.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\data\rgbE_32.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\data\xyzbasis.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\equalspd.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\frequencyspd.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\gaussianspd.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\irregular.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\regular.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\rgbillum.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spds\rgbrefl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\spectrumwavelengths.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\color\swcspectrum.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\context.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\dataset.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\device.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\exttrianglemesh.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bsphere.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix3x3.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4op.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\raybuffer.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\uv.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_normal.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\intersectiondevice.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\ocldevice.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\oclintersectiondevice.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\utils.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\core\virtualdevice.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\kernels\kernels.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\luxrays.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\atomic.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\cyhair\cyHairFile.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\exportdefs.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\mc.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\mcdistribution.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\memory.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\ocl.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\ply\rply.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\properties.h" />
+    <ClInclude Include="..\..\..\..\..\luxrays\include\luxrays\utils\threadsafe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\bvhaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\embreeaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\mbvhaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\mqbvhaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\accelerators\qbvhaccel.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\accelerator.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\color.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spd.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\blackbodyspd.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\equalspd.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\frequencyspd.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\gaussianspd.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\irregular.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\regular.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\rgbillum.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spds\rgbrefl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\spectrumwavelengths.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\color\swcspectrum.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\context.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\dataset.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\device.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\epsilon.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\exttrianglemesh.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\bbox.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\matrix4x4.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\motionsystem.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\quaternion.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\geometry\transform.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\core\trianglemesh.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\idevices\nativeidevice.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\idevices\openclidevice.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\idevices\virtualidevice.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\mc.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\ocl.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\ply\rply.cpp" />
+    <ClCompile Include="..\..\..\..\..\luxrays\src\luxrays\utils\properties.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bbox_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\bvh_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\color_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\epsilon_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\epsilon_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\frame_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\frame_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\luxrays_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\matrix4x4_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\matrix4x4_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mbvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mc_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\motionsystem_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\mqbvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\normal_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\point_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\qbvh_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\quaternion_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\randomgen_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\ray_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\ray_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\transform_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\transform_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\trianglemesh_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\trianglemesh_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\triangle_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\triangle_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\utils_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\uv_types_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\vector_funcs_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LibLuxRays\Generated\vector_types_kernel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\bvh_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mbvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\mqbvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\accelerators\qbvh_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\color\color_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\epsilon_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\bbox_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\frame_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\matrix4x4_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\motionsystem_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\normal_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\point_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\quaternion_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\ray_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\transform_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\triangle_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\uv_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\geometry\vector_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\randomgen_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\trianglemesh_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\core\utils_funcs.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\luxrays_types.cl" />
+    <OpenCLPreprocessor Include="..\..\..\..\..\luxrays\include\luxrays\utils\mc_funcs.cl" />
+    <None Include="..\..\..\..\..\luxrays\include\luxrays\cfg.h.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\BuildRules\OpenCLPreprocessor.targets" />
+  </ImportGroup>
+</Project>

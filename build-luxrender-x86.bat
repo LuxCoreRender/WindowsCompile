@@ -5,44 +5,22 @@ echo **************************************************************************
 echo * Checking environment                                                   *
 echo **************************************************************************
 
-IF EXIST build-vars.bat (
-	call build-vars.bat
-)
+IF EXIST build-vars.bat CALL build-vars.bat
 
-IF NOT EXIST %LUX_X86_PYTHON3_ROOT% (
-	echo.
-	echo %%LUX_X86_PYTHON3_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_BOOST_ROOT% (
-	echo.
-	echo %%LUX_X86_BOOST_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_QT_ROOT% (
-	echo.
-	echo %%LUX_X86_QT_ROOT%% not valid! Aborting.
-	exit /b -1
-)
-IF NOT EXIST %LUX_X86_FREEIMAGE_ROOT% (
-	echo.
-	echo %%LUX_X86_FREEIMAGE_ROOT%% not valid! Aborting.
-	exit /b -1
-)
+CALL:checkEnvVarValid "LUX_WINDOWS_DEPS_ROOT"  || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_BOOST_ROOT"     || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X86_QT_ROOT"        || EXIT /b -1
 
 set MSBUILD_VERSION=
 FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION=%%a.%%b
-IF "%MSBUILD_VERSION%" NEQ "4.0" (
+IF "%MSBUILD_VERSION%" NEQ "12.0" (
 	echo.
-	echo Could not find 'msbuild' version 4.0.
-	echo Please run this script from the Visual Studio 2010 Command Prompt.
-	exit /b -1
+	echo Could not find 'msbuild' version 12.0.
+	echo Please run this script from the Visual Studio 2013 Command Prompt.
+	EXIT /b -1
 )
 
-
 echo Environment OK.
-
-
 
 echo.
 echo **************************************************************************
@@ -60,10 +38,17 @@ echo 0: No (default)
 echo 1: Yes
 set BUILD_DEBUG=0
 set /P BUILD_DEBUG="Selection? "
-IF %BUILD_DEBUG% EQU 0 GOTO LuxRender 
-IF %BUILD_DEBUG% EQU 1 GOTO LuxRender
+IF %BUILD_DEBUG% EQU 0 GOTO SetConfiguration 
+IF %BUILD_DEBUG% EQU 1 GOTO SetConfiguration
 echo Invalid choice
 GOTO DebugChoice
+
+
+:SetConfiguration
+IF %BUILD_DEBUG% EQU 0 set BUILD_CONFIGURATION=Release
+IF %BUILD_DEBUG% EQU 1 set BUILD_CONFIGURATION=Debug
+
+set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /property:"Platform=Win32" /target:"Clean"
 
 
 :: ****************************************************************************
@@ -74,27 +59,17 @@ echo.
 echo **************************************************************************
 echo * Building LuxRender                                                     *
 echo **************************************************************************
-cd /d %LUX_WINDOWS_BUILD_ROOT%
-IF %BUILD_DEBUG% EQU 1 (
-	msbuild /m /property:"Configuration=Debug" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
-	msbuild /m /property:"Configuration=Debug SSE1" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
-)
+cd /d %LUX_WINDOWS_BUILD_ROOT%\Visual Studio
 
-msbuild /m /property:"Configuration=Release" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
-msbuild /m /property:"Configuration=Release SSE1" /property:"Platform=Win32" /target:liblux;luxrender;luxconsole;luxcomp;luxmerger;pylux2;pylux3 lux.sln
-
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:UIs\LuxRender;UIs\LuxConsole;Tools\LuxComp;Tools\LuxMerger;Tools\LuxVR;Libraries\LibPyLux Lux.sln
 
 
 :: ****************************************************************************
 :: *********************************** Install ********************************
 :: ****************************************************************************
-
 cd /d %LUX_WINDOWS_BUILD_ROOT%
 
-IF EXIST ./install-x86.bat (
-	call install-x86.bat
-)
-
+IF EXIST install-x86.bat CALL install-x86.bat
 
 
 :postLuxRender
@@ -111,3 +86,27 @@ echo *        Building Completed                                              *
 echo *                                                                        *
 echo **************************************************************************
 echo **************************************************************************
+
+:: Functions below this point
+GOTO:EOF
+
+:checkEnvVarValid
+:: Checks whether an environment variable is set to an existing directory
+:: %1 - Environment variable to check
+
+SETLOCAL
+CALL set ENVVAR=%%%~1%%
+IF "%ENVVAR%" == "" (
+	echo.
+	echo %%%~1%% not set! Aborting.
+	EXIT /b 1
+)
+
+IF NOT EXIST "%ENVVAR%" (
+	echo.
+	echo %~1="%ENVVAR%"
+	echo but "%ENVVAR%" does not exist! Aborting.
+	EXIT /b 1
+)
+ENDLOCAL
+GOTO:EOF

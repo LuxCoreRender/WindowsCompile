@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|Win32">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release NoOpenCL|x64">
+      <Configuration>Release NoOpenCL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7639E1EE-B211-4CC6-9CFD-6D8D1BC109A8}</ProjectGuid>
+    <RootNamespace>LuxRender</RootNamespace>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\BuildRules\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Debug.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-32Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-AMD-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-Intel-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenCL-NVIDIA-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-User-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-64Bit-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Release.props" />
+    <Import Project="..\..\..\Properties\Lux-Deps-Variables.props" />
+    <Import Project="..\..\..\Properties\Lux-Common.props" />
+    <Import Project="..\..\..\Properties\Lux-Boost.props" />
+    <Import Project="..\..\..\Properties\Lux-OpenImageIO.props" />
+    <Import Project="..\..\..\Properties\Lux-FreeImage.props" />
+    <Import Project="..\..\..\Properties\Lux-FFTW.props" />
+    <Import Project="..\..\..\Properties\Lux-QT.props" />
+    <Import Project="..\..\..\Properties\Lux-LibLux.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile />
+    <Link />
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|Win32'">
+    <ClCompile />
+    <Link />
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+    <Link />
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release NoOpenCL|x64'">
+    <ClCompile />
+    <Link />
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\lux\console\commandline.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\aboutdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\advancedinfowidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\colorspacewidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\gammawidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\guiutil.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\histogramview.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\histogramwidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\lenseffectswidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\lightgroupwidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\luxapp.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\mainwindow.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\noisereductionwidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\panewidget.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\queue.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\renderview.cpp" />
+    <ClCompile Include="..\..\..\..\..\lux\qtgui\tonemapwidget.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\aboutdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\advancedinfowidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\batchprocessdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\colorspacewidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\gammawidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\histogramview_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\histogramwidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\icons_qrc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\images_qrc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\lenseffectswidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\lightgroupwidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\luxapp_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\mainwindow_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\noisereductionwidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\openexroptionsdialog_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\panewidget_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\queue_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\renderview_moc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\splash_qrc.cpp" />
+    <ClCompile Include="..\..\..\..\Build\LuxRender\Generated\tonemapwidget_moc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\lux\console\commandline.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_aboutdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_advancedinfo.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_batchprocessdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_colorspace.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_gamma.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_histogram.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_lenseffects.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_lightgroup.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_luxrender.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_noisereduction.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_openexroptionsdialog.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_pane.h" />
+    <ClInclude Include="..\..\..\..\Build\LuxRender\Generated\ui_tonemap.h" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\aboutdialog.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\advancedinfowidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\colorspacewidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\gammawidget.hxx" />
+    <ClInclude Include="..\..\..\..\..\lux\qtgui\guiutil.h" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\histogramview.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\histogramwidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\lenseffectswidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\lightgroupwidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\luxapp.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\mainwindow.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\noisereductionwidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\panewidget.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\queue.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\renderview.hxx" />
+    <QtMetaObject Include="..\..\..\..\..\lux\qtgui\tonemapwidget.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\advancedicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\analogclockicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\arrowicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\clipboardicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\clipboardicon_alpha.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\collapsedicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\colorspaceicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\erroricon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\expandedicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\gammaicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\histogramicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\imageicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\lenseffectsicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\lightgroupsicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\logtabicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\luxrender.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\mappainticon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\minusicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\networktabicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\noisereductionicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\pauseicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\plusicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\powerofficon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\poweronicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\queuetabicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\rendertabicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\resolutionicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\resumeicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\stopicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\tonemapicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\viewicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\warningicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\icons\zoomicon.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\images\checkerboard.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\images\colortemp.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\images\luxlogo_bg.png" />
+    <Image Include="..\..\..\..\..\lux\qtgui\images\splash.png" />
+    <Image Include="..\..\..\Resources\lux.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\Resources\core.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\LibLux\LibLux.vcxproj">
+      <Project>{e943c01b-e88b-4aa3-ade8-d3fde89a1393}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\aboutdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\advancedinfo.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\batchprocessdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\colorspace.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\gamma.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\histogram.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\lenseffects.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\lightgroup.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\luxrender.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\noisereduction.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\openexroptionsdialog.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\pane.ui" />
+    <QtDesignerUI Include="..\..\..\..\..\lux\qtgui\tonemap.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\icons.qrc">
+      <AdditionalDependencies>%(RootDir)%(Directory)\icons\advancedicon.png;%(RootDir)%(Directory)\icons\analogclockicon.png;%(RootDir)%(Directory)\icons\arrowicon.png;%(RootDir)%(Directory)\icons\clipboardicon.png;%(RootDir)%(Directory)\icons\clipboardicon_alpha.png;%(RootDir)%(Directory)\icons\collapsedicon.png;%(RootDir)%(Directory)\icons\colorspaceicon.png;%(RootDir)%(Directory)\icons\erroricon.png;%(RootDir)%(Directory)\icons\expandedicon.png;%(RootDir)%(Directory)\icons\gammaicon.png;%(RootDir)%(Directory)\icons\histogramicon.png;%(RootDir)%(Directory)\icons\imageicon.png;%(RootDir)%(Directory)\icons\lenseffectsicon.png;%(RootDir)%(Directory)\icons\lightgroupsicon.png;%(RootDir)%(Directory)\icons\logtabicon.png;%(RootDir)%(Directory)\icons\luxrender.png;%(RootDir)%(Directory)\icons\mappainticon.png;%(RootDir)%(Directory)\icons\minusicon.png;%(RootDir)%(Directory)\icons\networktabicon.png;%(RootDir)%(Directory)\icons\noisereductionicon.png;%(RootDir)%(Directory)\icons\pauseicon.png;%(RootDir)%(Directory)\icons\plusicon.png;%(RootDir)%(Directory)\icons\powerofficon.png;%(RootDir)%(Directory)\icons\poweronicon.png;%(RootDir)%(Directory)\icons\queuetabicon.png;%(RootDir)%(Directory)\icons\rendertabicon.png;%(RootDir)%(Directory)\icons\resolutionicon.png;%(RootDir)%(Directory)\icons\resumeicon.png;%(RootDir)%(Directory)\icons\stopicon.png;%(RootDir)%(Directory)\icons\tonemapicon.png;%(RootDir)%(Directory)\icons\viewicon.png;%(RootDir)%(Directory)\icons\warningicon.png;%(RootDir)%(Directory)\icons\zoomicon.png;%(AdditionalDependencies)</AdditionalDependencies>
+    </QtResource>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\images.qrc">
+      <AdditionalDependencies>%(RootDir)%(Directory)\images\checkerboard.png;%(RootDir)%(Directory)\images\colortemp.png;%(RootDir)%(Directory)\images\luxlogo_bg.png;%(AdditionalDependencies)</AdditionalDependencies>
+    </QtResource>
+    <QtResource Include="..\..\..\..\..\lux\qtgui\splash.qrc">
+      <AdditionalDependencies>%(RootDir)%(Directory)\images\splash.png;%(AdditionalDependencies)</AdditionalDependencies>
+    </QtResource>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\BuildRules\Qt.targets" />
+  </ImportGroup>
+</Project>

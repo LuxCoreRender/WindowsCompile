@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule Name="OpenCLPreprocessor"
+        PageTemplate="tool"
+        DisplayName="OpenCL Preprocessor"
+        Order="200">
+    <Rule.DataSource>
+      <DataSource
+        Persistence="ProjectFile"
+        ItemType="OpenCLPreprocessor" />
+    </Rule.DataSource>
+    <Rule.Categories>
+      <Category
+        Name="General"
+        DisplayName="General" />
+      <Category
+        Name="Output"
+        DisplayName="Output Files" />
+    </Rule.Categories>
+    <DynamicEnumProperty
+      Name="OpenCLPreprocessorBeforeTargets"
+      Category="General"
+      EnumProvider="Targets"
+      DisplayName="Execute Before"
+      Description="Specify a target to run OpenCLPreprocessor before.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^OpenCLPreprocessorBeforeTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <DynamicEnumProperty
+      Name="OpenCLPreprocessorAfterTargets"
+      Category="General"
+      EnumProvider="Targets"
+      DisplayName="Execute After"
+      Description="Specify a target to run OpenCLPreprocessor after.">
+      <DynamicEnumProperty.ProviderSettings>
+        <NameValuePair
+          Name="Exclude"
+          Value="^OpenCLPreprocessorAfterTargets|^Compute" />
+      </DynamicEnumProperty.ProviderSettings>
+    </DynamicEnumProperty>
+    <StringProperty
+      Name="Namespace" 
+      Category="General" 
+      DisplayName="Namespace"
+      Description="Specifies the namespace to use when generating source">
+      <StringProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="OpenCLPreprocessor"
+          HasConfigurationCondition="False" />
+      </StringProperty.DataSource>
+    </StringProperty>
+    <StringProperty
+      Subtype="file" 
+      Name="OutputFileName" 
+      Category="Output" 
+      DisplayName="Output File Name"
+      Description="Specifies a name to override the default output file name.">
+      <StringProperty.DataSource>
+        <DataSource
+          Persistence="ProjectFile"
+          ItemType="OpenCLPreprocessor"
+          HasConfigurationCondition="False" />
+      </StringProperty.DataSource>
+    </StringProperty>
+    <StringProperty
+      Name="ExecutionDescription"
+      DisplayName="Execution Description"
+      Visible="False" />
+    <StringListProperty
+      Name="Outputs"
+      DisplayName="Outputs"
+      Visible="False" />
+  </Rule>
+  <ItemType
+   Name="OpenCLPreprocessor"
+   DisplayName="OpenCL Preprocessor" />
+  <FileExtension
+    Name="*.cl"
+    ContentType="OpenCLPreprocessor" />
+  <ContentType
+    Name="OpenCLPreprocessor"
+    DisplayName="OpenCL Preprocessor"
+    ItemType="OpenCLPreprocessor" />
+</ProjectSchemaDefinitions>
