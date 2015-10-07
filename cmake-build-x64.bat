@@ -156,7 +156,7 @@ cd /d %LUXRENDER_BUILD_ROOT%
 if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 "%CMAKE%" %CMAKE_OPTS% %LUX_ROOT%
 if ERRORLEVEL 1 goto CMakeError
-
+echo "Compiling the Lux project"
 msbuild %MSBUILD_OPTS% Lux.sln
 
 if ERRORLEVEL 1 goto CMakeError
