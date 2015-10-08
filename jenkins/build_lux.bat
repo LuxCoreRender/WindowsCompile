@@ -35,9 +35,12 @@ set BUILD_TYPE=%BITNESS%_%OCL%
 SET STAGE_DIR=w:\product-deployment\luxbuildno
 SET INSTALLER_DIR=windows_installer
 python "%WORKSPACE%\lux\makeBuildNumber.py" --notime "%WORKSPACE%\lux\core\version.h"
+cd 
+echo Installer dir: %INSTALLER_DIR%
 if exist %INSTALLER_DIR% (
-  cd %INSTALLER_DIR%
+  pushd %INSTALLER_DIR%
   hg pull -u
+  popd 
 ) else (
   hg clone http://bitbucket.org/luxrender/windows_installer %INSTALLER_DIR%
 )
@@ -60,15 +63,10 @@ set LUX_DIR=LuxRender
 set LUXRAYS_DIR=LuxRays
 set DEPS_DIR=windows_deps
 
-set INSTALLER_ROOT=windows_installer
-set INSTALLER_SRC=%INSTALLER_ROOT%\Source\Files
+set INSTALLER_SRC=%INSTALLER_DIR%\Source\Files
 set PYLUX_DIR=PyLux
 
-if not exist %INSTALLER_ROOT% (
-  hg clone https://bitbucket.org/luxrender/%INSTALLER_ROOT% %INSTALLER_ROOT%
-)
-
-pushd %INSTALLER_ROOT%
+pushd %INSTALLER_DIR%
 
 :: Obtain the LuxBlend files
 echo ------------------------------------------------
@@ -115,7 +113,7 @@ popd
 echo ------------------------------------------------
 echo Copying the Visual Studio 2013 redistributable
 echo ------------------------------------------------
-pushd "%WORKSPACE%\%INSTALLER_ROOT%" 
+pushd "%WORKSPACE%\%INSTALLER_DIR%" 
 copy VCPP_Redist\VisualStudio2013\vcredist_%CPU_PLATFORM%.exe Source\Files
 
 ::Luxblend
