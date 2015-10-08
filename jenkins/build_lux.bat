@@ -57,6 +57,7 @@ call cmake-build-x64 /rebuild %BUILD_ARGS%
 echo ------------------------------------------------
 echo Preparing the installer
 echo ------------------------------------------------
+cd %WORKSPACE%
 
 set BUILD_ROOT=windows\Build_CMake
 set LUX_DIR=LuxRender
