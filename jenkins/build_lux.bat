@@ -10,7 +10,7 @@ SET PATH=%PATH:"=%
 set BUILD_ARGS=
 set CPU_PLATFORM=x64
 set BITNESS=64
-set LUX_VERSION=1.5
+set LUX_VERSION=1.6
 set OCL=OpenCL
 set VC_PLATFORM=amd64
 set SETUP_ARGS=--ocl
@@ -100,8 +100,12 @@ copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxcomp.exe"      "%WORKSPACE%\
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxconsole.exe"   "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxmerger.exe"    "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxrender.exe"    "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
-copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxvr.exe"        "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
-copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\Bin\Release\slg4.exe" "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
+if "%OCL%"=="OpenCL" (
+  echo Copying OpenCL-based programs
+  copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\luxvr.exe"        "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
+  copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\Bin\Release\slg4.exe" "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
+  copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\Bin\Release\luxcoreui.exe" "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
+)
 
 if not exist "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%" md "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%"
 pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%"
