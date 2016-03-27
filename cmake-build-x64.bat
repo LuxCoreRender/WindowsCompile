@@ -190,6 +190,7 @@ goto exit
 
 :CMakeError
 echo --- FATAL ERROR RUNNING CMAKE ---
+exit /B 1
 goto exit
 
 :exit
