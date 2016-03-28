@@ -53,6 +53,7 @@ echo -------------------------------------------------------------
 cd "%WORKSPACE%\windows"
 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" %VC_PLATFORM%
 call cmake-build-x64 /rebuild %BUILD_ARGS% 
+if errorlevel 1 exit /b1
 
 echo ------------------------------------------------
 echo Preparing the installer
