@@ -156,6 +156,10 @@ set CMAKE_OPTS=%CMAKE_OPTS% -D LuxRays_HOME=%LUXRAYS_BUILD_ROOT% -D LUXRAYS_INCL
 mkdir %LUXRENDER_BUILD_ROOT%
 cd /d %LUXRENDER_BUILD_ROOT%
 
+echo ========================================================
+echo Building LuxRender
+echo ========================================================
+
 if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 "%CMAKE%" %CMAKE_OPTS% %LUX_ROOT%
 if ERRORLEVEL 1 goto CMakeError
