@@ -117,6 +117,21 @@ copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\pylux.pyd"             .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\lib\Release\pyluxcore.pyd" .
 popd
 
+REM Code signing is done via a script that the user installs in his/her home dir
+REM If the script is not found everything continues normally.
+REM The use of the script allows us to sign the executables without having to manage
+REM certificates and passwords.
+set CODE_SIGNING_BAT=%HOMEDRIVE%%HOMEPATH%\lux-code-signing.bat
+if exist %CODE_SIGNING_BAT%  (
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxrender.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcomp.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxconsole.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxmerger.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxvr.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\slg4.exe"
+  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcoreui.exe"
+)
+
 echo ------------------------------------------------
 echo Copying the Visual Studio 2013 redistributable
 echo ------------------------------------------------
