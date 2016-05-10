@@ -127,9 +127,11 @@ if exist %CODE_SIGNING_BAT%  (
   %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcomp.exe"
   %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxconsole.exe"
   %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxmerger.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxvr.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\slg4.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcoreui.exe"
+  if "%OCL%"=="OpenCL" (
+    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxvr.exe"
+    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\slg4.exe"
+    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcoreui.exe"
+  )
 )
 
 echo ------------------------------------------------
