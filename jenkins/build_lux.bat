@@ -123,14 +123,14 @@ REM The use of the script allows us to sign the executables without having to ma
 REM certificates and passwords.
 set CODE_SIGNING_BAT=%HOMEDRIVE%%HOMEPATH%\lux-code-signing.bat
 if exist %CODE_SIGNING_BAT%  (
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxrender.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcomp.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxconsole.exe"
-  %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxmerger.exe"
+  call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxrender.exe"
+  call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcomp.exe"
+  call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxconsole.exe"
+  call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxmerger.exe"
   if "%OCL%"=="OpenCL" (
-    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxvr.exe"
-    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\slg4.exe"
-    %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcoreui.exe"
+    call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxvr.exe"
+    call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\slg4.exe"
+    call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxcoreui.exe"
   )
 )
 
@@ -160,7 +160,10 @@ pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%"
 "C:\Program Files\7-Zip\7z" a -r LuxBlend.zip luxrender\*.*
 popd
 ::Create the Installer by using Inno setup
+
 python configSetup.py --platform %CPU_PLATFORM% %SETUP_ARGS% luxSetup.iss
 "C:\Program Files (x86)\Inno Setup 5\ISCC" luxSetup.iss
+
+call %CODE_SIGNING_BAT% "%WORKSPACE%\%INSTALLER_DIR%\Output\LuxRender %LUX_VERSION% %CPU_PLATFORM% %OCL% Setup.exe"
 
 popd
