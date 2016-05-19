@@ -112,7 +112,7 @@ if not exist "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%" md
 pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\%PYLUX_DIR%"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\lux.dll"               .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\OpenImageIO.dll"       .
-copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python34.dll"       .
+copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python35.dll"       .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\pylux.pyd"             .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\lib\Release\pyluxcore.pyd" .
 popd
@@ -146,7 +146,7 @@ robocopy "%LUXBLEND_DIR%\src\luxrender" "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%
 pushd "%WORKSPACE%\%INSTALLER_SRC%\LuxRender_%BUILD_TYPE%\luxrender"
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\lux.dll"               .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\OpenImageIO.dll"       .
-copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python34.dll"   .
+copy "%WORKSPACE%\%DEPS_DIR%\%CPU_PLATFORM%\Release\lib\python35.dll"   .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\pylux.pyd"             .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUXRAYS_DIR%\lib\Release\pyluxcore.pyd" .
 copy "%WORKSPACE%\%BUILD_ROOT%\%LUX_DIR%\RELEASE\embree.dll"            .
