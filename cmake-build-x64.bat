@@ -10,6 +10,7 @@ set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
 set CPU_PLATFORM=x64
 set BUILD_TYPE=Release
+set BUILD_DLL=0
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -18,6 +19,7 @@ if /i "%1" EQU "luxrays" set BUILD_LUXRAYS_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "luxrender" set BUILD_LUXRENDER_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
+if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/x86" (
   set CPU_PLATFORM=x86
@@ -98,7 +100,17 @@ if %DISABLE_OPENCL% EQU 1 (
   )
 )
 
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION%
+if %BUILD_DLL% EQU 1 (
+  echo -----------------------------------------
+  echo Enable LuxCore DLL
+  echo -----------------------------------------
+
+  set DLL_OPTION=-DBUILD_LUXCORE_DLL=1
+) else (
+  set DLL_OPTION=
+)
+
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:12.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
