@@ -19,5 +19,7 @@ navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.ba
 cd C:\Path\to\luxcorerender\WindowsCompile\
 .\cmake-build-x64.bat
 
-(You can copy the file from an explorer window and paste it in the command prompto via right click -> paste)
-The first run of the build process will take around 30 minutes (depending on your CPU) and the linking process may consume a lot of RAM.
+(You can copy the file from an explorer window and 
+paste it in the command prompt via right click -> paste)
+The first run of the build process will take around 30 minutes 
+(depending on your CPU) and the linking process may consume a lot of RAM.
