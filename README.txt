@@ -26,4 +26,4 @@ The first run of the build process will take around 30 minutes
 
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
-You can run the script collect_compiled_binaries.bat to collect them.
+You can run the script collect-compiled-binaries.bat to collect them.
