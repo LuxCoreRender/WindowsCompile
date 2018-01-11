@@ -2,18 +2,21 @@ Building LuxCoreRender with Visual Studio (Express) 2013
 
 This basic procedure to compile LuxCoreRender for Windows 64bit is:
 
-1) Install VS2013 (Community Edition works too);
+1) Install VS2013 (Community Edition works too). It has been reported that
+VS2015 and VS2017 work too;
 
-2) Create a "luxcorerender" directory;
+2) Install cmake v3.0 or better (https://cmake.org/);
 
-3) Clone the following repositories inside the "luxcorerender" directory:
+3) Create a "luxcorerender" directory;
+
+4) Clone the following repositories inside the "luxcorerender" directory:
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
 - https://github.com/LuxCoreRender/WindowsCompileDeps
 
 You can install and use https://desktop.github.com to clone the repositories.
 
-4) Open the VS2013 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
+5) Open the VS2013 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
