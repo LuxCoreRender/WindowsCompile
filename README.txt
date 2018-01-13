@@ -2,8 +2,7 @@ Building LuxCoreRender with Visual Studio (Express) 2013
 
 This basic procedure to compile LuxCoreRender for Windows 64bit is:
 
-1) Install VS2013 (Community Edition works too). It has been reported that
-VS2015 and VS2017 work too;
+1) Install VS2013 (Community Edition works too). A VS2013 iso is still avilable here: https://go.microsoft.com/fwlink/?LinkId=532496&type=ISO&clcid=0x409
 
 2) Install cmake v3.0 or better (https://cmake.org/);
 
