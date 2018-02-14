@@ -13,7 +13,7 @@ This basic procedure to compile LuxCoreRender for Windows 64bit is:
 - https://github.com/LuxCoreRender/WindowsCompile
 - https://github.com/LuxCoreRender/WindowsCompileDeps
 
-You can install and use https://desktop.github.com to clone the repositories.
+NOTE: you need git LFS extension (https://git-lfs.github.com) to clone WindowsCompileDeps repository. Or you can install and use https://desktop.github.com to clone the repositories.
 
 5) Open the VS2013 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
