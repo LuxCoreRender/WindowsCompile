@@ -11,17 +11,11 @@ md %DIR%
 
 :: Pack pyluxcoretools
 cd ..\LuxCore
-pyinstaller samples\pyluxcoreconsole\pyluxcoreconsole.win.spec
-pyinstaller samples\pyluxcoremerge\pyluxcoremerge.win.spec
-pyinstaller samples\pyluxcorenetconsole\pyluxcorenetconsole.win.spec
-pyinstaller samples\pyluxcorenetnode\pyluxcorenetnode.win.spec
+pyinstaller samples\pyluxcoretool\pyluxcoretool.win.spec
 cd ..\WindowsCompile
 
 :: Copy pyluxcoretools binaries
-xcopy ..\LuxCore\dist\pyluxcoreconsole.exe %DIR%
-xcopy ..\LuxCore\dist\pyluxcoremerge.exe %DIR%
-xcopy ..\LuxCore\dist\pyluxcorenetconsole.exe %DIR%
-xcopy ..\LuxCore\dist\pyluxcorenetnode.exe %DIR%
+xcopy ..\LuxCore\dist\pyluxcoretool.exe %DIR%
 
 :: Copy binaries
 xcopy .\Build_CMake\LuxCore\bin\Release\luxcoreui.exe %DIR%
