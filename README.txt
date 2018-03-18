@@ -30,6 +30,7 @@ The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
 
-In order to create an official release, you need also to install Python v3.5, PyInstaller (with a "pip install pyinstaller") and
-PySide (download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5). You can than pack the archieve
-with a create-standalon.bat or create-sdk.bat.
+In order to create an official release, you need also to install Python v3.5, PyInstaller
+(with a "pip install pyinstaller") and PySide
+(download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5).
+You can than pack the archieve with a create-standalon.bat or create-sdk.bat.
