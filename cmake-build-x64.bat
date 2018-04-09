@@ -72,12 +72,6 @@ for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
 for %%a in (..\WindowsCompileDeps\%CPU_PLATFORM%\Release\lib) do set LIB_DIR=%%~fa
 echo LIB_DIR: %LIB_DIR%
 
-::set LUX_X64_BOOST_ROOT=%INCLUDE_DIR%\Boost
-::set LUX_X64_GLUT_ROOT=%INCLUDE_DIR%
-::set LUX_X64_GLEW_ROOT=%INCLUDE_DIR%
-::set LUX_X64_FREEIMAGE_ROOT=%INCLUDE_DIR%
-::set LUX_X64_QT_ROOT=%INCLUDE_DIR%\Qt
-
 if %DISABLE_OPENCL% EQU 1 (
   echo -----------------------------------------
   echo Disabling OpenCL
