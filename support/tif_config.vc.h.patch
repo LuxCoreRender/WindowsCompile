@@ -1,0 +1,13 @@
+--- tif_config.vc.h.orig	2011-09-07 23:55:24.000000000 +0200
++++ tif_config.vc.h	2018-04-25 23:00:03.519931100 +0200
+@@ -47,7 +47,9 @@
+ /* Set the native cpu bit order */
+ #define HOST_FILLORDER FILLORDER_LSB2MSB
+ 
+-#define snprintf _snprintf
++#if _MSC_VER < 1900
++#	define snprintf _snprintf
++#endif
+ 
+ /* Define to 1 if your processor stores words with the most significant byte
+    first (like Motorola and SPARC, unlike Intel and VAX). */
