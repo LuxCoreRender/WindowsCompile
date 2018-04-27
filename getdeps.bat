@@ -205,7 +205,7 @@ REM CALL:extractFile "freeglut %FREEGLUT_VER%", "%DOWNLOADS%\freeglut-%FREEGLUT_
 REM CALL:addBuildPathVar "LUX_X64_GLUT_ROOT",    "%D64%\freeglut-%FREEGLUT_VER%"
 
 :freeimage
-CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "https://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip", "--content-disposition" || EXIT /b -1
+CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "https://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip", "--no-check-certificate --content-disposition" || EXIT /b -1
 CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%"
 
 CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
@@ -229,7 +229,7 @@ CALL:extractFile "JPEG %JPEG_VER%", "%DOWNLOADS%\jpeg-%JPEG_VER%.tar.gz"
 CALL:addBuildPathVar "LUX_X64_JPEG_ROOT", "%D64%\jpeg-%JPEG_VER%"
 
 :libpng
-CALL:downloadFile "libPNG %LIBPNG_VER%", "https://download.sourceforge.net/libpng/libpng-%LIBPNG_VER%.tar.gz", "libpng-%LIBPNG_VER%.tar.gz", "--content-disposition" || EXIT /b -1
+CALL:downloadFile "libPNG %LIBPNG_VER%", "https://download.sourceforge.net/libpng/libpng-%LIBPNG_VER%.tar.gz", "libpng-%LIBPNG_VER%.tar.gz", "--no-check-certificate --content-disposition" || EXIT /b -1
 CALL:extractFile "libPNG %LIBPNG_VER%", "%DOWNLOADS%\libpng-%LIBPNG_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_LIBPNG_ROOT", "%D64%\libpng-%LIBPNG_VER%"
