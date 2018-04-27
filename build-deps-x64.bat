@@ -23,6 +23,7 @@ IF EXIST build-vars.bat CALL build-vars.bat
 
 CALL:checkEnvVarValid "LUX_WINDOWS_BUILD_ROOT" || EXIT /b -1
 CALL:checkEnvVarValid "LUX_DEPS_ROOT"          || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_BLOSC_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BOOST_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BZIP_ROOT"      || EXIT /b -1
 ::CALL:checkEnvVarValid "LUX_X64_CMAKE_ROOT"     || EXIT /b -1
@@ -567,6 +568,30 @@ CALL:xcopyFiles include\serial\*.* %INCLUDE_DIR%\serial
 
 mkdir %INCLUDE_DIR%\tbb
 CALL:xcopyFiles include\tbb\*.* %INCLUDE_DIR%\tbb
+
+
+:: ****************************************************************************
+:: ************************************ blosc *********************************
+:: ****************************************************************************
+:blosc
+echo.
+echo **************************************************************************
+echo * Building blosc
+echo **************************************************************************
+cd /d %LUX_X64_BLOSC_ROOT%
+
+rmdir /s /q build
+mkdir build
+cd build
+cmake .. -DBUILD_TESTS=OFF
+if ERRORLEVEL 1 goto :EOF
+
+cmake --build .
+if ERRORLEVEL 1 goto :EOF
+
+CALL:copyFile ..\blosc\blosc.h %INCLUDE_DIR%\blosc.h
+CALL:copyFile ..\blosc\blosc-export.h %INCLUDE_DIR%\blosc-export.h
+CALL:copyFile blosc\Debug\blosc.lib %LIB_DIR%\blosc.lib
 
 
 :postLuxRender

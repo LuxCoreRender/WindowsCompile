@@ -7,6 +7,7 @@ SET BOOST_VER_P=1.56.0
 SET FREEIMAGE_VER_P=3.16.0
 SET FREEIMAGE_VER_N=3160
 
+SET BLOSC_VER=1.14.3
 SET BZIP2_VER=1.0.6
 SET CMAKE_VER=2.8.12.2
 SET EMBREE_VER=2.17.1
@@ -34,6 +35,7 @@ echo * Startup                                                                *
 echo **************************************************************************
 echo.
 echo We are going to download and extract these libraries:
+echo   Blosc    	%BLOSC_VER%		https://github.com/Blosc/c-blosc/
 echo   Boost      	%BOOST_VER_P%		http://www.boost.org/
 echo   bzip       	%BZIP2_VER%		http://www.bzip.org/
 echo   cmake      	%CMAKE_VER%	http://www.cmake.org/
@@ -162,6 +164,12 @@ CALL:addBuildPathVar "LUX_DEPS_ROOT", "%DEPSROOT%"
 set LUX_WINDOWS_BUILD_ROOT="%CD%"
 
 
+:blosc
+CALL:downloadFile "Blosc %BLOSC_VER%", "https://github.com/Blosc/c-blosc/archive/v1.14.3.zip", "c-blosc-%BLOSC_VER%.zip" || EXIT /b -1
+CALL:extractFile "Blosc %BLOSC_VER%", "%DOWNLOADS%\c-blosc-%BLOSC_VER%.zip"
+
+CALL:addBuildPathVar "LUX_X64_BLOSC_ROOT", "%D64%\c-blosc-%BLOSC_VER%"
+
 :boost
 CALL:downloadFile "Boost %BOOST_VER_P%", "https://sourceforge.net/projects/boost/files/boost/%BOOST_VER_P%/boost_%BOOST_VER_U%.7z/download", "boost_%BOOST_VER_U%.7z", "--content-disposition" || EXIT /b -1
 CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
@@ -175,8 +183,8 @@ CALL:extractFile "bzip2 %BZIP2_VER%", "%DOWNLOADS%\bzip2-%BZIP2_VER%.tar.gz"
 CALL:addBuildPathVar "LUX_X64_BZIP_ROOT", "%D64%\bzip2-%BZIP2_VER%"
 
 :embree
-CALL:downloadFile "embree %EMBREE_VER%", "https://github.com/embree/embree/releases/download/v%EMBREE_VER%/embree-%EMBREE_VER%.x64.windows.zip", "embree-%EMBREE_VER%.x64.windows.zip" || EXIT /b -1
-CALL:extractFile "embree %EMBREE_VER%", "%DOWNLOADS%\embree-%EMBREE_VER%.x64.windows.zip"
+CALL:downloadFile "embree %EMBREE_VER%", "https://github.com/embree/embree/releases/download/v%EMBREE_VER%/embree-%EMBREE_VER%.x64.windows.zip", "embree-%EMBREE_VER%.zip" || EXIT /b -1
+CALL:extractFile "embree %EMBREE_VER%", "%DOWNLOADS%\embree-%EMBREE_VER%.zip"
 ren %D64%\embree-%EMBREE_VER%.x64.windows embree-%EMBREE_VER%
 
 CALL:addBuildPathVar "LUX_X64_EMBREE_ROOT", "%D64%\embree-%EMBREE_VER%"
@@ -263,8 +271,8 @@ REM CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%Q
 REM CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
 
 :tbb
-CALL:downloadFile "tbb %TBB_VER_FULL%", "https://github.com/01org/tbb/releases/download/%TBB_VER%/tbb%TBB_VER_FULL%oss_win.zip", "tbb%TBB_VER_FULL%oss_win.zip" || EXIT /b -1
-CALL:extractFile "tbb %TBB_VER_FULL%", "%DOWNLOADS%\tbb%TBB_VER_FULL%oss_win.zip"
+CALL:downloadFile "tbb %TBB_VER_FULL%", "https://github.com/01org/tbb/releases/download/%TBB_VER%/tbb%TBB_VER_FULL%oss_win.zip", "tbb%TBB_VER_FULL%oss.zip" || EXIT /b -1
+CALL:extractFile "tbb %TBB_VER_FULL%", "%DOWNLOADS%\tbb%TBB_VER_FULL%oss.zip"
 ren %D64%\tbb%TBB_VER_FULL%oss_win tbb%TBB_VER_FULL%oss
 
 CALL:addBuildPathVar "LUX_X64_TBB_ROOT", "%D64%\tbb%TBB_VER_FULL%oss"
