@@ -64,8 +64,8 @@ if "%CPU_PLATFORM%"=="x64" (
 )
 
 if %CMAKE_VN_MAJOR%==2 (
-  set CMAKE_GENERATOR="Visual Studio 12 Win64"
-  set CMAKE_PLATFORM=
+  echo You need CMake 3.0 or better to build LuxCoreRender
+  goto CMakeNotFound
 )
 
 for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
@@ -150,7 +150,7 @@ goto exit
 :CMakeNotFound
 echo --- FATAL ERROR: CMake not found ---
 echo.
-goto GeneralNotFound
+goto exit
 
 :LuxCoreNotFound
 goto GeneralNotFound
