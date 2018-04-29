@@ -264,11 +264,11 @@ CALL:extractFile "Python %PYTHON35_VER%", "%DOWNLOADS%\Python-%PYTHON35_VER%.tgz
 
 CALL:addBuildPathVar "LUX_X64_PYTHON3_ROOT", "%D64%\Python-%PYTHON35_VER%"
 
-REM :qt
-REM CALL:downloadFile "QT %QT_VER%", "http://download.qt-project.org/official_releases/qt/4.8/%QT_VER%/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
-REM CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.tar.gz"
+:qt
+CALL:downloadFile "QT %QT_VER%", "http://download.qt-project.org/official_releases/qt/4.8/%QT_VER%/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
+CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.tar.gz"
 
-REM CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
+CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
 
 :tbb
 CALL:downloadFile "tbb %TBB_VER_FULL%", "https://github.com/01org/tbb/releases/download/%TBB_VER%/tbb%TBB_VER_FULL%oss_win.zip", "tbb%TBB_VER_FULL%oss.zip" || EXIT /b -1

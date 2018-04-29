@@ -41,7 +41,7 @@ CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON3_ROOT"   || EXIT /b -1
 ::CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
 
@@ -120,7 +120,7 @@ IF %BUILD_DEBUG% EQU 1 set MSBUILD_OPTS=%MSBUILD_OPTS% %MSBUILD_DEBUG_OPTS%
 echo.
 echo Build options:
 echo 1: Build all dependencies (default)
-rem echo 2: Build all but Qt
+echo 2: Build all but Qt
 echo q: Quit (do nothing)
 echo.
 set BUILDCHOICE=1
@@ -133,8 +133,8 @@ GOTO BuildDepsChoice
 
 
 :StartBuild
-::IF %BUILDCHOICE% EQU 2 GOTO NotQT
-goto NotQT
+IF %BUILDCHOICE% EQU 2 GOTO NotQT
+
 
 :: ****************************************************************************
 :: ********************************** QT **************************************
@@ -145,6 +145,9 @@ echo **************************************************************************
 echo * Building Qt                                                            *
 echo **************************************************************************
 cd /d %LUX_X64_QT_ROOT%
+
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\qt.patch
+
 echo.
 echo Cleaning Qt, this may take a few moments...
 nmake confclean 1>NUL 2>NUL
@@ -177,6 +180,12 @@ CALL:copyFile bin\qmake.exe %LIB_DIR%
 CALL:copyFile bin\moc.exe %LIB_DIR%
 CALL:copyFile bin\uic.exe %LIB_DIR%
 CALL:copyFile bin\rcc.exe %LIB_DIR%
+mkdir %LIB_DIR%\qtplugins
+mkdir %LIB_DIR%\qtplugins\imageformats
+CALL:copyFile plugins\imageformats\qjpeg4.dll %LIB_DIR%\qtplugins\imageformats
+CALL:copyFile plugins\imageformats\qtga4.dll %LIB_DIR%\qtplugins\imageformats
+CALL:copyFile plugins\imageformats\qtiff4.dll %LIB_DIR%\qtplugins\imageformats
+
 
 :NotQT
 
