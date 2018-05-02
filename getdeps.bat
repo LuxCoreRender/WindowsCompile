@@ -11,9 +11,6 @@ SET BLOSC_VER=1.14.3
 SET BZIP2_VER=1.0.6
 SET CMAKE_VER=2.8.12.2
 SET EMBREE_VER=2.17.1
-::SET FFTW_VER=3.3.4
-::SET FREEGLUT_VER=2.8.1
-::SET GLEW_VER=1.11.0
 SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
@@ -22,7 +19,6 @@ SET OIIO_VER=1.4.12
 SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
 SET PYTHON35_VER=3.5.5
-::SET PYTHON36_VER=3.6.5
 SET QT_VER=4.8.7
 SET TBB_VER=2017
 SET TBB_VER_FULL=2017_20160722
@@ -40,10 +36,7 @@ echo   Boost      	%BOOST_VER_P%		http://www.boost.org/
 echo   bzip       	%BZIP2_VER%		http://www.bzip.org/
 echo   cmake      	%CMAKE_VER%	http://www.cmake.org/
 echo   embree     	%EMBREE_VER%		https://embree.github.io
-::echo   FFTW       	%FFTW_VER%		http://www.fftw.org/
-::echo   freeglut   	%FREEGLUT_VER%		http://freeglut.sourceforge.net/
 echo   FreeImage  	%FREEIMAGE_VER_P%		http://freeimage.sf.net/
-::echo   GLEW       	%GLEW_VER%		http://glew.sourceforge.net/
 echo   IlmBase    	%ILMBASE_VER%		http://www.openexr.com/
 echo   JPEG       	%JPEG_VER%		http://www.ijg.org/
 echo   libPNG     	%LIBPNG_VER%		http://www.libpng.org/
@@ -189,32 +182,11 @@ ren %D64%\embree-%EMBREE_VER%.x64.windows embree-%EMBREE_VER%
 
 CALL:addBuildPathVar "LUX_X64_EMBREE_ROOT", "%D64%\embree-%EMBREE_VER%"
 
-REM :fftw
-REM CALL:downloadFile "FFTW %FFTW_VER%", "http://www.fftw.org/fftw-%FFTW_VER%.tar.gz", "fftw-%FFTW_VER%.tar.gz" || EXIT /b -1
-REM CALL:extractFile "FFTW %FFTW_VER%", "%DOWNLOADS%\fftw-%FFTW_VER%.tar.gz"
-
-REM CALL:downloadFile "FFTW 3.3 VS Solution", "ftp://ftp.fftw.org/pub/fftw/fftw-3.3-libs-visual-studio-2010.zip", "fftw-3.3-libs-visual-studio-2010.zip" || EXIT /b -1
-REM CALL:extractFile "FFTW 3.3 VS Solution", "%DOWNLOADS%\fftw-3.3-libs-visual-studio-2010.zip", "fftw-%FFTW_VER%"
-
-REM CALL:addBuildPathVar "LUX_X64_FFTW_ROOT",    "%D64%\fftw-%FFTW_VER%"
-
-REM :freeglut
-REM CALL:downloadFile "freeglut %FREEGLUT_VER%", "http://downloads.sourceforge.net/freeglut/freeglut-%FREEGLUT_VER%.tar.gz", "freeglut-%FREEGLUT_VER%.tar.gz" || EXIT /b -1
-REM CALL:extractFile "freeglut %FREEGLUT_VER%", "%DOWNLOADS%\freeglut-%FREEGLUT_VER%.tar.gz"
-
-REM CALL:addBuildPathVar "LUX_X64_GLUT_ROOT",    "%D64%\freeglut-%FREEGLUT_VER%"
-
 :freeimage
 CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "https://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip", "--no-check-certificate --content-disposition" || EXIT /b -1
 CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%"
 
 CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
-
-REM :glew
-REM CALL:downloadFile "GLEW %GLEW_VER%", "http://sourceforge.net/projects/glew/files/glew/%GLEW_VER%/glew-%GLEW_VER%.tgz/download", "glew-%GLEW_VER%.tgz", "--no-check-certificate" || EXIT /b -1
-REM CALL:extractFile "GLEW %GLEW_VER%", "%DOWNLOADS%\glew-%GLEW_VER%.tgz"
-
-REM CALL:addBuildPathVar "LUX_X64_GLEW_ROOT",    "%D64%\glew-%GLEW_VER%"
 
 :ilmbase
 CALL:downloadFile "IlmBase %ILMBASE_VER%", "http://download.savannah.nongnu.org/releases/openexr/ilmbase-%ILMBASE_VER%.tar.gz", "ilmbase-%ILMBASE_VER%.tar.gz" || EXIT /b -1

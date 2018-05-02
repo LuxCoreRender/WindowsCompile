@@ -26,12 +26,8 @@ CALL:checkEnvVarValid "LUX_DEPS_ROOT"          || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BLOSC_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BOOST_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BZIP_ROOT"      || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_CMAKE_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_EMBREE_ROOT"      || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_FFTW_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_FREEIMAGE_ROOT" || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_GLUT_ROOT"      || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_GLEW_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ILMBASE_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
@@ -40,7 +36,6 @@ CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON3_ROOT"   || EXIT /b -1
-::CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
@@ -245,60 +240,6 @@ mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
-
-
-:: ****************************************************************************
-:: ********************************** freeglut ********************************
-:: ****************************************************************************
-REM :freeglut
-REM echo.
-REM echo **************************************************************************
-REM echo * Building freeglut
-REM echo **************************************************************************
-REM cd /d %LUX_X64_GLUT_ROOT%
-
-REM msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%_Static" /target:"freeglut" VisualStudio\2012\freeglut.sln
-REM if ERRORLEVEL 1 goto :EOF
-
-REM mkdir %INCLUDE_DIR%\GL
-REM CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
-REM CALL:copyFile lib\x64\* %LIB_DIR%
-
-
-:: ****************************************************************************
-:: ********************************** FFTW ************************************
-:: ****************************************************************************
-REM :FFTW
-REM echo.
-REM echo **************************************************************************
-REM echo * Building FFTW
-REM echo **************************************************************************
-REM cd /d %LUX_X64_FFTW_ROOT%
-
-REM msbuild %MSBUILD_OPTS% /property:"Configuration=Static-%BUILD_CONFIGURATION%" /target:"libfftw-3_3" fftw-3.3-libs\fftw-3.3-libs.sln
-REM if ERRORLEVEL 1 goto :EOF
-
-REM CALL:copyFile api\fftw3.h %INCLUDE_DIR%
-REM CALL:copyFile fftw-3.3-libs\x64\Static-%BUILD_CONFIGURATION%\libfftw-3.3.lib %LIB_DIR%\fftw3.lib
-
-
-REM :: ****************************************************************************
-REM :: ********************************** GLEW ************************************
-REM :: ****************************************************************************
-REM :GLEW
-REM echo.
-REM echo **************************************************************************
-REM echo * Building GLEW
-REM echo **************************************************************************
-REM cd /d %LUX_X64_GLEW_ROOT%
-
-REM msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"glew_static" build\vc10\glew.sln
-REM if ERRORLEVEL 1 goto :EOF
-
-REM mkdir %INCLUDE_DIR%\GL
-REM CALL:xcopyFiles include\GL\*.h %INCLUDE_DIR%\GL
-REM IF %BUILD_CONFIGURATION%==Release CALL:copyFile lib\Release\x64\glew32s.lib %LIB_DIR%\glew32.lib
-REM IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile lib\Debug\x64\glew32sd.lib %LIB_DIR%\glew32.lib
 
 
 :: ****************************************************************************
