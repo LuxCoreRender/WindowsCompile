@@ -1,10 +1,10 @@
-Building LuxCoreRender with Visual Studio (Express) 2013
+Building LuxCoreRender with Visual Studio 2017 (Community)
 
 This basic procedure to compile LuxCoreRender for Windows 64bit is:
 
-1) Install VS2013 (Community Edition works too). A VS2013 iso is still avilable here: https://go.microsoft.com/fwlink/?LinkId=532496&type=ISO&clcid=0x409
+1) Install VS2017 (Community Edition works too, https://www.visualstudio.com/downloads/). If you don't want the full IDE you can also install the "Build Tools for Visual Studio 2017";
 
-2) Install cmake v3.0 or better (https://cmake.org/);
+2) Install cmake v3.7 or better (https://cmake.org/);
 
 3) Create a "luxcorerender" directory;
 
@@ -15,7 +15,7 @@ This basic procedure to compile LuxCoreRender for Windows 64bit is:
 
 NOTE: you need git LFS extension (https://git-lfs.github.com) to clone WindowsCompileDeps repository. Or you can install and use https://desktop.github.com to clone the repositories.
 
-5) Open the VS2013 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
+5) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
@@ -23,7 +23,7 @@ cd C:\Path\to\luxcorerender\WindowsCompile\
 
 (You can copy the filepath from an explorer window and 
 paste it in the command prompt via right click -> paste)
-The first run of the build process will take around 30 minutes 
+The first run of the build process will take around 20 minutes 
 (depending on your CPU) and the linking process may consume a lot of RAM.
 
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
