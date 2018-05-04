@@ -50,8 +50,10 @@ echo   tbb        	%TBB_VER%		https://www.threadingbuildingblocks.org/
 echo   zlib       	%ZLIB_VER%		http://www.zlib.net/
 echo.
 pause
-echo   To build LuxCoreRender you will need also a working installation of CMake
-echo   (suggested version 3.10 or newer) and an OpenCL SDK, e.g. one among:
+echo   To build these dependencies and LuxCoreRender you will also need a 
+echo   working installation of CMake (suggested version 3.7 or newer).
+echo   To enable OpenCL support in LuxCoreRender you will need an OpenCL SDK,
+echo   e.g. one among:
 echo    1. AMD APP SDK
 echo    2. Intel SDK for OpenCL Applications
 echo    3. NVIDIA CUDA Toolkit

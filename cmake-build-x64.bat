@@ -64,7 +64,7 @@ if "%CPU_PLATFORM%"=="x64" (
 )
 
 if %CMAKE_VN_MAJOR%==2 (
-  echo You need CMake 3.0 or better to build LuxCoreRender
+  echo You need CMake 3.7 or better to build LuxCoreRender
   goto CMakeNotFound
 )
 
