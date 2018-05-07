@@ -59,3 +59,26 @@
  
  
  namespace Imf {
+--- Source\LibRawLite\internal\dcraw_common.cpp.orig	2014-02-07 23:48:09.000000000 +0100
++++ Source\LibRawLite\internal\dcraw_common.cpp	2018-04-26 16:32:46.850683300 +0200
+@@ -9235,7 +9235,7 @@
+   strncpy (th->t_desc, desc, 512);
+   strncpy (th->t_make, make, 64);
+   strncpy (th->t_model, model, 64);
+-  strcpy (th->soft, "dcraw v"DCRAW_VERSION);
++  strcpy (th->soft, "dcraw v" DCRAW_VERSION);
+   t = localtime (&timestamp);
+   sprintf (th->date, "%04d:%02d:%02d %02d:%02d:%02d",
+       t->tm_year+1900,t->tm_mon+1,t->tm_mday,t->tm_hour,t->tm_min,t->tm_sec);
+--- Source\LibTIFF4\tif_config.h.orig	2013-11-30 03:29:14.000000000 +0100
++++ Source\LibTIFF4\tif_config.h	2018-04-26 16:30:20.854283300 +0200
+@@ -81,7 +81,9 @@
+ #endif // BYTE_ORDER
+ 
+ #ifdef _WIN32
++#if _MSC_VER < 1900
+ #define snprintf _snprintf
++#endif // _MSC_VER
+ #define lfind _lfind
+ #endif // _WIN32
+ 

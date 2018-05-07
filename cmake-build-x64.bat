@@ -54,8 +54,8 @@ for /F "tokens=3" %%G in ('cmake --version ^| find "cmake version"') do set CMAK
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
-set CMAKE_GENERATOR="Visual Studio 12 2013"
-set CMAKE_TOOLSET=-T v120_xp
+set CMAKE_GENERATOR="Visual Studio 15 2017"
+set CMAKE_TOOLSET=-T v141_xp
 if "%CPU_PLATFORM%"=="x64" (
   set CMAKE_PLATFORM=-A %CPU_PLATFORM%
 ) else (
@@ -64,8 +64,8 @@ if "%CPU_PLATFORM%"=="x64" (
 )
 
 if %CMAKE_VN_MAJOR%==2 (
-  set CMAKE_GENERATOR="Visual Studio 12 Win64"
-  set CMAKE_PLATFORM=
+  echo You need CMake 3.7 or better to build LuxCoreRender
+  goto CMakeNotFound
 )
 
 for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
@@ -98,7 +98,7 @@ if %BUILD_DLL% EQU 1 (
 
 set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
-set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:12.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
+set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
@@ -150,7 +150,7 @@ goto exit
 :CMakeNotFound
 echo --- FATAL ERROR: CMake not found ---
 echo.
-goto GeneralNotFound
+goto exit
 
 :LuxCoreNotFound
 goto GeneralNotFound
