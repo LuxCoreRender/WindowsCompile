@@ -256,7 +256,7 @@ CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
 CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
 CALL:copyFile jconfig.vc jconfig.h
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile *.h %INCLUDE_DIR%
@@ -279,7 +279,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\zconf.h.included ..\zconf.h
@@ -307,7 +307,7 @@ cd build
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
@@ -339,7 +339,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\*.h %INCLUDE_DIR%
@@ -392,7 +392,7 @@ cd build
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D ILMBASE_PACKAGE_PREFIX="%INSTALL_DIR%" ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
@@ -417,7 +417,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
@@ -446,7 +446,7 @@ cd build
 cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_PYTHON=0 ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenImageIO
@@ -472,7 +472,7 @@ CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
+msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
