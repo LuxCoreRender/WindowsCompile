@@ -1,0 +1,10 @@
+--- src\libOpenImageIO\CMakeLists.txt.orig	2014-08-23 23:11:14.030900128 -0600
++++ src\libOpenImageIO\CMakeLists.txt	2014-08-23 23:06:41.000000000 -0600
+@@ -160,6 +160,7 @@
+ endif ()
+ 
+ if (WIN32)
++    add_definitions ("-DPSAPI_VERSION=1")
+     target_link_libraries (OpenImageIO psapi.lib)
+ endif ()
+ 

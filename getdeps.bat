@@ -1,8 +1,8 @@
 @Echo OFF
 
 :: Versions to download / install
-SET BOOST_VER_U=1_56_0
-SET BOOST_VER_P=1.56.0
+SET BOOST_VER_U=1_67_0
+SET BOOST_VER_P=1.67.0
 
 SET FREEIMAGE_VER_P=3.16.0
 SET FREEIMAGE_VER_N=3160
@@ -15,7 +15,7 @@ SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
 SET LIBTIFF_VER=4.0.3
-SET OIIO_VER=1.4.12
+SET OIIO_VER=1.8.11
 SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
 SET PYTHON35_VER=3.5.5
@@ -166,7 +166,7 @@ CALL:extractFile "Blosc %BLOSC_VER%", "%DOWNLOADS%\c-blosc-%BLOSC_VER%.zip"
 CALL:addBuildPathVar "LUX_X64_BLOSC_ROOT", "%D64%\c-blosc-%BLOSC_VER%"
 
 :boost
-CALL:downloadFile "Boost %BOOST_VER_P%", "https://sourceforge.net/projects/boost/files/boost/%BOOST_VER_P%/boost_%BOOST_VER_U%.7z/download", "boost_%BOOST_VER_U%.7z", "--content-disposition" || EXIT /b -1
+CALL:downloadFile "Boost %BOOST_VER_P%", "https://dl.bintray.com/boostorg/release/%BOOST_VER_P%/source/boost_%BOOST_VER_U%.7z", "boost_%BOOST_VER_U%.7z", "--content-disposition" || EXIT /b -1
 CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
 
 CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"

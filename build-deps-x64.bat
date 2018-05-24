@@ -94,8 +94,6 @@ set LIB_DIR=%INSTALL_DIR%\lib
 mkdir %LIB_DIR%
 set INCLUDE_DIR=%INSTALL_DIR%\..\..\include
 mkdir %INCLUDE_DIR%
-set BIN_DIR=%INSTALL_DIR%\..\..\bin
-mkdir %BIN_DIR%
 
 :: Make junction to include dir for braindead cmake scripts
 rd %INSTALL_DIR%\include
@@ -104,7 +102,7 @@ mklink /j %INSTALL_DIR%\include %INCLUDE_DIR%
 set CMAKE_OPTS=-G "Visual Studio 15 Win64" -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
 
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
-set MSBUILD_RELEASE_OPTS=/property:"WholeProgramOptimization=True"
+set MSBUILD_RELEASE_OPTS=/property:"WholeProgramOptimization=False"
 set MSBUILD_DEBUG_OPTS=
 
 IF %BUILD_DEBUG% EQU 0 set MSBUILD_OPTS=%MSBUILD_OPTS% %MSBUILD_RELEASE_OPTS%
@@ -222,10 +220,6 @@ echo *          Boost::Thread                                                 *
 echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
 
-rem Update auto_link.hpp and visualc.hpp
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch .\boost\config\auto_link.hpp %LUX_WINDOWS_BUILD_ROOT%\support\auto_link.hpp.patch
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch .\boost\config\compiler\visualc.hpp %LUX_WINDOWS_BUILD_ROOT%\support\visualc.hpp.patch
-
 CALL bootstrap.bat
 type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-3.jam >> project-config.jam
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
@@ -233,13 +227,14 @@ set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static thread
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% toolset=msvc-14.1 variant=%BUILD_CONFIGURATION_BOOST% stage
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
+CALL:copyFile %LIB_DIR%\libboost_python35-vc141-mt-x64-1_67.lib %LIB_DIR%\libboost_python-vc141-mt-x64-1_67.lib
 
 
 :: ****************************************************************************
@@ -256,7 +251,7 @@ CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
 CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
 CALL:copyFile jconfig.vc jconfig.h
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile *.h %INCLUDE_DIR%
@@ -279,7 +274,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"zlibstatic" zlib.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\zconf.h.included ..\zconf.h
@@ -307,7 +302,7 @@ cd build
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
@@ -339,7 +334,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\*.h %INCLUDE_DIR%
@@ -392,7 +387,7 @@ cd build
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D ILMBASE_PACKAGE_PREFIX="%INSTALL_DIR%" ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
@@ -417,7 +412,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
@@ -434,19 +429,16 @@ echo * Building OpenImageIO
 echo **************************************************************************
 cd /d %LUX_X64_OIIO_ROOT%
 
-rem Update project files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch src\cmake\modules\FindOpenJpeg.cmake %LUX_WINDOWS_BUILD_ROOT%\support\FindOpenJpeg.cmake.patch
-
 rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.4.12.patch
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.8.11.patch
 
 rmdir /s /q build
 mkdir build
 cd build
-cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_PYTHON=0 ..
+cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_FFMPEG=0 -D USE_PYTHON=0 -D USE_TBB=0 -D USE_OPENGL=0 -D USE_QT=0 -D USE_GIF=0 -D USE_OPENJPEG=0 -D USE_OPENSSL=0 -D USE_FIELD3D=0 -D USE_OCIO=0 -D USE_OPENCV=0 -D OIIO_BUILD_TOOLS=0 -D OIIO_BUILD_TESTS=0 ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenImageIO
@@ -472,7 +464,7 @@ CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 rem Update source files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
 
-msbuild %MSBUILD_OPTS% /property:"WholeProgramOptimization=False" /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
