@@ -4,7 +4,7 @@ This basic procedure to compile LuxCoreRender for Windows 64bit is:
 
 1) Install VS2017 (Community Edition works too, https://www.visualstudio.com/downloads/). If you don't want the full IDE you can also install the "Build Tools for Visual Studio 2017";
 
-2) Install cmake v3.7 or better (https://cmake.org/);
+2) Install cmake v3.11.2 or better (https://cmake.org/);
 
 3) Create a "luxcorerender" directory;
 
