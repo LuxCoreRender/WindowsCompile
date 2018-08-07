@@ -33,4 +33,7 @@ You can run the script collect-compiled-binaries.bat to collect them.
 In order to create an official release, you need also to install Python v3.5, PyInstaller
 (with a "pip install pyinstaller") and PySide
 (download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5).
-You can than pack the archieve with a create-standalon.bat or create-sdk.bat.
+You can then pack the archive with the create-standalone.bat or create-sdk.bat.
+Note that the create-standalone.bat assumes that you have 7zip installed in this path:
+"C:\Program Files\7-Zip\7z.exe"
+If that is not the case, the pyluxcoretools.zip will not be created.
