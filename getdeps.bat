@@ -19,6 +19,8 @@ SET OIIO_VER=1.8.11
 SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
 SET PYTHON35_VER=3.5.5
+SET PYTHON36_VER=3.6.6
+SET PYTHON37_VER=3.7.0
 SET QT_VER=4.8.7
 SET TBB_VER=2017
 SET TBB_VER_FULL=2017_20160722
@@ -45,6 +47,7 @@ echo   OpenEXR    	%OPENEXR_VER%		http://www.openexr.com/
 echo   OpenImageIO	%OIIO_VER%		http://openimageio.org/
 echo   OpenJPEG   	%OPENJPEG_VER%		http://www.openjpeg.org/
 echo   Python     	%PYTHON35_VER%		http://www.python.org/
+echo   Python     	%PYTHON36_VER%		http://www.python.org/
 echo   QT         	%QT_VER%		http://qt-project.org/
 echo   tbb        	%TBB_VER%		https://www.threadingbuildingblocks.org/
 echo   zlib       	%ZLIB_VER%		http://www.zlib.net/
@@ -236,7 +239,19 @@ CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
 CALL:downloadFile "Python %PYTHON35_VER%", "http://python.org/ftp/python/%PYTHON35_VER%/Python-%PYTHON35_VER%.tgz", "Python-%PYTHON35_VER%.tgz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "Python %PYTHON35_VER%", "%DOWNLOADS%\Python-%PYTHON35_VER%.tgz"
 
-CALL:addBuildPathVar "LUX_X64_PYTHON3_ROOT", "%D64%\Python-%PYTHON35_VER%"
+CALL:addBuildPathVar "LUX_X64_PYTHON35_ROOT", "%D64%\Python-%PYTHON35_VER%"
+
+:python36
+CALL:downloadFile "Python %PYTHON36_VER%", "http://python.org/ftp/python/%PYTHON36_VER%/Python-%PYTHON36_VER%.tgz", "Python-%PYTHON36_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:extractFile "Python %PYTHON36_VER%", "%DOWNLOADS%\Python-%PYTHON36_VER%.tgz"
+
+CALL:addBuildPathVar "LUX_X64_PYTHON36_ROOT", "%D64%\Python-%PYTHON36_VER%"
+
+:python37
+CALL:downloadFile "Python %PYTHON37_VER%", "http://python.org/ftp/python/%PYTHON37_VER%/Python-%PYTHON37_VER%.tgz", "Python-%PYTHON37_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:extractFile "Python %PYTHON37_VER%", "%DOWNLOADS%\Python-%PYTHON37_VER%.tgz"
+
+CALL:addBuildPathVar "LUX_X64_PYTHON37_ROOT", "%D64%\Python-%PYTHON37_VER%"
 
 :qt
 CALL:downloadFile "QT %QT_VER%", "http://download.qt-project.org/official_releases/qt/4.8/%QT_VER%/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
