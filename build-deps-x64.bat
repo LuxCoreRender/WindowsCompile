@@ -35,7 +35,9 @@ CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_PYTHON3_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON35_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON37_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
@@ -190,16 +192,46 @@ echo.
 echo **************************************************************************
 echo * Building Python 35                                                     *
 echo **************************************************************************
-cd /d %LUX_X64_PYTHON3_ROOT%\PCbuild
+cd /d %LUX_X64_PYTHON35_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
 
-mkdir %INCLUDE_DIR%\Python3
-CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python3
+mkdir %INCLUDE_DIR%\Python35
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python35
 CALL:copyFile amd64\python35.lib %LIB_DIR%
 CALL:copyFile amd64\python35.dll %LIB_DIR%
+
+echo.
+echo **************************************************************************
+echo * Building Python 36                                                     *
+echo **************************************************************************
+cd /d %LUX_X64_PYTHON36_ROOT%\PCbuild
+CALL:copyFile ..\PC\pyconfig.h ..\Include
+
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Python36
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python36
+CALL:copyFile amd64\python36.lib %LIB_DIR%
+CALL:copyFile amd64\python36.dll %LIB_DIR%
+
+echo.
+echo **************************************************************************
+echo * Building Python 37                                                     *
+echo **************************************************************************
+cd /d %LUX_X64_PYTHON37_ROOT%\PCbuild
+CALL:copyFile ..\PC\pyconfig.h ..\Include
+
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Python37
+CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python37
+CALL:copyFile amd64\python37.lib %LIB_DIR%
+CALL:copyFile amd64\python37.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -221,8 +253,9 @@ echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
 
 CALL bootstrap.bat
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-3.jam >> project-config.jam
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON3_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+CALL:copyfile project-config.jam .\project-config.bck
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-35.jam >> project-config.jam
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON35_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
@@ -234,7 +267,38 @@ mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
-CALL:copyFile %LIB_DIR%\libboost_python35-vc141-mt-x64-1_67.lib %LIB_DIR%\libboost_python-vc141-mt-x64-1_67.lib
+
+:: with python 3.6
+b2 --clean
+CALL:copyfile project-config.bck .\project-config.jam
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-36.jam >> project-config.jam
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON36_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+
+set BUILD_CONFIGURATION_BOOST=release
+IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
+
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Boost
+mkdir %INCLUDE_DIR%\Boost\boost
+CALL:copyFile stage\lib\*.lib %LIB_DIR%
+
+:: with python 3.7
+b2 --clean
+CALL:copyfile project-config.bck .\project-config.jam
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-37.jam >> project-config.jam
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON37_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+
+set BUILD_CONFIGURATION_BOOST=release
+IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
+
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Boost
+mkdir %INCLUDE_DIR%\Boost\boost
+CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************

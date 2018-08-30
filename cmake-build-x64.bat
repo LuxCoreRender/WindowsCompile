@@ -10,6 +10,7 @@ set DISABLE_OPENCL=0
 set CPU_PLATFORM=x64
 set BUILD_TYPE=Release
 set BUILD_DLL=0
+set PYTHON_VERSION=35
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -19,6 +20,9 @@ if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
+if /i "%1" EQU "/python35" set PYTHON_VERSION=35
+if /i "%1" EQU "/python36" set PYTHON_VERSION=36
+if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 
 shift 
 goto ParseCmdParams
@@ -96,7 +100,7 @@ if %BUILD_DLL% EQU 1 (
   set DLL_OPTION=
 )
 
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python3" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="python%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
