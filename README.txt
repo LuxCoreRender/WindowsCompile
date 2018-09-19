@@ -26,6 +26,10 @@ paste it in the command prompt via right click -> paste)
 The first run of the build process will take around 20 minutes 
 (depending on your CPU) and the linking process may consume a lot of RAM.
 
+Default build will use Python 3.5, the version embedded in Blender 2.79b.
+You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
+.\cmake-build-x64.bat /python36
+
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
