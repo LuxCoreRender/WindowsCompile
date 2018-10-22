@@ -7,7 +7,7 @@ rd /s /q %DIR%
 md %DIR%
 
 :: Create pyluxcoretools.zip (cmake tar doesn't work on Windows)
-"C:\Program Files\7-Zip\7z.exe" a ..\LuxCore\lib\pyluxcoretools.zip ..\LuxCore\src\pyluxcoretools\pyluxcoretools
+".\support\bin\7za.exe" a ..\LuxCore\lib\pyluxcoretools.zip ..\LuxCore\src\pyluxcoretools\pyluxcoretools
 
 :: Pack pyluxcoretools
 cd ..\LuxCore

@@ -5,6 +5,7 @@ SETLOCAL ENABLEEXTENSIONS
 set FULL_REBUILD=0
 set BUILD_LUXCORE_ONLY=0
 set BUILD_LUXMARK_ONLY=0
+set CMAKE_ONLY=0
 set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
 set CPU_PLATFORM=x64
@@ -17,6 +18,7 @@ if "%1" EQU "" goto Start
 if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "luxcore" set BUILD_LUXCORE_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
+if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
@@ -67,10 +69,11 @@ if "%CPU_PLATFORM%"=="x64" (
   set CMAKE_TOOLSET=
 )
 
-if %CMAKE_VN_MAJOR%==2 (
-  echo You need CMake 3.7 or better to build LuxCoreRender
-  goto CMakeNotFound
-)
+:: temporarily disabled this check because of different behaviour on Azure pipelines
+:: if %CMAKE_VN_MAJOR%==2 (
+::   echo You need CMake 3.7 or better to build LuxCoreRender
+::   goto CMakeNotFound
+:: )
 
 for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
 for %%a in (..\WindowsCompileDeps\%CPU_PLATFORM%\Release\lib) do set LIB_DIR=%%~fa
@@ -123,8 +126,10 @@ if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 "%CMAKE%" %CMAKE_OPTS% %LUXCORE_ROOT%
 if ERRORLEVEL 1 goto CMakeError
 
-msbuild %MSBUILD_OPTS% LuxRays.sln
-if ERRORLEVEL 1 goto CMakeError
+if %CMAKE_ONLY%==0 (
+  msbuild %MSBUILD_OPTS% LuxRays.sln
+  if ERRORLEVEL 1 goto CMakeError
+)
 
 cd ..
 
@@ -143,9 +148,10 @@ if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 "%CMAKE%" %CMAKE_OPTS% %LUXMARK_ROOT%
 if ERRORLEVEL 1 goto CMakeError
 
-msbuild %MSBUILD_OPTS% LuxMark.sln
-
-if ERRORLEVEL 1 goto CMakeError
+if %CMAKE_ONLY%==0 (
+  msbuild %MSBUILD_OPTS% LuxMark.sln
+  if ERRORLEVEL 1 goto CMakeError
+)
 
 cd ..
 
