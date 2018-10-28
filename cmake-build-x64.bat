@@ -56,7 +56,7 @@ if not exist "%CMAKE%" goto CMakeNotFound
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
 
 :: Determine if we have CMake 2 or 3
-for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| find "cmake version"') do set CMAKE_VER=%%G
+for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| findstr /I /C:"cmake version"') do set CMAKE_VER=%%G
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
@@ -69,11 +69,10 @@ if "%CPU_PLATFORM%"=="x64" (
   set CMAKE_TOOLSET=
 )
 
-:: temporarily disabled this check because of different behaviour on Azure pipelines
-:: if %CMAKE_VN_MAJOR%==2 (
-::   echo You need CMake 3.7 or better to build LuxCoreRender
-::   goto CMakeNotFound
-:: )
+if %CMAKE_VN_MAJOR%==2 (
+  echo You need CMake 3.11 or better to build LuxCoreRender
+  goto CMakeNotFound
+)
 
 for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
 for %%a in (..\WindowsCompileDeps\%CPU_PLATFORM%\Release\lib) do set LIB_DIR=%%~fa
