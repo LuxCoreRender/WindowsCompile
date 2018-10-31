@@ -10,7 +10,7 @@ SET FREEIMAGE_VER_N=3160
 SET BLOSC_VER=1.14.3
 SET BZIP2_VER=1.0.6
 SET CMAKE_VER=2.8.12.2
-SET EMBREE_VER=2.17.1
+SET EMBREE_VER=3.2.4
 SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
@@ -181,9 +181,9 @@ CALL:extractFile "bzip2 %BZIP2_VER%", "%DOWNLOADS%\bzip2-%BZIP2_VER%.tar.gz"
 CALL:addBuildPathVar "LUX_X64_BZIP_ROOT", "%D64%\bzip2-%BZIP2_VER%"
 
 :embree
-CALL:downloadFile "embree %EMBREE_VER%", "https://github.com/embree/embree/releases/download/v%EMBREE_VER%/embree-%EMBREE_VER%.x64.windows.zip", "embree-%EMBREE_VER%.zip" || EXIT /b -1
+CALL:downloadFile "embree %EMBREE_VER%", "https://github.com/embree/embree/releases/download/v%EMBREE_VER%/embree-%EMBREE_VER%.x64.vc14.windows.zip", "embree-%EMBREE_VER%.zip" || EXIT /b -1
 CALL:extractFile "embree %EMBREE_VER%", "%DOWNLOADS%\embree-%EMBREE_VER%.zip"
-ren %D64%\embree-%EMBREE_VER%.x64.windows embree-%EMBREE_VER%
+ren %D64%\embree-%EMBREE_VER%.x64.vc14.windows embree-%EMBREE_VER%
 
 CALL:addBuildPathVar "LUX_X64_EMBREE_ROOT", "%D64%\embree-%EMBREE_VER%"
 

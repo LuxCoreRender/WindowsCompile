@@ -546,13 +546,13 @@ echo **************************************************************************
 cd /d %LUX_X64_EMBREE_ROOT%
 
 rem Not necessary to build embree, we copy files from binary distribution
-CALL:copyFile bin\embree.dll %LIB_DIR%\embree.dll
+CALL:copyFile bin\embree3.dll %LIB_DIR%\embree3.dll
 CALL:copyFile bin\tbb.dll %LIB_DIR%\tbb.dll
 CALL:copyFile bin\tbbmalloc.dll %LIB_DIR%\tbbmalloc.dll
 CALL:copyFile lib\*.lib %LIB_DIR%
 
-mkdir %INCLUDE_DIR%\embree2
-CALL:copyFile include\embree2\*.* %INCLUDE_DIR%\embree2
+mkdir %INCLUDE_DIR%\embree3
+CALL:copyFile include\embree3\*.* %INCLUDE_DIR%\embree3
 
 
 :: ****************************************************************************

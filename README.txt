@@ -26,18 +26,22 @@ paste it in the command prompt via right click -> paste)
 The first run of the build process will take around 20 minutes 
 (depending on your CPU) and the linking process may consume a lot of RAM.
 
-Default build will use Python 3.5, the version embedded in Blender 2.79b.
-You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
-.\cmake-build-x64.bat /python36
-
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
 
-In order to create an official release, you need also to install Python v3.5, PyInstaller
-(with a "pip install pyinstaller") and PySide
-(download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5).
+In order to create an official release, you need also to install the following:
+- Python v3.5
+- PyInstaller (with a "pip install pyinstaller")
+- PySide (download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5)
+- NumPy (with a "pip install numpy==1.12.1")
 You can then pack the archive with the create-standalone.bat or create-sdk.bat.
-Note that the create-standalone.bat assumes that you have 7zip installed in this path:
-"C:\Program Files\7-Zip\7z.exe"
-If that is not the case, the pyluxcoretools.zip will not be created.
+
+Note: default build will use Python 3.5, the version embedded in Blender 2.79b.
+You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
+.\cmake-build-x64.bat /python36
+
+Note: normally you never need to build dependencies in order to build LuxCore, 
+just use the WindowsCompileDeps repo as explained above.
+The getdeps.bat and build-deps-x64.bat scripts are used mainly as a reference 
+for developers and are not guaranteed to be always up-to-date.
