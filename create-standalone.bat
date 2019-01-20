@@ -11,7 +11,7 @@ md %DIR%
 
 :: Pack pyluxcoretools
 cd ..\LuxCore
-pyinstaller samples\pyluxcoretool\pyluxcoretool.win.spec
+PyInstaller samples\pyluxcoretool\pyluxcoretool.win.spec
 cd ..\WindowsCompile
 
 :: Copy pyluxcoretools binaries

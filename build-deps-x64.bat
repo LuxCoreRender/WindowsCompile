@@ -5,7 +5,8 @@ echo **************************************************************************
 echo * Startup                                                                *
 echo **************************************************************************
 echo.
-echo This script will use 3 pre-built binaries to help build LuxRender:
+echo This script will use 3 pre-built binaries to help build dependencies
+echo for LuxCoreRender:
 echo  1: win_flex.exe       from http://sourceforge.net/projects/winflexbison/
 echo  2: win_bison.exe      from http://sourceforge.net/projects/winflexbison/
 echo  3: GNU patch.exe      from http://gnuwin32.sourceforge.net/packages/patch.htm
@@ -64,12 +65,12 @@ echo **************************************************************************
 
 :StartChoice
 echo.
-echo If this is your first time building LuxRender, you'll need to build the 
-echo dependencies as well. After they've been built you'll shouldn't need to
-echo rebuild them unless there's a change in versions.
+echo WARNING: building dependencies is normally not needed to build
+echo LuxCoreRender, you can just follow the instructions at:
+echo https://github.com/LuxCoreRender/WindowsCompile
 echo.
-echo If you've successfully built the dependencies before, you only need to
-echo build LuxRender.
+echo If you really need to build dependencies, answer the following questions,
+echo otherwise PRESS CTRL-C NOW to exit this script.
 echo.
 
 
@@ -89,7 +90,7 @@ GOTO DebugChoice
 IF %BUILD_DEBUG% EQU 0 set BUILD_CONFIGURATION=Release
 IF %BUILD_DEBUG% EQU 1 set BUILD_CONFIGURATION=Debug
 
-set LUX_WINDOWS_DEPS_ROOT=%LUX_DEPS_ROOT%\..\WindowsCompileDeps
+set LUX_WINDOWS_DEPS_ROOT=%LUX_DEPS_ROOT%\..\BuiltDeps
 set INSTALL_DIR=%LUX_WINDOWS_DEPS_ROOT%\x64\%BUILD_CONFIGURATION%
 
 set LIB_DIR=%INSTALL_DIR%\lib
@@ -114,11 +115,11 @@ IF %BUILD_DEBUG% EQU 1 set MSBUILD_OPTS=%MSBUILD_OPTS% %MSBUILD_DEBUG_OPTS%
 :BuildDepsChoice
 echo.
 echo Build options:
-echo 1: Build all dependencies (default)
-echo 2: Build all but Qt
+echo 1: Build all dependencies
+echo 2: Build all but Qt (default, Qt is not needed by LuxCoreRender)
 echo q: Quit (do nothing)
 echo.
-set BUILDCHOICE=1
+set BUILDCHOICE=2
 set /P BUILDCHOICE="Selection? "
 IF %BUILDCHOICE% EQU 1 GOTO StartBuild
 IF %BUILDCHOICE% EQU 2 GOTO StartBuild
@@ -128,6 +129,10 @@ GOTO BuildDepsChoice
 
 
 :StartBuild
+echo.
+echo To use the freshly built dependencies for a standard LuxCoreRender build,
+echo rename folder 'BuiltDeps' to 'WindowsCompileDeps'.
+echo.
 IF %BUILDCHOICE% EQU 2 GOTO NotQT
 
 

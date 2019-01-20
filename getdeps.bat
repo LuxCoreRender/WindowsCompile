@@ -48,19 +48,23 @@ echo   OpenImageIO	%OIIO_VER%		http://openimageio.org/
 echo   OpenJPEG   	%OPENJPEG_VER%		http://www.openjpeg.org/
 echo   Python     	%PYTHON35_VER%		http://www.python.org/
 echo   Python     	%PYTHON36_VER%		http://www.python.org/
+echo   Python     	%PYTHON37_VER%		http://www.python.org/
 echo   QT         	%QT_VER%		http://qt-project.org/
 echo   tbb        	%TBB_VER%		https://www.threadingbuildingblocks.org/
 echo   zlib       	%ZLIB_VER%		http://www.zlib.net/
 echo.
 pause
 echo   To build these dependencies and LuxCoreRender you will also need a 
-echo   working installation of CMake (suggested version 3.7 or newer).
+echo   working installation of CMake (suggested version 3.11.2 or newer).
 echo   To enable OpenCL support in LuxCoreRender you will need an OpenCL SDK,
 echo   e.g. one among:
-echo    1. AMD APP SDK
+echo    1. GPUopen OCL SDK
 echo    2. Intel SDK for OpenCL Applications
 echo    3. NVIDIA CUDA Toolkit
 echo   None of these will be downloaded or installed by this script.
+echo.
+echo   Note: at the moment this script cannot build Boost.NumPy library.
+echo   This will be fixed as soon as possible.
 echo.
 echo Downloading, extracting and building all this source code will require a 
 echo lot of hard drive space. Make sure you have at least 10 GB.
