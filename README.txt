@@ -34,7 +34,7 @@ You can run the script collect-compiled-binaries.bat to collect them.
 In order to create an official release, you need also to install the following:
 - Python v3.5
 - PyInstaller (with a "pip install pyinstaller")
-- PySide (download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside the version for Python 3.5)
+- PySide2 (with a "pip install PySide2")
 - NumPy (with a "pip install numpy==1.12.1")
 You can then pack the archive with the create-standalone.bat or create-sdk.bat.
 
