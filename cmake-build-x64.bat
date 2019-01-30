@@ -12,6 +12,7 @@ set CPU_PLATFORM=x64
 set BUILD_TYPE=Release
 set BUILD_DLL=0
 set PYTHON_VERSION=35
+set CPUCOUNT=/maxcpucount
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -25,6 +26,12 @@ if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
+:: /cpucount[:n] specifies the number of concurrent processes used by msbuild
+:: Default is to use all the available processors
+set cpupar=%1
+if /i "%cpupar:~0,9%" EQU "/cpucount" (
+    set "CPUCOUNT=/maxcpucount%cpupar:~9%"
+)
 
 shift 
 goto ParseCmdParams
@@ -104,7 +111,7 @@ if %BUILD_DLL% EQU 1 (
 
 set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D LUXRAYS_CUSTOM_CONFIG=cmake\SpecializedConfig\Config_Windows.cmake -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
-set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
+set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
