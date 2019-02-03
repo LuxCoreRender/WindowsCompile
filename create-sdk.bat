@@ -17,6 +17,7 @@ md %DIR%\lib
 xcopy .\Build_CMake\LuxCore\bin\Release\luxcore.dll %DIR%\lib
 xcopy .\Build_CMake\LuxCore\lib\Release\pyluxcore.pyd %DIR%\lib
 :: Copy DLLs from WindowsCompileDeps (assuming it is in same folder as WindowsCompile)
+xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
