@@ -15,12 +15,13 @@ SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
 SET LIBTIFF_VER=4.0.3
+SET OIDN_VER=0.8.1
 SET OIIO_VER=1.8.11
 SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
 SET PYTHON35_VER=3.5.5
-SET PYTHON36_VER=3.6.6
-SET PYTHON37_VER=3.7.0
+SET PYTHON36_VER=3.6.8
+SET PYTHON37_VER=3.7.2
 SET QT_VER=4.8.7
 SET TBB_VER=2017
 SET TBB_VER_FULL=2017_20160722
@@ -44,6 +45,7 @@ echo   JPEG       	%JPEG_VER%		http://www.ijg.org/
 echo   libPNG     	%LIBPNG_VER%		http://www.libpng.org/
 echo   libTIFF    	%LIBTIFF_VER%		http://www.libtiff.org/
 echo   OpenEXR    	%OPENEXR_VER%		http://www.openexr.com/
+echo   OpenImageDenoise %OIDN_VER%	https://openimagedenoise.github.io
 echo   OpenImageIO	%OIIO_VER%		http://openimageio.org/
 echo   OpenJPEG   	%OPENJPEG_VER%		http://www.openjpeg.org/
 echo   Python     	%PYTHON35_VER%		http://www.python.org/
@@ -227,6 +229,12 @@ CALL:extractFile "OpenEXR %OPENEXR_VER%", "%DOWNLOADS%\openexr-%OPENEXR_VER%.tar
 
 CALL:addBuildPathVar "LUX_X64_OPENEXR_ROOT", "%D64%\openexr-%OPENEXR_VER%"
 
+:oidn
+CALL:downloadFile "OpenImageDenoise %OIDN_VER%", "https://github.com/OpenImageDenoise/oidn/releases/download/v%OIDN_VER%/oidn-%OIDN_VER%.x64.vc14.windows.zip", "oidn-%OIDN_VER%.x64.vc14.windows.zip", "--no-check-certificate" || EXIT /b -1
+CALL:extractFile "OpenImageDenoise %OIDN_VER%", "%DOWNLOADS%\oidn-%OIDN_VER%.x64.vc14.windows.zip"
+
+CALL:addBuildPathVar "LUX_X64_OIDN_ROOT", "%D64%\oidn-%OIDN_VER%.x64.vc14.windows"
+
 :oiio
 CALL:downloadFile "OpenImageIO %OIIO_VER%", "http://github.com/OpenImageIO/oiio/archive/Release-%OIIO_VER%.tar.gz", "oiio-Release-%OIIO_VER%.tar.gz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "OpenImageIO %OIIO_VER%", "%DOWNLOADS%\oiio-Release-%OIIO_VER%.tar.gz"
@@ -240,19 +248,19 @@ CALL:extractFile "OpenJPEG %OPENJPEG_VER%", "%DOWNLOADS%\openjpeg-%OPENJPEG_VER%
 CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
 
 :python35
-CALL:downloadFile "Python %PYTHON35_VER%", "http://python.org/ftp/python/%PYTHON35_VER%/Python-%PYTHON35_VER%.tgz", "Python-%PYTHON35_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:downloadFile "Python %PYTHON35_VER%", "https://python.org/ftp/python/%PYTHON35_VER%/Python-%PYTHON35_VER%.tgz", "Python-%PYTHON35_VER%.tgz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "Python %PYTHON35_VER%", "%DOWNLOADS%\Python-%PYTHON35_VER%.tgz"
 
 CALL:addBuildPathVar "LUX_X64_PYTHON35_ROOT", "%D64%\Python-%PYTHON35_VER%"
 
 :python36
-CALL:downloadFile "Python %PYTHON36_VER%", "http://python.org/ftp/python/%PYTHON36_VER%/Python-%PYTHON36_VER%.tgz", "Python-%PYTHON36_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:downloadFile "Python %PYTHON36_VER%", "https://python.org/ftp/python/%PYTHON36_VER%/Python-%PYTHON36_VER%.tgz", "Python-%PYTHON36_VER%.tgz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "Python %PYTHON36_VER%", "%DOWNLOADS%\Python-%PYTHON36_VER%.tgz"
 
 CALL:addBuildPathVar "LUX_X64_PYTHON36_ROOT", "%D64%\Python-%PYTHON36_VER%"
 
 :python37
-CALL:downloadFile "Python %PYTHON37_VER%", "http://python.org/ftp/python/%PYTHON37_VER%/Python-%PYTHON37_VER%.tgz", "Python-%PYTHON37_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:downloadFile "Python %PYTHON37_VER%", "https://python.org/ftp/python/%PYTHON37_VER%/Python-%PYTHON37_VER%.tgz", "Python-%PYTHON37_VER%.tgz", "--no-check-certificate" || EXIT /b -1
 CALL:extractFile "Python %PYTHON37_VER%", "%DOWNLOADS%\Python-%PYTHON37_VER%.tgz"
 
 CALL:addBuildPathVar "LUX_X64_PYTHON37_ROOT", "%D64%\Python-%PYTHON37_VER%"

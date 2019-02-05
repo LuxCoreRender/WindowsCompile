@@ -33,6 +33,7 @@ CALL:checkEnvVarValid "LUX_X64_ILMBASE_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
@@ -582,6 +583,24 @@ CALL:xcopyFiles include\tbb\*.* %INCLUDE_DIR%\tbb
 
 
 :: ****************************************************************************
+:: ****************************** OpenImageDenoise ****************************
+:: ****************************************************************************
+:oidn
+echo.
+echo **************************************************************************
+echo * Copying OpenImageDenoise files
+echo **************************************************************************
+cd /d %LUX_X64_OIDN_ROOT%
+
+rem Not necessary to build OIDN, we copy files from binary distribution
+CALL:copyFile bin\*.dll %LIB_DIR%
+CALL:copyFile lib\*.lib %LIB_DIR%
+
+mkdir %INCLUDE_DIR%\OpenImageDenoise
+CALL:copyFile include\OpenImageDenoise\*.* %INCLUDE_DIR%\OpenImageDenoise
+
+
+:: ****************************************************************************
 :: ************************************ blosc *********************************
 :: ****************************************************************************
 :blosc
@@ -605,7 +624,7 @@ CALL:copyFile ..\blosc\blosc-export.h %INCLUDE_DIR%\blosc-export.h
 CALL:copyFile blosc\Debug\blosc.lib %LIB_DIR%\blosc.lib
 
 
-:postLuxRender
+:postLuxCoreRender
 :: ****************************************************************************
 :: *********************************** Finished *******************************
 :: ****************************************************************************
