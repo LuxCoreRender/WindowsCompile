@@ -6,15 +6,13 @@ rd /s /q %DIR%
 :: Create new folder for the binaries
 md %DIR%
 
-xcopy .\Build_CMake\LuxCore\lib\pyluxcoretools.zip ..\LuxCore\lib\
-
 :: Pack pyluxcoretools
-cd ..\LuxCore
-PyInstaller samples\pyluxcoretool\pyluxcoretool.win.spec
-cd ..\WindowsCompile
+cd Build_CMake\LuxCore
+PyInstaller ..\..\..\LuxCore\samples\pyluxcoretool\pyluxcoretool.win.spec
+cd ..\..
 
 :: Copy pyluxcoretools binaries
-xcopy ..\LuxCore\dist\pyluxcoretool.exe %DIR%
+xcopy .\Build_CMake\LuxCore\dist\pyluxcoretool.exe %DIR%
 
 :: Copy binaries
 xcopy .\Build_CMake\LuxCore\bin\Release\luxcoreui.exe %DIR%
