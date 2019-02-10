@@ -6,8 +6,7 @@ rd /s /q %DIR%
 :: Create new folder for the binaries
 md %DIR%
 
-:: Create pyluxcoretools.zip (cmake tar doesn't work on Windows)
-".\support\bin\7za.exe" a ..\LuxCore\lib\pyluxcoretools.zip ..\LuxCore\src\pyluxcoretools\pyluxcoretools
+xcopy .\Build_CMake\LuxCore\lib\pyluxcoretools.zip ..\LuxCore\lib\
 
 :: Pack pyluxcoretools
 cd ..\LuxCore
@@ -20,7 +19,7 @@ xcopy ..\LuxCore\dist\pyluxcoretool.exe %DIR%
 :: Copy binaries
 xcopy .\Build_CMake\LuxCore\bin\Release\luxcoreui.exe %DIR%
 xcopy .\Build_CMake\LuxCore\lib\Release\pyluxcore.pyd %DIR%
-xcopy ..\LuxCore\lib\pyluxcoretools.zip %DIR%
+xcopy .\Build_CMake\LuxCore\lib\pyluxcoretools.zip %DIR%
 
 :: Copy DLLs from WindowsCompileDeps (assuming it is in same folder as WindowsCompile)
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%
