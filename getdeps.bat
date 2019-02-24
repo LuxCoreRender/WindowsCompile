@@ -15,6 +15,9 @@ SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
 SET LIBTIFF_VER=4.0.3
+SET NUMPY35_VER=1.12.1
+SET NUMPY36_VER=1.15.4
+SET NUMPY37_VER=1.15.4
 SET OIDN_VER=0.8.1
 SET OIIO_VER=1.8.11
 SET OPENEXR_VER=2.2.0
@@ -44,6 +47,9 @@ echo   IlmBase    	%ILMBASE_VER%		http://www.openexr.com/
 echo   JPEG       	%JPEG_VER%		http://www.ijg.org/
 echo   libPNG     	%LIBPNG_VER%		http://www.libpng.org/
 echo   libTIFF    	%LIBTIFF_VER%		http://www.libtiff.org/
+echo   NumPy      	%NUMPY35_VER%		http://www.numpy.org/
+echo   NumPy      	%NUMPY36_VER%		http://www.numpy.org/
+echo   NumPy      	%NUMPY37_VER%		http://www.numpy.org/
 echo   OpenEXR    	%OPENEXR_VER%		http://www.openexr.com/
 echo   OpenImageDenoise %OIDN_VER%	https://openimagedenoise.github.io
 echo   OpenImageIO	%OIIO_VER%		http://openimageio.org/
@@ -64,9 +70,6 @@ echo    1. GPUopen OCL SDK
 echo    2. Intel SDK for OpenCL Applications
 echo    3. NVIDIA CUDA Toolkit
 echo   None of these will be downloaded or installed by this script.
-echo.
-echo   Note: at the moment this script cannot build Boost.NumPy library.
-echo   This will be fixed as soon as possible.
 echo.
 echo Downloading, extracting and building all this source code will require a 
 echo lot of hard drive space. Make sure you have at least 10 GB.
@@ -98,6 +101,21 @@ IF ERRORLEVEL 9009 (
 	echo.
 	echo Cannot execute unzip. Aborting.
 	EXIT /b -1
+)
+
+echo Finding if Python is installed...
+for /f "tokens=*" %%a in ('where python') do SET PYTHON=%%~fa  
+
+if exist "%PYTHON%" (
+  echo Python found at "%PYTHON%"
+) else (
+  for /f "tokens=*" %%a in ('where py') do SET PYTHON=%%~fa
+  if exist "%PYTHON%" (
+    echo Python found at "%PYTHON%"
+  ) else (
+    echo Python was not found, Numpy will not be downloaded.
+    echo Without it, you will not be able to build Boost.NumPy.
+  )
 )
 
 set DOWNLOADS="%CD%\..\downloads"
@@ -222,6 +240,30 @@ CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/ol
 CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_LIBTIFF_ROOT", "%D64%\tiff-%LIBTIFF_VER%"
+
+:numpy35
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 35 --only-binary=:all: numpy==%NUMPY35_VER%
+CALL:extractFile "Numpy %NUMPY35_VER% for Python 3.5", "%DOWNLOADS%\numpy-%NUMPY35_VER%-cp35-none-win_amd64.whl", "numpy35-%NUMPY35_VER%"
+
+CALL:addBuildPathVar "LUX_X64_NUMPY35_ROOT", "%D64%\numpy35-%NUMPY35_VER%"
+)
+
+:numpy36
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 36 --only-binary=:all: numpy==%NUMPY36_VER%
+CALL:extractFile "Numpy %NUMPY36_VER% for Python 3.6", "%DOWNLOADS%\numpy-%NUMPY36_VER%-cp36-none-win_amd64.whl", "numpy36-%NUMPY36_VER%"
+
+CALL:addBuildPathVar "LUX_X64_NUMPY36_ROOT", "%D64%\numpy36-%NUMPY36_VER%"
+)
+
+:numpy37
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 37 --only-binary=:all: numpy==%NUMPY37_VER%
+CALL:extractFile "Numpy %NUMPY37_VER% for Python 3.7", "%DOWNLOADS%\numpy-%NUMPY37_VER%-cp37-none-win_amd64.whl", "numpy37-%NUMPY37_VER%"
+
+CALL:addBuildPathVar "LUX_X64_NUMPY37_ROOT", "%D64%\numpy37-%NUMPY37_VER%"
+)
 
 :openexr
 CALL:downloadFile "OpenEXR %OPENEXR_VER%", "http://download.savannah.nongnu.org/releases/openexr/openexr-%OPENEXR_VER%.tar.gz", "openexr-%OPENEXR_VER%.tar.gz" || EXIT /b -1

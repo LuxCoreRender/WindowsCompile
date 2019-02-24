@@ -33,6 +33,9 @@ CALL:checkEnvVarValid "LUX_X64_ILMBASE_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_NUMPY35_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_NUMPY36_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_NUMPY37_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
@@ -201,7 +204,7 @@ echo **************************************************************************
 cd /d %LUX_X64_PYTHON35_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" /target:"_ctypes" pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Python35
@@ -231,7 +234,7 @@ echo **************************************************************************
 cd /d %LUX_X64_PYTHON37_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" /target:"_decimal" pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Python37
@@ -261,6 +264,7 @@ cd /d %LUX_X64_BOOST_ROOT%
 CALL bootstrap.bat
 CALL:copyfile project-config.jam .\project-config.bck
 type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-35.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY35_ROOT%\numpy\*.* %LUX_X64_PYTHON35_ROOT%\Lib\site-packages\numpy
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON35_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
@@ -278,6 +282,7 @@ CALL:copyFile stage\lib\*.lib %LIB_DIR%
 b2 --clean
 CALL:copyfile project-config.bck .\project-config.jam
 type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-36.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY36_ROOT%\numpy\*.* %LUX_X64_PYTHON36_ROOT%\Lib\site-packages\numpy
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON36_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
@@ -294,6 +299,7 @@ CALL:copyFile stage\lib\*.lib %LIB_DIR%
 b2 --clean
 CALL:copyfile project-config.bck .\project-config.jam
 type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-37.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY37_ROOT%\numpy\*.* %LUX_X64_PYTHON37_ROOT%\Lib\site-packages\numpy
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON37_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
