@@ -35,6 +35,10 @@ In order to create an official release, you need also to install the following:
 - Python v3.5
 - PyInstaller (with a "pip install pyinstaller")
 - PySide2 (with a "pip install PySide2")
+  Note: a bug in PySide2 v5.12.1 prevents pyinstaller-packed executables to
+        run properly. If you need to use pyluxcoretool.exe, then please
+        install the previous version with:
+        pip install PySide2==5.12.0 shiboken2==5.12.0
 - NumPy (with a "pip install numpy==1.12.1")
 You can then pack the archive with the create-standalone.bat or create-sdk.bat.
 
