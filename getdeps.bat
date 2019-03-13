@@ -15,6 +15,7 @@ SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
 SET LIBPNG_VER=1.6.12
 SET LIBTIFF_VER=4.0.3
+SET NUMPY27_VER=1.15.4
 SET NUMPY35_VER=1.12.1
 SET NUMPY36_VER=1.15.4
 SET NUMPY37_VER=1.15.4
@@ -22,6 +23,7 @@ SET OIDN_VER=0.8.1
 SET OIIO_VER=1.8.11
 SET OPENEXR_VER=2.2.0
 SET OPENJPEG_VER=1.5.1
+SET PYTHON27_VER=2.7.16
 SET PYTHON35_VER=3.5.5
 SET PYTHON36_VER=3.6.8
 SET PYTHON37_VER=3.7.2
@@ -199,7 +201,7 @@ CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
 CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"
 
 :bzip
-CALL:downloadFile "bzip2 %BZIP2_VER%", "http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz", "bzip2-%BZIP2_VER%.tar.gz" || EXIT /b -1
+CALL:downloadFile "bzip2 %BZIP2_VER%", "https://downloads.sourceforge.net/bzip2/bzip2-%BZIP2_VER%.tar.gz", "bzip2-%BZIP2_VER%.tar.gz", "--no-check-certificate --content-disposition" || EXIT /b -1
 CALL:extractFile "bzip2 %BZIP2_VER%", "%DOWNLOADS%\bzip2-%BZIP2_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_BZIP_ROOT", "%D64%\bzip2-%BZIP2_VER%"
@@ -240,6 +242,14 @@ CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/ol
 CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_LIBTIFF_ROOT", "%D64%\tiff-%LIBTIFF_VER%"
+
+:numpy27
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 27 --only-binary=:all: numpy==%NUMPY27_VER%
+CALL:extractFile "Numpy %NUMPY27_VER% for Python 2.7", "%DOWNLOADS%\numpy-%NUMPY27_VER%-cp27-none-win_amd64.whl", "numpy27-%NUMPY27_VER%"
+
+CALL:addBuildPathVar "LUX_X64_NUMPY27_ROOT", "%D64%\numpy27-%NUMPY27_VER%"
+)
 
 :numpy35
 if exist "%PYTHON%" (
@@ -288,6 +298,12 @@ CALL:downloadFile "OpenJPEG %OPENJPEG_VER%", "https://storage.googleapis.com/goo
 CALL:extractFile "OpenJPEG %OPENJPEG_VER%", "%DOWNLOADS%\openjpeg-%OPENJPEG_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
+
+:python27
+CALL:downloadFile "Python %PYTHON27_VER%", "https://python.org/ftp/python/%PYTHON27_VER%/Python-%PYTHON27_VER%.tgz", "Python-%PYTHON27_VER%.tgz", "--no-check-certificate" || EXIT /b -1
+CALL:extractFile "Python %PYTHON27_VER%", "%DOWNLOADS%\Python-%PYTHON27_VER%.tgz"
+
+CALL:addBuildPathVar "LUX_X64_PYTHON27_ROOT", "%D64%\Python-%PYTHON27_VER%"
 
 :python35
 CALL:downloadFile "Python %PYTHON35_VER%", "https://python.org/ftp/python/%PYTHON35_VER%/Python-%PYTHON35_VER%.tgz", "Python-%PYTHON35_VER%.tgz", "--no-check-certificate" || EXIT /b -1

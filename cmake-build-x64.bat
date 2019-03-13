@@ -23,6 +23,7 @@ if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
+if /i "%1" EQU "/python27" set PYTHON_VERSION=27
 if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
