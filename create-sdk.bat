@@ -40,5 +40,9 @@ xcopy ..\LuxCore\include\luxrays\utils\oclerror.h %DIR%\include\luxrays\utils
 xcopy ..\LuxCore\include\luxrays\utils\properties.h %DIR%\include\luxrays\utils
 xcopy ..\LuxCore\include\luxrays\utils\utils.h %DIR%\include\luxrays\utils
 
+md %DIR%\include\luxcore
+xcopy ..\LuxCore\include\luxcore\cfg.h %DIR%\include\luxcore
+xcopy ..\LuxCore\include\luxcoreluxcore.h %DIR%\include\luxcore
+
 xcopy /E /I ..\LuxCore\samples %DIR%\samples
 xcopy /E /I ..\LuxCore\scenes %DIR%\scenes
