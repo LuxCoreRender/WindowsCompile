@@ -40,7 +40,14 @@ In order to create an official release, you need also to install the following:
         install the previous version with:
         pip install PySide2==5.12.0 shiboken2==5.12.0
 - NumPy (with a "pip install numpy==1.12.1")
-You can then pack the archive with the create-standalone.bat or create-sdk.bat.
+
+You can then pack the release archive running the create-standalone.bat script.
+
+In order to build the SDK version, just run:
+
+cd C:\Path\to\luxcorerender\WindowsCompile\
+.\cmake-build-x64.bat /dll
+create-sdk.bat
 
 Note: default build will use Python 3.5, the version embedded in Blender 2.79b.
 You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
