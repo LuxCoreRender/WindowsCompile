@@ -7,16 +7,19 @@ Note that you have to enable the "Visual C++ ATL for x86 and x64" in the install
 
 2) Install cmake v3.11.2 or better (https://cmake.org/);
 
-3) Create a "luxcorerender" directory;
+3) If you want to build LuxCoreRender with OpenCL support, you also need to install an OpenCL SDK, for example the GPUOpen OCL SDK:
+- https://github.com/GPUOpen-LibrariesAndSDKs/OCL-SDK/releases
 
-4) Clone the following repositories inside the "luxcorerender" directory:
+4) Create a "luxcorerender" directory;
+
+5) Clone the following repositories inside the "luxcorerender" directory:
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
 - https://github.com/LuxCoreRender/WindowsCompileDeps
 
 NOTE: you need git LFS extension (https://git-lfs.github.com) to clone WindowsCompileDeps repository. Or you can install and use https://desktop.github.com to clone the repositories.
 
-5) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
+6) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
