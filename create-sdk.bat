@@ -35,6 +35,7 @@ md %DIR%\include
 md %DIR%\include\luxrays
 md %DIR%\include\luxrays\utils
 xcopy /E /I ..\LuxCore\include\luxrays\utils\cyhair %DIR%\include\luxrays\utils\cyhair
+xcopy ..\LuxCore\include\luxrays\utils\exportdefs.h %DIR%\include\luxrays\utils
 xcopy ..\LuxCore\include\luxrays\utils\ocl.h %DIR%\include\luxrays\utils
 xcopy ..\LuxCore\include\luxrays\utils\oclerror.h %DIR%\include\luxrays\utils
 xcopy ..\LuxCore\include\luxrays\utils\properties.h %DIR%\include\luxrays\utils
