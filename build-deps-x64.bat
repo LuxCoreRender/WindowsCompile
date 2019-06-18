@@ -33,6 +33,7 @@ CALL:checkEnvVarValid "LUX_X64_ILMBASE_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_NUMPY27_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_NUMPY35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_NUMPY36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_NUMPY37_ROOT"   || EXIT /b -1
@@ -40,6 +41,7 @@ CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON27_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON37_ROOT"   || EXIT /b -1
@@ -75,6 +77,8 @@ echo https://github.com/LuxCoreRender/WindowsCompile
 echo.
 echo If you really need to build dependencies, answer the following questions,
 echo otherwise PRESS CTRL-C NOW to exit this script.
+echo
+echo NOTE: out-of-the-box build of Boost.Numpy27 is not supported.
 echo.
 
 
@@ -198,6 +202,22 @@ CALL:copyFile plugins\imageformats\qtiff4.dll %LIB_DIR%\qtplugins\imageformats
 :: ****************************************************************************
 :Python
 echo.
+REM echo **************************************************************************
+REM echo * Building Python 27                                                     *
+REM echo **************************************************************************
+REM cd /d %LUX_X64_PYTHON27_ROOT%\PCbuild
+REM CALL:copyFile ..\PC\pyconfig.h ..\Include
+
+REM ::msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
+REM build.bat -p x64 -c Release "%MSBUILD_OPTS%"
+REM if ERRORLEVEL 1 goto :EOF
+
+REM mkdir %INCLUDE_DIR%\Python27
+REM CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python27
+REM CALL:copyFile amd64\python27.lib %LIB_DIR%
+REM CALL:copyFile amd64\python27.dll %LIB_DIR%
+
+echo.
 echo **************************************************************************
 echo * Building Python 35                                                     *
 echo **************************************************************************
@@ -301,6 +321,23 @@ CALL:copyfile project-config.bck .\project-config.jam
 type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-37.jam >> project-config.jam
 CALL:xcopyFiles %LUX_X64_NUMPY37_ROOT%\numpy\*.* %LUX_X64_PYTHON37_ROOT%\Lib\site-packages\numpy
 set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON37_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+
+set BUILD_CONFIGURATION_BOOST=release
+IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
+
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+if ERRORLEVEL 1 goto :EOF
+
+mkdir %INCLUDE_DIR%\Boost
+mkdir %INCLUDE_DIR%\Boost\boost
+CALL:copyFile stage\lib\*.lib %LIB_DIR%
+
+:: with python 2.7
+b2 --clean
+CALL:copyfile project-config.bck .\project-config.jam
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-27.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY27_ROOT%\numpy\*.* %LUX_X64_PYTHON27_ROOT%\Lib\site-packages\numpy
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON27_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
@@ -600,6 +637,7 @@ cd /d %LUX_X64_OIDN_ROOT%
 
 rem Not necessary to build OIDN, we copy files from binary distribution
 CALL:copyFile bin\*.dll %LIB_DIR%
+CALL:copyFile bin\*.exe %LIB_DIR%
 CALL:copyFile lib\*.lib %LIB_DIR%
 
 mkdir %INCLUDE_DIR%\OpenImageDenoise
