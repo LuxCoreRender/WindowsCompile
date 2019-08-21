@@ -40,10 +40,6 @@ In order to create an official release, you need also to install the following:
 - PySide (download wheel from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside)
   OR 
   PySide2 (with a "pip install PySide2")
-  Note: a bug in PySide2 v5.12.1 prevents pyinstaller-packed executables to
-        run properly. If you need to use pyluxcoretool.exe, then please
-        install the previous version with:
-        pip install PySide2==5.12.0 shiboken2==5.12.0
   Note: some pre-generated pyluxcoretools source files are not compatible with
         PySide2, so you need to have it already installed at build time in order
         to have pyluxcoretools correctly working

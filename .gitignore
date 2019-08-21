@@ -3,3 +3,4 @@ compiled_binaries
 luxcorerender
 luxmark
 build-vars.bat
+py*venv
