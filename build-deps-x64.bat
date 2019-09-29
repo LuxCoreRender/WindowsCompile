@@ -45,7 +45,6 @@ CALL:checkEnvVarValid "LUX_X64_PYTHON27_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON37_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_QT_ROOT"        || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
 
@@ -124,13 +123,11 @@ IF %BUILD_DEBUG% EQU 1 set MSBUILD_OPTS=%MSBUILD_OPTS% %MSBUILD_DEBUG_OPTS%
 echo.
 echo Build options:
 echo 1: Build all dependencies
-echo 2: Build all but Qt (default, Qt is not needed by LuxCoreRender)
 echo q: Quit (do nothing)
 echo.
-set BUILDCHOICE=2
+set BUILDCHOICE=q
 set /P BUILDCHOICE="Selection? "
 IF %BUILDCHOICE% EQU 1 GOTO StartBuild
-IF %BUILDCHOICE% EQU 2 GOTO StartBuild
 IF /I %BUILDCHOICE% EQU q GOTO:EOF
 echo Invalid choice
 GOTO BuildDepsChoice
@@ -141,61 +138,7 @@ echo.
 echo To use the freshly built dependencies for a standard LuxCoreRender build,
 echo rename folder 'BuiltDeps' to 'WindowsCompileDeps'.
 echo.
-IF %BUILDCHOICE% EQU 2 GOTO NotQT
 
-
-:: ****************************************************************************
-:: ********************************** QT **************************************
-:: ****************************************************************************
-:QT
-echo.
-echo **************************************************************************
-echo * Building Qt                                                            *
-echo **************************************************************************
-cd /d %LUX_X64_QT_ROOT%
-
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\qt.patch
-
-echo.
-echo Cleaning Qt, this may take a few moments...
-nmake confclean 1>NUL 2>NUL
-echo.
-echo Building Qt may take a very long time! The Qt configure utility will now 
-echo ask you a few questions before building commences. The rest of the build 
-echo process should be autonomous.
-pause
-
-set BUILD_CONFIGURATION_QT=-release -ltcg
-IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_QT=-debug
-
-configure -opensource -fast -mp -nomake demos -nomake examples -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-webkit -no-script -no-scripttools -no-qt3support %BUILD_CONFIGURATION_QT%
-if ERRORLEVEL 1 goto :EOF
-
-nmake
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Qt
-CALL:xcopyFiles include\*.* %INCLUDE_DIR%\Qt\include
-CALL:xcopyFiles src\*.h?? %INCLUDE_DIR%\Qt\src
-CALL:copyFile lib\qtmain.lib %LIB_DIR%
-CALL:copyFile lib\QtCore4.lib %LIB_DIR%
-CALL:copyFile lib\QtCore4.dll %LIB_DIR%
-CALL:copyFile lib\QtGui4.lib %LIB_DIR%
-CALL:copyFile lib\QtGui4.dll %LIB_DIR%
-CALL:copyFile lib\QtNetwork4.lib %LIB_DIR%
-CALL:copyFile lib\QtNetwork4.dll %LIB_DIR%
-CALL:copyFile bin\qmake.exe %LIB_DIR%
-CALL:copyFile bin\moc.exe %LIB_DIR%
-CALL:copyFile bin\uic.exe %LIB_DIR%
-CALL:copyFile bin\rcc.exe %LIB_DIR%
-mkdir %LIB_DIR%\qtplugins
-mkdir %LIB_DIR%\qtplugins\imageformats
-CALL:copyFile plugins\imageformats\qjpeg4.dll %LIB_DIR%\qtplugins\imageformats
-CALL:copyFile plugins\imageformats\qtga4.dll %LIB_DIR%\qtplugins\imageformats
-CALL:copyFile plugins\imageformats\qtiff4.dll %LIB_DIR%\qtplugins\imageformats
-
-
-:NotQT
 
 :: ****************************************************************************
 :: ******************************* PYTHON *************************************
@@ -636,6 +579,7 @@ echo **************************************************************************
 cd /d %LUX_X64_OIDN_ROOT%
 
 rem Not necessary to build OIDN, we copy files from binary distribution
+rem This also overwrites tbb and tbbmalloc libraries with the OIDN version
 CALL:copyFile bin\*.dll %LIB_DIR%
 CALL:copyFile bin\*.exe %LIB_DIR%
 CALL:copyFile lib\*.lib %LIB_DIR%

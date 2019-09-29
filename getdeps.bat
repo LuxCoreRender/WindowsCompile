@@ -27,7 +27,7 @@ SET PYTHON27_VER=2.7.16
 SET PYTHON35_VER=3.5.5
 SET PYTHON36_VER=3.6.8
 SET PYTHON37_VER=3.7.2
-SET QT_VER=4.8.7
+SET QT_VER=5.12.2
 SET TBB_VER=2017
 SET TBB_VER_FULL=2017_20160722
 SET ZLIB_VER=1.2.8
@@ -59,13 +59,15 @@ echo   OpenJPEG   	%OPENJPEG_VER%		http://www.openjpeg.org/
 echo   Python     	%PYTHON35_VER%		http://www.python.org/
 echo   Python     	%PYTHON36_VER%		http://www.python.org/
 echo   Python     	%PYTHON37_VER%		http://www.python.org/
-echo   QT         	%QT_VER%		http://qt-project.org/
+echo   QT         	%QT_VER%		http://www.qt.io/
 echo   tbb        	%TBB_VER%		https://www.threadingbuildingblocks.org/
 echo   zlib       	%ZLIB_VER%		http://www.zlib.net/
 echo.
 pause
 echo   To build these dependencies and LuxCoreRender you will also need a 
 echo   working installation of CMake (suggested version 3.11.2 or newer).
+echo   If you want to build LuxMark, Qt5 is also needed: this script downloads
+echo   the installer for v%QT_VER%, but installation must be done separately.
 echo   To enable OpenCL support in LuxCoreRender you will need an OpenCL SDK,
 echo   e.g. one among:
 echo    1. GPUopen OCL SDK
@@ -324,10 +326,7 @@ CALL:extractFile "Python %PYTHON37_VER%", "%DOWNLOADS%\Python-%PYTHON37_VER%.tgz
 CALL:addBuildPathVar "LUX_X64_PYTHON37_ROOT", "%D64%\Python-%PYTHON37_VER%"
 
 :qt
-CALL:downloadFile "QT %QT_VER%", "http://download.qt-project.org/official_releases/qt/4.8/%QT_VER%/qt-everywhere-opensource-src-%QT_VER%.tar.gz", "qt-everywhere-opensource-src-%QT_VER%.tar.gz" || EXIT /b -1
-CALL:extractFile "QT %QT_VER%", "%DOWNLOADS%\qt-everywhere-opensource-src-%QT_VER%.tar.gz"
-
-CALL:addBuildPathVar "LUX_X64_QT_ROOT", "%D64%\qt-everywhere-opensource-src-%QT_VER%"
+CALL:downloadFile "QT %QT_VER%", "http://download.qt.io/official_releases/qt/5.12/%QT_VER%/qt-opensource-windows-x86-%QT_VER%.exe", "qt-opensource-windows-x86-%QT_VER%.exe" || EXIT /b -1
 
 :tbb
 CALL:downloadFile "tbb %TBB_VER_FULL%", "https://github.com/01org/tbb/releases/download/%TBB_VER%/tbb%TBB_VER_FULL%oss_win.zip", "tbb%TBB_VER_FULL%oss.zip" || EXIT /b -1
