@@ -81,7 +81,7 @@ echo.
 echo This script will use 2 pre-built binaries to download and extract source
 echo code from the internet:
 echo  1: GNU wget.exe       from http://gnuwin32.sourceforge.net/packages/wget.htm
-echo  2: 7za.exe (7-zip)    from http://7-zip.org/download.html
+echo  2: 7z.exe (7-zip)     from http://www.7-zip.org/download.html
 echo.
 echo If you do not wish to execute these binaries for any reason, PRESS CTRL-C NOW
 echo Otherwise,
@@ -99,7 +99,7 @@ IF ERRORLEVEL 9009 (
 	echo Cannot execute wget. Aborting.
 	EXIT /b -1
 )
-SET UNZIPBIN="%CD%\support\bin\7za.exe"
+SET UNZIPBIN="%CD%\support\bin\7z.exe"
 %UNZIPBIN% > NUL
 IF ERRORLEVEL 9009 (
 	echo.
