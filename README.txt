@@ -35,7 +35,7 @@ The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
 
 In order to create an official release, you need also to install the following:
-- Python v3.5
+- Python v3.7
 - PyInstaller (with a "pip install pyinstaller")
 - PySide (download wheel from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside)
   OR 
@@ -43,7 +43,7 @@ In order to create an official release, you need also to install the following:
   Note: some pre-generated pyluxcoretools source files are not compatible with
         PySide2, so you need to have it already installed at build time in order
         to have pyluxcoretools correctly working
-- NumPy (with a "pip install numpy==1.12.1")
+- NumPy (with a "pip install numpy==1.15.4")
 
 You can then pack the release archive running the create-standalone.bat script.
 
@@ -53,7 +53,7 @@ cd C:\Path\to\luxcorerender\WindowsCompile\
 .\cmake-build-x64.bat /dll
 create-sdk.bat
 
-Note: default build will use Python 3.5, the version embedded in Blender 2.79b.
+Note: default build will use Python 3.7, the version embedded in Blender 2.8x.
 You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
 .\cmake-build-x64.bat /python36
 

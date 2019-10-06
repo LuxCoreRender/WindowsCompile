@@ -11,7 +11,7 @@ set DISABLE_OPENCL=0
 set CPU_PLATFORM=x64
 set BUILD_TYPE=Release
 set BUILD_DLL=0
-set PYTHON_VERSION=35
+set PYTHON_VERSION=37
 set CPUCOUNT=/maxcpucount
 
 :ParseCmdParams
