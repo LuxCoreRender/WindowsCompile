@@ -8,6 +8,7 @@ md %DIR%
 
 :: Copy binaries
 xcopy .\Build_CMake\LuxMark\bin\Release\luxmark.exe %DIR%
+xcopy .\Build_CMake\LuxCore\bin\Release\luxcoreui.exe %DIR%
 
 :: Copy DLLs from WindowsCompileDeps (assuming it is in same folder as WindowsCompile)
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%
@@ -19,11 +20,10 @@ xcopy ..\WindowsCompileDeps\Qt5\bin\Qt5Core.dll %DIR%
 xcopy ..\WindowsCompileDeps\Qt5\bin\Qt5Gui.dll %DIR%
 xcopy ..\WindowsCompileDeps\Qt5\bin\Qt5Network.dll %DIR%
 xcopy ..\WindowsCompileDeps\Qt5\bin\Qt5Widgets.dll %DIR%
+xcopy /e /i ..\WindowsCompileDeps\Qt5\plugins\platforms %DIR%\platforms
 
 :: Copy addition files from LuxMark (assuming it is in same folder as WindowsCompile)
 xcopy ..\LuxMark\README.txt %DIR%
 xcopy ..\LuxMark\COPYING.txt %DIR%
 xcopy ..\LuxMark\AUTHORS.txt %DIR%
-md %DIR%\scenes
-md %DIR%\scenes\luxball
-xcopy ..\LuxMark\scenes\luxball\* %DIR%\scenes\luxball
+xcopy /e /i ..\LuxMark\scenes %DIR%\scenes
