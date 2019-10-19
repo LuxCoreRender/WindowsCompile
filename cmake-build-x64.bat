@@ -13,9 +13,11 @@ set BUILD_TYPE=Release
 set BUILD_DLL=0
 set PYTHON_VERSION=37
 set CPUCOUNT=/maxcpucount
+set PRINT_USAGE=0
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
+if /i "%1" EQU "/?" set PRINT_USAGE=1
 if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "luxcore" set BUILD_LUXCORE_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
@@ -38,6 +40,34 @@ shift
 goto ParseCmdParams
 
 :Start
+
+if %PRINT_USAGE%==1 (
+  echo Starts LuxCore build process
+  echo:
+  echo USAGE: cmake-build-x64.bat [options] [target]
+  echo:
+  echo Options:
+  echo:  /?             Prints this help message and exits
+  echo   /no-ocl        Disables OpenCL support in LuxCore
+  echo   /dll           Builds LuxCore SDK version
+  echo   /python^<xy^>    Builds pyluxcore.pyd module for Python version x.y
+  echo                  Available versions: 27, 35, 36, 37
+  echo   /rebuild       Rebuilds everything from scratch
+  echo   /cmake-only    Runs CMake to set up Visual Studio project files,
+  echo                  but does not run MSBuild
+  echo   /debug         Builds a debug version
+  echo:
+  echo Target:
+  echo   Default behaviour is to build all the available targets, i.e. also LuxMark
+  echo   is built if source is available.
+  echo   To build a single target only, just specify it:
+  echo   luxcore        Builds LuxCore only
+  echo   luxmark        Builds LuxMark only (LuxCore must have been built already^)
+  echo:
+  echo Additional information about LuxCore build process is available at:
+  echo   https://github.com/LuxCoreRender/WindowsCompile
+  goto exit
+)
 
 if %FULL_REBUILD%==1 (
   echo =========================================
