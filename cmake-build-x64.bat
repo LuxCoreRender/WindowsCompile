@@ -77,9 +77,9 @@ if %FULL_REBUILD%==1 (
 
 for %%a in (.) do set LUX_WINDOWS_BUILD_ROOT=%%~fa
 for %%a in (support\bin) do set SUPPORT_BIN=%%~fa
-::for %%a in (..\WindowsCompileDeps\bin\CMake\bin\cmake.exe) do set CMAKE=%%~fa
 for %%a in (..\LuxCore) do set LUXCORE_ROOT=%%~fa
 for %%a in (..\LuxMark) do set LUXMARK_ROOT=%%~fa
+for %%a in (..\WindowsCompileDeps) do set DEPS_DIR=%%~fa
 
 echo Finding if CMake is installed...
 for /f "tokens=*" %%a in ('where cmake') do SET CMAKE=%%~fa  
@@ -87,11 +87,16 @@ for /f "tokens=*" %%a in ('where cmake') do SET CMAKE=%%~fa
 if exist "%CMAKE%" (
   echo CMake found at "%CMAKE%"
 ) else (
-  for %%a in (..\WindowsCompileDeps\bin\CMake\bin\cmake.exe) do set CMAKE=%%~fa
+  goto CMakeNotFound
 )
 
-if not exist "%CMAKE%" goto CMakeNotFound
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
+
+set WINDOWS_DEPS_RELEASE=LuxCoreRender_v2.3alpha0
+if not exist "%DEPS_DIR%" (
+    %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps.7z
+    %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps.7z
+)
 
 :: Determine if we have CMake 2 or 3
 for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| findstr /I /C:"cmake version"') do set CMAKE_VER=%%G
