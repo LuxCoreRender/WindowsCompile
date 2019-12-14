@@ -77,7 +77,7 @@ echo.
 echo If you really need to build dependencies, answer the following questions,
 echo otherwise PRESS CTRL-C NOW to exit this script.
 echo
-echo NOTE: out-of-the-box build of Boost.Numpy27 is not supported.
+echo NOTE: building Python 2.7 and the related Boost libs is not yet supported.
 echo.
 
 
@@ -144,7 +144,7 @@ echo.
 :: ******************************* PYTHON *************************************
 :: ****************************************************************************
 :Python
-echo.
+REM echo.
 REM echo **************************************************************************
 REM echo * Building Python 27                                                     *
 REM echo **************************************************************************
@@ -181,6 +181,7 @@ echo * Building Python 36                                                     *
 echo **************************************************************************
 cd /d %LUX_X64_PYTHON36_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch python.props %LUX_WINDOWS_BUILD_ROOT%\support\python368.props.patch
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
@@ -226,14 +227,16 @@ cd /d %LUX_X64_BOOST_ROOT%
 
 CALL bootstrap.bat
 CALL:copyfile project-config.jam .\project-config.bck
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-35.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY35_ROOT%\numpy\*.* %LUX_X64_PYTHON35_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON35_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+
+:: with Python 3.7
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY37_ROOT%\numpy\*.* %LUX_X64_PYTHON37_ROOT%\Lib\site-packages\numpy
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% python=3.7 stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
@@ -244,53 +247,53 @@ CALL:copyFile stage\lib\*.lib %LIB_DIR%
 :: with python 3.6
 b2 --clean
 CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-36.jam >> project-config.jam
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config.jam >> project-config.jam
 CALL:xcopyFiles %LUX_X64_NUMPY36_ROOT%\numpy\*.* %LUX_X64_PYTHON36_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON36_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% python=3.6 stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
-:: with python 3.7
+:: with python 3.5
 b2 --clean
 CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-37.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY37_ROOT%\numpy\*.* %LUX_X64_PYTHON37_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON37_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config.jam >> project-config.jam
+CALL:xcopyFiles %LUX_X64_NUMPY35_ROOT%\numpy\*.* %LUX_X64_PYTHON35_ROOT%\Lib\site-packages\numpy
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% python=3.5 stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
-:: with python 2.7
-b2 --clean
-CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-27.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY27_ROOT%\numpy\*.* %LUX_X64_PYTHON27_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON27_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+REM :: with python 2.7
+REM b2 --clean
+REM CALL:copyfile project-config.bck .\project-config.jam
+REM type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config.jam >> project-config.jam
+REM CALL:xcopyFiles %LUX_X64_NUMPY27_ROOT%\numpy\*.* %LUX_X64_PYTHON27_ROOT%\Lib\site-packages\numpy
+REM set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
-set BUILD_CONFIGURATION_BOOST=release
-IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
+REM set BUILD_CONFIGURATION_BOOST=release
+REM IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
-if ERRORLEVEL 1 goto :EOF
+REM bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% python=2.7 stage
+REM if ERRORLEVEL 1 goto :EOF
 
-mkdir %INCLUDE_DIR%\Boost
-mkdir %INCLUDE_DIR%\Boost\boost
-CALL:copyFile stage\lib\*.lib %LIB_DIR%
+REM mkdir %INCLUDE_DIR%\Boost
+REM mkdir %INCLUDE_DIR%\Boost\boost
+REM CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************

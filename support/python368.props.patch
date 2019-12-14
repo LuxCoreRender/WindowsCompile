@@ -1,0 +1,11 @@
+--- python.props.orig	2018-12-23 22:37:00.000000000 +0200
++++ python.props	2019-12-12 15:38:00.060332000 +0200
+@@ -78,7 +78,7 @@
+    <_KitsRoot Condition="$(_KitsRoot) == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Microsoft SDKs\Windows\v10.0@InstallationFolder)</_KitsRoot>
+ 
+     <!-- The minimum allowed SDK version to use for building -->
+-    <DefaultWindowsSDKVersion>10.0.10586.0</DefaultWindowsSDKVersion>
++    <DefaultWindowsSDKVersion Condition="Exists('$(_KitsRoot)\Platforms\UAP\10.0.10586.0')">10.0.10586.0</DefaultWindowsSDKVersion>
+     <DefaultWindowsSDKVersion Condition="Exists('$(_KitsRoot)\Platforms\UAP\10.0.14393.0')">10.0.14393.0</DefaultWindowsSDKVersion>
+     <DefaultWindowsSDKVersion Condition="Exists('$(_KitsRoot)\Platforms\UAP\10.0.15063.0')">10.0.15063.0</DefaultWindowsSDKVersion>
+   </PropertyGroup>
