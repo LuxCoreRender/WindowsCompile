@@ -9,6 +9,7 @@ SET FREEIMAGE_VER_N=3160
 
 SET BLOSC_VER=1.14.3
 SET BZIP2_VER=1.0.6
+SET CMAKE_VER=2.8.12.2
 SET EMBREE_VER=3.2.4
 SET ILMBASE_VER=2.2.0
 SET JPEG_VER=9a
@@ -27,8 +28,8 @@ SET PYTHON35_VER=3.5.5
 SET PYTHON36_VER=3.6.8
 SET PYTHON37_VER=3.7.4
 SET QT_VER=5.12.2
-SET TBB_VER=2018
-SET TBB_VER_FULL=2018_20180312
+SET TBB_VER=2017
+SET TBB_VER_FULL=2017_20160722
 SET ZLIB_VER=1.2.8
 
 :: Initial message to display to user
@@ -41,6 +42,7 @@ echo We are going to download and extract these libraries:
 echo   Blosc    	%BLOSC_VER%		https://github.com/Blosc/c-blosc/
 echo   Boost      	%BOOST_VER_P%		http://www.boost.org/
 echo   bzip       	%BZIP2_VER%		http://www.bzip.org/
+echo   cmake      	%CMAKE_VER%	http://www.cmake.org/
 echo   embree     	%EMBREE_VER%		https://embree.github.io
 echo   FreeImage  	%FREEIMAGE_VER_P%		http://freeimage.sf.net/
 echo   IlmBase    	%ILMBASE_VER%		http://www.openexr.com/
@@ -116,8 +118,8 @@ if exist "%PYTHON%" (
   if exist "%PYTHON%" (
     echo Python found at "%PYTHON%"
   ) else (
-    echo Python was not found, NumPy will not be downloaded.
-    echo Without it, you will not be able to build Boost.Numpy.
+    echo Python was not found, Numpy will not be downloaded.
+    echo Without it, you will not be able to build Boost.NumPy.
   )
 )
 
@@ -190,7 +192,7 @@ set LUX_WINDOWS_BUILD_ROOT="%CD%"
 
 
 :blosc
-CALL:downloadFile "Blosc %BLOSC_VER%", "https://github.com/Blosc/c-blosc/archive/v%BLOSC_VER%.zip", "c-blosc-%BLOSC_VER%.zip" || EXIT /b -1
+CALL:downloadFile "Blosc %BLOSC_VER%", "https://github.com/Blosc/c-blosc/archive/v1.14.3.zip", "c-blosc-%BLOSC_VER%.zip" || EXIT /b -1
 CALL:extractFile "Blosc %BLOSC_VER%", "%DOWNLOADS%\c-blosc-%BLOSC_VER%.zip"
 
 CALL:addBuildPathVar "LUX_X64_BLOSC_ROOT", "%D64%\c-blosc-%BLOSC_VER%"
@@ -244,40 +246,34 @@ CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.tar.gz
 
 CALL:addBuildPathVar "LUX_X64_LIBTIFF_ROOT", "%D64%\tiff-%LIBTIFF_VER%"
 
-if exist "%PYTHON%" (
 :numpy27
-if not exist "%DOWNLOADS%\numpy-%NUMPY27_VER%-cp27-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 27 --only-binary=:all: numpy==%NUMPY27_VER%
-)
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 27 --only-binary=:all: numpy==%NUMPY27_VER%
 CALL:extractFile "Numpy %NUMPY27_VER% for Python 2.7", "%DOWNLOADS%\numpy-%NUMPY27_VER%-cp27-none-win_amd64.whl", "numpy27-%NUMPY27_VER%"
 
-
 CALL:addBuildPathVar "LUX_X64_NUMPY27_ROOT", "%D64%\numpy27-%NUMPY27_VER%"
+)
 
 :numpy35
-if not exist "%DOWNLOADS%\numpy-%NUMPY35_VER%-cp35-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 35 --only-binary=:all: numpy==%NUMPY35_VER%
-)
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 35 --only-binary=:all: numpy==%NUMPY35_VER%
 CALL:extractFile "Numpy %NUMPY35_VER% for Python 3.5", "%DOWNLOADS%\numpy-%NUMPY35_VER%-cp35-none-win_amd64.whl", "numpy35-%NUMPY35_VER%"
 
-
 CALL:addBuildPathVar "LUX_X64_NUMPY35_ROOT", "%D64%\numpy35-%NUMPY35_VER%"
+)
 
 :numpy36
-if not exist "%DOWNLOADS%\numpy-%NUMPY36_VER%-cp36-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 36 --only-binary=:all: numpy==%NUMPY36_VER%
-)
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 36 --only-binary=:all: numpy==%NUMPY36_VER%
 CALL:extractFile "Numpy %NUMPY36_VER% for Python 3.6", "%DOWNLOADS%\numpy-%NUMPY36_VER%-cp36-none-win_amd64.whl", "numpy36-%NUMPY36_VER%"
 
-
 CALL:addBuildPathVar "LUX_X64_NUMPY36_ROOT", "%D64%\numpy36-%NUMPY36_VER%"
+)
 
 :numpy37
-if not exist "%DOWNLOADS%\numpy-%NUMPY37_VER%-cp37-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 37 --only-binary=:all: numpy==%NUMPY37_VER%
-)
+if exist "%PYTHON%" (
+"%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 37 --only-binary=:all: numpy==%NUMPY37_VER%
 CALL:extractFile "Numpy %NUMPY37_VER% for Python 3.7", "%DOWNLOADS%\numpy-%NUMPY37_VER%-cp37-none-win_amd64.whl", "numpy37-%NUMPY37_VER%"
-
 
 CALL:addBuildPathVar "LUX_X64_NUMPY37_ROOT", "%D64%\numpy37-%NUMPY37_VER%"
 )
