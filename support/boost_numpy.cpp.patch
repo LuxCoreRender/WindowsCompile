@@ -1,0 +1,11 @@
+--- numpy.cpp.orig	2018-04-18 22:37:00.000000000 +0200
++++ numpy.cpp	2019-12-16 15:38:00.060332000 +0200
+@@ -19,6 +19,8 @@
+ static void * wrap_import_array()
+ {
+   import_array();
++  // A fix from https://github.com/boostorg/python/pull/218
++  return NULL;
+ }
+ #endif
+ 

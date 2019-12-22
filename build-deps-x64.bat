@@ -76,12 +76,55 @@ echo https://github.com/LuxCoreRender/WindowsCompile
 echo.
 echo If you really need to build dependencies, answer the following questions,
 echo otherwise PRESS CTRL-C NOW to exit this script.
-echo
-echo NOTE: out-of-the-box build of Boost.Numpy27 is not supported.
 echo.
 
 
+:PythonChoice
+echo.
+echo Choose the version of Python used to build Boost.Python
+echo Available options:
+echo      S - Use system available version (default, see note)
+echo     37 - Use Python 3.7 with NumPy 1.15.4
+echo     36 - Use Python 3.6 with NumPy 1.15.4
+echo     35 - Use Python 3.5 with NumPy 1.12.1
+echo.
+echo     NOTE: to use system Python, its location must be listed in the PATH
+echo           environment variable. The NumPy package must also be installed
+echo           (with 'pip install numpy') or Boost.Numpy will not be built.
+echo           Not all Python versions are supported:
+echo           2.7, 3.5, 3.6 and 3.7 should work.
+echo.
+set PYTHON_CHOICE=0
+set /P PYTHON_CHOICE="Python version? "
+if %PYTHON_CHOICE% EQU s set PYTHON_CHOICE=S
+if %PYTHON_CHOICE% EQU S (
+    set BUILD_PYTHON=NO
+    for /f "usebackq delims=" %%a in (`python -c "import sys; import os; print(os.path.dirname(sys.executable))"`) do SET LUX_X64_PYTHON_ROOT=%%a
+    for /f "usebackq" %%b in (`python -c "import sys; print(str(sys.version_info.major)+str(sys.version_info.minor))"`) do set PYTHON_V=%%b
+    echo %LUX_X64_PYTHON_ROOT%
+    echo %PYTHON_V%
+    goto DebugChoice
+)
+if %PYTHON_CHOICE% EQU 37 (
+    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON37_ROOT%
+    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY37_ROOT%
+    goto DebugChoice
+)
+if %PYTHON_CHOICE% EQU 36 (
+    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON36_ROOT%
+    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY36_ROOT%
+    goto DebugChoice
+)
+if %PYTHON_CHOICE% EQU 35 (
+    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON35_ROOT%
+    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY35_ROOT%
+    goto DebugChoice
+)
+echo Invalid choice
+goto PythonChoice
+
 :DebugChoice
+echo.
 echo Build Debug binaries?
 echo 0: No (default)
 echo 1: Yes
@@ -144,66 +187,40 @@ echo.
 :: ******************************* PYTHON *************************************
 :: ****************************************************************************
 :Python
-echo.
-REM echo **************************************************************************
-REM echo * Building Python 27                                                     *
-REM echo **************************************************************************
-REM cd /d %LUX_X64_PYTHON27_ROOT%\PCbuild
-REM CALL:copyFile ..\PC\pyconfig.h ..\Include
-
-REM ::msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
-REM build.bat -p x64 -c Release "%MSBUILD_OPTS%"
-REM if ERRORLEVEL 1 goto :EOF
-
-REM mkdir %INCLUDE_DIR%\Python27
-REM CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python27
-REM CALL:copyFile amd64\python27.lib %LIB_DIR%
-REM CALL:copyFile amd64\python27.dll %LIB_DIR%
-
+if %PYTHON_CHOICE% EQU S (
+    if "%PYTHON_V%" EQU "" (
+        echo Python not found, skipping...
+        goto Boost
+    )
+    rem copying python deps from system python
+    mkdir %INCLUDE_DIR%\Python%PYTHON_V%
+    CALL:xcopyFiles "%LUX_X64_PYTHON_ROOT%\include\*.*" %INCLUDE_DIR%\Python%PYTHON_V%
+    CALL:copyFile "%LUX_X64_PYTHON_ROOT%\libs\python%PYTHON_V%.lib" %LIB_DIR%
+    CALL:copyFile "%LUX_X64_PYTHON_ROOT%\python%PYTHON_V%.dll" %LIB_DIR%
+    goto Boost
+)
 echo.
 echo **************************************************************************
-echo * Building Python 35                                                     *
+echo * Building Python %PYTHON_CHOICE%                                                     *
 echo **************************************************************************
-cd /d %LUX_X64_PYTHON35_ROOT%\PCbuild
+cd /d %LUX_X64_PYTHON_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" /target:"_ctypes" pcbuild.sln
+set MSBUILD_PYTHON_OPTS=""
+if %PYTHON_CHOICE% EQU 35 set MSBUILD_PYTHON_OPTS=/target:"_ctypes"
+if %PYTHON_CHOICE% EQU 36 (
+    %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch python.props %LUX_WINDOWS_BUILD_ROOT%\support\python368.props.patch
+)
+if %PYTHON_CHOICE% EQU 37 set MSBUILD_PYTHON_OPTS=/target:"_decimal"
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" %MSBUILD_PYTHON_OPTS% pcbuild.sln
 if ERRORLEVEL 1 goto :EOF
 
-mkdir %INCLUDE_DIR%\Python35
-CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python35
-CALL:copyFile amd64\python35.lib %LIB_DIR%
-CALL:copyFile amd64\python35.dll %LIB_DIR%
+:CopyPythonFiles
+mkdir %INCLUDE_DIR%\Python%PYTHON_CHOICE%
+CALL:xcopyFiles ..\include\*.* %INCLUDE_DIR%\Python%PYTHON_CHOICE%
+CALL:copyFile amd64\python%PYTHON_CHOICE%.lib %LIB_DIR%
+CALL:copyFile amd64\python%PYTHON_CHOICE%.dll %LIB_DIR%
 
-echo.
-echo **************************************************************************
-echo * Building Python 36                                                     *
-echo **************************************************************************
-cd /d %LUX_X64_PYTHON36_ROOT%\PCbuild
-CALL:copyFile ..\PC\pyconfig.h ..\Include
-
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" pcbuild.sln
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Python36
-CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python36
-CALL:copyFile amd64\python36.lib %LIB_DIR%
-CALL:copyFile amd64\python36.dll %LIB_DIR%
-
-echo.
-echo **************************************************************************
-echo * Building Python 37                                                     *
-echo **************************************************************************
-cd /d %LUX_X64_PYTHON37_ROOT%\PCbuild
-CALL:copyFile ..\PC\pyconfig.h ..\Include
-
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" /target:"_decimal" pcbuild.sln
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Python37
-CALL:copyFile ..\include\*.h %INCLUDE_DIR%\Python37
-CALL:copyFile amd64\python37.lib %LIB_DIR%
-CALL:copyFile amd64\python37.dll %LIB_DIR%
 
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
@@ -224,12 +241,20 @@ echo *          Boost::Thread                                                 *
 echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
 
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch libs\python\src\numpy\numpy.cpp %LUX_WINDOWS_BUILD_ROOT%\support\boost_numpy.cpp.patch
+
 CALL bootstrap.bat
 CALL:copyfile project-config.jam .\project-config.bck
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-35.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY35_ROOT%\numpy\*.* %LUX_X64_PYTHON35_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON35_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
 
+b2 --clean
+rd /q /s stage
+set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-date_time --with-filesystem --with-iostreams --with-locale --with-program_options --with-python --with-regex --with-serialization --with-system --with-thread -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
+if "%PYTHON_CHOICE%" NEQ "S" (
+    set BJAM_OPTS=%BJAM_OPTS% -sPYTHON_SOURCE="%LUX_X64_PYTHON_ROOT%"
+    type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-%PYTHON_CHOICE%.jam >> project-config.jam
+    CALL:xcopyFiles %LUX_X64_NUMPY_ROOT%\numpy\*.* %LUX_X64_PYTHON_ROOT%\Lib\site-packages\numpy
+)
+echo %BJAM_OPTS%
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
@@ -239,57 +264,6 @@ if ERRORLEVEL 1 goto :EOF
 mkdir %INCLUDE_DIR%\Boost
 mkdir %INCLUDE_DIR%\Boost\boost
 CALL:xcopyFiles boost\*.* %INCLUDE_DIR%\Boost\boost
-CALL:copyFile stage\lib\*.lib %LIB_DIR%
-
-:: with python 3.6
-b2 --clean
-CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-36.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY36_ROOT%\numpy\*.* %LUX_X64_PYTHON36_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON36_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
-
-set BUILD_CONFIGURATION_BOOST=release
-IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
-
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Boost
-mkdir %INCLUDE_DIR%\Boost\boost
-CALL:copyFile stage\lib\*.lib %LIB_DIR%
-
-:: with python 3.7
-b2 --clean
-CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-37.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY37_ROOT%\numpy\*.* %LUX_X64_PYTHON37_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON37_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
-
-set BUILD_CONFIGURATION_BOOST=release
-IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
-
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Boost
-mkdir %INCLUDE_DIR%\Boost\boost
-CALL:copyFile stage\lib\*.lib %LIB_DIR%
-
-:: with python 2.7
-b2 --clean
-CALL:copyfile project-config.bck .\project-config.jam
-type %LUX_WINDOWS_BUILD_ROOT%\support\x64-project-config-27.jam >> project-config.jam
-CALL:xcopyFiles %LUX_X64_NUMPY27_ROOT%\numpy\*.* %LUX_X64_PYTHON27_ROOT%\Lib\site-packages\numpy
-set BJAM_OPTS=-a -q -j%NUMBER_OF_PROCESSORS% address-model=64 link=static threading=multi runtime-link=shared --with-python -sBZIP2_SOURCE=%LUX_X64_BZIP_ROOT% -sPYTHON_SOURCE=%LUX_X64_PYTHON27_ROOT% -sZLIB_SOURCE=%LUX_X64_ZLIB_ROOT%
-
-set BUILD_CONFIGURATION_BOOST=release
-IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
-
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\Boost
-mkdir %INCLUDE_DIR%\Boost\boost
 CALL:copyFile stage\lib\*.lib %LIB_DIR%
 
 
