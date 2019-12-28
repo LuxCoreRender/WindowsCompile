@@ -29,6 +29,7 @@ if /i "%1" EQU "/python27" set PYTHON_VERSION=27
 if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
+if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 :: /cpucount[:n] specifies the number of concurrent processes used by msbuild
 :: Default is to use all the available processors
 set cpupar=%1
@@ -51,7 +52,7 @@ if %PRINT_USAGE%==1 (
   echo   /no-ocl        Disables OpenCL support in LuxCore
   echo   /dll           Builds LuxCore SDK version
   echo   /python^<xy^>    Builds pyluxcore.pyd module for Python version x.y
-  echo                  Available versions: 27, 35, 36, 37
+  echo                  Available versions: 27, 35, 36, 37, 38
   echo   /rebuild       Rebuilds everything from scratch
   echo   /cmake-only    Runs CMake to set up Visual Studio project files,
   echo                  but does not run MSBuild
