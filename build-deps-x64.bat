@@ -83,16 +83,18 @@ echo.
 echo.
 echo Choose the version of Python used to build Boost.Python
 echo Available options:
-echo      S - Use system available version (default, see note)
+echo      S - Use system available version (see note)
 echo     37 - Use Python 3.7 with NumPy 1.15.4
 echo     36 - Use Python 3.6 with NumPy 1.15.4
 echo     35 - Use Python 3.5 with NumPy 1.12.1
 echo.
-echo     NOTE: to use system Python, its location must be listed in the PATH
+echo     NOTE: Recomended choice if you have installed a python version that
+echo           you would like to use.
+echo           To use system Python, its location must be listed in the PATH
 echo           environment variable. The NumPy package must also be installed
 echo           (with 'pip install numpy') or Boost.Numpy will not be built.
 echo           Not all Python versions are supported:
-echo           2.7, 3.5, 3.6 and 3.7 should work.
+echo           2.7, 3.5 and greater should work.
 echo.
 set PYTHON_CHOICE=0
 set /P PYTHON_CHOICE="Python version? "
@@ -575,15 +577,15 @@ cd /d %LUX_X64_BLOSC_ROOT%
 rmdir /s /q build
 mkdir build
 cd build
-cmake .. -DBUILD_TESTS=OFF
+cmake %CMAKE_OPTS% -DBUILD_TESTS=OFF ..
 if ERRORLEVEL 1 goto :EOF
 
-cmake --build .
+cmake --build . --config %BUILD_CONFIGURATION%
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\blosc\blosc.h %INCLUDE_DIR%\blosc.h
 CALL:copyFile ..\blosc\blosc-export.h %INCLUDE_DIR%\blosc-export.h
-CALL:copyFile blosc\Debug\blosc.lib %LIB_DIR%\blosc.lib
+CALL:copyFile blosc\%BUILD_CONFIGURATION%\libblosc.lib %LIB_DIR%\libblosc.lib
 
 
 :postLuxCoreRender
