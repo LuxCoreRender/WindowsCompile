@@ -18,9 +18,10 @@ set PRINT_USAGE=0
 :ParseCmdParams
 if "%1" EQU "" goto Start
 if /i "%1" EQU "/?" set PRINT_USAGE=1
-if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "luxcore" set BUILD_LUXCORE_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
+if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
+if /i "%1" EQU "/minimal" set LUXCORE_MINIMAL=1
 if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
@@ -53,6 +54,7 @@ if %PRINT_USAGE%==1 (
   echo   /dll           Builds LuxCore SDK version
   echo   /python^<xy^>    Builds pyluxcore.pyd module for Python version x.y
   echo                  Available versions: 27, 35, 36, 37, 38
+  echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /rebuild       Rebuilds everything from scratch
   echo   /cmake-only    Runs CMake to set up Visual Studio project files,
   echo                  but does not run MSBuild
@@ -170,7 +172,11 @@ if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 if ERRORLEVEL 1 goto CMakeError
 
 if %CMAKE_ONLY%==0 (
-  msbuild %MSBUILD_OPTS% LuxRays.sln
+  if %LUXCORE_MINIMAL%==1 (
+    msbuild %MSBUILD_OPTS% /target:pyluxcore,pyluxcoretools,luxcoreui LuxRays.sln
+  ) else (
+    msbuild %MSBUILD_OPTS% LuxRays.sln
+  )
   if ERRORLEVEL 1 goto CMakeError
 )
 
