@@ -8,9 +8,11 @@ If you don't want the full IDE you can also install the "Build Tools for Visual 
 
 2) Install cmake v3.11.2 or better (https://cmake.org/);
 
-3) If you want to build LuxCoreRender with OpenCL support, you also need to install an OpenCL SDK, 
-for example the GPUOpen OCL SDK:
+3) If you want to build LuxCoreRender with OpenCL support, you also need to install an OpenCL SDK.
+A lightweight one is the GPUOpen OCL SDK:
 - https://github.com/GPUOpen-LibrariesAndSDKs/OCL-SDK/releases
+If you use the suggested one, also replace the included 'cl.hpp' file with a more recent version:
+- https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp
 
 4) Create a "luxcorerender" directory;
 
@@ -44,9 +46,6 @@ In order to create an official release, you need also to install the following:
 - PyInstaller (with a "pip install pyinstaller")
 - PySide2 (with a "pip install PySide2")
 - NumPy (with a "pip install numpy==1.15.4")
-NOTE: some pre-generated pyluxcoretools source files are not compatible with
-      PySide2, so you need to have it already installed at build time in order
-      to have pyluxcoretools correctly working.
 
 You can then package the release archive running the create-standalone.bat script.
 
@@ -57,7 +56,7 @@ cd C:\Path\to\luxcorerender\WindowsCompile\
 create-sdk.bat
 
 NOTE: default build will use Python 3.7, the version embedded in Blender 2.8x.
-You can add an option to specify the version of your choice among 3.5, 3.6, 3.7, e.g.:
+If needed, you can specify the preferred version among from 3.5 to 3.8, e.g.:
 .\cmake-build-x64.bat /python36
 
 NOTE: normally you never need to build dependencies in order to build LuxCore, 
