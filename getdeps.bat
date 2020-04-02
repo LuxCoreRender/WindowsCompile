@@ -221,10 +221,10 @@ REM CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEI
 REM CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
 
 :ilmbase
-CALL:downloadFile "IlmBase %ILMBASE_VER%", "http://download.savannah.nongnu.org/releases/openexr/ilmbase-%ILMBASE_VER%.tar.gz", "ilmbase-%ILMBASE_VER%.tar.gz" || EXIT /b -1
-CALL:extractFile "IlmBase %ILMBASE_VER%", "%DOWNLOADS%\ilmbase-%ILMBASE_VER%.tar.gz"
+REM CALL:downloadFile "IlmBase %ILMBASE_VER%", "http://download.savannah.nongnu.org/releases/openexr/ilmbase-%ILMBASE_VER%.tar.gz", "ilmbase-%ILMBASE_VER%.tar.gz" || EXIT /b -1
+REM CALL:extractFile "IlmBase %ILMBASE_VER%", "%DOWNLOADS%\ilmbase-%ILMBASE_VER%.tar.gz"
 
-CALL:addBuildPathVar "LUX_X64_ILMBASE_ROOT", "%D64%\ilmbase-%ILMBASE_VER%"
+REM CALL:addBuildPathVar "LUX_X64_ILMBASE_ROOT", "%D64%\ilmbase-%ILMBASE_VER%"
 
 :jpeg
 CALL:downloadFile "JPEG %JPEG_VER%", "http://www.ijg.org/files/jpegsr%JPEG_VER%.zip", "jpeg-%JPEG_VER%.zip" || EXIT /b -1
