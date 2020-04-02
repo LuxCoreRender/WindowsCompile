@@ -9,7 +9,6 @@ set LUXCORE_MINIMAL=0
 set CMAKE_ONLY=0
 set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
-set CPU_PLATFORM=x64
 set BUILD_TYPE=Release
 set BUILD_DLL=0
 set PYTHON_VERSION=37
@@ -109,12 +108,7 @@ echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
 set CMAKE_GENERATOR="Visual Studio 15 2017"
 set CMAKE_TOOLSET=-T v141,host=x64
-if "%CPU_PLATFORM%"=="x64" (
-  set CMAKE_PLATFORM=-A %CPU_PLATFORM%
-) else (
-  set CMAKE_PLATFORM=
-  set CMAKE_TOOLSET=
-)
+set CMAKE_PLATFORM=-A x64
 
 if %CMAKE_VN_MAJOR%==2 (
   echo You need CMake 3.11 or better to build LuxCoreRender
@@ -122,7 +116,7 @@ if %CMAKE_VN_MAJOR%==2 (
 )
 
 for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
-for %%a in (..\WindowsCompileDeps\%CPU_PLATFORM%\Release\lib) do set LIB_DIR=%%~fa
+for %%a in (..\WindowsCompileDeps\x64\Release\lib) do set LIB_DIR=%%~fa
 echo LIB_DIR: %LIB_DIR%
 
 if %DISABLE_OPENCL% EQU 1 (
@@ -132,11 +126,7 @@ if %DISABLE_OPENCL% EQU 1 (
 
   set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
 ) else (
-  if "%CPU_PLATFORM%"=="x86" (
-    set OCL_OPTION=-DOPENCL_X86=1
-  ) else (
-    set OCL_OPTION=
-  )
+  set OCL_OPTION=
 )
 
 if %BUILD_DLL% EQU 1 (
