@@ -19,10 +19,9 @@ If you use the suggested one, also replace the included 'cl.hpp' file with a mor
 5) Clone the following repositories inside the "luxcorerender" directory:
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
-- https://github.com/LuxCoreRender/WindowsCompileDeps
 
-NOTE: you need git LFS extension (https://git-lfs.github.com) to clone WindowsCompileDeps repository.
-Or you can install and use https://desktop.github.com to clone the repositories.
+NOTE: it is no more necessary to clone the WindowsCompileDeps repository:
+the build script will download the required deps.
 
 6) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
@@ -59,8 +58,7 @@ NOTE: default build will use Python 3.7, the version embedded in Blender 2.8x.
 If needed, you can specify the preferred version among from 3.5 to 3.8, e.g.:
 .\cmake-build-x64.bat /python36
 
-NOTE: normally you never need to build dependencies in order to build LuxCore, 
-just use the WindowsCompileDeps repo as explained above.
+NOTE: normally you never need to build dependencies in order to build LuxCore.
 The getdeps.bat and build-deps-x64.bat scripts are used mainly as a reference 
 for developers and are not guaranteed to be always up-to-date.
 

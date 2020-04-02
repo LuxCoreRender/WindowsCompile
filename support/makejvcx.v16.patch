@@ -1,0 +1,12 @@
+--- makejvcx.v16.orig	2019-04-04 20:04:56.000000000 +0200
++++ makejvcx.v16	2020-03-27 21:14:08.795863100 +0100
+@@ -73,7 +73,8 @@
+     <ProjectGuid>{019DBD2A-273D-4BA4-BF86-B5EFE2ED76B1}</ProjectGuid>
+     <Keyword>Win32Proj</Keyword>
+     <RootNamespace>jpeg</RootNamespace>
+-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
++    <DefaultWindowsSDKVersion Condition="Exists('$(_KitsRoot)\Platforms\UAP\10.0.10586.0')">10.0.10586.0</DefaultWindowsSDKVersion>
++    <WindowsTargetPlatformVersion>$(DefaultWindowsSDKVersion)</WindowsTargetPlatformVersion>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

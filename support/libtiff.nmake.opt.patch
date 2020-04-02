@@ -1,6 +1,6 @@
 --- nmake.opt.orig	2006-06-14 18:12:02.000000000 -0600
 +++ nmake.opt	2014-03-11 22:23:46.000000000 -0600
-@@ -54,19 +54,19 @@
+@@ -61,19 +61,19 @@
  #
  # Uncomment and edit following lines to enable JPEG support.
  #
@@ -10,7 +10,7 @@
 -#JPEG_LIB 	= $(JPEGDIR)/Release/jpeg.lib
 +JPEG_SUPPORT   = 1
 +JPEGDIR        = $(INSTALL_DIR)
-+JPEG_INCLUDE   = -I$(JPEGDIR)\include
++JPEG_INCLUDE   = -I$(JPEGDIR)\..\..\include
 +JPEG_LIB       = $(JPEGDIR)\lib\jpeg.lib
  
  #
@@ -23,12 +23,12 @@
 -#ZLIB_LIB 	= $(ZLIBDIR)/zlib.lib
 +ZIP_SUPPORT    = 1
 +ZLIBDIR        = $(INSTALL_DIR)
-+ZLIB_INCLUDE   = -I$(ZLIBDIR)\include
++ZLIB_INCLUDE   = -I$(ZLIBDIR)\..\..\include
 +ZLIB_LIB       = $(ZLIBDIR)\lib\zlib1.lib
  
  #
  # Uncomment and edit following lines to enable ISO JBIG support
-@@ -80,7 +80,7 @@
+@@ -87,7 +87,7 @@
  # Uncomment following line to enable Pixar log-format algorithm
  # (Zlib required).
  #
@@ -37,18 +37,16 @@
  
  #
  # Comment out the following lines to disable strip chopping
-@@ -115,7 +115,9 @@
+@@ -122,7 +122,7 @@
  # NOTE: /EHsc option required if you want to build the C++ stream API
  #
+ !IFDEF DEBUG
+-OPTFLAGS =	/MDd /EHsc /W3 /D_CRT_SECURE_NO_DEPRECATE
++OPTFLAGS =	/Zi /MDd /EHsc /W3 /D_CRT_SECURE_NO_DEPRECATE
+ !ELSE
  OPTFLAGS =	/Ox /MD /EHsc /W3 /D_CRT_SECURE_NO_DEPRECATE
--#OPTFLAGS = 	/Zi 
-+!IFDEF DEBUG
-+OPTFLAGS = 	/Zi /MDd /EHsc /W3 /D_CRT_SECURE_NO_DEPRECATE
-+!ENDIF
- 
- #
- # Uncomment following line to enable using Windows Common RunTime Library
-@@ -129,6 +129,9 @@
+ !ENDIF
+@@ -140,6 +140,9 @@
  # for the option reference.
  #
  MAKE	=	nmake /nologo

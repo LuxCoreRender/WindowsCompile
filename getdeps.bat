@@ -1,35 +1,35 @@
 @Echo OFF
 
 :: Versions to download / install
-SET BOOST_VER_U=1_67_0
-SET BOOST_VER_P=1.67.0
+SET BOOST_VER_U=1_72_0
+SET BOOST_VER_P=1.72.0
 
-SET FREEIMAGE_VER_P=3.16.0
-SET FREEIMAGE_VER_N=3160
+::SET FREEIMAGE_VER_P=3.16.0
+::SET FREEIMAGE_VER_N=3160
 
 SET BLOSC_VER=1.17.1
-SET BZIP2_VER=1.0.6
-SET EMBREE_VER=3.2.4
-SET ILMBASE_VER=2.2.0
-SET JPEG_VER=9a
-SET LIBPNG_VER=1.6.12
-SET LIBTIFF_VER=4.0.3
+SET BZIP2_VER=1.0.8
+SET EMBREE_VER=3.8.0
+::SET ILMBASE_VER=2.2.0
+SET JPEG_VER=9d
+SET LIBPNG_VER=1.6.37
+SET LIBTIFF_VER=4.0.9
 SET NUMPY27_VER=1.15.4
 SET NUMPY35_VER=1.12.1
 SET NUMPY36_VER=1.15.4
 SET NUMPY37_VER=1.15.4
-SET OIDN_VER=1.0.0
-SET OIIO_VER=1.8.11
-SET OPENEXR_VER=2.2.0
-SET OPENJPEG_VER=1.5.1
+SET OIDN_VER=1.1.0
+SET OIIO_VER=1.8.13
+SET OPENEXR_VER=2.4.1
+::SET OPENJPEG_VER=1.5.1
 SET PYTHON27_VER=2.7.16
 SET PYTHON35_VER=3.5.5
 SET PYTHON36_VER=3.6.8
-SET PYTHON37_VER=3.7.4
+SET PYTHON37_VER=3.7.7
 SET QT_VER=5.12.2
-SET TBB_VER=2018
-SET TBB_VER_FULL=2018_20180312
-SET ZLIB_VER=1.2.8
+SET TBB_VER=2019_U9
+SET TBB_VER_FULL=2019_20191006
+SET ZLIB_VER=1.2.11
 
 :: Initial message to display to user
 echo.
@@ -202,7 +202,7 @@ CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
 CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"
 
 :bzip
-CALL:downloadFile "bzip2 %BZIP2_VER%", "https://downloads.sourceforge.net/bzip2/bzip2-%BZIP2_VER%.tar.gz", "bzip2-%BZIP2_VER%.tar.gz", "--no-check-certificate --content-disposition" || EXIT /b -1
+CALL:downloadFile "bzip2 %BZIP2_VER%", "https://sourceware.org/pub/bzip2/bzip2-%BZIP2_VER%.tar.gz", "bzip2-%BZIP2_VER%.tar.gz", "--no-check-certificate --content-disposition" || EXIT /b -1
 CALL:extractFile "bzip2 %BZIP2_VER%", "%DOWNLOADS%\bzip2-%BZIP2_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_BZIP_ROOT", "%D64%\bzip2-%BZIP2_VER%"
@@ -215,10 +215,10 @@ ren %D64%\embree-%EMBREE_VER%.x64.vc14.windows embree-%EMBREE_VER%
 CALL:addBuildPathVar "LUX_X64_EMBREE_ROOT", "%D64%\embree-%EMBREE_VER%"
 
 :freeimage
-CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "https://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip", "--no-check-certificate --content-disposition" || EXIT /b -1
-CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%"
+REM CALL:downloadFile "FreeImage %FREEIMAGE_VER_P%", "https://downloads.sourceforge.net/freeimage/FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%.zip", "--no-check-certificate --content-disposition" || EXIT /b -1
+REM CALL:extractFile "FreeImage %FREEIMAGE_VER_P%", "%DOWNLOADS%\FreeImage%FREEIMAGE_VER_N%.zip", "FreeImage%FREEIMAGE_VER_N%"
 
-CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
+REM CALL:addBuildPathVar "LUX_X64_FREEIMAGE_ROOT", "%D64%\FreeImage%FREEIMAGE_VER_N%"
 
 :ilmbase
 CALL:downloadFile "IlmBase %ILMBASE_VER%", "http://download.savannah.nongnu.org/releases/openexr/ilmbase-%ILMBASE_VER%.tar.gz", "ilmbase-%ILMBASE_VER%.tar.gz" || EXIT /b -1
@@ -227,8 +227,8 @@ CALL:extractFile "IlmBase %ILMBASE_VER%", "%DOWNLOADS%\ilmbase-%ILMBASE_VER%.tar
 CALL:addBuildPathVar "LUX_X64_ILMBASE_ROOT", "%D64%\ilmbase-%ILMBASE_VER%"
 
 :jpeg
-CALL:downloadFile "JPEG %JPEG_VER%", "http://www.ijg.org/files/jpegsrc.v%JPEG_VER%.tar.gz", "jpeg-%JPEG_VER%.tar.gz" || EXIT /b -1
-CALL:extractFile "JPEG %JPEG_VER%", "%DOWNLOADS%\jpeg-%JPEG_VER%.tar.gz"
+CALL:downloadFile "JPEG %JPEG_VER%", "http://www.ijg.org/files/jpegsr%JPEG_VER%.zip", "jpeg-%JPEG_VER%.zip" || EXIT /b -1
+CALL:extractFile "JPEG %JPEG_VER%", "%DOWNLOADS%\jpeg-%JPEG_VER%.zip"
 
 CALL:addBuildPathVar "LUX_X64_JPEG_ROOT", "%D64%\jpeg-%JPEG_VER%"
 
@@ -239,7 +239,7 @@ CALL:extractFile "libPNG %LIBPNG_VER%", "%DOWNLOADS%\libpng-%LIBPNG_VER%.tar.gz"
 CALL:addBuildPathVar "LUX_X64_LIBPNG_ROOT", "%D64%\libpng-%LIBPNG_VER%"
 
 :libtiff
-CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/old/tiff-%LIBTIFF_VER%.tar.gz", "tiff-%LIBTIFF_VER%.tar.gz" || EXIT /b -1
+CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/tiff-%LIBTIFF_VER%.tar.gz", "tiff-%LIBTIFF_VER%.tar.gz" || EXIT /b -1
 CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.tar.gz"
 
 CALL:addBuildPathVar "LUX_X64_LIBTIFF_ROOT", "%D64%\tiff-%LIBTIFF_VER%"
@@ -283,8 +283,8 @@ CALL:addBuildPathVar "LUX_X64_NUMPY37_ROOT", "%D64%\numpy37-%NUMPY37_VER%"
 )
 
 :openexr
-CALL:downloadFile "OpenEXR %OPENEXR_VER%", "http://download.savannah.nongnu.org/releases/openexr/openexr-%OPENEXR_VER%.tar.gz", "openexr-%OPENEXR_VER%.tar.gz" || EXIT /b -1
-CALL:extractFile "OpenEXR %OPENEXR_VER%", "%DOWNLOADS%\openexr-%OPENEXR_VER%.tar.gz"
+CALL:downloadFile "OpenEXR %OPENEXR_VER%", "https://github.com/AcademySoftwareFoundation/openexr/archive/v%OPENEXR_VER%.zip", "openexr-%OPENEXR_VER%.zip" || EXIT /b -1
+CALL:extractFile "OpenEXR %OPENEXR_VER%", "%DOWNLOADS%\openexr-%OPENEXR_VER%.zip"
 
 CALL:addBuildPathVar "LUX_X64_OPENEXR_ROOT", "%D64%\openexr-%OPENEXR_VER%"
 
@@ -301,10 +301,10 @@ CALL:extractFile "OpenImageIO %OIIO_VER%", "%DOWNLOADS%\oiio-Release-%OIIO_VER%.
 CALL:addBuildPathVar "LUX_X64_OIIO_ROOT", "%D64%\oiio-Release-%OIIO_VER%"
 
 :openjpeg
-CALL:downloadFile "OpenJPEG %OPENJPEG_VER%", "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/openjpeg/openjpeg-%OPENJPEG_VER%.tar.gz", "openjpeg-%OPENJPEG_VER%.tar.gz", "--no-check-certificate" || EXIT /b -1
-CALL:extractFile "OpenJPEG %OPENJPEG_VER%", "%DOWNLOADS%\openjpeg-%OPENJPEG_VER%.tar.gz"
+REM CALL:downloadFile "OpenJPEG %OPENJPEG_VER%", "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/openjpeg/openjpeg-%OPENJPEG_VER%.tar.gz", "openjpeg-%OPENJPEG_VER%.tar.gz", "--no-check-certificate" || EXIT /b -1
+REM CALL:extractFile "OpenJPEG %OPENJPEG_VER%", "%DOWNLOADS%\openjpeg-%OPENJPEG_VER%.tar.gz"
 
-CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
+REM CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
 
 :python27
 CALL:downloadFile "Python %PYTHON27_VER%", "https://python.org/ftp/python/%PYTHON27_VER%/Python-%PYTHON27_VER%.tgz", "Python-%PYTHON27_VER%.tgz", "--no-check-certificate" || EXIT /b -1

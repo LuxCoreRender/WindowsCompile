@@ -28,8 +28,7 @@ CALL:checkEnvVarValid "LUX_X64_BLOSC_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BOOST_ROOT"     || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_BZIP_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_EMBREE_ROOT"      || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_FREEIMAGE_ROOT" || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_ILMBASE_ROOT"   || EXIT /b -1
+::CALL:checkEnvVarValid "LUX_X64_FREEIMAGE_ROOT" || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
@@ -40,7 +39,7 @@ CALL:checkEnvVarValid "LUX_X64_NUMPY37_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
+::CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON27_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
@@ -101,8 +100,8 @@ set /P PYTHON_CHOICE="Python version? "
 if %PYTHON_CHOICE% EQU s set PYTHON_CHOICE=S
 if %PYTHON_CHOICE% EQU S (
     set BUILD_PYTHON=NO
-    for /f "usebackq delims=" %%a in (`python -c "import sys; import os; print(os.path.dirname(sys.executable))"`) do SET LUX_X64_PYTHON_ROOT=%%a
-    for /f "usebackq" %%b in (`python -c "import sys; print(str(sys.version_info.major)+str(sys.version_info.minor))"`) do set PYTHON_V=%%b
+    for /f "usebackq delims=" %%a in (`python -c "import sysconfig; import os; print(sysconfig.get_config_var('installed_base'))"`) do SET LUX_X64_PYTHON_ROOT=%%a
+    for /f "usebackq" %%b in (`python -c "import sysconfig; print(sysconfig.get_config_var('VERSION'))"`) do set PYTHON_V=%%b
     echo %LUX_X64_PYTHON_ROOT%
     echo %PYTHON_V%
     goto DebugChoice
@@ -243,8 +242,6 @@ echo *          Boost::Thread                                                 *
 echo **************************************************************************
 cd /d %LUX_X64_BOOST_ROOT%
 
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch libs\python\src\numpy\numpy.cpp %LUX_WINDOWS_BUILD_ROOT%\support\boost_numpy.cpp.patch
-
 CALL bootstrap.bat
 CALL:copyfile project-config.jam .\project-config.bck
 
@@ -260,7 +257,7 @@ echo %BJAM_OPTS%
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-bjam %BJAM_OPTS% variant=%BUILD_CONFIGURATION_BOOST% stage
+b2 %BJAM_OPTS% toolset=msvc-14.1 variant=%BUILD_CONFIGURATION_BOOST% stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost
@@ -279,15 +276,16 @@ echo * Building JPEG
 echo **************************************************************************
 cd /d %LUX_X64_JPEG_ROOT%
 
-CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.sln .
-CALL:copyFile %LUX_WINDOWS_BUILD_ROOT%\support\jpeg.vcxproj .
-CALL:copyFile jconfig.vc jconfig.h
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch makejvcx.v16 %LUX_WINDOWS_BUILD_ROOT%\support\makejvcx.v16.patch
+
+nmake /f makefile.vs setupcopy-v16
+if ERRORLEVEL 1 goto :EOF
 
 msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"jpeg" jpeg.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile *.h %INCLUDE_DIR%
-CALL:copyFile x64\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+CALL:copyFile %BUILD_CONFIGURATION%\x64\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -319,38 +317,6 @@ IF %BUILD_CONFIGURATION%==Debug   CALL:copyFile %BUILD_CONFIGURATION%\zlibstatic
 
 
 :: ****************************************************************************
-:: *********************************** IlmBase ********************************
-:: ****************************************************************************
-:IlmBase
-echo.
-echo **************************************************************************
-echo * Building IlmBase
-echo **************************************************************************
-cd /d %LUX_X64_ILMBASE_ROOT%
-
-rmdir /s /q build
-mkdir build
-cd build
-cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 ..
-if ERRORLEVEL 1 goto :EOF
-
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"Half" /target:"IlmThread" /target:"Imath" ilmbase.sln
-if ERRORLEVEL 1 goto :EOF
-
-mkdir %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\config\*.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\Half\*.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\Iex\*.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\IlmThread\*.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\Imath\*.h %INCLUDE_DIR%\OpenEXR
-
-CALL:copyFile Half\%BUILD_CONFIGURATION%\Half.lib %LIB_DIR%
-CALL:copyFile Iex\%BUILD_CONFIGURATION%\Iex-2_2.lib %LIB_DIR%\Iex.lib
-CALL:copyFile IlmThread\%BUILD_CONFIGURATION%\IlmThread-2_2.lib %LIB_DIR%\IlmThread.lib
-CALL:copyFile Imath\%BUILD_CONFIGURATION%\Imath-2_2.lib %LIB_DIR%\Imath.lib
-
-
-:: ****************************************************************************
 :: *********************************** libPNG *********************************
 :: ****************************************************************************
 :libPNG
@@ -366,7 +332,7 @@ cd build
 cmake %CMAKE_OPTS% ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png16_static" libpng.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"png_static" libpng.sln
 if ERRORLEVEL 1 goto :EOF
 
 CALL:copyFile ..\*.h %INCLUDE_DIR%
@@ -386,15 +352,19 @@ echo * Building libTIFF
 echo **************************************************************************
 cd /d %LUX_X64_LIBTIFF_ROOT%
 
-rem Update project files
 %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch nmake.opt %LUX_WINDOWS_BUILD_ROOT%\support\libtiff.nmake.opt.patch
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch .\libtiff\tif_config.vc.h %LUX_WINDOWS_BUILD_ROOT%\support\tif_config.vc.h.patch
 
 nmake /f Makefile.vc Clean
 if ERRORLEVEL 1 goto :EOF
 
-IF %BUILD_CONFIGURATION%==Release nmake /f Makefile.vc 
-IF %BUILD_CONFIGURATION%==Debug nmake /f Makefile.vc DEBUG=1
+IF %BUILD_CONFIGURATION%==Release (
+	nmake /f Makefile.vc 
+	if ERRORLEVEL 1 goto :EOF
+)
+IF %BUILD_CONFIGURATION%==Debug (
+	nmake /f Makefile.vc DEBUG=1
+	if ERRORLEVEL 1 goto :EOF
+)
 
 CALL:copyFile libtiff\*.h %INCLUDE_DIR%
 CALL:copyFile libtiff\libtiff.lib %LIB_DIR%
@@ -410,45 +380,58 @@ echo * Building OpenEXR
 echo **************************************************************************
 cd /d %LUX_X64_OPENEXR_ROOT%
 
-rem Update project files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch CMakeLists.txt %LUX_WINDOWS_BUILD_ROOT%\support\openexr-2.2.0.CMakeLists.txt.patch
-
-rmdir /s /q build
-mkdir build
-cd build
-cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D ILMBASE_PACKAGE_PREFIX="%INSTALL_DIR%" ..
+rmdir /s /q build-IlmBase
+mkdir build-IlmBase
+cd build-IlmBase
+cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D BUILD_TESTING=0 -D CMAKE_INSTALL_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR ..\IlmBase
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"IlmImf" openexr.sln
+cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
+if ERRORLEVEL 1 goto :EOF
+
+cd ..
+rmdir /s /q build-OpenEXR
+mkdir build-OpenEXR
+cd build-OpenEXR
+
+cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D BUILD_TESTING=0 -D CMAKE_SYSTEM_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR -D CMAKE_INSTALL_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR ..\OpenEXR
+if ERRORLEVEL 1 goto :EOF
+
+cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\IlmImf\*.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile ..\config\OpenEXRConfig.h %INCLUDE_DIR%\OpenEXR
-CALL:copyFile IlmImf\%BUILD_CONFIGURATION%\IlmImf-2_2.lib %LIB_DIR%\IlmImf.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\include\OpenEXR\*.h %INCLUDE_DIR%\OpenEXR
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\Half-2_4.lib %LIB_DIR%\Half.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\Iex-2_4.lib %LIB_DIR%\Iex.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\IexMath-2_4.lib %LIB_DIR%\IexMath.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\IlmThread-2_4.lib %LIB_DIR%\IlmThread.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\Imath-2_4.lib %LIB_DIR%\Imath.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\IlmImf-2_4.lib %LIB_DIR%\IlmImf.lib
+CALL:copyFile %LUX_WINDOWS_DEPS_ROOT%\OpenEXR\lib\IlmImfUtil-2_4.lib %LIB_DIR%\IlmImfUtil.lib
 
 
 :: ****************************************************************************
 :: ********************************** OpenJPEG ********************************
 :: ****************************************************************************
-:OpenJPEG
-echo.
-echo **************************************************************************
-echo * Building OpenJPEG
-echo **************************************************************************
-cd /d %LUX_X64_OPENJPEG_ROOT%
+REM :OpenJPEG
+REM echo.
+REM echo **************************************************************************
+REM echo * Building OpenJPEG
+REM echo **************************************************************************
+REM cd /d %LUX_X64_OPENJPEG_ROOT%
 
-rmdir /s /q build
-mkdir build
-cd build
-cmake %CMAKE_OPTS% ..
-if ERRORLEVEL 1 goto :EOF
+REM rmdir /s /q build
+REM mkdir build
+REM cd build
+REM cmake %CMAKE_OPTS% ..
+REM if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
-if ERRORLEVEL 1 goto :EOF
+REM msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"openjpeg" openjpeg.sln
+REM if ERRORLEVEL 1 goto :EOF
 
-CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
-CALL:copyFile bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+REM CALL:copyFile ..\libopenjpeg\openjpeg.h %INCLUDE_DIR%
+REM CALL:copyFile bin\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -483,24 +466,24 @@ CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 :: ****************************************************************************
 :: ********************************** FreeImage *******************************
 :: ****************************************************************************
-:FreeImage
-echo.
-echo **************************************************************************
-echo * Building FreeImage
-echo **************************************************************************
-cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
+REM :FreeImage
+REM echo.
+REM echo **************************************************************************
+REM echo * Building FreeImage
+REM echo **************************************************************************
+REM cd /d %LUX_X64_FREEIMAGE_ROOT%\FreeImage
 
-rem Install solution and project files for VS2013
-CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
+REM REM Install solution and project files for VS2013
+REM CALL:xcopyFiles %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage\*.* .
 
-rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
+REM REM Update source files
+REM %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\FreeImage-3.16.0.patch
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
-if ERRORLEVEL 1 goto :EOF
+REM msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"FreeImageLib" FreeImage.2013.sln
+REM if ERRORLEVEL 1 goto :EOF
 
-CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
-CALL:copyFile Dist\FreeImage.lib %LIB_DIR%\FreeImage.lib
+REM CALL:copyFile Source\FreeImage.h %INCLUDE_DIR%
+REM CALL:copyFile Dist\FreeImage.lib %LIB_DIR%\FreeImage.lib
 
 
 :: ****************************************************************************
@@ -524,6 +507,26 @@ CALL:copyFile include\embree3\*.* %INCLUDE_DIR%\embree3
 
 
 :: ****************************************************************************
+:: ****************************** OpenImageDenoise ****************************
+:: ****************************************************************************
+:oidn
+echo.
+echo **************************************************************************
+echo * Copying OpenImageDenoise files
+echo **************************************************************************
+cd /d %LUX_X64_OIDN_ROOT%
+
+rem Not necessary to build OIDN, we copy files from binary distribution
+rem This also overwrites tbb and tbbmalloc libraries with the OIDN version
+CALL:copyFile bin\*.dll %LIB_DIR%
+CALL:copyFile bin\*.exe %LIB_DIR%
+CALL:copyFile lib\*.lib %LIB_DIR%
+
+mkdir %INCLUDE_DIR%\OpenImageDenoise
+CALL:copyFile include\OpenImageDenoise\*.* %INCLUDE_DIR%\OpenImageDenoise
+
+
+:: ****************************************************************************
 :: ************************************* tbb **********************************
 :: ****************************************************************************
 :tbb
@@ -542,26 +545,6 @@ CALL:xcopyFiles include\serial\*.* %INCLUDE_DIR%\serial
 
 mkdir %INCLUDE_DIR%\tbb
 CALL:xcopyFiles include\tbb\*.* %INCLUDE_DIR%\tbb
-
-
-:: ****************************************************************************
-:: ****************************** OpenImageDenoise ****************************
-:: ****************************************************************************
-:oidn
-echo.
-echo **************************************************************************
-echo * Copying OpenImageDenoise files
-echo **************************************************************************
-cd /d %LUX_X64_OIDN_ROOT%
-
-rem Not necessary to build OIDN, we copy files from binary distribution
-rem This also overwrites tbb and tbbmalloc libraries with the OIDN version
-CALL:copyFile bin\*.dll %LIB_DIR%
-CALL:copyFile bin\*.exe %LIB_DIR%
-CALL:copyFile lib\*.lib %LIB_DIR%
-
-mkdir %INCLUDE_DIR%\OpenImageDenoise
-CALL:copyFile include\OpenImageDenoise\*.* %INCLUDE_DIR%\OpenImageDenoise
 
 
 :: ****************************************************************************
