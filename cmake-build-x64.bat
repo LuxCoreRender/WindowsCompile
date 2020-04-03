@@ -9,6 +9,7 @@ set LUXCORE_MINIMAL=0
 set CMAKE_ONLY=0
 set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
+set ENABLE_CUDA=0
 set BUILD_TYPE=Release
 set BUILD_DLL=0
 set PYTHON_VERSION=37
@@ -24,6 +25,7 @@ if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "/minimal" set LUXCORE_MINIMAL=1
 if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
+if /i "%1" EQU "/cuda" set ENABLE_CUDA=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/python27" set PYTHON_VERSION=27
@@ -50,20 +52,19 @@ if %PRINT_USAGE%==1 (
   echo:
   echo Options:
   echo:  /?             Prints this help message and exits
-  echo   /no-ocl        Disables OpenCL support in LuxCore
+  echo   /no-ocl        Disables OpenCL support in LuxCore. CUDA is also disabled.
+  echo   /cuda          Enables CUDA support in LuxCore. OpenCL is also enabled.
   echo   /dll           Builds LuxCore SDK version
-  echo   /python^<xy^>    Builds pyluxcore.pyd module for Python version x.y
+  echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
   echo                  Available versions: 27, 35, 36, 37, 38
   echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /rebuild       Rebuilds everything from scratch
-  echo   /cmake-only    Runs CMake to set up Visual Studio project files,
-  echo                  but does not run MSBuild
+  echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
   echo   /debug         Builds a debug version
   echo:
   echo Target:
-  echo   Default behaviour is to build all the available targets, i.e. also LuxMark
-  echo   is built if source is available.
-  echo   To build a single target only, just specify it:
+  echo   Default: builds all the targets for which source code is available
+  echo   A single build target can be specified:
   echo   luxcore        Builds LuxCore only
   echo   luxmark        Builds LuxMark only (LuxCore must have been built already^)
   echo:
@@ -119,14 +120,22 @@ for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
 for %%a in (..\WindowsCompileDeps\x64\Release\lib) do set LIB_DIR=%%~fa
 echo LIB_DIR: %LIB_DIR%
 
-if %DISABLE_OPENCL% EQU 1 (
+if %ENABLE_CUDA% EQU 1 (
   echo -----------------------------------------
-  echo Disabling OpenCL
+  echo Enabling CUDA
   echo -----------------------------------------
 
-  set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
+  set OCL_OPTION=-DLUXRAYS_ENABLE_CUDA=1
 ) else (
-  set OCL_OPTION=
+  if %DISABLE_OPENCL% EQU 1 (
+    echo -----------------------------------------
+    echo Disabling OpenCL
+    echo -----------------------------------------
+  
+    set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
+  ) else (
+    set OCL_OPTION=
+  )
 )
 
 if %BUILD_DLL% EQU 1 (
