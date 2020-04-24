@@ -52,6 +52,7 @@ if %PRINT_USAGE%==1 (
   echo:
   echo Options:
   echo:  /?             Prints this help message and exits
+  echo   /cpucount:n    Specifies the number of concurrent processes used by msbuild
   echo   /no-ocl        Disables OpenCL support in LuxCore. CUDA is also disabled.
   echo   /cuda          Enables CUDA support in LuxCore. OpenCL is also enabled.
   echo   /dll           Builds LuxCore SDK version
@@ -126,6 +127,9 @@ if %ENABLE_CUDA% EQU 1 (
   echo -----------------------------------------
 
   set OCL_OPTION=-DLUXRAYS_ENABLE_CUDA=1
+  if NOT DEFINED CUDA_PATH (
+    set CUDA_BIN_PATH=%DEPS_DIR%\CUDA
+  )
 ) else (
   if %DISABLE_OPENCL% EQU 1 (
     echo -----------------------------------------
