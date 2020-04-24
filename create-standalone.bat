@@ -27,6 +27,12 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
 
+:: Copy CUDA redistributable files if needed
+if "%1" EQU "/cuda" (
+    xcopy %CUDA_PATH%\bin\nvrtc64_101_0.dll %DIR%
+    xcopy %CUDA_PATH%\bin\nvrtc-builtins64_101.dll %DIR%
+)
+
 :: Copy addition files from LuxCore (assuming it is in same folder as WindowsCompile)
 xcopy ..\LuxCore\README.md %DIR%
 xcopy ..\LuxCore\COPYING.txt %DIR%
