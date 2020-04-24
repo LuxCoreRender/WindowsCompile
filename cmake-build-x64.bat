@@ -126,9 +126,11 @@ if %ENABLE_CUDA% EQU 1 (
   echo Enabling CUDA
   echo -----------------------------------------
 
+  set
   set OCL_OPTION=-DLUXRAYS_ENABLE_CUDA=1
   if NOT DEFINED CUDA_PATH (
     set CUDA_BIN_PATH=%DEPS_DIR%\CUDA
+    echo Set CUDA location to %CUDA_BIN_PATH%
   )
 ) else (
   if %DISABLE_OPENCL% EQU 1 (
