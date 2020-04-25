@@ -29,11 +29,8 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
 
 :: Copy CUDA redistributable files if needed
 if "%1" EQU "/cuda" (
-    set
-    echo xcopy "%CUDA_PATH%\bin\nvrtc64_101_0.dll" %DIR%
-    xcopy "%CUDA_PATH%\bin\nvrtc64_101_0.dll" %DIR%
-    echo xcopy "%CUDA_PATH%\bin\nvrtc-builtins64_101.dll" %DIR%
-    xcopy "%CUDA_PATH%\bin\nvrtc-builtins64_101.dll" %DIR%
+    xcopy "%CUDA_PATH%\bin\nvrtc64*.dll" %DIR%
+    xcopy "%CUDA_PATH%\bin\nvrtc-builtins*.dll" %DIR%
 )
 
 :: Copy addition files from LuxCore (assuming it is in same folder as WindowsCompile)

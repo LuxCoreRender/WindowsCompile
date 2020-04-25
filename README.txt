@@ -14,16 +14,32 @@ A lightweight one is the GPUOpen OCL SDK:
 If you use the suggested one, also replace the included 'cl.hpp' file with a more recent version:
 - https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp
 
-4) Create a "luxcorerender" directory;
+4) If you want to build LuxCoreRender with Cuda support, you also need to install the NVidia Cuda Toolkit:
+- https://developer.nvidia.com/cuda-10.1-download-archive-update2?target_os=Windows&target_arch=x86_64&target_version=10
+The minimum required packages to build LuxCoreRender are: nvcc, cudart, nvrtc, nvrtc_dev.
+The whole package is more than 2.6 GB, but a minimal download and installation (58 MB without any documentation)
+can be done using the network installer:
 
-5) Clone the following repositories inside the "luxcorerender" directory:
+start /wait cuda_<version>_network.exe -s nvcc_<version> cudart_<version> nvrtc_<version> nvrtc_dev_<version>
+
+More info can be found on the Cuda Installation Guide for Microsoft Windows:
+- https://docs.nvidia.com/cuda/archive/10.1/cuda-installation-guide-microsoft-windows/index.html
+
+NOTE: Nvidia drivers are backward compatible with toolkit versions, while the opposite is not true:
+if you download the lastest toolkit version, you might have to upgrade the driver as well.
+
+NOTE: the Cuda Toolkit provides also an OpenCL installation, so you can skip step 3.
+
+5) Create a "luxcorerender" directory;
+
+6) Clone the following repositories inside the "luxcorerender" directory:
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
 
 NOTE: it is no more necessary to clone the WindowsCompileDeps repository:
-the build script will download the required deps.
+the build script will download the required deps if no WindowsCompileDeps directory is found.
 
-6) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
+7) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
