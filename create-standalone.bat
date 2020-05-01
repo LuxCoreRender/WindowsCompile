@@ -6,6 +6,11 @@ rd /s /q %DIR%
 :: Create new folder for the binaries
 md %DIR%
 
+:: If we need Nvidia DLLs, set variable used in PyInstaller script
+if "%1" EQU "/cuda" (
+	set CUDA_DLLS=1
+)
+
 :: Pack pyluxcoretools
 cd Build_CMake\LuxCore
 PyInstaller ..\..\..\LuxCore\samples\pyluxcoretool\pyluxcoretool.win.spec
@@ -28,7 +33,7 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
 
 :: Copy CUDA redistributable files if needed
-if "%1" EQU "/cuda" (
+if "%CUDA_DLLS%" EQU "1" (
     xcopy "%CUDA_PATH%\bin\nvrtc64*.dll" %DIR%
     xcopy "%CUDA_PATH%\bin\nvrtc-builtins*.dll" %DIR%
 )
