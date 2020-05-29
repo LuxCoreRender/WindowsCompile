@@ -25,14 +25,10 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%\lib
+xcopy "%CUDA_PATH%\bin\nvrtc64*.dll" %DIR%\lib
+xcopy "%CUDA_PATH%\bin\nvrtc-builtins*.dll" %DIR%\lib
 
-:: Copy CUDA redistributable files if needed
-if "%1" EQU "/cuda" (
-    xcopy "%CUDA_PATH%\bin\nvrtc64*.dll" %DIR%\lib
-    xcopy "%CUDA_PATH%\bin\nvrtc-builtins*.dll" %DIR%\lib
-)
-
-:: Copy addition files from LuxCore (assuming it is in same folder as WindowsCompile)
+:: Copy additional files from LuxCore (assuming it is in same folder as WindowsCompile)
 xcopy ..\LuxCore\README.md %DIR%
 xcopy ..\LuxCore\COPYING.txt %DIR%
 xcopy ..\LuxCore\AUTHORS.txt %DIR%

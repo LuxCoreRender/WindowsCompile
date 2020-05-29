@@ -9,7 +9,7 @@ set LUXCORE_MINIMAL=0
 set CMAKE_ONLY=0
 set MSBUILD_PLATFORM=x64
 set DISABLE_OPENCL=0
-set ENABLE_CUDA=0
+set DISABLE_CUDA=0
 set BUILD_TYPE=Release
 set BUILD_DLL=0
 set PYTHON_VERSION=37
@@ -25,7 +25,7 @@ if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "/minimal" set LUXCORE_MINIMAL=1
 if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
-if /i "%1" EQU "/cuda" set ENABLE_CUDA=1
+if /i "%1" EQU "/no-cuda" set DISABLE_CUDA=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/python27" set PYTHON_VERSION=27
@@ -121,22 +121,22 @@ for %%a in (..\WindowsCompileDeps\include) do set INCLUDE_DIR=%%~fa
 for %%a in (..\WindowsCompileDeps\x64\Release\lib) do set LIB_DIR=%%~fa
 echo LIB_DIR: %LIB_DIR%
 
-if %ENABLE_CUDA% EQU 1 (
+set CUDA_OPTION= 
+if %DISABLE_CUDA% EQU 1 (
   echo -----------------------------------------
-  echo Enabling CUDA
+  echo Disabling CUDA
   echo -----------------------------------------
 
-  set OCL_OPTION=-DLUXRAYS_ENABLE_CUDA=1
-) else (
-  if %DISABLE_OPENCL% EQU 1 (
-    echo -----------------------------------------
-    echo Disabling OpenCL
-    echo -----------------------------------------
-  
-    set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
-  ) else (
-    set OCL_OPTION=
-  )
+  set CUDA_OPTION=-DLUXRAYS_DISABLE_CUDA=1
+)
+
+set OCL_OPTION= 
+if %DISABLE_OPENCL% EQU 1 (
+  echo -----------------------------------------
+  echo Disabling OpenCL
+  echo -----------------------------------------
+
+  set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
 )
 
 if %BUILD_DLL% EQU 1 (
@@ -146,10 +146,11 @@ if %BUILD_DLL% EQU 1 (
 
   set DLL_OPTION=-DBUILD_LUXCORE_DLL=1
 ) else (
-  set DLL_OPTION=
+  set DLL_OPTION= 
 )
 
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %DLL_OPTION%
+echo CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
 set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 

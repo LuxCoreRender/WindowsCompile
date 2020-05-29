@@ -4,3 +4,4 @@ luxcorerender
 luxmark
 build-vars.bat
 py*venv
+.vscode
