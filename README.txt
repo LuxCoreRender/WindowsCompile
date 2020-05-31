@@ -8,38 +8,16 @@ If you don't want the full IDE you can also install the "Build Tools for Visual 
 
 2) Install cmake v3.11.2 or better (https://cmake.org/);
 
-3) If you want to build LuxCoreRender with OpenCL support, you also need to install an OpenCL SDK.
-A lightweight one is the GPUOpen OCL SDK:
-- https://github.com/GPUOpen-LibrariesAndSDKs/OCL-SDK/releases
-If you use the suggested one, also replace the included 'cl.hpp' file with a more recent version:
-- https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp
+3) Create a "luxcorerender" directory;
 
-4) If you want to build LuxCoreRender with Cuda support, you also need to install the NVidia Cuda Toolkit:
-- https://developer.nvidia.com/cuda-10.1-download-archive-update2?target_os=Windows&target_arch=x86_64&target_version=10
-The minimum required packages to build LuxCoreRender are: nvcc, cudart, nvrtc, nvrtc_dev.
-The whole package is more than 2.6 GB, but a minimal download and installation (58 MB without any documentation)
-can be done using the network installer:
-
-start /wait cuda_<version>_network.exe -s nvcc_<version> cudart_<version> nvrtc_<version> nvrtc_dev_<version>
-
-More info can be found on the Cuda Installation Guide for Microsoft Windows:
-- https://docs.nvidia.com/cuda/archive/10.1/cuda-installation-guide-microsoft-windows/index.html
-
-NOTE: Nvidia drivers are backward compatible with toolkit versions, while the opposite is not true:
-if you download the lastest toolkit version, you might have to upgrade the driver as well.
-
-NOTE: the Cuda Toolkit provides also an OpenCL installation, so you can skip step 3.
-
-5) Create a "luxcorerender" directory;
-
-6) Clone the following repositories inside the "luxcorerender" directory:
+4) Clone the following repositories inside the "luxcorerender" directory:
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
 
 NOTE: it is no more necessary to clone the WindowsCompileDeps repository:
 the build script will download the required deps if no WindowsCompileDeps directory is found.
 
-7) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
+5) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
@@ -53,6 +31,12 @@ The first run of the build process will take around 20 minutes
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
+
+OpenCL and CUDA
+---------------
+You don't need to install OpenCL or CUDA SDK anymore. The binaries will check at
+run time if OpenCL and/or CUDA are available and enable/disable the support
+accordingly.
 
 Packaging a release
 -------------------

@@ -26,8 +26,8 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
-xcopy "%CUDA_PATH%\bin\nvrtc64*.dll" %DIR%
-xcopy "%CUDA_PATH%\bin\nvrtc-builtins*.dll" %DIR%
+xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc64*.dll" %DIR%
+xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc-builtins*.dll" %DIR%
 
 :: Copy additional files from LuxCore (assuming it is in same folder as WindowsCompile)
 xcopy ..\LuxCore\README.md %DIR%
