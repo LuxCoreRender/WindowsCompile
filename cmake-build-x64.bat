@@ -97,7 +97,7 @@ if exist "%CMAKE%" (
 
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
 
-set WINDOWS_DEPS_RELEASE=luxcorerender_v2.4alpha2
+set WINDOWS_DEPS_RELEASE=luxcorerender_v2.4beta2
 if not exist "%DEPS_DIR%" (
     %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps.7z
     %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps.7z
