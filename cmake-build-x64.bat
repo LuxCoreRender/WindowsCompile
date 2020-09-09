@@ -15,6 +15,7 @@ set BUILD_DLL=0
 set PYTHON_VERSION=37
 set CPUCOUNT=/maxcpucount
 set PRINT_USAGE=0
+set VSVERSION=2017
 
 :ParseCmdParams
 if "%1" EQU "" goto Start
@@ -24,8 +25,6 @@ if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
 if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "/minimal" set LUXCORE_MINIMAL=1
 if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
-if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
-if /i "%1" EQU "/no-cuda" set DISABLE_CUDA=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/python27" set PYTHON_VERSION=27
@@ -33,6 +32,11 @@ if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
+if /i "%1" EQU "/vs2019" set VSVERSION=2019
+:: The following two options are normally not necessary:
+:: both OpenCL and CUDA are detected at runtime
+if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
+if /i "%1" EQU "/no-cuda" set DISABLE_CUDA=1
 :: /cpucount[:n] specifies the number of concurrent processes used by msbuild
 :: Default is to use all the available processors
 set cpupar=%1
@@ -53,15 +57,14 @@ if %PRINT_USAGE%==1 (
   echo Options:
   echo:  /?             Prints this help message and exits
   echo   /cpucount:n    Specifies the number of concurrent processes used by msbuild
-  echo   /no-ocl        Disables OpenCL support in LuxCore. CUDA is also disabled.
-  echo   /cuda          Enables CUDA support in LuxCore. OpenCL is also enabled.
   echo   /dll           Builds LuxCore SDK version
+  echo   /rebuild       Rebuilds everything from scratch
+  echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
   echo                  Available versions: 27, 35, 36, 37, 38
-  echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
-  echo   /rebuild       Rebuilds everything from scratch
-  echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
   echo   /debug         Builds a debug version
+  echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
+  echo   /vs2019        Uses Visual Studio 2019 to build (default is 2017^)
   echo:
   echo Target:
   echo   Default: builds all the targets for which source code is available
@@ -108,8 +111,13 @@ for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| findstr /I /C:"cmake ve
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
-set CMAKE_GENERATOR="Visual Studio 15 2017"
-set CMAKE_TOOLSET=-T v141,host=x64
+if "%VSVERSION%" EQU "2019" (
+	set CMAKE_GENERATOR="Visual Studio 16 2019"
+	set CMAKE_TOOLSET=-T host=x64
+) else (
+	set CMAKE_GENERATOR="Visual Studio 15 2017"
+	set CMAKE_TOOLSET=-T v141,host=x64
+)
 set CMAKE_PLATFORM=-A x64
 
 if %CMAKE_VN_MAJOR%==2 (
@@ -152,7 +160,11 @@ if %BUILD_DLL% EQU 1 (
 echo CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
 set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
 rem To display only errors add: /clp:ErrorsOnly
-set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal /toolsversion:15.0 /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
+set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal
+if "%VSVERSION%" EQU "2017" (
+	set MSBUILD_OPTS=%MSBUILD_OPTS% /toolsversion:15.0
+)
+set MSBUILD_OPTS=%MSBUILD_OPTS% /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
