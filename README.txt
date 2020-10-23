@@ -32,6 +32,16 @@ The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
 
+Using Visual Studio 2019
+-------------------------
+Building vith VS2019 is also supported:
+1-4) same steps as above (just for VS2019)
+5) change the last line as follows:
+
+.\cmake-build-x64.bat /vs2019
+
+It is recommended to use a recent cmake version.
+
 OpenCL and CUDA
 ---------------
 You don't need to install OpenCL or CUDA SDK anymore. The binaries will check at
