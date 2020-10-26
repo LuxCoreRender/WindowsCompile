@@ -15,10 +15,9 @@ set BUILD_DLL=0
 set PYTHON_VERSION=37
 set CPUCOUNT=/maxcpucount
 set PRINT_USAGE=0
-set VSVERSION=2017
 
 :ParseCmdParams
-if "%1" EQU "" goto Start
+if "%1" EQU "" goto SetVisualStudioVersion
 if /i "%1" EQU "/?" set PRINT_USAGE=1
 if /i "%1" EQU "luxcore" set BUILD_LUXCORE_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
@@ -32,6 +31,7 @@ if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
+if /i "%1" EQU "/vs2017" set VSVERSION=2017
 if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
 :: both OpenCL and CUDA are detected at runtime
@@ -46,6 +46,29 @@ if /i "%cpupar:~0,9%" EQU "/cpucount" (
 
 shift 
 goto ParseCmdParams
+
+:SetVisualStudioVersion
+if "%VSVERSION%" NEQ "" (
+    echo Setting up build for Visual Studio %VSVERSION%
+    goto Start
+)
+
+if "%VisualStudioVersion%" EQU "" (
+    echo Could not determine Visual Studio version, trying to use 2017
+    set VSVERSION=2017
+    goto Start
+)
+
+if "%VisualStudioVersion%" GEQ "16" (
+    set VSVERSION=2019
+) else (
+    if "%VisualStudioVersion%" LSS "15" (
+        goto VSVersionNotSupported
+    ) else (
+        set VSVERSION=2017
+    )
+)
+echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
 
 :Start
 
@@ -64,7 +87,8 @@ if %PRINT_USAGE%==1 (
   echo                  Available versions: 27, 35, 36, 37, 38
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
-  echo   /vs2019        Uses Visual Studio 2019 to build (default is 2017^)
+  echo   /vs^<yyyy^>      Visual Studio version to use. Supported: 2017 and 2019
+  echo                  If unspecified and autodetect fails, VS2017 is used
   echo:
   echo Target:
   echo   Default: builds all the targets for which source code is available
@@ -218,6 +242,13 @@ if %CMAKE_ONLY%==0 (
 
 cd ..
 
+goto exit
+
+:VSVersionNotSupported
+echo --- FATAL ERROR: your version of Visual Studio is not supported
+echo --- Detected version: %VisualStudioVersion%
+echo --- Recommended version is 2017 (15.x). 2019 (16.x) should also work.
+echo.
 goto exit
 
 :CMakeNotFound
