@@ -1,16 +1,12 @@
-Building LuxCoreRender with Visual Studio
-=========================================
+Building LuxCoreRender with Visual Studio 2017 (Community)
+==========================================================
 
 Basic procedure to compile LuxCoreRender for Windows 64bit
 ----------------------------------------------------------
-1) Install Visual Studio (Community Edition works perfectly).
-The officially supported version is 2017, but 2019 should work too.
-Visual Studio 2017: https://visualstudio.microsoft.com/vs/older-downloads/
-Visual Studio 2019: https://visualstudio.microsoft.com/downloads/
-If you don't want the full IDE you can also install the "Build Tools for Visual Studio";
+1) Install VS2017 (Community Edition works too, https://visualstudio.microsoft.com/vs/older-downloads/).
+If you don't want the full IDE you can also install the "Build Tools for Visual Studio 2017";
 
-2) Install cmake v3.11.2 or better
-(https://cmake.org/ or install the CMake tools included in Visual Studio);
+2) Install cmake v3.11.2 or better (https://cmake.org/);
 
 3) Create a "luxcorerender" directory;
 
@@ -21,7 +17,7 @@ If you don't want the full IDE you can also install the "Build Tools for Visual 
 NOTE: it is no more necessary to clone the WindowsCompileDeps repository:
 the build script will download the required deps if no WindowsCompileDeps directory is found.
 
-5) Open the Visual Studio "x64 Native Tools Command Prompt" (one of the others will not work),
+5) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
@@ -35,6 +31,16 @@ The first run of the build process will take around 15 minutes
 The compiled binaries are in Build_CMake\LuxCore\bin\Release\
 The pyluxcore.pyd binary is in Build_CMake\LuxCore\lib\Release
 You can run the script collect-compiled-binaries.bat to collect them.
+
+Using Visual Studio 2019
+-------------------------
+Building vith VS2019 is also supported:
+1-4) same steps as above (just for VS2019)
+5) change the last line as follows:
+
+.\cmake-build-x64.bat /vs2019
+
+It is recommended to use a recent cmake version.
 
 OpenCL and CUDA
 ---------------
@@ -72,7 +78,7 @@ Optional: compiling LuxMark
 directory:
 - https://github.com/LuxCoreRender/LuxMark
 
-2) Open the "x64 Native Tools Command Prompt" (one of the others will not work),
+2) Open the VS2017 x64 command prompt (you must use "x64 Native Tools Command Prompt" to execute the .bat),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
 cd C:\Path\to\luxcorerender\WindowsCompile\
