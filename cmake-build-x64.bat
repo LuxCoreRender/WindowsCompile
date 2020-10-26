@@ -15,9 +15,14 @@ set BUILD_DLL=0
 set PYTHON_VERSION=37
 set CPUCOUNT=/maxcpucount
 set PRINT_USAGE=0
+set
+:: Trying to detect Visual Studio version
+if "%VisualStudioVersion%" EQU "" (
+    echo Visual Studio version not detected, trying with VS2017
+    set VSVERSION=2017
+    goto ParseCmdParams
+)
 
-:: Detecting Visual Studio version
-if "%VisualStudioVersion%" EQU "" goto NoVSToolsCmd
 if "%VisualStudioVersion%" GEQ "16" (
     set VSVERSION=2019
 ) else (
