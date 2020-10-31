@@ -31,6 +31,7 @@ if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
+if /i "%1" EQU "/python39" set PYTHON_VERSION=39
 if /i "%1" EQU "/vs2017" set VSVERSION=2017
 if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
@@ -84,7 +85,7 @@ if %PRINT_USAGE%==1 (
   echo   /rebuild       Rebuilds everything from scratch
   echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
-  echo                  Available versions: 27, 35, 36, 37, 38
+  echo                  Available versions: 27, 35, 36, 37, 38, 39
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
   echo   /vs^<yyyy^>      Visual Studio version to use. Supported: 2017 and 2019
@@ -124,10 +125,10 @@ if exist "%CMAKE%" (
 
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
 
-set WINDOWS_DEPS_RELEASE=luxcorerender_v2.4beta2
+set WINDOWS_DEPS_RELEASE=v2.5_1
 if not exist "%DEPS_DIR%" (
-    %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps.7z
-    %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps.7z
+    %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/luxcorerender_%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z
+    %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z
 )
 
 :: Determine if we have CMake 2 or 3
