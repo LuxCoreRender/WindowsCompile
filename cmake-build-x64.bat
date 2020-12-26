@@ -172,6 +172,16 @@ if %DISABLE_OPENCL% EQU 1 (
   set OCL_OPTION=-DLUXRAYS_DISABLE_OPENCL=1
 )
 
+if %LUXCORE_MINIMAL% EQU 1 (
+  echo -----------------------------------------------------------
+  echo Minimal build selected: pyluxcore, pylucoretools, luxcoreui
+  echo -----------------------------------------------------------
+
+  set MINIMAL_OPTION=
+) else (
+  set MINIMAL_OPTION=-DWIN_BUILD_DEMOS=1
+)
+
 if %BUILD_DLL% EQU 1 (
   echo -----------------------------------------
   echo Enable LuxCore DLL
@@ -182,8 +192,9 @@ if %BUILD_DLL% EQU 1 (
   set DLL_OPTION= 
 )
 
-echo CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
-set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION%
+set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D PYTHON_LIBRARY="%LIB_DIR%" -D PYTHON_V="%PYTHON_VERSION%" -D PYTHON_INCLUDE_DIR="%INCLUDE_DIR%\Python%PYTHON_VERSION%" -D CMAKE_BUILD_TYPE=%BUILD_TYPE% %OCL_OPTION% %CUDA_OPTION% %DLL_OPTION% %MINIMAL_OPTION%
+echo CMAKE_OPTS=%CMAKE_OPTS%
+
 rem To display only errors add: /clp:ErrorsOnly
 set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal
 if "%VSVERSION%" EQU "2017" (
@@ -211,11 +222,7 @@ if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 if ERRORLEVEL 1 goto CMakeError
 
 if %CMAKE_ONLY%==0 (
-  if %LUXCORE_MINIMAL%==1 (
-    msbuild %MSBUILD_OPTS% /target:pyluxcore,pyluxcoretools,luxcoreui LuxRays.sln
-  ) else (
-    msbuild %MSBUILD_OPTS% LuxRays.sln
-  )
+  msbuild %MSBUILD_OPTS% LuxRays.sln
   if ERRORLEVEL 1 goto CMakeError
 )
 
