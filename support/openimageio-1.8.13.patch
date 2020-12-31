@@ -1,10 +1,185 @@
---- src\libOpenImageIO\CMakeLists.txt.orig	2014-08-23 23:11:14.030900128 -0600
-+++ src\libOpenImageIO\CMakeLists.txt	2014-08-23 23:06:41.000000000 -0600
-@@ -160,6 +160,7 @@
+--- CMakeLists.txt.orig	2018-08-01 07:45:19.000000000 +0200
++++ CMakeLists.txt	2020-12-28 16:01:42.816305100 +0100
+@@ -1,6 +1,6 @@
+ cmake_minimum_required (VERSION 3.2.2)
+ cmake_policy (SET CMP0048 NEW)  # Allow VERSION specifier in project()
+-project (OpenImageIO
++project (OpenImageIO_LuxCore
+          VERSION 1.8.13
+          LANGUAGES CXX C)
+ set (PROJ_NAME OIIO)    # short name, caps
+--- src\libOpenImageIO\CMakeLists.txt.orig	2018-08-01 07:45:19.000000000 +0200
++++ src\libOpenImageIO\CMakeLists.txt	2020-12-30 12:02:33.278662600 +0100
+@@ -94,17 +94,17 @@
+ source_group ("libtexture" REGULAR_EXPRESSION ".+/libtexture/.+")
+ 
+ if (BUILDSTATIC)
+-    add_library (OpenImageIO STATIC ${libOpenImageIO_srcs})
++    add_library (OpenImageIO_LuxCore STATIC ${libOpenImageIO_srcs})
+ else ()
+-    add_library (OpenImageIO SHARED ${libOpenImageIO_srcs})
++    add_library (OpenImageIO_LuxCore SHARED ${libOpenImageIO_srcs})
+ endif ()
+ 
+ # if (SANITIZE AND ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+-#     # target_link_libraries (OpenImageIO "asan" "ubsan")
+-#     target_link_libraries (OpenImageIO ${SANITIZE_LIBRARIES})
++#     # target_link_libraries (OpenImageIO_LuxCore "asan" "ubsan")
++#     target_link_libraries (OpenImageIO_LuxCore ${SANITIZE_LIBRARIES})
+ # endif ()
+ 
+-target_link_libraries (OpenImageIO
++target_link_libraries (OpenImageIO_LuxCore
+                        ${SANITIZE_LIBRARIES}
+                        ${format_plugin_libs} # Add all the target link libraries from the plugins
+                        ${Boost_LIBRARIES}
+@@ -116,31 +116,31 @@
+     if (VERBOSE)
+         message (STATUS "Linking OpenColorIO ${OCIO_LIBRARIES}")
+     endif ()
+-    target_link_libraries (OpenImageIO ${OCIO_LIBRARIES})
++    target_link_libraries (OpenImageIO_LuxCore ${OCIO_LIBRARIES})
+ endif ()
+ 
+ # Include OpenCV if using it
+ if (OpenCV_FOUND)
+     include_directories (${OpenCV_INCLUDE_DIR})
+-    target_link_libraries (OpenImageIO ${OpenCV_LIBS})
++    target_link_libraries (OpenImageIO_LuxCore ${OpenCV_LIBS})
+ endif ()
+ 
+ # Include OpenSSL if using it
+ if (OPENSSL_FOUND)
+     include_directories (${OPENSSL_INCLUDE_DIR})
+-    target_link_libraries (OpenImageIO ${OPENSSL_LIBRARIES})
++    target_link_libraries (OpenImageIO_LuxCore ${OPENSSL_LIBRARIES})
+ endif ()
+ 
+ # Include Freetype if using it
+ if (FREETYPE_FOUND)
+     include_directories (${FREETYPE_INCLUDE_DIRS})
+-    target_link_libraries (OpenImageIO ${FREETYPE_LIBRARIES} ${BZIP2_LIBRARIES})
++    target_link_libraries (OpenImageIO_LuxCore ${FREETYPE_LIBRARIES} ${BZIP2_LIBRARIES})
+ endif ()
+ 
+ # Include GDCM if using it
+ if (GDCM_FOUND)
+     include_directories (${GDCM_INCLUDE_DIRS})
+-    target_link_libraries (OpenImageIO ${GDCM_LIBRARIES})
++    target_link_libraries (OpenImageIO_LuxCore ${GDCM_LIBRARIES})
+     # set_property(SOURCE dicominput.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-macro-redefined ")
+     set_property(SOURCE ../dicom.imageio/dicominput.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-macro-redefined ")
+ endif ()
+@@ -159,31 +159,32 @@
  endif ()
  
  if (WIN32)
+-    target_link_libraries (OpenImageIO psapi.lib)
 +    add_definitions ("-DPSAPI_VERSION=1")
-     target_link_libraries (OpenImageIO psapi.lib)
++	target_link_libraries (OpenImageIO_LuxCore psapi.lib)
  endif ()
+ 
+ if (VISIBILITY_MAP_FILE)
+-    add_dependencies (OpenImageIO "${VISIBILITY_MAP_FILE}")
++    add_dependencies (OpenImageIO_LuxCore "${VISIBILITY_MAP_FILE}")
+ endif ()
+ 
+ if (USE_EXTERNAL_PUGIXML)
+-    target_link_libraries (OpenImageIO ${PUGIXML_LIBRARIES})
++    target_link_libraries (OpenImageIO_LuxCore ${PUGIXML_LIBRARIES})
+ endif ()
+ 
+-target_link_libraries (OpenImageIO ${ILMBASE_LIBRARIES})
+-target_link_libraries (OpenImageIO ${OPENEXR_LIBRARIES})
+-target_link_libraries (OpenImageIO ${ZLIB_LIBRARIES})
++target_link_libraries (OpenImageIO_LuxCore ${ILMBASE_LIBRARIES})
++target_link_libraries (OpenImageIO_LuxCore ${OPENEXR_LIBRARIES})
++target_link_libraries (OpenImageIO_LuxCore ${ZLIB_LIBRARIES})
+ 
+ if (VERBOSE)
+     message(STATUS "Setting SOVERSION to: ${SOVERSION}")
+ endif ()
+-set_target_properties(OpenImageIO
++set_target_properties(OpenImageIO_LuxCore
+                          PROPERTIES
+                          VERSION ${OIIO_VERSION_MAJOR}.${OIIO_VERSION_MINOR}.${OIIO_VERSION_PATCH}
+                          SOVERSION ${SOVERSION}
+                      )
+ if (VISIBILITY_COMMAND)
+-    set_target_properties (OpenImageIO
++    set_target_properties (OpenImageIO_LuxCore
+                            PROPERTIES
+                            LINK_FLAGS "${VISIBILITY_COMMAND} ${VISIBILITY_MAP_COMMAND}")
+ endif ()
+@@ -194,17 +195,17 @@
+   if (VERBOSE)
+       message(STATUS "Setting SUFFIX to: ${OVERRIDE_SHARED_LIBRARY_SUFFIX}")
+   endif ()
+-  set_target_properties(OpenImageIO
++  set_target_properties(OpenImageIO_LuxCore
+                            PROPERTIES
+                            SUFFIX ${OVERRIDE_SHARED_LIBRARY_SUFFIX}
+                        )
+ endif(DEFINED OVERRIDE_SHARED_LIBRARY_SUFFIX)
+ 
+ if (EXTRA_DSO_LINK_ARGS)
+-    set_target_properties (OpenImageIO PROPERTIES LINK_FLAGS ${EXTRA_DSO_LINK_ARGS})
++    set_target_properties (OpenImageIO_LuxCore PROPERTIES LINK_FLAGS ${EXTRA_DSO_LINK_ARGS})
+ endif()
+ 
+-oiio_install_targets (OpenImageIO)
++oiio_install_targets (OpenImageIO_LuxCore)
+ 
+ 
+ # Testing
+@@ -213,32 +214,32 @@
+ 
+     add_executable (imagebuf_test imagebuf_test.cpp)
+     set_target_properties (imagebuf_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (imagebuf_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (imagebuf_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     add_test (unit_imagebuf imagebuf_test)
+ 
+     add_executable (imagecache_test imagecache_test.cpp)
+     set_target_properties (imagecache_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (imagecache_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (imagecache_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     add_test (unit_imagecache imagecache_test)
+ 
+     add_executable (imagebufalgo_test imagebufalgo_test.cpp)
+     set_target_properties (imagebufalgo_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (imagebufalgo_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (imagebufalgo_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     add_test (unit_imagebufalgo imagebufalgo_test)
+ 
+     add_executable (imagespec_test imagespec_test.cpp)
+     set_target_properties (imagespec_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (imagespec_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (imagespec_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     add_test (unit_imagespec imagespec_test)
+     
+     add_executable (imagespeed_test imagespeed_test.cpp)
+     set_target_properties (imagespeed_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (imagespeed_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (imagespeed_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     #add_test (imagespeed_test imagespeed_test)
+ 
+     add_executable (compute_test compute_test.cpp)
+     set_target_properties (compute_test PROPERTIES FOLDER "Unit Tests")
+-    target_link_libraries (compute_test OpenImageIO ${Boost_LIBRARIES})
++    target_link_libraries (compute_test OpenImageIO_LuxCore ${Boost_LIBRARIES})
+     add_test (unit_compute compute_test)
+ 
+ endif (OIIO_BUILD_TESTS)
+--- src\include\OpenImageIO\export.h.orig	2018-08-01 07:45:19.000000000 +0200
++++ src\include\OpenImageIO\export.h	2020-12-28 17:11:12.652922800 +0100
+@@ -85,7 +85,7 @@
+   #define OIIO_LOCAL  __attribute__ ((visibility ("hidden")))
+ #endif
+ 
+-#if defined(OpenImageIO_EXPORTS) || defined(OpenImageIO_Util_EXPORTS)
++#if defined(OpenImageIO_LuxCore_EXPORTS) || defined(OpenImageIO_Util_EXPORTS)
+ #  define OIIO_API OIIO_EXPORT
+ #else
+ #  define OIIO_API OIIO_IMPORT
  
