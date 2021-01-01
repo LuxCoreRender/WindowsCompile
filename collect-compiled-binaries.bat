@@ -16,6 +16,6 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\oidnDenoise.exe %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
-xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
+xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO_LuxCore.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc64*.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc-builtins*.dll %DIR%
