@@ -15,7 +15,7 @@ xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%
-xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO.dll %DIR%
+xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO_LuxCore.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc64*.dll %DIR%
 xcopy ..\WindowsCompileDeps\x64\Release\lib\nvrtc-builtins*.dll %DIR%
 xcopy ..\WindowsCompileDeps\Qt5\bin\Qt5Core.dll %DIR%
