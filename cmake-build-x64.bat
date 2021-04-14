@@ -17,7 +17,7 @@ set CPUCOUNT=/maxcpucount
 set PRINT_USAGE=0
 
 :ParseCmdParams
-if "%1" EQU "" goto SetVisualStudioVersion
+if "%1" EQU "" goto VisualStudioVersion
 if /i "%1" EQU "/?" set PRINT_USAGE=1
 if /i "%1" EQU "luxcore" set BUILD_LUXCORE_ONLY=1
 if /i "%1" EQU "luxmark" set BUILD_LUXMARK_ONLY=1
@@ -32,8 +32,6 @@ if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 if /i "%1" EQU "/python39" set PYTHON_VERSION=39
-if /i "%1" EQU "/vs2017" set VSVERSION=2017
-if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
 :: both OpenCL and CUDA are detected at runtime
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
@@ -48,28 +46,18 @@ if /i "%cpupar:~0,9%" EQU "/cpucount" (
 shift 
 goto ParseCmdParams
 
-:SetVisualStudioVersion
-if "%VSVERSION%" NEQ "" (
-    echo Setting up build for Visual Studio %VSVERSION%
-    goto Start
-)
-
+:VisualStudioVersion
 if "%VisualStudioVersion%" EQU "" (
-    echo Could not determine Visual Studio version, trying to use 2017
-    set VSVERSION=2017
+    echo Could not determine Visual Studio version, only VS2019 is supported
     goto Start
 )
 
 if "%VisualStudioVersion%" GEQ "16" (
-    set VSVERSION=2019
+    echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
 ) else (
-    if "%VisualStudioVersion%" LSS "15" (
-        goto VSVersionNotSupported
-    ) else (
-        set VSVERSION=2017
-    )
+    goto VSVersionNotSupported
 )
-echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
+
 
 :Start
 
@@ -136,13 +124,8 @@ for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| findstr /I /C:"cmake ve
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
-if "%VSVERSION%" EQU "2019" (
-	set CMAKE_GENERATOR="Visual Studio 16 2019"
-	set CMAKE_TOOLSET=-T host=x64
-) else (
-	set CMAKE_GENERATOR="Visual Studio 15 2017"
-	set CMAKE_TOOLSET=-T v141,host=x64
-)
+set CMAKE_GENERATOR="Visual Studio 16 2019"
+set CMAKE_TOOLSET=-T v142,host=x64
 set CMAKE_PLATFORM=-A x64
 
 if %CMAKE_VN_MAJOR%==2 (
@@ -196,11 +179,7 @@ set CMAKE_OPTS=-G %CMAKE_GENERATOR% %CMAKE_PLATFORM% %CMAKE_TOOLSET% -D CMAKE_IN
 echo CMAKE_OPTS=%CMAKE_OPTS%
 
 rem To display only errors add: /clp:ErrorsOnly
-set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal
-if "%VSVERSION%" EQU "2017" (
-	set MSBUILD_OPTS=%MSBUILD_OPTS% /toolsversion:15.0
-)
-set MSBUILD_OPTS=%MSBUILD_OPTS% /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
+set MSBUILD_OPTS=/nologo %CPUCOUNT% /verbosity:normal /property:"Platform=%MSBUILD_PLATFORM%" /property:"Configuration=%BUILD_TYPE%" /p:WarningLevel=0
 
 if %FULL_REBUILD%==1 rd /q /s Build_CMake
 mkdir Build_CMake
@@ -255,7 +234,7 @@ goto exit
 :VSVersionNotSupported
 echo --- FATAL ERROR: your version of Visual Studio is not supported
 echo --- Detected version: %VisualStudioVersion%
-echo --- Recommended version is 2017 (15.x). 2019 (16.x) should also work.
+echo --- The only supported version is 2019 (16.x).
 echo.
 goto exit
 

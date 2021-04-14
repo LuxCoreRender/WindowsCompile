@@ -1,12 +1,11 @@
-Building LuxCoreRender with Visual Studio
-=========================================
+Building LuxCoreRender with Visual Studio 2019
+==============================================
 
 Basic procedure to compile LuxCoreRender for Windows 64bit
 ----------------------------------------------------------
-1) Install Visual Studio (Community Edition works perfectly.
-The officially supported version is 2017, but 2019 should work too.
-Visual Studio 2017: https://visualstudio.microsoft.com/vs/older-downloads/
-Visual Studio 2019: https://visualstudio.microsoft.com/downloads/
+1) Install Visual Studio 2019 from:
+https://visualstudio.microsoft.com/downloads/
+VS2019 is the only supported version. Community Edition works perfectly.
 If you don't want the full IDE you can also install the "Build Tools for Visual Studio";
 
 2) Install cmake v3.11.2 or better
@@ -18,23 +17,16 @@ If you don't want the full IDE you can also install the "Build Tools for Visual 
 - https://github.com/LuxCoreRender/LuxCore
 - https://github.com/LuxCoreRender/WindowsCompile
 
-NOTE: it is no more necessary to clone the WindowsCompileDeps repository:
-the build script will download the required deps if no WindowsCompileDeps directory is found.
+The build script will download the required deps if no WindowsCompileDeps directory is found.
 
 5) Open the Visual Studio "x64 Native Tools Command Prompt" (one of the others will not work),
 navigate to the "WindowsCompile" folder and simply invoke the cmake-build-x64.bat file:
 
-cd C:\Path\to\luxcorerender\WindowsCompile\
+cd /d C:\Path\to\luxcorerender\WindowsCompile\
 .\cmake-build-x64.bat
 
 (You can copy the filepath from an explorer window and 
 paste it in the command prompt via right click -> paste)
-
-Your Visual Studio version should be autodetected and used.
-If autodetection fails, VS2017 is used by default,
-but you can always specify the desired version, e.g.
-
-.\cmake-build-x64.bat /vs2019
 
 The first run of the build process will take around 15 minutes 
 (depending on your CPU) and the linking process may consume a lot of RAM.
@@ -61,11 +53,11 @@ You can then package the release archive running the create-standalone.bat scrip
 
 In order to build the SDK version, just run:
 
-cd C:\Path\to\luxcorerender\WindowsCompile\
+cd /d C:\Path\to\luxcorerender\WindowsCompile\
 .\cmake-build-x64.bat /dll
 create-sdk.bat
 
-NOTE: default build will use Python 3.7, the version embedded in Blender 2.8x.
+NOTE: default build will use Python 3.7, the version embedded in Blender 2.83 LTS and 2.9x.
 If needed, you can specify the preferred version among from 3.5 to 3.9, e.g.:
 .\cmake-build-x64.bat /python36
 

@@ -1,6 +1,6 @@
-Build_CMake
-compiled_binaries
-luxcorerender
+Build_CMake*
+compiled_binaries*
+luxcorerender*
 luxmark
 build-vars.bat
 py*venv
