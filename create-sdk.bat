@@ -22,6 +22,7 @@ xcopy .\Build_CMake\LuxCore\lib\Release\pyluxcore.pyd %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\oidnDenoise.exe %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\embree3.dll %DIR%\lib
+xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb12.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbb.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\tbbmalloc.dll %DIR%\lib
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageIO_LuxCore.dll %DIR%\lib
