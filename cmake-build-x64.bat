@@ -25,6 +25,7 @@ if /i "%1" EQU "/rebuild" set FULL_REBUILD=1
 if /i "%1" EQU "/minimal" set LUXCORE_MINIMAL=1
 if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
+if /i "%1" EQU "/sdk" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
 if /i "%1" EQU "/python27" set PYTHON_VERSION=27
 if /i "%1" EQU "/python35" set PYTHON_VERSION=35
@@ -32,6 +33,7 @@ if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 if /i "%1" EQU "/python39" set PYTHON_VERSION=39
+if /i "%1" EQU "/vs2017" set VSVERSION=2017
 :: The following two options are normally not necessary:
 :: both OpenCL and CUDA are detected at runtime
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
@@ -55,7 +57,7 @@ if "%VisualStudioVersion%" EQU "" (
 if "%VisualStudioVersion%" GEQ "16" (
     echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
 ) else (
-    goto VSVersionNotSupported
+    rem goto VSVersionNotSupported
 )
 
 
@@ -69,15 +71,14 @@ if %PRINT_USAGE%==1 (
   echo Options:
   echo:  /?             Prints this help message and exits
   echo   /cpucount:n    Specifies the number of concurrent processes used by msbuild
-  echo   /dll           Builds LuxCore SDK version
+  echo   /dll or /sdk   Builds LuxCore SDK version
   echo   /rebuild       Rebuilds everything from scratch
   echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
   echo                  Available versions: 27, 35, 36, 37, 38, 39
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
-  echo   /vs^<yyyy^>      Visual Studio version to use. Supported: 2017 and 2019
-  echo                  If unspecified and autodetect fails, VS2017 is used
+  echo   /vs2017        Use Visual Studio 2017 CMake generator (default is 2019)
   echo:
   echo Target:
   echo   Default: builds all the targets for which source code is available
@@ -124,9 +125,15 @@ for /F "tokens=3" %%G in ('cmd /c "%CMAKE%" --version ^| findstr /I /C:"cmake ve
 for /F "tokens=1 delims=." %%G in ("%CMAKE_VER%") do set CMAKE_VN_MAJOR=%%G
 echo We are using CMake version: %CMAKE_VN_MAJOR%
 :: Default values
+if "%VSVERSION%" EQU "2017" (
+set CMAKE_GENERATOR="Visual Studio 15 2017"
+set CMAKE_TOOLSET=-T v141,host=x64
+set CMAKE_PLATFORM=-A x64
+) else (
 set CMAKE_GENERATOR="Visual Studio 16 2019"
 set CMAKE_TOOLSET=-T v142,host=x64
 set CMAKE_PLATFORM=-A x64
+)
 
 if %CMAKE_VN_MAJOR%==2 (
   echo You need CMake 3.11 or better to build LuxCoreRender
