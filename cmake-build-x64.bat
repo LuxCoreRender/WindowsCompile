@@ -78,7 +78,7 @@ if %PRINT_USAGE%==1 (
   echo                  Available versions: 27, 35, 36, 37, 38, 39
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
-  echo   /vs2017        Use Visual Studio 2017 CMake generator (default is 2019)
+  echo   /vs2017        Use Visual Studio 2017 CMake generator (default is 2019^)
   echo:
   echo Target:
   echo   Default: builds all the targets for which source code is available
