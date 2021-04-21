@@ -27,8 +27,6 @@ if /i "%1" EQU "/cmake-only" set CMAKE_ONLY=1
 if /i "%1" EQU "/dll" set BUILD_DLL=1
 if /i "%1" EQU "/sdk" set BUILD_DLL=1
 if /i "%1" EQU "/debug" set BUILD_TYPE=Debug
-if /i "%1" EQU "/python27" set PYTHON_VERSION=27
-if /i "%1" EQU "/python35" set PYTHON_VERSION=35
 if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
@@ -75,7 +73,7 @@ if %PRINT_USAGE%==1 (
   echo   /rebuild       Rebuilds everything from scratch
   echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
   echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
-  echo                  Available versions: 27, 35, 36, 37, 38, 39
+  echo                  Available versions: 36, 37, 38, 39
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
   echo   /vs2017        Use Visual Studio 2017 CMake generator (default is 2019^)
