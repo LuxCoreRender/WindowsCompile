@@ -206,7 +206,11 @@ if exist %CMAKE_CACHE% del %CMAKE_CACHE%
 if ERRORLEVEL 1 goto CMakeError
 
 if %CMAKE_ONLY%==0 (
-  msbuild %MSBUILD_OPTS% LuxRays.sln
+  if exist LuxCoreRender.sln (
+    msbuild %MSBUILD_OPTS% LuxCoreRender.sln
+  ) else (
+    msbuild %MSBUILD_OPTS% LuxRays.sln
+  )
   if ERRORLEVEL 1 goto CMakeError
 )
 
