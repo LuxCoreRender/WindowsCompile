@@ -9,6 +9,7 @@ md %DIR%
 :: Copy binaries
 xcopy .\Build_CMake\LuxCore\bin\Release\luxcoreui.exe %DIR%
 xcopy .\Build_CMake\LuxCore\lib\Release\pyluxcore.pyd %DIR%
+xcopy .\Build_CMake\LuxCore\lib\pyluxcoretools.zip %DIR%
 
 :: Copy DLLs from WindowsCompileDeps (assuming it is in same folder as WindowsCompile)
 xcopy ..\WindowsCompileDeps\x64\Release\lib\OpenImageDenoise.dll %DIR%
