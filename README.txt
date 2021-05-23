@@ -1,11 +1,11 @@
-Building LuxCoreRender with Visual Studio 2019
+Building LuxCoreRender with Visual Studio 2017
 ==============================================
 
 Basic procedure to compile LuxCoreRender for Windows 64bit
 ----------------------------------------------------------
-1) Install Visual Studio 2019 from:
-https://visualstudio.microsoft.com/downloads/
-VS2019 is the only supported version. Community Edition works perfectly.
+1) Install Visual Studio 2017 from:
+https://visualstudio.microsoft.com/vs/older-downloads/
+VS2017 is the only supported version, even if VS2019 should work too. Community Edition works perfectly.
 If you don't want the full IDE you can also install the "Build Tools for Visual Studio";
 
 2) Install cmake v3.11.2 or better
