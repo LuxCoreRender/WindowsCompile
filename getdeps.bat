@@ -14,16 +14,12 @@ SET EMBREE_VER=3.12.2
 SET JPEG_VER=9d
 SET LIBPNG_VER=1.6.37
 SET LIBTIFF_VER=4.0.9
-SET NUMPY27_VER=1.15.4
-SET NUMPY35_VER=1.12.1
 SET NUMPY36_VER=1.15.4
 SET NUMPY37_VER=1.15.4
 SET OIDN_VER=1.3.0
-SET OIIO_VER=1.8.13
+SET OIIO_VER=2.2.13.1
 SET OPENEXR_VER=2.4.1
 ::SET OPENJPEG_VER=1.5.1
-SET PYTHON27_VER=2.7.16
-SET PYTHON35_VER=3.5.5
 SET PYTHON36_VER=3.6.8
 SET PYTHON37_VER=3.7.7
 SET QT_VER=5.12.2
@@ -239,29 +235,10 @@ CALL:extractFile "libPNG %LIBPNG_VER%", "%DOWNLOADS%\libpng-%LIBPNG_VER%.tar.gz"
 CALL:addBuildPathVar "LUX_X64_LIBPNG_ROOT", "%D64%\libpng-%LIBPNG_VER%"
 
 :libtiff
-CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/tiff-%LIBTIFF_VER%.tar.gz", "tiff-%LIBTIFF_VER%.tar.gz" || EXIT /b -1
-CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.tar.gz"
+CALL:downloadFile "libTIFF %LIBTIFF_VER%", "http://download.osgeo.org/libtiff/tiff-%LIBTIFF_VER%.zip", "tiff-%LIBTIFF_VER%.zip" || EXIT /b -1
+CALL:extractFile "libTIFF %LIBTIFF_VER%", "%DOWNLOADS%\tiff-%LIBTIFF_VER%.zip"
 
 CALL:addBuildPathVar "LUX_X64_LIBTIFF_ROOT", "%D64%\tiff-%LIBTIFF_VER%"
-
-if exist "%PYTHON%" (
-:numpy27
-if not exist "%DOWNLOADS%\numpy-%NUMPY27_VER%-cp27-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 27 --only-binary=:all: numpy==%NUMPY27_VER%
-)
-CALL:extractFile "Numpy %NUMPY27_VER% for Python 2.7", "%DOWNLOADS%\numpy-%NUMPY27_VER%-cp27-none-win_amd64.whl", "numpy27-%NUMPY27_VER%"
-
-
-CALL:addBuildPathVar "LUX_X64_NUMPY27_ROOT", "%D64%\numpy27-%NUMPY27_VER%"
-
-:numpy35
-if not exist "%DOWNLOADS%\numpy-%NUMPY35_VER%-cp35-none-win_amd64.whl" (
-    "%PYTHON%" -m pip download -d %DOWNLOADS% --python-version 35 --only-binary=:all: numpy==%NUMPY35_VER%
-)
-CALL:extractFile "Numpy %NUMPY35_VER% for Python 3.5", "%DOWNLOADS%\numpy-%NUMPY35_VER%-cp35-none-win_amd64.whl", "numpy35-%NUMPY35_VER%"
-
-
-CALL:addBuildPathVar "LUX_X64_NUMPY35_ROOT", "%D64%\numpy35-%NUMPY35_VER%"
 
 :numpy36
 if not exist "%DOWNLOADS%\numpy-%NUMPY36_VER%-cp36-none-win_amd64.whl" (
@@ -295,8 +272,8 @@ CALL:extractFile "OpenImageDenoise %OIDN_VER%", "%DOWNLOADS%\oidn-%OIDN_VER%.x64
 CALL:addBuildPathVar "LUX_X64_OIDN_ROOT", "%D64%\oidn-%OIDN_VER%.x64.vc14.windows"
 
 :oiio
-CALL:downloadFile "OpenImageIO %OIIO_VER%", "http://github.com/OpenImageIO/oiio/archive/Release-%OIIO_VER%.tar.gz", "oiio-Release-%OIIO_VER%.tar.gz", "--no-check-certificate" || EXIT /b -1
-CALL:extractFile "OpenImageIO %OIIO_VER%", "%DOWNLOADS%\oiio-Release-%OIIO_VER%.tar.gz"
+CALL:downloadFile "OpenImageIO %OIIO_VER%", "http://github.com/OpenImageIO/oiio/archive/refs/tags/Release-%OIIO_VER%.zip", "oiio-Release-%OIIO_VER%.zip", "--no-check-certificate" || EXIT /b -1
+CALL:extractFile "OpenImageIO %OIIO_VER%", "%DOWNLOADS%\oiio-Release-%OIIO_VER%.zip"
 
 CALL:addBuildPathVar "LUX_X64_OIIO_ROOT", "%D64%\oiio-Release-%OIIO_VER%"
 
@@ -305,18 +282,6 @@ REM CALL:downloadFile "OpenJPEG %OPENJPEG_VER%", "https://storage.googleapis.com
 REM CALL:extractFile "OpenJPEG %OPENJPEG_VER%", "%DOWNLOADS%\openjpeg-%OPENJPEG_VER%.tar.gz"
 
 REM CALL:addBuildPathVar "LUX_X64_OPENJPEG_ROOT", "%D64%\openjpeg-%OPENJPEG_VER%"
-
-:python27
-CALL:downloadFile "Python %PYTHON27_VER%", "https://python.org/ftp/python/%PYTHON27_VER%/Python-%PYTHON27_VER%.tgz", "Python-%PYTHON27_VER%.tgz", "--no-check-certificate" || EXIT /b -1
-CALL:extractFile "Python %PYTHON27_VER%", "%DOWNLOADS%\Python-%PYTHON27_VER%.tgz"
-
-CALL:addBuildPathVar "LUX_X64_PYTHON27_ROOT", "%D64%\Python-%PYTHON27_VER%"
-
-:python35
-CALL:downloadFile "Python %PYTHON35_VER%", "https://python.org/ftp/python/%PYTHON35_VER%/Python-%PYTHON35_VER%.tgz", "Python-%PYTHON35_VER%.tgz", "--no-check-certificate" || EXIT /b -1
-CALL:extractFile "Python %PYTHON35_VER%", "%DOWNLOADS%\Python-%PYTHON35_VER%.tgz"
-
-CALL:addBuildPathVar "LUX_X64_PYTHON35_ROOT", "%D64%\Python-%PYTHON35_VER%"
 
 :python36
 CALL:downloadFile "Python %PYTHON36_VER%", "https://python.org/ftp/python/%PYTHON36_VER%/Python-%PYTHON36_VER%.tgz", "Python-%PYTHON36_VER%.tgz", "--no-check-certificate" || EXIT /b -1
