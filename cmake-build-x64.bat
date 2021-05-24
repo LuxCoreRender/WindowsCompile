@@ -32,6 +32,7 @@ if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 if /i "%1" EQU "/python39" set PYTHON_VERSION=39
 if /i "%1" EQU "/vs2017" set VSVERSION=2017
+if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
 :: both OpenCL and CUDA are detected at runtime
 if /i "%1" EQU "/no-ocl" set DISABLE_OPENCL=1
@@ -47,12 +48,25 @@ shift
 goto ParseCmdParams
 
 :VisualStudioVersion
+if "%VSVERSION%" NEQ "" (
+    echo Setting up build for Visual Studio %VSVERSION%
+    goto Start
+)
+
 if "%VisualStudioVersion%" EQU "" (
-    echo Could not determine Visual Studio version, only VS2019 is supported
+    echo Could not determine Visual Studio version, using VS2017
+    set VSVERSION=2017
     goto Start
 )
 
 if "%VisualStudioVersion%" GEQ "16" (
+    set VSVERSION=2019
+    echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
+    goto Start
+)
+
+if "%VisualStudioVersion%" GEQ "15" (
+    set VSVERSION=2017
     echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
 ) else (
     rem goto VSVersionNotSupported
