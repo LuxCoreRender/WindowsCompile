@@ -1,11 +1,12 @@
-Building LuxCoreRender with Visual Studio 2017
+Building LuxCoreRender with Visual Studio 2019
 ==============================================
 
 Basic procedure to compile LuxCoreRender for Windows 64bit
 ----------------------------------------------------------
-1) Install Visual Studio 2017 from:
-https://visualstudio.microsoft.com/vs/older-downloads/
-VS2017 is the only supported version, even if VS2019 should work too. Community Edition works perfectly.
+1) Install Visual Studio 2019 from:
+https://visualstudio.microsoft.com/downloads/
+VS2019 is the only supported version, even if VS2017 should work too.
+Community Edition works perfectly.
 If you don't want the full IDE you can also install the "Build Tools for Visual Studio";
 
 2) Install cmake v3.11.2 or better
@@ -44,10 +45,10 @@ accordingly.
 Packaging a release
 -------------------
 In order to create an official release, you need also to install the following:
-- Python v3.7
+- Python v3.9
 - PyInstaller (with a "pip install pyinstaller")
 - PySide2 (with a "pip install PySide2")
-- NumPy (with a "pip install numpy==1.15.4")
+- NumPy (with a "pip install numpy==1.19.5")
 
 You can then package the release archive running the create-standalone.bat script.
 
@@ -57,7 +58,7 @@ cd /d C:\Path\to\luxcorerender\WindowsCompile\
 .\cmake-build-x64.bat /dll
 create-sdk.bat
 
-NOTE: default build will use Python 3.7, the version embedded in Blender 2.83 LTS and 2.9x.
+NOTE: default build will use Python 3.9, the version embedded in Blender 2.93 LTS and following.
 If needed, you can specify the preferred version among from 3.6 to 3.9, e.g.:
 .\cmake-build-x64.bat /python36
 
