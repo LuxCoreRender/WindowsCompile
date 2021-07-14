@@ -54,8 +54,8 @@ if "%VSVERSION%" NEQ "" (
 )
 
 if "%VisualStudioVersion%" EQU "" (
-    echo Could not determine Visual Studio version, using VS2017
-    set VSVERSION=2017
+    echo Could not determine Visual Studio version, using VS2019
+    set VSVERSION=2019
     goto Start
 )
 
@@ -69,7 +69,7 @@ if "%VisualStudioVersion%" GEQ "15" (
     set VSVERSION=2017
     echo Detected Visual Studio %VSVERSION% (version %VisualStudioVersion%^)
 ) else (
-    rem goto VSVersionNotSupported
+    goto VSVersionNotSupported
 )
 
 
@@ -86,7 +86,7 @@ if %PRINT_USAGE%==1 (
   echo   /dll or /sdk   Builds LuxCore SDK version
   echo   /rebuild       Rebuilds everything from scratch
   echo   /minimal       Builds only pyluxcore, pyluxcoretools and luxcoreui
-  echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.7^)
+  echo   /python^<xy^>    Builds pyluxcore module for Python version x.y (default: 3.9^)
   echo                  Available versions: 36, 37, 38, 39
   echo   /debug         Builds a debug version
   echo   /cmake-only    Sets up Visual Studio project files, but does not run MSBuild
@@ -126,7 +126,7 @@ if exist "%CMAKE%" (
 
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
 
-set WINDOWS_DEPS_RELEASE=v2.6_2
+set WINDOWS_DEPS_RELEASE=v2.6_3
 if not exist "%DEPS_DIR%" (
     %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/luxcorerender_%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z
     %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z
@@ -257,7 +257,7 @@ goto exit
 :VSVersionNotSupported
 echo --- FATAL ERROR: your version of Visual Studio is not supported
 echo --- Detected version: %VisualStudioVersion%
-echo --- The only supported version is 2019 (16.x).
+echo --- The officially supported version is 2019 (16.x).
 echo.
 goto exit
 
