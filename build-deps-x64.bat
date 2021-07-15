@@ -32,16 +32,12 @@ CALL:checkEnvVarValid "LUX_X64_EMBREE_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_NUMPY27_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_NUMPY35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_NUMPY36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_NUMPY37_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 ::CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_PYTHON27_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_PYTHON35_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_PYTHON37_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
@@ -85,7 +81,6 @@ echo Available options:
 echo      S - Use system available version (see note)
 echo     37 - Use Python 3.7 with NumPy 1.15.4
 echo     36 - Use Python 3.6 with NumPy 1.15.4
-echo     35 - Use Python 3.5 with NumPy 1.12.1
 echo.
 echo     NOTE: Recomended choice if you have installed a python version that
 echo           you would like to use.
@@ -114,11 +109,6 @@ if %PYTHON_CHOICE% EQU 37 (
 if %PYTHON_CHOICE% EQU 36 (
     set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON36_ROOT%
     set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY36_ROOT%
-    goto DebugChoice
-)
-if %PYTHON_CHOICE% EQU 35 (
-    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON35_ROOT%
-    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY35_ROOT%
     goto DebugChoice
 )
 echo Invalid choice
@@ -153,9 +143,11 @@ mkdir %INCLUDE_DIR%
 rd %INSTALL_DIR%\include
 mklink /j %INSTALL_DIR%\include %INCLUDE_DIR%
 
-set CMAKE_OPTS=-G "Visual Studio 15 Win64" -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
+set CMAKE_OPTS=-G "Visual Studio 15 2017" -T v141,host=x64 -A x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
+rem set CMAKE_OPTS=-G "Visual Studio 16 2019" -T v142,host=x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
 
 set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
+REM set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
 set MSBUILD_RELEASE_OPTS=/property:"WholeProgramOptimization=False"
 set MSBUILD_DEBUG_OPTS=
 
@@ -208,7 +200,6 @@ cd /d %LUX_X64_PYTHON_ROOT%\PCbuild
 CALL:copyFile ..\PC\pyconfig.h ..\Include
 
 set MSBUILD_PYTHON_OPTS=""
-if %PYTHON_CHOICE% EQU 35 set MSBUILD_PYTHON_OPTS=/target:"_ctypes"
 if %PYTHON_CHOICE% EQU 36 (
     %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch python.props %LUX_WINDOWS_BUILD_ROOT%\support\python368.props.patch
 )
@@ -386,7 +377,8 @@ cd build-IlmBase
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D BUILD_TESTING=0 -D CMAKE_INSTALL_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR ..\IlmBase
 if ERRORLEVEL 1 goto :EOF
 
-cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
+rem cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
+cmake --build . --target install --config Release -- /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
 if ERRORLEVEL 1 goto :EOF
 
 cd ..
@@ -397,7 +389,8 @@ cd build-OpenEXR
 cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D BUILD_TESTING=0 -D CMAKE_SYSTEM_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR -D CMAKE_INSTALL_PREFIX=%LUX_WINDOWS_DEPS_ROOT%\OpenEXR ..\OpenEXR
 if ERRORLEVEL 1 goto :EOF
 
-cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
+rem cmake --build . --target install --config Release -- /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
+cmake --build . --target install --config Release -- /property:"Platform=x64" /property:"ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props"
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenEXR
@@ -444,23 +437,21 @@ echo * Building OpenImageIO
 echo **************************************************************************
 cd /d %LUX_X64_OIIO_ROOT%
 
-rem Update source files
-%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch -p0 -i %LUX_WINDOWS_BUILD_ROOT%\support\openimageio-1.8.13.patch
-
 rmdir /s /q build
 mkdir build
 cd build
-cmake %CMAKE_OPTS% -D LINKSTATIC=1 -D USE_FFMPEG=0 -D USE_PYTHON=0 -D USE_TBB=0 -D USE_OPENGL=0 -D USE_QT=0 -D USE_GIF=0 -D USE_OPENJPEG=0 -D USE_OPENSSL=0 -D USE_FIELD3D=0 -D USE_OCIO=0 -D USE_OPENCV=0 -D OIIO_BUILD_TOOLS=0 -D OIIO_BUILD_TESTS=0 ..
+cmake %CMAKE_OPTS% -D BUILD_SHARED_LIBS=0 -D LINKSTATIC=1 -D USE_FFMPEG=0 -D USE_PYTHON=0 -D USE_TBB=0 -D USE_OPENGL=0 -D USE_QT=0 -D USE_GIF=0 -D USE_OPENJPEG=0 -D USE_OPENSSL=0 -D USE_FIELD3D=0 -D USE_OCIO=0 -D USE_OPENCV=0 -D OIIO_BUILD_TOOLS=0 -D OIIO_BUILD_TESTS=0 ..
 if ERRORLEVEL 1 goto :EOF
 
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO_LuxCore" OpenImageIO_LuxCore.sln
+msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"OpenImageIO" OpenImageIO.sln
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\OpenImageIO
-CALL:copyFile ..\src\include\OpenImageIO\*.h %INCLUDE_DIR%\OpenImageIO
+CALL:xcopyFiles ..\src\include\OpenImageIO\*.* %INCLUDE_DIR%\OpenImageIO
+CALL:xcopyFiles include\OpenImageIO\detail\*.* %INCLUDE_DIR%\OpenImageIO\detail
 CALL:copyFile include\OpenImageIO\oiioversion.h %INCLUDE_DIR%\OpenImageIO
-CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
-CALL:copyFile src\libOpenImageIO\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
+CALL:copyFile lib\%BUILD_CONFIGURATION%\*.lib %LIB_DIR%
+rem CALL:copyFile lib\%BUILD_CONFIGURATION%\*.dll %LIB_DIR%
 
 
 :: ****************************************************************************
@@ -498,9 +489,9 @@ cd /d %LUX_X64_EMBREE_ROOT%
 
 rem Not necessary to build embree, we copy files from binary distribution
 CALL:copyFile bin\embree3.dll %LIB_DIR%\embree3.dll
-CALL:copyFile bin\tbb.dll %LIB_DIR%\tbb.dll
-CALL:copyFile bin\tbbmalloc.dll %LIB_DIR%\tbbmalloc.dll
-CALL:copyFile lib\*.lib %LIB_DIR%
+CALL:copyFile bin\tbb12.dll %LIB_DIR%\tbb12.dll
+CALL:copyFile lib\embree3.lib %LIB_DIR%\embree3.lib
+CALL:copyFile lib\tbb.lib %LIB_DIR%\tbb12.lib
 
 mkdir %INCLUDE_DIR%\embree3
 CALL:copyFile include\embree3\*.* %INCLUDE_DIR%\embree3
@@ -519,8 +510,9 @@ cd /d %LUX_X64_OIDN_ROOT%
 rem Not necessary to build OIDN, we copy files from binary distribution
 rem This also overwrites tbb and tbbmalloc libraries with the OIDN version
 CALL:copyFile bin\*.dll %LIB_DIR%
-CALL:copyFile bin\*.exe %LIB_DIR%
-CALL:copyFile lib\*.lib %LIB_DIR%
+CALL:copyFile bin\oidnDenoise.exe %LIB_DIR%
+CALL:copyFile lib\OpenImageDenoise.lib %LIB_DIR%
+CALL:copyFile lib\tbb.lib %LIB_DIR%\tbb12.lib
 
 mkdir %INCLUDE_DIR%\OpenImageDenoise
 CALL:copyFile include\OpenImageDenoise\*.* %INCLUDE_DIR%\OpenImageDenoise
@@ -537,6 +529,10 @@ echo **************************************************************************
 cd /d %LUX_X64_TBB_ROOT%
 
 rem Not necessary to build tbb, we copy files from binary distribution
+CALL:copyFile lib\intel64\vc14\tbb.lib %LIB_DIR%\tbb.lib
+CALL:copyFile bin\intel64\vc14\tbb.dll %LIB_DIR%\tbb.dll
+CALL:copyFile lib\intel64\vc14\tbbmalloc.lib %LIB_DIR%\tbbmalloc.lib
+CALL:copyFile bin\intel64\vc14\tbbmalloc.dll %LIB_DIR%\tbbmalloc.dll
 CALL:copyFile lib\intel64\vc14\tbbproxy.lib %LIB_DIR%\tbbproxy.lib
 
 mkdir %INCLUDE_DIR%\serial
@@ -560,7 +556,7 @@ cd /d %LUX_X64_BLOSC_ROOT%
 rmdir /s /q build
 mkdir build
 cd build
-cmake %CMAKE_OPTS% -DBUILD_TESTS=OFF ..
+cmake %CMAKE_OPTS% -DPREFER_EXTERNAL_ZLIB=ON -DBUILD_TESTS=OFF ..
 if ERRORLEVEL 1 goto :EOF
 
 cmake --build . --config %BUILD_CONFIGURATION%

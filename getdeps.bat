@@ -16,7 +16,7 @@ SET LIBPNG_VER=1.6.37
 SET LIBTIFF_VER=4.0.9
 SET NUMPY36_VER=1.15.4
 SET NUMPY37_VER=1.15.4
-SET OIDN_VER=1.3.0
+SET OIDN_VER=1.4.1
 SET OIIO_VER=2.2.13.1
 SET OPENEXR_VER=2.4.1
 ::SET OPENJPEG_VER=1.5.1
@@ -192,7 +192,7 @@ CALL:extractFile "Blosc %BLOSC_VER%", "%DOWNLOADS%\c-blosc-%BLOSC_VER%.zip"
 CALL:addBuildPathVar "LUX_X64_BLOSC_ROOT", "%D64%\c-blosc-%BLOSC_VER%"
 
 :boost
-CALL:downloadFile "Boost %BOOST_VER_P%", "https://dl.bintray.com/boostorg/release/%BOOST_VER_P%/source/boost_%BOOST_VER_U%.7z", "boost_%BOOST_VER_U%.7z", "--content-disposition" || EXIT /b -1
+CALL:downloadFile "Boost %BOOST_VER_P%", "https://boostorg.jfrog.io/artifactory/main/release/%BOOST_VER_P%/source/boost_%BOOST_VER_U%.7z", "boost_%BOOST_VER_U%.7z", "--content-disposition" || EXIT /b -1
 CALL:extractFile "Boost %BOOST_VER_P%", "%DOWNLOADS%\boost_%BOOST_VER_U%.7z"
 
 CALL:addBuildPathVar "LUX_X64_BOOST_ROOT", "%D64%\boost_%BOOST_VER_U%"
