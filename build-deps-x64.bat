@@ -49,6 +49,7 @@ IF "%MSBUILD_VERSION_MAJOR%" NEQ "15" (
 	echo.
 	echo Could not find 'msbuild' version 15.
 	echo Please run this script from the Visual Studio 2017 Command Prompt.
+	echo Generated libraries will be usable also with Visual Studio 2019.
 	EXIT /b -1
 )
 
@@ -235,6 +236,7 @@ cd /d %LUX_X64_BOOST_ROOT%
 
 CALL bootstrap.bat
 CALL:copyfile project-config.jam .\project-config.bck
+%LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch libs\python\src\exec.cpp %LUX_WINDOWS_BUILD_ROOT%\support\boost.python-1.72.0.patch
 
 b2 --clean
 rd /q /s stage

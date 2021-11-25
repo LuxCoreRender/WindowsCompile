@@ -59,7 +59,7 @@ cd /d C:\Path\to\luxcorerender\WindowsCompile\
 create-sdk.bat
 
 NOTE: default build will use Python 3.9, the version embedded in Blender 2.93 LTS and following.
-If needed, you can specify the preferred version among from 3.6 to 3.9, e.g.:
+If needed, you can specify the preferred version among from 3.6 to 3.10, e.g.:
 .\cmake-build-x64.bat /python36
 
 NOTE: normally you never need to build dependencies in order to build LuxCore.

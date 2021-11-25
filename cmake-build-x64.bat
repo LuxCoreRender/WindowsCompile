@@ -2,6 +2,9 @@
 
 SETLOCAL ENABLEEXTENSIONS
 
+:: This is normally the latest WindowsCompileDeps release
+set WINDOWS_DEPS_RELEASE=v2.6_4
+
 set FULL_REBUILD=0
 set BUILD_LUXCORE_ONLY=0
 set BUILD_LUXMARK_ONLY=0
@@ -31,6 +34,7 @@ if /i "%1" EQU "/python36" set PYTHON_VERSION=36
 if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 if /i "%1" EQU "/python39" set PYTHON_VERSION=39
+if /i "%1" EQU "/python310" set PYTHON_VERSION=310
 if /i "%1" EQU "/vs2017" set VSVERSION=2017
 if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
@@ -126,7 +130,6 @@ if exist "%CMAKE%" (
 
 if not exist "%LUXCORE_ROOT%" goto LuxCoreNotFound
 
-set WINDOWS_DEPS_RELEASE=v2.6_3
 if not exist "%DEPS_DIR%" (
     %SUPPORT_BIN%\wget https://github.com/LuxCoreRender/WindowsCompileDeps/releases/download/luxcorerender_%WINDOWS_DEPS_RELEASE%/WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z
     %SUPPORT_BIN%\7z x -o%DEPS_DIR% WindowsCompileDeps_%WINDOWS_DEPS_RELEASE%.7z

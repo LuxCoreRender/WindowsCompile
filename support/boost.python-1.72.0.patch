@@ -1,0 +1,22 @@
+--- exec.cpp.orig	2019-12-10 01:19:39.000000000 +0100
++++ exec.cpp	2021-11-25 11:11:49.933084600 +0100
+@@ -104,9 +104,16 @@
+   if (local.is_none()) local = global;
+   // should be 'char const *' but older python versions don't use 'const' yet.
+   char *f = const_cast<char *>(filename);
+-  // Let python open the file to avoid potential binary incompatibilities.
+-#if PY_VERSION_HEX >= 0x03040000
+-  FILE *fs = _Py_fopen(f, "r");
++#if PY_VERSION_HEX >= 0x03010000
++  // Backported from Boost.Python v1.75.0 to build LuxCore for Python 3.10
++  // Let python manage any UTF bits to avoid potential incompatibilities.
++  PyObject *fo = Py_BuildValue("s", f);
++  PyObject *fb = Py_None;
++  PyUnicode_FSConverter(fo, &fb);
++  f = PyBytes_AsString(fb);
++  FILE *fs = fopen(f, "r");
++  Py_DECREF(fo);
++  Py_DECREF(fb);
+ #elif PY_VERSION_HEX >= 0x03000000
+   PyObject *fo = Py_BuildValue("s", f);
+   FILE *fs = _Py_fopen(fo, "r");
