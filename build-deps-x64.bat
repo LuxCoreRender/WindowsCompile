@@ -32,20 +32,18 @@ CALL:checkEnvVarValid "LUX_X64_EMBREE_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_JPEG_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBPNG_ROOT"    || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_LIBTIFF_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_NUMPY36_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_NUMPY37_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_NUMPY311_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIDN_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OIIO_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_OPENEXR_ROOT"   || EXIT /b -1
 ::CALL:checkEnvVarValid "LUX_X64_OPENJPEG_ROOT"  || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_PYTHON36_ROOT"   || EXIT /b -1
-CALL:checkEnvVarValid "LUX_X64_PYTHON37_ROOT"   || EXIT /b -1
+CALL:checkEnvVarValid "LUX_X64_PYTHON311_ROOT"   || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_TBB_ROOT"      || EXIT /b -1
 CALL:checkEnvVarValid "LUX_X64_ZLIB_ROOT"      || EXIT /b -1
 
 set MSBUILD_VERSION=
 FOR /f "tokens=1,2 delims=." %%a IN ('msbuild /nologo /version') DO set MSBUILD_VERSION_MAJOR=%%a
-IF "%MSBUILD_VERSION_MAJOR%" NEQ "15" (
+IF "%MSBUILD_VERSION_MAJOR%" NEQ "16" (
 	echo.
 	echo Could not find 'msbuild' version 15.
 	echo Please run this script from the Visual Studio 2017 Command Prompt.
@@ -80,8 +78,7 @@ echo.
 echo Choose the version of Python used to build Boost.Python
 echo Available options:
 echo      S - Use system available version (see note)
-echo     37 - Use Python 3.7 with NumPy 1.15.4
-echo     36 - Use Python 3.6 with NumPy 1.15.4
+echo     311 - Use Python 3.11 with NumPy 1.15.4
 echo.
 echo     NOTE: Recomended choice if you have installed a python version that
 echo           you would like to use.
@@ -102,14 +99,9 @@ if %PYTHON_CHOICE% EQU S (
     echo %PYTHON_V%
     goto DebugChoice
 )
-if %PYTHON_CHOICE% EQU 37 (
-    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON37_ROOT%
-    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY37_ROOT%
-    goto DebugChoice
-)
-if %PYTHON_CHOICE% EQU 36 (
-    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON36_ROOT%
-    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY36_ROOT%
+if %PYTHON_CHOICE% EQU 311 (
+    set LUX_X64_PYTHON_ROOT=%LUX_X64_PYTHON311_ROOT%
+    set LUX_X64_NUMPY_ROOT=%LUX_X64_NUMPY311_ROOT%
     goto DebugChoice
 )
 echo Invalid choice
@@ -144,10 +136,10 @@ mkdir %INCLUDE_DIR%
 rd %INSTALL_DIR%\include
 mklink /j %INSTALL_DIR%\include %INCLUDE_DIR%
 
-set CMAKE_OPTS=-G "Visual Studio 15 2017" -T v141,host=x64 -A x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
-rem set CMAKE_OPTS=-G "Visual Studio 16 2019" -T v142,host=x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
+rem set CMAKE_OPTS=-G "Visual Studio 15 2017" -T v141,host=x64 -A x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
+set CMAKE_OPTS=-G "Visual Studio 16 2019" -T v142,host=x64 -D CMAKE_INCLUDE_PATH="%INCLUDE_DIR%" -D CMAKE_LIBRARY_PATH="%LIB_DIR%" -D BUILD_SHARED_LIBS=0 -D BOOST_ROOT="%LUX_X64_BOOST_ROOT%" -D ZLIB_ROOT="%LUX_X64_ZLIB_ROOT%" -D Boost_USE_STATIC_LIBS=1 -D QT_QMAKE_EXECUTABLE="%LUX_X64_QT_ROOT%\bin\qmake"
 
-set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:15.0 /property:"PlatformToolset=v141" /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
+set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /toolsversion:Current /property:"PlatformToolset=v142" /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
 REM set MSBUILD_OPTS=/nologo /maxcpucount /verbosity:quiet /property:"Platform=x64" /property:ForceImportBeforeCppTargets=%LUX_WINDOWS_BUILD_ROOT%\Support\MultiThreadedDLL.props /target:"Clean"
 set MSBUILD_RELEASE_OPTS=/property:"WholeProgramOptimization=False"
 set MSBUILD_DEBUG_OPTS=
@@ -176,45 +168,7 @@ echo To use the freshly built dependencies for a standard LuxCoreRender build,
 echo rename folder 'BuiltDeps' to 'WindowsCompileDeps'.
 echo.
 
-
 :: ****************************************************************************
-:: ******************************* PYTHON *************************************
-:: ****************************************************************************
-:Python
-if %PYTHON_CHOICE% EQU S (
-    if "%PYTHON_V%" EQU "" (
-        echo Python not found, skipping...
-        goto Boost
-    )
-    rem copying python deps from system python
-    mkdir %INCLUDE_DIR%\Python%PYTHON_V%
-    CALL:xcopyFiles "%LUX_X64_PYTHON_ROOT%\include\*.*" %INCLUDE_DIR%\Python%PYTHON_V%
-    CALL:copyFile "%LUX_X64_PYTHON_ROOT%\libs\python%PYTHON_V%.lib" %LIB_DIR%
-    CALL:copyFile "%LUX_X64_PYTHON_ROOT%\python%PYTHON_V%.dll" %LIB_DIR%
-    goto Boost
-)
-echo.
-echo **************************************************************************
-echo * Building Python %PYTHON_CHOICE%                                                     *
-echo **************************************************************************
-cd /d %LUX_X64_PYTHON_ROOT%\PCbuild
-CALL:copyFile ..\PC\pyconfig.h ..\Include
-
-set MSBUILD_PYTHON_OPTS=""
-if %PYTHON_CHOICE% EQU 36 (
-    %LUX_WINDOWS_BUILD_ROOT%\support\bin\patch --forward --backup --batch python.props %LUX_WINDOWS_BUILD_ROOT%\support\python368.props.patch
-)
-if %PYTHON_CHOICE% EQU 37 set MSBUILD_PYTHON_OPTS=/target:"_decimal"
-msbuild %MSBUILD_OPTS% /property:"Configuration=%BUILD_CONFIGURATION%" /target:"python" %MSBUILD_PYTHON_OPTS% pcbuild.sln
-if ERRORLEVEL 1 goto :EOF
-
-:CopyPythonFiles
-mkdir %INCLUDE_DIR%\Python%PYTHON_CHOICE%
-CALL:xcopyFiles ..\include\*.* %INCLUDE_DIR%\Python%PYTHON_CHOICE%
-CALL:copyFile amd64\python%PYTHON_CHOICE%.lib %LIB_DIR%
-CALL:copyFile amd64\python%PYTHON_CHOICE%.dll %LIB_DIR%
-
-
 :: ****************************************************************************
 :: ******************************* BOOST **************************************
 :: ****************************************************************************
@@ -250,7 +204,7 @@ echo %BJAM_OPTS%
 set BUILD_CONFIGURATION_BOOST=release
 IF %BUILD_CONFIGURATION%==Debug set BUILD_CONFIGURATION_BOOST=debug
 
-b2 %BJAM_OPTS% toolset=msvc-14.1 variant=%BUILD_CONFIGURATION_BOOST% stage
+b2 %BJAM_OPTS% toolset=msvc-14.2 variant=%BUILD_CONFIGURATION_BOOST% stage
 if ERRORLEVEL 1 goto :EOF
 
 mkdir %INCLUDE_DIR%\Boost

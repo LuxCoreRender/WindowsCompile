@@ -3,7 +3,7 @@
 SETLOCAL ENABLEEXTENSIONS
 
 :: This is normally the latest WindowsCompileDeps release
-set WINDOWS_DEPS_RELEASE=v2.6_4
+set WINDOWS_DEPS_RELEASE=v2.8_1
 
 set FULL_REBUILD=0
 set BUILD_LUXCORE_ONLY=0
@@ -15,7 +15,7 @@ set DISABLE_OPENCL=0
 set DISABLE_CUDA=0
 set BUILD_TYPE=Release
 set BUILD_DLL=0
-set PYTHON_VERSION=310
+set PYTHON_VERSION=311
 set CPUCOUNT=/maxcpucount
 set PRINT_USAGE=0
 
@@ -35,6 +35,7 @@ if /i "%1" EQU "/python37" set PYTHON_VERSION=37
 if /i "%1" EQU "/python38" set PYTHON_VERSION=38
 if /i "%1" EQU "/python39" set PYTHON_VERSION=39
 if /i "%1" EQU "/python310" set PYTHON_VERSION=310
+if /i "%1" EQU "/python311" set PYTHON_VERSION=311
 if /i "%1" EQU "/vs2017" set VSVERSION=2017
 if /i "%1" EQU "/vs2019" set VSVERSION=2019
 :: The following two options are normally not necessary:
@@ -148,6 +149,7 @@ set CMAKE_PLATFORM=-A x64
 set CMAKE_GENERATOR="Visual Studio 16 2019"
 set CMAKE_TOOLSET=-T v142,host=x64
 set CMAKE_PLATFORM=-A x64
+set CMAKE_CXX_STANDARD=17
 )
 
 if %CMAKE_VN_MAJOR%==2 (

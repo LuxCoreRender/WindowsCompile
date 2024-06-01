@@ -22,6 +22,7 @@ SET OPENEXR_VER=2.4.1
 ::SET OPENJPEG_VER=1.5.1
 SET PYTHON36_VER=3.6.8
 SET PYTHON37_VER=3.7.7
+SET PYTHON311_VER=3.11.8
 SET QT_VER=5.12.2
 SET TBB_VER=2019_U9
 SET TBB_VER_FULL=2019_20191006
@@ -46,6 +47,7 @@ echo   libTIFF    	%LIBTIFF_VER%		http://www.libtiff.org/
 echo   NumPy      	%NUMPY35_VER%		http://www.numpy.org/
 echo   NumPy      	%NUMPY36_VER%		http://www.numpy.org/
 echo   NumPy      	%NUMPY37_VER%		http://www.numpy.org/
+echo   NumPy      	%NUMPY311_VER%		http://www.numpy.org/
 echo   OpenEXR    	%OPENEXR_VER%		http://www.openexr.com/
 echo   OpenImageDenoise %OIDN_VER%	https://openimagedenoise.github.io
 echo   OpenImageIO	%OIIO_VER%		http://openimageio.org/
@@ -53,6 +55,7 @@ echo   OpenJPEG   	%OPENJPEG_VER%		http://www.openjpeg.org/
 echo   Python     	%PYTHON35_VER%		http://www.python.org/
 echo   Python     	%PYTHON36_VER%		http://www.python.org/
 echo   Python     	%PYTHON37_VER%		http://www.python.org/
+echo   Python     	%PYTHON311_VER%		http://www.python.org/
 echo   QT         	%QT_VER%		http://www.qt.io/
 echo   tbb        	%TBB_VER%		https://www.threadingbuildingblocks.org/
 echo   zlib       	%ZLIB_VER%		http://www.zlib.net/
