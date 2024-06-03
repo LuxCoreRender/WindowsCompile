@@ -3,7 +3,7 @@
 SETLOCAL ENABLEEXTENSIONS
 
 :: This is normally the latest WindowsCompileDeps release
-set WINDOWS_DEPS_RELEASE=v2.8_1
+set WINDOWS_DEPS_RELEASE=v2.9_1
 
 set FULL_REBUILD=0
 set BUILD_LUXCORE_ONLY=0
